@@ -1,9 +1,8 @@
+using AdventureMode.Items;
 using AdventureMode.Tiles;
-using HamstarHelpers.Helpers.DotNET.Extensions;
-using HamstarHelpers.Services.Debug.CustomHotkeys;
-using System.Collections.Generic;
-using System.Linq;
+using HamstarHelpers.Helpers.Recipes;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 
@@ -37,18 +36,33 @@ namespace AdventureMode {
 			AdventureModeMod.Instance = null;
 		}
 
+
 		////////////////
 
 		public override void PostSetupContent() {
-			CustomHotkeys.BindActionToKey1( "Illuminate", () => {
+			/*CustomHotkeys.BindActionToKey1( "Illuminate", () => {
 				var manaTileSingleton = ModContent.GetInstance<ManaCrystalShardTile>();
 				foreach( (int tileX, IDictionary<int, float> tileYs) in manaTileSingleton.IlluminatedCrystals.ToArray() ) {
 					foreach( (int tileY, float illum) in tileYs.ToArray() ) {
 						manaTileSingleton.IlluminatedCrystals[tileX][tileY] = 1f;
 					}
 				}
-Main.NewText("Lit!");
-			} );
+				Main.NewText("Lit!");
+			} );*/
+		}
+
+		public override void PostAddRecipes() {
+			if( AdventureModeMod.Config.ManaCrystalShardsPerManaCrystal > 0 ) {
+				foreach( Recipe recipe in RecipeFinderHelpers.GetRecipesOfItem( ItemID.ManaCrystal ) ) {
+					for( int i = 0; i < recipe.requiredItem.Length; i++ ) {
+						if( recipe.requiredItem[i] != null && !recipe.requiredItem[i].IsAir ) {
+							continue;
+						}
+						recipe.requiredItem[i].SetDefaults( ModContent.ItemType<ManaCrystalShardItem>() );
+						recipe.requiredItem[i].stack = AdventureModeMod.Config.ManaCrystalShardsPerManaCrystal;
+					}
+				}
+			}
 		}
 	}
 }

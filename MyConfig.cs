@@ -15,7 +15,11 @@ namespace AdventureMode {
 
 		////
 
-		public bool DebugModeInfo = false;
+		public bool DebugModeInfo { get; set; } = false;
+
+		////
+
+		public int ManaCrystalShardsPerManaCrystal { get; set; } = 4;
 
 
 
