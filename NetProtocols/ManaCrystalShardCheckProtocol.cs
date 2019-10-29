@@ -7,6 +7,7 @@ namespace AdventureMode.NetProtocols {
 	class ManaCrystalShardCheckProtocol : PacketProtocolSendToServer {
 		public static void QuickRequest( int tileX, int tileY, float brightness ) {
 			var protocol = new ManaCrystalShardCheckProtocol( tileX, tileY, brightness );
+			protocol.SendToServer( false );
 		}
 
 

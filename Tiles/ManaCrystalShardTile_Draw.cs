@@ -35,31 +35,9 @@ namespace AdventureMode.Tiles {
 
 		////
 
-		private float UpdateIlluminationAt( int i, int j ) {
-			var singleton = ModContent.GetInstance<ManaCrystalShardTile>();
-			if( !singleton.IlluminatedCrystals.ContainsKey( i ) || !singleton.IlluminatedCrystals[i].ContainsKey( j ) ) {
-				singleton.IlluminatedCrystals.Set2D( i, j, 0f );
-				return 0f;
-			}
-
-			float illum = singleton.IlluminatedCrystals[i][j];
-
-			if( illum > 0f ) {
-				illum = singleton.IlluminatedCrystals[i][j] -= 0.1f;
-			}
-
-			// Animate flicker
-			if( ( (int)( illum * 10 ) % 2 ) == 0 ) {
-				return 0f;
-			}
-
-			return illum;
-		}
-
-
-		////
-
 		public override bool PreDraw( int i, int j, SpriteBatch spriteBatch ) {
+			this.StaggeredUpdate( i, j );
+
 			float illum = this.UpdateIlluminationAt( i, j );
 			if( illum <= 0f ) {
 				return false;

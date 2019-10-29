@@ -2,6 +2,7 @@
 using HamstarHelpers.Helpers.DotNET.Extensions;
 using HamstarHelpers.Helpers.Tiles;
 using HamstarHelpers.Helpers.TModLoader;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
@@ -127,6 +128,27 @@ namespace AdventureMode.Tiles {
 			singleton.IlluminatedCrystals.Remove2D( i, j );
 
 			Item.NewItem( i << 4, j << 4, 16, 16, ModContent.ItemType<ManaCrystalShardItem>() );
+		}
+
+
+		////////////////
+
+		private void StaggeredUpdate( int i, int j ) {
+			var projSingletone = ModContent.GetInstance<AdventureModeProjectile>();
+			int responseDistSqr = 7 * 16;
+			responseDistSqr *= responseDistSqr;
+
+			foreach( int projWho in projSingletone.GetAllPlayerMagicProjectiles() ) {
+				Vector2 pos = Main.projectile[i].Center * 16;
+				int distX = (int)pos.X - (i<<4);
+				int distY = (int)pos.Y - (j<<4);
+
+				int distSqr = (distX+distX) + (distY+distY);
+				if( distSqr < responseDistSqr ) {
+					this.IlluminateAt( i, j );
+					break;
+				}
+			}
 		}
 	}
 }

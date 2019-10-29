@@ -31,6 +31,7 @@ namespace AdventureMode {
 		public override void Load() {
 			ManaCrystalShardTile.InitializeSingleton();
 			AdventureModeWorld.InitializeSingleton();
+			AdventureModeProjectile.InitializeSingleton();
 		}
 
 		public override void Unload() {
