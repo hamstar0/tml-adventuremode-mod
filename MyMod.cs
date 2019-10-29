@@ -1,6 +1,8 @@
 using AdventureMode.Items;
 using AdventureMode.Tiles;
+using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.Recipes;
+using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -54,16 +56,24 @@ namespace AdventureMode {
 		}
 
 		public override void PostAddRecipes() {
-			if( AdventureModeMod.Config.ManaCrystalShardsPerManaCrystal > 0 ) {
+			if( AdventureModeMod.Config.ManaCrystalShardsPerManaCrystal == 0 ) {
+				return;
+			}
+
+			try {
 				foreach( Recipe recipe in RecipeFinderHelpers.GetRecipesOfItem( ItemID.ManaCrystal ) ) {
 					for( int i = 0; i < recipe.requiredItem.Length; i++ ) {
 						if( recipe.requiredItem[i] != null && !recipe.requiredItem[i].IsAir ) {
 							continue;
 						}
-						recipe.requiredItem[i].SetDefaults( ModContent.ItemType<ManaCrystalShardItem>() );
+
+						recipe.requiredItem[i] = new Item();
+						recipe.requiredItem[i].SetDefaults( ModContent.ItemType<ManaCrystalShardItem>(), true );
 						recipe.requiredItem[i].stack = AdventureModeMod.Config.ManaCrystalShardsPerManaCrystal;
 					}
 				}
+			} catch( Exception e ) {
+				LogHelpers.Warn( e.ToString() );
 			}
 		}
 	}

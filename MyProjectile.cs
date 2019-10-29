@@ -9,7 +9,7 @@ namespace AdventureMode {
 	class AdventureModeProjectile : GlobalProjectile {
 		internal static void InitializeSingleton() {
 			var projSingleton = ModContent.GetInstance<AdventureModeProjectile>();
-			projSingleton.PlayerMagicProjectiles = new HashSet<int>();
+			projSingleton.MagicProjectiles = new HashSet<int>();
 		}
 
 
@@ -17,37 +17,38 @@ namespace AdventureMode {
 		////////////////
 
 		private bool IsAccountedFor = false;
-		private ISet<int> PlayerMagicProjectiles = null;
+		private ISet<int> MagicProjectiles = null;
 
 
 		////////////////
 
 		public override bool CloneNewInstances => false;
+		public override bool InstancePerEntity => true;
 
 
 
 		////////////////
 
 		private void Initialize( Projectile projectile ) {
-			if( !projectile.npcProj && projectile.magic ) {
+			if( projectile.magic ) {
 				var projSingleton = ModContent.GetInstance<AdventureModeProjectile>();
-				projSingleton.PlayerMagicProjectiles.Add( projectile.whoAmI );
+				projSingleton.MagicProjectiles.Add( projectile.whoAmI );
 			}
 		}
 
 
 		////////////////
 
-		public IEnumerable<int> GetAllPlayerMagicProjectiles() {
-			var projWhos = new List<int>( this.PlayerMagicProjectiles.Count );
+		public IEnumerable<int> GetAllMagicProjectiles() {
+			var projWhos = new List<int>( this.MagicProjectiles.Count );
 
-			foreach( int i in this.PlayerMagicProjectiles.ToArray() ) {
+			foreach( int i in this.MagicProjectiles.ToArray() ) {
 				Projectile proj = Main.projectile[i];
-				if( proj == null || !proj.active || proj.npcProj || !proj.magic ) {
+				if( proj == null || !proj.active || !proj.magic ) {
 					continue;
 				}
 
-				this.PlayerMagicProjectiles.Remove( i );
+				this.MagicProjectiles.Remove( i );
 				projWhos.Add( i );
 			}
 

@@ -138,7 +138,7 @@ namespace AdventureMode.Tiles {
 			int responseDistSqr = 7 * 16;
 			responseDistSqr *= responseDistSqr;
 
-			foreach( int projWho in projSingletone.GetAllPlayerMagicProjectiles() ) {
+			foreach( int projWho in projSingletone.GetAllMagicProjectiles() ) {
 				Vector2 pos = Main.projectile[i].Center * 16;
 				int distX = (int)pos.X - (i<<4);
 				int distY = (int)pos.Y - (j<<4);
