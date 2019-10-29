@@ -31,8 +31,8 @@ namespace AdventureMode {
 		public int ManaCrystalShardTeleportRadius { get; set; } = 80;
 
 		[Range( 0.01f, 100f )]
-		[DefaultValue( 1f )]
-		public float ManaCrystalShardLightToleranceScale { get; set; } = 1f;
+		[DefaultValue( 20f )]
+		public float ManaCrystalShardLightToleranceScale { get; set; } = 20f;
 
 
 		[Range( 0, 10000 )]

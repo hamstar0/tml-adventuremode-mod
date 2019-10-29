@@ -1,5 +1,4 @@
 ﻿using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Helpers.DotNET.Extensions;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -9,16 +8,7 @@ using Terraria.ModLoader;
 namespace AdventureMode.Tiles {
 	partial class ManaCrystalShardTile : ModTile {
 		public override void ModifyLight( int i, int j, ref float r, ref float g, ref float b ) {
-			float illum = 0f;
-
-			var singleton = ModContent.GetInstance<ManaCrystalShardTile>();
-			if( singleton.IlluminatedCrystals.ContainsKey(i) && singleton.IlluminatedCrystals[i].ContainsKey(j) ) {
-				illum = singleton.IlluminatedCrystals[i][j];
-
-				if( ((int)(illum * 100) % 2) == 0 ) {
-					illum = 0f;
-				}
-			}
+			float illum = this.GetIlluminationAt( i, j );
 
 			r = illum * 0.32f;
 			g = illum * 0.32f;
@@ -36,11 +26,14 @@ namespace AdventureMode.Tiles {
 		////
 
 		public override bool PreDraw( int i, int j, SpriteBatch spriteBatch ) {
-			this.StaggeredUpdate( i, j );
+			this.UpdateDrawnTileSlow( i, j );
+			this.UpdateIlluminationAt( i, j );
 
-			float illum = this.UpdateIlluminationAt( i, j );
+			float illum = this.GetIlluminationAt( i, j );
 			if( illum <= 0f ) {
 				return false;
+			} else if( illum >= 0.9f ) {
+				Dust.NewDust( new Vector2(i<<4, j<<4), 16, 16, 20, 0f, 0f, 0, new Color(255, 255, 255), 0.5f );
 			}
 
 			SpriteEffects effects = SpriteEffects.None;

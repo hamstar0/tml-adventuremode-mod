@@ -30,10 +30,10 @@ namespace AdventureMode.Tiles {
 			);
 
 			if( AdventureModeWorldGenPass.GetRandomShardAttachableTile( within, 100, pattern, out tileAt ) ) {
-				TileHelpers.Swap1x1( tileX, tileY, tileAt.newTileX, tileAt.newTileY );
+				TileHelpers.Swap1x1( tileX, tileY, tileAt.newTileX, tileAt.newTileY, true, true, true );
 
 				for( int i = 0; i < 4; i++ ) {
-					Dust.NewDust( new Vector2(tileX << 4, tileY << 4), 16, 17, 229 );
+					Dust.NewDust( new Vector2(tileX<<4, tileY<<4), 16, 17, 229 );
 				}
 			}
 		}

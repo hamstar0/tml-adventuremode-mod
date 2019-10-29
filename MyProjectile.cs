@@ -45,10 +45,10 @@ namespace AdventureMode {
 			foreach( int i in this.MagicProjectiles.ToArray() ) {
 				Projectile proj = Main.projectile[i];
 				if( proj == null || !proj.active || !proj.magic ) {
+					this.MagicProjectiles.Remove( i );
 					continue;
 				}
 
-				this.MagicProjectiles.Remove( i );
 				projWhos.Add( i );
 			}
 

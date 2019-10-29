@@ -60,20 +60,19 @@ namespace AdventureMode {
 				return;
 			}
 
-			try {
-				foreach( Recipe recipe in RecipeFinderHelpers.GetRecipesOfItem( ItemID.ManaCrystal ) ) {
-					for( int i = 0; i < recipe.requiredItem.Length; i++ ) {
-						if( recipe.requiredItem[i] != null && !recipe.requiredItem[i].IsAir ) {
-							continue;
-						}
+			int shardType = ModContent.ItemType<ManaCrystalShardItem>();
 
-						recipe.requiredItem[i] = new Item();
-						recipe.requiredItem[i].SetDefaults( ModContent.ItemType<ManaCrystalShardItem>(), true );
-						recipe.requiredItem[i].stack = AdventureModeMod.Config.ManaCrystalShardsPerManaCrystal;
+			foreach( Recipe recipe in RecipeFinderHelpers.GetRecipesOfItem( ItemID.ManaCrystal ) ) {
+				for( int i = 0; i < recipe.requiredItem.Length; i++ ) {
+					if( recipe.requiredItem[i] != null && !recipe.requiredItem[i].IsAir ) {
+						continue;
 					}
+
+					recipe.requiredItem[i] = new Item();
+					recipe.requiredItem[i].SetDefaults( shardType, true );
+					recipe.requiredItem[i].stack = AdventureModeMod.Config.ManaCrystalShardsPerManaCrystal;
+					break;
 				}
-			} catch( Exception e ) {
-				LogHelpers.Warn( e.ToString() );
 			}
 		}
 	}

@@ -6,9 +6,20 @@ using Terraria.ModLoader;
 
 namespace AdventureMode.Tiles {
 	partial class ManaCrystalShardTile : ModTile {
-		public void IlluminateAt( int i, int j ) {
+		public float GetIlluminationAt( int i, int j ) {
 			var singleton = ModContent.GetInstance<ManaCrystalShardTile>();
-			if( !singleton.IlluminatedCrystals.ContainsKey( i ) || !singleton.IlluminatedCrystals[i].ContainsKey( j ) ) {
+			float illum = singleton.IlluminatedCrystals.Get2DOrDefault( i, j );
+
+			return illum;
+			/*// Animate flicker
+			return ( (int)( illum * 100 ) % 2 ) == 0
+				? illum
+				: 0f;*/
+		}
+
+		public void SetIlluminateAt( int i, int j ) {
+			var singleton = ModContent.GetInstance<ManaCrystalShardTile>();
+			if( !singleton.IlluminatedCrystals.ContainsKey(i) || !singleton.IlluminatedCrystals[i].ContainsKey(j) ) {
 				LogHelpers.Warn( "Cannot illuminate "+i+","+j+"; no shard defined");
 				return;
 			}
@@ -24,25 +35,16 @@ namespace AdventureMode.Tiles {
 
 		////
 
-		private float UpdateIlluminationAt( int i, int j ) {
+		private void UpdateIlluminationAt( int i, int j ) {
 			var singleton = ModContent.GetInstance<ManaCrystalShardTile>();
-			if( !singleton.IlluminatedCrystals.ContainsKey( i ) || !singleton.IlluminatedCrystals[i].ContainsKey( j ) ) {
+			if( !singleton.IlluminatedCrystals.ContainsKey(i) || !singleton.IlluminatedCrystals[i].ContainsKey(j) ) {
 				singleton.IlluminatedCrystals.Set2D( i, j, 0f );
-				return 0f;
+				return;
 			}
 
-			float illum = singleton.IlluminatedCrystals[i][j];
-
-			if( illum > 0f ) {
-				illum = singleton.IlluminatedCrystals[i][j] -= 0.1f;
+			if( singleton.IlluminatedCrystals[i][j] > 0f ) {
+				singleton.IlluminatedCrystals[i][j] -= 0.05f;
 			}
-
-			// Animate flicker
-			if( ((int)(illum * 10) % 2) == 0 ) {
-				return 0f;
-			}
-
-			return illum;
 		}
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using AdventureMode.Items;
+using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.DotNET.Extensions;
 using HamstarHelpers.Helpers.Tiles;
 using HamstarHelpers.Helpers.TModLoader;
@@ -123,7 +124,6 @@ namespace AdventureMode.Tiles {
 		}
 
 		public override void KillTile( int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem ) {
-
 			var singleton = ModContent.GetInstance<ManaCrystalShardTile>();
 			singleton.IlluminatedCrystals.Remove2D( i, j );
 
@@ -133,19 +133,22 @@ namespace AdventureMode.Tiles {
 
 		////////////////
 
-		private void StaggeredUpdate( int i, int j ) {
+		private void UpdateDrawnTileSlow( int i, int j ) {
 			var projSingletone = ModContent.GetInstance<AdventureModeProjectile>();
 			int responseDistSqr = 7 * 16;
 			responseDistSqr *= responseDistSqr;
 
-			foreach( int projWho in projSingletone.GetAllMagicProjectiles() ) {
-				Vector2 pos = Main.projectile[i].Center * 16;
-				int distX = (int)pos.X - (i<<4);
-				int distY = (int)pos.Y - (j<<4);
+			int tileWldX = i << 4;
+			int tileWldY = j << 4;
 
-				int distSqr = (distX+distX) + (distY+distY);
+			foreach( int projWho in projSingletone.GetAllMagicProjectiles() ) {
+				Vector2 pos = Main.projectile[projWho].Center;
+				int distX = ((int)pos.X) - tileWldX;
+				int distY = ((int)pos.Y) - tileWldY;
+
+				int distSqr = (distX*distX) + (distY*distY);
 				if( distSqr < responseDistSqr ) {
-					this.IlluminateAt( i, j );
+					this.SetIlluminateAt( i, j );
 					break;
 				}
 			}
