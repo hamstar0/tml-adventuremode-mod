@@ -11,6 +11,11 @@
     <Exec Command="&quot;$(tMLBuildServerPath)&quot; -build $(ProjectDir) -eac $(TargetPath) -define $(DefineConstants) -unsafe $(AllowUnsafeBlocks)" />
   </Target>
   <ItemGroup>
+    <Compile Remove="ImageSources\**" />
+    <EmbeddedResource Remove="ImageSources\**" />
+    <None Remove="ImageSources\**" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove=".gitattributes" />
     <None Remove=".gitignore" />
   </ItemGroup>

@@ -7,6 +7,7 @@ using Terraria.World.Generation;
 using HamstarHelpers.Helpers.Debug;
 using AdventureMode.Tiles;
 using HamstarHelpers.Classes.Tiles.TilePattern;
+using AdventureMode.NetProtocols;
 
 
 namespace AdventureMode {
@@ -117,7 +118,7 @@ namespace AdventureMode {
 					ManaCrystalShardTile.UpdateLightAversionForTile(
 						tileAt.tileX,
 						tileAt.tileY,
-						(float)AdventureModeMod.Config.ManaCrystalShardLightToleranceScale,
+						AdventureModeMod.Config.ManaCrystalShardLightToleranceScale,
 						brightness
 					);
 				}

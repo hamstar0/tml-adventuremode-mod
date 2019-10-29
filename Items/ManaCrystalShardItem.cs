@@ -8,7 +8,7 @@ namespace AdventureMode.Items {
 	internal class ManaCrystalShardItem : ModItem {
 		public override void SetStaticDefaults() {
 			this.DisplayName.SetDefault( "Mana Crystal Shard" );
-			this.Tooltip.SetDefault( "Awakens with magic." );
+			this.Tooltip.SetDefault( "Alights when magic." );
 		}
 
 		public override void SetDefaults() {
