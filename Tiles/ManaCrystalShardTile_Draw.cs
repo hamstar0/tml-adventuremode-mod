@@ -98,5 +98,15 @@ namespace AdventureMode.Tiles {
 
 			return false; // return false to stop vanilla draw.
 		}
+
+
+		public override void PostDraw( int i, int j, SpriteBatch spriteBatch ) {
+			float brightness = Lighting.Brightness( i, j );
+
+			if( brightness > 0.05f ) {
+				var myworld = ModContent.GetInstance<AdventureModeWorld>();
+				myworld.QueueManaCrystalShardCheck( i, j, brightness );
+			}
+		}
 	}
 }
