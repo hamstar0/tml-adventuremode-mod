@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ModLoader;
 using System;
+using Microsoft.Xna.Framework;
 
 
 namespace AdventureMode.Items {
@@ -46,11 +47,25 @@ namespace AdventureMode.Items {
 			int tileX = (int)player.Center.X >> 4;
 			int tileY = (int)player.Center.Y >> 4;
 			IList<(ushort TileX, ushort TileY)> innerHouseSpace, fullHouseSpace;
-			int floorY;
+			int floorX, floorY;
+			
+			HouseViabilityState state = HouseFurnishingKitItem.IsValidHouse(
+				tileX,
+				tileY,
+				out innerHouseSpace,
+				out fullHouseSpace,
+				out floorX,
+				out floorY
+			);
 
-			if( HouseFurnishingKitItem.IsValidHouse( tileX, tileY, out innerHouseSpace, out fullHouseSpace, out floorY ) ) {
-				HouseFurnishingKitItem.MakeHouse( player, innerHouseSpace, fullHouseSpace, tileX, floorY );
+			if( state == HouseViabilityState.Good ) {
+				HouseFurnishingKitItem.MakeHouse( player, innerHouseSpace, fullHouseSpace, floorX, floorY );
 				return true;
+			} else {
+				Color color;
+				String msg = HouseFurnishingKitItem.GetViabilityStateMessage( state, out color );
+
+				Main.NewText( msg, color );
 			}
 
 			return false;

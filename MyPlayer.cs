@@ -1,4 +1,5 @@
 ﻿using AdventureMode.Items;
+using HamstarHelpers.Helpers.Debug;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
@@ -9,7 +10,7 @@ namespace AdventureMode {
 	class AdventureModePlayer : ModPlayer {
 		private int CurrentZoomedX;
 		private int CurrentZoomedY;
-		private bool PreviousHouseCheck = false;
+		private bool HasPreviousHouseViableAlert = false;
 
 
 		////////////////
@@ -53,15 +54,16 @@ namespace AdventureMode {
 			bool? isViable = this.CheckIfViableHouseIfNearby();
 
 			if( isViable.HasValue && isViable.Value ) {
-				if( !this.PreviousHouseCheck ) {
-					this.PreviousHouseCheck = true;
+				if( !this.HasPreviousHouseViableAlert ) {
+					this.HasPreviousHouseViableAlert = true;
 
-					Main.NewText( "Valid town house space found. Note: Only above ground houses work automatically.", Color.Lime );
-				} else {
-					this.PreviousHouseCheck = false;
+					Color color;
+					string msg = HouseFurnishingKitItem.GetViabilityStateMessage( HouseViabilityState.Good, out color );
+
+					Main.NewText( msg, color );
 				}
 			} else {
-				this.PreviousHouseCheck = false;
+				this.HasPreviousHouseViableAlert = false;
 			}
 		}
 
@@ -79,7 +81,8 @@ namespace AdventureMode {
 					continue;
 				}
 
-				return HouseFurnishingKitItem.IsValidHouse( tileX, tileY );
+				HouseViabilityState state = HouseFurnishingKitItem.IsValidHouse( tileX, tileY );
+				return state == HouseViabilityState.Good;
 			}
 
 			return null;
