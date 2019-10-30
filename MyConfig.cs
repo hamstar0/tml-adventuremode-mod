@@ -34,6 +34,10 @@ namespace AdventureMode {
 		[DefaultValue( 20f )]
 		public float ManaCrystalShardLightToleranceScale { get; set; } = 20f;
 
+		[Range( 0, 100 )]
+		[DefaultValue( 10 )]
+		public int ManaCrystalShardMagicResonanceTileRange { get; set; } = 10;
+
 
 		[Range( 0, 10000 )]
 		[DefaultValue( 160 )]

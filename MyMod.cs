@@ -2,6 +2,8 @@ using AdventureMode.Items;
 using AdventureMode.Tiles;
 using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.Recipes;
+using HamstarHelpers.Services.Debug.CustomHotkeys;
+using Microsoft.Xna.Framework;
 using System;
 using Terraria;
 using Terraria.ID;

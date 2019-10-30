@@ -135,7 +135,7 @@ namespace AdventureMode.Tiles {
 
 		private void UpdateDrawnTileSlow( int i, int j ) {
 			var projSingletone = ModContent.GetInstance<AdventureModeProjectile>();
-			int responseDistSqr = 7 * 16;
+			int responseDistSqr = AdventureModeMod.Config.ManaCrystalShardMagicResonanceTileRange * 16;
 			responseDistSqr *= responseDistSqr;
 
 			int tileWldX = i << 4;
