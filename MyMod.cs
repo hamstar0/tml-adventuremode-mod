@@ -1,12 +1,5 @@
-using AdventureMode.Items;
-using AdventureMode.Tiles;
 using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Helpers.Recipes;
-using HamstarHelpers.Services.Debug.CustomHotkeys;
-using Microsoft.Xna.Framework;
 using System;
-using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 
@@ -33,9 +26,6 @@ namespace AdventureMode {
 		////////////////
 
 		public override void Load() {
-			ManaCrystalShardTile.InitializeSingleton();
-			AdventureModeWorld.InitializeSingleton();
-			AdventureModeProjectile.InitializeSingleton();
 		}
 
 		public override void Unload() {
@@ -55,27 +45,6 @@ namespace AdventureMode {
 				}
 				Main.NewText("Lit!");
 			} );*/
-		}
-
-		public override void PostAddRecipes() {
-			if( AdventureModeMod.Config.ManaCrystalShardsPerManaCrystal == 0 ) {
-				return;
-			}
-
-			int shardType = ModContent.ItemType<ManaCrystalShardItem>();
-
-			foreach( Recipe recipe in RecipeFinderHelpers.GetRecipesOfItem( ItemID.ManaCrystal ) ) {
-				for( int i = 0; i < recipe.requiredItem.Length; i++ ) {
-					if( recipe.requiredItem[i] != null && !recipe.requiredItem[i].IsAir ) {
-						continue;
-					}
-
-					recipe.requiredItem[i] = new Item();
-					recipe.requiredItem[i].SetDefaults( shardType, true );
-					recipe.requiredItem[i].stack = AdventureModeMod.Config.ManaCrystalShardsPerManaCrystal;
-					break;
-				}
-			}
 		}
 	}
 }
