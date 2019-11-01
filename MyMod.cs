@@ -1,10 +1,12 @@
 using HamstarHelpers.Helpers.Debug;
+using HamstarHelpers.Services.EntityGroups;
+using Nihilism;
 using System;
 using Terraria.ModLoader;
 
 
 namespace AdventureMode {
-	public class AdventureModeMod : Mod {
+	partial class AdventureModeMod : Mod {
 		public static string GithubUserName => "hamstar0";
 		public static string GithubProjectName => "tml-adventuremode-mod";
 
@@ -26,6 +28,16 @@ namespace AdventureMode {
 		////////////////
 
 		public override void Load() {
+			EntityGroups.Enable();
+			NihilismAPI.InstancedFiltersOn();
+
+			NihilismAPI.OnSyncOrWorldLoad( ( isSync ) => {
+				if( isSync ) { return; }
+				//NihilismAPI.ClearFiltersForCurrentWorld( true );
+				//NihilismAPI.SetRecipeBlacklistGroupEntry( "Any Item", true );
+				//NihilismAPI.SetItemBlacklistGroupEntry( "Any Placeable", true );
+				NihilismAPI.NihilateCurrentWorld( true );
+			}, 0f );
 		}
 
 		public override void Unload() {

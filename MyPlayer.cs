@@ -1,5 +1,4 @@
 ﻿using HamstarHelpers.Helpers.Debug;
-using Nihilism;
 using System;
 using Terraria;
 using Terraria.ModLoader;
@@ -17,11 +16,6 @@ namespace AdventureMode {
 			if( player.whoAmI != Main.myPlayer ) {
 				return;
 			}
-
-			NihilismAPI.InstancedFiltersOn();
-			NihilismAPI.SetRecipeBlacklistGroupEntry( "Any Item", true );
-			NihilismAPI.SetItemBlacklistGroupEntry( "Any Placeable", true );
-			NihilismAPI.NihilateCurrentWorld();
 		}
 
 
