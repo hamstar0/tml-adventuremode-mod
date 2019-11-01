@@ -1,6 +1,5 @@
 ﻿using HamstarHelpers.Classes.UI.ModConfig;
 using System;
-using System.ComponentModel;
 using Terraria.ModLoader.Config;
 
 
