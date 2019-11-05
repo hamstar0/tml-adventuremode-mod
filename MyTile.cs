@@ -27,14 +27,34 @@ namespace AdventureMode {
 
 		public override bool CanPlace( int i, int j, int type ) {
 			switch( type ) {
-			case ItemID.WoodPlatform:
+			case TileID.Platforms:
 				return AdventureModeTile.IsStableForPlatform(i, j, -1) || AdventureModeTile.IsStableForPlatform(i, j, 1);
-			case ItemID.Rope:
-			case ItemID.SilkRope:
-			case ItemID.VineRope:
-			case ItemID.WebRope:
-			case ItemID.Chain:
-			case ItemID.MinecartTrack:
+			case TileID.Rope:
+			case TileID.SilkRope:
+			case TileID.VineRope:
+			case TileID.WebRope:
+			case TileID.Chain:
+			case TileID.MinecartTrack:
+			///
+			case TileID.Torches:
+			case TileID.Campfire:
+			///
+			case TileID.Saplings:
+			case TileID.Pumpkins:
+			case TileID.ImmatureHerbs:
+			case TileID.MatureHerbs:
+			case TileID.BloomingHerbs:
+			case TileID.Sunflower:
+			///
+			/*case TileID.Plants:
+			case TileID.Plants2:
+			case TileID.JunglePlants:
+			case TileID.JunglePlants2:
+			case TileID.MushroomPlants:
+			case TileID.HallowedPlants:
+			case TileID.HallowedPlants2:
+			case TileID.CorruptPlants:
+			case TileID.FleshWeeds:*/
 				return true;
 			default:
 				return false;
@@ -44,12 +64,36 @@ namespace AdventureMode {
 
 		////
 
-		public override bool CanKillTile( int i, int j, int type, ref bool blockDamaged ) {
-			return false;
-		}
+		/*public override bool CanKillTile( int i, int j, int type, ref bool blockDamaged ) {
+			return true;
+			bool fail = false, effectOnly = false, noItem = false;
+			this.KillTile( i, j, type, ref fail, ref effectOnly, ref noItem );
+			return !fail;
+		}*/
 
 		public override void KillTile( int i, int j, int type, ref bool fail, ref bool effectOnly, ref bool noItem ) {
 			switch( type ) {
+			case TileID.Trees:
+			case TileID.MushroomTrees:
+			case TileID.PalmTree:
+			case TileID.Plants:
+			case TileID.Plants2:
+			case TileID.CorruptPlants:
+			case TileID.CorruptThorns:
+			case TileID.FleshWeeds:
+			case TileID.CrimtaneThorns:
+			case TileID.HallowedPlants:
+			case TileID.HallowedPlants2:
+			case TileID.HallowedVines:
+			case TileID.JunglePlants:
+			case TileID.JunglePlants2:
+			case TileID.JungleVines:
+			case TileID.Coral:
+			case TileID.ImmatureHerbs:
+			case TileID.BloomingHerbs:
+			case TileID.MatureHerbs:
+			///
+			case TileID.Torches:
 			case TileID.Platforms:
 			case TileID.Rope:
 			case TileID.SilkRope:
@@ -57,12 +101,8 @@ namespace AdventureMode {
 			case TileID.WebRope:
 			case TileID.Chain:
 			case TileID.MinecartTrack:
-			case TileID.Torches:
 			case TileID.Heart:
-				fail = false;
-				effectOnly = false;
-				noItem = true;
-				break;
+			///
 			case TileID.Copper:
 			case TileID.Tin:
 			case TileID.Iron:
@@ -91,13 +131,14 @@ namespace AdventureMode {
 			case TileID.Emerald:
 			case TileID.Ruby:
 			case TileID.Diamond:
+			///
 			case TileID.DesertFossil:
 			case TileID.FossilOre:
 			case TileID.Silt:
 			case TileID.Slush:
-				fail = false;
-				effectOnly = false;
-				noItem = false;
+				//fail = false;
+				//effectOnly = false;
+				//noItem = false;
 				break;
 			default:
 				fail = true;
@@ -111,10 +152,14 @@ namespace AdventureMode {
 			return false;
 		}
 		public override bool CreateDust( int i, int j, int type, ref int dustType ) {
-			return false;
+			bool fail=false, effectOnly=false, noItem=false;
+			this.KillTile( i, j, type, ref fail, ref effectOnly, ref noItem );
+			return !fail || effectOnly;
 		}
 		public override bool KillSound( int i, int j, int type ) {
-			return false;
+			bool fail = false, effectOnly = false, noItem = false;
+			this.KillTile( i, j, type, ref fail, ref effectOnly, ref noItem );
+			return !fail || effectOnly;
 		}
 	}
 }

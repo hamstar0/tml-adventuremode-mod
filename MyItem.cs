@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -6,28 +7,27 @@ using Terraria.ModLoader;
 
 namespace AdventureMode {
 	class AdventureModeItem : GlobalItem {
-		public override bool CanUseItem( Item item, Player player ) {
-			switch( item.type ) {
-			case ItemID.ManaCrystal:
-				Main.NewText( "yum mana" );
-				break;
-			case ItemID.LifeCrystal:
-				Main.NewText( "yum life" );
-				break;
+		public override void ModifyTooltips( Item item, List<TooltipLine> tooltips ) {
+			if( item.type != ItemID.WoodPlatform ) {
+				return;
 			}
-			return true;
+
+			var tip = new TooltipLine( this.mod, "AdventureModePlatform", "Only placeable in short ledges attached to something solid" );
+			tooltips.Add( tip );
 		}
 
-		public override bool ConsumeItem( Item item, Player player ) {
+
+		////////////////
+
+		public override void OnConsumeItem( Item item, Player player ) {
 			switch( item.type ) {
 			case ItemID.ManaCrystal:
-				Main.NewText( "yummy mana" );
+				player.statManaMax -= 15;
 				break;
 			case ItemID.LifeCrystal:
-				Main.NewText( "yummy life" );
+				player.statLifeMax -= 15;
 				break;
 			}
-			return true;
 		}
 	}
 }
