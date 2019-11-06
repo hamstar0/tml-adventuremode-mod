@@ -1,5 +1,5 @@
-﻿using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Services.Messages.Player;
+﻿using AdventureMode.Buffs;
+using HamstarHelpers.Helpers.Debug;
 using HouseFurnishingKit.Items;
 using Microsoft.Xna.Framework;
 using System;
@@ -15,16 +15,45 @@ namespace AdventureMode {
 		private bool IsAlertedToBossesWhileDead = false;
 
 
+		////////////////
+
+		public float NecrotisPercent { get; internal set; }
+
+		////////////////
+
 		public override bool CloneNewInstances => false;
 
 
 
 		////////////////
 
+		public override void ResetEffects() {
+			this.NecrotisPercent = 1f;
+		}
+
+		////
+
 		public override void PreUpdate() {
-			if( Main.myPlayer != this.player.whoAmI ) {
+			NecrotisDebuff.UpdateForPlayer( this.player );
+		}
+
+		public override void PreUpdateBuffs() {
+			int dangBuffIds = this.player.FindBuffIndex( BuffID.Dangersense );
+
+			if( dangBuffIds != -1 ) {
+				if( this.player.buffTime[dangBuffIds] > 60 * 60 * 2 ) {
+					this.player.buffTime[dangBuffIds] = 60 * 60 * 2;
+				}
 			}
 		}
+
+		public override void PreUpdateMovement() {
+			if( this.NecrotisPercent < 1f ) {
+				NecrotisDebuff.ApplyEffect( this.player, this.NecrotisPercent, ref this.player.velocity.X, ref this.player.jumpSpeedBoost );
+			}
+		}
+
+		////
 
 		public override void UpdateDead() {
 			if( !Main.npc.Any( n => n.active && n.boss ) ) {
@@ -39,16 +68,6 @@ namespace AdventureMode {
 
 			if( this.player.respawnTimer < 60 ) {
 				this.player.respawnTimer = 59;
-			}
-		}
-
-		public override void PreUpdateBuffs() {
-			int dangBuffIds = this.player.FindBuffIndex( BuffID.Dangersense );
-
-			if( dangBuffIds != -1 ) {
-				if( this.player.buffTime[dangBuffIds] > 60 * 60 * 2 ) {
-					this.player.buffTime[dangBuffIds] = 60 * 60 * 2;
-				}
 			}
 		}
 
