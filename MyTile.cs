@@ -1,11 +1,12 @@
-﻿using System;
+﻿using HamstarHelpers.Helpers.TModLoader;
+using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 
 namespace AdventureMode {
-	/*class AdventureModeTile : GlobalTile {
+	class AdventureModeTile : GlobalTile {
 		public static bool IsStableForPlatform( int tileX, int tileY, int dirX ) {
 			for( int i=1; i<=8; i++ ) {
 				Tile tile = Framing.GetTileSafely( tileX + (i * dirX), tileY );
@@ -26,6 +27,10 @@ namespace AdventureMode {
 		////////////////
 
 		public override bool CanPlace( int i, int j, int type ) {
+			if( !LoadHelpers.IsCurrentPlayerInGame() ) {
+				return true;
+			}
+
 			switch( type ) {
 			case TileID.Platforms:
 				return AdventureModeTile.IsStableForPlatform(i, j, -1) || AdventureModeTile.IsStableForPlatform(i, j, 1);
@@ -64,24 +69,29 @@ namespace AdventureMode {
 
 		////
 
-		public override bool CanKillTile( int i, int j, int type, ref bool blockDamaged ) {
-			return true;
+		/*public override bool CanKillTile( int i, int j, int type, ref bool blockDamaged ) {
 			bool fail = false, effectOnly = false, noItem = false;
 			this.KillTile( i, j, type, ref fail, ref effectOnly, ref noItem );
 			return !fail;
-		}
+		}*/
 
 		public override void KillTile( int i, int j, int type, ref bool fail, ref bool effectOnly, ref bool noItem ) {
+			if( !LoadHelpers.IsCurrentPlayerInGame() ) {
+				return;
+			}
+
 			switch( type ) {
 			case TileID.Trees:
 			case TileID.MushroomTrees:
 			case TileID.PalmTree:
 			case TileID.Plants:
 			case TileID.Plants2:
+			case TileID.Vines:
 			case TileID.CorruptPlants:
 			case TileID.CorruptThorns:
 			case TileID.FleshWeeds:
 			case TileID.CrimtaneThorns:
+			case TileID.CrimsonVines:
 			case TileID.HallowedPlants:
 			case TileID.HallowedPlants2:
 			case TileID.HallowedVines:
@@ -102,6 +112,11 @@ namespace AdventureMode {
 			case TileID.Chain:
 			case TileID.MinecartTrack:
 			case TileID.Heart:
+			case TileID.Pots:
+			case TileID.ShadowOrbs:
+			case TileID.DemonAltar:
+			case TileID.LifeFruit:
+			case TileID.PlanteraBulb:
 			///
 			case TileID.Copper:
 			case TileID.Tin:
@@ -149,17 +164,31 @@ namespace AdventureMode {
 		}
 
 		public override bool Slope( int i, int j, int type ) {
+			if( !LoadHelpers.IsCurrentPlayerInGame() ) {
+				return true;
+			}
+
 			return false;
 		}
+
 		public override bool CreateDust( int i, int j, int type, ref int dustType ) {
+			if( !LoadHelpers.IsCurrentPlayerInGame() ) {
+				return true;
+			}
+
 			bool fail=false, effectOnly=false, noItem=false;
 			this.KillTile( i, j, type, ref fail, ref effectOnly, ref noItem );
 			return !fail || effectOnly;
 		}
+
 		public override bool KillSound( int i, int j, int type ) {
+			if( !LoadHelpers.IsCurrentPlayerInGame() ) {
+				return true;
+			}
+
 			bool fail = false, effectOnly = false, noItem = false;
 			this.KillTile( i, j, type, ref fail, ref effectOnly, ref noItem );
 			return !fail || effectOnly;
 		}
-	}*/
+	}
 }

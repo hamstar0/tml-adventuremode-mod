@@ -119,25 +119,7 @@ namespace AdventureMode {
 				for( int x=0; x<boatTiles[y].Length; x++ ) {
 					if( boatTiles[y][x] == 0 ) { continue; }
 
-					//if( boatTiles[y][x] == (int)TileID.WorkBenches ) {
-					//	WorldGen.Place2x1( boatLeft + x, boatTop + y, (ushort)boatTiles[y][x], 0 );
-					//} else {
 					WorldGen.PlaceTile( boatLeft + x, boatTop + y, boatTiles[y][x] );
-					//}
-					/*Tile tile = Main.tile[boatLeft + x, boatTop + y];
-					tile.type = (ushort)boatTiles[y][x];
-					tile.active( true );
-
-					if( boatTiles[y][x] == (int)TileID.WorkBenches ) {
-						//tile.frameX = 0;
-						//tile.frameY = 1;
-
-						//tile = Main.tile[boatLeft + x + 1, boatTop + y];
-						//tile.type = (ushort)boatTiles[y][x];
-						//tile.active( true );
-						//tile.frameX = 18;
-						//tile.frameY = 1;
-					}*/
 				}
 			}
 
@@ -147,7 +129,18 @@ namespace AdventureMode {
 				for( int x=0; x< boatWalls[y].Length; x++ ) {
 					if( boatWalls[y][x] == 0 ) { continue; }
 
-					Main.tile[boatLeft + x, boatTop + y].wall = (ushort)boatWalls[y][x];
+					WorldGen.PlaceWall( boatLeft + x, boatTop + y, boatWalls[y][x] );
+					//Main.tile[boatLeft + x, boatTop + y].wall = (ushort)boatWalls[y][x];
+				}
+			}
+
+			for( int y = 0; y < boatTiles.Length; y++ ) {
+				progress.Value = (float)y / (float)boatTiles.Length;
+
+				for( int x = 0; x < boatTiles[y].Length; x++ ) {
+					if( boatTiles[y][x] == 0 ) { continue; }
+
+					WorldGen.PlaceTile( boatLeft + x, boatTop + y, boatTiles[y][x] );
 				}
 			}
 		}
