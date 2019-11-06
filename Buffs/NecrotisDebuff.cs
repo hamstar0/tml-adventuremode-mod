@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 
 namespace AdventureMode.Buffs {
 	class NecrotisDebuff : ModBuff {
-		public const int Duration = 60 * 60 * 5;    // 5 minutes
+		public const int Duration = 60 * 60 * 15;    // 15 minutes
 
 
 
@@ -23,7 +23,7 @@ namespace AdventureMode.Buffs {
 				}
 			} else {
 				if( necrotisIdx != -1 ) {
-					player.buffTime[necrotisIdx] += 2;
+					player.buffTime[necrotisIdx] += 4;
 					if( player.buffTime[necrotisIdx] >= NecrotisDebuff.Duration ) {
 						player.DelBuff( necrotisType );
 					}
@@ -31,11 +31,10 @@ namespace AdventureMode.Buffs {
 			}
 		}
 
-		public static void ApplyEffect( Player player, float percent, ref float runSpeed, ref float jumpHeight ) {
-			float scaledPercent = Math.Min( 1f, percent * 1.5f );
+		////
 
-			runSpeed *= scaledPercent;
-			jumpHeight *= scaledPercent;
+		public static void ApplyEffect( Player player, float percent ) {
+			float scaledPercent = Math.Min( 1f, percent + 0.25f );
 
 			if( percent < 0.75f ) {
 				player.AddBuff( BuffID.Ichor, 3 );
@@ -43,11 +42,20 @@ namespace AdventureMode.Buffs {
 			if( percent < 0.5f ) {
 				player.AddBuff( BuffID.Bleeding, 3 );
 			}
-			if( percent < 0.1f ) {
+			if( percent < 0.2f ) {
 				player.AddBuff( BuffID.Poisoned, 3 );
 			}
 			if( percent < 0.01f ) {
 				player.AddBuff( BuffID.CursedInferno, 3 );
+			}
+
+			player.maxRunSpeed *= scaledPercent;
+			player.accRunSpeed = player.maxRunSpeed;
+			player.moveSpeed *= scaledPercent;
+
+			int maxJump = (int)( Player.jumpHeight * scaledPercent );
+			if( player.jump > maxJump ) {
+				player.jump = maxJump;
 			}
 		}
 
@@ -57,16 +65,12 @@ namespace AdventureMode.Buffs {
 
 		public override void SetDefaults() {
 			this.DisplayName.SetDefault( "Necrotis" );
-			this.Description.SetDefault( "You feel your life force draining..." + "\n" + "Gets worse the longer it lasts" );
+			this.Description.SetDefault( "You feel your life force draining"
+				+ "\n" + "Gets worse the longer it lasts" );
 
 			Main.debuff[this.Type] = true;
 			//Main.buffNoTimeDisplay[this.Type] = true;
-			Main.buffNoSave[this.Type] = true;
-		}
-
-		public override void ModifyBuffTip( ref string tip, ref int rare ) {
-			tip = "This is no place for the living";
-			rare = 2;
+			//Main.buffNoSave[this.Type] = true;
 		}
 
 

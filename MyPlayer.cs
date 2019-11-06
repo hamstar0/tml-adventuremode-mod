@@ -49,7 +49,7 @@ namespace AdventureMode {
 
 		public override void PreUpdateMovement() {
 			if( this.NecrotisPercent < 1f ) {
-				NecrotisDebuff.ApplyEffect( this.player, this.NecrotisPercent, ref this.player.velocity.X, ref this.player.jumpSpeedBoost );
+				NecrotisDebuff.ApplyEffect( this.player, this.NecrotisPercent );
 			}
 		}
 

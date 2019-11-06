@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 
 
 namespace AdventureMode {
-	class AdventureModeTile : GlobalTile {
+	partial class AdventureModeTile : GlobalTile {
 		public static bool IsStableForPlatform( int tileX, int tileY, int dirX ) {
 			for( int i=1; i<=8; i++ ) {
 				Tile tile = Framing.GetTileSafely( tileX + (i * dirX), tileY );
@@ -122,6 +122,7 @@ namespace AdventureMode {
 			case TileID.DemonAltar:
 			case TileID.LifeFruit:
 			case TileID.PlanteraBulb:
+			case TileID.Bottles:
 			///
 			case TileID.Copper:
 			case TileID.Tin:
@@ -151,6 +152,7 @@ namespace AdventureMode {
 			case TileID.Emerald:
 			case TileID.Ruby:
 			case TileID.Diamond:
+			case TileID.ExposedGems:
 			///
 			case TileID.DesertFossil:
 			case TileID.FossilOre:

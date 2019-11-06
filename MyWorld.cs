@@ -17,7 +17,7 @@ namespace AdventureMode {
 					progress.Value = 1f;
 				} ) );
 				tasks.Insert( idx + 2, new PassLegacy( "Adventure Mode: Create Spawn Boat", ( progress ) => {
-					AdventureModeWorldGen.CreateBoat( progress );
+					AdventureModeWorldGen.PlaceRaft( progress );
 					progress.Value = 1f;
 				} ) );
 			}
