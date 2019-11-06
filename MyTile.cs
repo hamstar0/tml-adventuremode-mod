@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 
 namespace AdventureMode {
-	class AdventureModeTile : GlobalTile {
+	/*class AdventureModeTile : GlobalTile {
 		public static bool IsStableForPlatform( int tileX, int tileY, int dirX ) {
 			for( int i=1; i<=8; i++ ) {
 				Tile tile = Framing.GetTileSafely( tileX + (i * dirX), tileY );
@@ -46,15 +46,15 @@ namespace AdventureMode {
 			case TileID.BloomingHerbs:
 			case TileID.Sunflower:
 			///
-			/*case TileID.Plants:
-			case TileID.Plants2:
-			case TileID.JunglePlants:
-			case TileID.JunglePlants2:
-			case TileID.MushroomPlants:
-			case TileID.HallowedPlants:
-			case TileID.HallowedPlants2:
-			case TileID.CorruptPlants:
-			case TileID.FleshWeeds:*/
+			//case TileID.Plants:
+			//case TileID.Plants2:
+			//case TileID.JunglePlants:
+			//case TileID.JunglePlants2:
+			//case TileID.MushroomPlants:
+			//case TileID.HallowedPlants:
+			//case TileID.HallowedPlants2:
+			//case TileID.CorruptPlants:
+			//case TileID.FleshWeeds:
 				return true;
 			default:
 				return false;
@@ -64,12 +64,12 @@ namespace AdventureMode {
 
 		////
 
-		/*public override bool CanKillTile( int i, int j, int type, ref bool blockDamaged ) {
+		public override bool CanKillTile( int i, int j, int type, ref bool blockDamaged ) {
 			return true;
 			bool fail = false, effectOnly = false, noItem = false;
 			this.KillTile( i, j, type, ref fail, ref effectOnly, ref noItem );
 			return !fail;
-		}*/
+		}
 
 		public override void KillTile( int i, int j, int type, ref bool fail, ref bool effectOnly, ref bool noItem ) {
 			switch( type ) {
@@ -161,5 +161,5 @@ namespace AdventureMode {
 			this.KillTile( i, j, type, ref fail, ref effectOnly, ref noItem );
 			return !fail || effectOnly;
 		}
-	}
+	}*/
 }

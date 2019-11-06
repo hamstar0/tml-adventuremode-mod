@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 
 namespace AdventureMode {
-	class AdventureModeWall : GlobalWall {
+	/*class AdventureModeWall : GlobalWall {
 		public override void KillWall( int i, int j, int type, ref bool fail ) {
 			fail = true;
 		}
@@ -14,5 +14,5 @@ namespace AdventureMode {
 		public override bool KillSound( int i, int j, int type ) {
 			return false;
 		}
-	}
+	}*/
 }

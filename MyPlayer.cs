@@ -15,15 +15,6 @@ namespace AdventureMode {
 
 		////////////////
 
-		public override void OnEnterWorld( Player player ) {
-			if( player.whoAmI != Main.myPlayer ) {
-				return;
-			}
-		}
-
-
-		////////////////
-
 		public override void PreUpdate() {
 			if( Main.netMode != 2 ) {
 				this.PreUpdateLocal();
@@ -41,7 +32,7 @@ namespace AdventureMode {
 
 		////////////////
 
-		public override void SetupStartInventory( IList<Item> items, bool mediumcoreDeath ) {
+		/*public override void SetupStartInventory( IList<Item> items, bool mediumcoreDeath ) {
 			if( !mediumcoreDeath ) {
 				var binocs = new Item();
 				binocs.SetDefaults( ItemID.Binoculars );
@@ -57,6 +48,6 @@ namespace AdventureMode {
 				items.Add( torches );
 				items.Add( houseKits );
 			}
-		}
+		}*/
 	}
 }

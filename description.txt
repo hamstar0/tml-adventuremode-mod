@@ -1,1 +1,4 @@
 Adventure Mode transforms Terraria into an adventure!
+
+Credits:
+	Raft template: mcmanybucks
