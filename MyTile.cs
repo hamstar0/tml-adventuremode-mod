@@ -1,4 +1,5 @@
 ﻿using HamstarHelpers.Helpers.TModLoader;
+using MountedMagicMirrors.Tiles;
 using System;
 using Terraria;
 using Terraria.ID;
@@ -62,6 +63,10 @@ namespace AdventureMode {
 			//case TileID.FleshWeeds:
 				return true;
 			default:
+				if( type == ModContent.TileType<MountedMagicMirrorTile>() ) {
+					return true;
+				}
+
 				return false;
 			}
 		}

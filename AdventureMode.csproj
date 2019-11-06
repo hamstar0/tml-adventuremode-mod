@@ -26,6 +26,9 @@
     <Reference Include="HouseFurnishingKit">
       <HintPath>..\..\House Furnishing Kit\HouseFurnishingKit\bin\Release\net452\HouseFurnishingKit.dll</HintPath>
     </Reference>
+    <Reference Include="MountedMagicMirrors">
+      <HintPath>..\..\Mounted Magic Mirrors\MountedMagicMirrors\bin\Release\net452\MountedMagicMirrors.dll</HintPath>
+    </Reference>
     <Reference Include="Nihilism">
       <HintPath>..\..\Nihilism\Nihilism\bin\Release\net452\Nihilism.dll</HintPath>
     </Reference>
