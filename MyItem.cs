@@ -8,12 +8,18 @@ using Terraria.ModLoader;
 namespace AdventureMode {
 	class AdventureModeItem : GlobalItem {
 		public override void ModifyTooltips( Item item, List<TooltipLine> tooltips ) {
-			if( item.type != ItemID.WoodPlatform ) {
-				return;
-			}
+			TooltipLine tip;
 
-			var tip = new TooltipLine( this.mod, "AdventureModePlatform", "Only placeable in short ledges attached to something solid" );
-			tooltips.Add( tip );
+			switch( item.type ) {
+			case ItemID.WoodPlatform:
+				tip = new TooltipLine( this.mod, "AdventureModePlatform", "Only placeable in short ledges attached to something solid" );
+				tooltips.Add( tip );
+				break;
+			case ItemID.Binoculars:
+				tip = new TooltipLine( this.mod, "AdventureModeBinoculars", "Use to spot important things" );
+				tooltips.Add( tip );
+				break;
+			}
 		}
 
 
