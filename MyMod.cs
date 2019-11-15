@@ -1,6 +1,8 @@
 using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Services.EntityGroups;
 using HamstarHelpers.Services.EntityGroups.Definitions;
+using HouseFurnishingKit;
+using MountedMagicMirrors.Tiles;
 using Nihilism;
 using System;
 using Terraria.ID;
@@ -24,6 +26,13 @@ namespace AdventureMode {
 
 		////////////////
 
+		private (ushort TileType, int Width, int Height)[] FurnitureCycle;
+		private int FurnitureCycleIdx = 0;
+
+
+
+		////////////////
+
 		public AdventureModeMod() {
 			AdventureModeMod.Instance = this;
 		}
@@ -34,11 +43,42 @@ namespace AdventureMode {
 			EntityGroups.Enable();
 			NihilismAPI.InstancedFiltersOn();
 
-			NihilismAPI.OnSyncOrWorldLoad( ( isSync ) => {
+			NihilismAPI.OnSyncOrWorldLoad( (isSync) => {
 				if( isSync ) { return; }
 				this.ApplyNihilismFilters();
 			}, 0f );
+
+			this.LoadHouseFurnishingKit();
 		}
+		
+		////
+
+		private void LoadHouseFurnishingKit() {
+			this.FurnitureCycle = new (ushort, int, int)[] {
+				(TileID.Anvils, 2, 1),
+				(TileID.Furnaces, 3, 2),
+				(TileID.CookingPots, 2, 2),
+				(TileID.Containers, 2, 2),
+				(TileID.Bottles, 1, 1),
+				(TileID.TinkerersWorkbench, 3, 2),
+				(TileID.PiggyBank, 2, 1),
+				(TileID.Statues, 2, 3)
+			};
+
+			HouseFurnishingKitAPI.OnHouseCreate( (tileX, tileY, item) => {
+				if( this.FurnitureCycleIdx >= this.FurnitureCycle.Length ) { return; }
+
+				var furniture = this.FurnitureCycle[ this.FurnitureCycleIdx++ ];
+				HouseFurnishingKitAPI.SetCustomFurniture( furniture.TileType, furniture.Width, furniture.Height );
+				HouseFurnishingKitAPI.SetCustomWallMount1( (ushort)ModContent.TileType<MountedMagicMirrorTile>(), 3, 3 );
+			} );
+
+			HouseFurnishingKitAPI.SetCustomFurniture( TileID.Tables, 3, 2 );
+			HouseFurnishingKitAPI.SetCustomWallMount1( (ushort)ModContent.TileType<MountedMagicMirrorTile>(), 3, 3 );
+			HouseFurnishingKitAPI.SetCustomWallMount2( (ushort)ModContent.TileType<MountedMagicMirrorTile>(), 3, 3 );
+		}
+
+		////
 
 		public override void Unload() {
 			AdventureModeMod.Instance = null;

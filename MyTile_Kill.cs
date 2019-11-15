@@ -1,5 +1,4 @@
 ﻿using HamstarHelpers.Helpers.TModLoader;
-using MountedMagicMirrors.Tiles;
 using System;
 using Terraria;
 using Terraria.ID;
@@ -41,6 +40,9 @@ namespace AdventureMode {
 			case TileID.ImmatureHerbs:
 			case TileID.BloomingHerbs:
 			case TileID.MatureHerbs:
+			case TileID.Cobweb:
+			case TileID.IceBrick:
+			case TileID.MagicalIceBlock:
 			///
 			case TileID.Torches:
 			case TileID.Platforms:
@@ -57,6 +59,9 @@ namespace AdventureMode {
 			case TileID.LifeFruit:
 			case TileID.PlanteraBulb:
 			case TileID.Bottles:
+			case TileID.Books:
+			case TileID.WaterCandle:
+			case TileID.PeaceCandle:
 			///
 			case TileID.Copper:
 			case TileID.Tin:
