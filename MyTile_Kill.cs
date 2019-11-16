@@ -19,6 +19,10 @@ namespace AdventureMode {
 			}
 
 			switch( type ) {
+			case TileID.WoodBlock:
+			case TileID.BorealWood:
+			case TileID.RichMahogany:
+			///
 			case TileID.Trees:
 			case TileID.MushroomTrees:
 			case TileID.PalmTree:
@@ -97,6 +101,11 @@ namespace AdventureMode {
 			case TileID.FossilOre:
 			case TileID.Silt:
 			case TileID.Slush:
+			///
+			case TileID.CopperCoinPile:
+			case TileID.SilverCoinPile:
+			case TileID.GoldCoinPile:
+			case TileID.PlatinumCoinPile:
 				//fail = false;
 				//effectOnly = false;
 				//noItem = false;

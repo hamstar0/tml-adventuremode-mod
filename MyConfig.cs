@@ -1,5 +1,6 @@
 ﻿using HamstarHelpers.Classes.UI.ModConfig;
 using System;
+using System.ComponentModel;
 using Terraria.ModLoader.Config;
 
 
@@ -17,6 +18,10 @@ namespace AdventureMode {
 		////
 
 		public bool DebugModeInfo { get; set; } = false;
+
+		[Range( 0, 100 )]
+		[DefaultValue( 2 )]
+		public int GrappleChainAmmoRate { get; set; } = 2;
 
 
 

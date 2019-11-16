@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HamstarHelpers.Helpers.Items.Attributes;
+using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
@@ -15,6 +16,13 @@ namespace AdventureMode {
 				tip = new TooltipLine( this.mod, "AdventureModePlatform", "Only placeable in short ledges attached to something solid" );
 				tooltips.Add( tip );
 				break;
+			}
+
+			if( ItemAttributeHelpers.IsGrapple(item) ) {
+				AdventureModeConfig config = AdventureModeMod.Config;
+
+				tip = new TooltipLine( this.mod, "AdventureModeGrapple", "Consumes "+config.GrappleChainAmmoRate+" chain(s) per use" );
+				tooltips.Add( tip );
 			}
 		}
 
