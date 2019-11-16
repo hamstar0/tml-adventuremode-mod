@@ -10,7 +10,7 @@ namespace AdventureMode {
 
 
 
-	public class AdventureModeConfig : ModConfig {
+	public partial class AdventureModeConfig : ModConfig {
 		public override ConfigScope Mode => ConfigScope.ServerSide;
 
 
@@ -18,6 +18,8 @@ namespace AdventureMode {
 		////
 
 		public bool DebugModeInfo { get; set; } = false;
+
+		////
 
 		[Range( 0, 100 )]
 		[DefaultValue( 2 )]
