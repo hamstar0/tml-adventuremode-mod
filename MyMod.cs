@@ -6,7 +6,6 @@ using MountedMagicMirrors.Tiles;
 using Nihilism;
 using System;
 using Terraria;
-using Terraria.Graphics.Effects;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
@@ -42,11 +41,6 @@ namespace AdventureMode {
 		////////////////
 
 		public override void Load() {
-			if( !Main.dedServ ) {
-				Overlays.Scene["BinocularsView"] = new BinocularsOverlay();
-				Overlays.Scene.Activate( "BinocularsView" );
-			}
-
 			EntityGroups.Enable();
 			NihilismAPI.InstancedFiltersOn();
 
@@ -88,10 +82,6 @@ namespace AdventureMode {
 		////
 
 		public override void Unload() {
-			if( !Main.dedServ ) {
-				Overlays.Scene["BinocularsView"].Deactivate();
-			}
-
 			AdventureModeMod.Instance = null;
 		}
 

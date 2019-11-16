@@ -11,8 +11,9 @@ using Terraria.ModLoader;
 
 
 namespace AdventureMode {
-	class AdventureModePlayer : ModPlayer {
+	partial class AdventureModePlayer : ModPlayer {
 		private bool IsAlertedToBossesWhileDead = false;
+		private int ScanTickElapsed = 0;
 
 
 		////////////////
@@ -35,6 +36,16 @@ namespace AdventureMode {
 
 		public override void PreUpdate() {
 			NecrotisDebuff.UpdateForPlayer( this.player );
+
+			if( this.ScanTickElapsed++ == 15 ) {
+				this.ScanTickElapsed = 0;
+
+				Item item = this.player.HeldItem;
+
+				if( item != null && !item.IsAir && item.type == ItemID.Binoculars ) {
+					this.AnimateManaCrystalShardHint();
+				}
+			}
 		}
 
 		public override void PreUpdateBuffs() {
