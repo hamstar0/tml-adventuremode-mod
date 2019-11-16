@@ -15,10 +15,6 @@ namespace AdventureMode {
 				tip = new TooltipLine( this.mod, "AdventureModePlatform", "Only placeable in short ledges attached to something solid" );
 				tooltips.Add( tip );
 				break;
-			case ItemID.Binoculars:
-				tip = new TooltipLine( this.mod, "AdventureModeBinoculars", "Use to spot important things" );
-				tooltips.Add( tip );
-				break;
 			}
 		}
 

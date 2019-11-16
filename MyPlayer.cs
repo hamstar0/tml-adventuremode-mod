@@ -13,7 +13,6 @@ using Terraria.ModLoader;
 namespace AdventureMode {
 	partial class AdventureModePlayer : ModPlayer {
 		private bool IsAlertedToBossesWhileDead = false;
-		private int ScanTickElapsed = 0;
 
 
 		////////////////
@@ -36,16 +35,6 @@ namespace AdventureMode {
 
 		public override void PreUpdate() {
 			NecrotisDebuff.UpdateForPlayer( this.player );
-
-			if( this.ScanTickElapsed++ == 15 ) {
-				this.ScanTickElapsed = 0;
-
-				Item item = this.player.HeldItem;
-
-				if( item != null && !item.IsAir && item.type == ItemID.Binoculars ) {
-					this.AnimateManaCrystalShardHint();
-				}
-			}
 		}
 
 		public override void PreUpdateBuffs() {
@@ -93,16 +82,12 @@ namespace AdventureMode {
 				var ropes = new Item();
 				ropes.SetDefaults( ItemID.Rope );
 				ropes.stack = 200;
-				var binocs = new Item();
-				binocs.SetDefaults( ItemID.Binoculars );
-				binocs.stack = 1;
 				var houseKits = new Item();
 				houseKits.SetDefaults( ModContent.ItemType<HouseFurnishingKitItem>() );
 				houseKits.stack = 3;
 
 				items.Add( torches );
 				items.Add( ropes );
-				items.Add( binocs );
 				items.Add( houseKits );
 			}
 		}
