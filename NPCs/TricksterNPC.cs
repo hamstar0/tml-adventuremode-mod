@@ -57,6 +57,10 @@ Main.NewText("Spawned trickster at "+spawnInfo.spawnTileX+","+spawnInfo.spawnTil
 				this.Encounter();
 			}
 
+			if( this.State == TricksterStates.Attack ) {
+				this.AnimateAttackCharge();
+			}
+
 			this.RunAI();
 			base.AI();
 		}

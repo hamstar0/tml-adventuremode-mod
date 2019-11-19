@@ -21,22 +21,16 @@ namespace AdventureMode.NPCs {
 
 		////////////////
 
-		////
+		public int ElapsedStateTicks { get; private set; } = 0;
 
-		private float ElapsedStateTicks {
-			get { return this.npc.localAI[1]; }
-			set { this.npc.localAI[1] += value; }
-		}
+		public TricksterStates State { get; private set; } = TricksterStates.Idle;
 
 
 
 		////////////////
 
-		public TricksterStates GetState() => (TricksterStates)(int)this.npc.localAI[0];
-		private void SetState( TricksterStates state ) => this.npc.localAI[0] = (float)state;
-
-		public int GetCurrentStateDuration() {
-			switch( this.GetState() ) {
+		public int GetCurrentStateTickDuration() {
+			switch( this.State ) {
 			default:
 			case TricksterStates.Idle:
 				return TricksterNPC.IdleDurationTicks;
@@ -51,23 +45,23 @@ namespace AdventureMode.NPCs {
 		////////////////
 
 		private void RunAI() {
-			if( this.ElapsedStateTicks++ < this.GetCurrentStateDuration() ) {
+			if( this.ElapsedStateTicks++ < this.GetCurrentStateTickDuration() ) {
 				return;
 			}
 
-			this.ElapsedStateTicks = 0f;
+			this.ElapsedStateTicks = 0;
 
-			switch( this.GetState() ) {
+			switch( this.State ) {
 			case TricksterStates.Idle:
-				this.SetState( TricksterStates.Attack );
+				this.State = TricksterStates.Attack;
 				break;
 			case TricksterStates.Attack:
 				this.LaunchAttack();
-				this.SetState( TricksterStates.Cooldown );
+				this.State = TricksterStates.Cooldown;
 				break;
 			case TricksterStates.Cooldown:
 				this.Evade();
-				this.SetState( TricksterStates.Attack );
+				this.State = TricksterStates.Attack;
 				break;
 			}
 		}
