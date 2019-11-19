@@ -15,8 +15,8 @@ using Terraria.ModLoader.Config;
 namespace AdventureMode {
 	partial class AdventureModeMod : Mod {
 		private void LoadChestImplants() {
-			var mirrorGoneDef1 = new ChestImplanterDefinition {
-				ChestContext = "Gold Chest",
+			var mirrorGoneDef = new ChestImplanterDefinition {
+				ChestTypes = new HashSet<string> { "Vanilla Underground World Chest" },
 				ItemDefinitions = new List<ChestImplanterItemDefinition> {
 					new ChestImplanterItemDefinition {
 						ChestItem = new ItemDefinition( ItemID.MagicMirror ),
@@ -26,21 +26,10 @@ namespace AdventureMode {
 					}
 				}
 			};
-			var mirrorGoneDef2 = new ChestImplanterDefinition {
-				ChestContext = "Ice Chest",
-				ItemDefinitions = new List<ChestImplanterItemDefinition> {
-					new ChestImplanterItemDefinition {
-						ChestItem = new ItemDefinition( ItemID.IceMirror ),
-						MinQuantity = -1,
-						MaxQuantity = -1,
-						ChancePerChest = 1f,
-					}
-				}
-			};
+			var mirrorGoneSetDef = new ChestImplanterSetDefinition { mirrorGoneDef };
 
 			ChestImplantsMod.Config.ChestImplanterDefinitions.Clear();
-			ChestImplantsMod.Config.ChestImplanterDefinitions.Add( mirrorGoneDef1 );
-			ChestImplantsMod.Config.ChestImplanterDefinitions.Add( mirrorGoneDef2 );
+			ChestImplantsMod.Config.ChestImplanterDefinitions["AdventureModeMirrorGone"] = mirrorGoneSetDef;
 		}
 
 

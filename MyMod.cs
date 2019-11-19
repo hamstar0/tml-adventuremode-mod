@@ -43,12 +43,12 @@ namespace AdventureMode {
 		public override void Load() {
 			EntityGroups.Enable();
 			NihilismAPI.InstancedFiltersOn();
-
 			NihilismAPI.OnSyncOrWorldLoad( (isSync) => {
 				if( isSync ) { return; }
 				this.ApplyNihilismFilters();
 			}, 0f );
 
+			this.LoadChestImplants();
 			this.LoadHouseFurnishingKit();
 		}
 
