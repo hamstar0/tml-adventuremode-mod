@@ -25,6 +25,10 @@ namespace AdventureMode {
 		[DefaultValue( 2 )]
 		public int GrappleChainAmmoRate { get; set; } = 2;
 
+		[Range( 0f, 100f )]
+		[DefaultValue( 0.01f )]
+		public float TricksterSpawnChance { get; set; } = 0.01f;
+
 
 
 		////////////////

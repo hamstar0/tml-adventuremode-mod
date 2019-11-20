@@ -1,4 +1,4 @@
-﻿using HamstarHelpers.Services.OverlaySounds;
+﻿using HamstarHelpers.Helpers.World;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
@@ -12,7 +12,8 @@ namespace AdventureMode.NPCs {
 		public static readonly int AttackDurationTicks = 60 * 5;
 		public static readonly int CooldownDurationTicks = 60 * 1;
 
-		public static readonly int AttackRadius = 768;
+		public static readonly int AttackRadius = 48 * 16;
+		public static readonly int DodgeRadius = 36 * 16;
 		public static readonly int InvulnTickDuration = 60 * 15;
 
 
@@ -43,7 +44,7 @@ namespace AdventureMode.NPCs {
 		}
 
 		public override void SetDefaults() {
-			this.npc.lifeMax = 10;
+			this.npc.lifeMax = 5;
 			this.npc.defense = 9999;
 			this.npc.width = 18;
 			this.npc.height = 40;
@@ -51,21 +52,47 @@ namespace AdventureMode.NPCs {
 			this.npc.HitSound = SoundID.NPCHit1;
 			this.npc.DeathSound = SoundID.NPCDeath2;
 			this.npc.value = 60f;
-			this.npc.knockBackResist = 1f;
+			this.npc.knockBackResist = 0.1f;
 			this.npc.aiStyle = -1;//8
 			this.npc.lavaImmune = true;
-			this.npc.buffImmune[BuffID.OnFire] = true;
-			this.npc.buffImmune[BuffID.CursedInferno] = true;
 			this.animationType = NPCID.FireImp;
 			this.banner = Item.NPCtoBanner( NPCID.FireImp );
 			this.bannerItem = Item.BannerToItem( this.banner );
+
+			//this.npc.buffImmune[BuffID.OnFire] = true;
+			//this.npc.buffImmune[BuffID.CursedInferno] = true;
+			for( int i = 0; i < this.npc.buffImmune.Length; i++ ) {
+				this.npc.buffImmune[i] = true;
+			}
 		}
 
 		////////////////
 
 		public override float SpawnChance( NPCSpawnInfo spawnInfo ) {
-Main.NewText("Spawned trickster at "+spawnInfo.spawnTileX+","+spawnInfo.spawnTileY);
-			return 10f;//0.05f;
+			this.npc.target = spawnInfo.player.whoAmI;
+
+if( NPC.AnyNPCs(this.npc.type) ) { return 0f; }
+return 5f;
+			if( spawnInfo.spawnTileY < WorldHelpers.UnderworldLayerTopTileY ) {
+				return 0f;
+			}
+
+			// Only one at a time
+			if( NPC.AnyNPCs(this.npc.type) ) {
+				return 0f;
+			}
+			return AdventureModeMod.Config.TricksterSpawnChance;
+		}
+
+
+		////////////////
+
+		public override bool StrikeNPC( ref double damage, int defense, ref float knockback, int hitDirection, ref bool crit ) {
+			if( damage > 0 ) {
+				this.Dodge( TricksterNPC.DodgeRadius );
+				this.SetState( TricksterStates.Idle );
+			}
+			return true;
 		}
 
 
@@ -76,8 +103,13 @@ Main.NewText("Spawned trickster at "+spawnInfo.spawnTileX+","+spawnInfo.spawnTil
 				this.Encounter();
 			}
 
+			if( this.npc.velocity.X != 0 && this.npc.velocity.Y == 0 ) {
+				this.npc.velocity.X *= 0.9f;
+			}
+
 			this.RunFX();
 			this.RunAI();
+
 			base.AI();
 		}
 

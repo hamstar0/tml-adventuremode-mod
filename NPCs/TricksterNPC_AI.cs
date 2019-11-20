@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -32,11 +33,13 @@ namespace AdventureMode.NPCs {
 			TricksterStates oldState = this.State;
 			this.State = newState;
 
+			this.ElapsedStateTicks = 0;
+
 			switch( newState ) {
 			case TricksterStates.Idle:
 				break;
 			case TricksterStates.Attack:
-				this.Evade();
+				this.Dodge( TricksterNPC.DodgeRadius );
 				break;
 			case TricksterStates.Cooldown:
 				if( oldState == TricksterStates.Attack ) {
@@ -58,7 +61,22 @@ namespace AdventureMode.NPCs {
 
 			switch( this.State ) {
 			case TricksterStates.Idle:
-				this.SetState( TricksterStates.Attack );
+Main.NewText("1");
+				if( this.npc.HasPlayerTarget ) {
+Main.NewText("2");
+					Player player = Main.player[this.npc.target];
+
+					if( player.active && !player.dead ) {
+Main.NewText("3");
+						float distSqr = TricksterNPC.AttackRadius;
+						distSqr *= distSqr;
+
+						if( Vector2.DistanceSquared( player.Center, this.npc.Center ) < distSqr ) {
+Main.NewText("4");
+							this.SetState( TricksterStates.Attack );
+						}
+					}
+				}
 				break;
 			case TricksterStates.Attack:
 				this.SetState( TricksterStates.Cooldown );
