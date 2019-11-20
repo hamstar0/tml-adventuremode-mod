@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using HamstarHelpers.Services.OverlaySounds;
+using Microsoft.Xna.Framework;
 using System;
 using Terraria;
 using Terraria.ID;
@@ -7,7 +8,25 @@ using Terraria.ModLoader;
 
 namespace AdventureMode.NPCs {
 	partial class TricksterNPC : ModNPC {
+		public static readonly int IdleDurationTicks = 60 * 2;
+		public static readonly int AttackDurationTicks = 60 * 5;
+		public static readonly int CooldownDurationTicks = 60 * 1;
+
+		public static readonly int AttackRadius = 768;
+		public static readonly int InvulnTickDuration = 60 * 15;
+
+
+
+		////////////////
+
 		private bool IsEncountered = false;
+
+
+		////////////////
+
+		public int ElapsedStateTicks { get; private set; } = 0;
+
+		public TricksterStates State { get; private set; } = TricksterStates.Idle;
 
 
 		////////////////
@@ -57,10 +76,7 @@ Main.NewText("Spawned trickster at "+spawnInfo.spawnTileX+","+spawnInfo.spawnTil
 				this.Encounter();
 			}
 
-			if( this.State == TricksterStates.Attack ) {
-				this.AnimateAttackCharge();
-			}
-
+			this.RunFX();
 			this.RunAI();
 			base.AI();
 		}

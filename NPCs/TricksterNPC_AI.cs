@@ -12,23 +12,8 @@ namespace AdventureMode.NPCs {
 
 
 
+
 	partial class TricksterNPC : ModNPC {
-		public static readonly int IdleDurationTicks = 60 * 2;
-		public static readonly int AttackDurationTicks = 60 * 5;
-		public static readonly int CooldownDurationTicks = 60 * 1;
-
-
-
-		////////////////
-
-		public int ElapsedStateTicks { get; private set; } = 0;
-
-		public TricksterStates State { get; private set; } = TricksterStates.Idle;
-
-
-
-		////////////////
-
 		public int GetCurrentStateTickDuration() {
 			switch( this.State ) {
 			default:
@@ -38,6 +23,26 @@ namespace AdventureMode.NPCs {
 				return TricksterNPC.AttackDurationTicks;
 			case TricksterStates.Cooldown:
 				return TricksterNPC.CooldownDurationTicks;
+			}
+		}
+
+		////////////////
+
+		public void SetState( TricksterStates newState ) {
+			TricksterStates oldState = this.State;
+			this.State = newState;
+
+			switch( newState ) {
+			case TricksterStates.Idle:
+				break;
+			case TricksterStates.Attack:
+				this.Evade();
+				break;
+			case TricksterStates.Cooldown:
+				if( oldState == TricksterStates.Attack ) {
+					this.LaunchAttack();
+				}
+				break;
 			}
 		}
 
@@ -53,38 +58,15 @@ namespace AdventureMode.NPCs {
 
 			switch( this.State ) {
 			case TricksterStates.Idle:
-				this.State = TricksterStates.Attack;
+				this.SetState( TricksterStates.Attack );
 				break;
 			case TricksterStates.Attack:
-				this.LaunchAttack();
-				this.State = TricksterStates.Cooldown;
+				this.SetState( TricksterStates.Cooldown );
 				break;
 			case TricksterStates.Cooldown:
-				this.Evade();
-				this.State = TricksterStates.Attack;
+				this.SetState( TricksterStates.Attack );
 				break;
 			}
-		}
-
-
-		////////////////
-
-		public void LaunchAttack() {
-
-		}
-
-
-		////////////////
-
-		public void Evade() {
-
-		}
-
-
-		////////////////
-
-		public void Flee() {
-
 		}
 	}
 }
