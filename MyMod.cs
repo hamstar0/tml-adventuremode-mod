@@ -1,14 +1,9 @@
 using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Services.EntityGroups;
-using HamstarHelpers.Services.EntityGroups.Definitions;
-using HouseFurnishingKit;
-using MountedMagicMirrors.Tiles;
 using Nihilism;
 using System;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.ModLoader.Config;
 
 
 namespace AdventureMode {
@@ -61,8 +56,8 @@ namespace AdventureMode {
 
 		////////////////
 
-		public override void PostSetupContent() {
-			/*CustomHotkeys.BindActionToKey1( "Illuminate", () => {
+		/*public override void PostSetupContent() {
+			CustomHotkeys.BindActionToKey1( "Illuminate", () => {
 				var manaTileSingleton = ModContent.GetInstance<ManaCrystalShardTile>();
 				foreach( (int tileX, IDictionary<int, float> tileYs) in manaTileSingleton.IlluminatedCrystals.ToArray() ) {
 					foreach( (int tileY, float illum) in tileYs.ToArray() ) {
@@ -70,7 +65,7 @@ namespace AdventureMode {
 					}
 				}
 				Main.NewText("Lit!");
-			} );*/
-		}
+			} );
+		}*/
 	}
 }

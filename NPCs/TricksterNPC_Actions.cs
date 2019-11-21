@@ -10,7 +10,7 @@ using Terraria.ModLoader;
 using Terraria.Utilities;
 
 
-namespace AdventureMode.NPCs {
+namespace TheTrickster.NPCs {
 	partial class TricksterNPC : ModNPC {
 		public void LaunchAttack() {
 			this.CreateLaunchedAttackFX( TricksterNPC.AttackRadius );
@@ -36,13 +36,14 @@ namespace AdventureMode.NPCs {
 		public void Dodge( int dodgeRadius ) {
 			UnifiedRandom rand = TmlHelpers.SafelyGetRand();
 			int minDist = 18 * 16;
+			int minDistSqr = minDist * minDist;
 
 			int plrWho = this.npc.HasPlayerTarget
 					? this.npc.target
 					: this.npc.FindClosestPlayer();
 			Player player = Main.player[ plrWho ];
 
-			Vector2 dir, testPos, pos;
+			Vector2 dir, testPos, groundPos;
 			bool isOnGround;
 			int tileX=0, tileY=0;
 			do {
@@ -53,17 +54,22 @@ namespace AdventureMode.NPCs {
 				testPos = player.Center + dir;
 				dodgeRadius += 1;
 
-				isOnGround = WorldHelpers.DropToGround( testPos, false, TilePattern.CommonSolid, out pos );
-				if( isOnGround ) {
-					tileX = (int)pos.X / 16;
-					tileY = (int)pos.Y / 16;
+				isOnGround = WorldHelpers.DropToGround( testPos, false, TilePattern.CommonSolid, out groundPos );
+				if( !isOnGround ) { continue; }
+
+				if( Vector2.DistanceSquared(player.Center, groundPos) < minDistSqr ) {
+					isOnGround = false;
+					continue;
 				}
+
+				tileX = (int)groundPos.X / 16;
+				tileY = (int)groundPos.Y / 16;
 			} while( !isOnGround || !TilePattern.NonSolid.CheckArea( new Rectangle(tileX-1, tileY-3, 3, 3) ) );
 
 			// Before
 			ParticleFxHelpers.MakeTeleportFx( this.npc.position, 16, this.npc.width, this.npc.height );
 
-			this.npc.position = pos - new Vector2( 0, this.npc.height + 1 );
+			this.npc.position = groundPos - new Vector2( 0, this.npc.height + 1 );
 			this.npc.netUpdate = true;
 
 			// After

@@ -1,4 +1,5 @@
-﻿using HamstarHelpers.Helpers.TModLoader;
+﻿using HamstarHelpers.Helpers.Debug;
+using HamstarHelpers.Helpers.TModLoader;
 using System;
 using Terraria;
 using Terraria.ID;
@@ -7,18 +8,8 @@ using Terraria.ModLoader;
 
 namespace AdventureMode {
 	partial class AdventureModeTile : GlobalTile {
-		/*public override bool CanKillTile( int i, int j, int type, ref bool blockDamaged ) {
-			bool fail = false, effectOnly = false, noItem = false;
-			this.KillTile( i, j, type, ref fail, ref effectOnly, ref noItem );
-			return !fail;
-		}*/
-
-		public override void KillTile( int i, int j, int type, ref bool fail, ref bool effectOnly, ref bool noItem ) {
-			if( !LoadHelpers.IsCurrentPlayerInGame() ) {
-				return;
-			}
-
-			switch( type ) {
+		public static bool IsKillable( int tileType ) {
+			switch( tileType ) {
 			case TileID.WoodBlock:
 			case TileID.BorealWood:
 			case TileID.RichMahogany:
@@ -47,6 +38,13 @@ namespace AdventureMode {
 			case TileID.Cobweb:
 			case TileID.IceBrick:
 			case TileID.MagicalIceBlock:
+			case TileID.BlueMoss:
+			case TileID.BrownMoss:
+			case TileID.GreenMoss:
+			case TileID.LavaMoss:
+			case TileID.LongMoss:
+			case TileID.PurpleMoss:
+			case TileID.RedMoss:
 			///
 			case TileID.Torches:
 			case TileID.Platforms:
@@ -106,16 +104,39 @@ namespace AdventureMode {
 			case TileID.SilverCoinPile:
 			case TileID.GoldCoinPile:
 			case TileID.PlatinumCoinPile:
-				//fail = false;
-				//effectOnly = false;
-				//noItem = false;
-				break;
-			default:
+			///
+			case TileID.Boulder:
+				return true;
+			}
+			return false;
+		}
+
+
+
+		////////////////
+
+		/*public override bool CanKillTile( int i, int j, int type, ref bool blockDamaged ) {
+			bool fail = false, effectOnly = false, noItem = false;
+			this.KillTile( i, j, type, ref fail, ref effectOnly, ref noItem );
+			return !fail;
+		}*/
+
+		public override void KillTile( int i, int j, int type, ref bool fail, ref bool effectOnly, ref bool noItem ) {
+//LogHelpers.LogAndPrintOnce( "KillTile "+TileID.Search.GetName(type)+" at "+i+","+j);
+			if( !LoadHelpers.IsCurrentPlayerInGame() ) {
+				return;
+			}
+
+			if( !AdventureModeTile.IsKillable(type) ) {
 				fail = true;
 				effectOnly = true;
 				noItem = true;
-				break;
 			}
+			//else {
+			//fail = false;
+			//effectOnly = false;
+			//noItem = false;
+			//}
 		}
 
 		public override bool Slope( int i, int j, int type ) {
@@ -126,24 +147,26 @@ namespace AdventureMode {
 			return false;
 		}
 
-		public override bool CreateDust( int i, int j, int type, ref int dustType ) {
+		/*public override bool CreateDust( int i, int j, int type, ref int dustType ) {
 			if( !LoadHelpers.IsCurrentPlayerInGame() ) {
 				return true;
 			}
 
-			bool fail=false, effectOnly=false, noItem=false;
-			this.KillTile( i, j, type, ref fail, ref effectOnly, ref noItem );
-			return !fail || effectOnly;
-		}
+			return AdventureModeTile.IsKillable( type );
+			//bool fail=false, effectOnly=false, noItem=false;
+			//this.KillTile( i, j, type, ref fail, ref effectOnly, ref noItem );
+			//return !fail || effectOnly;
+		}*/
 
-		public override bool KillSound( int i, int j, int type ) {
+		/*public override bool KillSound( int i, int j, int type ) {
 			if( !LoadHelpers.IsCurrentPlayerInGame() ) {
 				return true;
 			}
 
-			bool fail = false, effectOnly = false, noItem = false;
-			this.KillTile( i, j, type, ref fail, ref effectOnly, ref noItem );
-			return !fail || effectOnly;
-		}
+			return AdventureModeTile.IsKillable( type );
+			//bool fail = false, effectOnly = false, noItem = false;
+			//this.KillTile( i, j, type, ref fail, ref effectOnly, ref noItem );
+			//return !fail || effectOnly;
+		}*/
 	}
 }

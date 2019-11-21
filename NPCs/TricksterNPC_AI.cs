@@ -4,7 +4,7 @@ using Terraria;
 using Terraria.ModLoader;
 
 
-namespace AdventureMode.NPCs {
+namespace TheTrickster.NPCs {
 	public enum TricksterStates : int {
 		Idle = 0,
 		Attack = 1,

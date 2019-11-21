@@ -12,7 +12,7 @@ using Terraria.ModLoader;
 using Terraria.Utilities;
 
 
-namespace AdventureMode.NPCs {
+namespace TheTrickster.NPCs {
 	partial class TricksterNPC : ModNPC {
 		public static void AnimateAttackBurstFX( Vector2 position, float radius, int particles ) {
 			UnifiedRandom rand = TmlHelpers.SafelyGetRand();

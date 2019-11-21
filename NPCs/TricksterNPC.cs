@@ -6,7 +6,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 
-namespace AdventureMode.NPCs {
+namespace TheTrickster.NPCs {
 	partial class TricksterNPC : ModNPC {
 		public static readonly int IdleDurationTicks = 60 * 2;
 		public static readonly int AttackDurationTicks = 60 * 5;
@@ -69,10 +69,8 @@ namespace AdventureMode.NPCs {
 		////////////////
 
 		public override float SpawnChance( NPCSpawnInfo spawnInfo ) {
-			this.npc.target = spawnInfo.player.whoAmI;
-
 if( NPC.AnyNPCs(this.npc.type) ) { return 0f; }
-return 5f;
+return 0f;
 			if( spawnInfo.spawnTileY < WorldHelpers.UnderworldLayerTopTileY ) {
 				return 0f;
 			}
@@ -82,6 +80,18 @@ return 5f;
 				return 0f;
 			}
 			return AdventureModeMod.Config.TricksterSpawnChance;
+		}
+
+		public override int SpawnNPC( int tileX, int tileY ) {
+			int npcWho = base.SpawnNPC( tileX, tileY );
+			NPC npc = Main.npc[npcWho];
+
+			int nearPlrWho = npc.FindClosestPlayer();
+			if( nearPlrWho != -1 ) {
+				npc.target = nearPlrWho;
+			}
+
+			return npcWho;
 		}
 
 
