@@ -38,6 +38,9 @@
     <Reference Include="Nihilism">
       <HintPath>..\..\Nihilism\Nihilism\bin\Release\net452\Nihilism.dll</HintPath>
     </Reference>
+    <Reference Include="TheTrickster">
+      <HintPath>..\..\The Trickster\TheTrickster\bin\Release\net452\TheTrickster.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="NetProtocols\" />
