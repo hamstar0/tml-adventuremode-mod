@@ -26,10 +26,10 @@ namespace AdventureMode {
 		public override void SetupShop( int type, Chest shop, ref int nextSlot ) {
 			var npcDef = new NPCDefinition( type );
 
-			if( AdventureModeMod.Config.ShopWhitelists.ContainsKey(npcDef) ) {
+			if( AdventureModeConfig.Instance.ShopWhitelists.ContainsKey(npcDef) ) {
 				var shopList = new List<Item>( shop.item );
 
-				AdventureModeNPC.FilterShop( shopList, AdventureModeMod.Config.ShopWhitelists[npcDef], ref nextSlot );
+				AdventureModeNPC.FilterShop( shopList, AdventureModeConfig.Instance.ShopWhitelists[npcDef], ref nextSlot );
 				shop.item = shopList.ToArray();
 			}
 		}

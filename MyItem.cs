@@ -19,7 +19,7 @@ namespace AdventureMode {
 			}
 
 			if( ItemAttributeHelpers.IsGrapple(item) ) {
-				AdventureModeConfig config = AdventureModeMod.Config;
+				AdventureModeConfig config = AdventureModeConfig.Instance;
 
 				tip = new TooltipLine( this.mod, "AdventureModeGrapple", "Consumes "+config.GrappleChainAmmoRate+" chain(s) per use" );
 				tooltips.Add( tip );

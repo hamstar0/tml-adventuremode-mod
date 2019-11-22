@@ -16,8 +16,6 @@ namespace AdventureMode {
 
 		public static AdventureModeMod Instance { get; private set; }
 
-		public static AdventureModeConfig Config => ModContent.GetInstance<AdventureModeConfig>();
-
 
 
 		////////////////
@@ -36,15 +34,10 @@ namespace AdventureMode {
 		////////////////
 
 		public override void Load() {
-			EntityGroups.Enable();
-			NihilismAPI.InstancedFiltersOn();
-			NihilismAPI.OnSyncOrWorldLoad( (isSync) => {
-				if( isSync ) { return; }
-				this.ApplyNihilismFilters();
-			}, 0f );
-
+			this.LoadNihilism();
 			this.LoadChestImplants();
 			this.LoadHouseFurnishingKit();
+			this.LoadTrickster();
 		}
 
 		////

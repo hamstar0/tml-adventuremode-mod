@@ -1,7 +1,10 @@
 using ChestImplants;
 using HamstarHelpers.Helpers.Debug;
+using HamstarHelpers.Services.Configs;
+using HamstarHelpers.Services.EntityGroups;
 using HamstarHelpers.Services.EntityGroups.Definitions;
 using HouseFurnishingKit;
+using LockedAbilities.Items.Consumable;
 using MountedMagicMirrors.Tiles;
 using Nihilism;
 using System;
@@ -10,10 +13,21 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
+using TheTrickster;
 
 
 namespace AdventureMode {
 	partial class AdventureModeMod : Mod {
+		private void LoadNihilism() {
+			EntityGroups.Enable();
+			NihilismAPI.InstancedFiltersOn();
+			NihilismAPI.OnSyncOrWorldLoad( ( isSync ) => {
+				if( isSync ) { return; }
+				this.ApplyNihilismFilters();
+			}, 0f );
+		}
+
+
 		private void LoadChestImplants() {
 			var mirrorGoneDef = new ChestImplanterDefinition {
 				ChestTypes = new HashSet<string> { "Vanilla Underground World Chest" },
@@ -56,6 +70,13 @@ namespace AdventureMode {
 			HouseFurnishingKitAPI.SetCustomFurniture( TileID.Tables, 3, 2 );
 			HouseFurnishingKitAPI.SetCustomWallMount1( (ushort)ModContent.TileType<MountedMagicMirrorTile>(), 3, 3 );
 			HouseFurnishingKitAPI.SetCustomWallMount2( (ushort)ModContent.TileType<MountedMagicMirrorTile>(), 3, 3 );
+		}
+
+		
+		private void LoadTrickster() {
+			StackableModConfig.SetConfig<TheTricksterConfig>( new TheTricksterConfig {
+				DropsOnDefeat = new ItemDefinition( ModContent.ItemType<DarkHeartItem>() )
+			} );
 		}
 
 

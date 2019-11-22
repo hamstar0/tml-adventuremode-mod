@@ -1,4 +1,5 @@
 ﻿using HamstarHelpers.Classes.UI.ModConfig;
+using HamstarHelpers.Services.Configs;
 using System;
 using System.ComponentModel;
 using Terraria.ModLoader.Config;
@@ -9,13 +10,18 @@ namespace AdventureMode {
 
 
 
+	
+	public partial class AdventureModeConfig : StackableModConfig {
+		public static AdventureModeConfig Instance => StackableModConfig.GetMergedConfigs<AdventureModeConfig>();
 
-	public partial class AdventureModeConfig : ModConfig {
+
+
+		////////////////
+
 		public override ConfigScope Mode => ConfigScope.ServerSide;
 
 
-
-		////
+		////////////////
 
 		public bool DebugModeInfo { get; set; } = false;
 

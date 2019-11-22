@@ -12,7 +12,7 @@ using Terraria.ModLoader;
 namespace AdventureMode {
 	class AdventureModeProjectile : GlobalProjectile {
 		public override bool? CanUseGrapple( int projType, Player player ) {
-			if( AdventureModeMod.Config.GrappleChainAmmoRate == 0 ) {
+			if( AdventureModeConfig.Instance.GrappleChainAmmoRate == 0 ) {
 				return null;
 			}
 
@@ -25,19 +25,19 @@ namespace AdventureMode {
 
 
 		public override void UseGrapple( Player player, ref int type ) {
-			if( AdventureModeMod.Config.GrappleChainAmmoRate == 0 ) {
+			if( AdventureModeConfig.Instance.GrappleChainAmmoRate == 0 ) {
 				return;
 			}
 
 			int idx = ItemFinderHelpers.FindIndexOfFirstOfItemInCollection( player.inventory, new HashSet<int> { ItemID.Chain } );
 			if( idx == -1 ) {
-				if( AdventureModeMod.Config.DebugModeInfo ) {
+				if( AdventureModeConfig.Instance.DebugModeInfo ) {
 					LogHelpers.LogAndPrintOnce( "No chains available for grappling.", Color.Red );
 				}
 				return;
 			}
 
-			PlayerItemHelpers.RemoveInventoryItemQuantity( player, ItemID.Chain, AdventureModeMod.Config.GrappleChainAmmoRate );
+			PlayerItemHelpers.RemoveInventoryItemQuantity( player, ItemID.Chain, AdventureModeConfig.Instance.GrappleChainAmmoRate );
 		}
 	}
 }

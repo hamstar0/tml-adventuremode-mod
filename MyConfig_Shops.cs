@@ -1,11 +1,12 @@
-﻿using System;
+﻿using HamstarHelpers.Services.Configs;
+using System;
 using System.Collections.Generic;
 using Terraria.ID;
 using Terraria.ModLoader.Config;
 
 
 namespace AdventureMode {
-	public partial class AdventureModeConfig : ModConfig {
+	public partial class AdventureModeConfig : StackableModConfig {
 		public Dictionary<NPCDefinition, List<ItemDefinition>> ShopWhitelists { get; set; } = new Dictionary<NPCDefinition, List<ItemDefinition>> {
 			{
 				new NPCDefinition( NPCID.Merchant ), new List<ItemDefinition> {
