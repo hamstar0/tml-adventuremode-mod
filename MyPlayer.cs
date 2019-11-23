@@ -1,11 +1,13 @@
 ﻿using AdventureMode.Buffs;
 using HamstarHelpers.Helpers.Debug;
+using HamstarHelpers.Helpers.Players;
 using HouseFurnishingKit.Items;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -13,6 +15,7 @@ using Terraria.ModLoader;
 namespace AdventureMode {
 	partial class AdventureModePlayer : ModPlayer {
 		private bool IsAlertedToBossesWhileDead = false;
+		private bool IsChaosStateChecked = false;
 
 
 		////////////////
@@ -91,5 +94,34 @@ namespace AdventureMode {
 				items.Add( houseKits );
 			}
 		}
+
+
+		////////////////
+
+		public override bool PreItemCheck() {
+			Item heldItem = this.player.HeldItem;
+
+			if( heldItem?.type == ItemID.RodofDiscord ) {
+				if( this.player.itemAnimation >= heldItem.useAnimation - 1 ) {
+					if( this.player.HasBuff(BuffID.ChaosState) ) {
+						if( this.IsChaosStateChecked ) {
+							var reason = PlayerDeathReason.ByCustomReason( this.player.name + " splinched." );
+							int dmg = this.player.statLifeMax2 / 7;
+
+							PlayerHelpers.RawHurt( this.player, reason, dmg * 2, 0 );
+						}
+						this.IsChaosStateChecked = true;
+
+						this.player.AddBuff( BuffID.ChaosState, AdventureModeConfig.Instance.AddedRodOfDiscordChaosStateTime );
+					}
+				}
+				
+				if( this.IsChaosStateChecked && !this.player.HasBuff(BuffID.ChaosState) ) {
+					this.IsChaosStateChecked = false;
+				}
+			}
+
+			return base.PreItemCheck();
+}
 	}
 }

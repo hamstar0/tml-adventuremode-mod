@@ -12,7 +12,7 @@ namespace AdventureMode {
 
 	
 	public partial class AdventureModeConfig : StackableModConfig {
-		public static AdventureModeConfig Instance => StackableModConfig.GetMergedConfigs<AdventureModeConfig>();
+		public static AdventureModeConfig Instance => ModConfigStack.GetMergedConfigs<AdventureModeConfig>();
 
 
 
@@ -30,6 +30,14 @@ namespace AdventureMode {
 		[Range( 0, 100 )]
 		[DefaultValue( 2 )]
 		public int GrappleChainAmmoRate { get; set; } = 2;
+
+
+		[DefaultValue(true)]
+		public bool AddRodOfDiscordRecipe { get; set; } = true;
+
+		[Range( 60, 60 * 60 * 60 * 24 )]
+		[DefaultValue( 60 * 60 )]
+		public int AddedRodOfDiscordChaosStateTime { get; set; } = 60 * 60;
 
 
 

@@ -4,6 +4,7 @@ using HamstarHelpers.Services.Configs;
 using HamstarHelpers.Services.EntityGroups;
 using HamstarHelpers.Services.EntityGroups.Definitions;
 using HouseFurnishingKit;
+using LockedAbilities;
 using LockedAbilities.Items.Consumable;
 using MountedMagicMirrors.Tiles;
 using Nihilism;
@@ -20,6 +21,7 @@ namespace AdventureMode {
 	partial class AdventureModeMod : Mod {
 		private void LoadNihilism() {
 			EntityGroups.Enable();
+
 			NihilismAPI.InstancedFiltersOn();
 			NihilismAPI.OnSyncOrWorldLoad( ( isSync ) => {
 				if( isSync ) { return; }
@@ -29,7 +31,7 @@ namespace AdventureMode {
 
 
 		private void LoadChestImplants() {
-			var mirrorGoneDef = new ChestImplanterDefinition {
+			var mirrorGoneDef1 = new ChestImplanterDefinition {
 				ChestTypes = new HashSet<string> { "Vanilla Underground World Chest" },
 				ItemDefinitions = new List<ChestImplanterItemDefinition> {
 					new ChestImplanterItemDefinition {
@@ -40,20 +42,31 @@ namespace AdventureMode {
 					}
 				}
 			};
-			var mirrorGoneSetDef = new ChestImplanterSetDefinition { mirrorGoneDef };
+			var mirrorGoneDef2 = new ChestImplanterDefinition {
+				ChestTypes = new HashSet<string> { "Vanilla Underground World Chest" },
+				ItemDefinitions = new List<ChestImplanterItemDefinition> {
+					new ChestImplanterItemDefinition {
+						ChestItem = new ItemDefinition( ItemID.IceMirror ),
+						MinQuantity = -1,
+						MaxQuantity = -1,
+						ChancePerChest = 1f,
+					}
+				}
+			};
+			var mirrorGoneSetDef = new ChestImplanterSetDefinition { mirrorGoneDef1, mirrorGoneDef2 };
 
 			ChestImplantsMod.Config.ChestImplanterDefinitions.Clear();
 			ChestImplantsMod.Config.ChestImplanterDefinitions["AdventureModeMirrorGone"] = mirrorGoneSetDef;
 		}
 
 
-		private void LoadHouseFurnishingKit() {
+		private void LoadHouseFurnishingKitAndMountedMagicMirrors() {
 			this.FurnitureCycle = new (ushort, int, int)[] {
 				(TileID.Anvils, 2, 1),
 				(TileID.Furnaces, 3, 2),
 				(TileID.CookingPots, 2, 2),
 				(TileID.Containers, 2, 2),
-				(TileID.Bottles, 1, 1),
+				//(TileID.Bottles, 1, 1),
 				(TileID.TinkerersWorkbench, 3, 2),
 				(TileID.PiggyBank, 2, 1),
 				(TileID.Statues, 2, 3)
@@ -73,9 +86,16 @@ namespace AdventureMode {
 		}
 
 		
-		private void LoadTrickster() {
-			StackableModConfig.SetConfig<TheTricksterConfig>( new TheTricksterConfig {
-				DropsOnDefeat = new ItemDefinition( ModContent.ItemType<DarkHeartItem>() )
+		private void LoadTricksterAndLockedAbilies() {
+			ModConfigStack.SetAndMergeConfig( new TheTricksterConfig {
+				DropsOnDefeat = new ItemDefinition( ModContent.ItemType<DarkHeartPieceItem>() )
+			} );
+		}
+
+
+		private void LoadLockedAbilities() {
+			ModConfigStack.SetAndMergeConfig( new LockedAbilitiesConfig {
+				WorldGenChestImplantDarkHeartPieceChance = 0f
 			} );
 		}
 

@@ -1,8 +1,10 @@
+using AdventureMode.Recipes;
 using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Services.EntityGroups;
 using Nihilism;
 using System;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 
@@ -36,14 +38,26 @@ namespace AdventureMode {
 		public override void Load() {
 			this.LoadNihilism();
 			this.LoadChestImplants();
-			this.LoadHouseFurnishingKit();
-			this.LoadTrickster();
+			this.LoadHouseFurnishingKitAndMountedMagicMirrors();
+			this.LoadTricksterAndLockedAbilies();
+			this.LoadLockedAbilities();
 		}
 
 		////
 
 		public override void Unload() {
 			AdventureModeMod.Instance = null;
+		}
+
+
+		////////////////
+
+		public override void AddRecipes() {
+			var newRoDRecipe1 = new RodOfDiscordRecipe( false );
+			newRoDRecipe1.AddRecipe();
+
+			var newRoDRecipe2 = new RodOfDiscordRecipe( true );
+			newRoDRecipe2.AddRecipe();
 		}
 
 
