@@ -1,9 +1,11 @@
 ﻿using HamstarHelpers.Helpers.Debug;
+using HamstarHelpers.Helpers.NPCs;
 using HamstarHelpers.Helpers.TModLoader;
 using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Utilities;
 
 
 namespace AdventureMode {
@@ -137,6 +139,34 @@ namespace AdventureMode {
 			//effectOnly = false;
 			//noItem = false;
 			//}
+
+			// Arachnophobes, rejoince!
+			if( type == TileID.Pots ) {
+LogHelpers.Log("1!");
+				UnifiedRandom rand = TmlHelpers.SafelyGetRand();
+
+				if( rand.NextFloat() < AdventureModeConfig.Instance.PotSurprisePercentChange ) {
+LogHelpers.Log("2!");
+					noItem = true;
+
+					if( Main.netMode != 1 ) {
+LogHelpers.Log("3!");
+						int spiderType = NPCID.WallCreeper;
+						if( Main.hardMode ) {
+							spiderType = NPCID.BlackRecluse;
+						}
+
+						int npcWho = NPC.NewNPC( i << 4, ( j + 1 ) << 4, spiderType );
+						Main.npc[npcWho].netUpdate = true;
+LogHelpers.Log("4!");
+
+						if( Main.netMode == 2 && npcWho < Main.npc.Length - 1 ) {
+LogHelpers.Log("5!");
+							NetMessage.SendData( MessageID.SyncNPC, -1, -1, null, npcWho, 0f, 0f, 0f, 0, 0, 0 );
+						}
+					}
+				}
+			}
 		}
 
 		public override bool Slope( int i, int j, int type ) {
@@ -147,7 +177,7 @@ namespace AdventureMode {
 			return false;
 		}
 
-		/*public override bool CreateDust( int i, int j, int type, ref int dustType ) {
+		public override bool CreateDust( int i, int j, int type, ref int dustType ) {
 			if( !LoadHelpers.IsCurrentPlayerInGame() ) {
 				return true;
 			}
@@ -156,7 +186,7 @@ namespace AdventureMode {
 			//bool fail=false, effectOnly=false, noItem=false;
 			//this.KillTile( i, j, type, ref fail, ref effectOnly, ref noItem );
 			//return !fail || effectOnly;
-		}*/
+		}
 
 		/*public override bool KillSound( int i, int j, int type ) {
 			if( !LoadHelpers.IsCurrentPlayerInGame() ) {

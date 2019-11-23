@@ -65,7 +65,7 @@ namespace AdventureMode {
 
 			Vector2 scrPos = npc.Center - Main.screenPosition;
 			scrPos.X -= 4;
-			scrPos.Y -= (npc.height / 2) + 16;
+			scrPos.Y -= (npc.height / 2) + 56;
 
 			sb.DrawString(
 				spriteFont: Main.fontMouseText,
@@ -74,7 +74,7 @@ namespace AdventureMode {
 				color: AnimatedColors.Alert.CurrentColor,
 				rotation: 0f,
 				origin: default(Vector2),
-				scale: 4f,
+				scale: 2f,
 				effects: SpriteEffects.None,
 				layerDepth: 1f
 			);

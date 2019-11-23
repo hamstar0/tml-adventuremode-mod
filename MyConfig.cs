@@ -39,6 +39,10 @@ namespace AdventureMode {
 		[DefaultValue( 60 * 60 )]
 		public int AddedRodOfDiscordChaosStateTime { get; set; } = 60 * 60;
 
+		[Range( 0f, 1f )]
+		[DefaultValue( 0.05f )]
+		public float PotSurprisePercentChange { get; set; } = 0.05f;
+
 
 
 		////////////////

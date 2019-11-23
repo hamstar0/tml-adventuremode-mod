@@ -1,4 +1,5 @@
 ﻿using HamstarHelpers.Helpers.TModLoader;
+using HamstarHelpers.Services.Timers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -68,6 +69,16 @@ namespace AdventureMode {
 
 
 		////////////////
+
+		public override void OnChatButtonClicked( NPC npc, bool firstButton ) {
+			if( firstButton && npc.type == NPCID.Guide ) {
+				Timers.SetTimer( "AdventureModeGuideHelpButton", 1, true, () => {
+					this.GetChat( npc, ref Main.npcChatText );
+					return false;
+				} );
+			}
+		}
+
 
 		public override void GetChat( NPC npc, ref string chat ) {
 			if( !AdventureModeNPC.NPCDialogs.ContainsKey( npc.type ) ) {
