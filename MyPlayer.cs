@@ -104,11 +104,14 @@ namespace AdventureMode {
 			if( heldItem?.type == ItemID.RodofDiscord ) {
 				if( this.player.itemAnimation >= heldItem.useAnimation - 1 ) {
 					if( this.player.HasBuff(BuffID.ChaosState) ) {
-						if( this.IsChaosStateChecked && AdventureModeConfig.Instance.AddedRodOfDiscordPain ) {
+						if( this.IsChaosStateChecked ) {
 							var reason = PlayerDeathReason.ByCustomReason( this.player.name + " splinched." );
 							int dmg = this.player.statLifeMax2 / 7;
+							dmg = (int)((float)dmg * AdventureModeConfig.Instance.RodOfDiscordPainIncreaseMultiplier);
 
-							PlayerHelpers.RawHurt( this.player, reason, dmg * 2, 0 );
+							if( dmg > 0 ) {
+								PlayerHelpers.RawHurt( this.player, reason, dmg, 0 );
+							}
 						}
 						this.IsChaosStateChecked = true;
 

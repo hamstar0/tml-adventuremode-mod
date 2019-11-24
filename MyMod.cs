@@ -1,10 +1,7 @@
 using AdventureMode.Recipes;
 using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Services.EntityGroups;
-using Nihilism;
 using System;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 

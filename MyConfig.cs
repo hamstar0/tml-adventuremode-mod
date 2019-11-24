@@ -42,6 +42,7 @@ namespace AdventureMode {
 		public int NecrotisTickDuration = 60 * 60 * 15;
 
 		[DefaultValue( true )]
+		[ReloadRequired]
 		public bool EnableMechBossItemRecipes { get; set; } = true;
 
 		////
@@ -50,25 +51,31 @@ namespace AdventureMode {
 		public bool AddRodOfDiscordRecipe { get; set; } = true;
 
 		[Range( 60, 60 * 60 * 60 * 24 )]
-		[DefaultValue( 60 * 60 )]
-		public int AddedRodOfDiscordChaosStateTime { get; set; } = 60 * 60;
+		[DefaultValue( 60 * 30 )]
+		public int AddedRodOfDiscordChaosStateTime { get; set; } = 60 * 30;
 
-		[DefaultValue( true )]
-		public bool AddedRodOfDiscordPain { get; set; } = true;
+		[Range( 0f, 100f )]
+		[DefaultValue( 3f )]
+		[CustomModConfigItem( typeof( MyFloatInputElement ) )]
+		public float RodOfDiscordPainIncreaseMultiplier { get; set; } = 3f;
 
 		////
 
 		[DefaultValue( true )]
+		[ReloadRequired]
 		public bool SetDefaultSpawnToBeach { get; set; } = true;
 
 		[Range( 0f, 1f )]
-		[DefaultValue( 0.05f / 4f )]	// divide by 4 since pot is 2x2?
+		[DefaultValue( 0.05f / 4f )]    // divide by 4 since pot is 2x2?
+		[CustomModConfigItem( typeof( MyFloatInputElement ) )]
 		public float PotSurprisePercentChance { get; set; } = 0.05f / 4f;
 
 		[DefaultValue( true )]
+		[ReloadRequired]
 		public bool RemoveWorldGenMagicMirrors { get; set; } = true;
 
 		[DefaultValue( true )]
+		[ReloadRequired]
 		public bool RemoveWorldGenDarkHeartPieces { get; set; } = true;
 
 
