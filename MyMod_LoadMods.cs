@@ -78,12 +78,13 @@ namespace AdventureMode {
 				(TileID.Anvils, 2, 1, false),
 				(TileID.Furnaces, 3, 2, false),
 				//(TileID.Bottles, 1, 1, false),
+				(TileID.Sawmill, 3, 3, false),
 				(TileID.TinkerersWorkbench, 3, 2, false),
 				(TileID.PiggyBank, 2, 1, false),
 				//(TileID.Statues, 2, 3, false),
 				(TileID.MythrilAnvil, 2, 1, true),
-				(TileID.AdamantiteForge, 2, 1, true),
-				(TileID.Safes, 2, 1, true),
+				(TileID.AdamantiteForge, 3, 2, true),
+				(TileID.Safes, 2, 2, true),
 			};
 
 			HouseFurnishingKitAPI.SetCustomFurniture( TileID.Tables, 3, 2 );

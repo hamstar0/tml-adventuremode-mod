@@ -1,8 +1,10 @@
-﻿using HamstarHelpers.Services.Configs;
+﻿using AdventureMode.Tiles;
+using HamstarHelpers.Services.Configs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using Terraria.ID;
+using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 
 
@@ -50,6 +52,7 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.BorealWood ),
 			TileID.GetUniqueKey( TileID.RichMahogany ),
 			TileID.GetUniqueKey( TileID.WoodenBeam ),
+			TileID.GetUniqueKey( ModContent.TileType<FramingPlankTile>() ),
 			///
 			TileID.GetUniqueKey( TileID.Trees ),
 			TileID.GetUniqueKey( TileID.MushroomTrees ),
@@ -150,6 +153,10 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.BeeHive ),
 			TileID.GetUniqueKey( TileID.Tombstones ),
 		};
+
+		[Range( -1, 1024 )]
+		[DefaultValue( 4 )]
+		public int MaxFramingPlankLength { get; set; } = 4;
 
 		[Range( -1, 1024 )]
 		[DefaultValue( 8 )]
