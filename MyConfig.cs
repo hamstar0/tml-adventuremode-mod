@@ -55,9 +55,9 @@ namespace AdventureMode {
 		public int AddedRodOfDiscordChaosStateTime { get; set; } = 60 * 30;
 
 		[Range( 0f, 100f )]
-		[DefaultValue( 3f )]
+		[DefaultValue( 2f )]
 		[CustomModConfigItem( typeof( MyFloatInputElement ) )]
-		public float RodOfDiscordPainIncreaseMultiplier { get; set; } = 3f;
+		public float RodOfDiscordPainIncreaseMultiplier { get; set; } = 2f;
 
 		////
 

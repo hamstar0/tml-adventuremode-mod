@@ -16,6 +16,14 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.Chain ),
 			TileID.GetUniqueKey( TileID.MinecartTrack ),
 			///
+			TileID.GetUniqueKey( TileID.ClosedDoor ),
+			TileID.GetUniqueKey( TileID.CrystalBall ),
+			TileID.GetUniqueKey( TileID.AmmoBox ),
+			TileID.GetUniqueKey( TileID.SharpeningStation ),
+			TileID.GetUniqueKey( TileID.Extractinator ),
+			TileID.GetUniqueKey( TileID.Tombstones ),
+			TileID.GetUniqueKey( TileID.Banners ),
+			///
 			TileID.GetUniqueKey( TileID.Torches ),
 			TileID.GetUniqueKey( TileID.Campfire ),
 			///
@@ -41,6 +49,7 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.WoodBlock ),
 			TileID.GetUniqueKey( TileID.BorealWood ),
 			TileID.GetUniqueKey( TileID.RichMahogany ),
+			TileID.GetUniqueKey( TileID.WoodenBeam ),
 			///
 			TileID.GetUniqueKey( TileID.Trees ),
 			TileID.GetUniqueKey( TileID.MushroomTrees ),
@@ -132,8 +141,14 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.SilverCoinPile ),
 			TileID.GetUniqueKey( TileID.GoldCoinPile ),
 			TileID.GetUniqueKey( TileID.PlatinumCoinPile ),
+			TileID.GetUniqueKey( TileID.Stalactite ),
+			TileID.GetUniqueKey( TileID.SmallPiles ),
+			TileID.GetUniqueKey( TileID.LargePiles ),
+			TileID.GetUniqueKey( TileID.LargePiles2 ),
 			///
 			TileID.GetUniqueKey( TileID.Boulder ),
+			TileID.GetUniqueKey( TileID.BeeHive ),
+			TileID.GetUniqueKey( TileID.Tombstones ),
 		};
 
 		[Range( -1, 1024 )]
