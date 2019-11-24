@@ -104,7 +104,7 @@ namespace AdventureMode {
 			if( heldItem?.type == ItemID.RodofDiscord ) {
 				if( this.player.itemAnimation >= heldItem.useAnimation - 1 ) {
 					if( this.player.HasBuff(BuffID.ChaosState) ) {
-						if( this.IsChaosStateChecked ) {
+						if( this.IsChaosStateChecked && AdventureModeConfig.Instance.AddedRodOfDiscordPain ) {
 							var reason = PlayerDeathReason.ByCustomReason( this.player.name + " splinched." );
 							int dmg = this.player.statLifeMax2 / 7;
 

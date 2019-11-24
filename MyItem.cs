@@ -1,5 +1,4 @@
 ﻿using HamstarHelpers.Helpers.Items.Attributes;
-using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using Terraria;
@@ -29,14 +28,18 @@ namespace AdventureMode {
 
 
 		////////////////
-
+		
 		public override void OnConsumeItem( Item item, Player player ) {
 			switch( item.type ) {
 			case ItemID.ManaCrystal:
-				player.statManaMax -= 15;
+				if( AdventureModeConfig.Instance.ReducedManaCrystalStatIncrease ) {
+					player.statManaMax -= 15;
+				}
 				break;
 			case ItemID.LifeCrystal:
-				player.statLifeMax -= 15;
+				if( AdventureModeConfig.Instance.ReducedLifeCrystalStatIncrease ) {
+					player.statLifeMax -= 15;
+				}
 				break;
 			}
 		}

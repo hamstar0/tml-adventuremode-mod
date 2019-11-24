@@ -47,5 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="NetProtocols\" />
+    <Folder Include="Items\" />
   </ItemGroup>
 </Project>

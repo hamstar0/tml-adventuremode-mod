@@ -12,7 +12,7 @@ using Terraria.ModLoader;
 namespace AdventureMode {
 	class AdventureModeProjectile : GlobalProjectile {
 		public override bool? CanUseGrapple( int projType, Player player ) {
-			if( AdventureModeConfig.Instance.GrappleChainAmmoRate == 0 ) {
+			if( AdventureModeConfig.Instance.GrappleChainAmmoRate <= 0 ) {
 				return null;
 			}
 
@@ -25,7 +25,7 @@ namespace AdventureMode {
 
 
 		public override void UseGrapple( Player player, ref int type ) {
-			if( AdventureModeConfig.Instance.GrappleChainAmmoRate == 0 ) {
+			if( AdventureModeConfig.Instance.GrappleChainAmmoRate <= 0 ) {
 				return;
 			}
 

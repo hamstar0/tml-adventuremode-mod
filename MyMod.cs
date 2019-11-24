@@ -22,8 +22,8 @@ namespace AdventureMode {
 
 		////////////////
 
-		private (ushort TileType, int Width, int Height)[] FurnitureCycle;
-		private int FurnitureCycleIdx = 0;
+		private (ushort TileType, int Width, int Height, bool IsHardMode)[] HouseKitFurnitureCycle;
+		private int HouseKitFurnitureCycleIdx = 0;
 
 
 

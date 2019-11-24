@@ -48,10 +48,13 @@ namespace AdventureMode {
 			int idx = tasks.FindIndex( pass => pass.Name.Equals("Grass Wall") );
 
 			if( idx != -1 ) {
-				tasks.Insert( idx + 1, new PassLegacy( "Adventure Mode: Set Default Spawn", ( progress ) => {
-					AdventureModeWorldGen.SetBeachSpawn( progress );
-					progress.Value = 1f;
-				} ) );
+				if( AdventureModeConfig.Instance.SetDefaultSpawnToBeach ) {
+					tasks.Insert( idx + 1, new PassLegacy( "Adventure Mode: Set Default Spawn", ( progress ) => {
+						AdventureModeWorldGen.SetBeachSpawn( progress );
+						progress.Value = 1f;
+					} ) );
+				}
+
 				tasks.Insert( idx + 2, new PassLegacy( "Adventure Mode: Create Spawn Boat", ( progress ) => {
 					AdventureModeWorldGen.PlaceRaft( progress );
 					progress.Value = 1f;

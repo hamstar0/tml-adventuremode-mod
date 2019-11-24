@@ -7,24 +7,23 @@ using Terraria.ModLoader;
 
 namespace AdventureMode.Buffs {
 	class NecrotisDebuff : ModBuff {
-		public const int Duration = 60 * 60 * 15;    // 15 minutes
-
-
-
-		////////////////
-
 		public static void UpdateForPlayer( Player player ) {
+			int duration = AdventureModeConfig.Instance.NecrotisTickDuration;
+			if( duration < 0 ) {
+				return;
+			} 
+
 			int necrotisType = ModContent.BuffType<NecrotisDebuff>();
 			int necrotisIdx = player.FindBuffIndex( necrotisType );
 
 			if( player.ZoneDungeon && WorldHelpers.UnderworldLayerTopTileY < player.position.Y ) {
 				if( necrotisIdx == -1 ) {
-					player.AddBuff( necrotisType, NecrotisDebuff.Duration );
+					player.AddBuff( necrotisType, duration );
 				}
 			} else {
 				if( necrotisIdx != -1 ) {
 					player.buffTime[necrotisIdx] += 4;
-					if( player.buffTime[necrotisIdx] >= NecrotisDebuff.Duration ) {
+					if( player.buffTime[necrotisIdx] >= duration ) {
 						player.DelBuff( necrotisType );
 					}
 				}
@@ -77,8 +76,9 @@ namespace AdventureMode.Buffs {
 		////////////////
 
 		public override void Update( Player player, ref int buffIndex ) {
+			int duration = AdventureModeConfig.Instance.NecrotisTickDuration;
 			var myplayer = player.GetModPlayer<AdventureModePlayer>();
-			myplayer.NecrotisPercent = (float)player.buffTime[buffIndex] / (float)NecrotisDebuff.Duration;
+			myplayer.NecrotisPercent = (float)player.buffTime[buffIndex] / (float)duration;
 
 			if( player.buffTime[buffIndex] > 0 && player.buffTime[buffIndex] < 60 ) {
 				player.buffTime[buffIndex] = 60;
