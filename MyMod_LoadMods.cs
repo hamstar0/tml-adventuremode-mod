@@ -1,21 +1,22 @@
-using ChestImplants;
-using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Helpers.TModLoader;
-using HamstarHelpers.Services.Configs;
-using HamstarHelpers.Services.EntityGroups;
-using HamstarHelpers.Services.EntityGroups.Definitions;
-using HouseFurnishingKit;
-using LockedAbilities;
-using LockedAbilities.Items.Consumable;
-using MountedMagicMirrors.Tiles;
-using Nihilism;
 using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
+using HamstarHelpers.Helpers.Debug;
+using HamstarHelpers.Helpers.TModLoader;
+using HamstarHelpers.Services.Configs;
+using HamstarHelpers.Services.EntityGroups;
+using HamstarHelpers.Services.EntityGroups.Definitions;
+using HamstarHelpers.Services.Hooks.LoadHooks;
+using ChestImplants;
 using TheTrickster;
+using HouseFurnishingKit;
+using LockedAbilities;
+using LockedAbilities.Items.Consumable;
+using MountedMagicMirrors.Tiles;
+using Nihilism;
 
 
 namespace AdventureMode {
@@ -28,7 +29,10 @@ namespace AdventureMode {
 				if( isSync && LoadHelpers.IsWorldBeingPlayed() ) {
 					return;
 				}
-				this.ApplyNihilismFilters();
+
+				LoadHooks.AddPostWorldLoadOnceHook( () => {
+					this.ApplyNihilismFilters();
+				} );
 			}, 0f );
 		}
 
@@ -116,17 +120,17 @@ namespace AdventureMode {
 
 		private void LoadLockedAbilities() {
 			if( AdventureModeConfig.Instance.RemoveWorldGenDarkHeartPieces ) {
-				return;
+				var config = new LockedAbilitiesConfig {
+					WorldGenChestImplantDarkHeartPieceChance = 0f
+				};
+
+				ModConfigStack.SetStackedConfigChangesOnly( config );
 			}
 
-			var config = new LockedAbilitiesConfig {
-				WorldGenChestImplantDarkHeartPieceChance = 0f
-			};
-
-			if( AdventureModeConfig.Instance.RemoveWorldGenDarkHeartPieces ) {
-			}
-
-			ModConfigStack.SetStackedConfigChangesOnly( config );
+			LockedAbilitiesConfig.Instance.OverlayChanges( new LockedAbilitiesConfig {
+				BackBraceEnabled = false,
+				WorldGenChestImplantBackBraceChance = 0f
+			} );
 		}
 
 
