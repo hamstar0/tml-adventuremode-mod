@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
+using Terraria.ObjectData;
 using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.TModLoader;
 using HamstarHelpers.Services.Configs;
@@ -16,6 +17,7 @@ using HouseFurnishingKit;
 using LockedAbilities;
 using LockedAbilities.Items.Consumable;
 using MountedMagicMirrors.Tiles;
+using MountedMagicMirrors.Items;
 using Nihilism;
 
 
@@ -42,7 +44,7 @@ namespace AdventureMode {
 			implantsConfig.AllFromSetChestImplanterDefinitions.Clear();
 			implantsConfig.RandomPickFromSetChestImplanterDefinitions.Clear();
 
-			if( AdventureModeConfig.Instance.RemoveWorldGenMagicMirrors ) {
+			if( AdventureModeConfig.Instance.WorldGenRemoveMagicMirrors ) {
 				var mirrorGoneDef1 = new ChestImplanterDefinition {
 					ChestTypes = new HashSet<string> { "Vanilla Underground World Chest" },
 					ItemDefinitions = new List<ChestImplanterItemDefinition> {
@@ -70,41 +72,46 @@ namespace AdventureMode {
 					= new ChestImplanterSetDefinition { mirrorGoneDef1, mirrorGoneDef2 };
 			}
 
-			ModConfigStack.SetStackedConfig( implantsConfig );
+			if( AdventureModeConfig.Instance.WorldGenAddedMountedMagicMirrorChance > 0f ) {
+				implantsConfig.RandomPickFromSetChestImplanterDefinitions[ "AdventureModeMountedMirrors" ]
+					= new ChestImplanterSetDefinition { new ChestImplanterDefinition {
+						ChestTypes = new HashSet<string> { "Vanilla Underground World Chest" },
+						ItemDefinitions = new List<ChestImplanterItemDefinition> {
+							new ChestImplanterItemDefinition {
+								ChestItem = new ItemDefinition( ModContent.ItemType<MountableMagicMirrorTileItem>() ),
+								MinQuantity = 1,
+								MaxQuantity = 1,
+								ChancePerChest = 0.05f,
+							}
+						}
+				} };
+			}
+
+			ChestImplantsConfig.Instance.OverlayChanges( implantsConfig );
 		}
 
 
 		private void LoadHouseFurnishingKitAndMountedMagicMirrors() {
-			this.HouseKitFurnitureCycle = new (ushort, int, int, bool)[] {
-				(TileID.Anvils, 2, 1, false),
-				(TileID.Furnaces, 3, 2, false),
-				(TileID.CookingPots, 2, 2, false),
-				(TileID.Anvils, 2, 1, false),
-				(TileID.Furnaces, 3, 2, false),
-				//(TileID.Bottles, 1, 1, false),
-				(TileID.Sawmill, 3, 3, false),
-				(TileID.TinkerersWorkbench, 3, 2, false),
-				(TileID.PiggyBank, 2, 1, false),
-				//(TileID.Statues, 2, 3, false),
-				(TileID.MythrilAnvil, 2, 1, true),
-				(TileID.AdamantiteForge, 3, 2, true),
-				(TileID.Safes, 2, 2, true),
-			};
+			IList<HouseKitFurnitureDefinition> cycle = AdventureModeConfig.Instance.HouseKitFurnitureSuccession;
 
 			HouseFurnishingKitAPI.SetCustomFurniture( TileID.Tables, 3, 2 );
 			HouseFurnishingKitAPI.SetCustomWallMount1( (ushort)ModContent.TileType<MountedMagicMirrorTile>(), 3, 3 );
 
 			HouseFurnishingKitAPI.OnHouseCreate( (tileX, tileY, item) => {
-				if( this.HouseKitFurnitureCycleIdx >= this.HouseKitFurnitureCycle.Length ) {
+				if( this.HouseKitFurnitureCycleIdx >= cycle.Count ) {
 					return;
 				}
 
-				var furniture = this.HouseKitFurnitureCycle[ this.HouseKitFurnitureCycleIdx ];
-				if( furniture.IsHardMode && !Main.hardMode ) {
+				HouseKitFurnitureDefinition furnDef = cycle[ this.HouseKitFurnitureCycleIdx ];
+				TileObjectData furnTileObj = TileObjectData.GetTileData( furnDef.TileType, 0 );
+				if( furnDef.IsHardMode && !Main.hardMode ) {
 					return;
 				}
 
-				HouseFurnishingKitAPI.SetCustomFurniture( furniture.TileType, furniture.Width, furniture.Height );
+				int width = furnTileObj?.Width ?? 1;
+				int height = furnTileObj?.Height ?? 1;
+
+				HouseFurnishingKitAPI.SetCustomFurniture( furnDef.TileType, width, height );
 
 				this.HouseKitFurnitureCycleIdx++;
 			} );
@@ -119,7 +126,7 @@ namespace AdventureMode {
 
 
 		private void LoadLockedAbilities() {
-			if( AdventureModeConfig.Instance.RemoveWorldGenDarkHeartPieces ) {
+			if( AdventureModeConfig.Instance.WorldGenRemoveDarkHeartPieces ) {
 				var config = new LockedAbilitiesConfig {
 					WorldGenChestImplantDarkHeartPieceChance = 0f
 				};

@@ -9,8 +9,18 @@ using Terraria.ModLoader.Config;
 
 
 namespace AdventureMode {
+	public class HouseKitFurnitureDefinition {
+		public ushort TileType { get; set; }
+		public bool IsHardMode { get; set; }
+	}
+
+
+
+
 	public partial class AdventureModeConfig : StackableModConfig {
 		public List<string> TilePlaceWhitelist { get; set; } = new List<string> {
+			TileID.GetUniqueKey( TileID.LunarCraftingStation ),
+			///
 			TileID.GetUniqueKey( TileID.Rope ),
 			TileID.GetUniqueKey( TileID.SilkRope ),
 			TileID.GetUniqueKey( TileID.VineRope ),
@@ -48,6 +58,8 @@ namespace AdventureMode {
 		};
 
 		public List<string> TileKillWhitelist { get; set; } = new List<string> {
+			TileID.GetUniqueKey( TileID.LunarCraftingStation ),
+			///
 			TileID.GetUniqueKey( TileID.WoodBlock ),
 			TileID.GetUniqueKey( TileID.BorealWood ),
 			TileID.GetUniqueKey( TileID.RichMahogany ),
@@ -72,6 +84,7 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.JunglePlants2 ),
 			TileID.GetUniqueKey( TileID.JungleVines ),
 			TileID.GetUniqueKey( TileID.Coral ),
+			TileID.GetUniqueKey( TileID.DyePlants ),
 			TileID.GetUniqueKey( TileID.ImmatureHerbs ),
 			TileID.GetUniqueKey( TileID.BloomingHerbs ),
 			TileID.GetUniqueKey( TileID.MatureHerbs ),
@@ -153,6 +166,28 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.BeeHive ),
 			TileID.GetUniqueKey( TileID.Tombstones ),
 		};
+
+		////
+
+		[ReloadRequired]
+		public List<HouseKitFurnitureDefinition> HouseKitFurnitureSuccession = new List<HouseKitFurnitureDefinition> {
+			new HouseKitFurnitureDefinition { TileType = TileID.Anvils, IsHardMode = false },
+			new HouseKitFurnitureDefinition { TileType = TileID.Furnaces, IsHardMode = false },
+			new HouseKitFurnitureDefinition { TileType = TileID.CookingPots, IsHardMode = false },
+			//new HouseKitFurnitureDefinition { TileType = TileID.Bottles, IsHardMode = false },
+			new HouseKitFurnitureDefinition { TileType = TileID.Sawmill, IsHardMode = false },
+			new HouseKitFurnitureDefinition { TileType = TileID.Anvils, IsHardMode = false },
+			new HouseKitFurnitureDefinition { TileType = TileID.Furnaces, IsHardMode = false },
+			new HouseKitFurnitureDefinition { TileType = TileID.TinkerersWorkbench, IsHardMode = false },
+			new HouseKitFurnitureDefinition { TileType = TileID.PiggyBank, IsHardMode = false },
+			//new HouseKitFurnitureDefinition { TileType = TileID.Statues, IsHardMode = false },
+			new HouseKitFurnitureDefinition { TileType = TileID.MythrilAnvil, IsHardMode = true },
+			new HouseKitFurnitureDefinition { TileType = TileID.AdamantiteForge, IsHardMode = true },
+			new HouseKitFurnitureDefinition { TileType = TileID.Safes, IsHardMode = true },
+		};
+
+
+		////
 
 		[Range( -1, 1024 )]
 		[DefaultValue( 4 )]

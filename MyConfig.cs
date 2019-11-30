@@ -61,22 +61,10 @@ namespace AdventureMode {
 
 		////
 
-		[DefaultValue( true )]
-		[ReloadRequired]
-		public bool SetDefaultSpawnToBeach { get; set; } = true;
-
 		[Range( 0f, 1f )]
 		[DefaultValue( 0.05f / 4f )]    // divide by 4 since pot is 2x2?
 		[CustomModConfigItem( typeof( MyFloatInputElement ) )]
 		public float PotSurprisePercentChance { get; set; } = 0.05f / 4f;
-
-		[DefaultValue( true )]
-		[ReloadRequired]
-		public bool RemoveWorldGenMagicMirrors { get; set; } = true;
-
-		[DefaultValue( true )]
-		[ReloadRequired]
-		public bool RemoveWorldGenDarkHeartPieces { get; set; } = true;
 
 
 
