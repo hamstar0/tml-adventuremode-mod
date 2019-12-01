@@ -19,6 +19,7 @@ using LockedAbilities.Items.Consumable;
 using MountedMagicMirrors.Tiles;
 using MountedMagicMirrors.Items;
 using Nihilism;
+using StaffOfGaia;
 
 
 namespace AdventureMode {
@@ -137,6 +138,13 @@ namespace AdventureMode {
 			LockedAbilitiesConfig.Instance.OverlayChanges( new LockedAbilitiesConfig {
 				BackBraceEnabled = false,
 				WorldGenChestImplantBackBraceChance = 0f
+			} );
+		}
+
+
+		private void LoadStaffOfGaia() {
+			StaffOfGaiaConfig.Instance.OverlayChanges( new StaffOfGaiaConfig {
+				PlayerStartStaves = 0
 			} );
 		}
 

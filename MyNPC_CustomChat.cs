@@ -20,6 +20,7 @@ namespace AdventureMode {
 						"Good thing the dungeon is sealed. I hear it's infested with an undeath curse and deadly fumes!",
 						"The people who lived here once discovered ways to wield wearable artifacts of power, and hid their secrets all around underground.",
 						"Rare magic crystals can be found hidden deep underground. Your binoculars will resonate when they come into view.",
+						"You may find digging to be rather difficult. If you find yourself needing to squeeze into tight areas, a simple hammer might be your best tool. Odd, huh?",
 					},
 					Blocked: new Dictionary<string, string> {
 						{

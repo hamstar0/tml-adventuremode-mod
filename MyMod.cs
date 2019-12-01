@@ -37,6 +37,7 @@ namespace AdventureMode {
 			this.LoadHouseFurnishingKitAndMountedMagicMirrors();
 			this.LoadTricksterAndLockedAbilies();
 			this.LoadLockedAbilities();
+			this.LoadStaffOfGaia();
 		}
 
 		////

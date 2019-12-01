@@ -41,11 +41,13 @@ namespace AdventureMode {
 		}
 
 		public override void PreUpdateBuffs() {
-			int dangBuffIds = this.player.FindBuffIndex( BuffID.Dangersense );
+			if( AdventureModeConfig.Instance.ReducedDangersenseBuffDuration ) {
+				int dangBuffIds = this.player.FindBuffIndex( BuffID.Dangersense );
 
-			if( dangBuffIds != -1 ) {
-				if( this.player.buffTime[dangBuffIds] > 60 * 60 * 2 ) {
-					this.player.buffTime[dangBuffIds] = 60 * 60 * 2;
+				if( dangBuffIds != -1 ) {
+					if( this.player.buffTime[dangBuffIds] > 60 * 60 * 2 ) {
+						this.player.buffTime[dangBuffIds] = 60 * 60 * 2;
+					}
 				}
 			}
 		}
@@ -59,6 +61,10 @@ namespace AdventureMode {
 		////
 
 		public override void UpdateDead() {
+			if( !AdventureModeConfig.Instance.RespawnBlockedDuringBosses ) {
+				return;
+			}
+
 			if( !Main.npc.Any( n => n.active && n.boss ) ) {
 				this.IsAlertedToBossesWhileDead = false;
 				return;

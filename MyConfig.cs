@@ -62,9 +62,9 @@ namespace AdventureMode {
 		////
 
 		[Range( 0f, 1f )]
-		[DefaultValue( 0.05f / 4f )]    // divide by 4 since pot is 2x2?
+		[DefaultValue( 0.025f )]
 		[CustomModConfigItem( typeof( MyFloatInputElement ) )]
-		public float PotSurprisePercentChance { get; set; } = 0.05f / 4f;
+		public float PotSurprisePercentChance { get; set; } = 0.025f;
 
 
 
