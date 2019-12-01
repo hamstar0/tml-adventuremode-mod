@@ -1,3 +1,4 @@
+using AdventureMode.Mods;
 using AdventureMode.Recipes;
 using HamstarHelpers.Helpers.Debug;
 using System;
@@ -19,7 +20,7 @@ namespace AdventureMode {
 
 		////////////////
 
-		private int HouseKitFurnitureCycleIdx = 0;
+		private AdventureModeModInteractions ModInteractions = new AdventureModeModInteractions();
 
 
 
@@ -32,12 +33,12 @@ namespace AdventureMode {
 		////////////////
 
 		public override void Load() {
-			this.LoadNihilism();
-			this.LoadChestImplants();
-			this.LoadHouseFurnishingKitAndMountedMagicMirrors();
-			this.LoadTricksterAndLockedAbilies();
-			this.LoadLockedAbilities();
-			this.LoadStaffOfGaia();
+			this.ModInteractions.LoadNihilism();
+			this.ModInteractions.LoadChestImplants();
+			this.ModInteractions.LoadHouseFurnishingKitAndMountedMagicMirrors();
+			this.ModInteractions.LoadTricksterAndLockedAbilies();
+			this.ModInteractions.LoadLockedAbilities();
+			this.ModInteractions.LoadStaffOfGaia();
 		}
 
 		////
