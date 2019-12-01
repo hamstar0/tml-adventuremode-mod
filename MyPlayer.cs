@@ -41,13 +41,13 @@ namespace AdventureMode {
 		}
 
 		public override void PreUpdateBuffs() {
-			if( AdventureModeConfig.Instance.ReducedDangersenseBuffDuration ) {
-				int dangBuffIds = this.player.FindBuffIndex( BuffID.Dangersense );
+			int dangBuffIds = this.player.FindBuffIndex( BuffID.Dangersense );
 
-				if( dangBuffIds != -1 ) {
-					if( this.player.buffTime[dangBuffIds] > 60 * 60 * 2 ) {
-						this.player.buffTime[dangBuffIds] = 60 * 60 * 2;
-					}
+			if( dangBuffIds != -1 ) {
+				int maxDuration = AdventureModeConfig.Instance.MaximumDangersenseBuffDuration;
+
+				if( this.player.buffTime[dangBuffIds] > maxDuration ) {
+					this.player.buffTime[dangBuffIds] = maxDuration;
 				}
 			}
 		}
@@ -59,7 +59,7 @@ namespace AdventureMode {
 		}
 
 		////
-
+		
 		public override void UpdateDead() {
 			if( !AdventureModeConfig.Instance.RespawnBlockedDuringBosses ) {
 				return;
@@ -88,9 +88,11 @@ namespace AdventureMode {
 				var torches = new Item();
 				torches.SetDefaults( ItemID.Torch );
 				torches.stack = 10;
+
 				var ropes = new Item();
 				ropes.SetDefaults( ItemID.Rope );
 				ropes.stack = 200;
+
 				var houseKits = new Item();
 				houseKits.SetDefaults( ModContent.ItemType<HouseFurnishingKitItem>() );
 				houseKits.stack = 3;
@@ -103,34 +105,50 @@ namespace AdventureMode {
 
 
 		////////////////
-
+		
 		public override bool PreItemCheck() {
 			Item heldItem = this.player.HeldItem;
+			bool enabled = true;
 
 			if( heldItem?.type == ItemID.RodofDiscord ) {
-				if( this.player.itemAnimation >= heldItem.useAnimation - 1 ) {
-					if( this.player.HasBuff(BuffID.ChaosState) ) {
-						if( this.IsChaosStateChecked ) {
-							var reason = PlayerDeathReason.ByCustomReason( this.player.name + " splinched." );
-							int dmg = this.player.statLifeMax2 / 7;
-							dmg = (int)((float)dmg * AdventureModeConfig.Instance.RodOfDiscordPainIncreaseMultiplier);
+				if( !AdventureModeConfig.Instance.RodOfDiscordChaosStateBlocksBlink ) {
+					enabled = this.CheckRodOfDiscord();
+				}
+			}
 
-							if( dmg > 0 ) {
-								PlayerHelpers.RawHurt( this.player, reason, dmg, 0 );
-							}
-						}
+			return enabled;
+		}
+
+		private bool CheckRodOfDiscord() {
+			if( this.player.itemAnimation == 0 ) {
+				if( this.IsChaosStateChecked ) {
+					return false;
+				}
+			}
+			
+			if( this.player.itemAnimation >= this.player.HeldItem.useAnimation - 1 ) {
+				if( this.player.HasBuff(BuffID.ChaosState) ) {
+					if( !this.IsChaosStateChecked ) {
 						this.IsChaosStateChecked = true;
+
+						/*var reason = PlayerDeathReason.ByCustomReason( this.player.name + " splinched." );
+						int dmg = this.player.statLifeMax2 / 7;
+						dmg = (int)((float)dmg * AdventureModeConfig.Instance.RodOfDiscordPainIncreaseMultiplier);
+
+						if( dmg > 0 ) {
+							PlayerHelpers.RawHurt( this.player, reason, dmg, 0 );
+						}*/
 
 						this.player.AddBuff( BuffID.ChaosState, AdventureModeConfig.Instance.AddedRodOfDiscordChaosStateTime );
 					}
 				}
+			}
 				
-				if( this.IsChaosStateChecked && !this.player.HasBuff(BuffID.ChaosState) ) {
-					this.IsChaosStateChecked = false;
-				}
+			if( this.IsChaosStateChecked && !this.player.HasBuff(BuffID.ChaosState) ) {
+				this.IsChaosStateChecked = false;
 			}
 
-			return base.PreItemCheck();
-}
+			return true;
+		}
 	}
 }

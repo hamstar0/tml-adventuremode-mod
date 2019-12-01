@@ -37,13 +37,23 @@ namespace AdventureMode {
 		[DefaultValue( true )]
 		public bool ReducedLifeCrystalStatIncrease { get; set; } = true;
 
+		[Range( 0, 60 * 60 * 30 )]
+		[DefaultValue( 60 * 60 * 2 )]
+		public int MaximumDangersenseBuffDuration { get; set; } = 60 * 60 * 2;
+
 		[Range( -1, 60 * 60 * 60 * 2 )]
 		[DefaultValue( 60 * 60 * 15 )]
 		public int NecrotisTickDuration = 60 * 60 * 15;
 
+		////
+
 		[DefaultValue( true )]
 		[ReloadRequired]
 		public bool EnableMechBossItemRecipes { get; set; } = true;
+
+		[DefaultValue( true )]
+		[ReloadRequired]
+		public bool RespawnBlockedDuringBosses { get; set; } = true;
 
 		////
 
@@ -54,10 +64,14 @@ namespace AdventureMode {
 		[DefaultValue( 60 * 30 )]
 		public int AddedRodOfDiscordChaosStateTime { get; set; } = 60 * 30;
 
-		[Range( 0f, 100f )]
+		/*[Range( 0f, 100f )]
 		[DefaultValue( 2f )]
 		[CustomModConfigItem( typeof( MyFloatInputElement ) )]
-		public float RodOfDiscordPainIncreaseMultiplier { get; set; } = 2f;
+		public float RodOfDiscordPainIncreaseMultiplier { get; set; } = 2f;*/
+
+		[DefaultValue( true )]
+		[ReloadRequired]
+		public bool RodOfDiscordChaosStateBlocksBlink { get; set; } = true;
 
 		////
 

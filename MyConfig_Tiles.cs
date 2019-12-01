@@ -83,6 +83,7 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.JunglePlants ),
 			TileID.GetUniqueKey( TileID.JunglePlants2 ),
 			TileID.GetUniqueKey( TileID.JungleVines ),
+			TileID.GetUniqueKey( TileID.JungleThorns ),
 			TileID.GetUniqueKey( TileID.Coral ),
 			TileID.GetUniqueKey( TileID.DyePlants ),
 			TileID.GetUniqueKey( TileID.ImmatureHerbs ),
