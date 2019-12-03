@@ -20,7 +20,7 @@ namespace AdventureMode {
 
 		////////////////
 
-		private AdventureModeModInteractions ModInteractions = new AdventureModeModInteractions();
+		public AdventureModeModInteractions ModInteractions { get; } = new AdventureModeModInteractions();
 
 
 

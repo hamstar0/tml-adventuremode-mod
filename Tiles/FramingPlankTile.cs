@@ -11,6 +11,7 @@ namespace AdventureMode.Tiles {
 		public override void SetDefaults() {
 			Main.tileSolid[ this.Type ] = true;
 			Main.tileMergeDirt[ this.Type ] = true;
+
 			//this.dustType = this.DustType<Sparkle>();
 			this.dustType = DustID.t_LivingWood;
 			this.drop = ModContent.ItemType<FramingPlankItem>();

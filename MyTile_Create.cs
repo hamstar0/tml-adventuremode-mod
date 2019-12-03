@@ -58,7 +58,8 @@ namespace AdventureMode {
 		////////////////
 
 		public override bool CanPlace( int i, int j, int type ) {
-			if( !LoadHelpers.IsCurrentPlayerInGame() ) {
+			// World gen?
+			if( Main.gameMenu || !LoadHelpers.IsCurrentPlayerInGame() ) {
 				return true;
 			}
 

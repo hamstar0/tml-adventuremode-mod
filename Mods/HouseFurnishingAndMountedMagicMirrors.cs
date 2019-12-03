@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.ObjectData;
 using HamstarHelpers.Helpers.Debug;
 using HouseFurnishingKit;
 using MountedMagicMirrors.Tiles;
@@ -11,7 +10,7 @@ using MountedMagicMirrors.Tiles;
 
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
-		private int HouseKitFurnitureCycleIdx = 0;
+		public bool IsCreatingHouse { get; private set; }
 
 
 
@@ -20,26 +19,31 @@ namespace AdventureMode.Mods {
 		public void LoadHouseFurnishingKitAndMountedMagicMirrors() {
 			IList<HouseKitFurnitureDefinition> cycle = AdventureModeConfig.Instance.HouseKitFurnitureSuccession;
 
-			HouseFurnishingKitAPI.SetCustomFurniture( TileID.Tables, 3, 2 );
-			HouseFurnishingKitAPI.SetCustomWallMount1( (ushort)ModContent.TileType<MountedMagicMirrorTile>(), 3, 3 );
+			HouseFurnishingKitAPI.SetCustomFurniture( TileID.Tables );
+			HouseFurnishingKitAPI.SetCustomWallMount1( (ushort)ModContent.TileType<MountedMagicMirrorTile>() );
 
-			HouseFurnishingKitAPI.OnHouseCreate( (tileX, tileY, item) => {
-				if( this.HouseKitFurnitureCycleIdx >= cycle.Count ) {
+			HouseFurnishingKitAPI.OnPreHouseCreate( (tileX, tileY, item) => {
+				this.IsCreatingHouse = true;
+				return true;
+			} );
+
+			HouseFurnishingKitAPI.OnPostHouseCreate( (tileX, tileY, item) => {
+				var myworld = ModContent.GetInstance<AdventureModeWorld>();
+
+				this.IsCreatingHouse = false;
+
+				if( myworld.HouseKitFurnitureIdx >= cycle.Count ) {
 					return;
 				}
 
-				HouseKitFurnitureDefinition furnDef = cycle[ this.HouseKitFurnitureCycleIdx ];
-				TileObjectData furnTileObj = TileObjectData.GetTileData( furnDef.TileType, 0 );
+				HouseKitFurnitureDefinition furnDef = cycle[myworld.HouseKitFurnitureIdx];
 				if( furnDef.IsHardMode && !Main.hardMode ) {
 					return;
 				}
+				
+				HouseFurnishingKitAPI.SetCustomFurniture( furnDef.TileType );
 
-				int width = furnTileObj?.Width ?? 1;
-				int height = furnTileObj?.Height ?? 1;
-
-				HouseFurnishingKitAPI.SetCustomFurniture( furnDef.TileType, width, height );
-
-				this.HouseKitFurnitureCycleIdx++;
+				myworld.HouseKitFurnitureIdx++;
 			} );
 		}
 	}

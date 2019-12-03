@@ -2,6 +2,7 @@
 using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.TModLoader;
 using HamstarHelpers.Services.Hooks.ExtendedHooks;
+using HamstarHelpers.Services.Hooks.LoadHooks;
 using System;
 using Terraria;
 using Terraria.ID;
@@ -12,6 +13,16 @@ using Terraria.Utilities;
 namespace AdventureMode {
 	class AdventureModeExtendedTileHooks : ILoadable {
 		private static void KillTile( int i, int j, int type, ref bool fail, ref bool effectOnly, ref bool noItem ) {
+			// World gen?
+			if( Main.gameMenu ) {
+				return;
+			}
+			// House creation
+			if( AdventureModeMod.Instance.ModInteractions.IsCreatingHouse ) {
+				noItem = true;
+				return;
+			}
+
 			if( fail || effectOnly ) {
 				return;
 			}
@@ -19,7 +30,7 @@ namespace AdventureMode {
 				return;
 			}
 
-			if( !AdventureModeTile.IsKillable( type ) ) {
+			if( !AdventureModeTile.IsKillable(type) ) {
 				fail = true;
 				effectOnly = true;
 				noItem = true;
@@ -59,6 +70,8 @@ namespace AdventureMode {
 
 		////////////////
 
+		private AdventureModeExtendedTileHooks() { }
+
 		void ILoadable.OnModsLoad() {
 		}
 
@@ -66,7 +79,12 @@ namespace AdventureMode {
 		}
 
 		void ILoadable.OnPostModsLoad() {
-			ExtendedTileHooks.AddSafeKillTileHook( AdventureModeExtendedTileHooks.KillTile );
+			LoadHooks.AddWorldLoadEachHook( () => {
+				ExtendedTileHooks.AddSafeKillTileHook( AdventureModeExtendedTileHooks.KillTile );
+			} );
+			LoadHooks.AddWorldUnloadEachHook( () => {
+				ExtendedTileHooks.RemoveSafeKillTileHook( AdventureModeExtendedTileHooks.KillTile );
+			} );
 		}
 	}
 
@@ -98,7 +116,7 @@ namespace AdventureMode {
 		}*/
 
 		public override bool CreateDust( int i, int j, int type, ref int dustType ) {
-			if( !LoadHelpers.IsCurrentPlayerInGame() ) {
+			if( Main.gameMenu || !LoadHelpers.IsCurrentPlayerInGame() ) {
 				return true;
 			}
 

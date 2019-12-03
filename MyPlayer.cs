@@ -1,19 +1,22 @@
 ﻿using AdventureMode.Buffs;
 using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Helpers.Players;
 using HouseFurnishingKit.Items;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.ModLoader.IO;
 
 
 namespace AdventureMode {
 	partial class AdventureModePlayer : ModPlayer {
+		internal ISet<string> IntroducedNpcUniqueKeys { get; } = new HashSet<string>();
+
+		////
+
 		private bool IsAlertedToBossesWhileDead = false;
 		private bool IsChaosStateChecked = false;
 
@@ -26,6 +29,35 @@ namespace AdventureMode {
 
 		public override bool CloneNewInstances => false;
 
+
+
+		////////////////
+
+		public override void Load( TagCompound tag ) {
+			if( !tag.ContainsKey( "introduced_npc_count" ) ) {
+				return;
+			}
+
+			int count = tag.GetInt( "introduced_npc_count" );
+
+			for( int i = 0; i < count; i++ ) {
+				string uniqueKey = tag.GetString( "introduced_npc_" + i );
+				this.IntroducedNpcUniqueKeys.Add( uniqueKey );
+			}
+		}
+		
+		public override TagCompound Save() {
+			var tag = new TagCompound {
+				{ "introduced_npc_count", this.IntroducedNpcUniqueKeys.Count }
+			};
+
+			int i = 0;
+			foreach( string key in this.IntroducedNpcUniqueKeys ) {
+				tag["introduced_npc_" + i] = key;
+			}
+
+			return tag;
+		}
 
 
 		////////////////

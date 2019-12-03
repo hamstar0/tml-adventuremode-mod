@@ -170,7 +170,7 @@ namespace AdventureMode {
 
 		////
 
-		[ReloadRequired]
+		//[ReloadRequired]
 		public List<HouseKitFurnitureDefinition> HouseKitFurnitureSuccession = new List<HouseKitFurnitureDefinition> {
 			new HouseKitFurnitureDefinition { TileType = TileID.Anvils, IsHardMode = false },
 			new HouseKitFurnitureDefinition { TileType = TileID.Furnaces, IsHardMode = false },

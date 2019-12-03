@@ -48,11 +48,11 @@ namespace AdventureMode {
 		////
 
 		[DefaultValue( true )]
-		[ReloadRequired]
+		//[ReloadRequired]
 		public bool EnableMechBossItemRecipes { get; set; } = true;
 
 		[DefaultValue( true )]
-		[ReloadRequired]
+		//[ReloadRequired]
 		public bool RespawnBlockedDuringBosses { get; set; } = true;
 
 		////
@@ -70,7 +70,7 @@ namespace AdventureMode {
 		public float RodOfDiscordPainIncreaseMultiplier { get; set; } = 2f;*/
 
 		[DefaultValue( true )]
-		[ReloadRequired]
+		//[ReloadRequired]
 		public bool RodOfDiscordChaosStateBlocksBlink { get; set; } = true;
 
 		////

@@ -7,7 +7,7 @@ using Terraria.ModLoader.Config;
 
 namespace AdventureMode {
 	public partial class AdventureModeConfig : StackableModConfig {
-		[ReloadRequired]
+		//[ReloadRequired]
 		public Dictionary<NPCDefinition, List<ItemDefinition>> ShopWhitelists { get; set; } = new Dictionary<NPCDefinition, List<ItemDefinition>> {
 			{
 				new NPCDefinition( NPCID.Merchant ), new List<ItemDefinition> {

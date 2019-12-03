@@ -86,18 +86,14 @@ namespace AdventureMode {
 				return;
 			}
 
-			var myworld = ModContent.GetInstance<AdventureModeWorld>();
-			if( myworld == null ) {
-				return;
-			}
-
+			var myplayer = TmlHelpers.SafelyGetModPlayer<AdventureModePlayer>( Main.LocalPlayer );
 			UnifiedRandom rand = TmlHelpers.SafelyGetRand();
 			string[] addedDialogs = AdventureModeNPC.NPCDialogs[ npc.type ].Added;
 			IDictionary<string, string> blockedDialogs = AdventureModeNPC.NPCDialogs[ npc.type ].Blocked;
 
 			string uniqueKey = NPCID.GetUniqueKey( npc.type );
-			if( !myworld.IntroducedNpcUniqueKeys.Contains(uniqueKey) ) {
-				myworld.IntroducedNpcUniqueKeys.Add( uniqueKey );
+			if( !myplayer.IntroducedNpcUniqueKeys.Contains(uniqueKey) ) {
+				myplayer.IntroducedNpcUniqueKeys.Add( uniqueKey );
 				chat = addedDialogs[0];
 				return;
 			}

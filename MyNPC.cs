@@ -1,4 +1,5 @@
-﻿using HamstarHelpers.Services.AnimatedColor;
+﻿using HamstarHelpers.Helpers.TModLoader;
+using HamstarHelpers.Services.AnimatedColor;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Graphics;
@@ -54,12 +55,8 @@ namespace AdventureMode {
 				return;
 			}
 
-			var myworld = ModContent.GetInstance<AdventureModeWorld>();
-			if( myworld == null ) {
-				return;
-			}
-
-			if( myworld.IntroducedNpcUniqueKeys.Contains(NPCID.GetUniqueKey(npc.type)) ) {
+			var myplayer = TmlHelpers.SafelyGetModPlayer<AdventureModePlayer>( Main.LocalPlayer );
+			if( myplayer?.IntroducedNpcUniqueKeys.Contains(NPCID.GetUniqueKey(npc.type)) ?? false ) {
 				return;
 			}
 

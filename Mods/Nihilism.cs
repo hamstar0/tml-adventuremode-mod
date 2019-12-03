@@ -6,6 +6,8 @@ using HamstarHelpers.Services.EntityGroups;
 using HamstarHelpers.Services.EntityGroups.Definitions;
 using HamstarHelpers.Services.Hooks.LoadHooks;
 using Nihilism;
+using Terraria.ModLoader;
+using AdventureMode.Items;
 
 
 namespace AdventureMode.Mods {
@@ -37,6 +39,7 @@ namespace AdventureMode.Mods {
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.ManaCrystal), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.WoodPlatform), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BoosterTrack), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ModContent.ItemType<FramingPlankItem>()), true );
 			if( AdventureModeConfig.Instance.EnableMechBossItemRecipes ) {
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.MechanicalWorm ), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.MechanicalSkull ), true );
@@ -44,21 +47,21 @@ namespace AdventureMode.Mods {
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.CelestialSigil ), true );
 			}
 
-			/*NihilismAPI.SetItemBlacklistGroupEntry( "Any Placeable", true );
-			NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.WoodPlatform), true );
-			NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.Rope), true );
-			NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.SilkRope), true );
-			NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.VineRope), true );
-			NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.WebRope), true );
-			NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.Chain), true );
-			NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.MinecartTrack), true );
+			//NihilismAPI.SetItemBlacklistGroupEntry( "Any Placeable", true );
+			//NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.WoodPlatform), true );
+			//NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.Rope), true );
+			//NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.SilkRope), true );
+			//NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.VineRope), true );
+			//NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.WebRope), true );
+			//NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.Chain), true );
+			//NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.MinecartTrack), true );
 
-			//NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.TinkerersWorkshop), true );
-			//NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.MythrilAnvil), true );
-			//NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.OrichalcumAnvil), true );
-			//NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.AdamantiteForge), true );
-			//NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.TitaniumForge), true );
-			NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.LunarCraftingStation), true );*/
+			////NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.TinkerersWorkshop), true );
+			////NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.MythrilAnvil), true );
+			////NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.OrichalcumAnvil), true );
+			////NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.AdamantiteForge), true );
+			////NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.TitaniumForge), true );
+			//NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.LunarCraftingStation), true );
 
 			NihilismAPI.NihilateCurrentWorld( true );
 		}
