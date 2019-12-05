@@ -10,7 +10,7 @@ namespace AdventureMode {
 
 
 
-	
+
 	public partial class AdventureModeConfig : StackableModConfig {
 		public static AdventureModeConfig Instance => ModConfigStack.GetMergedConfigs<AdventureModeConfig>();
 
@@ -41,18 +41,27 @@ namespace AdventureMode {
 		[DefaultValue( 60 * 60 * 2 )]
 		public int MaximumDangersenseBuffDuration { get; set; } = 60 * 60 * 2;
 
-		[Range( -1, 60 * 60 * 60 * 2 )]
-		[DefaultValue( 60 * 60 * 15 )]
-		public int NecrotisTickDuration = 60 * 60 * 15;
+		//[Range( -1, 60 * 60 * 60 * 2 )]
+		//[DefaultValue( 60 * 60 * 3 )]
+		//public int NecrotisMaxTickDuration { get; set; } = 60 * 60 * 3;
+
+		[Range( 0f, 1f )]
+		[DefaultValue( 1f / 24f )]
+		[CustomModConfigItem( typeof( MyFloatInputElement ) )]
+		public float NecrotisAfflictTickRate { get; set; } = 1f / 24f;
+
+		//[Range( 1, 60 * 60 )]
+		//[DefaultValue( 8 )]
+		//public int NecrotisRecoverTickRate { get; set; } = 8;
 
 		////
 
 		[DefaultValue( true )]
-		//[ReloadRequired]
+		[ReloadRequired]
 		public bool EnableMechBossItemRecipes { get; set; } = true;
 
 		[DefaultValue( true )]
-		//[ReloadRequired]
+		[ReloadRequired]
 		public bool RespawnBlockedDuringBosses { get; set; } = true;
 
 		////
@@ -70,7 +79,7 @@ namespace AdventureMode {
 		public float RodOfDiscordPainIncreaseMultiplier { get; set; } = 2f;*/
 
 		[DefaultValue( true )]
-		//[ReloadRequired]
+		[ReloadRequired]
 		public bool RodOfDiscordChaosStateBlocksBlink { get; set; } = true;
 
 		////

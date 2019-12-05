@@ -12,6 +12,22 @@ namespace AdventureMode {
 	public class HouseKitFurnitureDefinition {
 		public ushort TileType { get; set; }
 		public bool IsHardMode { get; set; }
+
+
+		////////////////
+
+		public override bool Equals( object obj ) {
+			var kitObj = obj as HouseKitFurnitureDefinition;
+			if( kitObj == null ) {
+				return false;
+			}
+
+			return this.TileType == kitObj.TileType && this.IsHardMode == kitObj.IsHardMode;
+		}
+
+		public override int GetHashCode() {
+			return this.TileType.GetHashCode() ^ (this.IsHardMode ? -1 : 0);
+		}
 	}
 
 
@@ -170,8 +186,8 @@ namespace AdventureMode {
 
 		////
 
-		//[ReloadRequired]
-		public List<HouseKitFurnitureDefinition> HouseKitFurnitureSuccession = new List<HouseKitFurnitureDefinition> {
+		[ReloadRequired]
+		public List<HouseKitFurnitureDefinition> HouseKitFurnitureSuccession { get; set; } = new List<HouseKitFurnitureDefinition> {
 			new HouseKitFurnitureDefinition { TileType = TileID.Anvils, IsHardMode = false },
 			new HouseKitFurnitureDefinition { TileType = TileID.Furnaces, IsHardMode = false },
 			new HouseKitFurnitureDefinition { TileType = TileID.CookingPots, IsHardMode = false },

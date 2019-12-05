@@ -23,7 +23,7 @@ namespace AdventureMode {
 
 		////////////////
 
-		public float NecrotisPercent { get; internal set; }
+		public float NecrotisAmount { get; internal set; } = 0f;
 
 		////////////////
 
@@ -62,14 +62,8 @@ namespace AdventureMode {
 
 		////////////////
 
-		public override void ResetEffects() {
-			this.NecrotisPercent = 1f;
-		}
-
-		////
-
 		public override void PreUpdate() {
-			NecrotisDebuff.UpdateForPlayer( this.player );
+			NecrotisDebuff.UpdateBuffDurationForPlayer( this.player );
 		}
 
 		public override void PreUpdateBuffs() {
@@ -85,8 +79,8 @@ namespace AdventureMode {
 		}
 
 		public override void PreUpdateMovement() {
-			if( this.NecrotisPercent < 1f ) {
-				NecrotisDebuff.ApplyEffect( this.player, this.NecrotisPercent );
+			if( this.player.HasBuff(ModContent.BuffType<NecrotisDebuff>()) ) {
+				NecrotisDebuff.ApplyEffect( this.player );
 			}
 		}
 

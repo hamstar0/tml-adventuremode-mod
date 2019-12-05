@@ -2,7 +2,6 @@
 using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.TModLoader;
 using HamstarHelpers.Services.Hooks.ExtendedHooks;
-using HamstarHelpers.Services.Hooks.LoadHooks;
 using System;
 using Terraria;
 using Terraria.ID;
@@ -13,7 +12,7 @@ using Terraria.Utilities;
 namespace AdventureMode {
 	class AdventureModeExtendedTileHooks : ILoadable {
 		private static void KillTile( int i, int j, int type, ref bool fail, ref bool effectOnly, ref bool noItem ) {
-			// World gen?
+			// Main menu
 			if( Main.gameMenu ) {
 				return;
 			}
@@ -79,12 +78,15 @@ namespace AdventureMode {
 		}
 
 		void ILoadable.OnPostModsLoad() {
-			LoadHooks.AddWorldLoadEachHook( () => {
-				ExtendedTileHooks.AddSafeKillTileHook( AdventureModeExtendedTileHooks.KillTile );
-			} );
-			LoadHooks.AddWorldUnloadEachHook( () => {
-				ExtendedTileHooks.RemoveSafeKillTileHook( AdventureModeExtendedTileHooks.KillTile );
-			} );
+			void killWall( int i, int j, int type, ref bool fail ) {
+				fail = true;
+			}
+
+			var killTileHook = new ExtendedTileHooks.KillTileDelegate( AdventureModeExtendedTileHooks.KillTile );
+			var killWallHook = new ExtendedTileHooks.KillWallDelegate( killWall );
+
+			ExtendedTileHooks.AddSafeKillTileHook( killTileHook );
+			ExtendedTileHooks.AddSafeWallKillHook( killWallHook );
 		}
 	}
 

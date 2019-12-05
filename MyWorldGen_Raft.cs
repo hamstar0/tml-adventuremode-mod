@@ -1,4 +1,5 @@
 ﻿using HamstarHelpers.Helpers.Debug;
+using HamstarHelpers.Helpers.Tiles;
 using MountedMagicMirrors.Tiles;
 using System;
 using Terraria;
@@ -19,9 +20,9 @@ namespace AdventureMode {
 			new int[] { 0,      42,     42,     42,     42,     42,     42,     42,     42,     42 },
 		};
 		private static int[][] RaftImageTiles = new int[][] {
-			new int[] { 0,      0,      0,      0,      0,      124,    4,      0,      0,      0,      0 },
-			new int[] { 0,      0,      0,      -1,     0,      124,    0,      0,      0,      0,      0 },
-			new int[] { 0,      0,      0,      0,      0,      124,    0,      0,      0,      0,      0 },
+			new int[] { 0,      0,      -1,		-1,		-1,		124,    4,      0,      0,      0,      0 },
+			new int[] { 0,      0,      -1,		-1,		-1,		124,    0,      0,      0,      0,      0 },
+			new int[] { 0,      0,      -1,		-1,		-1,		124,    0,      0,      0,      0,      0 },
 			new int[] { 0,      0,      0,      0,      0,      124,    0,      0,      0,      0,      0 },
 			new int[] { 0,      0,      0,      0,      0,      124,    0,      0,      0,      0,      0 },
 			new int[] { 0,      0,      0,      0,      0,      124,    0,      0,      0,      0,      0 },
@@ -73,9 +74,10 @@ namespace AdventureMode {
 					if( tiles[y][x] == 0 ) { continue; }
 
 					if( tiles[y][x] > 0 ) {
-						WorldGen.PlaceTile( left + x, top + y, tiles[y][x] );
+						WorldGen.PlaceTile( left+x, top+y, tiles[y][x] );
 					} else {
-						WorldGen.PlaceTile( left + x, top + y, ModContent.TileType<MountedMagicMirrorTile>() );
+						//WorldGen.Place3x3Wall( left+x, top+y, (ushort)ModContent.TileType<MountedMagicMirrorTile>(), 0 );	//3,1
+						TilePlacementHelpers.Place3x3Wall( left+x, top+y, (ushort)ModContent.TileType<MountedMagicMirrorTile>() );	//2,1
 					}
 				}
 			}
