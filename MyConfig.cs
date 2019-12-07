@@ -28,8 +28,8 @@ namespace AdventureMode {
 		////
 
 		[Range( 0, 100 )]
-		[DefaultValue( 2 )]
-		public int GrappleChainAmmoRate { get; set; } = 2;
+		[DefaultValue( 0 )]
+		public int GrappleChainAmmoRate { get; set; } = 0;
 
 		[DefaultValue( true )]
 		public bool ReducedManaCrystalStatIncrease { get; set; } = true;
@@ -70,8 +70,8 @@ namespace AdventureMode {
 		public bool AddRodOfDiscordRecipe { get; set; } = true;
 
 		[Range( 60, 60 * 60 * 60 * 24 )]
-		[DefaultValue( 60 * 30 )]
-		public int AddedRodOfDiscordChaosStateTime { get; set; } = 60 * 30;
+		[DefaultValue( 60 * 15 )]
+		public int AddedRodOfDiscordChaosStateTime { get; set; } = 60 * 15;
 
 		/*[Range( 0f, 100f )]
 		[DefaultValue( 2f )]

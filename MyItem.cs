@@ -9,6 +9,7 @@ using Terraria.ModLoader;
 namespace AdventureMode {
 	class AdventureModeItem : GlobalItem {
 		public override void ModifyTooltips( Item item, List<TooltipLine> tooltips ) {
+			AdventureModeConfig config = AdventureModeConfig.Instance;
 			TooltipLine tip;
 
 			switch( item.type ) {
@@ -16,13 +17,18 @@ namespace AdventureMode {
 				tip = new TooltipLine( this.mod, "AdventureModePlatform", "Only placeable in short ledges attached to something solid" );
 				tooltips.Add( tip );
 				break;
-			}
-
-			if( ItemAttributeHelpers.IsGrapple(item) ) {
-				AdventureModeConfig config = AdventureModeConfig.Instance;
-
-				tip = new TooltipLine( this.mod, "AdventureModeGrapple", "Consumes "+config.GrappleChainAmmoRate+" chain(s) per use" );
-				tooltips.Add( tip );
+			case ItemID.RodofDiscord:
+				if( config.RodOfDiscordChaosStateBlocksBlink ) {
+					tip = new TooltipLine( this.mod, "AdventureModeRodOfDiscord", "Cannot be used while Chaos State is active" );
+					tooltips.Add( tip );
+				}
+				break;
+			default:
+				if( config.GrappleChainAmmoRate > 0 && ItemAttributeHelpers.IsGrapple( item ) ) {
+					tip = new TooltipLine( this.mod, "AdventureModeGrapple", "Consumes " + config.GrappleChainAmmoRate + " chain(s) per use" );
+					tooltips.Add( tip );
+				}
+				break;
 			}
 		}
 

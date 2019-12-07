@@ -137,7 +137,7 @@ namespace AdventureMode {
 			bool enabled = true;
 
 			if( heldItem?.type == ItemID.RodofDiscord ) {
-				if( !AdventureModeConfig.Instance.RodOfDiscordChaosStateBlocksBlink ) {
+				if( AdventureModeConfig.Instance.RodOfDiscordChaosStateBlocksBlink ) {
 					enabled = this.CheckRodOfDiscord();
 				}
 			}
