@@ -1,8 +1,11 @@
-﻿using HamstarHelpers.Helpers.Debug;
+﻿using AdventureMode.Items;
+using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.Tiles;
+using HouseFurnishingKit.Items;
 using MountedMagicMirrors.Tiles;
 using System;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.World.Generation;
 
@@ -19,15 +22,15 @@ namespace AdventureMode {
 			new int[] {  },
 			new int[] { 0,      42,     42,     42,     42,     42,     42,     42,     42,     42 },
 		};
-		private static int[][] RaftImageTiles = new int[][] {
-			new int[] { 0,      0,      -1,		-1,		-1,		124,    4,      0,      0,      0,      0 },
-			new int[] { 0,      0,      -1,		-1,		-1,		124,    0,      0,      0,      0,      0 },
-			new int[] { 0,      0,      -1,		-1,		-1,		124,    0,      0,      0,      0,      0 },
-			new int[] { 0,      0,      0,      0,      0,      124,    0,      0,      0,      0,      0 },
-			new int[] { 0,      0,      0,      0,      0,      124,    0,      0,      0,      0,      0 },
-			new int[] { 0,      0,      0,      0,      0,      124,    0,      0,      0,      0,      0 },
-			new int[] { 0,      0,      18,     0,      0,      124,    0,      0,      0,      0,      0 },
-			new int[] { 158,    158,    158,    158,    158,    158,    158,    158,    158,    158,    158 }
+		private static int[][] RaftImageTiles = new int[][] {	//124
+			new int[] { 0,      0,      -1,		-1,		-1,		272,    4,      0,      0,      0,      0 },
+			new int[] { 0,      0,      -1,		-1,		-1,		272,    0,      0,      0,      0,      0 },
+			new int[] { 0,      0,      -1,		-1,		-1,		272,    0,      0,      0,      0,      0 },
+			new int[] { 0,      0,      0,      0,      0,      272,    0,      0,      0,      0,      0 },
+			new int[] { 0,      0,      0,      0,      0,      272,    0,      0,      0,      0,      0 },
+			new int[] { 0,      0,      0,      0,      0,      272,    0,      0,      0,      0,      0 },
+			new int[] { 0,      0,      18,     0,      0,      272,    0,      0,		21,		0,      0 },
+			new int[] { 380,    380,    380,    380,    380,    380,    380,    380,    380,    380,    380 }	//158
 		};
 
 
@@ -37,8 +40,8 @@ namespace AdventureMode {
 		public static void GetBoatCoordinates( out int boatLeft, out int boatTop ) {
 			boatLeft = Main.spawnTileX;
 			boatTop = Main.spawnTileY;
-
-			if( Main.spawnTileX < ( Main.maxTilesX / 2 ) ) {
+			
+			if( Main.spawnTileX < (Main.maxTilesX / 2) ) {
 				boatLeft -= 20;
 			} else {
 				boatLeft += 8;
@@ -74,7 +77,32 @@ namespace AdventureMode {
 					if( tiles[y][x] == 0 ) { continue; }
 
 					if( tiles[y][x] > 0 ) {
-						WorldGen.PlaceTile( left+x, top+y, tiles[y][x] );
+						switch( tiles[y][x] ) {
+						case TileID.Containers:
+							int chestIdx = WorldGen.PlaceChest( left + x, top + y, 21, false, 5 );
+							if( chestIdx != -1 ) {
+								Main.chest[chestIdx].item[0] = new Item();
+								Main.chest[chestIdx].item[0].SetDefaults( ModContent.ItemType<FramingPlankItem>() );
+								Main.chest[chestIdx].item[0].stack = 99;
+								Main.chest[chestIdx].item[1] = new Item();
+								Main.chest[chestIdx].item[1].SetDefaults( ModContent.ItemType<HouseFurnishingKitItem>() );
+								Main.chest[chestIdx].item[2] = new Item();
+								Main.chest[chestIdx].item[2].SetDefaults( ModContent.ItemType<HouseFurnishingKitItem>() );
+								Main.chest[chestIdx].item[3] = new Item();
+								Main.chest[chestIdx].item[3].SetDefaults( ModContent.ItemType<HouseFurnishingKitItem>() );
+							}
+							break;
+						case TileID.Cog:
+							WorldGen.PlaceTile( left + x, top + y, tiles[y][x] );
+							Main.tile[ left + x, top + y].inActive( true );
+							break;
+						case TileID.PlanterBox:
+							WorldGen.PlaceTile( left + x, top + y, tiles[y][x], false, false, -1, 6 );
+							break;
+						default:
+							WorldGen.PlaceTile( left + x, top + y, tiles[y][x] );
+							break;
+						}
 					} else {
 						//WorldGen.Place3x3Wall( left+x, top+y, (ushort)ModContent.TileType<MountedMagicMirrorTile>(), 0 );	//3,1
 						TilePlacementHelpers.Place3x3Wall( left+x, top+y, (ushort)ModContent.TileType<MountedMagicMirrorTile>() );	//2,1

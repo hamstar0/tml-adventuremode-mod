@@ -1,4 +1,5 @@
 ﻿using AdventureMode.Tiles;
+using FindableManaCrystals.Tiles;
 using HamstarHelpers.Services.Configs;
 using System;
 using System.Collections.Generic;
@@ -115,6 +116,9 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.LongMoss ),
 			TileID.GetUniqueKey( TileID.PurpleMoss ),
 			TileID.GetUniqueKey( TileID.RedMoss ),
+			TileID.GetUniqueKey( TileID.HoneyBlock ),
+			TileID.GetUniqueKey( TileID.CrispyHoneyBlock ),
+			TileID.GetUniqueKey( TileID.Hive ),
 			///
 			TileID.GetUniqueKey( TileID.Torches ),
 			TileID.GetUniqueKey( TileID.Platforms ),
@@ -182,6 +186,8 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.Boulder ),
 			TileID.GetUniqueKey( TileID.BeeHive ),
 			TileID.GetUniqueKey( TileID.Tombstones ),
+			///
+			TileID.GetUniqueKey( ModContent.TileType<ManaCrystalShardTile>() ),
 		};
 
 		////

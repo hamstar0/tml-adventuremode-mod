@@ -7,7 +7,10 @@ using Terraria.ModLoader;
 namespace AdventureMode.Items {
 	public class FramingPlankItem : ModItem {
 		public override void SetStaticDefaults() {
-			this.Tooltip.SetDefault( "So easy to build, even a chimp could do it." );
+			this.Tooltip.SetDefault(
+				"May be used for patching houses or structures"
+				+"\n"+"Crafted with a sawmill station"
+			);
 			this.DisplayName.SetDefault( "Framing Plank" );
 		}
 

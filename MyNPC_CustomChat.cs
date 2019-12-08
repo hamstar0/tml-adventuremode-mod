@@ -21,6 +21,10 @@ namespace AdventureMode {
 						"The people who lived here once discovered ways to wield wearable artifacts of power, and hid their secrets under the ground of this land.",
 						"Rare magic crystals can be found hidden deep underground. You need binoculars to pick up their trail. I hear they resonate strongly with any nearby magical energy.",
 						"You may find digging to be rather difficult. If you find yourself needing to squeeze into tight areas, a simple hammer of all things might be your best tool. Odd, huh?",
+						"Not everything can be crafted. You'll have to learn to make do with what you can find or buy.",
+						"Need to add a few small patches or solid additions to a given area? You'll want to get your hands on some framing planks.",
+						"Be sure to keep your eyes peeled for livable spaces to convert for use. This is where our House Furnishing Kits will come in handy. They'll even provide you with new crafting stations!",
+						"Wood is about the only material you can alter the shape of. Though you'll need special framing planks to place your own, and they can be finicky.",
 					},
 					Blocked: new Dictionary<string, string> {
 						{

@@ -119,13 +119,8 @@ namespace AdventureMode {
 				ropes.SetDefaults( ItemID.Rope );
 				ropes.stack = 200;
 
-				var houseKits = new Item();
-				houseKits.SetDefaults( ModContent.ItemType<HouseFurnishingKitItem>() );
-				houseKits.stack = 3;
-
 				items.Add( torches );
 				items.Add( ropes );
-				items.Add( houseKits );
 			}
 		}
 
