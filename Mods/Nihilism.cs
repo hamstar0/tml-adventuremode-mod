@@ -34,6 +34,7 @@ namespace AdventureMode.Mods {
 			NihilismAPI.ClearFiltersForCurrentWorld( true );
 
 			NihilismAPI.SetRecipeBlacklistGroupEntry( "Any Item", true );
+
 			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyOreEquipment, true );
 			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyNonOreCraftedEquipment, true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Snowball), true );
@@ -47,6 +48,7 @@ namespace AdventureMode.Mods {
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BouncyGlowstick), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.ManaCrystal), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.WoodPlatform), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Wood), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BoosterTrack), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ModContent.ItemType<FramingPlankItem>()), true );
 			if( AdventureModeConfig.Instance.EnableMechBossItemRecipes ) {

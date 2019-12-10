@@ -50,13 +50,14 @@ namespace AdventureMode {
 
 		public override void ModifyWorldGenTasks( List<GenPass> tasks, ref float totalWeight ) {
 			int idx = tasks.FindIndex( pass => pass.Name.Equals("Grass Wall") );
-			//if( idx != -1 ) { 
 
-			if( AdventureModeConfig.Instance.SetDefaultSpawnToBeach ) {
-				tasks.Add( new PassLegacy( "Adventure Mode: Set Default Spawn", ( progress ) => {
-					AdventureModeWorldGen.SetBeachSpawn( progress );
-					progress.Value = 1f;
-				} ) );
+			if( idx != -1 ) {
+				if( AdventureModeConfig.Instance.SetDefaultSpawnToBeach ) {
+					tasks.Insert( idx - 1, new PassLegacy( "Adventure Mode: Set Default Spawn", ( progress ) => {
+						AdventureModeWorldGen.SetBeachSpawn( progress );
+						progress.Value = 1f;
+					} ) );
+				}
 			}
 
 			tasks.Add( new PassLegacy( "Adventure Mode: Create Spawn Boat", ( progress ) => {

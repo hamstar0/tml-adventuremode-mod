@@ -13,50 +13,55 @@ namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
 		public void LoadChestImplants() {
 			var implantsConfig = new ChestImplantsConfig();
-			implantsConfig.AllFromSetChestImplanterDefinitions.Clear();
-			implantsConfig.RandomPickFromSetChestImplanterDefinitions.Clear();
+			implantsConfig.AllFromSetChestImplanterDefinitions.Value.Clear();
+			implantsConfig.ClearRandomImplanterSets();
 
 			if( AdventureModeConfig.Instance.WorldGenRemoveMagicMirrors ) {
-				var mirrorGoneDef1 = new ChestImplanterDefinition {
-					ChestTypes = new HashSet<string> { "Vanilla Underground World Chest" },
-					ItemDefinitions = new List<ChestImplanterItemDefinition> {
-						new ChestImplanterItemDefinition {
-							ChestItem = new ItemDefinition( ItemID.MagicMirror ),
-							MinQuantity = -1,
-							MaxQuantity = -1,
-							ChancePerChest = 1f,
-						}
-					}
+				var mirrorGoneItemDef1 = new ChestImplanterItemDefinition {
+					ChestItem = new ItemDefinition( ItemID.MagicMirror ),
+					MinQuantity = -1,
+					MaxQuantity = -1,
+					ChancePerChest = 1f,
 				};
-				var mirrorGoneDef2 = new ChestImplanterDefinition {
-					ChestTypes = new HashSet<string> { "Vanilla Underground World Chest" },
-					ItemDefinitions = new List<ChestImplanterItemDefinition> {
-						new ChestImplanterItemDefinition {
-							ChestItem = new ItemDefinition( ItemID.IceMirror ),
-							MinQuantity = -1,
-							MaxQuantity = -1,
-							ChancePerChest = 1f,
-						}
-					}
+				var mirrorGoneItemDef2 = new ChestImplanterItemDefinition {
+					ChestItem = new ItemDefinition( ItemID.IceMirror ),
+					MinQuantity = -1,
+					MaxQuantity = -1,
+					ChancePerChest = 1f,
 				};
 
-				implantsConfig.AllFromSetChestImplanterDefinitions[ "AdventureModeMirrorGone" ]
-					= new ChestImplanterSetDefinition { mirrorGoneDef1, mirrorGoneDef2 };
+				var mirrorGoneDef1 = new ChestImplanterDefinition {
+					ChestTypes = new List<Ref<string>> { new Ref<string>("Vanilla Underground World Chest") },
+					ItemDefinitions = new List<ChestImplanterItemDefinition> { mirrorGoneItemDef1 }
+				};
+				var mirrorGoneDef2 = new ChestImplanterDefinition {
+					ChestTypes = new List<Ref<string>> { new Ref<string>("Vanilla Underground World Chest") },
+					ItemDefinitions = new List<ChestImplanterItemDefinition> { mirrorGoneItemDef2 }
+				};
+
+				implantsConfig.AllFromSetChestImplanterDefinitions.Value.Add(
+					new Ref<ChestImplanterDefinition>( mirrorGoneDef1 )
+				);
+				implantsConfig.AllFromSetChestImplanterDefinitions.Value.Add(
+					new Ref<ChestImplanterDefinition>( mirrorGoneDef2 )
+				);
 			}
 
 			if( AdventureModeConfig.Instance.WorldGenAddedMountedMagicMirrorChance > 0f ) {
-				implantsConfig.RandomPickFromSetChestImplanterDefinitions[ "AdventureModeMountedMirrors" ]
-					= new ChestImplanterSetDefinition { new ChestImplanterDefinition {
-						ChestTypes = new HashSet<string> { "Vanilla Underground World Chest" },
-						ItemDefinitions = new List<ChestImplanterItemDefinition> {
-							new ChestImplanterItemDefinition {
-								ChestItem = new ItemDefinition( ModContent.ItemType<MountableMagicMirrorTileItem>() ),
-								MinQuantity = 1,
-								MaxQuantity = 1,
-								ChancePerChest = 0.05f,
-							}
-						}
-				} };
+				var randItemDef = new ChestImplanterItemDefinition {
+					ChestItem = new ItemDefinition( ModContent.ItemType<MountableMagicMirrorTileItem>() ),
+					MinQuantity = 1,
+					MaxQuantity = 1,
+					ChancePerChest = 0.05f,
+				};
+				var randDef = new ChestImplanterDefinition {
+					ChestTypes = new List<Ref<string>> { new Ref<string>( "Vanilla Underground World Chest" ) },
+					ItemDefinitions = new List<ChestImplanterItemDefinition> { randItemDef }
+				};
+
+				implantsConfig.RandomPickFromSetChestImplanterDefinitions1.Value.Add(
+					new Ref<ChestImplanterDefinition>( randDef )
+				);
 			}
 
 			ChestImplantsConfig.Instance.OverlayChanges( implantsConfig );

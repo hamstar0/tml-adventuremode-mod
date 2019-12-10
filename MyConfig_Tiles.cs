@@ -85,6 +85,8 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.WoodBlock ),
 			TileID.GetUniqueKey( TileID.BorealWood ),
 			TileID.GetUniqueKey( TileID.RichMahogany ),
+			TileID.GetUniqueKey( TileID.LivingWood ),
+			TileID.GetUniqueKey( TileID.LeafBlock ),
 			TileID.GetUniqueKey( TileID.WoodenBeam ),
 			TileID.GetUniqueKey( TileID.ClosedDoor ),
 			TileID.GetUniqueKey( TileID.OpenDoor ),

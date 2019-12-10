@@ -15,7 +15,7 @@ using Terraria.ModLoader.Config;
 namespace AdventureMode {
 	partial class AdventureModeNPC : GlobalNPC {
 		public static void FilterShop( IList<Item> shop, IList<ItemDefinition> whitelist, ref int nextSlot ) {
-			foreach( Item item in shop ) {
+			foreach( Item item in shop.ToArray() ) {
 				if( whitelist.Any( itemDef => itemDef.Type == item.type ) ) {
 					continue;
 				}
