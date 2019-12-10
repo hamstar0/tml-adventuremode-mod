@@ -70,8 +70,8 @@ namespace AdventureMode {
 		public bool AddRodOfDiscordRecipe { get; set; } = true;
 
 		[Range( 60, 60 * 60 * 60 * 24 )]
-		[DefaultValue( 60 * 15 )]
-		public int AddedRodOfDiscordChaosStateTime { get; set; } = 60 * 15;
+		[DefaultValue( 60 * 10 )]
+		public int AddedRodOfDiscordChaosStateTime { get; set; } = 60 * 10;
 
 		/*[Range( 0f, 100f )]
 		[DefaultValue( 2f )]

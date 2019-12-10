@@ -63,6 +63,11 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.BloomingHerbs ),
 			TileID.GetUniqueKey( TileID.Sunflower ),
 			///
+			// TileID.GetUniqueKey( TileID.Sand ),
+			// TileID.GetUniqueKey( TileID.Ebonsand ),
+			// TileID.GetUniqueKey( TileID.Crimsand ),
+			// TileID.GetUniqueKey( TileID.Pearlsand ),
+			///
 			// TileID.GetUniqueKey(case TileID.Plants ),
 			// TileID.GetUniqueKey(case TileID.Plants2 ),
 			// TileID.GetUniqueKey(case TileID.JunglePlants ),
@@ -81,6 +86,8 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.BorealWood ),
 			TileID.GetUniqueKey( TileID.RichMahogany ),
 			TileID.GetUniqueKey( TileID.WoodenBeam ),
+			TileID.GetUniqueKey( TileID.ClosedDoor ),
+			TileID.GetUniqueKey( TileID.OpenDoor ),
 			TileID.GetUniqueKey( ModContent.TileType<FramingPlankTile>() ),
 			///
 			TileID.GetUniqueKey( TileID.Trees ),
@@ -102,6 +109,8 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.JungleVines ),
 			TileID.GetUniqueKey( TileID.JungleThorns ),
 			TileID.GetUniqueKey( TileID.Coral ),
+			TileID.GetUniqueKey( TileID.BeachPiles ),
+			TileID.GetUniqueKey( TileID.Cactus ),
 			TileID.GetUniqueKey( TileID.DyePlants ),
 			TileID.GetUniqueKey( TileID.ImmatureHerbs ),
 			TileID.GetUniqueKey( TileID.BloomingHerbs ),
@@ -169,6 +178,10 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.Diamond ),
 			TileID.GetUniqueKey( TileID.ExposedGems ),
 			///
+			TileID.GetUniqueKey( TileID.Sand ),
+			TileID.GetUniqueKey( TileID.Pearlsand ),
+			TileID.GetUniqueKey( TileID.Crimsand ),
+			TileID.GetUniqueKey( TileID.Ebonsand ),
 			TileID.GetUniqueKey( TileID.DesertFossil ),
 			TileID.GetUniqueKey( TileID.FossilOre ),
 			TileID.GetUniqueKey( TileID.Silt ),

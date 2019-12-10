@@ -1,6 +1,5 @@
 ﻿using AdventureMode.Buffs;
 using HamstarHelpers.Helpers.Debug;
-using HouseFurnishingKit.Items;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -131,7 +130,7 @@ namespace AdventureMode {
 			Item heldItem = this.player.HeldItem;
 			bool enabled = true;
 
-			if( heldItem?.type == ItemID.RodofDiscord ) {
+			if( heldItem?.IsAir != true && heldItem.type == ItemID.RodofDiscord ) {
 				if( AdventureModeConfig.Instance.RodOfDiscordChaosStateBlocksBlink ) {
 					enabled = this.CheckRodOfDiscord();
 				}
@@ -140,36 +139,32 @@ namespace AdventureMode {
 			return enabled;
 		}
 
+		////
+
 		private bool CheckRodOfDiscord() {
-			if( this.player.itemAnimation == 0 ) {
-				if( this.IsChaosStateChecked ) {
-					return false;
+			int buffIdx = this.player.FindBuffIndex( BuffID.ChaosState );
+			bool isUsingItem = this.player.itemAnimation >= 1;
+			//bool firstUseOfItem = this.player.itemAnimation >= this.player.HeldItem.useAnimation - 1;
+
+			if( buffIdx != -1 ) {
+				if( !this.IsChaosStateChecked ) {
+					this.IsChaosStateChecked = true;
+
+					/*var reason = PlayerDeathReason.ByCustomReason( this.player.name + " splinched." );
+					int dmg = this.player.statLifeMax2 / 7;
+					dmg = (int)((float)dmg * AdventureModeConfig.Instance.RodOfDiscordPainIncreaseMultiplier);
+
+					if( dmg > 0 ) {
+						PlayerHelpers.RawHurt( this.player, reason, dmg, 0 );
+					}*/
+
+					this.player.AddBuff( BuffID.ChaosState, AdventureModeConfig.Instance.AddedRodOfDiscordChaosStateTime );
 				}
-			}
-			
-			if( this.player.itemAnimation >= this.player.HeldItem.useAnimation - 1 ) {
-				if( this.player.HasBuff(BuffID.ChaosState) ) {
-					if( !this.IsChaosStateChecked ) {
-						this.IsChaosStateChecked = true;
-
-						/*var reason = PlayerDeathReason.ByCustomReason( this.player.name + " splinched." );
-						int dmg = this.player.statLifeMax2 / 7;
-						dmg = (int)((float)dmg * AdventureModeConfig.Instance.RodOfDiscordPainIncreaseMultiplier);
-
-						if( dmg > 0 ) {
-							PlayerHelpers.RawHurt( this.player, reason, dmg, 0 );
-						}*/
-
-						this.player.AddBuff( BuffID.ChaosState, AdventureModeConfig.Instance.AddedRodOfDiscordChaosStateTime );
-					}
-				}
-			}
-				
-			if( this.IsChaosStateChecked && !this.player.HasBuff(BuffID.ChaosState) ) {
+			} else {
 				this.IsChaosStateChecked = false;
 			}
 
-			return true;
+			return isUsingItem || !this.IsChaosStateChecked;
 		}
 	}
 }

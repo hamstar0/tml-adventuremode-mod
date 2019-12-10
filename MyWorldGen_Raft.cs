@@ -1,9 +1,11 @@
 ﻿using AdventureMode.Items;
 using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.Tiles;
-using HouseFurnishingKit.Items;
+using HouseKits.Items;
+using MountedMagicMirrors.Items;
 using MountedMagicMirrors.Tiles;
 using System;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -79,18 +81,7 @@ namespace AdventureMode {
 					if( tiles[y][x] > 0 ) {
 						switch( tiles[y][x] ) {
 						case TileID.Containers:
-							int chestIdx = WorldGen.PlaceChest( left + x, top + y, 21, false, 5 );
-							if( chestIdx != -1 ) {
-								Main.chest[chestIdx].item[0] = new Item();
-								Main.chest[chestIdx].item[0].SetDefaults( ModContent.ItemType<FramingPlankItem>() );
-								Main.chest[chestIdx].item[0].stack = 99;
-								Main.chest[chestIdx].item[1] = new Item();
-								Main.chest[chestIdx].item[1].SetDefaults( ModContent.ItemType<HouseFurnishingKitItem>() );
-								Main.chest[chestIdx].item[2] = new Item();
-								Main.chest[chestIdx].item[2].SetDefaults( ModContent.ItemType<HouseFurnishingKitItem>() );
-								Main.chest[chestIdx].item[3] = new Item();
-								Main.chest[chestIdx].item[3].SetDefaults( ModContent.ItemType<HouseFurnishingKitItem>() );
-							}
+							AdventureModeWorldGen.PlaceStarterBarrel( left + x, top + y );
 							break;
 						case TileID.Cog:
 							WorldGen.PlaceTile( left + x, top + y, tiles[y][x] );
@@ -108,6 +99,34 @@ namespace AdventureMode {
 						TilePlacementHelpers.Place3x3Wall( left+x, top+y, (ushort)ModContent.TileType<MountedMagicMirrorTile>() );	//2,1
 					}
 				}
+			}
+		}
+
+		public static void PlaceStarterBarrel( int x, int y ) {
+			int chestIdx = WorldGen.PlaceChest( x, y, 21, false, 5 );
+			if( chestIdx == -1 ) {
+				return;	// this occurs on the first pass
+			}
+
+			Item getBarrelItem( int type, int stack=1 ) {
+				Item item;
+				item = new Item();
+				item.SetDefaults( ModContent.ItemType<FramingPlankItem>() );
+				item.stack = 99;
+				return item;
+			}
+			IEnumerable<Item> getBarrelItems() {
+				yield return getBarrelItem( ModContent.ItemType<FramingPlankItem>(), 99 );
+				yield return getBarrelItem( ModContent.ItemType<HouseFurnishingKitItem>() );
+				yield return getBarrelItem( ModContent.ItemType<HouseFurnishingKitItem>() );
+				yield return getBarrelItem( ModContent.ItemType<HouseFurnishingKitItem>() );
+				yield return getBarrelItem( ModContent.ItemType<MountableMagicMirrorTileItem>() );
+				yield return getBarrelItem( ModContent.ItemType<MountableMagicMirrorTileItem>() );
+			}
+
+			int i = 0;
+			foreach( Item item in getBarrelItems() ) {
+				Main.chest[chestIdx].item[i++] = item;
 			}
 		}
 

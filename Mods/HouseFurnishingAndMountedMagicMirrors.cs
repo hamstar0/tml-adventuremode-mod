@@ -4,8 +4,8 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using HamstarHelpers.Helpers.Debug;
-using HouseFurnishingKit;
 using MountedMagicMirrors.Tiles;
+using HouseKits;
 
 
 namespace AdventureMode.Mods {
@@ -16,18 +16,18 @@ namespace AdventureMode.Mods {
 
 		////////////////
 
-		public void LoadHouseFurnishingKitAndMountedMagicMirrors() {
+		public void LoadHouseKitAndMountedMagicMirrors() {
 			IList<HouseKitFurnitureDefinition> cycle = AdventureModeConfig.Instance.HouseKitFurnitureSuccession;
 
-			HouseFurnishingKitAPI.SetCustomFurniture( TileID.Tables );
-			HouseFurnishingKitAPI.SetCustomWallMount1( (ushort)ModContent.TileType<MountedMagicMirrorTile>() );
+			HouseKitsAPI.SetCustomFurniture( TileID.Tables );
+			HouseKitsAPI.SetCustomWallMount1( (ushort)ModContent.TileType<MountedMagicMirrorTile>() );
 
-			HouseFurnishingKitAPI.OnPreHouseCreate( (tileX, tileY, item) => {
+			HouseKitsAPI.OnPreHouseCreate( (tileX, tileY, item) => {
 				this.IsCreatingHouse = true;
 				return true;
 			} );
 
-			HouseFurnishingKitAPI.OnPostHouseCreate( (tileX, tileY, item) => {
+			HouseKitsAPI.OnPostHouseCreate( (tileX, tileY, item) => {
 				var myworld = ModContent.GetInstance<AdventureModeWorld>();
 
 				this.IsCreatingHouse = false;
@@ -40,8 +40,8 @@ namespace AdventureMode.Mods {
 				if( furnDef.IsHardMode && !Main.hardMode ) {
 					return;
 				}
-				
-				HouseFurnishingKitAPI.SetCustomFurniture( furnDef.TileType );
+
+				HouseKitsAPI.SetCustomFurniture( furnDef.TileType );
 
 				myworld.HouseKitFurnitureIdx++;
 			} );

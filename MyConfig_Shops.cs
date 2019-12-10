@@ -1,5 +1,4 @@
 ﻿using HamstarHelpers.Services.Configs;
-using HamstarHelpers.Helpers.DotNET.Extensions;
 using System;
 using System.Collections.Generic;
 using Terraria.ID;
@@ -26,7 +25,7 @@ namespace AdventureMode {
 					new ItemDefinition( ItemID.Glowstick ),
 					new ItemDefinition( ItemID.Flare ),
 					new ItemDefinition( ItemID.BlueFlare ),
-					new ItemDefinition( ItemID.Sickle ),
+					//new ItemDefinition( ItemID.Sickle ),
 					new ItemDefinition( ItemID.GoldDust ),
 					new ItemDefinition( ItemID.Nail ),
 					new ItemDefinition( ItemID.TaxCollectorHat ),

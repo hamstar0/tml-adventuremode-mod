@@ -15,7 +15,9 @@ namespace AdventureMode.Recipes {
 				this.AddIngredient( ItemID.RubyStaff, 1 );
 				this.AddIngredient( ItemID.Diamond, 4 );
 			}
+
 			this.AddTile( TileID.MythrilAnvil );
+
 			this.SetResult( ItemID.RodofDiscord, 1 );
 		}
 

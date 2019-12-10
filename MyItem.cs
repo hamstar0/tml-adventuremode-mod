@@ -1,4 +1,5 @@
 ﻿using HamstarHelpers.Helpers.Items.Attributes;
+using MountedMagicMirrors.Items;
 using System;
 using System.Collections.Generic;
 using Terraria;
@@ -14,18 +15,28 @@ namespace AdventureMode {
 
 			switch( item.type ) {
 			case ItemID.WoodPlatform:
-				tip = new TooltipLine( this.mod, "AdventureModePlatform", "Only placeable in short ledges attached to something solid" );
-				tooltips.Add( tip );
+				if( AdventureModeConfig.Instance.MaxPlatformBridgeLength > 0 ) {
+					tip = new TooltipLine( this.mod, "AdventureModePlatform", "Only placeable in short ledges attached to something solid" );
+					tooltips.Add( tip );
+				}
 				break;
 			case ItemID.RodofDiscord:
 				if( config.RodOfDiscordChaosStateBlocksBlink ) {
-					tip = new TooltipLine( this.mod, "AdventureModeRodOfDiscord", "Cannot be used while Chaos State is active" );
+					tip = new TooltipLine( this.mod, "AdventureModeRoD", "Cannot be used while Chaos State is active" );
 					tooltips.Add( tip );
 				}
 				break;
 			default:
-				if( config.GrappleChainAmmoRate > 0 && ItemAttributeHelpers.IsGrapple( item ) ) {
+				/*if( config.GrappleChainAmmoRate > 0 && ItemAttributeHelpers.IsGrapple( item ) ) {
 					tip = new TooltipLine( this.mod, "AdventureModeGrapple", "Consumes " + config.GrappleChainAmmoRate + " chain(s) per use" );
+					tooltips.Add( tip );
+				}*/
+				if( item.type == ModContent.ItemType<MountableMagicMirrorTileItem>() ) {
+					tip = new TooltipLine( this.mod, "AdventureModeMMM", "May be placed once, but NOT removed!" );
+					tooltips.Add( tip );
+				}
+				if( item.pick > 0 ) {
+					tip = new TooltipLine( this.mod, "AdventureModePick", "Able to break ores, plants, gems, sand, silt, and wood" );
 					tooltips.Add( tip );
 				}
 				break;
