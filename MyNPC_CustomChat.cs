@@ -17,14 +17,14 @@ namespace AdventureMode {
 				NPCID.Guide, (
 					Added: new string[] {
 						"Looks like your adventure is just beginning. Please take stock of your surroundings and inventory. These may be important later. Talk with me if you need any further assistance.",
-						"Good thing the dungeon is sealed. I hear it's infested with an undeath curse and deadly fumes!",
-						"The people who lived here once discovered ways to wield wearable artifacts of power, and hid their secrets under the ground of this land.",
-						"Rare magic crystals can be found hidden deep underground. You need binoculars to pick up their trail. I hear they resonate strongly with any nearby magical energy.",
+						"Good thing the dungeon is sealed. I hear it's blighted with an undeath curse and filled with deadly fumes!",
+						"The people who lived here once discovered ways to wield wearable artifacts of power, and hid their secrets around this land.",
+						"Rare magic crystals can be found hidden underground. Somehow your binoculars are able to pick up their trail. I also hear they resonate with any magic energies that get near.",
 						"You may find digging to be rather difficult. If you find yourself needing to squeeze into tight areas, a simple hammer of all things might be your best tool. Odd, huh?",
-						"Not everything can be crafted. You'll have to learn to make do with what you can find or buy.",
+						"Not everything can be crafted. You'll have to learn to make do with what you can find or buy. Talk to me for more information, if in doubt.",
 						"Need to add a few small patches or solid additions to a given area? You'll want to get your hands on some framing planks.",
-						"Be sure to keep your eyes peeled for livable spaces to convert for use. This is where our House Furnishing Kits will come in handy. They'll even provide you with new crafting stations!",
-						"Wood is about the only material you can alter the shape of. Though you'll need special framing planks to place your own, and they can be finicky.",
+						"Be sure to keep your eyes peeled for livable spaces to furnish. This is where our House Furnishing Kits will come in handy. They'll even provide you with new crafting stations and fast travel points!",
+						"Wood is about the only non-ore material you can break freely. You'll need special framing planks to do any building, but they can be finicky. Best use house kits whenever possible.",
 					},
 					Blocked: new Dictionary<string, string> {
 						{

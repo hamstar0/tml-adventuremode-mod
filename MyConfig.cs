@@ -89,6 +89,11 @@ namespace AdventureMode {
 		[CustomModConfigItem( typeof( MyFloatInputElement ) )]
 		public float PotSurprisePercentChance { get; set; } = 0.025f;
 
+		////
+
+		[DefaultValue( true )]
+		public bool NerfReaverShark { get; set; } = true;
+
 
 
 		////////////////

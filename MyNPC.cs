@@ -43,7 +43,14 @@ namespace AdventureMode {
 				var shopList = new List<Item>( shop.item );
 
 				AdventureModeNPC.FilterShop( shopList, AdventureModeConfig.Instance.ShopWhitelists[npcDef], ref nextSlot );
-				shop.item = shopList.ToArray();
+
+				for( int i=0; i<shop.item.Length; i++ ) {
+					if( i < shopList.Count ) {
+						shop.item[i] = shopList[i];
+					} else {
+						shop.item[i] = new Item();
+					}
+				}
 			}
 		}
 

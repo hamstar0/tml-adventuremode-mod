@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using Terraria.ID;
 using Terraria.ModLoader.Config;
 using HamstarHelpers.Helpers.Debug;
+using Terraria.ModLoader;
+using StaffOfGaia.Items;
+using HouseKits.Items;
 
 
 namespace AdventureMode {
@@ -14,7 +17,7 @@ namespace AdventureMode {
 				new NPCDefinition( NPCID.Merchant ), new List<ItemDefinition> {
 					new ItemDefinition( ItemID.MiningHelmet ),
 					new ItemDefinition( ItemID.BugNet ),
-					//new ItemDefinition( ItemID.Torch ),
+					new ItemDefinition( ItemID.Torch ),
 					new ItemDefinition( ItemID.LesserHealingPotion ),
 					//new ItemDefinition( ItemID.LesserManaPotion ),
 					new ItemDefinition( ItemID.WoodenArrow ),
@@ -31,6 +34,8 @@ namespace AdventureMode {
 					new ItemDefinition( ItemID.TaxCollectorHat ),
 					new ItemDefinition( ItemID.TaxCollectorSuit ),
 					new ItemDefinition( ItemID.TaxCollectorPants ),
+					new ItemDefinition( ModContent.ItemType<HouseFramingKitItem>() ),
+					new ItemDefinition( ModContent.ItemType<HouseFurnishingKitItem>() ),
 				}
 			},
 			{
@@ -43,10 +48,46 @@ namespace AdventureMode {
 				}
 			},
 			{
+				new NPCDefinition( NPCID.Dryad ), new List<ItemDefinition> {
+					new ItemDefinition( ItemID.PurificationPowder ),
+					new ItemDefinition( ItemID.VilePowder ),
+					new ItemDefinition( ItemID.ViciousPowder ),
+					new ItemDefinition( ItemID.GrassSeeds ),
+					new ItemDefinition( ItemID.CorruptSeeds ),
+					new ItemDefinition( ItemID.CrimsonSeeds ),
+					new ItemDefinition( ItemID.Sunflower ),
+					new ItemDefinition( ItemID.Acorn ),
+					new ItemDefinition( ItemID.DirtRod ),
+					new ItemDefinition( ItemID.PumpkinSeed ),
+					new ItemDefinition( ItemID.HallowedSeeds ),
+					new ItemDefinition( ItemID.MushroomGrassSeeds ),
+					new ItemDefinition( ItemID.DryadCoverings ),
+					new ItemDefinition( ItemID.DryadLoincloth ),
+					new ItemDefinition( ModContent.ItemType<StaffOfGaiaItem>() ),
+				}
+			},
+			{
 				new NPCDefinition( NPCID.Mechanic ), new List<ItemDefinition> {
 					new ItemDefinition( ItemID.MechanicalEye ),
 					new ItemDefinition( ItemID.EngineeringHelmet ),
 					new ItemDefinition( ItemID.MechanicsRod ),
+				}
+			},
+			{
+				new NPCDefinition( NPCID.WitchDoctor ), new List<ItemDefinition> {
+					new ItemDefinition( ItemID.Blowgun ),
+					new ItemDefinition( ItemID.Stinger ),
+					new ItemDefinition( ItemID.Stake ),
+					new ItemDefinition( ItemID.TikiTotem ),
+					new ItemDefinition( ItemID.LeafWings ),
+					new ItemDefinition( ItemID.VialofVenom ),
+					new ItemDefinition( ItemID.TikiMask ),
+					new ItemDefinition( ItemID.TikiShirt ),
+					new ItemDefinition( ItemID.TikiPants ),
+					new ItemDefinition( ItemID.PygmyNecklace ),
+					new ItemDefinition( ItemID.HerculesBeetle ),
+					new ItemDefinition( ItemID.ImbuingStation ),
+					new ItemDefinition( ItemID.BewitchingTable ),
 				}
 			}
 		};

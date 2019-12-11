@@ -1,12 +1,12 @@
-﻿using AdventureMode.Tiles;
-using FindableManaCrystals.Tiles;
-using HamstarHelpers.Services.Configs;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
+using HamstarHelpers.Services.Configs;
+using AdventureMode.Tiles;
+using FindableManaCrystals.Tiles;
 
 
 namespace AdventureMode {
@@ -52,6 +52,10 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.Extractinator ),
 			TileID.GetUniqueKey( TileID.Tombstones ),
 			TileID.GetUniqueKey( TileID.Banners ),
+			TileID.GetUniqueKey( TileID.ImbuingStation ),
+			TileID.GetUniqueKey( TileID.BewitchingTable ),
+			TileID.GetUniqueKey( TileID.Autohammer ),
+			TileID.GetUniqueKey( TileID.Cannon ),
 			///
 			TileID.GetUniqueKey( TileID.Torches ),
 			TileID.GetUniqueKey( TileID.Campfire ),
@@ -118,7 +122,6 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.BloomingHerbs ),
 			TileID.GetUniqueKey( TileID.MatureHerbs ),
 			TileID.GetUniqueKey( TileID.Cobweb ),
-			TileID.GetUniqueKey( TileID.IceBrick ),
 			TileID.GetUniqueKey( TileID.MagicalIceBlock ),
 			TileID.GetUniqueKey( TileID.BlueMoss ),
 			TileID.GetUniqueKey( TileID.BrownMoss ),
@@ -180,6 +183,15 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.Diamond ),
 			TileID.GetUniqueKey( TileID.ExposedGems ),
 			///
+			TileID.GetUniqueKey( TileID.SnowBlock ),
+			TileID.GetUniqueKey( TileID.Cloud ),
+			TileID.GetUniqueKey( TileID.RainCloud ),
+			TileID.GetUniqueKey( TileID.SnowCloud ),
+			TileID.GetUniqueKey( TileID.HoneyDrip ),
+			TileID.GetUniqueKey( TileID.LavaDrip ),
+			TileID.GetUniqueKey( TileID.SandDrip ),
+			TileID.GetUniqueKey( TileID.WaterDrip ),
+			///
 			TileID.GetUniqueKey( TileID.Sand ),
 			TileID.GetUniqueKey( TileID.Pearlsand ),
 			TileID.GetUniqueKey( TileID.Crimsand ),
@@ -204,6 +216,9 @@ namespace AdventureMode {
 			///
 			TileID.GetUniqueKey( ModContent.TileType<ManaCrystalShardTile>() ),
 		};
+
+		[DefaultValue( true )]
+		public bool HardmodeBreakableDirt { get; set; } = true;
 
 		////
 

@@ -9,6 +9,16 @@ using Terraria.ModLoader;
 
 namespace AdventureMode {
 	class AdventureModeItem : GlobalItem {
+		public override void SetDefaults( Item item ) {
+			if( AdventureModeConfig.Instance.NerfReaverShark ) {
+				if( item.type == ItemID.ReaverShark ) {
+					item.pick = 50;
+				}
+			}
+		}
+
+		////////////////
+
 		public override void ModifyTooltips( Item item, List<TooltipLine> tooltips ) {
 			AdventureModeConfig config = AdventureModeConfig.Instance;
 			TooltipLine tip;

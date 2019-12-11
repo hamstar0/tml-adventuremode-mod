@@ -29,6 +29,10 @@ namespace AdventureMode {
 				return;
 			}
 
+			if( AdventureModeConfig.Instance.HardmodeBreakableDirt && Main.hardMode && type == TileID.Dirt ) {
+				return;
+			}
+			
 			if( !AdventureModeTile.IsKillable(type) ) {
 				fail = true;
 				effectOnly = true;

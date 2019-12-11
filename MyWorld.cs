@@ -53,7 +53,7 @@ namespace AdventureMode {
 
 			if( idx != -1 ) {
 				if( AdventureModeConfig.Instance.SetDefaultSpawnToBeach ) {
-					tasks.Insert( idx - 1, new PassLegacy( "Adventure Mode: Set Default Spawn", ( progress ) => {
+					tasks.Insert( idx + 1, new PassLegacy( "Adventure Mode: Set Default Spawn", ( progress ) => {
 						AdventureModeWorldGen.SetBeachSpawn( progress );
 						progress.Value = 1f;
 					} ) );
