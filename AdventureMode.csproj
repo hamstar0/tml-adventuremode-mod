@@ -20,6 +20,9 @@
     <None Remove=".gitignore" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Bullwhip">
+      <HintPath>..\..\Bullwhip\Bullwhip\bin\Release\net452\Bullwhip.dll</HintPath>
+    </Reference>
     <Reference Include="ChestImplants">
       <HintPath>..\..\Chest Implants\ChestImplants\bin\Release\net452\ChestImplants.dll</HintPath>
     </Reference>

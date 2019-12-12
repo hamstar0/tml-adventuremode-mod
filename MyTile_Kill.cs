@@ -2,6 +2,7 @@
 using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.TModLoader;
 using HamstarHelpers.Services.Hooks.ExtendedHooks;
+using HamstarHelpers.Services.Timers;
 using System;
 using Terraria;
 using Terraria.ID;
@@ -62,13 +63,18 @@ namespace AdventureMode {
 
 				int npcWho = NPC.NewNPC( i << 4, ( j + 1 ) << 4, spiderType );
 				NPC npc = Main.npc[npcWho];
-				npc.netUpdate = true;
-				npc.lifeMax = npc.life /= 2;
-				npc.scale *= 0.5f;
 
-				if( Main.netMode == 2 && npcWho < Main.npc.Length - 1 ) {
-					NetMessage.SendData( MessageID.SyncNPC, -1, -1, null, npcWho, 0f, 0f, 0f, 0, 0, 0 );
-				}
+				Timers.SetTimer( "AdventureModePotSurprise", 2, false, () => {
+					npc.life /= 2;
+					npc.lifeMax /= 2;
+					npc.scale *= 0.5f;
+					npc.netUpdate = true;
+
+					if( Main.netMode == 2 && npcWho < Main.npc.Length - 1 ) {
+						NetMessage.SendData( MessageID.SyncNPC, -1, -1, null, npcWho, 0f, 0f, 0f, 0, 0, 0 );
+					}
+					return false;
+				} );
 			}
 		}
 

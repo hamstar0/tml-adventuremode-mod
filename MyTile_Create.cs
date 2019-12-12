@@ -32,7 +32,6 @@ namespace AdventureMode {
 
 		public static bool IsSuitableForRope( int tileX, int tileY ) {
 			Tile tileBelow = Framing.GetTileSafely( tileX, tileY + 1 );
-			Tile tile = Framing.GetTileSafely( tileX, tileY );
 
 			bool belowIsNotRope = tileBelow.type != TileID.Rope
 				&& tileBelow.type != TileID.SilkRope
@@ -42,11 +41,22 @@ namespace AdventureMode {
 				return true;
 			}
 
+			Tile tile = Framing.GetTileSafely( tileX, tileY );
 			bool hereIsNotRope = tile.type != TileID.Rope
 				&& tile.type != TileID.SilkRope
 				&& tile.type != TileID.VineRope
 				&& tile.type != TileID.WebRope;
-			return !hereIsNotRope;
+
+			if( hereIsNotRope ) {
+				Tile tileAbove = Framing.GetTileSafely( tileX, tileY - 1 );
+
+				return tileAbove.type != TileID.Rope
+					&& tileAbove.type != TileID.SilkRope
+					&& tileAbove.type != TileID.VineRope
+					&& tileAbove.type != TileID.WebRope;
+			}
+
+			return true;
 		}
 
 		public static bool IsSuitableForFramingPlank( int tileX, int tileY, int dirX, int dirY ) {

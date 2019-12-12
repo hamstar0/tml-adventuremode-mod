@@ -12,6 +12,7 @@ using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.TModLoader;
 using HamstarHelpers.Services.AnimatedColor;
 using HouseKits.Items;
+using Bullwhip.Items;
 
 
 namespace AdventureMode {
@@ -56,16 +57,14 @@ namespace AdventureMode {
 			var npcDef = new NPCDefinition( type );
 
 			if( AdventureModeConfig.Instance.ShopWhitelists.ContainsKey(npcDef) ) {
-				var shopList = new List<Item>( shop.item );
-
 				Item[] newShop = AdventureModeNPC.FilterShop(
 					shop.item,
 					AdventureModeConfig.Instance.ShopWhitelists[npcDef],
 					ref nextSlot
 				);
 				
-				for( int i=0; i<newShop.Length; i++ ) {
-					shop.item[i] = shopList[i];
+				for( int i=0; i< shop.item.Length; i++ ) {
+					shop.item[i] = newShop[i];
 				}
 			}
 
@@ -73,9 +72,11 @@ namespace AdventureMode {
 			case NPCID.Merchant:
 				var frameKit = new Item();
 				var furnKit = new Item();
+				var whip = new Item();
 
 				frameKit.SetDefaults( ModContent.ItemType<HouseFramingKitItem>() );
 				furnKit.SetDefaults( ModContent.ItemType<HouseFurnishingKitItem>() );
+				whip.SetDefaults( ModContent.ItemType<BullwhipItem>() );
 
 				shop.item[nextSlot++] = frameKit;
 				shop.item[nextSlot++] = furnKit;
