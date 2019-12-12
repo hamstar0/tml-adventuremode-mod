@@ -93,7 +93,7 @@ namespace AdventureMode {
 						case TileID.Signs:
 							if( WorldGen.PlaceSign(left + x, top + y, TileID.Signs) ) {
 								int signIdx = Sign.ReadSign( left + x, top + y, true );
-								Main.sign[ signIdx ].text = "[c/00FF00:Welcome to Adventure Mode!]"
+								Main.sign[ signIdx ].text = "Welcome to Adventure Mode!"	//[c/00FF00:
 									+"\n- Building and digging disabled (some exceptions, e.g. treasure)."
 									+"\n- Use house kits for NPC houses, beds, crafting, and fast travel."
 									+"\n- Read item descriptions for more info."
@@ -136,27 +136,9 @@ namespace AdventureMode {
 				return;	// this occurs on the first pass
 			}
 
-			Item getBarrelItem( int type, int stack=1 ) {
-				Item item;
-				item = new Item();
-				item.SetDefaults( type );
-				item.stack = stack;
-				return item;
-			}
-			IEnumerable<Item> getBarrelItems() {
-				yield return getBarrelItem( ItemID.Wood, 99 );
-				yield return getBarrelItem( ModContent.ItemType<FramingPlankItem>(), 99 );
-				yield return getBarrelItem( ModContent.ItemType<HouseFurnishingKitItem>() );
-				yield return getBarrelItem( ModContent.ItemType<HouseFurnishingKitItem>() );
-				yield return getBarrelItem( ModContent.ItemType<HouseFurnishingKitItem>() );
-				yield return getBarrelItem( ModContent.ItemType<HouseFramingKitItem>() );
-				yield return getBarrelItem( ModContent.ItemType<HouseFramingKitItem>() );
-				yield return getBarrelItem( ModContent.ItemType<MountableMagicMirrorTileItem>(), 2 );
-			}
-
 			int i = 0;
-			foreach( Item item in getBarrelItems() ) {
-				Main.chest[chestIdx].item[i++] = item;
+			foreach( ItemQuantityDefinition def in AdventureModeConfig.Instance.RaftBarrelContents ) {
+				Main.chest[chestIdx].item[i++] = def.GetItem();
 			}
 		}
 

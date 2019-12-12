@@ -36,6 +36,13 @@ namespace AdventureMode {
 					tooltips.Add( tip );
 				}
 				break;
+			case ItemID.Rope:
+			case ItemID.SilkRope:
+			case ItemID.VineRope:
+			case ItemID.WebRope:
+				tip = new TooltipLine( this.mod, "AdventureModeCoil", "Must be crafted into coils to use" );
+				tooltips.Add( tip );
+				break;
 			default:
 				/*if( config.GrappleChainAmmoRate > 0 && ItemAttributeHelpers.IsGrapple( item ) ) {
 					tip = new TooltipLine( this.mod, "AdventureModeGrapple", "Consumes " + config.GrappleChainAmmoRate + " chain(s) per use" );
@@ -62,12 +69,29 @@ namespace AdventureMode {
 				if( AdventureModeConfig.Instance.ReducedManaCrystalStatIncrease ) {
 					player.statManaMax -= 15;
 				}
+				this.ModifyPopupText();
 				break;
 			case ItemID.LifeCrystal:
 				if( AdventureModeConfig.Instance.ReducedLifeCrystalStatIncrease ) {
 					player.statLifeMax -= 15;
 				}
+				this.ModifyPopupText();
 				break;
+			}
+		}
+
+
+		////////////////
+
+		private void ModifyPopupText() {
+			for( int idx = 0; idx < Main.combatText.Length; idx++ ) {
+				CombatText txt = Main.combatText[idx];
+				if( txt == null || !txt.active ) { continue; }
+
+				if( txt.text.Equals( "20" ) ) {
+					txt.text = "5";
+					break;
+				}
 			}
 		}
 	}

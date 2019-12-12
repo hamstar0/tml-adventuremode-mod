@@ -1,5 +1,6 @@
 ﻿using HamstarHelpers.Helpers.TModLoader;
 using HamstarHelpers.Services.AnimatedColor;
+using HouseKits.Items;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Graphics;
@@ -51,6 +52,19 @@ namespace AdventureMode {
 						shop.item[i] = new Item();
 					}
 				}
+			}
+
+			switch( type ) {
+			case NPCID.Merchant:
+				var frameKit = new Item();
+				var furnKit = new Item();
+
+				frameKit.SetDefaults( ModContent.ItemType<HouseFramingKitItem>() );
+				furnKit.SetDefaults( ModContent.ItemType<HouseFurnishingKitItem>() );
+
+				shop.item[nextSlot++] = frameKit;
+				shop.item[nextSlot++] = furnKit;
+				break;
 			}
 		}
 

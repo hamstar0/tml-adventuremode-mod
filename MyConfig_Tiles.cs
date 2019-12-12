@@ -15,6 +15,7 @@ namespace AdventureMode {
 		public bool IsHardMode { get; set; }
 
 
+
 		////////////////
 
 		public override bool Equals( object obj ) {
@@ -38,10 +39,10 @@ namespace AdventureMode {
 		public List<string> TilePlaceWhitelist { get; set; } = new List<string> {
 			TileID.GetUniqueKey( TileID.LunarCraftingStation ),
 			///
-			TileID.GetUniqueKey( TileID.Rope ),
-			TileID.GetUniqueKey( TileID.SilkRope ),
-			TileID.GetUniqueKey( TileID.VineRope ),
-			TileID.GetUniqueKey( TileID.WebRope ),
+			//TileID.GetUniqueKey( TileID.Rope ),	//<-Rope coils only
+			//TileID.GetUniqueKey( TileID.SilkRope ),
+			//TileID.GetUniqueKey( TileID.VineRope ),
+			//TileID.GetUniqueKey( TileID.WebRope ),
 			TileID.GetUniqueKey( TileID.Chain ),
 			TileID.GetUniqueKey( TileID.MinecartTrack ),
 			///
@@ -56,6 +57,12 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.BewitchingTable ),
 			TileID.GetUniqueKey( TileID.Autohammer ),
 			TileID.GetUniqueKey( TileID.Cannon ),
+			TileID.GetUniqueKey( TileID.Anvils ),
+			TileID.GetUniqueKey( TileID.MythrilAnvil ),
+			TileID.GetUniqueKey( TileID.Furnaces ),
+			TileID.GetUniqueKey( TileID.AdamantiteForge ),
+			TileID.GetUniqueKey( TileID.TinkerersWorkbench ),
+			TileID.GetUniqueKey( TileID.Sawmill ),
 			///
 			TileID.GetUniqueKey( TileID.Torches ),
 			TileID.GetUniqueKey( TileID.Campfire ),
@@ -94,6 +101,8 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.WoodenBeam ),
 			TileID.GetUniqueKey( TileID.ClosedDoor ),
 			TileID.GetUniqueKey( TileID.OpenDoor ),
+			TileID.GetUniqueKey( TileID.MushroomBlock ),
+			TileID.GetUniqueKey( TileID.CactusBlock ),
 			TileID.GetUniqueKey( ModContent.TileType<FramingPlankTile>() ),
 			///
 			TileID.GetUniqueKey( TileID.Trees ),
@@ -102,6 +111,7 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.Plants ),
 			TileID.GetUniqueKey( TileID.Plants2 ),
 			TileID.GetUniqueKey( TileID.Vines ),
+			TileID.GetUniqueKey( TileID.MushroomPlants ),
 			TileID.GetUniqueKey( TileID.CorruptPlants ),
 			TileID.GetUniqueKey( TileID.CorruptThorns ),
 			TileID.GetUniqueKey( TileID.FleshWeeds ),

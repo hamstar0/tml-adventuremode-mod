@@ -45,6 +45,13 @@ namespace AdventureMode.Mods {
 
 				myworld.HouseKitFurnitureIdx++;
 			} );
+
+			HouseKitsConfig.Instance.OverlayChanges(
+				new HouseKitsConfig {
+					HouseFramingKitPrice = 250000,
+					HouseFurnishingKitPrice = 200000,
+				}
+			);
 		}
 	}
 }

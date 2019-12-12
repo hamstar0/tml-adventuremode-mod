@@ -115,8 +115,8 @@ namespace AdventureMode {
 				torches.stack = 10;
 
 				var ropes = new Item();
-				ropes.SetDefaults( ItemID.Rope );
-				ropes.stack = 200;
+				ropes.SetDefaults( ItemID.RopeCoil );
+				ropes.stack = 20;
 
 				items.Add( torches );
 				items.Add( ropes );

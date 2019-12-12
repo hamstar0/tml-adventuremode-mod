@@ -33,10 +33,19 @@ namespace AdventureMode.Mods {
 		private void ApplyNihilismFilters() {
 			NihilismAPI.ClearFiltersForCurrentWorld( true );
 
+			//
+
 			NihilismAPI.SetRecipeBlacklistGroupEntry( "Any Item", true );
+
+			//
 
 			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyOreEquipment, true );
 			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyNonOreCraftedEquipment, true );
+			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyOreBar, true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.RopeCoil), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.SilkRopeCoil), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.VineRopeCoil), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.WebRopeCoil), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Snowball), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.StickyBomb), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.StickyDynamite), true );

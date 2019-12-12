@@ -85,9 +85,9 @@ namespace AdventureMode {
 		////
 
 		[Range( 0f, 1f )]
-		[DefaultValue( 0.025f )]
+		[DefaultValue( 0.02f )]
 		[CustomModConfigItem( typeof( MyFloatInputElement ) )]
-		public float PotSurprisePercentChance { get; set; } = 0.025f;
+		public float PotSurprisePercentChance { get; set; } = 0.02f;
 
 		////
 

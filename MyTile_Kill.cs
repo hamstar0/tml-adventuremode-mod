@@ -61,7 +61,10 @@ namespace AdventureMode {
 				}
 
 				int npcWho = NPC.NewNPC( i << 4, ( j + 1 ) << 4, spiderType );
-				Main.npc[npcWho].netUpdate = true;
+				NPC npc = Main.npc[npcWho];
+				npc.netUpdate = true;
+				npc.lifeMax = npc.life /= 2;
+				npc.scale *= 0.5f;
 
 				if( Main.netMode == 2 && npcWho < Main.npc.Length - 1 ) {
 					NetMessage.SendData( MessageID.SyncNPC, -1, -1, null, npcWho, 0f, 0f, 0f, 0, 0, 0 );
