@@ -39,7 +39,7 @@ namespace AdventureMode {
 			case ItemID.SilkRope:
 			case ItemID.VineRope:
 			case ItemID.WebRope:
-				tip = new TooltipLine( this.mod, "AdventureModeCoil", "Must be crafted into coils to use" );
+				tip = new TooltipLine( this.mod, "AdventureModeCoil", "Can only be lowered" );
 				tooltips.Add( tip );
 				break;
 			default:

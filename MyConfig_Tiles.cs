@@ -39,10 +39,10 @@ namespace AdventureMode {
 		public List<string> TilePlaceWhitelist { get; set; } = new List<string> {
 			TileID.GetUniqueKey( TileID.LunarCraftingStation ),
 			//
-			//TileID.GetUniqueKey( TileID.Rope ),	//<-Rope coils only
-			//TileID.GetUniqueKey( TileID.SilkRope ),
-			//TileID.GetUniqueKey( TileID.VineRope ),
-			//TileID.GetUniqueKey( TileID.WebRope ),
+			TileID.GetUniqueKey( TileID.Rope ),
+			TileID.GetUniqueKey( TileID.SilkRope ),
+			TileID.GetUniqueKey( TileID.VineRope ),
+			TileID.GetUniqueKey( TileID.WebRope ),
 			TileID.GetUniqueKey( TileID.Chain ),
 			TileID.GetUniqueKey( TileID.MinecartTrack ),
 			//
@@ -93,6 +93,8 @@ namespace AdventureMode {
 			// TileID.GetUniqueKey(case TileID.FleshWeeds ),
 		};
 
+		////////////////
+
 		public List<string> TileKillWhitelist { get; set; } = new List<string> {
 			TileID.GetUniqueKey( TileID.PiggyBank ),
 			TileID.GetUniqueKey( TileID.Safes ),
@@ -130,6 +132,7 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.JunglePlants2 ),
 			TileID.GetUniqueKey( TileID.JungleVines ),
 			TileID.GetUniqueKey( TileID.JungleThorns ),
+			TileID.GetUniqueKey( TileID.PlantDetritus ),
 			TileID.GetUniqueKey( TileID.Coral ),
 			TileID.GetUniqueKey( TileID.BeachPiles ),
 			TileID.GetUniqueKey( TileID.Cactus ),
@@ -232,6 +235,9 @@ namespace AdventureMode {
 			//
 			TileID.GetUniqueKey( ModContent.TileType<ManaCrystalShardTile>() ),
 		};
+
+
+		////////////////
 
 		[DefaultValue( true )]
 		public bool HardmodeBreakableDirt { get; set; } = true;

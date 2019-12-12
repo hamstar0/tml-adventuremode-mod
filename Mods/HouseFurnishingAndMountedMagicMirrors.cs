@@ -48,8 +48,8 @@ namespace AdventureMode.Mods {
 
 			HouseKitsConfig.Instance.OverlayChanges(
 				new HouseKitsConfig {
-					HouseFramingKitPrice = 250000,
-					HouseFurnishingKitPrice = 200000,
+					HouseFramingKitPrice = 200000,
+					HouseFurnishingKitPrice = 100000,
 				}
 			);
 		}

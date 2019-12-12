@@ -46,6 +46,7 @@ namespace AdventureMode.Mods {
 
 			//
 
+			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyAmmo, true );
 			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyOreEquipment, true );
 			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyNonOreCraftedEquipment, true );
 			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyOreBar, true );

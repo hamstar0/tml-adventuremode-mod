@@ -30,6 +30,25 @@ namespace AdventureMode {
 			return false;
 		}
 
+		public static bool IsSuitableForRope( int tileX, int tileY ) {
+			Tile tileBelow = Framing.GetTileSafely( tileX, tileY + 1 );
+			Tile tile = Framing.GetTileSafely( tileX, tileY );
+
+			bool belowIsRope = tileBelow.type != TileID.Rope
+				&& tileBelow.type != TileID.SilkRope
+				&& tileBelow.type != TileID.VineRope
+				&& tileBelow.type != TileID.WebRope;
+			if( !belowIsRope ) {
+				return true;
+			}
+
+			bool hereIsRope = tile.type != TileID.Rope
+				&& tile.type != TileID.SilkRope
+				&& tile.type != TileID.VineRope
+				&& tile.type != TileID.WebRope;
+			return hereIsRope;
+		}
+
 		public static bool IsSuitableForFramingPlank( int tileX, int tileY, int dirX, int dirY ) {
 			int max = AdventureModeConfig.Instance.MaxFramingPlankLength;
 			if( max < 0 ) {
@@ -63,21 +82,29 @@ namespace AdventureMode {
 				return true;
 			}
 
-			if( type == TileID.Platforms ) {
+			switch( type ) {
+			case TileID.Platforms:
 				return AdventureModeTile.IsSuitableForPlatform( i, j, -1 )
 					|| AdventureModeTile.IsSuitableForPlatform( i, j, 1 );
-			}
-			if( type == ModContent.TileType<FramingPlankTile>() ) {
-				return AdventureModeTile.IsSuitableForFramingPlank( i, j, -1, 0 )
-					|| AdventureModeTile.IsSuitableForFramingPlank( i, j, 1, 0 )
-					|| AdventureModeTile.IsSuitableForFramingPlank( i, j, 0, -1 )
-					|| AdventureModeTile.IsSuitableForFramingPlank( i, j, 0, 1 );
-			}
-			if( type == ModContent.TileType<MountedMagicMirrorTile>() ) {
-				return true;
-			}
-			if( AdventureModeConfig.Instance.TilePlaceWhitelist.Contains(TileID.GetUniqueKey(type)) ) {
-				return true;
+			case TileID.Rope:
+			case TileID.SilkRope:
+			case TileID.VineRope:
+			case TileID.WebRope:
+				return AdventureModeTile.IsSuitableForRope( i, j );
+			default:
+				if( type == ModContent.TileType<FramingPlankTile>() ) {
+					return AdventureModeTile.IsSuitableForFramingPlank( i, j, -1, 0 )
+						|| AdventureModeTile.IsSuitableForFramingPlank( i, j, 1, 0 )
+						|| AdventureModeTile.IsSuitableForFramingPlank( i, j, 0, -1 )
+						|| AdventureModeTile.IsSuitableForFramingPlank( i, j, 0, 1 );
+				}
+				if( type == ModContent.TileType<MountedMagicMirrorTile>() ) {
+					return true;
+				}
+				if( AdventureModeConfig.Instance.TilePlaceWhitelist.Contains( TileID.GetUniqueKey( type ) ) ) {
+					return true;
+				}
+				break;
 			}
 
 			return false;
