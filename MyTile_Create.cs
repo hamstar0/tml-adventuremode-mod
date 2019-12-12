@@ -34,19 +34,19 @@ namespace AdventureMode {
 			Tile tileBelow = Framing.GetTileSafely( tileX, tileY + 1 );
 			Tile tile = Framing.GetTileSafely( tileX, tileY );
 
-			bool belowIsRope = tileBelow.type != TileID.Rope
+			bool belowIsNotRope = tileBelow.type != TileID.Rope
 				&& tileBelow.type != TileID.SilkRope
 				&& tileBelow.type != TileID.VineRope
 				&& tileBelow.type != TileID.WebRope;
-			if( !belowIsRope ) {
+			if( belowIsNotRope ) {
 				return true;
 			}
 
-			bool hereIsRope = tile.type != TileID.Rope
+			bool hereIsNotRope = tile.type != TileID.Rope
 				&& tile.type != TileID.SilkRope
 				&& tile.type != TileID.VineRope
 				&& tile.type != TileID.WebRope;
-			return hereIsRope;
+			return !hereIsNotRope;
 		}
 
 		public static bool IsSuitableForFramingPlank( int tileX, int tileY, int dirX, int dirY ) {
