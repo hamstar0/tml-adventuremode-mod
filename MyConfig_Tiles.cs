@@ -37,7 +37,6 @@ namespace AdventureMode {
 
 	public partial class AdventureModeConfig : StackableModConfig {
 		public List<string> TilePlaceWhitelist { get; set; } = new List<string> {
-			TileID.GetUniqueKey( TileID.LunarCraftingStation ),
 			//
 			TileID.GetUniqueKey( TileID.Rope ),
 			TileID.GetUniqueKey( TileID.SilkRope ),
@@ -55,6 +54,7 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.Banners ),
 			TileID.GetUniqueKey( TileID.ImbuingStation ),
 			TileID.GetUniqueKey( TileID.BewitchingTable ),
+			TileID.GetUniqueKey( TileID.Bottles ),
 			TileID.GetUniqueKey( TileID.Autohammer ),
 			TileID.GetUniqueKey( TileID.Cannon ),
 			TileID.GetUniqueKey( TileID.Anvils ),
@@ -66,6 +66,7 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.PiggyBank ),
 			TileID.GetUniqueKey( TileID.Safes ),
 			TileID.GetUniqueKey( TileID.DefendersForge ),
+			TileID.GetUniqueKey( TileID.LunarCraftingStation ),
 			//
 			TileID.GetUniqueKey( TileID.Torches ),
 			TileID.GetUniqueKey( TileID.Campfire ),
@@ -141,6 +142,7 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.BloomingHerbs ),
 			TileID.GetUniqueKey( TileID.MatureHerbs ),
 			TileID.GetUniqueKey( TileID.Cobweb ),
+			TileID.GetUniqueKey( TileID.BreakableIce ),
 			TileID.GetUniqueKey( TileID.MagicalIceBlock ),
 			TileID.GetUniqueKey( TileID.BlueMoss ),
 			TileID.GetUniqueKey( TileID.BrownMoss ),
