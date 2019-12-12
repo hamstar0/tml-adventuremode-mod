@@ -1,5 +1,4 @@
-﻿using HamstarHelpers.Helpers.Items.Attributes;
-using MountedMagicMirrors.Items;
+﻿using MountedMagicMirrors.Items;
 using System;
 using System.Collections.Generic;
 using Terraria;

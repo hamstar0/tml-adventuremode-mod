@@ -38,14 +38,14 @@ namespace AdventureMode {
 	public partial class AdventureModeConfig : StackableModConfig {
 		public List<string> TilePlaceWhitelist { get; set; } = new List<string> {
 			TileID.GetUniqueKey( TileID.LunarCraftingStation ),
-			///
+			//
 			//TileID.GetUniqueKey( TileID.Rope ),	//<-Rope coils only
 			//TileID.GetUniqueKey( TileID.SilkRope ),
 			//TileID.GetUniqueKey( TileID.VineRope ),
 			//TileID.GetUniqueKey( TileID.WebRope ),
 			TileID.GetUniqueKey( TileID.Chain ),
 			TileID.GetUniqueKey( TileID.MinecartTrack ),
-			///
+			//
 			TileID.GetUniqueKey( TileID.ClosedDoor ),
 			TileID.GetUniqueKey( TileID.CrystalBall ),
 			TileID.GetUniqueKey( TileID.AmmoBox ),
@@ -63,22 +63,25 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.AdamantiteForge ),
 			TileID.GetUniqueKey( TileID.TinkerersWorkbench ),
 			TileID.GetUniqueKey( TileID.Sawmill ),
-			///
+			TileID.GetUniqueKey( TileID.PiggyBank ),
+			TileID.GetUniqueKey( TileID.Safes ),
+			TileID.GetUniqueKey( TileID.DefendersForge ),
+			//
 			TileID.GetUniqueKey( TileID.Torches ),
 			TileID.GetUniqueKey( TileID.Campfire ),
-			///
+			//
 			TileID.GetUniqueKey( TileID.Saplings ),
 			TileID.GetUniqueKey( TileID.Pumpkins ),
 			TileID.GetUniqueKey( TileID.ImmatureHerbs ),
 			TileID.GetUniqueKey( TileID.MatureHerbs ),
 			TileID.GetUniqueKey( TileID.BloomingHerbs ),
 			TileID.GetUniqueKey( TileID.Sunflower ),
-			///
+			//
 			// TileID.GetUniqueKey( TileID.Sand ),
 			// TileID.GetUniqueKey( TileID.Ebonsand ),
 			// TileID.GetUniqueKey( TileID.Crimsand ),
 			// TileID.GetUniqueKey( TileID.Pearlsand ),
-			///
+			//
 			// TileID.GetUniqueKey(case TileID.Plants ),
 			// TileID.GetUniqueKey(case TileID.Plants2 ),
 			// TileID.GetUniqueKey(case TileID.JunglePlants ),
@@ -91,8 +94,11 @@ namespace AdventureMode {
 		};
 
 		public List<string> TileKillWhitelist { get; set; } = new List<string> {
+			TileID.GetUniqueKey( TileID.PiggyBank ),
+			TileID.GetUniqueKey( TileID.Safes ),
+			TileID.GetUniqueKey( TileID.DefendersForge ),
 			TileID.GetUniqueKey( TileID.LunarCraftingStation ),
-			///
+			//
 			TileID.GetUniqueKey( TileID.WoodBlock ),
 			TileID.GetUniqueKey( TileID.BorealWood ),
 			TileID.GetUniqueKey( TileID.RichMahogany ),
@@ -104,7 +110,7 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.MushroomBlock ),
 			TileID.GetUniqueKey( TileID.CactusBlock ),
 			TileID.GetUniqueKey( ModContent.TileType<FramingPlankTile>() ),
-			///
+			//
 			TileID.GetUniqueKey( TileID.Trees ),
 			TileID.GetUniqueKey( TileID.MushroomTrees ),
 			TileID.GetUniqueKey( TileID.PalmTree ),
@@ -143,7 +149,7 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.HoneyBlock ),
 			TileID.GetUniqueKey( TileID.CrispyHoneyBlock ),
 			TileID.GetUniqueKey( TileID.Hive ),
-			///
+			//
 			TileID.GetUniqueKey( TileID.Torches ),
 			TileID.GetUniqueKey( TileID.Platforms ),
 			TileID.GetUniqueKey( TileID.Rope ),
@@ -162,7 +168,7 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.Books ),
 			TileID.GetUniqueKey( TileID.WaterCandle ),
 			TileID.GetUniqueKey( TileID.PeaceCandle ),
-			///
+			//
 			TileID.GetUniqueKey( TileID.Copper ),
 			TileID.GetUniqueKey( TileID.Tin ),
 			TileID.GetUniqueKey( TileID.Iron ),
@@ -184,7 +190,7 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.Titanium ),
 			TileID.GetUniqueKey( TileID.Chlorophyte ),
 			TileID.GetUniqueKey( TileID.LunarOre ),
-			///
+			//
 			TileID.GetUniqueKey( TileID.Amethyst ),
 			TileID.GetUniqueKey( TileID.Sapphire ),
 			TileID.GetUniqueKey( TileID.Topaz ),
@@ -192,7 +198,7 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.Ruby ),
 			TileID.GetUniqueKey( TileID.Diamond ),
 			TileID.GetUniqueKey( TileID.ExposedGems ),
-			///
+			//
 			TileID.GetUniqueKey( TileID.SnowBlock ),
 			TileID.GetUniqueKey( TileID.Cloud ),
 			TileID.GetUniqueKey( TileID.RainCloud ),
@@ -201,7 +207,7 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.LavaDrip ),
 			TileID.GetUniqueKey( TileID.SandDrip ),
 			TileID.GetUniqueKey( TileID.WaterDrip ),
-			///
+			//
 			TileID.GetUniqueKey( TileID.Sand ),
 			TileID.GetUniqueKey( TileID.Pearlsand ),
 			TileID.GetUniqueKey( TileID.Crimsand ),
@@ -210,7 +216,7 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.FossilOre ),
 			TileID.GetUniqueKey( TileID.Silt ),
 			TileID.GetUniqueKey( TileID.Slush ),
-			///
+			//
 			TileID.GetUniqueKey( TileID.CopperCoinPile ),
 			TileID.GetUniqueKey( TileID.SilverCoinPile ),
 			TileID.GetUniqueKey( TileID.GoldCoinPile ),
@@ -219,11 +225,11 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.SmallPiles ),
 			TileID.GetUniqueKey( TileID.LargePiles ),
 			TileID.GetUniqueKey( TileID.LargePiles2 ),
-			///
+			//
 			TileID.GetUniqueKey( TileID.Boulder ),
 			TileID.GetUniqueKey( TileID.BeeHive ),
 			TileID.GetUniqueKey( TileID.Tombstones ),
-			///
+			//
 			TileID.GetUniqueKey( ModContent.TileType<ManaCrystalShardTile>() ),
 		};
 

@@ -29,6 +29,8 @@ namespace AdventureMode {
 					new ItemDefinition( ItemID.Flare ),
 					new ItemDefinition( ItemID.BlueFlare ),
 					//new ItemDefinition( ItemID.Sickle ),
+					new ItemDefinition( ItemID.PiggyBank ),
+					new ItemDefinition( ItemID.Safe ),
 					new ItemDefinition( ItemID.GoldDust ),
 					new ItemDefinition( ItemID.Nail ),
 					new ItemDefinition( ItemID.TaxCollectorHat ),

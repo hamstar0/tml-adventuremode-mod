@@ -1,29 +1,44 @@
-﻿using HamstarHelpers.Helpers.TModLoader;
-using HamstarHelpers.Services.AnimatedColor;
-using HouseKits.Items;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
+using HamstarHelpers.Helpers.Debug;
+using HamstarHelpers.Helpers.TModLoader;
+using HamstarHelpers.Services.AnimatedColor;
+using HouseKits.Items;
 
 
 namespace AdventureMode {
 	partial class AdventureModeNPC : GlobalNPC {
-		public static void FilterShop( IList<Item> shop, IList<ItemDefinition> whitelist, ref int nextSlot ) {
-			foreach( Item item in shop.ToArray() ) {
-				if( whitelist.Any( itemDef => itemDef.Type == item.type ) ) {
+		public static Item[] FilterShop( Item[] shop, IList<ItemDefinition> whitelist, ref int nextSlot ) {
+			Item[] newShop = new Item[ shop.Length ];
+
+			Item item;
+			int j = 0;
+			for( int i=0; i<shop.Length; i++ ) {
+				item = shop[i];
+				if( item == null || item.IsAir ) {
 					continue;
 				}
 
-				shop.Remove( item );
-				nextSlot--;
+				if( whitelist.Any(itemDef => itemDef.Type == item.type) ) {
+					newShop[j++] = item;
+				} else {
+					nextSlot--;
+				}
 			}
+
+			for( ; j<shop.Length; j++ ) {
+				newShop[j] = new Item();
+			}
+
+			return newShop;
 		}
 
 
@@ -43,14 +58,14 @@ namespace AdventureMode {
 			if( AdventureModeConfig.Instance.ShopWhitelists.ContainsKey(npcDef) ) {
 				var shopList = new List<Item>( shop.item );
 
-				AdventureModeNPC.FilterShop( shopList, AdventureModeConfig.Instance.ShopWhitelists[npcDef], ref nextSlot );
-
-				for( int i=0; i<shop.item.Length; i++ ) {
-					if( i < shopList.Count ) {
-						shop.item[i] = shopList[i];
-					} else {
-						shop.item[i] = new Item();
-					}
+				Item[] newShop = AdventureModeNPC.FilterShop(
+					shop.item,
+					AdventureModeConfig.Instance.ShopWhitelists[npcDef],
+					ref nextSlot
+				);
+				
+				for( int i=0; i<newShop.Length; i++ ) {
+					shop.item[i] = shopList[i];
 				}
 			}
 

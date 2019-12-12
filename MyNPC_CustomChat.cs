@@ -25,6 +25,7 @@ namespace AdventureMode {
 						"Need to add a few small patches or solid additions to a given area? You'll want to get your hands on some framing planks.",
 						"Be sure to keep your eyes peeled for livable spaces to furnish. This is where our House Furnishing Kits will come in handy. They'll even provide you with new crafting stations and fast travel points!",
 						"Wood is about the only non-ore material you can break freely. You'll need special framing planks to do any building, but they can be finicky. Best use house kits whenever possible.",
+						"Need money? Sell your loot. Be sure to have me check your loot for available crafting recipes, first. Not everything works here the way you might assume.",
 					},
 					Blocked: new Dictionary<string, string> {
 						{
