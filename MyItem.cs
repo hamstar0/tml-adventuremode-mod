@@ -72,9 +72,9 @@ namespace AdventureMode {
 				break;*/	//<- Implemented via FindableManaCrystals mod
 			case ItemID.LifeCrystal:
 				if( AdventureModeConfig.Instance.ReducedLifeCrystalStatIncrease ) {
-					player.statLifeMax -= 15;
+					player.statLifeMax -= 10;
+					this.ModifyPopupText();
 				}
-				this.ModifyPopupText();
 				break;
 			}
 		}
@@ -88,7 +88,7 @@ namespace AdventureMode {
 				if( txt == null || !txt.active ) { continue; }
 
 				if( txt.text.Equals( "20" ) ) {
-					txt.text = "5";
+					txt.text = "10";
 					break;
 				}
 			}

@@ -31,11 +31,10 @@ namespace AdventureMode {
 		[DefaultValue( 0 )]
 		public int GrappleChainAmmoRate { get; set; } = 0;
 
-		[DefaultValue( true )]
-		public bool ReducedManaCrystalStatIncrease { get; set; } = true;
 
 		[DefaultValue( true )]
 		public bool ReducedLifeCrystalStatIncrease { get; set; } = true;
+
 
 		[Range( 0, 60 * 60 * 30 )]
 		[DefaultValue( 60 * 60 * 2 )]

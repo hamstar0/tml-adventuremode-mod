@@ -62,9 +62,13 @@ namespace AdventureMode {
 				}
 
 				int npcWho = NPC.NewNPC( i << 4, ( j + 1 ) << 4, spiderType );
-				NPC npc = Main.npc[npcWho];
 
 				Timers.SetTimer( "AdventureModePotSurprise", 2, false, () => {
+					NPC npc = Main.npc[npcWho];
+					if( !npc.active || npc.type != spiderType ) {
+						return false;
+					}
+
 					npc.life /= 2;
 					npc.lifeMax /= 2;
 					npc.scale *= 0.5f;
