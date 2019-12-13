@@ -31,32 +31,28 @@ namespace AdventureMode {
 		}
 
 		public static bool IsSuitableForRope( int tileX, int tileY ) {
-			Tile tileBelow = Framing.GetTileSafely( tileX, tileY + 1 );
+			bool isRope( int x, int y ) {
+				Tile tile = Framing.GetTileSafely( x, y );
+				return tile.type == TileID.Rope
+					|| tile.type == TileID.SilkRope
+					|| tile.type == TileID.VineRope
+					|| tile.type == TileID.WebRope
+					|| tile.type == TileID.Chain;
+			}
 
-			bool belowIsNotRope = tileBelow.type != TileID.Rope
-				&& tileBelow.type != TileID.SilkRope
-				&& tileBelow.type != TileID.VineRope
-				&& tileBelow.type != TileID.WebRope;
-			if( belowIsNotRope ) {
+			if( isRope(tileX, tileY) ) {
 				return true;
 			}
 
-			Tile tile = Framing.GetTileSafely( tileX, tileY );
-			bool hereIsNotRope = tile.type != TileID.Rope
-				&& tile.type != TileID.SilkRope
-				&& tile.type != TileID.VineRope
-				&& tile.type != TileID.WebRope;
-
-			if( hereIsNotRope ) {
-				Tile tileAbove = Framing.GetTileSafely( tileX, tileY - 1 );
-
-				return tileAbove.type != TileID.Rope
-					&& tileAbove.type != TileID.SilkRope
-					&& tileAbove.type != TileID.VineRope
-					&& tileAbove.type != TileID.WebRope;
+			if( !isRope(tileX, tileY+1) ) {
+				return true;
 			}
 
-			return true;
+			if( isRope(tileX, tileY-1) ) {
+				return true;
+			}
+
+			return false;
 		}
 
 		public static bool IsSuitableForFramingPlank( int tileX, int tileY, int dirX, int dirY ) {
