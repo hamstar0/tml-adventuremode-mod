@@ -19,8 +19,11 @@ namespace AdventureMode.Mods {
 		public void LoadHouseKitAndMountedMagicMirrors() {
 			IList<HouseKitFurnitureDefinition> cycle = AdventureModeConfig.Instance.HouseKitFurnitureSuccession;
 
-			HouseKitsAPI.SetCustomFurniture( TileID.Tables );
-			HouseKitsAPI.SetCustomWallMount1( (ushort)ModContent.TileType<MountedMagicMirrorTile>() );
+			HouseKitsConfig.Instance.OverlayChanges( new HouseKitsConfig {
+				CustomFurnitureTile = TileID.Tables,
+				CustomWallMount1Tile = (ushort)ModContent.TileType<MountedMagicMirrorTile>(),
+				CustomFloorTile = TileID.Mudstone
+			} );
 
 			HouseKitsAPI.OnPreHouseCreate( (tileX, tileY, item) => {
 				this.IsCreatingHouse = true;
@@ -41,7 +44,9 @@ namespace AdventureMode.Mods {
 					return;
 				}
 
-				HouseKitsAPI.SetCustomFurniture( furnDef.TileType );
+				HouseKitsConfig.Instance.OverlayChanges( new HouseKitsConfig {
+					CustomFurnitureTile = furnDef.TileType,
+				} );
 
 				myworld.HouseKitFurnitureIdx++;
 			} );
