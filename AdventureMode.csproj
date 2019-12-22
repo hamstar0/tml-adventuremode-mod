@@ -44,6 +44,9 @@
     <Reference Include="Nihilism">
       <HintPath>..\..\Nihilism\Nihilism\bin\Release\net452\Nihilism.dll</HintPath>
     </Reference>
+    <Reference Include="Orbs">
+      <HintPath>..\..\Orbs\Orbs\bin\Release\net452\Orbs.dll</HintPath>
+    </Reference>
     <Reference Include="StaffOfGaia">
       <HintPath>..\..\Staff Of Gaia\StaffOfGaia\bin\Release\net452\StaffOfGaia.dll</HintPath>
     </Reference>

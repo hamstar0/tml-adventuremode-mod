@@ -5,11 +5,11 @@ using Terraria.ModLoader;
 
 namespace AdventureMode {
 	class AdventureModeWall : GlobalWall {
-		public override void KillWall( int i, int j, int type, ref bool fail ) {
+		/*public override void KillWall( int i, int j, int type, ref bool fail ) {
 			if( !Main.gameMenu ) {
-				fail = true;
+				fail = true;	//!nonGameplay
 			}
-		}
+		}*/
 		public override bool CreateDust( int i, int j, int type, ref int dustType ) {
 			return Main.gameMenu;
 		}

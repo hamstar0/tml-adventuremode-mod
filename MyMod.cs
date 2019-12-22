@@ -39,6 +39,7 @@ namespace AdventureMode {
 			this.ModInteractions.LoadTricksterAndLockedAbilies();
 			this.ModInteractions.LoadLockedAbilities();
 			this.ModInteractions.LoadStaffOfGaia();
+			this.ModInteractions.LoadOrbs();
 		}
 
 		////

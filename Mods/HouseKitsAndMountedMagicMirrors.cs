@@ -10,30 +10,11 @@ using HouseKits;
 
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
-		public bool IsCreatingHouse { get; private set; }
-
-
-
-		////////////////
-
 		public void LoadHouseKitAndMountedMagicMirrors() {
 			IList<HouseKitFurnitureDefinition> cycle = AdventureModeConfig.Instance.HouseKitFurnitureSuccession;
 
-			HouseKitsConfig.Instance.OverlayChanges( new HouseKitsConfig {
-				CustomFurnitureTile = TileID.Tables,
-				CustomWallMount1Tile = (ushort)ModContent.TileType<MountedMagicMirrorTile>(),
-				CustomFloorTile = TileID.Mudstone
-			} );
-
-			HouseKitsAPI.OnPreHouseCreate( (tileX, tileY, item) => {
-				this.IsCreatingHouse = true;
-				return true;
-			} );
-
 			HouseKitsAPI.OnPostHouseCreate( (tileX, tileY, item) => {
 				var myworld = ModContent.GetInstance<AdventureModeWorld>();
-
-				this.IsCreatingHouse = false;
 
 				if( myworld.HouseKitFurnitureIdx >= cycle.Count ) {
 					return;
@@ -53,6 +34,9 @@ namespace AdventureMode.Mods {
 
 			HouseKitsConfig.Instance.OverlayChanges(
 				new HouseKitsConfig {
+					CustomFurnitureTile = TileID.Tables,
+					CustomWallMount1Tile = (ushort)ModContent.TileType<MountedMagicMirrorTile>(),
+					CustomFloorTile = TileID.Mudstone,
 					HouseFramingKitPrice = 200000,
 					HouseFurnishingKitPrice = 100000,
 				}

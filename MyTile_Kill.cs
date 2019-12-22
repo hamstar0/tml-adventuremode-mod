@@ -1,25 +1,27 @@
-﻿using HamstarHelpers.Classes.Loadable;
-using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Helpers.TModLoader;
-using HamstarHelpers.Services.Hooks.ExtendedHooks;
-using HamstarHelpers.Services.Timers;
-using System;
+﻿using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Utilities;
+using HamstarHelpers.Classes.Loadable;
+using HamstarHelpers.Helpers.Debug;
+using HamstarHelpers.Helpers.TModLoader;
+using HamstarHelpers.Services.Hooks.ExtendedHooks;
+using HamstarHelpers.Services.Timers;
+using FindableManaCrystals.Tiles;
 
 
 namespace AdventureMode {
 	class AdventureModeExtendedTileHooks : ILoadable {
-		private static void KillTile( int i, int j, int type, ref bool fail, ref bool effectOnly, ref bool noItem ) {
-			// Main menu
+		private static void OnKillTile( int i, int j, int type, ref bool fail, ref bool effectOnly, ref bool noItem, bool nonGameplay ) {
 			if( Main.gameMenu ) {
 				return;
 			}
-			// House creation
-			if( AdventureModeMod.Instance.ModInteractions.IsCreatingHouse ) {
-				noItem = true;
+			if( noItem ) {
+				return;
+			}
+			if( nonGameplay ) {
+				noItem = type != TileID.Pots && type != TileID.Heart && type != ModContent.TileType<ManaCrystalShardTile>();
 				return;
 			}
 
@@ -29,17 +31,7 @@ namespace AdventureMode {
 			if( Main.netMode != 2 && !LoadHelpers.IsCurrentPlayerInGame() ) {
 				return;
 			}
-
-			if( AdventureModeConfig.Instance.HardmodeBreakableDirt && Main.hardMode && type == TileID.Dirt ) {
-				return;
-			}
 			
-			if( !AdventureModeTile.IsKillable(type) ) {
-				fail = true;
-				effectOnly = true;
-				noItem = true;
-			}
-
 			// Arachnophobes, rejoince!
 			if( type == TileID.Pots ) {
 				AdventureModeExtendedTileHooks.KillPotTile( i, j, ref noItem );
@@ -95,11 +87,11 @@ namespace AdventureMode {
 		}
 
 		void ILoadable.OnPostModsLoad() {
-			void killWall( int i, int j, int type, ref bool fail ) {
-				fail = true;
+			void killWall( int i, int j, int type, ref bool fail, bool nonGameplay ) {
+				fail = !nonGameplay;
 			}
 
-			var killTileHook = new ExtendedTileHooks.KillTileDelegate( AdventureModeExtendedTileHooks.KillTile );
+			var killTileHook = new ExtendedTileHooks.KillTileDelegate( AdventureModeExtendedTileHooks.OnKillTile );
 			var killWallHook = new ExtendedTileHooks.KillWallDelegate( killWall );
 
 			ExtendedTileHooks.AddSafeKillTileHook( killTileHook );
@@ -111,49 +103,5 @@ namespace AdventureMode {
 
 
 	partial class AdventureModeTile : GlobalTile {
-		public static bool IsKillable( int tileType ) {
-			return AdventureModeConfig.Instance.TileKillWhitelist.Contains( TileID.GetUniqueKey( tileType ) );
-		}
-
-
-
-		////////////////
-
-		/*public override bool CanKillTile( int i, int j, int type, ref bool blockDamaged ) {
-			bool fail = false, effectOnly = false, noItem = false;
-			this.KillTile( i, j, type, ref fail, ref effectOnly, ref noItem );
-			return !fail;
-		}*/
-
-
-		/*public override bool Slope( int i, int j, int type ) {
-			if( !LoadHelpers.IsCurrentPlayerInGame() ) {
-				return true;
-			}
-
-			return false;
-		}*/
-
-		public override bool CreateDust( int i, int j, int type, ref int dustType ) {
-			if( Main.gameMenu || !LoadHelpers.IsCurrentPlayerInGame() ) {
-				return true;
-			}
-
-			return AdventureModeTile.IsKillable( type );
-			//bool fail=false, effectOnly=false, noItem=false;
-			//this.KillTile( i, j, type, ref fail, ref effectOnly, ref noItem );
-			//return !fail || effectOnly;
-		}
-
-		/*public override bool KillSound( int i, int j, int type ) {
-			if( !LoadHelpers.IsCurrentPlayerInGame() ) {
-				return true;
-			}
-
-			return AdventureModeTile.IsKillable( type );
-			//bool fail = false, effectOnly = false, noItem = false;
-			//this.KillTile( i, j, type, ref fail, ref effectOnly, ref noItem );
-			//return !fail || effectOnly;
-		}*/
 	}
 }
