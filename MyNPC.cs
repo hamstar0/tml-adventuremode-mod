@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using ReLogic.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Helpers.TModLoader;
-using HamstarHelpers.Services.AnimatedColor;
 using HouseKits.Items;
 using Bullwhip.Items;
 
@@ -82,36 +77,6 @@ namespace AdventureMode {
 				shop.item[nextSlot++] = furnKit;
 				break;
 			}
-		}
-
-
-		////////////////
-
-		public override void PostDraw( NPC npc, SpriteBatch sb, Color drawColor ) {
-			if( !npc.townNPC || !AdventureModeNPC.NPCDialogs.ContainsKey(npc.type) ) {
-				return;
-			}
-
-			var myplayer = TmlHelpers.SafelyGetModPlayer<AdventureModePlayer>( Main.LocalPlayer );
-			if( myplayer?.IntroducedNpcUniqueKeys.Contains(NPCID.GetUniqueKey(npc.type)) ?? false ) {
-				return;
-			}
-
-			Vector2 scrPos = npc.Center - Main.screenPosition;
-			scrPos.X -= 4;
-			scrPos.Y -= (npc.height / 2) + 56;
-
-			sb.DrawString(
-				spriteFont: Main.fontMouseText,
-				text: "!",
-				position: scrPos,
-				color: AnimatedColors.Alert.CurrentColor,
-				rotation: 0f,
-				origin: default(Vector2),
-				scale: 2f,
-				effects: SpriteEffects.None,
-				layerDepth: 1f
-			);
 		}
 	}
 }
