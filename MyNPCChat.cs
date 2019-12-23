@@ -10,11 +10,13 @@ using HamstarHelpers.Helpers.TModLoader;
 
 namespace AdventureMode {
 	partial class AdventureModeNpcChat : ILoadable {
-		public readonly IDictionary<int, (string Greeting, string[] Added, string[] Blocked)> NPCDialogs
-			= new Dictionary<int, (string Greeting, string[] Added, string[] Blocked)> {
+		public readonly IDictionary<int, (string[] Greetings, string[] Added, string[] Blocked)> NPCDialogs
+			= new Dictionary<int, (string[] Greetings, string[] Added, string[] Blocked)> {
 				{
 					NPCID.Guide, (
-						Greeting: "Looks like your adventure is just beginning. Please take stock of your surroundings and inventory. These may be important later. Talk with me if you need any further assistance.",
+						Greetings: new string[] {
+							"Looks like your adventure is just beginning. Please take stock of your surroundings and inventory. These may be important later. Talk with me if you need any further assistance.",
+						},
 						Added: new string[] {
 							"Good thing the dungeon is sealed. I hear it's blighted with an undeath curse and filled with deadly fumes!",
 							"The people who lived here once discovered ways to wield wearable artifacts of power, and hid their secrets around this land.",
@@ -45,6 +47,22 @@ namespace AdventureMode {
 							"You should make an attempt to max out your available life",
 						}
 					)
+				},
+				{
+					NPCID.TravellingMerchant, (
+						Greetings: new string[] {
+							"Ever encounter that annoying Trickster fellow? I hear it likes to reward those who think they can outwit them extra quickly. If you ask me, I think it's up to something...",
+							"Though the dryad gives warnings about using the Staff of Gaia, more practically I think some things of value might be lost from those it's used upon. Conversely, I hear it also gives back a portion of what it takes, in a different form.",
+							"The dryad doesn't know what sort of power she carries. If only she wasn't so pressed to have to settle with mere capitalism. I don't know where she gets those orbs she's selling, but they can sure open up a world of possibilities to whomever knows how to use them.",
+						},
+						Added: new string[] {
+							"Ever encounter that annoying Trickster fellow? I hear it likes to reward those who think they can outwit them extra quickly. If you ask me, I think it's up to something...",
+							"Though the dryad gives warnings about using the Staff of Gaia, more practically I think some things of value might be lost from those it's used upon. Conversely, I hear it also gives back a portion of what it takes, in a different form.",
+							"The dryad doesn't know what sort of power she carries. If only she wasn't so pressed to have to settle with mere capitalism. I don't know where she gets those orbs she's selling, but they can sure open up a world of possibilities to whomever knows how to use them.",
+						},
+						Blocked: new string[] {
+						}
+					)
 				}
 			};
 
@@ -56,7 +74,10 @@ namespace AdventureMode {
 
 		public void OnPostModsLoad() {
 			foreach( (int npcType, var chats) in this.NPCDialogs ) {
-				NPCChat.SetPriorityChat( npcType, _ => this.Greeting(npcType, chats.Greeting) );
+				Func<string, string> greetingFunc = this.Greeting( npcType, chats.Greetings );
+				if( greetingFunc != null ) {
+					NPCChat.SetPriorityChat( npcType, greetingFunc );
+				}
 
 				foreach( string addedChat in chats.Added ) {
 					NPCChat.AddChatForNPC( npcType, addedChat, 0.1f );
@@ -72,16 +93,32 @@ namespace AdventureMode {
 
 		////////////////
 
-		private string Greeting( int npcType, string greeting ) {
-			string npcKey = NPCID.GetUniqueKey( npcType );
-			var myplayer = TmlHelpers.SafelyGetModPlayer<AdventureModePlayer>( Main.LocalPlayer );
-
-			if( myplayer.IntroducedNpcUniqueKeys.Contains(npcKey) ) {
+		private Func<string, string> Greeting( int npcType, string[] greetings ) {
+			if( greetings.Length == 0 ) {
 				return null;
 			}
 
-			myplayer.IntroducedNpcUniqueKeys.Add( npcKey );
-			return greeting;
+			int i = 0;
+
+			return ( currentChat ) => {
+				string npcKey = NPCID.GetUniqueKey( npcType );
+				var myplayer = TmlHelpers.SafelyGetModPlayer<AdventureModePlayer>( Main.LocalPlayer );
+
+				if( i >= greetings.Length ) {
+					myplayer.IntroducedNpcUniqueKeys.Add( npcKey );
+				}
+				if( myplayer.IntroducedNpcUniqueKeys.Contains(npcKey) ) {
+					return null;
+				}
+
+				string greeting = greetings[i];
+
+				if( currentChat != null ) {
+					i++;
+				}
+
+				return greeting;
+			};
 		}
 	}
 }
