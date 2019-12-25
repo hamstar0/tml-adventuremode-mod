@@ -1,15 +1,11 @@
-﻿using AdventureMode.Items;
-using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Helpers.Tiles;
-using HouseKits.Items;
-using MountedMagicMirrors.Items;
-using MountedMagicMirrors.Tiles;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.World.Generation;
+using HamstarHelpers.Helpers.Debug;
+using HamstarHelpers.Helpers.Tiles;
+using MountedMagicMirrors.Tiles;
 
 
 namespace AdventureMode {

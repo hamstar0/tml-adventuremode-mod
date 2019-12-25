@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 using HamstarHelpers.Services.Configs;
 using AdventureMode.Items;
-using HouseKits.Items;
 using MountedMagicMirrors.Items;
-using Terraria;
+using PrefabKits.Items;
 
 
 namespace AdventureMode {

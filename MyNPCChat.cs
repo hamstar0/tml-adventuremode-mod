@@ -4,8 +4,9 @@ using Terraria;
 using Terraria.ID;
 using HamstarHelpers.Classes.Loadable;
 using HamstarHelpers.Helpers.DotNET.Extensions;
-using HamstarHelpers.Services.NPCChat;
 using HamstarHelpers.Helpers.TModLoader;
+using HamstarHelpers.Helpers.Debug;
+using HamstarHelpers.Services.NPCChat;
 
 
 namespace AdventureMode {
@@ -45,20 +46,23 @@ namespace AdventureMode {
 							"they can be combined to create an item that will increase your magic capacity",
 							"The ebonstone in the corruption can be purified",
 							"You should make an attempt to max out your available life",
+							"You can make a grappling hook from a hook",
 						}
 					)
 				},
 				{
-					NPCID.TravellingMerchant, (
+					NPCID.Dryad, (
 						Greetings: new string[] {
-							"Ever encounter that annoying Trickster fellow? I hear it likes to reward those who think they can outwit them extra quickly. If you ask me, I think it's up to something...",
-							"Though the dryad gives warnings about using the Staff of Gaia, more practically I think some things of value might be lost from those it's used upon. Conversely, I hear it also gives back a portion of what it takes, in a different form.",
-							"The dryad doesn't know what sort of power she carries. If only she wasn't so pressed to have to settle with mere capitalism. I don't know where she gets those orbs she's selling, but they can sure open up a world of possibilities to whomever knows how to use them.",
+							"Ever encounter that annoying Trickster? I hear it likes to reward those who think they can outwit it with quick thinking. I think it's up to something...",
+							"My Geo-Resonant Orbs are a powerful new addition to my stock. If only I wasn't relegated to simplying trying to sell them. These can be used to get around almost anywhere in the world, with the right know-how. Very powerful.",
+							"You can use my Geo-Resonant Orbs to create other types of Orbs, and also a powerful item called the Staff of Gaia. Think carefully about what you use it on, though. It's truly one of the most powerful weapons born of this world, but its use comes at a cost...",
+							"As powerful as the Staff of Gaia is, I think some things of value might be lost from those it's used upon. Conversely, it also returns back a portion of what it takes, but in a different form."
 						},
 						Added: new string[] {
-							"Ever encounter that annoying Trickster fellow? I hear it likes to reward those who think they can outwit them extra quickly. If you ask me, I think it's up to something...",
-							"Though the dryad gives warnings about using the Staff of Gaia, more practically I think some things of value might be lost from those it's used upon. Conversely, I hear it also gives back a portion of what it takes, in a different form.",
-							"The dryad doesn't know what sort of power she carries. If only she wasn't so pressed to have to settle with mere capitalism. I don't know where she gets those orbs she's selling, but they can sure open up a world of possibilities to whomever knows how to use them.",
+							"Ever encounter that annoying Trickster? I hear it likes to reward those who think they can outwit it with quick thinking. I think it's up to something...",
+							"My Geo-Resonant Orbs are a powerful new addition to my stock. If only I wasn't relegated to simplying trying to sell them. These can be used to get around almost anywhere in the world, with the right know-how. Very powerful.",
+							"You can use my Geo-Resonant Orbs to create other types of Orbs, and also a powerful item called the Staff of Gaia. Think carefully about what you use it on, though. It's truly one of the most powerful weapons born of this world, but its use comes at a cost...",
+							"As powerful as the Staff of Gaia is, I think some things of value might be lost from those it's used upon. Conversely, it also returns back a portion of what it takes, but in a different form."
 						},
 						Blocked: new string[] {
 						}
@@ -74,7 +78,7 @@ namespace AdventureMode {
 
 		public void OnPostModsLoad() {
 			foreach( (int npcType, var chats) in this.NPCDialogs ) {
-				Func<string, string> greetingFunc = this.Greeting( npcType, chats.Greetings );
+				Func<string, string> greetingFunc = this.GetGreetingFunc( npcType, chats.Greetings );
 				if( greetingFunc != null ) {
 					NPCChat.SetPriorityChat( npcType, greetingFunc );
 				}
@@ -93,7 +97,7 @@ namespace AdventureMode {
 
 		////////////////
 
-		private Func<string, string> Greeting( int npcType, string[] greetings ) {
+		private Func<string, string> GetGreetingFunc( int npcType, string[] greetings ) {
 			if( greetings.Length == 0 ) {
 				return null;
 			}

@@ -32,9 +32,6 @@
     <Reference Include="HamstarHelpers">
       <HintPath>..\..\Mod Helpers\v5 (tML11)\HamstarHelpers\bin\Release\net452\HamstarHelpers.dll</HintPath>
     </Reference>
-    <Reference Include="HouseKits">
-      <HintPath>..\..\House Kits\HouseKits\bin\Release\net452\HouseKits.dll</HintPath>
-    </Reference>
     <Reference Include="LockedAbilities">
       <HintPath>..\..\Locked Abilities\LockedAbilities\bin\Release\net452\LockedAbilities.dll</HintPath>
     </Reference>
@@ -46,6 +43,9 @@
     </Reference>
     <Reference Include="Orbs">
       <HintPath>..\..\Orbs\Orbs\bin\Release\net452\Orbs.dll</HintPath>
+    </Reference>
+    <Reference Include="PrefabKits">
+      <HintPath>..\..\Prefab Kits\PrefabKits\bin\Release\net452\PrefabKits.dll</HintPath>
     </Reference>
     <Reference Include="StaffOfGaia">
       <HintPath>..\..\Staff Of Gaia\StaffOfGaia\bin\Release\net452\StaffOfGaia.dll</HintPath>

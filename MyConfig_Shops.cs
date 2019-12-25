@@ -1,12 +1,12 @@
-﻿using HamstarHelpers.Services.Configs;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Terraria.ID;
-using Terraria.ModLoader.Config;
-using HamstarHelpers.Helpers.Debug;
 using Terraria.ModLoader;
+using Terraria.ModLoader.Config;
+using HamstarHelpers.Services.Configs;
+using HamstarHelpers.Helpers.Debug;
 using StaffOfGaia.Items;
-using HouseKits.Items;
+using PrefabKits.Items;
 
 
 namespace AdventureMode {

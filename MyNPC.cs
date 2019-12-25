@@ -6,7 +6,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 using HamstarHelpers.Helpers.Debug;
-using HouseKits.Items;
+using PrefabKits.Items;
 using Bullwhip.Items;
 
 

@@ -5,7 +5,8 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using HamstarHelpers.Helpers.Debug;
 using MountedMagicMirrors.Tiles;
-using HouseKits;
+using PrefabKits;
+
 
 
 namespace AdventureMode.Mods {
@@ -13,7 +14,7 @@ namespace AdventureMode.Mods {
 		public void LoadHouseKitAndMountedMagicMirrors() {
 			IList<HouseKitFurnitureDefinition> cycle = AdventureModeConfig.Instance.HouseKitFurnitureSuccession;
 
-			HouseKitsAPI.OnPostHouseCreate( (tileX, tileY, item) => {
+			PrefabKitsAPI.OnPostHouseCreate( (tileX, tileY, item) => {
 				var myworld = ModContent.GetInstance<AdventureModeWorld>();
 
 				if( myworld.HouseKitFurnitureIdx >= cycle.Count ) {
@@ -25,15 +26,15 @@ namespace AdventureMode.Mods {
 					return;
 				}
 
-				HouseKitsConfig.Instance.OverlayChanges( new HouseKitsConfig {
+				PrefabKitsConfig.Instance.OverlayChanges( new PrefabKitsConfig {
 					CustomFurnitureTile = furnDef.TileType,
 				} );
 
 				myworld.HouseKitFurnitureIdx++;
 			} );
 
-			HouseKitsConfig.Instance.OverlayChanges(
-				new HouseKitsConfig {
+			PrefabKitsConfig.Instance.OverlayChanges(
+				new PrefabKitsConfig {
 					CustomFurnitureTile = TileID.Tables,
 					CustomWallMount1Tile = (ushort)ModContent.TileType<MountedMagicMirrorTile>(),
 					CustomFloorTile = TileID.Mudstone,
