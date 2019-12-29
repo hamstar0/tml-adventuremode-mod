@@ -50,7 +50,7 @@ namespace AdventureMode {
 			new ItemQuantityDefinition( ModContent.ItemType<HouseFramingKitItem>() ),
 			new ItemQuantityDefinition( ModContent.ItemType<HouseFramingKitItem>() ),
 			new ItemQuantityDefinition( ModContent.ItemType<MountableMagicMirrorTileItem>(), 5 ),
-			new ItemQuantityDefinition( ItemID.MinecartTrack, 500 ),
+			new ItemQuantityDefinition( ModContent.ItemType<TrackDeploymentKitItem>(), 10 )
 		};
 	}
 }

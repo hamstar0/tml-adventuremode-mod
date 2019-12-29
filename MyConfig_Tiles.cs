@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using Terraria.ID;
 using Terraria.ModLoader.Config;
+using Terraria.ModLoader;
 using HamstarHelpers.Services.Configs;
+using PrefabKits.Tiles;
+using MountedMagicMirrors.Tiles;
 
 
 namespace AdventureMode {
@@ -40,7 +43,9 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.VineRope ),
 			TileID.GetUniqueKey( TileID.WebRope ),
 			TileID.GetUniqueKey( TileID.Chain ),
-			TileID.GetUniqueKey( TileID.MinecartTrack ),
+			//TileID.GetUniqueKey( TileID.MinecartTrack ),
+			TileID.GetUniqueKey( ModContent.TileType<TrackDeploymentTile>() ),
+			TileID.GetUniqueKey( ModContent.TileType<MountedMagicMirrorTile>() ),
 			//
 			TileID.GetUniqueKey( TileID.ClosedDoor ),
 			TileID.GetUniqueKey( TileID.CrystalBall ),
@@ -121,5 +126,11 @@ namespace AdventureMode {
 		[Range( -1, 1024 )]
 		[DefaultValue( 8 )]
 		public int MaxPlatformBridgeLength { get; set; } = 8;
+
+		////
+
+		[Range( -1, 64 )]
+		[DefaultValue( 8 )]
+		public int MaxTrackGapPatchWidth { get; set; } = 16;
 	}
 }

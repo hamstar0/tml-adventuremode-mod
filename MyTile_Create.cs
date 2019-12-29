@@ -55,6 +55,55 @@ namespace AdventureMode {
 			return false;
 		}
 
+		public static bool IsSuitableForTrack( int tileX, int tileY ) {
+			bool isTrack( int x, int y ) {
+				if( x < 0 || x >= Main.maxTilesX ) {
+					return false;
+				}
+				if( y < 0 || y >= Main.maxTilesY ) {
+					return false;
+				}
+				Tile tile = Framing.GetTileSafely( x, y );
+				return tile.type == TileID.MinecartTrack;
+			}
+
+			bool foundGap = false;
+			int maxGapCheck = AdventureModeConfig.Instance.MaxTrackGapPatchWidth;
+			if( maxGapCheck == -1 ) {
+				return true;
+			}
+
+			// Allow patching holes from the left
+			if( isTrack(tileX-1, tileY-1) || isTrack(tileX-1, tileY) || isTrack(tileX-1, tileY+1) ) {
+
+				for( int i=1; i<maxGapCheck; i++ ) {
+					if( isTrack(tileX+i, tileY-1) || isTrack(tileX+i, tileY) || isTrack(tileX+i, tileY+1) ) {
+						foundGap = true;
+						break;
+					}
+				}
+			}
+			if( foundGap ) { return true; }
+
+			// Allow patching holes from the right
+			if( isTrack( tileX+1, tileY-1) || isTrack(tileX+1, tileY) || isTrack(tileX+1, tileY+1) ) {
+				for( int i=1; i<maxGapCheck; i++ ) {
+					if( isTrack(tileX-i, tileY-1) || isTrack(tileX-i, tileY) || isTrack(tileX-i, tileY+1) ) {
+						foundGap = true;
+						break;
+					}
+				}
+			}
+			if( foundGap ) { return true; }
+
+			// Otherwise, only downward placement
+			if( isTrack(tileX-1, tileY-1) || isTrack(tileX+1, tileY-1) ) {
+				return true;
+			}
+
+			return false;
+		}
+
 		public static bool IsSuitableForFramingPlank( int tileX, int tileY, int dirX, int dirY ) {
 			int max = AdventureModeConfig.Instance.MaxFramingPlankLength;
 			if( max < 0 ) {
@@ -97,6 +146,8 @@ namespace AdventureMode {
 			case TileID.VineRope:
 			case TileID.WebRope:
 				return AdventureModeTile.IsSuitableForRope( i, j );
+			case TileID.MinecartTrack:
+				return AdventureModeTile.IsSuitableForTrack( i, j );
 			default:
 				if( type == ModContent.TileType<FramingPlankTile>() ) {
 					return AdventureModeTile.IsSuitableForFramingPlank( i, j, -1, 0 )
@@ -104,9 +155,7 @@ namespace AdventureMode {
 						|| AdventureModeTile.IsSuitableForFramingPlank( i, j, 0, -1 )
 						|| AdventureModeTile.IsSuitableForFramingPlank( i, j, 0, 1 );
 				}
-				if( type == ModContent.TileType<MountedMagicMirrorTile>() ) {
-					return true;
-				}
+
 				if( AdventureModeConfig.Instance.TilePlaceWhitelist.Contains( TileID.GetUniqueKey( type ) ) ) {
 					return true;
 				}
