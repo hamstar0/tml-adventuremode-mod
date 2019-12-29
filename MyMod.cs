@@ -35,7 +35,7 @@ namespace AdventureMode {
 		public override void Load() {
 			this.ModInteractions.LoadNihilism();
 			this.ModInteractions.LoadChestImplants();
-			this.ModInteractions.LoadHouseKitAndMountedMagicMirrors();
+			this.ModInteractions.LoadPrefabsKitAndMountedMagicMirrors();
 			this.ModInteractions.LoadTricksterAndLockedAbilies();
 			this.ModInteractions.LoadLockedAbilities();
 			this.ModInteractions.LoadStaffOfGaia();

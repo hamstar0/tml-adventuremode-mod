@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.ModLoader.Config;
 using HamstarHelpers.Helpers.Debug;
 using MountedMagicMirrors.Tiles;
 using PrefabKits;
 
 
-
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
-		public void LoadHouseKitAndMountedMagicMirrors() {
+		public void LoadPrefabsKitAndMountedMagicMirrors() {
 			IList<HouseKitFurnitureDefinition> cycle = AdventureModeConfig.Instance.HouseKitFurnitureSuccession;
 
 			PrefabKitsAPI.OnPostHouseCreate( (tileX, tileY, item) => {
@@ -40,6 +40,8 @@ namespace AdventureMode.Mods {
 					CustomFloorTile = TileID.Mudstone,
 					HouseFramingKitPrice = 200000,
 					HouseFurnishingKitPrice = 100000,
+					TrackDeploymentKitRecipeTile = -1,
+					TrackDeploymentKitRecipeExtraIngredient = new List<ItemDefinition>()
 				}
 			);
 		}
