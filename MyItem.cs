@@ -42,6 +42,10 @@ namespace AdventureMode {
 				tip = new TooltipLine( this.mod, "AdventureModeCoil", "Can only be lowered" );
 				tooltips.Add( tip );
 				break;
+			case ItemID.MinecartTrack:
+				tip = new TooltipLine( this.mod, "AdventureModeTrack", "Can only bridge gaps or be placed downwards" );
+				tooltips.Add( tip );
+				break;
 			default:
 				/*if( config.GrappleChainAmmoRate > 0 && ItemAttributeHelpers.IsGrapple( item ) ) {
 					tip = new TooltipLine( this.mod, "AdventureModeGrapple", "Consumes " + config.GrappleChainAmmoRate + " chain(s) per use" );

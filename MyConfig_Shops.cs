@@ -15,6 +15,8 @@ namespace AdventureMode {
 		public Dictionary<NPCDefinition, List<ItemDefinition>> ShopWhitelists { get; set; } = new Dictionary<NPCDefinition, List<ItemDefinition>> {
 			{
 				new NPCDefinition( NPCID.Merchant ), new List<ItemDefinition> {
+					new ItemDefinition( ItemID.CopperPickaxe ),
+					new ItemDefinition( ItemID.CopperAxe ),
 					new ItemDefinition( ItemID.MiningHelmet ),
 					new ItemDefinition( ItemID.BugNet ),
 					new ItemDefinition( ItemID.Torch ),

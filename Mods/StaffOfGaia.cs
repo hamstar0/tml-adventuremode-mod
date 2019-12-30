@@ -7,6 +7,7 @@ namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
 		public void LoadStaffOfGaia() {
 			StaffOfGaiaConfig.Instance.OverlayChanges( new StaffOfGaiaConfig {
+				StaffOfGaiaSoldByDryad = false,
 				PlayerStartStaves = 0
 			} );
 		}

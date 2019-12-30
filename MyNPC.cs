@@ -20,13 +20,13 @@ namespace AdventureMode {
 				}
 
 				if( !whitelist.Any( itemDef => itemDef.Type == item.type ) ) {
-					shop[i] = new Item();
-
 					for( int j=i; j<shop.Length-1; j++ ) {
 						shop[j] = shop[j+1];
 					}
 					shop[ shop.Length-1 ] = new Item();
+
 					nextSlot--;
+					i--;
 				}
 			}
 		}
@@ -45,23 +45,34 @@ namespace AdventureMode {
 		public override void SetupShop( int type, Chest shop, ref int nextSlot ) {
 			var npcDef = new NPCDefinition( type );
 
-			if( AdventureModeConfig.Instance.ShopWhitelists.ContainsKey(npcDef) ) {
-				AdventureModeNPC.FilterShop( shop.item, AdventureModeConfig.Instance.ShopWhitelists[npcDef], ref nextSlot );
-			}
+			//if( AdventureModeConfig.Instance.ShopWhitelists.ContainsKey(npcDef) ) {
+			//	AdventureModeNPC.FilterShop( shop.item, AdventureModeConfig.Instance.ShopWhitelists[npcDef], ref nextSlot );
+			//}
 
 			switch( type ) {
 			case NPCID.Merchant:
 				var frameKit = new Item();
 				var furnKit = new Item();
 				var whip = new Item();
+				var binocs = new Item();
 
 				frameKit.SetDefaults( ModContent.ItemType<HouseFramingKitItem>() );
 				furnKit.SetDefaults( ModContent.ItemType<HouseFurnishingKitItem>() );
 				whip.SetDefaults( ModContent.ItemType<BullwhipItem>() );
+				binocs.SetDefaults( ItemID.Binoculars );
 
-				shop.item[nextSlot++] = frameKit;
-				shop.item[nextSlot++] = furnKit;
-				shop.item[nextSlot++] = whip;
+				if( nextSlot < shop.item.Length ) {
+					shop.item[nextSlot++] = frameKit;
+				}
+				if( nextSlot < shop.item.Length ) {
+					shop.item[nextSlot++] = furnKit;
+				}
+				if( nextSlot < shop.item.Length ) {
+					shop.item[nextSlot++] = whip;
+				}
+				if( nextSlot < shop.item.Length ) {
+					shop.item[nextSlot++] = binocs;
+				}
 				break;
 			}
 		}

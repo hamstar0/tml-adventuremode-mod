@@ -72,6 +72,9 @@ namespace AdventureMode.Mods {
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Wood), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BoosterTrack), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.TallGate), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Campfire), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.HeartLantern), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.MagicLantern), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ModContent.ItemType<FramingPlankItem>()), true );
 			if( AdventureModeConfig.Instance.EnableMechBossItemRecipes ) {
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.MechanicalWorm ), true );

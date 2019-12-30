@@ -90,8 +90,8 @@ namespace AdventureMode {
 							if( WorldGen.PlaceSign(left + x, top + y, TileID.Signs) ) {
 								int signIdx = Sign.ReadSign( left + x, top + y, true );
 								Main.sign[ signIdx ].text = "Welcome to Adventure Mode!"	//[c/00FF00:
-									+"\n- Building and digging disabled (some exceptions, e.g. treasure)."
-									+"\n- Use house kits for NPC houses, beds, crafting, and fast travel."
+									+"\n- Building and digging disabled (some exceptions)."//, e.g. treasures)."
+									+"\n- Use house kits for NPC houses, beds, crafting, and placing fast travel points."
 									+"\n- Read item descriptions for more info."
 									+"\n- Talk to the Guide for further tips."
 									+"\n- Do not whip the slimes!";

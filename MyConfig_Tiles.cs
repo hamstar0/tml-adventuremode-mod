@@ -59,6 +59,7 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.Banners ),
 			TileID.GetUniqueKey( TileID.ImbuingStation ),
 			TileID.GetUniqueKey( TileID.BewitchingTable ),
+			TileID.GetUniqueKey( TileID.AlchemyTable ),
 			TileID.GetUniqueKey( TileID.Bottles ),
 			TileID.GetUniqueKey( TileID.Autohammer ),
 			TileID.GetUniqueKey( TileID.Anvils ),
@@ -74,9 +75,17 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.Cannon ),
 			TileID.GetUniqueKey( TileID.SnowballLauncher ),
 			//
+			TileID.GetUniqueKey( TileID.Timers ),
+			TileID.GetUniqueKey( TileID.InletPump ),
+			TileID.GetUniqueKey( TileID.OutletPump ),
+			TileID.GetUniqueKey( TileID.Lever ),
+			TileID.GetUniqueKey( TileID.Statues ),
+			TileID.GetUniqueKey( TileID.Explosives ),
+			//
 			TileID.GetUniqueKey( TileID.Torches ),
 			TileID.GetUniqueKey( TileID.Campfire ),
 			TileID.GetUniqueKey( TileID.LandMine ),
+			TileID.GetUniqueKey( TileID.HangingLanterns ),
 			//
 			TileID.GetUniqueKey( TileID.Saplings ),
 			TileID.GetUniqueKey( TileID.Pumpkins ),
