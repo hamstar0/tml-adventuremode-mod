@@ -54,19 +54,20 @@ namespace AdventureMode {
 				}
 
 				int npcWho = NPC.NewNPC( i << 4, ( j + 1 ) << 4, spiderType );
+				NPC npc = Main.npc[npcWho];
+				npc.life /= 4;
+				npc.netUpdate = true;
 
 				Timers.SetTimer( "AdventureModePotSurprise", 2, false, () => {
-					NPC npc = Main.npc[npcWho];
+					npc = Main.npc[npcWho];
 					if( !npc.active || npc.type != spiderType ) {
 						return false;
 					}
 
-					npc.life /= 2;
-					npc.lifeMax /= 2;
-					npc.scale *= 0.5f;
+					npc.life /= 4;
 					npc.netUpdate = true;
 
-					if( Main.netMode == 2 && npcWho < Main.npc.Length - 1 ) {
+					if( Main.netMode != 0 ) {
 						NetMessage.SendData( MessageID.SyncNPC, -1, -1, null, npcWho, 0f, 0f, 0f, 0, 0, 0 );
 					}
 					return false;

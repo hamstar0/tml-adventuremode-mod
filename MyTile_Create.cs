@@ -40,6 +40,10 @@ namespace AdventureMode {
 					|| tile.type == TileID.Chain;
 			}
 
+			if( Framing.GetTileSafely(tileX, tileY).wall != 0 ) {
+				return true;
+			}
+
 			if( isRope(tileX, tileY) ) {
 				return true;
 			}

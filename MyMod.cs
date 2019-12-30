@@ -1,9 +1,9 @@
-using AdventureMode.Mods;
-using AdventureMode.Recipes;
-using HamstarHelpers.Helpers.Debug;
 using System;
 using Terraria;
 using Terraria.ModLoader;
+using HamstarHelpers.Helpers.Debug;
+using AdventureMode.Mods;
+using AdventureMode.Recipes;
 
 
 namespace AdventureMode {

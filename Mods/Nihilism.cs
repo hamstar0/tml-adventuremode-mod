@@ -50,6 +50,10 @@ namespace AdventureMode.Mods {
 			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyOreEquipment, true );
 			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyNonOreCraftedEquipment, true );
 			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyOreBar, true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.CopperCoin), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.SilverCoin), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.GoldCoin), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.PlatinumCoin), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.RopeCoil), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.SilkRopeCoil), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.VineRopeCoil), true );
