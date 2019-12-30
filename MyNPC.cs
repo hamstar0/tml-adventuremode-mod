@@ -12,29 +12,23 @@ using Bullwhip.Items;
 
 namespace AdventureMode {
 	partial class AdventureModeNPC : GlobalNPC {
-		public static Item[] FilterShop( Item[] shop, IList<ItemDefinition> whitelist, ref int nextSlot ) {
-			Item[] newShop = new Item[ shop.Length ];
-
-			Item item;
-			int j = 0;
+		public static void FilterShop( Item[] shop, IList<ItemDefinition> whitelist, ref int nextSlot ) {
 			for( int i=0; i<shop.Length; i++ ) {
-				item = shop[i];
+				Item item = shop[i];
 				if( item == null || item.IsAir ) {
 					continue;
 				}
 
-				if( whitelist.Any(itemDef => itemDef.Type == item.type) ) {
-					newShop[j++] = item;
-				} else {
+				if( !whitelist.Any( itemDef => itemDef.Type == item.type ) ) {
+					shop[i] = new Item();
+
+					for( int j=i; j<shop.Length-1; j++ ) {
+						shop[j] = shop[j+1];
+					}
+					shop[ shop.Length-1 ] = new Item();
 					nextSlot--;
 				}
 			}
-
-			for( ; j<shop.Length; j++ ) {
-				newShop[j] = new Item();
-			}
-
-			return newShop;
 		}
 
 
@@ -52,15 +46,7 @@ namespace AdventureMode {
 			var npcDef = new NPCDefinition( type );
 
 			if( AdventureModeConfig.Instance.ShopWhitelists.ContainsKey(npcDef) ) {
-				Item[] newShop = AdventureModeNPC.FilterShop(
-					shop.item,
-					AdventureModeConfig.Instance.ShopWhitelists[npcDef],
-					ref nextSlot
-				);
-				
-				for( int i=0; i< shop.item.Length; i++ ) {
-					shop.item[i] = newShop[i];
-				}
+				AdventureModeNPC.FilterShop( shop.item, AdventureModeConfig.Instance.ShopWhitelists[npcDef], ref nextSlot );
 			}
 
 			switch( type ) {
@@ -75,6 +61,7 @@ namespace AdventureMode {
 
 				shop.item[nextSlot++] = frameKit;
 				shop.item[nextSlot++] = furnKit;
+				shop.item[nextSlot++] = whip;
 				break;
 			}
 		}

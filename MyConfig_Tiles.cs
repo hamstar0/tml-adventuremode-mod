@@ -47,7 +47,10 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( ModContent.TileType<TrackDeploymentTile>() ),
 			TileID.GetUniqueKey( ModContent.TileType<MountedMagicMirrorTile>() ),
 			//
+			TileID.GetUniqueKey( TileID.OpenDoor ),
 			TileID.GetUniqueKey( TileID.ClosedDoor ),
+			TileID.GetUniqueKey( TileID.TallGateClosed ),
+			TileID.GetUniqueKey( TileID.TallGateOpen ),
 			TileID.GetUniqueKey( TileID.CrystalBall ),
 			TileID.GetUniqueKey( TileID.AmmoBox ),
 			TileID.GetUniqueKey( TileID.SharpeningStation ),
@@ -58,7 +61,6 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.BewitchingTable ),
 			TileID.GetUniqueKey( TileID.Bottles ),
 			TileID.GetUniqueKey( TileID.Autohammer ),
-			TileID.GetUniqueKey( TileID.Cannon ),
 			TileID.GetUniqueKey( TileID.Anvils ),
 			TileID.GetUniqueKey( TileID.MythrilAnvil ),
 			TileID.GetUniqueKey( TileID.Furnaces ),
@@ -69,9 +71,12 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.Safes ),
 			TileID.GetUniqueKey( TileID.DefendersForge ),
 			TileID.GetUniqueKey( TileID.LunarCraftingStation ),
+			TileID.GetUniqueKey( TileID.Cannon ),
+			TileID.GetUniqueKey( TileID.SnowballLauncher ),
 			//
 			TileID.GetUniqueKey( TileID.Torches ),
 			TileID.GetUniqueKey( TileID.Campfire ),
+			TileID.GetUniqueKey( TileID.LandMine ),
 			//
 			TileID.GetUniqueKey( TileID.Saplings ),
 			TileID.GetUniqueKey( TileID.Pumpkins ),
@@ -106,14 +111,16 @@ namespace AdventureMode {
 			new HouseKitFurnitureDefinition { TileType = TileID.CookingPots, IsHardMode = false },
 			//new HouseKitFurnitureDefinition { TileType = TileID.Bottles, IsHardMode = false },
 			new HouseKitFurnitureDefinition { TileType = TileID.Sawmill, IsHardMode = false },
-			new HouseKitFurnitureDefinition { TileType = TileID.Anvils, IsHardMode = false },
-			new HouseKitFurnitureDefinition { TileType = TileID.Furnaces, IsHardMode = false },
+			new HouseKitFurnitureDefinition { TileType = TileID.Bookcases, IsHardMode = false },
+			new HouseKitFurnitureDefinition { TileType = TileID.HeavyWorkBench, IsHardMode = false },
 			new HouseKitFurnitureDefinition { TileType = TileID.TinkerersWorkbench, IsHardMode = false },
-			new HouseKitFurnitureDefinition { TileType = TileID.PiggyBank, IsHardMode = false },
+			//new HouseKitFurnitureDefinition { TileType = TileID.PiggyBank, IsHardMode = false },
 			//new HouseKitFurnitureDefinition { TileType = TileID.Statues, IsHardMode = false },
 			new HouseKitFurnitureDefinition { TileType = TileID.MythrilAnvil, IsHardMode = true },
 			new HouseKitFurnitureDefinition { TileType = TileID.AdamantiteForge, IsHardMode = true },
-			new HouseKitFurnitureDefinition { TileType = TileID.Safes, IsHardMode = true },
+			new HouseKitFurnitureDefinition { TileType = TileID.MythrilAnvil, IsHardMode = true },
+			new HouseKitFurnitureDefinition { TileType = TileID.AdamantiteForge, IsHardMode = true },
+			//new HouseKitFurnitureDefinition { TileType = TileID.Safes, IsHardMode = true },
 		};
 
 
