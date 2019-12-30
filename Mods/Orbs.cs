@@ -15,7 +15,9 @@ namespace AdventureMode.Mods {
 			myTileKillWhitelist.Add( TileID.GetUniqueKey( ModContent.TileType<ManaCrystalShardTile>() ) );
 
 			OrbsConfig.Instance.OverlayChanges( new OrbsConfig {
-				TileKillWhitelist = myTileKillWhitelist
+				TileKillWhitelist = myTileKillWhitelist,
+				OnlyGenOrbsInUndergroundChests = false,
+				AnyOrbPercentChancePerChest = 1f
 			} );
 		}
 	}
