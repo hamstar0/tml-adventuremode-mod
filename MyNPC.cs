@@ -45,9 +45,9 @@ namespace AdventureMode {
 		public override void SetupShop( int type, Chest shop, ref int nextSlot ) {
 			var npcDef = new NPCDefinition( type );
 
-			//if( AdventureModeConfig.Instance.ShopWhitelists.ContainsKey(npcDef) ) {
-			//	AdventureModeNPC.FilterShop( shop.item, AdventureModeConfig.Instance.ShopWhitelists[npcDef], ref nextSlot );
-			//}
+			if( AdventureModeConfig.Instance.ShopWhitelists.ContainsKey( npcDef ) ) {
+				AdventureModeNPC.FilterShop( shop.item, AdventureModeConfig.Instance.ShopWhitelists[npcDef], ref nextSlot );
+			}
 
 			switch( type ) {
 			case NPCID.Merchant:

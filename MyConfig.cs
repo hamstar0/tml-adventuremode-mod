@@ -56,6 +56,10 @@ namespace AdventureMode {
 
 		////
 
+		[DefaultValue( false )]
+		[ReloadRequired]
+		public bool EnableAlchemyRecipes { get; set; } = false;
+
 		[DefaultValue( true )]
 		[ReloadRequired]
 		public bool EnableMechBossItemRecipes { get; set; } = true;

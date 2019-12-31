@@ -132,16 +132,15 @@ namespace AdventureMode {
 			new HouseKitFurnitureDefinition { TileType = TileID.CookingPots, IsHardMode = false },
 			//new HouseKitFurnitureDefinition { TileType = TileID.Bottles, IsHardMode = false },
 			new HouseKitFurnitureDefinition { TileType = TileID.Sawmill, IsHardMode = false },
-			new HouseKitFurnitureDefinition { TileType = TileID.Bookcases, IsHardMode = false },
 			new HouseKitFurnitureDefinition { TileType = TileID.HeavyWorkBench, IsHardMode = false },
 			new HouseKitFurnitureDefinition { TileType = TileID.TinkerersWorkbench, IsHardMode = false },
-			//new HouseKitFurnitureDefinition { TileType = TileID.PiggyBank, IsHardMode = false },
+			new HouseKitFurnitureDefinition { TileType = TileID.Containers, IsHardMode = false },
 			//new HouseKitFurnitureDefinition { TileType = TileID.Statues, IsHardMode = false },
 			new HouseKitFurnitureDefinition { TileType = TileID.MythrilAnvil, IsHardMode = true },
 			new HouseKitFurnitureDefinition { TileType = TileID.AdamantiteForge, IsHardMode = true },
-			new HouseKitFurnitureDefinition { TileType = TileID.MythrilAnvil, IsHardMode = true },
-			new HouseKitFurnitureDefinition { TileType = TileID.AdamantiteForge, IsHardMode = true },
+			new HouseKitFurnitureDefinition { TileType = TileID.Bookcases, IsHardMode = false },
 			//new HouseKitFurnitureDefinition { TileType = TileID.Safes, IsHardMode = true },
+			new HouseKitFurnitureDefinition { TileType = TileID.Containers, IsHardMode = false },
 		};
 
 
