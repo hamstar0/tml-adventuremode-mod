@@ -10,8 +10,15 @@ namespace AdventureMode {
 	class AdventureModeItem : GlobalItem {
 		public override void SetDefaults( Item item ) {
 			if( AdventureModeConfig.Instance.NerfReaverShark ) {
-				if( item.type == ItemID.ReaverShark ) {
+				switch( item.type ) {
+				case ItemID.ReaverShark:
 					item.pick = 50;
+					break;
+				case ItemID.RocketBoots:
+					if( AdventureModeConfig.Instance.RocketBootsCost >= 0 ) {
+						item.value = AdventureModeConfig.Instance.RocketBootsCost;
+					}
+					break;
 				}
 			}
 		}

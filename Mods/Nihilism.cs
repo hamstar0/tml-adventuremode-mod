@@ -36,7 +36,7 @@ namespace AdventureMode.Mods {
 			//
 
 			NihilismAPI.SetRecipeBlacklistGroupEntry( "Any Item", true );
-			NihilismAPI.SetRecipeBlacklist2Entry( new ItemDefinition(ItemID.GrapplingHook), true );
+			//NihilismAPI.SetRecipeBlacklist2Entry( new ItemDefinition(ItemID.GrapplingHook), true );
 			NihilismAPI.SetRecipeBlacklist2Entry( new ItemDefinition(ItemID.AmethystHook), true );
 			NihilismAPI.SetRecipeBlacklist2Entry( new ItemDefinition(ItemID.TopazHook), true );
 			NihilismAPI.SetRecipeBlacklist2Entry( new ItemDefinition(ItemID.SapphireHook), true );
@@ -50,14 +50,17 @@ namespace AdventureMode.Mods {
 			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyOreEquipment, true );
 			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyNonOreCraftedEquipment, true );
 			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyOreBar, true );
+			//
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.CopperCoin), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.SilverCoin), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.GoldCoin), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.PlatinumCoin), true );
+			//
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.RopeCoil), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.SilkRopeCoil), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.VineRopeCoil), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.WebRopeCoil), true );
+			//
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Snowball), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.StickyBomb), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.StickyDynamite), true );
@@ -68,14 +71,20 @@ namespace AdventureMode.Mods {
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BouncyGrenade), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BouncyGlowstick), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.ManaCrystal), true );
-			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.WoodPlatform), true );
+			//
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Wood), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.WoodPlatform), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.MinecartTrack), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BoosterTrack), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.TallGate), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ModContent.ItemType<FramingPlankItem>()), true );
+			//
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Campfire), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.HeartLantern), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.MagicLantern), true );
-			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ModContent.ItemType<FramingPlankItem>()), true );
+			//
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.GrapplingHook), true );
+
 			if( AdventureModeConfig.Instance.EnableMechBossItemRecipes ) {
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.MechanicalWorm ), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.MechanicalSkull ), true );

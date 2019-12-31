@@ -38,7 +38,7 @@ namespace AdventureMode.Mods {
 					CustomFurnitureTile = TileID.Tables,
 					CustomWallMount1Tile = (ushort)ModContent.TileType<MountedMagicMirrorTile>(),
 					CustomFloorTile = TileID.Mudstone,
-					HouseFramingKitPrice = 200000,
+					HouseFramingKitPrice = 100000,
 					HouseFurnishingKitPrice = 100000,
 					TrackDeploymentKitRecipeTile = -1,
 					TrackDeploymentKitRecipeExtraIngredient = new List<ItemDefinition>()

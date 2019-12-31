@@ -91,7 +91,10 @@ namespace AdventureMode {
 								int signIdx = Sign.ReadSign( left + x, top + y, true );
 								Main.sign[ signIdx ].text = "Welcome to Adventure Mode!"	//[c/00FF00:
 									+"\n- Building and digging disabled (some exceptions)."//, e.g. treasures)."
-									+"\n- Use house kits for NPC houses, beds, crafting, and placing fast travel points."
+									+"\n- Use house kits to create NPC houses, beds, crafting stations, and placing fast travel points."
+									+"\n- Crafting stations are either found or kit-made."
+									+"\n- Get Orbs from chests or challeges to progress."
+									+"\n- Grappling only works on platforms."
 									+"\n- Read item descriptions for more info."
 									+"\n- Talk to the Guide for further tips."
 									+"\n- Do not whip the slimes!";

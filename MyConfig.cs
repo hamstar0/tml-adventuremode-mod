@@ -2,6 +2,7 @@
 using HamstarHelpers.Services.Configs;
 using System;
 using System.ComponentModel;
+using Terraria;
 using Terraria.ModLoader.Config;
 
 
@@ -92,6 +93,10 @@ namespace AdventureMode {
 
 		[DefaultValue( true )]
 		public bool NerfReaverShark { get; set; } = true;
+
+		[Range( -1, 99000000 )]
+		[DefaultValue( 350000 )]
+		public int RocketBootsCost { get; set; } = Item.buyPrice( 0, 35, 0, 0 );
 
 
 
