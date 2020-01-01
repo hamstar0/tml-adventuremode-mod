@@ -9,6 +9,7 @@ using Nihilism;
 using Terraria.ModLoader;
 using AdventureMode.Items;
 using PrefabKits.Items;
+using LockedAbilities.Items.Consumable;
 
 
 namespace AdventureMode.Mods {
@@ -78,6 +79,7 @@ namespace AdventureMode.Mods {
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BouncyGrenade), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BouncyGlowstick), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.ManaCrystal), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ModContent.ItemType<DarkHeartItem>() ), true );
 			//
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Wood), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.WoodPlatform), true );

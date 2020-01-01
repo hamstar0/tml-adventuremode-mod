@@ -17,7 +17,8 @@ namespace AdventureMode.Mods {
 			OrbsConfig.Instance.OverlayChanges( new OrbsConfig {
 				TileKillWhitelist = myTileKillWhitelist,
 				OnlyGenOrbsInUndergroundChests = false,
-				AnyOrbPercentChancePerChest = 1f
+				AnyOrbPercentChancePerChest = 0.5f,
+				WhiteOrbPercentChanceForOrbChest = 0f
 			} );
 		}
 	}
