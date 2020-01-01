@@ -6,6 +6,8 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 using HamstarHelpers.Helpers.Debug;
+using HamstarHelpers.Helpers.World;
+using HamstarHelpers.Helpers.NPCs;
 using PrefabKits.Items;
 using Bullwhip.Items;
 
@@ -32,6 +34,10 @@ namespace AdventureMode {
 		}
 
 
+
+		////////////////
+
+		private bool InvaderWaterSpawnChecked = false;
 
 		////////////////
 
@@ -74,6 +80,27 @@ namespace AdventureMode {
 					shop.item[nextSlot++] = binocs;
 				}
 				break;
+			}
+		}
+
+
+		////////////////
+
+		public override void PostAI( NPC npc ) {
+//DebugHelpers.Print( "invasionstate", "invasionSize:"+Main.invasionSize
+//	+", invasionProgress:"+Main.invasionProgress
+//	+", invasionProgressMax:"+Main.invasionProgressMax
+//	+", invasionType:"+Main.invasionType
+//	+", y:"+(npc.position.Y < WorldHelpers.DirtLayerTopTileY)
+//	+", wet:"+npc.wet);
+			if( Main.invasionSize > 0 && !npc.friendly ) {
+				if( !this.InvaderWaterSpawnChecked ) {
+					this.InvaderWaterSpawnChecked = true;
+
+					if( npc.position.Y < (WorldHelpers.DirtLayerTopTileY<<4) && npc.wet ) {
+						NPCHelpers.Remove( npc );
+					}
+				}
 			}
 		}
 	}

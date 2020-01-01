@@ -8,6 +8,7 @@ namespace AdventureMode.Mods {
 		public void LoadLockedAbilities() {
 			var config = new LockedAbilitiesConfig {
 				BackBraceEnabled = false,
+				FlyingCertificateEnabled = false,
 				WorldGenChestImplantBackBraceChance = 0f
 			};
 
