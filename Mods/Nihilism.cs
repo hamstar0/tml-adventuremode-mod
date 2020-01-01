@@ -102,6 +102,13 @@ namespace AdventureMode.Mods {
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.CelestialSigil ), true );
 			}
 
+			if( AdventureModeConfig.Instance.RemoveRecipeTileRequirements ) {
+				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Furnace), true );
+				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Hellforge), true );
+				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.AdamantiteForge), true );
+				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.TitaniumForge), true );
+			}
+
 			//
 
 			//NihilismAPI.SetItemBlacklistGroupEntry( "Any Placeable", true );

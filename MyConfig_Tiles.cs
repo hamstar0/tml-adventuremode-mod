@@ -65,6 +65,7 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.Anvils ),
 			TileID.GetUniqueKey( TileID.MythrilAnvil ),
 			TileID.GetUniqueKey( TileID.Furnaces ),
+			TileID.GetUniqueKey( TileID.Hellforge ),
 			TileID.GetUniqueKey( TileID.AdamantiteForge ),
 			TileID.GetUniqueKey( TileID.TinkerersWorkbench ),
 			TileID.GetUniqueKey( TileID.Sawmill ),
@@ -127,7 +128,7 @@ namespace AdventureMode {
 
 		[ReloadRequired]
 		public List<HouseKitFurnitureDefinition> HouseKitFurnitureSuccession { get; set; } = new List<HouseKitFurnitureDefinition> {
-			new HouseKitFurnitureDefinition { TileType = TileID.Anvils, IsHardMode = false },
+			/*new HouseKitFurnitureDefinition { TileType = TileID.Anvils, IsHardMode = false },
 			new HouseKitFurnitureDefinition { TileType = TileID.Furnaces, IsHardMode = false },
 			new HouseKitFurnitureDefinition { TileType = TileID.CookingPots, IsHardMode = false },
 			//new HouseKitFurnitureDefinition { TileType = TileID.Bottles, IsHardMode = false },
@@ -139,8 +140,10 @@ namespace AdventureMode {
 			new HouseKitFurnitureDefinition { TileType = TileID.MythrilAnvil, IsHardMode = true },
 			new HouseKitFurnitureDefinition { TileType = TileID.AdamantiteForge, IsHardMode = true },
 			new HouseKitFurnitureDefinition { TileType = TileID.Bookcases, IsHardMode = false },
-			//new HouseKitFurnitureDefinition { TileType = TileID.Safes, IsHardMode = true },
+			//new HouseKitFurnitureDefinition { TileType = TileID.Safes, IsHardMode = true },*/
+			new HouseKitFurnitureDefinition { TileType = TileID.Furnaces, IsHardMode = false },
 			new HouseKitFurnitureDefinition { TileType = TileID.Containers, IsHardMode = false },
+			new HouseKitFurnitureDefinition { TileType = TileID.Containers, IsHardMode = true },
 		};
 
 
@@ -159,5 +162,29 @@ namespace AdventureMode {
 		[Range( -1, 64 )]
 		[DefaultValue( 8 )]
 		public int MaxTrackGapPatchWidth { get; set; } = 16;
+
+
+
+		////////////////
+
+		private void OnLoadedTiles() {
+			if( !this.RemoveRecipeTileRequirements ) {
+				this.HouseKitFurnitureSuccession.AddRange( new HouseKitFurnitureDefinition[] {
+					new HouseKitFurnitureDefinition { TileType = TileID.Anvils, IsHardMode = false },
+					new HouseKitFurnitureDefinition { TileType = TileID.Furnaces, IsHardMode = false },
+					new HouseKitFurnitureDefinition { TileType = TileID.CookingPots, IsHardMode = false },
+					//new HouseKitFurnitureDefinition { TileType = TileID.Bottles, IsHardMode = false },
+					new HouseKitFurnitureDefinition { TileType = TileID.Sawmill, IsHardMode = false },
+					new HouseKitFurnitureDefinition { TileType = TileID.HeavyWorkBench, IsHardMode = false },
+					new HouseKitFurnitureDefinition { TileType = TileID.TinkerersWorkbench, IsHardMode = false },
+					new HouseKitFurnitureDefinition { TileType = TileID.Containers, IsHardMode = false },
+					//new HouseKitFurnitureDefinition { TileType = TileID.Statues, IsHardMode = false },
+					new HouseKitFurnitureDefinition { TileType = TileID.MythrilAnvil, IsHardMode = true },
+					new HouseKitFurnitureDefinition { TileType = TileID.AdamantiteForge, IsHardMode = true },
+					new HouseKitFurnitureDefinition { TileType = TileID.Bookcases, IsHardMode = false },
+					//new HouseKitFurnitureDefinition { TileType = TileID.Safes, IsHardMode = true },
+				} );
+			}
+		}
 	}
 }

@@ -28,6 +28,12 @@ namespace AdventureMode {
 
 		////
 
+		[DefaultValue( true )]
+		[ReloadRequired]
+		public bool RemoveRecipeTileRequirements { get; set; } = true;
+
+		////
+
 		[Range( 0, 100 )]
 		[DefaultValue( 0 )]
 		public int GrappleChainAmmoRate { get; set; } = 0;
@@ -110,5 +116,12 @@ namespace AdventureMode {
 			var clone = (AdventureModeConfig)base.Clone();
 			return clone;
 		}*/
+
+
+		////////////////
+
+		public override void OnLoaded() {
+			this.OnLoadedTiles();
+		}
 	}
 }

@@ -4,6 +4,7 @@ using Terraria.ModLoader;
 using HamstarHelpers.Helpers.Debug;
 using AdventureMode.Mods;
 using AdventureMode.Recipes;
+using Terraria.ID;
 
 
 namespace AdventureMode {
@@ -57,6 +58,23 @@ namespace AdventureMode {
 
 			var newRoDRecipe2 = new RodOfDiscordRecipe( true );
 			newRoDRecipe2.AddRecipe();
+		}
+
+		public override void PostAddRecipes() {
+			if( !AdventureModeConfig.Instance.RemoveRecipeTileRequirements ) {
+				return;
+			}
+
+			for( int i=0; i<Main.recipe.Length; i++ ) {
+				Recipe recipe = Main.recipe[i];
+				if( recipe == null ) { continue; }
+				
+				for( int j=0; j<recipe.requiredTile.Length; j++ ) {
+					if( recipe.requiredTile[j] != TileID.Furnaces ) {
+						recipe.requiredTile[j] = -1;
+					}
+				}
+			}
 		}
 
 
