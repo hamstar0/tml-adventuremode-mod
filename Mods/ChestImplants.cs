@@ -16,36 +16,31 @@ namespace AdventureMode.Mods {
 			implantsConfig.AllFromSetChestImplanterDefinitions.Value.Clear();
 			implantsConfig.ClearRandomImplanterSets();
 
-			if( AdventureModeConfig.Instance.WorldGenRemoveMagicMirrors ) {
-				var mirrorGoneItemDef1 = new ChestImplanterItemDefinition {
-					ChestItem = new ItemDefinition( ItemID.MagicMirror ),
+			void addRemovedItemImplanter( int itemType ) {
+				var itemDef = new ChestImplanterItemDefinition {
+					ChestItem = new ItemDefinition( itemType ),
 					MinQuantity = -1,
 					MaxQuantity = -1,
 					ChancePerChest = 1f,
 				};
-				var mirrorGoneItemDef2 = new ChestImplanterItemDefinition {
-					ChestItem = new ItemDefinition( ItemID.IceMirror ),
-					MinQuantity = -1,
-					MaxQuantity = -1,
-					ChancePerChest = 1f,
-				};
-
-				var mirrorGoneDef1 = new ChestImplanterDefinition {
-					ChestTypes = new List<Ref<string>> { new Ref<string>("Vanilla Underground World Chest") },
-					ItemDefinitions = new List<ChestImplanterItemDefinition> { mirrorGoneItemDef1 }
-				};
-				var mirrorGoneDef2 = new ChestImplanterDefinition {
-					ChestTypes = new List<Ref<string>> { new Ref<string>("Vanilla Underground World Chest") },
-					ItemDefinitions = new List<ChestImplanterItemDefinition> { mirrorGoneItemDef2 }
+				var def = new ChestImplanterDefinition {
+					ChestTypes = new List<Ref<string>> { new Ref<string>( "Vanilla Underground World Chest" ) },
+					ItemDefinitions = new List<ChestImplanterItemDefinition> { itemDef }
 				};
 
 				implantsConfig.AllFromSetChestImplanterDefinitions.Value.Add(
-					new Ref<ChestImplanterDefinition>( mirrorGoneDef1 )
-				);
-				implantsConfig.AllFromSetChestImplanterDefinitions.Value.Add(
-					new Ref<ChestImplanterDefinition>( mirrorGoneDef2 )
+					new Ref<ChestImplanterDefinition>( def )
 				);
 			}
+
+			if( AdventureModeConfig.Instance.WorldGenRemoveMagicMirrors ) {
+				addRemovedItemImplanter( ItemID.MagicMirror );
+				addRemovedItemImplanter( ItemID.IceMirror );
+			}
+			addRemovedItemImplanter( ItemID.LivingWoodWand );
+			addRemovedItemImplanter( ItemID.LeafWand );
+			addRemovedItemImplanter( ItemID.LivingMahoganyWand );
+			addRemovedItemImplanter( ItemID.LivingMahoganyLeafWand );
 
 			if( AdventureModeConfig.Instance.WorldGenAddedMountedMagicMirrorChance > 0f ) {
 				var randItemDef = new ChestImplanterItemDefinition {
