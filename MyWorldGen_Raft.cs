@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -21,13 +22,13 @@ namespace AdventureMode {
 			new int[] { 0,      42,     42,     42,     42,     42,     42,     42,     42,     42 },
 		};
 		private static int[][] RaftImageTiles = new int[][] {	//124
-			new int[] { 0,      0,      -1,		-1,		-1,		272,    4,      0,      0,      0,      0 },
-			new int[] { 0,      0,      -1,		-1,		-1,		272,    55,		55,		0,		0,      0 },
-			new int[] { 0,      0,      -1,		-1,		-1,		272,    55,		55,		0,		0,      0 },
-			new int[] { 0,      0,      0,      0,      0,      272,    0,		0,		0,      0,      0 },
+			new int[] { 0,      0,      -1,		-1,     -1,     272,    4,      0,      0,      0,      0 },
+			new int[] { 0,      0,      -1,		-1,     -1,     272,    55,     55,     0,      0,      0 },
+			new int[] { 0,      0,      -1,		-1,     -1,     272,    55,     55,     0,      0,      0 },
 			new int[] { 0,      0,      0,      0,      0,      272,    0,      0,      0,      0,      0 },
 			new int[] { 0,      0,      0,      0,      0,      272,    0,      0,      0,      0,      0 },
-			new int[] { 0,      0,      18,     0,      0,      272,    0,      0,		21,		0,      0 },
+			new int[] { 0,      0,      0,      0,      0,      272,    0,      0,      0,      0,      0 },
+			new int[] { 0,      0,      18,     0,      0,      272,    0,      0,      21,     0,      0 },
 			new int[] { 380,    380,    380,    380,    380,    380,    380,    380,    380,    380,    380 }	//158
 		};
 
@@ -38,8 +39,8 @@ namespace AdventureMode {
 		public static void GetBoatCoordinates( out int boatLeft, out int boatTop ) {
 			boatLeft = Main.spawnTileX;
 			boatTop = Main.spawnTileY;
-			
-			if( Main.spawnTileX < (Main.maxTilesX / 2) ) {
+
+			if( Main.spawnTileX < ( Main.maxTilesX / 2 ) ) {
 				boatLeft -= 20;
 			} else {
 				boatLeft += 8;
@@ -70,7 +71,7 @@ namespace AdventureMode {
 
 		public static void PlaceTiles( GenerationProgress progress, int left, int top, int[][] tiles ) {
 			for( int y = 0; y < tiles.Length; y++ ) {
-				progress.Value = (float)y / ((float)tiles.Length * 3f);
+				progress.Value = (float)y / ( (float)tiles.Length * 3f );
 
 				for( int x = 0; x < tiles[y].Length; x++ ) {
 					if( tiles[y][x] == 0 ) { continue; }
@@ -87,17 +88,9 @@ namespace AdventureMode {
 							WorldGen.PlaceTile( left + x, top + y, tiles[y][x], false, false, -1, 6 );
 							break;
 						case TileID.Signs:
-							if( WorldGen.PlaceSign(left + x, top + y, TileID.Signs) ) {
+							if( WorldGen.PlaceSign( left + x, top + y, TileID.Signs ) ) {
 								int signIdx = Sign.ReadSign( left + x, top + y, true );
-								Main.sign[ signIdx ].text = "Welcome to Adventure Mode!"	//[c/00FF00:
-									+"\n- Building and digging disabled (some exceptions)."//, e.g. treasures)."
-									+"\n- Use house kits to create NPC houses, beds, crafting stations, and placing fast travel points."
-									+"\n- Crafting stations are either found or kit-made."
-									+"\n- Get Orbs from chests or challeges to progress."
-									+"\n- Grappling only works on platforms."
-									+"\n- Read item descriptions for more info."
-									+"\n- Talk to the Guide for further tips."
-									+"\n- Do not whip the slimes!";
+								Main.sign[signIdx].text = AdventureModeWorldGen.GetIntroText();
 							}
 							break;
 						default:
@@ -106,14 +99,15 @@ namespace AdventureMode {
 						}
 					} else {
 						//WorldGen.Place3x3Wall( left+x, top+y, (ushort)ModContent.TileType<MountedMagicMirrorTile>(), 0 );	//3,1
-						TilePlacementHelpers.Place3x3Wall( left+x, top+y, (ushort)ModContent.TileType<MountedMagicMirrorTile>() );	//2,1
+						TilePlacementHelpers.Place3x3Wall( left + x, top + y, (ushort)ModContent.TileType<MountedMagicMirrorTile>() );  //2,1
 					}
 				}
 			}
 		}
+
 		public static void ProcessTiles( GenerationProgress progress, int left, int top, int[][] tiles ) {
 			for( int y = 0; y < tiles.Length; y++ ) {
-				progress.Value = (float)y / ((float)tiles.Length * 3f);
+				progress.Value = (float)y / ( (float)tiles.Length * 3f );
 
 				for( int x = 0; x < tiles[y].Length; x++ ) {
 					if( tiles[y][x] == 0 ) { continue; }
@@ -121,7 +115,7 @@ namespace AdventureMode {
 					if( tiles[y][x] > 0 ) {
 						switch( tiles[y][x] ) {
 						case TileID.Cog:
-							Main.tile[ left + x, top + y].inActive( true );
+							Main.tile[left + x, top + y].inActive( true );
 							break;
 						}
 					}
@@ -132,7 +126,7 @@ namespace AdventureMode {
 		public static void PlaceStarterBarrel( int x, int y ) {
 			int chestIdx = WorldGen.PlaceChest( x, y, 21, false, 5 );
 			if( chestIdx == -1 ) {
-				return;	// this occurs on the first pass
+				return; // this occurs on the first pass
 			}
 
 			int i = 0;
@@ -152,6 +146,29 @@ namespace AdventureMode {
 					//Main.tile[boatLeft + x, boatTop + y].wall = (ushort)boatWalls[y][x];
 				}
 			}
+		}
+
+
+		////////////////
+
+		public static string GetIntroText() {
+			var texts = new List<string> { "Welcome to Adventure Mode!",	//[c/00FF00:
+			   "- Building and digging disabled (some exceptions).",		//, e.g. treasures)."
+			   "- Use house kits to create NPC houses, beds, crafting stations, and placing fast travel points.",
+			   "- Crafting stations are either found or kit-made.",
+			   "- Get Orbs from chests or challeges to progress.",
+			   //"- Grappling only works on platforms.",
+			   "- Read item descriptions for more info.",
+			   "- Talk to the Guide for further tips.",
+			   "- Do not whip the slimes!",
+			};
+
+			if( AdventureModeConfig.Instance.RemoveRecipeTileRequirements ) {
+				texts[2] = "- Use house kits to create NPC houses, beds, storage, and placing fast travel points.";
+				texts.RemoveAt( 3 );
+			}
+
+			return string.Join( "\n", texts );
 		}
 	}
 }

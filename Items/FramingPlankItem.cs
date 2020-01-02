@@ -7,10 +7,12 @@ using Terraria.ModLoader;
 namespace AdventureMode.Items {
 	public class FramingPlankItem : ModItem {
 		public override void SetStaticDefaults() {
-			this.Tooltip.SetDefault(
-				"May be used for patching houses or structures"
-				+"\n"+"Crafted with a sawmill station"
-			);
+			string text = "May be used for patching houses or structures";
+			if( !AdventureModeConfig.Instance.RemoveRecipeTileRequirements ) {
+				text += "\n" + "Crafted with a sawmill station";
+			}
+
+			this.Tooltip.SetDefault( text );
 			this.DisplayName.SetDefault( "Framing Plank" );
 		}
 

@@ -10,6 +10,7 @@ using Terraria.ModLoader;
 using AdventureMode.Items;
 using PrefabKits.Items;
 using LockedAbilities.Items.Consumable;
+using StaffOfGaia.Items;
 
 
 namespace AdventureMode.Mods {
@@ -94,6 +95,7 @@ namespace AdventureMode.Mods {
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.MagicLantern), true );
 			//
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.GrapplingHook), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ModContent.ItemType<StaffOfGaiaItem>()), true );
 
 			if( AdventureModeConfig.Instance.EnableMechBossItemRecipes ) {
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.MechanicalWorm ), true );
