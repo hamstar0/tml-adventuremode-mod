@@ -16,12 +16,12 @@ namespace AdventureMode.Mods {
 			implantsConfig.AllFromSetChestImplanterDefinitions.Value.Clear();
 			implantsConfig.ClearRandomImplanterSets();
 
-			void addRemovedItemImplanter( int itemType ) {
+			void addItemImplanter( int itemType, int quantity, float chancePerChest=1f ) {
 				var itemDef = new ChestImplanterItemDefinition {
 					ChestItem = new ItemDefinition( itemType ),
-					MinQuantity = -1,
-					MaxQuantity = -1,
-					ChancePerChest = 1f,
+					MinQuantity = quantity,
+					MaxQuantity = quantity,
+					ChancePerChest = chancePerChest,
 				};
 				var def = new ChestImplanterDefinition {
 					ChestTypes = new List<Ref<string>> { new Ref<string>( "Vanilla Underground World Chest" ) },
@@ -33,30 +33,20 @@ namespace AdventureMode.Mods {
 				);
 			}
 
-			if( AdventureModeConfig.Instance.WorldGenRemoveMagicMirrors ) {
-				addRemovedItemImplanter( ItemID.MagicMirror );
-				addRemovedItemImplanter( ItemID.IceMirror );
+			if( !AdventureModeConfig.Instance.EnableAlchemyRecipes ) {
+				addItemImplanter( ItemID.Bottle, -1 );
 			}
-			addRemovedItemImplanter( ItemID.LivingWoodWand );
-			addRemovedItemImplanter( ItemID.LeafWand );
-			addRemovedItemImplanter( ItemID.LivingMahoganyWand );
-			addRemovedItemImplanter( ItemID.LivingMahoganyLeafWand );
+			if( AdventureModeConfig.Instance.WorldGenRemoveMagicMirrors ) {
+				addItemImplanter( ItemID.MagicMirror, -1 );
+				addItemImplanter( ItemID.IceMirror, -1 );
+			}
+			addItemImplanter( ItemID.LivingWoodWand, -1 );
+			addItemImplanter( ItemID.LeafWand, -1 );
+			addItemImplanter( ItemID.LivingMahoganyWand, -1 );
+			addItemImplanter( ItemID.LivingMahoganyLeafWand, -1 );
 
 			if( AdventureModeConfig.Instance.WorldGenAddedMountedMagicMirrorChance > 0f ) {
-				var randItemDef = new ChestImplanterItemDefinition {
-					ChestItem = new ItemDefinition( ModContent.ItemType<MountableMagicMirrorTileItem>() ),
-					MinQuantity = 1,
-					MaxQuantity = 1,
-					ChancePerChest = 0.05f,
-				};
-				var randDef = new ChestImplanterDefinition {
-					ChestTypes = new List<Ref<string>> { new Ref<string>( "Vanilla Underground World Chest" ) },
-					ItemDefinitions = new List<ChestImplanterItemDefinition> { randItemDef }
-				};
-
-				implantsConfig.RandomPickFromSetChestImplanterDefinitions1.Value.Add(
-					new Ref<ChestImplanterDefinition>( randDef )
-				);
+				addItemImplanter( ModContent.ItemType<MountableMagicMirrorTileItem>(), 1, 0.5f );
 			}
 
 			ChestImplantsConfig.Instance.OverlayChanges( implantsConfig );

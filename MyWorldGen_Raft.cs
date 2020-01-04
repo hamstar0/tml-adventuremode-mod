@@ -154,7 +154,7 @@ namespace AdventureMode {
 		public static string GetIntroText() {
 			var texts = new List<string> { "Welcome to Adventure Mode!",	//[c/00FF00:
 			   "- Building and digging disabled (some exceptions).",		//, e.g. treasures)."
-			   "- Use house kits to create NPC houses, beds, crafting stations, and placing fast travel points.",
+			   "- Use house kits to create NPC houses, beds, crafting stations, and fast travel points.",
 			   "- Crafting stations are either found or kit-made.",
 			   "- Get Orbs from chests or challeges to progress.",
 			   //"- Grappling only works on platforms.",
@@ -164,8 +164,11 @@ namespace AdventureMode {
 			};
 
 			if( AdventureModeConfig.Instance.RemoveRecipeTileRequirements ) {
-				texts[2] = "- Use house kits to create NPC houses, beds, storage, and placing fast travel points.";
+				texts[2] = "- Use house kits to create NPC houses, beds, storage, and fast travel points.";
 				texts.RemoveAt( 3 );
+			}
+			if( !AdventureModeConfig.Instance.EnableAlchemyRecipes ) {
+				texts.Insert( 2, "- Alchemy and non-equipment recipes disabled." );
 			}
 
 			return string.Join( "\n", texts );
