@@ -35,7 +35,7 @@ namespace AdventureMode.Mods {
 
 			PrefabKitsConfig.Instance.OverlayChanges(
 				new PrefabKitsConfig {
-					CustomFurnitureTile = TileID.Tables,
+					CustomFurnitureTile = TileID.Containers,
 					CustomWallMount1Tile = (ushort)ModContent.TileType<MountedMagicMirrorTile>(),
 					CustomFloorTile = TileID.Mudstone,
 					HouseFramingKitPrice = 100000,

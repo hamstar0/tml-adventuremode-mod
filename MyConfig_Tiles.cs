@@ -141,7 +141,6 @@ namespace AdventureMode {
 			new HouseKitFurnitureDefinition { TileType = TileID.AdamantiteForge, IsHardMode = true },
 			new HouseKitFurnitureDefinition { TileType = TileID.Bookcases, IsHardMode = false },
 			//new HouseKitFurnitureDefinition { TileType = TileID.Safes, IsHardMode = true },*/
-			new HouseKitFurnitureDefinition { TileType = TileID.Furnaces, IsHardMode = false },
 			new HouseKitFurnitureDefinition { TileType = TileID.Containers, IsHardMode = false },
 			new HouseKitFurnitureDefinition { TileType = TileID.Containers, IsHardMode = true },
 		};
@@ -170,6 +169,7 @@ namespace AdventureMode {
 		private void OnLoadedTiles() {
 			if( !this.RemoveRecipeTileRequirements ) {
 				this.HouseKitFurnitureSuccession.AddRange( new HouseKitFurnitureDefinition[] {
+					new HouseKitFurnitureDefinition { TileType = TileID.Table, IsHardMode = false },
 					new HouseKitFurnitureDefinition { TileType = TileID.Anvils, IsHardMode = false },
 					new HouseKitFurnitureDefinition { TileType = TileID.Furnaces, IsHardMode = false },
 					new HouseKitFurnitureDefinition { TileType = TileID.CookingPots, IsHardMode = false },
