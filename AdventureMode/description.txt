@@ -1,0 +1,8 @@
+Adventure Mode transforms Terraria from a sandbox into a journey!
+
+Credits:
+  Templates:
+    mcmanybucks (raft)
+  Testers:
+    Putan (beta)
+    CrabBar (beta)

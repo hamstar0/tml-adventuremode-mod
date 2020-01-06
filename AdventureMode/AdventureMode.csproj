@@ -21,37 +21,37 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Bullwhip">
-      <HintPath>..\..\Bullwhip\Bullwhip\bin\Release\net452\Bullwhip.dll</HintPath>
+      <HintPath>..\..\..\Bullwhip\Bullwhip\bin\Release\net452\Bullwhip.dll</HintPath>
     </Reference>
     <Reference Include="ChestImplants">
-      <HintPath>..\..\Chest Implants\ChestImplants\bin\Release\net452\ChestImplants.dll</HintPath>
+      <HintPath>..\..\..\Chest Implants\ChestImplants\bin\Release\net452\ChestImplants.dll</HintPath>
     </Reference>
     <Reference Include="FindableManaCrystals">
-      <HintPath>..\..\Findable Mana Crystals\FindableManaCrystals\bin\Release\net452\FindableManaCrystals.dll</HintPath>
+      <HintPath>..\..\..\Findable Mana Crystals\FindableManaCrystals\bin\Release\net452\FindableManaCrystals.dll</HintPath>
     </Reference>
     <Reference Include="HamstarHelpers">
-      <HintPath>..\..\Mod Helpers\v5 (tML11)\HamstarHelpers\bin\Release\net452\HamstarHelpers.dll</HintPath>
+      <HintPath>..\..\..\Mod Helpers\v5 (tML11)\HamstarHelpers\bin\Release\net452\HamstarHelpers.dll</HintPath>
     </Reference>
     <Reference Include="LockedAbilities">
-      <HintPath>..\..\Locked Abilities\LockedAbilities\bin\Release\net452\LockedAbilities.dll</HintPath>
+      <HintPath>..\..\..\Locked Abilities\LockedAbilities\bin\Release\net452\LockedAbilities.dll</HintPath>
     </Reference>
     <Reference Include="MountedMagicMirrors">
-      <HintPath>..\..\Mounted Magic Mirrors\MountedMagicMirrors\bin\Release\net452\MountedMagicMirrors.dll</HintPath>
+      <HintPath>..\..\..\Mounted Magic Mirrors\MountedMagicMirrors\bin\Release\net452\MountedMagicMirrors.dll</HintPath>
     </Reference>
     <Reference Include="Nihilism">
-      <HintPath>..\..\Nihilism\Nihilism\bin\Release\net452\Nihilism.dll</HintPath>
+      <HintPath>..\..\..\Nihilism\Nihilism\bin\Release\net452\Nihilism.dll</HintPath>
     </Reference>
     <Reference Include="Orbs">
-      <HintPath>..\..\Orbs\Orbs\bin\Release\net452\Orbs.dll</HintPath>
+      <HintPath>..\..\..\Orbs\Orbs\bin\Release\net452\Orbs.dll</HintPath>
     </Reference>
     <Reference Include="PrefabKits">
-      <HintPath>..\..\Prefab Kits\PrefabKits\bin\Release\net452\PrefabKits.dll</HintPath>
+      <HintPath>..\..\..\Prefab Kits\PrefabKits\bin\Release\net452\PrefabKits.dll</HintPath>
     </Reference>
     <Reference Include="StaffOfGaia">
-      <HintPath>..\..\Staff Of Gaia\StaffOfGaia\bin\Release\net452\StaffOfGaia.dll</HintPath>
+      <HintPath>..\..\..\Staff Of Gaia\StaffOfGaia\bin\Release\net452\StaffOfGaia.dll</HintPath>
     </Reference>
     <Reference Include="TheTrickster">
-      <HintPath>..\..\The Trickster\TheTrickster\bin\Release\net452\TheTrickster.dll</HintPath>
+      <HintPath>..\..\..\The Trickster\TheTrickster\bin\Release\net452\TheTrickster.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>
