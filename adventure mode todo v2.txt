@@ -1,0 +1,28 @@
+v2
+-	Implement Rod of Dissonance via. the new recipe
+-	Add Equipment Degradation mod (tool use incurs random, stacking negative prefixes)
+-	Set coins to evaporate after 8 seconds
+-	Set fighter-AI monsters to climb on top of each other when blockaded
+-	@Add Middle Earth mod
+-	@Add On A Rail mod
+-	@Bullwhip
+	-	Add a hotkey for using the whip
+	-	Increase bullwhip reach
+	-	Set grab behavior to pull player
+	-	Set it to activate levers
+	-	Kill anything under 20 hp
+	-	Use alternate sound fx for hitting solid tile
+	-	Create Stunning Whip (rename?)
+		-	Makes enemies unable to attack for random duration
+		-	Trickster always flees on hit, and stays away for a while
+		-	Removes Degreelessness Mode from enemies
+		-	Crafted from 3 Dark Hearts, 1 Bullwhip, 50 Pixie Dust
+-	Fix ReloadRequired attribute for configs
+-	Add ziplines
+-	@Remake Durability mod as Wear and Tear
+-	Debug doors of frame houses
+-	@Orbs
+	-	Make orbs placeable to create their effects
+	-	Set orbs to destroy tiles outside of their square in small amounts
+-	@Mounted Magic Mirrors
+	-	Fix mirror map icon sizes and interactivity (study player head code?)

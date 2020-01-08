@@ -14,7 +14,7 @@ namespace AdventureMode.Mods {
 		public void LoadPrefabsKitAndMountedMagicMirrors() {
 			IList<HouseKitFurnitureDefinition> cycle = AdventureModeConfig.Instance.HouseKitFurnitureSuccession;
 
-			PrefabKitsAPI.OnPostHouseCreate( (tileX, tileY, item) => {
+			PrefabKitsAPI.OnPostHouseCreate( (tileX, tileY) => {
 				var myworld = ModContent.GetInstance<AdventureModeWorld>();
 
 				if( myworld.HouseKitFurnitureIdx >= cycle.Count ) {
