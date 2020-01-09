@@ -39,13 +39,6 @@ namespace AdventureMode.Mods {
 			//
 
 			NihilismAPI.SetRecipeBlacklistGroupEntry( "Any Item", true );
-			//NihilismAPI.SetRecipeBlacklist2Entry( new ItemDefinition(ItemID.GrapplingHook), true );
-			NihilismAPI.SetRecipeBlacklist2Entry( new ItemDefinition(ItemID.AmethystHook), true );
-			NihilismAPI.SetRecipeBlacklist2Entry( new ItemDefinition(ItemID.TopazHook), true );
-			NihilismAPI.SetRecipeBlacklist2Entry( new ItemDefinition(ItemID.SapphireHook), true );
-			NihilismAPI.SetRecipeBlacklist2Entry( new ItemDefinition(ItemID.EmeraldHook), true );
-			NihilismAPI.SetRecipeBlacklist2Entry( new ItemDefinition(ItemID.RubyHook), true );
-			NihilismAPI.SetRecipeBlacklist2Entry( new ItemDefinition(ItemID.DiamondHook), true );
 
 			//
 
@@ -105,12 +98,12 @@ namespace AdventureMode.Mods {
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.CelestialSigil ), true );
 			}
 
-			if( AdventureModeConfig.Instance.RemoveRecipeTileRequirements ) {
+			/*if( AdventureModeConfig.Instance.RemoveRecipeTileRequirements ) {
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Furnace), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Hellforge), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.AdamantiteForge), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.TitaniumForge), true );
-			}
+			}*/
 
 			//
 

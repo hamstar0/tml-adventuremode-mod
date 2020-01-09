@@ -61,16 +61,13 @@ namespace AdventureMode {
 		}
 
 		public override void PostAddRecipes() {
-			if( !AdventureModeConfig.Instance.RemoveRecipeTileRequirements ) {
-				return;
-			}
+			if( AdventureModeConfig.Instance.RemoveRecipeTileRequirements ) {
+				for( int i = 0; i < Main.recipe.Length; i++ ) {
+					Recipe recipe = Main.recipe[i];
+					if( recipe == null ) { continue; }
 
-			for( int i=0; i<Main.recipe.Length; i++ ) {
-				Recipe recipe = Main.recipe[i];
-				if( recipe == null ) { continue; }
-				
-				for( int j=0; j<recipe.requiredTile.Length; j++ ) {
-					if( recipe.requiredTile[j] != TileID.Furnaces ) {
+					for( int j = 0; j < recipe.requiredTile.Length; j++ ) {
+						//if( recipe.requiredTile[j] != TileID.Furnaces ) {
 						recipe.requiredTile[j] = -1;
 					}
 				}

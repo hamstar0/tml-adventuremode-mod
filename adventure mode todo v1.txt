@@ -61,11 +61,11 @@ v1
 	-	@Surroundings
 		-	Fix alignment issues for certain setups (?)
 		-	Fix shaders for certain setups (?)
-	-	Enable torch crafting
-	-	Enable gem hooks
+	-	Remove double jump gel requirement
 	-	Fix rope placement upward against ceiling with rope below
-	-	Remove superfluous recipes
+	-	Fix Nihilism sync in MP
 
+	-	Enable gem hooks
 	-	Allow placing Framing Planks horizontally 6 blocks
 	-	Give indication of placement options
 	-	Fix leaf wand world gen removals not working
