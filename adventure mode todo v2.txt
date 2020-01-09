@@ -26,3 +26,8 @@ v2
 	-	Set orbs to destroy tiles outside of their square in small amounts
 -	@Mounted Magic Mirrors
 	-	Fix mirror map icon sizes and interactivity (study player head code?)
+-	@Add Guarded Meteors mod
+	-	@Decide: Set meteor heads to appear from random meteor blocks directly
+	-	Set meteor heads to seek and self destruct to stop bombs, dynamite
+	-	Set meteor biome to drain mana
+	-	Set meteor heads to phase occasionally (cannot be damaged)

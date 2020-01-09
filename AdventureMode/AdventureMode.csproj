@@ -11,17 +11,8 @@
     <Exec Command="&quot;$(tMLBuildServerPath)&quot; -build $(ProjectDir) -eac $(TargetPath) -define $(DefineConstants) -unsafe $(AllowUnsafeBlocks)" />
   </Target>
   <ItemGroup>
-    <Compile Remove="ImageSources\**" />
-    <EmbeddedResource Remove="ImageSources\**" />
-    <None Remove="ImageSources\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove=".gitattributes" />
-    <None Remove=".gitignore" />
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="Bullwhip">
-      <HintPath>..\..\..\Bullwhip\Bullwhip\bin\Release\net452\Bullwhip.dll</HintPath>
+      <HintPath>..\..\..\Bullwhip\Project\Bullwhip\bin\Release\net452\Bullwhip.dll</HintPath>
     </Reference>
     <Reference Include="ChestImplants">
       <HintPath>..\..\..\Chest Implants\ChestImplants\bin\Release\net452\ChestImplants.dll</HintPath>
@@ -45,7 +36,7 @@
       <HintPath>..\..\..\Orbs\Orbs\bin\Release\net452\Orbs.dll</HintPath>
     </Reference>
     <Reference Include="PrefabKits">
-      <HintPath>..\..\..\Prefab Kits\PrefabKits\bin\Release\net452\PrefabKits.dll</HintPath>
+      <HintPath>..\..\..\Prefab Kits\Project\PrefabKits\bin\Release\net452\PrefabKits.dll</HintPath>
     </Reference>
     <Reference Include="StaffOfGaia">
       <HintPath>..\..\..\Staff Of Gaia\StaffOfGaia\bin\Release\net452\StaffOfGaia.dll</HintPath>

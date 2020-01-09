@@ -149,8 +149,12 @@ namespace AdventureMode {
 		////
 
 		[Range( -1, 1024 )]
-		[DefaultValue( 4 )]
-		public int MaxFramingPlankLength { get; set; } = 4;
+		[DefaultValue( 3 )]
+		public int MaxFramingPlankVerticalLength { get; set; } = 3;
+
+		[Range( -1, 1024 )]
+		[DefaultValue( 5 )]
+		public int MaxFramingPlankHorizontalLength { get; set; } = 5;
 
 		[Range( -1, 1024 )]
 		[DefaultValue( 8 )]

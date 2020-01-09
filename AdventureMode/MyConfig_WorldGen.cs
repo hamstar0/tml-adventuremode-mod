@@ -18,7 +18,8 @@ namespace AdventureMode {
 		[DefaultValue( true )]
 		public bool WorldGenRemoveDarkHeartPieces { get; set; } = true;
 
+		[DefaultValue( 0.1f )]
 		[CustomModConfigItem( typeof(MyFloatInputElement) )]
-		public float WorldGenAddedMountedMagicMirrorChance { get; set; } = 0.05f;
+		public float WorldGenAddedMountedMagicMirrorChance { get; set; } = 0.1f;
 	}
 }

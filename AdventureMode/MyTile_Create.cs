@@ -1,6 +1,5 @@
 ﻿using AdventureMode.Tiles;
 using HamstarHelpers.Helpers.TModLoader;
-using MountedMagicMirrors.Tiles;
 using System;
 using Terraria;
 using Terraria.ID;
@@ -109,14 +108,16 @@ namespace AdventureMode {
 		}
 
 		public static bool IsSuitableForFramingPlank( int tileX, int tileY, int dirX, int dirY ) {
-			int max = AdventureModeConfig.Instance.MaxFramingPlankLength;
+			int max = dirY != 0
+				? AdventureModeConfig.Instance.MaxFramingPlankVerticalLength
+				: AdventureModeConfig.Instance.MaxFramingPlankHorizontalLength;
 			if( max < 0 ) {
 				return true;
 			}
 
 			int plankType = ModContent.TileType<FramingPlankTile>();
 
-			for( int i = 1; i < max; i++ ) {
+			for( int i = 1; i <= max; i++ ) {
 				Tile tile = Framing.GetTileSafely( tileX + (i * dirX), tileY + (i * dirY) );
 				if( !tile.active() || !Main.tileSolid[tile.type] || Main.tileSolidTop[tile.type] ) {
 					break;

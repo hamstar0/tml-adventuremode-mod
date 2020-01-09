@@ -46,7 +46,11 @@ namespace AdventureMode.Mods {
 			addItemImplanter( ItemID.LivingMahoganyLeafWand, -1 );
 
 			if( AdventureModeConfig.Instance.WorldGenAddedMountedMagicMirrorChance > 0f ) {
-				addItemImplanter( ModContent.ItemType<MountableMagicMirrorTileItem>(), 1, 0.5f );
+				addItemImplanter(
+					ModContent.ItemType<MountableMagicMirrorTileItem>(),
+					1,
+					AdventureModeConfig.Instance.WorldGenAddedMountedMagicMirrorChance
+				);
 			}
 
 			ChestImplantsConfig.Instance.OverlayChanges( implantsConfig );

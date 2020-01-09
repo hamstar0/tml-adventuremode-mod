@@ -153,14 +153,15 @@ namespace AdventureMode {
 
 		public static string GetIntroText() {
 			var texts = new List<string> { "Welcome to Adventure Mode!",	//[c/00FF00:
-			   "- Building and digging disabled (some exceptions).",		//, e.g. treasures)."
-			   "- Use house kits to create NPC houses, beds, crafting stations, and fast travel points.",
-			   "- Crafting stations are either found or kit-made.",
-			   "- Get Orbs from chests or challeges to progress.",
-			   //"- Grappling only works on platforms.",
-			   "- Read item descriptions for more info.",
-			   "- Talk to the Guide for further tips.",
-			   "- Do not whip the slimes!",
+				"- Building and digging disabled (some exceptions).",		//, e.g. treasures)."
+				"- Use house kits to create NPC houses, beds, crafting stations, and fast travel points.",
+				"- Crafting stations are either found or kit-made.",
+				"- Use platforms, planks, and ropes to get around.",
+				"- Get Orbs from chests or challeges to progress.",
+				//"- Grappling only works on platforms.",
+				"- Read item descriptions for more info.",
+				"- Talk to the Guide for further help.",
+				"- Do not whip the slimes!",
 			};
 
 			if( AdventureModeConfig.Instance.RemoveRecipeTileRequirements ) {

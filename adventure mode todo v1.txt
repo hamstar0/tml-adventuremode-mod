@@ -18,12 +18,6 @@ v1
 -	Add behavior to keep some monsters still until light shines on them
 -	Create special minecart type that makes immune to enemies, but disables player attacks
 -	@Set git repos public
--	@Add Guarded Meteors mod
-	-	@Decide: Set meteor heads to appear from random meteor blocks directly
-	-	Set meteor heads to seek and self destruct to stop bombs, dynamite
-	-	Set meteor biome to drain mana
-	-	Set meteor heads to phase occasionally (cannot be damaged)
--	@Add Smoke Bombs mod
 -	@Trickster: Make Trickster give degreelessness + haste buff to random, individual invaders
 -	@Orbs
 	-	Add map button to toggle tile color overlay (Orb Resonance Map View)
@@ -38,12 +32,7 @@ v1
 	-	Enable clay bowl and soup recipes
 	-	Set binoculars to end of hotbar
 	-	Disable Nihilism inbox message
-	-	Allow placing sand, but not stacking high
-	-	Allow placing Framing Planks horizontally 6 blocks
-	-	Give indication of placement range for platforms and framing planks
-	-	@Locked Abilities
-		-	Fix Xs drawing incorrectly (zoom? non-windowed mode?)
-		-	Remove no grab delay after ejecting equipped items
+	-	Allow placing sand, but not stacking
 	-	@Staff of Gaia
 		-	Set SoG recipe to require any 3 orbs
 		-	Disable SoG for invasions and protected (Degreelessness mode) bosses
@@ -51,14 +40,44 @@ v1
 	-	@MMM
 		-	Set players to load and save mirrors per world
 		-	Fix particles at default spawn
+	-	@Findable Mana Shards
+		-	Fix ManaCrystalShardCheckProtocol spam
 	-	@Bullwhip
-		-	Fix MP graphic sync of whip sprite
-		-	Soften knockback
-		-	Fix knockback against antlions (and other 'stationary' NPCs)
-		-	Fix upside down left facing animation
-		-	Slim down whip hit detection against NPCs
-		-	Implement grabbing items through tiles
+		-	Remove platform grab (right click only?)
+		-	Tune knockback
+	-	@Locked Abilities
+		-	Fix duplicating accessories in MP
+		-	Fix Xs drawing incorrectly (zoom? non-windowed mode?)
+		-	Remove no grab delay after ejecting equipped items
+		-	Remove double jump gel requirement
+	-	@Trickster
+		-	Debug MP premature exit
+		-	Fix Degreelessness Buff sync?
+	-	@Orbs
+		-	Sync orb uses
+	-	@Prefab Kits
+		-	Fix Track Kit sync
+		-	Start players with more Track Kits
+	-	@Surroundings
+		-	Fix alignment issues for certain setups (?)
+		-	Fix shaders for certain setups (?)
+	-	Enable torch crafting
+	-	Enable gem hooks
+	-	Fix rope placement upward against ceiling with rope below
+	-	Remove superfluous recipes
 
+	-	Allow placing Framing Planks horizontally 6 blocks
+	-	Give indication of placement options
+	-	Fix leaf wand world gen removals not working
+	-	Remove furniture recipes
+	-	Allow making ore bars without furnace
+	-	@Bullwhip
+		-	Add player damage
+		-	Soften knockback
+		-	Fix hits against protected NPCs
+		-	Slim down whip hit detection against NPCs
+		-	Fix MP graphic sync of whip sprite
+		-	Fix upside down left facing animation
 	-	@Prefab Kits
 		-	Mention contents of furnishing kit
 		-	Fix sync issues

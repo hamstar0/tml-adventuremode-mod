@@ -28,16 +28,17 @@ Consideration
 		-	Each staff if used to destroy blocks of a given world power hue
 		-	Give 'world power grid' random colors via world's own random seed
 	-	Rename Staff of Gaia to Divine Staves
--	@B&D underworld "locking"
+-	@Decide underworld "locking"
 	-	Vegetative Vestment (via Jungle) - Protects against underworld heat
 	-	Jester's Motley (via Dungeon) - Wards Tricksters (especially nasty in the underworld)
 	-	Mana Circuits (via Mana Crystal Shards) - Retains mana (underworld drains mana)
 	-	Flame-proof Bridge Kits (via Underground Desert) - Hastens WoF bridge building
--	@B&D locked chest variants
+-	@Decide locked chest variants
 -	Add auto-jumps for 2-3 high block obstacles while moving fast
 -	Set fishing to tap out in a given area (add Guide tip correspondingly)
 -	Add disappearing coins
 -	Test allowing placing non-solid tiles (any)
 -	On death, add a spike in spawn rate upon revisiting location
--	Add Boss Lairs mod
+-	@Add Boss Lairs mod
+-	@Add Smoke Bombs mod
 
