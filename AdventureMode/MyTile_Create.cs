@@ -32,12 +32,17 @@ namespace AdventureMode {
 		public static bool IsSuitableForRope( int tileX, int tileY ) {
 			bool isRope( int x, int y ) {
 				Tile tile = Framing.GetTileSafely( x, y );
+				return isRopeTile( tile );
+			}
+			bool isRopeTile( Tile tile ) {
 				return tile.type == TileID.Rope
 					|| tile.type == TileID.SilkRope
 					|| tile.type == TileID.VineRope
 					|| tile.type == TileID.WebRope
 					|| tile.type == TileID.Chain;
 			}
+
+			//
 
 			if( Framing.GetTileSafely(tileX, tileY).wall != 0 ) {
 				return true;
@@ -51,7 +56,7 @@ namespace AdventureMode {
 				return true;
 			}
 
-			if( isRope(tileX, tileY-1) ) {
+			if( Framing.GetTileSafely(tileX, tileY-1).active() ) {	//isRope(tileX, tileY-1) ) {
 				return true;
 			}
 

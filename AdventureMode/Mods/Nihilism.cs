@@ -1,12 +1,13 @@
 using System;
 using Terraria.ID;
+using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
+using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.TModLoader;
 using HamstarHelpers.Services.EntityGroups;
 using HamstarHelpers.Services.EntityGroups.Definitions;
 using HamstarHelpers.Services.Hooks.LoadHooks;
 using Nihilism;
-using Terraria.ModLoader;
 using AdventureMode.Items;
 using PrefabKits.Items;
 using LockedAbilities.Items.Consumable;

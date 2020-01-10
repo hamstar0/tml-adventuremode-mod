@@ -9,7 +9,8 @@ namespace AdventureMode.Mods {
 			var config = new LockedAbilitiesConfig {
 				BackBraceEnabled = false,
 				FlyingCertificateEnabled = false,
-				WorldGenChestImplantBackBraceChance = 0f
+				WorldGenChestImplantBackBraceChance = 0f,
+				DoubleJumpsRequireGels = false
 			};
 
 			if( AdventureModeConfig.Instance.WorldGenRemoveDarkHeartPieces ) {

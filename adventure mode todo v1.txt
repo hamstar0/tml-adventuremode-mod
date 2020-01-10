@@ -49,7 +49,6 @@ v1
 		-	Fix duplicating accessories in MP
 		-	Fix Xs drawing incorrectly (zoom? non-windowed mode?)
 		-	Remove no grab delay after ejecting equipped items
-		-	Remove double jump gel requirement
 	-	@Trickster
 		-	Debug MP premature exit
 		-	Fix Degreelessness Buff sync?
@@ -57,14 +56,15 @@ v1
 		-	Sync orb uses
 	-	@Prefab Kits
 		-	Fix Track Kit sync
+
 		-	Start players with more Track Kits
 	-	@Surroundings
 		-	Fix alignment issues for certain setups (?)
-		-	Fix shaders for certain setups (?)
+*
+		-	Fix blur shaders
 	-	Remove double jump gel requirement
 	-	Fix rope placement upward against ceiling with rope below
 	-	Fix Nihilism sync in MP
-
 	-	Enable gem hooks
 	-	Allow placing Framing Planks horizontally 6 blocks
 	-	Give indication of placement options
