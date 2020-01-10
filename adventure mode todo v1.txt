@@ -32,6 +32,10 @@ v1
 	-	Set binoculars to end of hotbar
 	-	Disable Nihilism inbox message
 	-	Allow placing sand, but not stacking
+	-	@Bullwhip
+		-	Reduce projectile size
+	-	@Surroundings
+		-	Fix alignment issues for certain setups (?)
 	-	@Staff of Gaia
 		-	Set SoG recipe to require any 3 orbs
 		-	Disable SoG for invasions and protected (Degreelessness mode) bosses
@@ -40,20 +44,25 @@ v1
 		-	Set players to load and save mirrors per world
 		-	Fix particles at default spawn
 	-	@Findable Mana Shards
+		-	Clarify hint to indicate only mana-using magic reveals shards
+		-	Make binoculars hints more distinct (add velocity?)
 		-	Fix ManaCrystalShardCheckProtocol spam
 	-	@Trickster
 		-	Debug MP premature exit
 		-	Fix Degreelessness Buff sync?
+	-	@Locked Abilities
+		-	Fix Xs drawing incorrectly (zoom? non-windowed mode?)
 	-	@Bullwhip
-		-	Reduce projectile size
 		-	Remove platform grab (right click only?)
 		-	Tune knockback
+	-	Fix silk ropes recipe (?)
+
+	-	Enable breaking banners
 	-	@Locked Abilities
+		-	Fix double jump fuel tooltip
 		-	Fix duplicating accessories in MP
-		-	Fix Xs drawing incorrectly (zoom? non-windowed mode?)
 		-	Remove no grab delay after ejecting equipped items
 	-	Give further tester credits
-
 	-	Enable clay bowl, soup, chain recipes
 	-	@Orbs
 		-	Sync orb uses
@@ -62,8 +71,6 @@ v1
 		-	Fix Track Kit sync
 		-	Start players with more Track Kits
 	-	@Surroundings
-		-	Fix alignment issues for certain setups (?)
-*
 		-	Fix blur shaders
 	-	Remove double jump gel requirement
 	-	Fix rope placement upward against ceiling with rope below
