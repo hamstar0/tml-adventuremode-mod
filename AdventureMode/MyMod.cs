@@ -34,6 +34,7 @@ namespace AdventureMode {
 		////////////////
 
 		public override void Load() {
+			this.ModInteractions.LoadBullwhip();
 			this.ModInteractions.LoadNihilism();
 			this.ModInteractions.LoadChestImplants();
 			this.ModInteractions.LoadPrefabsKitAndMountedMagicMirrors();
