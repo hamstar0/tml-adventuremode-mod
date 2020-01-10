@@ -47,6 +47,7 @@ namespace AdventureMode.Mods {
 			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyOreEquipment, true );
 			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyNonOreCraftedEquipment, true );
 			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyOreBar, true );
+
 			if( AdventureModeConfig.Instance.EnableAlchemyRecipes ) {
 				NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyPotion, true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Bottle), true );
@@ -60,6 +61,7 @@ namespace AdventureMode.Mods {
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.GoldCoin), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.PlatinumCoin), true );
 			//
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Chain), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.RopeCoil), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.SilkRopeCoil), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.VineRopeCoil), true );
@@ -74,8 +76,14 @@ namespace AdventureMode.Mods {
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BouncyDynamite), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BouncyGrenade), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BouncyGlowstick), true );
+			//
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.ManaCrystal), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ModContent.ItemType<DarkHeartItem>() ), true );
+			//
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.Bowl ), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.BowlofSoup ), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.GrubSoup ), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.PumpkinPie ), true );
 			//
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Wood), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.WoodPlatform), true );
@@ -99,30 +107,12 @@ namespace AdventureMode.Mods {
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.CelestialSigil ), true );
 			}
 
-			/*if( AdventureModeConfig.Instance.RemoveRecipeTileRequirements ) {
+			if( AdventureModeConfig.Instance.RemoveRecipeTileRequirements ) {
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Furnace), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Hellforge), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.AdamantiteForge), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.TitaniumForge), true );
-			}*/
-
-			//
-
-			//NihilismAPI.SetItemBlacklistGroupEntry( "Any Placeable", true );
-			//NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.WoodPlatform), true );
-			//NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.Rope), true );
-			//NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.SilkRope), true );
-			//NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.VineRope), true );
-			//NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.WebRope), true );
-			//NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.Chain), true );
-			//NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.MinecartTrack), true );
-
-			////NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.TinkerersWorkshop), true );
-			////NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.MythrilAnvil), true );
-			////NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.OrichalcumAnvil), true );
-			////NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.AdamantiteForge), true );
-			////NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.TitaniumForge), true );
-			//NihilismAPI.SetItemWhitelistEntry( new ItemDefinition(ItemID.LunarCraftingStation), true );
+			}
 
 			NihilismAPI.NihilateCurrentWorld( true );
 		}

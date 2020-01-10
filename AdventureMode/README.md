@@ -8,5 +8,8 @@ Credits:
   Testers:
     Putan (beta)
     CrabBar (beta)
+    FuryForged (beta)
+    BlueJay T Gaming (beta)
+    Agrair (beta)
 
 https://forums.terraria.org/index.php?threads/adventure-mode.85140/

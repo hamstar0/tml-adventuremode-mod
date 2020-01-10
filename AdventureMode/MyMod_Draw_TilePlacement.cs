@@ -8,11 +8,19 @@ using HamstarHelpers.Helpers.Draw;
 using HamstarHelpers.Services.AnimatedColor;
 using AdventureMode.Tiles;
 using AdventureMode.Items;
+using HamstarHelpers.Helpers.Players;
 
 
 namespace AdventureMode {
 	partial class AdventureModeMod : Mod {
 		private void DrawCurrentTilePlacementOutline() {
+			int mouseWorldX = (int)Main.screenPosition.X + Main.mouseX;
+			int mouseWorldY = (int)Main.screenPosition.Y + Main.mouseY;
+
+			if( !PlayerInteractionHelpers.IsWithinTilePlacementReach(mouseWorldX, mouseWorldY) ) {
+				return;
+			}
+
 			Item heldItem = Main.LocalPlayer.HeldItem;
 
 			switch( heldItem.type ) {
