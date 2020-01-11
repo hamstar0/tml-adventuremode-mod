@@ -32,13 +32,15 @@ v1
 	-	Set binoculars to end of hotbar
 	-	Disable Nihilism inbox message
 	-	Allow placing sand, but not stacking
+	-	Fix tooltips of items in shops
+	-	@Prefab Kits
+		-	Use mouse position for placing house framing kits
 	-	@Bullwhip
 		-	Reduce projectile size
 	-	@Surroundings
 		-	Fix alignment issues for certain setups (?)
 	-	@Staff of Gaia
 		-	Set SoG recipe to require any 3 orbs
-		-	Disable SoG for invasions and protected (Degreelessness mode) bosses
 		-	Add staff sound effect
 	-	@MMM
 		-	Set players to load and save mirrors per world
@@ -54,6 +56,13 @@ v1
 	-	@Locked Abilities
 		-	Fix Xs drawing incorrectly (zoom? non-windowed mode?)
 
+	-	Enable placing paintings
+	-	Enable fish recipes
+	-	Add bowl recipe using wood
+	-	Enable gem hook recipes
+	-	Add torch recipe enable setting
+	-	Set players to spawn with hammer
+v0.9.11
 	-	@Bullwhip
 		-	Remove platform grab (right click only?)
 		-	Tune knockback

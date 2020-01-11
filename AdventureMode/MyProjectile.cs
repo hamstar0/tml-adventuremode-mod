@@ -1,13 +1,9 @@
-﻿using AdventureMode.Tiles;
-using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Helpers.Items;
-using HamstarHelpers.Helpers.Players;
-using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using HamstarHelpers.Helpers.Debug;
+using AdventureMode.Tiles;
 
 
 namespace AdventureMode {
@@ -31,7 +27,12 @@ namespace AdventureMode {
 			case TileID.LivingMahoganyLeaves:
 				return true;
 			default:
-				return tile.type == ModContent.TileType<FramingPlankTile>();
+				if( tile.type == ModContent.TileType<FramingPlankTile>() ) {
+					return true;
+				}
+				return AdventureModeConfig.Instance.GrappleOnlyWoodAndPlatforms
+					? (bool?)false
+					: null;
 			}
 		}
 
@@ -39,40 +40,11 @@ namespace AdventureMode {
 
 		////////////////
 
-		public override bool? CanUseGrapple( int projType, Player player ) {
-			if( AdventureModeConfig.Instance.GrappleChainAmmoRate <= 0 ) {
-				return null;
-			}
-
-			//int ammo = ItemFinderHelpers.CountTotalOfEach( player.inventory, new HashSet<int> { ItemID.Chain } );
-			int idx = ItemFinderHelpers.FindIndexOfFirstOfItemInCollection( player.inventory, new HashSet<int> { ItemID.Chain } );
-			if( idx == -1 ) { return false; }
-
-			return null;
-		}
-
-
-		public override void UseGrapple( Player player, ref int type ) {
-			if( AdventureModeConfig.Instance.GrappleChainAmmoRate <= 0 ) {
-				return;
-			}
-
-			int idx = ItemFinderHelpers.FindIndexOfFirstOfItemInCollection( player.inventory, new HashSet<int> { ItemID.Chain } );
-			if( idx == -1 ) {
-				if( AdventureModeConfig.Instance.DebugModeInfo ) {
-					LogHelpers.LogAndPrintOnce( "No chains available for grappling.", Color.Red );
-				}
-				return;
-			}
-
-			PlayerItemHelpers.RemoveInventoryItemQuantity( player, ItemID.Chain, AdventureModeConfig.Instance.GrappleChainAmmoRate );
-		}
-
-		////
-
 		public override bool PreAI( Projectile projectile ) {
 			if( projectile.aiStyle == 7 && !projectile.npcProj ) {
-				this.AdjustGrappleAttachState( projectile );
+				if( AdventureModeConfig.Instance.GrappleOnlyWoodAndPlatforms ) {
+					this.AdjustGrappleAttachState( projectile );
+				}
 			}
 			return base.PreAI( projectile );
 		}
@@ -94,7 +66,7 @@ namespace AdventureMode {
 			if( projectile.ai[0] != 0 && projectile.ai[0] != 2 ) {
 				return;
 			}
-
+			
 			int baseX = (int)( ((projectile.velocity.X * 1.01f) + projectile.Center.X) / 16f );
 			int baseY = (int)( ((projectile.velocity.Y * 1.01f) + projectile.Center.Y) / 16f );
 

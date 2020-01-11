@@ -85,6 +85,9 @@ namespace AdventureMode.Mods {
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.BowlofSoup ), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.GrubSoup ), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.PumpkinPie ), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.CookedFish ), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.CookedShrimp ), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.Sashimi ), true );
 			//
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Wood), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.WoodPlatform), true );
@@ -101,12 +104,17 @@ namespace AdventureMode.Mods {
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.GrapplingHook), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ModContent.ItemType<StaffOfGaiaItem>()), true );
 
+			if( AdventureModeConfig.Instance.EnableTorchRecipes ) {
+				NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyWallTorch, true );
+			}
 			if( AdventureModeConfig.Instance.EnableMechBossItemRecipes ) {
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.MechanicalWorm ), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.MechanicalSkull ), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.MechanicalEye ), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.CelestialSigil ), true );
 			}
+
+			//
 
 			if( AdventureModeConfig.Instance.RemoveRecipeTileRequirements ) {
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Furnace), true );

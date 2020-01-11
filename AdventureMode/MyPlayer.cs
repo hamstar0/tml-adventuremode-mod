@@ -109,17 +109,19 @@ namespace AdventureMode {
 		////////////////
 
 		public override void SetupStartInventory( IList<Item> items, bool mediumcoreDeath ) {
+			void addItem( int itemType, int stack ) {
+				var item = new Item();
+				item.SetDefaults( itemType );
+				item.stack = stack;
+				items.Add( item );
+			}
+
 			if( !mediumcoreDeath ) {
-				var torches = new Item();
-				torches.SetDefaults( ItemID.Torch );
-				torches.stack = 10;
-
-				var ropes = new Item();
-				ropes.SetDefaults( ItemID.RopeCoil );
-				ropes.stack = 20;
-
-				items.Add( torches );
-				items.Add( ropes );
+				addItem( ItemID.WoodenHammer, 1 );
+				if( !AdventureModeConfig.Instance.EnableTorchRecipes ) {
+					addItem( ItemID.Torch, 10 );
+				}
+				addItem( ItemID.RopeCoil, 20 );
 			}
 		}
 

@@ -34,10 +34,10 @@ namespace AdventureMode {
 
 		////
 
-		[Range( 0, 100 )]
-		[DefaultValue( 0 )]
-		public int GrappleChainAmmoRate { get; set; } = 0;
+		[DefaultValue( true )]
+		public bool GrappleOnlyWoodAndPlatforms { get; set; } = true;
 
+		////
 
 		[DefaultValue( true )]
 		public bool ReducedLifeCrystalStatIncrease { get; set; } = true;
@@ -69,6 +69,12 @@ namespace AdventureMode {
 		[DefaultValue( true )]
 		[ReloadRequired]
 		public bool EnableMechBossItemRecipes { get; set; } = true;
+
+		[DefaultValue( false )]
+		[ReloadRequired]
+		public bool EnableTorchRecipes { get; set; } = false;
+		
+		////
 
 		[DefaultValue( true )]
 		[ReloadRequired]

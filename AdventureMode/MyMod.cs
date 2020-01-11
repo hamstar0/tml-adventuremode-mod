@@ -73,6 +73,19 @@ namespace AdventureMode {
 					}
 				}
 			}
+
+			for( int i = 0; i < Main.recipe.Length; i++ ) {
+				Recipe recipe = Main.recipe[i];
+				if( recipe?.createItem?.type != ItemID.Bowl ) { continue; }
+
+				foreach( Item item in recipe.requiredItem ) {
+					if( item?.type == ItemID.ClayBlock ) { continue; }
+
+					item.type = ItemID.Wood;
+					break;
+				}
+				break;
+			}
 		}
 
 
