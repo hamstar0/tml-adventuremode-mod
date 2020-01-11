@@ -79,15 +79,15 @@ namespace AdventureMode.Mods {
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BouncyGlowstick), true );
 			//
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.ManaCrystal), true );
-			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ModContent.ItemType<DarkHeartItem>() ), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ModContent.ItemType<DarkHeartItem>()), true );
 			//
-			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.Bowl ), true );
-			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.BowlofSoup ), true );
-			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.GrubSoup ), true );
-			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.PumpkinPie ), true );
-			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.CookedFish ), true );
-			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.CookedShrimp ), true );
-			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.Sashimi ), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Bowl), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BowlofSoup), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.GrubSoup), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.PumpkinPie), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.CookedFish), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.CookedShrimp), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Sashimi), true );
 			//
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Wood), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.WoodPlatform), true );
