@@ -1,41 +1,63 @@
+v1.1
+-	Add behavior to keep some monsters still until light shines on them
+-	Add compatibility with Lives mod to generate the world with extra lives in chests
+-	Implement difficulty select (sub-modes)
 v1
 -	@Mod Helpers v6
+	-	Implement game mode function with Mod Helpers
+		-	Use Darkpuppy's mod icon (add credit)
+		-	...
+		-	@Plan
+			-	Modes: Vanilla, Adventure, Survival, Brutal, Honor Bound, Creative, Custom
+		-	Add world lock + new world requirement when a non-Custom game mode is set
+	-	Add mod tags to Mods menu
+	-	Remove 'Core Game' tag
 	-	After playing, give alert to player to give mod tags
 	-	Set to link to githubs in mod list and control panel list per mod
-	-	Set to not look up IPs unless set to do so (use ModConfigStack)
+	-	Set to not look up IPs unless config says to do so
 	-	Indicate MusicHelpers is janky
-	-	Implement game mode function with Mod Helpers
-		-	Use Darkpuppy's mod icon
-		-	...
-		-	Modes: Vanilla, Adventure, Survival, Brutal, Honor Bound, Creative, Custom
-		-	Add world lock + new world gen requirement
-	-	@Implement server-side loggings
-	-	Fix CustomHooks.TriggerHooks firing without CustomHooks loaded
--	Add allowed-mod whitelist (configurable)
--	Fix Guide's false recipe reports?
+	-	Implement CancellationTokens for tasks
+	-	Remove obsolete crap (reconsider TileDraw stuff)
+	-	@Take down github tutorials (for now)
+-	Final
+	-	Add allowed-mod whitelist (configurable)
+	-	Fix Guide's false recipe reports?
+	-	Add "Adventure Mode" watermark to inventory backdrop
+	-	@Set git repos public
 -	@Staff of Gaia
+	-	Set non-boss enemies struck with attack to use smaller font
 	-	Make SoG half hp fx create energy from ground tiles
--	Add behavior to keep some monsters still until light shines on them
--	Create special minecart type that makes immune to enemies, but disables player attacks
--	@Set git repos public
--	@Trickster: Make Trickster give degreelessness + haste buff to random, individual invaders
+-	Underworld
+	-	Protective items
+		-	Jester's Motley (via Jungle) - Protects against underworld heat
+		-	Vegetative Vestment (via Underground Desert) - Wards Tricksters (especially nasty in the underworld)
+		-	Mana Circuits (via Dungeon) - Retains mana (underworld drains mana)
+	-	Set Tricksters to attack 2x quickly and slowly regenerate hp
+	-	Swap dungeon debuff with underworld + rename to Heat Prostration
+-	Set all enemies in dungeon to be strong against all attacks that aren't magic (add Guide tips)
+-	@Trickster
+	-	Make Trickster give degreelessness + haste buff to random, individual invaders
+	-	Buff Trickster + add defense
+		-	Add repulsion effect during attack charge-up (causes projectiles to veer proportional to velocity)
+		-	On hit dodge, set Trickster to release weak bats with short term Degreelessness mode + transparency
+		-	Add max hp cap
+		-	Increase dodge range
+		-	Reduce charge time
+		-	Set Trickster to flee if too few NPCs exist nearby
+		-	Set Trickster to dodge on no more than 2 hits
+	-	Fix Degreelessness Buff sync (do all AI behaviors on the server)
 -	@Orbs
 	-	Add map button to toggle tile color overlay (Orb Resonance Map View)
-	-	Add gates (requires 4 of a given type crafted into a "Super Orb" to open all of that type), also for underworld?
--	Allow platform stair placing in short stretches (2 long, down only)
--	Add "Adventure Mode" watermark to inventory backdrop
+-	@Add Boss Lairs mod
 -	Fixes and tweaks
-	-	Fix double jump message spam
-	-	Enable stair placement
+	-	Improve logo
 	-	Add mention of furniture cycling with furnishing kits (if settings not disabled for crafting requirement tiles)
 	-	Enable saplings, sunflower breaking
-	-	Set binoculars to end of hotbar
 	-	Disable Nihilism inbox message
 	-	Allow placing sand, but not stacking
 	-	Fix tooltips of items in shops
-	-	@Prefab Kits
-		-	Use mouse position for placing house framing kits
 	-	@Bullwhip
+		-	Fix self bullwhipping
 		-	Reduce projectile size
 	-	@Surroundings
 		-	Fix alignment issues for certain setups (?)
@@ -49,15 +71,11 @@ v1
 		-	Clarify hint to indicate only mana-using magic reveals shards
 		-	Make binoculars hints more distinct (add velocity?)
 		-	Fix ManaCrystalShardCheckProtocol spam
-	-	@Trickster
-		-	Set Trickster to flee if too few NPCs exist nearby
-		-	Debug MP premature exit
-		-	Fix Degreelessness Buff sync?
-	-	@Locked Abilities
-		-	Fix Xs drawing incorrectly (zoom? non-windowed mode?)
 	-	Update tile frame of mud bricks and torches
 	-	Set tile placement overlay to fade
 	-	Enable enchanted worm, minecart recipe
+	-	Enable Geo-resonant Orbs
+	-	Disable dirt rod
 
 	-	Fix wood tile grapple
 	-	Enable placing paintings
@@ -66,7 +84,7 @@ v1
 	-	Enable gem hook recipes
 	-	Add torch recipe enable setting
 	-	Set players to spawn with hammer
-v0.9.11
+[v0.9.11]
 	-	@Bullwhip
 		-	Remove platform grab (right click only?)
 		-	Tune knockback

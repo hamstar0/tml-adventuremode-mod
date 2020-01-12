@@ -157,7 +157,7 @@ namespace AdventureMode {
 				"- Use house kits to create NPC houses, beds, crafting stations, and fast travel points.",
 				"- Crafting stations are either found or kit-made.",
 				"- Use platforms, planks, and ropes to get around.",
-				"- Get Orbs from chests or challeges to progress.",
+				"- Get Orbs from chests or challenges to progress.",
 				//"- Grappling only works on platforms.",
 				"- Read item descriptions for more info.",
 				"- Talk to the Guide for further help.",

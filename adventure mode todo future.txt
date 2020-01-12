@@ -1,12 +1,11 @@
 Consideration
--	Set Lives mod to generate the world with extra lives in chests
 -	Set ore mining to break adjacent stone, dirt, mud, and ash blocks
 -	Set SoG to illuminate mana crystals and recover world power
 -	Add corrupting effect of world power removal
 -	@Locked Abilities
 	-	Turn world gen chest items into ingredients to craft into accessories
 -	Allow breaking tiles with no more than 3 solid neighbors
--	Set party girl to sell Teleportation potions for 50 gold each
+-	Set party girl to sell Teleportation potions for 10 gold each
 -	"Inspiration" buff
 -	@Mounted Magic Mirrors
 	-	Lock down Mounted Magic Mirrors when a boss is near
@@ -28,17 +27,10 @@ Consideration
 		-	Each staff if used to destroy blocks of a given world power hue
 		-	Give 'world power grid' random colors via world's own random seed
 	-	Rename Staff of Gaia to Divine Staves
--	@Decide underworld "locking"
-	-	Vegetative Vestment (via Jungle) - Protects against underworld heat
-	-	Jester's Motley (via Dungeon) - Wards Tricksters (especially nasty in the underworld)
-	-	Mana Circuits (via Mana Crystal Shards) - Retains mana (underworld drains mana)
-	-	Flame-proof Bridge Kits (via Underground Desert) - Hastens WoF bridge building
 -	@Decide locked chest variants
 -	Add auto-jumps for 2-3 high block obstacles while moving fast
--	Set fishing to tap out in a given area (add Guide tip correspondingly)
 -	Add disappearing coins
--	Test allowing placing non-solid tiles (any)
 -	On death, add a spike in spawn rate upon revisiting location
--	@Add Boss Lairs mod
 -	@Add Smoke Bombs mod
+-	@Add On A Rail mod
 

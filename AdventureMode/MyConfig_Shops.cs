@@ -7,6 +7,7 @@ using HamstarHelpers.Services.Configs;
 using HamstarHelpers.Helpers.Debug;
 using StaffOfGaia.Items;
 using PrefabKits.Items;
+using HamstarHelpers.Items;
 
 
 namespace AdventureMode {
@@ -61,13 +62,14 @@ namespace AdventureMode {
 					new ItemDefinition( ItemID.CrimsonSeeds ),
 					new ItemDefinition( ItemID.Sunflower ),
 					new ItemDefinition( ItemID.Acorn ),
-					new ItemDefinition( ItemID.DirtRod ),
+					//new ItemDefinition( ItemID.DirtRod ),
 					new ItemDefinition( ItemID.PumpkinSeed ),
 					new ItemDefinition( ItemID.HallowedSeeds ),
 					new ItemDefinition( ItemID.MushroomGrassSeeds ),
 					new ItemDefinition( ItemID.DryadCoverings ),
 					new ItemDefinition( ItemID.DryadLoincloth ),
 					new ItemDefinition( ModContent.ItemType<StaffOfGaiaItem>() ),
+					new ItemDefinition( ModContent.ItemType<GeoResonantOrbItem>() ),
 				}
 			},
 			{
