@@ -71,12 +71,14 @@ v1
 		-	Clarify hint to indicate only mana-using magic reveals shards
 		-	Make binoculars hints more distinct (add velocity?)
 		-	Fix ManaCrystalShardCheckProtocol spam
+	-	@Locked Abilities
+		-	Fix locked gun message spam
 	-	Update tile frame of mud bricks and torches
 	-	Set tile placement overlay to fade
 	-	Enable enchanted worm, minecart recipe
+
 	-	Enable Geo-resonant Orbs
 	-	Disable dirt rod
-
 	-	Fix wood tile grapple
 	-	Enable placing paintings
 	-	Enable fish recipes

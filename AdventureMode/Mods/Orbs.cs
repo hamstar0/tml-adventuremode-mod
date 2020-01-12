@@ -18,7 +18,8 @@ namespace AdventureMode.Mods {
 				TileKillWhitelist = myTileKillWhitelist,
 				OnlyGenOrbsInUndergroundChests = false,
 				AnyOrbPercentChancePerChest = 0.5f,
-				WhiteOrbPercentChanceForOrbChest = 0f
+				WhiteOrbPercentChanceForOrbChest = 0f,
+				IsGeoResonantOrbSoldByDryad = false	// Mod Helpers adds this
 			} );
 		}
 	}

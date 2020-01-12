@@ -107,7 +107,12 @@ namespace AdventureMode.Mods {
 			if( AdventureModeConfig.Instance.EnableTorchRecipes ) {
 				NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyWallTorch, true );
 			}
-			if( AdventureModeConfig.Instance.EnableMechBossItemRecipes ) {
+			if( AdventureModeConfig.Instance.EnableBossItemRecipes ) {
+				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.SlimeCrown ), true );
+				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.SuspiciousLookingEye ), true );
+				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.WormFood ), true );
+				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.BloodySpine ), true );
+				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.Abeemination ), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.MechanicalWorm ), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.MechanicalSkull ), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.MechanicalEye ), true );
