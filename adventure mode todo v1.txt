@@ -88,6 +88,7 @@ v1
 	-	Debug house framing kits upon jungle leaf wall
 	-	Set guide's intro message to not repeat
 	-	Verify NPC chat 'have read' checks
+	-	Ignore 'no respawn' restriction for WoF
 
 	-	Enable Geo-resonant Orbs
 	-	Disable dirt rod

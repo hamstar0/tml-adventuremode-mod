@@ -78,6 +78,8 @@ namespace AdventureMode.Mods {
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BouncyDynamite), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BouncyGrenade), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BouncyGlowstick), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.ViciousPowder), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.VilePowder), true );
 			//
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.ManaCrystal), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ModContent.ItemType<DarkHeartItem>()), true );
@@ -110,6 +112,12 @@ namespace AdventureMode.Mods {
 				NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyWallTorch, true );
 			}
 			if( AdventureModeConfig.Instance.EnableBossItemRecipes ) {
+				if( !AdventureModeConfig.Instance.EnableAlchemyRecipes ) {
+					NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BottledHoney), true );
+				}
+				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.GoldCrown), true );
+				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.PlatinumCrown), true );
+				//
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.SlimeCrown ), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.SuspiciousLookingEye ), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.WormFood ), true );
