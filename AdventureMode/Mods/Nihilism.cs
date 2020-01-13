@@ -11,6 +11,7 @@ using Nihilism;
 using AdventureMode.Items;
 using PrefabKits.Items;
 using LockedAbilities.Items.Consumable;
+using LockedAbilities.Items.Accessories;
 using StaffOfGaia.Items;
 
 
@@ -103,6 +104,7 @@ namespace AdventureMode.Mods {
 			//
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.GrapplingHook), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ModContent.ItemType<StaffOfGaiaItem>()), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ModContent.ItemType<UtilitarianBeltItem>()), true );
 
 			if( AdventureModeConfig.Instance.EnableTorchRecipes ) {
 				NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyWallTorch, true );

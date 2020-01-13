@@ -4,6 +4,7 @@ v1.1
 -	Implement difficulty select (sub-modes)
 v1
 -	@Mod Helpers v6
+	-	Add support via PayPal directly
 	-	Implement game mode function with Mod Helpers
 		-	Use Darkpuppy's mod icon (add credit)
 		-	...
@@ -35,6 +36,11 @@ v1
 	-	Set Tricksters to attack 2x quickly and slowly regenerate hp
 	-	Swap dungeon debuff with underworld + rename to Heat Prostration
 -	Set all enemies in dungeon to be strong against all attacks that aren't magic (add Guide tips)
+-	Set Dryad to sell Antidotes
+-	@Add Boss Lairs mod
+-	@Orbs
+	-	Add Black Orbs (crafted from Luminite + Geo-resonant Orbs; removes any type of chunk)
+	-	Add map button to toggle tile color overlay (Orb Resonance Map View)
 -	@Trickster
 	-	Make Trickster give degreelessness + haste buff to random, individual invaders
 	-	Buff Trickster + add defense
@@ -46,9 +52,10 @@ v1
 		-	Set Trickster to flee if too few NPCs exist nearby
 		-	Set Trickster to dodge on no more than 2 hits
 	-	Fix Degreelessness Buff sync (do all AI behaviors on the server)
--	@Orbs
-	-	Add map button to toggle tile color overlay (Orb Resonance Map View)
--	@Add Boss Lairs mod
+-	Add town portals scroll (not Wormholes affiliated)
+-	Set Explosives to destroy tiles with no more than 1 cardinal neighbor
+-	Disable foreground layer when using binoculars
+-	Set each new boss kill to drop 3 Teleporation Potions
 -	Fixes and tweaks
 	-	Improve logo
 	-	Add mention of furniture cycling with furnishing kits (if settings not disabled for crafting requirement tiles)
@@ -71,11 +78,16 @@ v1
 		-	Clarify hint to indicate only mana-using magic reveals shards
 		-	Make binoculars hints more distinct (add velocity?)
 		-	Fix ManaCrystalShardCheckProtocol spam
+		-	Increase mana crystal increase to 20
 	-	@Locked Abilities
 		-	Fix locked gun message spam
 	-	Update tile frame of mud bricks and torches
 	-	Set tile placement overlay to fade
 	-	Enable enchanted worm, minecart recipe
+	-	Enable breaking mahogany
+	-	Debug house framing kits upon jungle leaf wall
+	-	Set guide's intro message to not repeat
+	-	Verify NPC chat 'have read' checks
 
 	-	Enable Geo-resonant Orbs
 	-	Disable dirt rod
