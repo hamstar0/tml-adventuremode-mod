@@ -90,7 +90,7 @@ namespace AdventureMode {
 				return;
 			}
 
-			if( !Main.npc.Any( n => n.active && n.boss ) ) {
+			if( !Main.npc.Any(n => n?.active == true && n.boss && n.netID != NPCID.WallofFlesh && n.netID != NPCID.WallofFleshEye) ) {
 				this.IsAlertedToBossesWhileDead = false;
 				return;
 			}

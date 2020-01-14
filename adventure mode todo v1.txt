@@ -88,8 +88,11 @@ v1
 	-	Debug house framing kits upon jungle leaf wall
 	-	Set guide's intro message to not repeat
 	-	Verify NPC chat 'have read' checks
-	-	Ignore 'no respawn' restriction for WoF
+	-	Add color for custom tooltips
+	-	"Furnishing kit in my inventory always tells me "housing space found" even tho im already in a furnished house"
+	-	"Space gun with full meteorite gear consumes no mana, but still gets the huge damage increase"
 
+	-	Ignore 'no respawn' restriction for WoF
 	-	Enable Geo-resonant Orbs
 	-	Disable dirt rod
 	-	Fix wood tile grapple

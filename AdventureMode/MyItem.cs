@@ -48,6 +48,7 @@ namespace AdventureMode {
 			case ItemID.SilkRope:
 			case ItemID.VineRope:
 			case ItemID.WebRope:
+			case ItemID.Chain:
 				tip = new TooltipLine( this.mod, "AdventureModeCoil", "Can only be lowered" );
 				ItemInformationAttributeHelpers.ApplyTooltipAt( tooltips, tip );
 				break;
