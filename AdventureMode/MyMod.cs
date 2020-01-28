@@ -24,6 +24,12 @@ namespace AdventureMode {
 		public AdventureModeModInteractions ModInteractions { get; } = new AdventureModeModInteractions();
 
 
+		////////////////
+
+		private (int X, int Y) PlacementOutlineTile = (0, 0);
+		private int PlacementOutlineLinger = 0;
+
+
 
 		////////////////
 
