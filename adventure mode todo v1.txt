@@ -1,7 +1,17 @@
+SEIU
+Court date
+Social Security thing
+
+
+
+
+
+
 v1.1
 -	Add behavior to keep some monsters still until light shines on them
 -	Add compatibility with Lives mod to generate the world with extra lives in chests
 -	Implement difficulty select (sub-modes)
+-	Add color for custom tooltips
 v1
 -	@Mod Helpers v6
 	-	Add support via PayPal directly
@@ -56,6 +66,9 @@ v1
 -	Set Explosives to destroy tiles with no more than 1 cardinal neighbor
 -	Disable foreground layer when using binoculars
 -	Set each new boss kill to drop 3 Teleporation Potions
+-	Add Spelunking Harness accessory (start item; auto-deploys a rope to allow quickly returning to the surface)
+-	@Add Dragon Lairs (featuring Elemental Dragon boss)
+-	@Add Elements mod (with elemental gates)
 -	Fixes and tweaks
 	-	Improve logo
 	-	Add mention of furniture cycling with furnishing kits (if settings not disabled for crafting requirement tiles)
@@ -78,20 +91,25 @@ v1
 		-	Clarify hint to indicate only mana-using magic reveals shards
 		-	Make binoculars hints more distinct (add velocity?)
 		-	Fix ManaCrystalShardCheckProtocol spam
+		-	Increase world gen mana shards
 		-	Increase mana crystal increase to 20
+		-	Fix mana crystal tooltip
 	-	@Locked Abilities
 		-	Fix locked gun message spam
+		-	Fix slime mount fall damage
 	-	Update tile frame of mud bricks and torches
 	-	Set tile placement overlay to fade
 	-	Enable enchanted worm, minecart recipe
-	-	Enable breaking mahogany
-	-	Debug house framing kits upon jungle leaf wall
-	-	Set guide's intro message to not repeat
+	-	Enable breaking mahogany and jungle trees
+	-	Debug house framing kits upon jungle leaf wall (any walls?)
+
 	-	Verify NPC chat 'have read' checks
-	-	Add color for custom tooltips
+	-	Remove mana crystal shard "rare tile" status
+	-	@Orbs
+		-	Enable orb use in the underworld (including binoculars displays)
 	-	"Furnishing kit in my inventory always tells me "housing space found" even tho im already in a furnished house"
 	-	"Space gun with full meteorite gear consumes no mana, but still gets the huge damage increase"
-
+	-	Add "snow, obsidian" to pickaxe tip
 	-	Ignore 'no respawn' restriction for WoF
 	-	Enable Geo-resonant Orbs
 	-	Disable dirt rod

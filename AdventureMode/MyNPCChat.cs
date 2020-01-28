@@ -78,6 +78,7 @@ namespace AdventureMode {
 		public void OnPostModsLoad() {
 			foreach( (int npcType, var chats) in this.NPCDialogs ) {
 				Func<string, string> greetingFunc = this.GetGreetingFunc( npcType, chats.Greetings );
+
 				if( greetingFunc != null ) {
 					NPCChat.SetPriorityChat( npcType, greetingFunc );
 				}
@@ -116,6 +117,7 @@ namespace AdventureMode {
 
 				string greeting = greetings[i];
 
+				// Is not merely peeking to see if new chats?
 				if( currentChat != null ) {
 					i++;
 				}

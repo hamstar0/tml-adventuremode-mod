@@ -53,6 +53,7 @@ namespace AdventureMode {
 			int i = 0;
 			foreach( string key in this.IntroducedNpcUniqueKeys ) {
 				tag["introduced_npc_" + i] = key;
+				i++;
 			}
 
 			return tag;

@@ -65,10 +65,6 @@ namespace AdventureMode {
 					tip = new TooltipLine( this.mod, "AdventureModeMMM", "May be placed once, but NOT removed!" );
 					ItemInformationAttributeHelpers.ApplyTooltipAt( tooltips, tip );
 				}
-				if( item.pick > 0 ) {
-					tip = new TooltipLine( this.mod, "AdventureModePick", "Able to break ores, plants, gems, sand, silt, and wood" );
-					ItemInformationAttributeHelpers.ApplyTooltipAt( tooltips, tip );
-				}
 				if( ItemAttributeHelpers.IsGrapple(item) && AdventureModeConfig.Instance.GrappleOnlyWoodAndPlatforms ) {
 					tip = new TooltipLine( this.mod, "AdventureModeGrapple", "Only works on wood and platforms" );
 					ItemInformationAttributeHelpers.ApplyTooltipAt( tooltips, tip );
