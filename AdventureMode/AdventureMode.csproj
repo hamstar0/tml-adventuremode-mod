@@ -27,7 +27,7 @@
       <HintPath>..\..\..\Locked Abilities\LockedAbilities\bin\Release\net452\LockedAbilities.dll</HintPath>
     </Reference>
     <Reference Include="MountedMagicMirrors">
-      <HintPath>..\..\..\Mounted Magic Mirrors\MountedMagicMirrors\bin\Release\net452\MountedMagicMirrors.dll</HintPath>
+      <HintPath>..\..\..\Mounted Magic Mirrors\Project\MountedMagicMirrors\bin\Release\net452\MountedMagicMirrors.dll</HintPath>
     </Reference>
     <Reference Include="Nihilism">
       <HintPath>..\..\..\Nihilism\Nihilism\bin\Release\net452\Nihilism.dll</HintPath>

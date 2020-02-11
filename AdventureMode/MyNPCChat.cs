@@ -21,13 +21,13 @@ namespace AdventureMode {
 						Added: new string[] {
 							"Good thing the dungeon is sealed. I hear it's blighted with an undeath curse and filled with deadly fumes!",
 							"The people who lived here once discovered ways to wield wearable artifacts of power, and hid their secrets around this land.",
-							"Rare magic crystals can be found hidden underground. Somehow your binoculars are able to pick up their trail. I also hear they resonate with any magic energies nearby.",
+							"Rare magic crystals can be found hidden underground. Somehow your binoculars are able to pick up their trail. I also hear they resonate with mana-drawn magic nearby.",
 							"You may find digging to be rather difficult. If you find yourself needing to squeeze into tight areas, a simple hammer of all things might be your best tool. Odd, huh?",
 							"Not everything can be crafted. You'll have to learn to make do with what you can find or buy. Talk to me for more information, if in doubt.",
 							"Need to add a few small patches or solid additions to a given area? You'll want to get your hands on some framing planks.",
 							"Be sure to keep your eyes peeled for livable spaces to furnish. This is where our House Furnishing Kits will come in handy. They'll even provide you with new storage space and mirrors for fast travel!",
 							"Wood is about the only non-ore material you can break freely. You'll need special framing planks to do any building, but they're limited. Best use house kits whenever possible.",
-							"Need money? Sell your loot. Be sure to have me check your loot for available crafting recipes, first. Not everything works here the way you might assume.",
+							"Need money? Sell your loot. Be sure to have me check your loot for available crafting recipes, first. Not everything gets used the way you might assume.",
 							//
 							"You can use your axe to chop down trees. Just place your cursor over the tile and click!",
 							"We'll need to create settlements to progress our journey. Use House Furnishing Kits to convert closed areas into livable spaces.",
@@ -103,7 +103,7 @@ namespace AdventureMode {
 			}
 
 			int i = 0;
-
+			
 			return ( currentChat ) => {
 				string npcKey = NPCID.GetUniqueKey( npcType );
 				var myplayer = TmlHelpers.SafelyGetModPlayer<AdventureModePlayer>( Main.LocalPlayer );

@@ -1,9 +1,6 @@
-SEIU
-Court date
-Social Security thing
-
-
-
+Future decisions:
+-	@Add Throwable Melee Weapons mod
+-	Set each new boss kill to drop 3 Teleporation Potions
 
 
 
@@ -11,22 +8,37 @@ v1.1
 -	Add behavior to keep some monsters still until light shines on them
 -	Add compatibility with Lives mod to generate the world with extra lives in chests
 -	Implement difficulty select (sub-modes)
+	-	Hard
+		-	Life Crystals give half health
+		-	Set all bosses to leave slight trails of brambles wherever they move
 -	Add color for custom tooltips
+-	Set WoF to drop Soul of Mole (consumable; enables breaking dirt)
+-	@Bullwhip
+	-	Allow picking up items inside walls
+-	@Staff of Gaia
+	-	Add Staff of Aether
+		-	@Plan
+			-	Naturally generated in floating island chests
+			-	Grants unlimited flight for up to 30s, but consumes nearby 'world power' to do so
+			-	Additional flight is possible, but at the cost of additional 'world power' (via. r-click)
+			-	'World power' now only exists where there's solid terrain (still non-renewable)
+			-	While flight active, staff also works as a weapon able to 12 damage, ignoring element resists
+-	@Add Dragon Lairs (featuring Elemental Dragon boss)
+-	@Add Elements mod (with elemental gates)
 v1
 -	@Mod Helpers v6
 	-	Add support via PayPal directly
 	-	Implement game mode function with Mod Helpers
-		-	Use Darkpuppy's mod icon (add credit)
 		-	...
 		-	@Plan
 			-	Modes: Vanilla, Adventure, Survival, Brutal, Honor Bound, Creative, Custom
 		-	Add world lock + new world requirement when a non-Custom game mode is set
 	-	Add mod tags to Mods menu
-	-	Remove 'Core Game' tag
+	-	Set "Cleanup unused mod tiles" button to add a confirmation step
 	-	After playing, give alert to player to give mod tags
 	-	Set to link to githubs in mod list and control panel list per mod
 	-	Set to not look up IPs unless config says to do so
-	-	Indicate MusicHelpers is janky
+	-	Fix mod unload memory leaks
 	-	Implement CancellationTokens for tasks
 	-	Remove obsolete crap (reconsider TileDraw stuff)
 	-	@Take down github tutorials (for now)
@@ -38,16 +50,20 @@ v1
 -	@Staff of Gaia
 	-	Set non-boss enemies struck with attack to use smaller font
 	-	Make SoG half hp fx create energy from ground tiles
+	-	Rename mod to Divine Staves
 -	Underworld
 	-	Protective items
 		-	Jester's Motley (via Jungle) - Protects against underworld heat
 		-	Vegetative Vestment (via Underground Desert) - Wards Tricksters (especially nasty in the underworld)
 		-	Mana Circuits (via Dungeon) - Retains mana (underworld drains mana)
-	-	Set Tricksters to attack 2x quickly and slowly regenerate hp
+	-	Set Tricksters to slowly regenerate hp and attack slightly quicker
 	-	Swap dungeon debuff with underworld + rename to Heat Prostration
 -	Set all enemies in dungeon to be strong against all attacks that aren't magic (add Guide tips)
 -	Set Dryad to sell Antidotes
--	@Add Boss Lairs mod
+-	Allow ducking inside a minecart to avoid damage (but risk derailing; no attacks possible, also)
+-	@Mounted Magic Mirrors
+	-	Increase mirror sizes on map?
+	-	Allow labeling mirrors on the map (and recoloring?)
 -	@Orbs
 	-	Add Black Orbs (crafted from Luminite + Geo-resonant Orbs; removes any type of chunk)
 	-	Add map button to toggle tile color overlay (Orb Resonance Map View)
@@ -62,45 +78,61 @@ v1
 		-	Set Trickster to flee if too few NPCs exist nearby
 		-	Set Trickster to dodge on no more than 2 hits
 	-	Fix Degreelessness Buff sync (do all AI behaviors on the server)
--	Add town portals scroll (not Wormholes affiliated)
--	Set Explosives to destroy tiles with no more than 1 cardinal neighbor
--	Disable foreground layer when using binoculars
--	Set each new boss kill to drop 3 Teleporation Potions
--	Add Spelunking Harness accessory (start item; auto-deploys a rope to allow quickly returning to the surface)
--	@Add Dragon Lairs (featuring Elemental Dragon boss)
--	@Add Elements mod (with elemental gates)
+-	Bosses
+	-	Generate sleeping bosses in large caverns
+-	@Add Horse mod
+-	@Add Ol' Big Iron mod
+	-	@Plan
+		-	Player begins with a special revolver and a bandolier of unlimited ammo for it (accessory)
+		-	Revolver has poor aim (is not focused) unless the player is still for 1.5 seconds
+		-	Gun appears as a held item, and a holster animation occurs when switching away (blocks re-equip fire)
+		-	Otherwise, aim (focus) improves for an instant upon:
+			-	Deploying the gun
+			-	Finishing a reload
+		-	Reload is 1 round at a time, finishing after 6 seconds
+		-	Reload slows movement speed, and is automatic after trying to fire when empty (hotkey also exists)
+		-	Gun can be fired fast, and does 20 damage per unfocused hit, 35 damage per focused hit
+		-	While tipsy, aim is further diminished, but occasional random moments of accurate aim (focus) occur
+		-	Firing shots diminishes accuracy for 1 second
+		-	Firing shots without a dash move slows the player's movement for a moment
+		-	Focus-hitting an enemy re-focuses aim for a moment (longer if further away)
+		-	Traveling Merchant rarely sells these types of revolvers for 35 gold
+-	Set Bomb and Dynamite explosions to destroy tiles with no more than 1 cardinal neighbor (mention in tooltip)
+-	Add Caving Harness accessory (start item; auto-deploys a rope to allow quickly returning to the surface)
+[v0.9.15]
+
 -	Fixes and tweaks
 	-	Improve logo
 	-	Enable breaking mahogany and jungle trees
-	-	Add mention of furniture cycling with furnishing kits (if settings not disabled for crafting requirement tiles)
 	-	Enable saplings, sunflower breaking
 	-	Disable Nihilism inbox message
-	-	Allow placing sand, but not stacking
-	-	Fix tooltips of items in shops
+	-	Enable crafting any type of platform
+	-	Fix uncraftable Goblin Tech
+	-	Enable breaking actuated tiles (no item drops)
 	-	@Bullwhip
-		-	Fix self bullwhipping
-		-	Reduce projectile size
-	-	@Surroundings
-		-	Fix alignment issues for certain setups (?)
+		-	Increase NPC/Projectile hit radius
 	-	@Staff of Gaia
-		-	Set SoG recipe to require any 3 orbs
 		-	Add staff sound effect
+		-	Set SoG recipe to require any 3 orbs
+	-	@Surroundings
+		-	Disable foreground layer when using binoculars or sniper scope
+		-	Fix alignment issues for certain setups (?)
 	-	@MMM
 		-	Set players to load and save mirrors per world
-		-	Fix particles at default spawn
 	-	@Findable Mana Shards
 		-	Clarify hint to indicate only mana-using magic reveals shards
 		-	Make binoculars hints more distinct (add velocity?)
-		-	Fix ManaCrystalShardCheckProtocol spam
 		-	Increase world gen mana shards
-		-	Increase mana crystal increase to 20
-		-	Fix mana crystal tooltip
-	-	@Locked Abilities
-		-	Fix locked gun message spam
-		-	Fix slime mount fall damage
+		-	Correct mana crystal tooltip
+	-	@Powerful Magic
+		-	Nerf "turret" weapons
+		-	Nerf space gun
+	-	Enable breaking Obsidian Brick with orbs
+	-	Enable placing Star in a Bottle (?)
+	-	Enable Eternia Stand and Eternal Crystal placement
+	-	Enable crafting Goblin Tech (via Entity Groups fix)
 	-	Update tile frame of mud bricks and torches
 	-	Set tile placement overlay to fade
-
 	-	Enable enchanted worm, minecart recipe
 	-	Debug house framing kits upon jungle leaf wall (any walls?)
 	-	Verify NPC chat 'have read' checks

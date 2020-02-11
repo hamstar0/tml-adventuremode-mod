@@ -75,6 +75,7 @@ namespace AdventureMode {
 			TileID.GetUniqueKey( TileID.LunarCraftingStation ),
 			TileID.GetUniqueKey( TileID.Cannon ),
 			TileID.GetUniqueKey( TileID.SnowballLauncher ),
+			TileID.GetUniqueKey( TileID.ElderCrystalStand ),
 			//
 			TileID.GetUniqueKey( TileID.Timers ),
 			TileID.GetUniqueKey( TileID.InletPump ),

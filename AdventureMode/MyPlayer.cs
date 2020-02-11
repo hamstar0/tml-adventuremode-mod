@@ -12,15 +12,13 @@ using Terraria.ModLoader.IO;
 
 namespace AdventureMode {
 	partial class AdventureModePlayer : ModPlayer {
-		internal ISet<string> IntroducedNpcUniqueKeys { get; } = new HashSet<string>();
-
-		////
-
 		private bool IsAlertedToBossesWhileDead = false;
 		private bool IsChaosStateChecked = false;
 
 
 		////////////////
+
+		internal ISet<string> IntroducedNpcUniqueKeys { get; } = new HashSet<string>();
 
 		public float NecrotisAmount { get; internal set; } = 0f;
 
@@ -33,15 +31,15 @@ namespace AdventureMode {
 		////////////////
 
 		public override void Load( TagCompound tag ) {
-			if( !tag.ContainsKey( "introduced_npc_count" ) ) {
-				return;
-			}
+			this.IntroducedNpcUniqueKeys.Clear();
 
-			int count = tag.GetInt( "introduced_npc_count" );
+			if( tag.ContainsKey( "introduced_npc_count" ) ) {
+				int count = tag.GetInt( "introduced_npc_count" );
 
-			for( int i = 0; i < count; i++ ) {
-				string uniqueKey = tag.GetString( "introduced_npc_" + i );
-				this.IntroducedNpcUniqueKeys.Add( uniqueKey );
+				for( int i = 0; i < count; i++ ) {
+					string uniqueKey = tag.GetString( "introduced_npc_" + i );
+					this.IntroducedNpcUniqueKeys.Add( uniqueKey );
+				}
 			}
 		}
 		
