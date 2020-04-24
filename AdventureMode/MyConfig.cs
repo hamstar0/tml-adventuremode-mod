@@ -1,9 +1,9 @@
-﻿using HamstarHelpers.Classes.UI.ModConfig;
-using HamstarHelpers.Services.Configs;
-using System;
+﻿using System;
 using System.ComponentModel;
 using Terraria;
 using Terraria.ModLoader.Config;
+using HamstarHelpers.Classes.UI.ModConfig;
+using HamstarHelpers.Services.Configs;
 
 
 namespace AdventureMode {
@@ -113,6 +113,14 @@ namespace AdventureMode {
 		[Range( -1, 99000000 )]
 		[DefaultValue( 350000 )]
 		public int RocketBootsCost { get; set; } = Item.buyPrice( 0, 35, 0, 0 );
+
+
+		////
+
+		[Range( 0f, 1f )]
+		[DefaultValue( 0.5f )]
+		[CustomModConfigItem( typeof( MyFloatInputElement ) )]
+		public float BossMaxLifePercentOnSpawn { get; set; } = 0.5f;
 
 
 

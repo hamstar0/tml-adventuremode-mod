@@ -12,7 +12,6 @@ using LockedAbilities.Items.Accessories;
 using Nihilism;
 using AdventureMode.Items;
 using PrefabKits.Items;
-using StaffOfGaia.Items;
 
 
 namespace AdventureMode.Mods {
@@ -110,7 +109,6 @@ namespace AdventureMode.Mods {
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.GrapplingHook), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Minecart), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.MinecartMech), true );
-			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ModContent.ItemType<StaffOfGaiaItem>()), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ModContent.ItemType<UtilitarianBeltItem>()), true );
 
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.CopperWatch), true );
@@ -154,6 +152,10 @@ namespace AdventureMode.Mods {
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Hellforge), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.AdamantiteForge), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.TitaniumForge), true );
+			}
+
+			if( ModLoader.GetMod("StaffOfGaia") != null ) {
+				this.LoadStaffOfGaiaForNihilism();
 			}
 
 			NihilismAPI.NihilateCurrentWorld( true );

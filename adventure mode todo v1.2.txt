@@ -1,0 +1,52 @@
+Future decisions:
+-	@Add Throwable Melee Weapons mod
+-	Set each new boss kill to drop 3 Teleporation Potions
+-	@Staff of Gaia
+	-	Add Staff of Aether
+		-	@Plan
+			-	Naturally generated in floating island chests
+			-	Grants unlimited flight for up to 30s, but consumes nearby 'world power' to do so
+			-	Additional flight is possible, but at the cost of additional 'world power' (via. r-click)
+			-	'World power' now only exists where there's solid terrain (still non-renewable)
+			-	While flight active, staff also works as a weapon able to 12 damage, ignoring element resists
+-	Add Caving Harness accessory (start item; auto-deploys a rope to allow quickly returning to the surface)
+-	Allow ducking inside a minecart to avoid damage (but risk derailing; no attacks possible, also)
+-	Underworld
+	-	@Plan: Protective items
+		-	Jester's Motley (via Jungle) - Wards Tricksters (especially nasty in the underworld)
+		-	Vegetative Vestment (via Underground Desert) - Protects against underworld heat
+		-	Mana Circuits (via Dungeon) - Retains mana (underworld drains mana)
+	-	Set Tricksters to slowly regenerate hp and attack slightly quicker
+	-	Add underworld debuff: Heat Prostration (similar to old Necrotis)
+-	@Trickster
+	-	Add surface tricks (item stealing + racing?)
+
+
+
+v1.2
+-	Add color for custom tooltips
+-	@Mounted Magic Mirrors
+	-	Allow labeling mirrors on the map (and recoloring?)
+-	@Add Dragon Lairs (featuring Elemental Dragon boss; always able to reach either underworld or overworld)
+-	@Add Elements mod (with elemental gates)
+-	@Add Horse mod
+-	Blast Mining
+	-	@Add Cave Ins mod
+	-	Set Bomb and Dynamite explosions to destroy tiles with no more than 1 cardinal neighbor (mention in tooltip)
+-	Add "narrative" (via NPCs)
+	-	(Post-Golem) Learn that the end times are approaching if the ancient cult is not defeated
+	-	(Post-Golem) Learn that Lihzarhds sought power only to oppose the real threat: A cult worshipping elder gods
+	-	(Post-Mech) Learn of a secret tribe of lizard men (lihzarhds) seeking celestial magic and technological might
+	-	(Post-Mech) Learn about an ancient danger brewing in the jungle, maybe elder god power?
+	-	(Hard mode) Learn about mechanical constructs designed to suppress jungle denizens from attaining ancient power
+	-	(Hard mode) Learn about demon altars the guardian itself, not the demon altars, containing elder god power
+	-	Learn about hell's guardian being summoned by a symbolic act of betraying one's humanity
+	-	Learn about the accessories needed to access the underworld
+	-	Learn that powerful ores exist in the corruption/crimson to gain strength needed to win hammer
+	-	Warn of mysterious dark magic resurrecting pieces of elder gods to try to guard the secret of the magic hammer
+	-	Learn about the dungeon existing to originally to seal away pieces of elder gods, but since having become cult
+	-	Learn about migrating slime colonies and undead plagues (blood moons) preventing civilization
+	-	Learn about goblins hoarding advanced technology
+	-	Learn that the hammer is hidden deep underground and guarded well
+	-	Find clues about magic hammer
+	-	Learn about a magic hammer that destroys altars that are being used to summon elder gods

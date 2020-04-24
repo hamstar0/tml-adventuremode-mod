@@ -38,6 +38,7 @@ namespace AdventureMode {
 		////////////////
 
 		private bool InvaderWaterSpawnChecked = false;
+		private bool BossPrepped = false;
 
 		////////////////
 
@@ -81,6 +82,19 @@ namespace AdventureMode {
 				}
 				break;
 			}
+		}
+
+
+		////////////////
+
+		public override bool PreAI( NPC npc ) {
+			if( npc.boss && !this.BossPrepped ) {
+				npc.lifeMax = (int)((float)npc.lifeMax * AdventureModeConfig.Instance.BossMaxLifePercentOnSpawn);
+				npc.life = npc.lifeMax;
+				this.BossPrepped = true;
+			}
+
+			return base.PreAI( npc );
 		}
 
 

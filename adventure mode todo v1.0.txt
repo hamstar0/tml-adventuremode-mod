@@ -1,106 +1,50 @@
-Future decisions:
--	@Add Throwable Melee Weapons mod
--	Set each new boss kill to drop 3 Teleporation Potions
-
-
-
-v1.1
--	Add behavior to keep some monsters still until light shines on them
--	Add compatibility with Lives mod to generate the world with extra lives in chests
--	Implement difficulty select (sub-modes)
-	-	Hard
-		-	Life Crystals give half health
-		-	Set all bosses to leave slight trails of brambles wherever they move
--	Add color for custom tooltips
--	Set WoF to drop Soul of Mole (consumable; enables breaking dirt)
--	@Bullwhip
-	-	Allow picking up items inside walls
--	@Staff of Gaia
-	-	Add Staff of Aether
-		-	@Plan
-			-	Naturally generated in floating island chests
-			-	Grants unlimited flight for up to 30s, but consumes nearby 'world power' to do so
-			-	Additional flight is possible, but at the cost of additional 'world power' (via. r-click)
-			-	'World power' now only exists where there's solid terrain (still non-renewable)
-			-	While flight active, staff also works as a weapon able to 12 damage, ignoring element resists
--	@Add Dragon Lairs (featuring Elemental Dragon boss)
--	@Add Elements mod (with elemental gates)
 v1
+-	Remake trailer
+-	Set Adventure Mode mod to be whitelist-only
 -	@Mod Helpers v6
 	-	Add support via PayPal directly
-	-	Implement game mode function with Mod Helpers
-		-	...
-		-	@Plan
-			-	Modes: Vanilla, Adventure, Survival, Brutal, Honor Bound, Creative, Custom
-		-	Add world lock + new world requirement when a non-Custom game mode is set
+	-	Implement AM advertisement to title logo
+	-	Implement mod incompatibility settings (disables mod on reload; white or black list)
 	-	Add mod tags to Mods menu
-	-	Set "Cleanup unused mod tiles" button to add a confirmation step
 	-	After playing, give alert to player to give mod tags
-	-	Set to link to githubs in mod list and control panel list per mod
+	-	Add link to githubs in mod list and control panel list per mod (if present)
 	-	Set to not look up IPs unless config says to do so
-	-	Fix mod unload memory leaks
 	-	Implement CancellationTokens for tasks
 	-	Remove obsolete crap (reconsider TileDraw stuff)
 	-	@Take down github tutorials (for now)
+	-	Debug MH "bad mods" route
+	-	Fix tag modification submit failing when < 3 tags set
+	-	Fix mod browser tags not appearing on support button click
+-	@Begin final beta test
+[v0.9.17]
 -	Final
 	-	Add allowed-mod whitelist (configurable)
 	-	Fix Guide's false recipe reports?
 	-	Add "Adventure Mode" watermark to inventory backdrop
 	-	@Set git repos public
--	@Staff of Gaia
-	-	Set non-boss enemies struck with attack to use smaller font
-	-	Make SoG half hp fx create energy from ground tiles
-	-	Rename mod to Divine Staves
--	Underworld
-	-	Protective items
-		-	Jester's Motley (via Jungle) - Protects against underworld heat
-		-	Vegetative Vestment (via Underground Desert) - Wards Tricksters (especially nasty in the underworld)
-		-	Mana Circuits (via Dungeon) - Retains mana (underworld drains mana)
-	-	Set Tricksters to slowly regenerate hp and attack slightly quicker
-	-	Swap dungeon debuff with underworld + rename to Heat Prostration
+-	Add lore graves
+-	On first grapple item acquire, add inbox message about grapple change
+-	@Powerful Magic
+	-	Add 'Focus' ability to recharge mana
+-	Set Dryad to sell Antidotes (remove poison and add buff against poison)
+[v0.9.16]
+-	@Test Trickster, Orbs (especially MP)
+-	Update Necrotis to 1.1
+-	Increase grenade price
+-	Increase sell value of ores and gems
 -	Set all enemies in dungeon to be strong against all attacks that aren't magic (add Guide tips)
--	Set Dryad to sell Antidotes
--	Allow ducking inside a minecart to avoid damage (but risk derailing; no attacks possible, also)
--	@Mounted Magic Mirrors
-	-	Increase mirror sizes on map?
-	-	Allow labeling mirrors on the map (and recoloring?)
--	@Orbs
-	-	Add Black Orbs (crafted from Luminite + Geo-resonant Orbs; removes any type of chunk)
-	-	Add map button to toggle tile color overlay (Orb Resonance Map View)
--	@Trickster
-	-	Make Trickster give degreelessness + haste buff to random, individual invaders
-	-	Buff Trickster + add defense
-		-	Add repulsion effect during attack charge-up (causes projectiles to veer proportional to velocity)
-		-	On hit dodge, set Trickster to release weak bats with short term Degreelessness mode + transparency
-		-	Add max hp cap
-		-	Increase dodge range
-		-	Reduce charge time
-		-	Set Trickster to flee if too few NPCs exist nearby
-		-	Set Trickster to dodge on no more than 2 hits
-	-	Fix Degreelessness Buff sync (do all AI behaviors on the server)
--	Bosses
-	-	Generate sleeping bosses in large caverns
--	@Add Horse mod
--	@Add Ol' Big Iron mod
-	-	@Plan
-		-	Player begins with a special revolver and a bandolier of unlimited ammo for it (accessory)
-		-	Revolver has poor aim (is not focused) unless the player is still for 1.5 seconds
-		-	Gun appears as a held item, and a holster animation occurs when switching away (blocks re-equip fire)
-		-	Otherwise, aim (focus) improves for an instant upon:
-			-	Deploying the gun
-			-	Finishing a reload
-		-	Reload is 1 round at a time, finishing after 6 seconds
-		-	Reload slows movement speed, and is automatic after trying to fire when empty (hotkey also exists)
-		-	Gun can be fired fast, and does 20 damage per unfocused hit, 35 damage per focused hit
-		-	While tipsy, aim is further diminished, but occasional random moments of accurate aim (focus) occur
-		-	Firing shots diminishes accuracy for 1 second
-		-	Firing shots without a dash move slows the player's movement for a moment
-		-	Focus-hitting an enemy re-focuses aim for a moment (longer if further away)
-		-	Traveling Merchant rarely sells these types of revolvers for 35 gold
--	Set Bomb and Dynamite explosions to destroy tiles with no more than 1 cardinal neighbor (mention in tooltip)
--	Add Caving Harness accessory (start item; auto-deploys a rope to allow quickly returning to the surface)
-[v0.9.15]
+-	Add boss chase events (become invincible for a time, leave trail of brambles)
+-	@Add Porous Terrain mod (makes surface porous, islandy)
 
+[v0.9.15]
+-	Halve all boss HP by default
+-	Remove Staff of Gaia
+-	Remove in-line Necrotis debuff
+-	@Add Necrotis mod
+-	@Orbs: Add map overlay
+-	@Trickster: Steal, AI revision
+-	@MMM: Fix world gen seed
+-	@Add The Mad Ranger mod
 -	Fixes and tweaks
 	-	Improve logo
 	-	Enable breaking mahogany and jungle trees

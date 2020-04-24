@@ -29,11 +29,14 @@
     <Reference Include="MountedMagicMirrors">
       <HintPath>..\..\..\Mounted Magic Mirrors\Project\MountedMagicMirrors\bin\Release\net452\MountedMagicMirrors.dll</HintPath>
     </Reference>
+    <Reference Include="Necrotis">
+      <HintPath>..\..\..\Necrotis\Project\Necrotis\bin\Release\net452\Necrotis.dll</HintPath>
+    </Reference>
     <Reference Include="Nihilism">
       <HintPath>..\..\..\Nihilism\Nihilism\bin\Release\net452\Nihilism.dll</HintPath>
     </Reference>
     <Reference Include="Orbs">
-      <HintPath>..\..\..\Orbs\Orbs\bin\Release\net452\Orbs.dll</HintPath>
+      <HintPath>..\..\..\Orbs\Project\Orbs\bin\Release\net452\Orbs.dll</HintPath>
     </Reference>
     <Reference Include="PrefabKits">
       <HintPath>..\..\..\Prefab Kits\Project\PrefabKits\bin\Release\net452\PrefabKits.dll</HintPath>
@@ -41,8 +44,11 @@
     <Reference Include="StaffOfGaia">
       <HintPath>..\..\..\Staff Of Gaia\StaffOfGaia\bin\Release\net452\StaffOfGaia.dll</HintPath>
     </Reference>
+    <Reference Include="TheMadRanger">
+      <HintPath>..\..\..\The Mad Ranger\Project\TheMadRanger\bin\Release\net452\TheMadRanger.dll</HintPath>
+    </Reference>
     <Reference Include="TheTrickster">
-      <HintPath>..\..\..\The Trickster\TheTrickster\bin\Release\net452\TheTrickster.dll</HintPath>
+      <HintPath>..\..\..\The Trickster\Project\TheTrickster\bin\Release\net452\TheTrickster.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

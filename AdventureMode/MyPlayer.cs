@@ -1,13 +1,12 @@
-﻿using AdventureMode.Buffs;
-using HamstarHelpers.Helpers.Debug;
-using Microsoft.Xna.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
+using HamstarHelpers.Helpers.Debug;
 
 
 namespace AdventureMode {
@@ -61,7 +60,6 @@ namespace AdventureMode {
 		////////////////
 
 		public override void PreUpdate() {
-			NecrotisDebuff.UpdateBuffDurationForPlayer( this.player );
 		}
 
 		public override void PreUpdateBuffs() {
@@ -73,12 +71,6 @@ namespace AdventureMode {
 				if( this.player.buffTime[dangBuffIds] > maxDuration ) {
 					this.player.buffTime[dangBuffIds] = maxDuration;
 				}
-			}
-		}
-
-		public override void PreUpdateMovement() {
-			if( this.player.HasBuff(ModContent.BuffType<NecrotisDebuff>()) ) {
-				NecrotisDebuff.ApplyEffect( this.player );
 			}
 		}
 

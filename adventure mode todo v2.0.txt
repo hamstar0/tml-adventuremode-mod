@@ -1,3 +1,10 @@
+Future considerations
+-	@Add Middle Earth mod
+-	Create special minecart type that makes immune to enemies, but disables player attacks
+-	@Decide: Add ziplines?
+
+
+
 v2
 -	Implement Rod of Dissonance via. the new recipe
 -	Set coins to evaporate after 8 seconds
@@ -14,15 +21,9 @@ v2
 		-	Trickster always flees on hit, and stays away for a while
 		-	Removes Degreelessness Mode from enemies
 		-	Crafted from 3 Dark Hearts, 1 Bullwhip, 50 Pixie Dust
--	@Decide: Add ziplines?
--	Debug doors of frame houses
--	Create special minecart type that makes immune to enemies, but disables player attacks
 -	@Orbs
 	-	Set orbs to destroy tiles outside of their square in small amounts
 	-	Add gates (requires 4 of a given type crafted into a "Super Orb" to open all of that type)
--	@Add Middle Earth mod
--	@Mounted Magic Mirrors
-	-	Fix mirror map icon sizes and interactivity (study player head code?)
 -	@Add Guarded Meteors mod
 	-	@Decide: Set meteor heads to appear from random meteor blocks directly
 	-	Set meteor heads to seek and self destruct to stop bombs, dynamite
