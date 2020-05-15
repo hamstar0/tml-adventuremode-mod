@@ -17,6 +17,9 @@
     <Reference Include="ChestImplants">
       <HintPath>..\..\..\Chest Implants\ChestImplants\bin\Release\net452\ChestImplants.dll</HintPath>
     </Reference>
+    <Reference Include="Enraged">
+      <HintPath>..\..\..\Enraged\Project\Enraged\bin\Release\net452\Enraged.dll</HintPath>
+    </Reference>
     <Reference Include="FindableManaCrystals">
       <HintPath>..\..\..\Findable Mana Crystals\Project\FindableManaCrystals\bin\Release\net452\FindableManaCrystals.dll</HintPath>
     </Reference>
@@ -42,7 +45,10 @@
       <HintPath>..\..\..\Prefab Kits\Project\PrefabKits\bin\Release\net452\PrefabKits.dll</HintPath>
     </Reference>
     <Reference Include="StaffOfGaia">
-      <HintPath>..\..\..\Staff Of Gaia\StaffOfGaia\bin\Release\net452\StaffOfGaia.dll</HintPath>
+      <HintPath>..\..\Old\Staff Of Gaia\StaffOfGaia\bin\Release\net452\StaffOfGaia.dll</HintPath>
+    </Reference>
+    <Reference Include="TerrainRemixer">
+      <HintPath>..\..\..\Terrain Remixer\Project\TerrainRemixer\bin\Release\net452\TerrainRemixer.dll</HintPath>
     </Reference>
     <Reference Include="TheMadRanger">
       <HintPath>..\..\..\The Mad Ranger\Project\TheMadRanger\bin\Release\net452\TheMadRanger.dll</HintPath>

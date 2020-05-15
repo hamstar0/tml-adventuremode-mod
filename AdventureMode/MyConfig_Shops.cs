@@ -5,9 +5,7 @@ using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 using HamstarHelpers.Services.Configs;
 using HamstarHelpers.Helpers.Debug;
-using StaffOfGaia.Items;
 using PrefabKits.Items;
-using HamstarHelpers.Items;
 
 
 namespace AdventureMode {
@@ -68,8 +66,8 @@ namespace AdventureMode {
 					new ItemDefinition( ItemID.MushroomGrassSeeds ),
 					new ItemDefinition( ItemID.DryadCoverings ),
 					new ItemDefinition( ItemID.DryadLoincloth ),
-					new ItemDefinition( ModContent.ItemType<StaffOfGaiaItem>() ),
-					new ItemDefinition( ModContent.ItemType<GeoResonantOrbItem>() ),
+					//new ItemDefinition( ModContent.ItemType<StaffOfGaiaItem>() ),
+					//new ItemDefinition( ModContent.ItemType<GeoResonantOrbItem>() ),
 				}
 			},
 			{

@@ -1,3 +1,8 @@
+Future
+-	Decide: Generate sleeping bosses in large caverns
+
+
+
 v1.1
 -	@Mod Helpers v7
 	-	Implement game mode function with Mod Helpers
@@ -14,13 +19,11 @@ v1.1
 		-	Life Crystals give half health
 -	Add color for custom tooltips
 -	Set WoF to drop Soul of Mole (consumable; enables breaking dirt)
--	Decide: Generate sleeping bosses in large caverns
 -	@B&D Add grapple reload function on return to ground (otherwise only works on wood)
 -	@B&D: Blackness covering any area that is unreachable
+-	@Add KO mod
 -	@Add Minecart Cannon mod
 -	@Add Fleeting Goodies mod (coins disappear)
 -	@Add Anomalies mod (only adds Gravitational Anomalies, for now)
 -	@Bullwhip
 	-	Allow picking up items inside walls
--	@B&D: Add lore arond the map
--	@B&D: Porous surface terrain

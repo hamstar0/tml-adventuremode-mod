@@ -7,10 +7,10 @@ using HamstarHelpers.Helpers.TModLoader;
 using HamstarHelpers.Services.EntityGroups;
 using HamstarHelpers.Services.EntityGroups.Definitions;
 using HamstarHelpers.Services.Hooks.LoadHooks;
+using AdventureMode.Items;
 using LockedAbilities.Items.Consumable;
 using LockedAbilities.Items.Accessories;
 using Nihilism;
-using AdventureMode.Items;
 using PrefabKits.Items;
 
 

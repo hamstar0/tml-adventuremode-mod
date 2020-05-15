@@ -1,7 +1,7 @@
-﻿using AdventureMode.Tiles;
-using System;
+﻿using System;
 using Terraria.ID;
 using Terraria.ModLoader;
+using AdventureMode.Tiles;
 
 
 namespace AdventureMode.Items {

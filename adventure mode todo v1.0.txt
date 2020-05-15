@@ -1,6 +1,7 @@
 v1
 -	Remake trailer
--	Set Adventure Mode mod to be whitelist-only
+-	Set Adventure Mode mod to allow other mods on a whitelist-only basis
+-	@Set git repos public
 -	@Mod Helpers v6
 	-	Add support via PayPal directly
 	-	Implement AM advertisement to title logo
@@ -16,26 +17,33 @@ v1
 	-	Fix tag modification submit failing when < 3 tags set
 	-	Fix mod browser tags not appearing on support button click
 -	@Begin final beta test
-[v0.9.17]
+[v0.12.0]
 -	Final
 	-	Add allowed-mod whitelist (configurable)
 	-	Fix Guide's false recipe reports?
 	-	Add "Adventure Mode" watermark to inventory backdrop
-	-	@Set git repos public
--	Add lore graves
+[v0.11.0]
+-	Add quests + lore (unlocks shops? quick loaders? orbs? ability accessories?)
+[v0.10.2]
 -	On first grapple item acquire, add inbox message about grapple change
 -	@Powerful Magic
+	-	Increase damage 5x, decrease mana recovery options by 1/5
 	-	Add 'Focus' ability to recharge mana
 -	Set Dryad to sell Antidotes (remove poison and add buff against poison)
-[v0.9.16]
+[v0.10.1]
 -	@Test Trickster, Orbs (especially MP)
+-	Fix The Mad Ranger
 -	Update Necrotis to 1.1
 -	Increase grenade price
 -	Increase sell value of ores and gems
 -	Set all enemies in dungeon to be strong against all attacks that aren't magic (add Guide tips)
--	Add boss chase events (become invincible for a time, leave trail of brambles)
--	@Add Porous Terrain mod (makes surface porous, islandy)
+[v0.10.0]
+-	Integrate Enraged
+-	Integrate Terrain Remixer
+-	Integrate Necrotis
 
+-	@Add Enraged mod (become invincible for a time, leave trail of brambles)
+-	@Add Porous Terrain mod (makes surface porous, islandy)
 [v0.9.15]
 -	Halve all boss HP by default
 -	Remove Staff of Gaia
