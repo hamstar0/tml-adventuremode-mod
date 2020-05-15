@@ -1,10 +1,10 @@
 using System;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using HamstarHelpers.Helpers.Debug;
 using AdventureMode.Mods;
 using AdventureMode.Recipes;
-using Terraria.ID;
 
 
 namespace AdventureMode {
@@ -22,12 +22,6 @@ namespace AdventureMode {
 		////////////////
 
 		public AdventureModeModInteractions ModInteractions { get; } = new AdventureModeModInteractions();
-
-
-		////////////////
-
-		private (int X, int Y) PlacementOutlineTile = (0, 0);
-		private int PlacementOutlineLinger = 0;
 
 
 

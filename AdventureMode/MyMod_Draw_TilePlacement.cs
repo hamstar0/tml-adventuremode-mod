@@ -5,14 +5,21 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.Draw;
+using HamstarHelpers.Helpers.Players;
 using HamstarHelpers.Services.AnimatedColor;
 using AdventureMode.Tiles;
 using AdventureMode.Items;
-using HamstarHelpers.Helpers.Players;
 
 
 namespace AdventureMode {
 	partial class AdventureModeMod : Mod {
+		private (int X, int Y) PlacementOutlineTile = (0, 0);
+		private int PlacementOutlineLinger = 0;
+
+
+
+		////////////////
+
 		private void DrawCurrentTilePlacementOutline() {
 			int mouseWorldX = (int)Main.screenPosition.X + Main.mouseX;
 			int mouseWorldY = (int)Main.screenPosition.Y + Main.mouseY;

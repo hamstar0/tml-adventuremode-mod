@@ -31,17 +31,18 @@ v1
 	-	Add 'Focus' ability to recharge mana
 -	Set Dryad to sell Antidotes (remove poison and add buff against poison)
 [v0.10.1]
--	@Test Trickster, Orbs (especially MP)
+-	@Test TMR, Trickster, Orbs (especially MP)
 -	Fix The Mad Ranger
 -	Update Necrotis to 1.1
 -	Increase grenade price
 -	Increase sell value of ores and gems
 -	Set all enemies in dungeon to be strong against all attacks that aren't magic (add Guide tips)
 [v0.10.0]
+-	@Test
 -	Integrate Enraged
+
 -	Integrate Terrain Remixer
 -	Integrate Necrotis
-
 -	@Add Enraged mod (become invincible for a time, leave trail of brambles)
 -	@Add Porous Terrain mod (makes surface porous, islandy)
 [v0.9.15]

@@ -1,6 +1,6 @@
 # Adventure Mode
 
-Adventure Mode transforms Terraria from a sandbox into a journey!
+Adventure Mode creates a progression-oriented journey designed to replace Terraria's sandbox mode. You will need good decision making, quick wits, and awareness of your surroundings in order to succeed.
 
 Credits:
   Templates:
