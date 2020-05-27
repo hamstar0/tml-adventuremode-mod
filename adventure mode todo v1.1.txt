@@ -1,5 +1,7 @@
 Future
 -	Decide: Generate sleeping bosses in large caverns
+-	Set Dryad to sell Antidotes (remove poison and add buff against poison)
+-	Set all enemies in dungeon to be strong against all attacks that aren't magic (add Guide tips)
 
 
 
@@ -27,3 +29,4 @@ v1.1
 -	@Add Anomalies mod (only adds Gravitational Anomalies, for now)
 -	@Bullwhip
 	-	Allow picking up items inside walls
+-	@Add Lucky Hat mod
