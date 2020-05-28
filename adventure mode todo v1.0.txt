@@ -9,7 +9,7 @@ v1
 	-	Add mod tags to Mods menu
 	-	After playing, give alert to player to give mod tags
 	-	Add link to githubs in mod list and control panel list per mod (if present)
-	-	Set inbox to exist on MH icon
+	-	Set inbox to exist on MH icon and a control panel tab
 	-	Set to not look up IPs unless config says to do so
 	-	Implement CancellationTokens for tasks
 	-	Remove obsolete crap (reconsider TileDraw stuff)
@@ -18,26 +18,40 @@ v1
 	-	Fix tag modification submit failing when < 3 tags set
 	-	Fix mod browser tags not appearing on support button click
 -	@Begin final beta test
-[v0.11.0]
+[v0.14.0]
 -	Final
 	-	Add allowed-mod whitelist (configurable)
 	-	Fix Guide's false recipe reports?
 	-	Add "Adventure Mode" watermark to inventory backdrop
-[v0.10.3]
--	Add "lore" (unlocks shops? quick loaders? orbs? ability accessories?)
-[v0.10.2]
+[v0.13.0]
+-	Add "lore" (see plan in Discord)
+[v0.12.0]
+-	Create intro cutscene
+-	@Add Cinema FX mod
+[v0.11.0]
 -	Add "treasure hunt" quests
 	-	@Plan
-		-	...
+		-	Pirate lackey appears and demands ransom or invasion happens
+		-	Depending on offering:
+			-	If sucks or nil, invasion happens immediately
+			-	If lackluster, a warning is issued, and an invasion occurs on repeat
+			-	If mediocre, all loot is lost, and pirate simply disappears
+			-	If good, all loot is lost, but player gets a secret orb supply dump somewhere
+			-	If excellent, the pirate envoy is slain, and all of the loot and orbs appear
+		-	If a pirate invasion happens
+			-	It happens regardless of pre-hardmode status
+			-	It lasts a whole day, and then the pirates leave
+			-	All surface-dwelling NPCs die, but randomly
+		-	When a secret orb/loot dump occurs, a note is included to mention secret support for cause
 [v0.10.1]
 -	@Test TMR, Trickster, Orbs (especially MP)
--	On first grapple item acquire, add inbox message about grapple change
 -	@Powerful Magic
 	-	Add special fx to make magic appear more dramatic (darken screen, shake screen)
-	-	Increase damage 5x, decrease mana recovery options by 1/5
+	-	Increase damage 4x, decrease mana recovery options by 1/4
 	-	Add 'Focus' ability to recharge mana
--	Increase ores, gems, grenade, torch, potion prices
+-	On first grapple item acquire, add inbox message about grapple change
 
+-	Increase ores, gems, grenade, torch, potion prices
 [v0.10.0]
 -	Set Necrotis ankh hover text to overlay
 -	Fix The Mad Ranger
