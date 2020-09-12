@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
 using Terraria;
+using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 using HamstarHelpers.Classes.UI.ModConfig;
-using HamstarHelpers.Services.Configs;
 
 
 namespace AdventureMode {
@@ -12,8 +12,8 @@ namespace AdventureMode {
 
 
 
-	public partial class AdventureModeConfig : StackableModConfig {
-		public static AdventureModeConfig Instance => ModConfigStack.GetMergedConfigs<AdventureModeConfig>();
+	public partial class AdventureModeConfig : ModConfig {
+		public static AdventureModeConfig Instance => ModContent.GetInstance<AdventureModeConfig>();
 
 
 

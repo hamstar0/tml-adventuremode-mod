@@ -4,7 +4,6 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.World.Generation;
-using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.Tiles;
 using MountedMagicMirrors.Tiles;
 

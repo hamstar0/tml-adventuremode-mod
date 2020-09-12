@@ -2,10 +2,26 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using HamstarHelpers.Helpers.Items.Attributes;
+using HamstarHelpers.Services.Messages.Inbox;
 
 
 namespace AdventureMode {
 	partial class AdventureModeItem : GlobalItem {
+		public override bool OnPickup( Item item, Player player ) {
+			if( ItemAttributeHelpers.IsGrapple(item) ) {
+				InboxMessages.SetMessage(
+					"AdventureModeGrappleChanges",
+					"New to Adventure Mode: Grappling hooks must now be used on only wood objects.",
+					false
+				);
+			}
+			return base.OnPickup( item, player );
+		}
+
+
+		////////////////
+
 		public override void OnConsumeItem( Item item, Player player ) {
 			switch( item.type ) {
 			/*case ItemID.ManaCrystal:

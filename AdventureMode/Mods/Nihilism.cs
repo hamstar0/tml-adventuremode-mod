@@ -154,10 +154,6 @@ namespace AdventureMode.Mods {
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.TitaniumForge), true );
 			}
 
-			if( ModLoader.GetMod("StaffOfGaia") != null ) {
-				this.LoadStaffOfGaiaForNihilism();
-			}
-
 			NihilismAPI.NihilateCurrentWorld( true );
 		}
 

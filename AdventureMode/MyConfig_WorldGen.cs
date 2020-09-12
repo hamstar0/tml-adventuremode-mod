@@ -1,11 +1,10 @@
-﻿using HamstarHelpers.Services.Configs;
-using System;
+﻿using System;
 using System.ComponentModel;
 using Terraria.ModLoader.Config;
 
 
 namespace AdventureMode {
-	public partial class AdventureModeConfig : StackableModConfig {
+	public partial class AdventureModeConfig : ModConfig {
 		[DefaultValue( true )]
 		[ReloadRequired]
 		public bool SetDefaultSpawnToBeach { get; set; } = true;

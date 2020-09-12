@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
-using HamstarHelpers.Services.Configs;
 using HamstarHelpers.Helpers.Debug;
 using PrefabKits.Items;
 
 
 namespace AdventureMode {
-	public partial class AdventureModeConfig : StackableModConfig {
+	public partial class AdventureModeConfig : ModConfig {
 		//[ReloadRequired]
 		public Dictionary<NPCDefinition, List<ItemDefinition>> ShopWhitelists { get; set; } = new Dictionary<NPCDefinition, List<ItemDefinition>> {
 			{

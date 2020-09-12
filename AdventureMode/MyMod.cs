@@ -41,9 +41,6 @@ namespace AdventureMode {
 			this.ModInteractions.LoadPrefabsKitAndMountedMagicMirrors();
 			this.ModInteractions.LoadTricksterAndLockedAbilies();
 			this.ModInteractions.LoadLockedAbilities();
-			if( ModLoader.GetMod("StaffOfGaia") != null ) {
-				this.ModInteractions.LoadStaffOfGaia();
-			}
 			this.ModInteractions.LoadOrbs();
 		}
 

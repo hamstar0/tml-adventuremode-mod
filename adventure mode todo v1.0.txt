@@ -1,56 +1,64 @@
 v1
--	Remake trailer
--	Set Adventure Mode mod to allow other mods on a whitelist-only basis
--	@Set git repos public
 -	@Mod Helpers v6
-	-	Add support via PayPal directly
-	-	Implement AM advertisement to title logo
-	-	Implement mod incompatibility settings (disables mod on reload; white or black list)
-	-	Add mod tags to Mods menu
-	-	After playing, give alert to player to give mod tags
-	-	Add link to githubs in mod list and control panel list per mod (if present)
-	-	Set inbox to exist on MH icon and a control panel tab
+	-	Change main menu support buttons (PayPal, Patreon, Discord)
+	-	Migrate TileDrawDefinition to a Class
 	-	Set to not look up IPs unless config says to do so
 	-	Implement CancellationTokens for tasks
 	-	Remove obsolete crap (reconsider TileDraw stuff)
+	-	Add "Find Depending Mods Of" button
 	-	@Take down github tutorials (for now)
-	-	Debug MH "bad mods" route
-	-	Fix tag modification submit failing when < 3 tags set
-	-	Fix mod browser tags not appearing on support button click
--	@Begin final beta test
-[v0.14.0]
+	-	Separate "common conditions" into a new category?
+	-	Debug
+		-	Debug MH "bad mods" route
+		-	HasSyncedWorldData: True, HasLoadedOldUID: False
+		-	HasSyncedState does not recur on loading new worlds?
+	-	Add mod reviews
+		-	@Implement wordpress page for adding 
+		-	Define reviews list menu page
+		-	Add button on Mod Info for each mod to show reviews
+	-	Control panel
+		-	Add a button to open config folder to mod configs menu
+		-	Move icon into Settings menu
+		-	Add link to githubs in mod list and control panel list per mod (if present)
+		-	Put inbox in a control panel tab
+		-	Fix control panel and inbox icon compat with Grand Design UI icons
+		-	Set clicks upon control panel button to use player.mouseInterface
+	-	Mod tags
+		-	Add github backups for tag database
+		-	Add to Mods menu
+		-	Add 'Has Mod Incompat.', 'Library Only' tags
+		-	Fix tag modification submit failing when < 3 tags set
+		-	Fix mod browser tags not appearing on support button click
+		-	Add mod tags text scale adjusting
+		-	Add toggle button to UI
+		-	@Update tag moderation page
+-	Set Adventure Mode mod to allow other mods on a whitelist-only basis
+-	@Set git repos public
+-	@Begin another beta test
 -	Final
 	-	Add allowed-mod whitelist (configurable)
 	-	Fix Guide's false recipe reports?
 	-	Add "Adventure Mode" watermark to inventory backdrop
-[v0.13.0]
--	Add "lore" (see plan in Discord)
-[v0.12.0]
--	Create intro cutscene
--	@Add Cinema FX mod
 [v0.11.0]
--	Add "treasure hunt" quests
-	-	@Plan
-		-	Pirate lackey appears and demands ransom or invasion happens
-		-	Depending on offering:
-			-	If sucks or nil, invasion happens immediately
-			-	If lackluster, a warning is issued, and an invasion occurs on repeat
-			-	If mediocre, all loot is lost, and pirate simply disappears
-			-	If good, all loot is lost, but player gets a secret orb supply dump somewhere
-			-	If excellent, the pirate envoy is slain, and all of the loot and orbs appear
-		-	If a pirate invasion happens
-			-	It happens regardless of pre-hardmode status
-			-	It lasts a whole day, and then the pirates leave
-			-	All surface-dwelling NPCs die, but randomly
-		-	When a secret orb/loot dump occurs, a note is included to mention secret support for cause
-[v0.10.1]
 -	@Test TMR, Trickster, Orbs (especially MP)
--	@Powerful Magic
-	-	Add special fx to make magic appear more dramatic (darken screen, shake screen)
-	-	Increase damage 4x, decrease mana recovery options by 1/4
-	-	Add 'Focus' ability to recharge mana
--	On first grapple item acquire, add inbox message about grapple change
 
+
+-	@Powerful Magic
+	-	Add alert when trying to cast with mana sickness
+	-	Add special fx to make magic appear more dramatic (darken screen, shake screen)
+-	@Implement Note item (via. MH)
+-	@MH
+	-	Add tile brush service and commands
+	-	Add NPC controls service
+	-	Add camera controls service
+-	@Add Pirates Demand Your Booty! mod
+[v0.10.1]
+-	@Powerful Magic: Add 'Focus' ability to recharge mana
+	-	Slowdown player movement
+	-	Implement mana recharge (increases with focus duration)
+	-	Implement hold visual
+-	@Bullwhip: Fix whip hitbox against large npcs
+-	On first grapple item acquire, add inbox message about grapple change
 -	Increase ores, gems, grenade, torch, potion prices
 [v0.10.0]
 -	Set Necrotis ankh hover text to overlay

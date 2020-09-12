@@ -4,7 +4,6 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
-using HamstarHelpers.Services.Configs;
 using AdventureMode.Items;
 using MountedMagicMirrors.Items;
 using PrefabKits.Items;
@@ -40,7 +39,7 @@ namespace AdventureMode {
 
 
 
-	public partial class AdventureModeConfig : StackableModConfig {
+	public partial class AdventureModeConfig : ModConfig {
 		public List<ItemQuantityDefinition> RaftBarrelContents { get; set; } = new List<ItemQuantityDefinition> {
 			new ItemQuantityDefinition( ItemID.Wood, 50 ),
 			new ItemQuantityDefinition( ModContent.ItemType<FramingPlankItem>(), 50 ),

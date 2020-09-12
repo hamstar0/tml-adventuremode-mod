@@ -4,7 +4,6 @@ using System.ComponentModel;
 using Terraria.ID;
 using Terraria.ModLoader.Config;
 using Terraria.ModLoader;
-using HamstarHelpers.Services.Configs;
 using PrefabKits.Tiles;
 using MountedMagicMirrors.Tiles;
 
@@ -35,7 +34,7 @@ namespace AdventureMode {
 
 
 
-	public partial class AdventureModeConfig : StackableModConfig {
+	public partial class AdventureModeConfig : ModConfig {
 		public List<string> TilePlaceWhitelist { get; set; } = new List<string> {
 			//
 			TileID.GetUniqueKey( TileID.Rope ),

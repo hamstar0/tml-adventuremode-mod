@@ -24,7 +24,7 @@
       <HintPath>..\..\..\Findable Mana Crystals\Project\FindableManaCrystals\bin\Release\net452\FindableManaCrystals.dll</HintPath>
     </Reference>
     <Reference Include="HamstarHelpers">
-      <HintPath>..\..\..\Mod Helpers\v5 (tML11)\HamstarHelpers\bin\Release\net452\HamstarHelpers.dll</HintPath>
+      <HintPath>..\..\..\Mod Helpers\Project\HamstarHelpers\bin\Release\net452\HamstarHelpers.dll</HintPath>
     </Reference>
     <Reference Include="LockedAbilities">
       <HintPath>..\..\..\Locked Abilities\LockedAbilities\bin\Release\net452\LockedAbilities.dll</HintPath>
@@ -43,9 +43,6 @@
     </Reference>
     <Reference Include="PrefabKits">
       <HintPath>..\..\..\Prefab Kits\Project\PrefabKits\bin\Release\net452\PrefabKits.dll</HintPath>
-    </Reference>
-    <Reference Include="StaffOfGaia">
-      <HintPath>..\..\Old\Staff Of Gaia\StaffOfGaia\bin\Release\net452\StaffOfGaia.dll</HintPath>
     </Reference>
     <Reference Include="TerrainRemixer">
       <HintPath>..\..\..\Terrain Remixer\Project\TerrainRemixer\bin\Release\net452\TerrainRemixer.dll</HintPath>

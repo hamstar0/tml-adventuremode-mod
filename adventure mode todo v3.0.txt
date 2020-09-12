@@ -1,4 +1,4 @@
-Future decisions:
+Ideas:
 -	@Add Throwable Melee Weapons mod
 -	Set each new boss kill to drop 3 Teleporation Potions
 -	@Staff of Gaia
@@ -20,19 +20,26 @@ Future decisions:
 	-	Add underworld debuff: Heat Prostration (similar to old Necrotis)
 -	@Trickster
 	-	Add surface tricks (item stealing + racing?)
-
-
-
-v1.2
--	Add color for custom tooltips
 -	@Mounted Magic Mirrors
 	-	Allow labeling mirrors on the map (and recoloring?)
--	@Add Dragon Lairs (featuring Elemental Dragon boss; always able to reach either underworld or overworld)
 -	@Add Elements mod (with elemental gates)
--	@Add Horse mod
+-	@Add Trusty Steed mod
 -	Blast Mining
 	-	@Add Cave Ins mod
 	-	Set Bomb and Dynamite explosions to destroy tiles with no more than 1 cardinal neighbor (mention in tooltip)
+-	@Add Myconids Attack! mod
+-	@Terrain Remixer
+	-	Add 'middle earth' setting
+
+
+
+[v3]
+-	Remake trailer
+-	@Add Adventure Mode Lore mod (for now, only intro cutscene)
+
+
+
+Lore plans (rev1)
 -	Add "narrative" (via NPCs)
 	-	(Post-Golem) Learn that the end times are approaching if the ancient cult is not defeated
 	-	(Post-Golem) Learn that Lihzarhds sought power only to oppose the real threat: A cult worshipping elder gods

@@ -10,17 +10,16 @@ using Orbs;
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
 		public void LoadOrbs() {
-			var myTileKillWhitelist = new List<string>( OrbsConfig.Instance.TileKillWhitelist );
+			var config = OrbsConfig.Instance;
+			var myTileKillWhitelist = new List<string>( config.TileKillWhitelist );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey( ModContent.TileType<FramingPlankTile>() ) );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey( ModContent.TileType<ManaCrystalShardTile>() ) );
 
-			OrbsConfig.Instance.OverlayChanges( new OrbsConfig {
-				TileKillWhitelist = myTileKillWhitelist,
-				OnlyGenOrbsInUndergroundChests = false,
-				AnyOrbPercentChancePerChest = 0.5f,
-				WhiteOrbPercentChanceForOrbChest = 0f,
-				IsGeoResonantOrbSoldByDryad = false	// Mod Helpers adds this
-			} );
+			config.SetOverride( nameof(OrbsConfig.TileKillWhitelist), myTileKillWhitelist );
+			config.SetOverride( nameof(OrbsConfig.OnlyGenOrbsInUndergroundChests), false );
+			config.SetOverride( nameof(OrbsConfig.AnyOrbPercentChancePerChest), 0.5f );
+			config.SetOverride( nameof(OrbsConfig.WhiteOrbPercentChanceForOrbChest), 0f );
+			config.SetOverride( nameof(OrbsConfig.IsGeoResonantOrbSoldByDryad), false );    // Mod Helpers adds this
 		}
 	}
 }
