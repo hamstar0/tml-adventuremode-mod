@@ -6,18 +6,17 @@ using LockedAbilities;
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
 		public void LoadLockedAbilities() {
-			var config = new LockedAbilitiesConfig {
-				BackBraceEnabled = false,
-				FlyingCertificateEnabled = false,
-				WorldGenChestImplantBackBraceChance = 0f,
-				DoubleJumpsRequireGels = false
-			};
+			var config = AdventureModeConfig.Instance;
+			var laConfig = LockedAbilitiesConfig.Instance;
 
-			if( AdventureModeConfig.Instance.WorldGenRemoveDarkHeartPieces ) {
-				config.WorldGenChestImplantDarkHeartPieceChance = 0f;
+			if( config.WorldGenRemoveDarkHeartPieces ) {
+				laConfig.SetOverride( nameof(LockedAbilitiesConfig.WorldGenChestImplantDarkHeartPieceChance), 0f );
 			}
 
-			LockedAbilitiesConfig.Instance.OverlayChanges( config );
+			laConfig.SetOverride( nameof(LockedAbilitiesConfig.BackBraceEnabled), false );
+			laConfig.SetOverride( nameof(LockedAbilitiesConfig.FlyingCertificateEnabled), false );
+			laConfig.SetOverride( nameof(LockedAbilitiesConfig.WorldGenChestImplantBackBraceChance), 0f );
+			laConfig.SetOverride( nameof(LockedAbilitiesConfig.DoubleJumpsRequireGels), false );
 		}
 	}
 }

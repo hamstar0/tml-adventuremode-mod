@@ -12,9 +12,10 @@ using MountedMagicMirrors.Items;
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
 		public void LoadChestImplants() {
-			var implantsConfig = new ChestImplantsConfig();
-			implantsConfig.AllFromSetChestImplanterDefinitions.Value.Clear();
-			implantsConfig.ClearRandomImplanterSets();
+			var implantsConfig = ChestImplantsConfig.Instance;
+			var implanterDefs = new ChestImplanterSetDefinition( new List<Ref<ChestImplanterDefinition>>() );
+
+			//
 
 			void addItemImplanter( int itemType, int quantity, float chancePerChest=1f ) {
 				var itemDef = new ChestImplanterItemDefinition {
@@ -28,10 +29,12 @@ namespace AdventureMode.Mods {
 					ItemDefinitions = new List<ChestImplanterItemDefinition> { itemDef }
 				};
 
-				implantsConfig.AllFromSetChestImplanterDefinitions.Value.Add(
+				implanterDefs.Value.Add(
 					new Ref<ChestImplanterDefinition>( def )
 				);
 			}
+
+			//
 
 			if( !AdventureModeConfig.Instance.EnableAlchemyRecipes ) {
 				addItemImplanter( ItemID.Bottle, -1 );
@@ -53,7 +56,42 @@ namespace AdventureMode.Mods {
 				);
 			}
 
-			ChestImplantsConfig.Instance.OverlayChanges( implantsConfig );
+			implantsConfig.SetOverride(
+				nameof(ChestImplantsConfig.AllFromSetChestImplanterDefinitions),
+				implanterDefs
+			);
+			implantsConfig.SetOverride(
+				nameof(ChestImplantsConfig.RandomPickFromSetChestImplanterDefinitions1),
+				new ChestImplanterSetDefinition()
+			);
+			implantsConfig.SetOverride(
+				nameof(ChestImplantsConfig.RandomPickFromSetChestImplanterDefinitions2),
+				new ChestImplanterSetDefinition()
+			);
+			implantsConfig.SetOverride(
+				nameof(ChestImplantsConfig.RandomPickFromSetChestImplanterDefinitions3),
+				new ChestImplanterSetDefinition()
+			);
+			implantsConfig.SetOverride(
+				nameof(ChestImplantsConfig.RandomPickFromSetChestImplanterDefinitions4),
+				new ChestImplanterSetDefinition()
+			);
+			implantsConfig.SetOverride(
+				nameof(ChestImplantsConfig.RandomPickFromSetChestImplanterDefinitions5),
+				new ChestImplanterSetDefinition()
+			);
+			implantsConfig.SetOverride(
+				nameof(ChestImplantsConfig.RandomPickFromSetChestImplanterDefinitions6),
+				new ChestImplanterSetDefinition()
+			);
+			implantsConfig.SetOverride(
+				nameof(ChestImplantsConfig.RandomPickFromSetChestImplanterDefinitions7),
+				new ChestImplanterSetDefinition()
+			);
+			implantsConfig.SetOverride(
+				nameof(ChestImplantsConfig.RandomPickFromSetChestImplanterDefinitions8),
+				new ChestImplanterSetDefinition()
+			);
 		}
 	}
 }

@@ -12,6 +12,7 @@ using PrefabKits;
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
 		public void LoadPrefabsKitAndMountedMagicMirrors() {
+			var prefabKitsConfig = PrefabKitsConfig.Instance;
 			IList<HouseKitFurnitureDefinition> cycle = AdventureModeConfig.Instance.HouseKitFurnitureSuccession;
 
 			PrefabKitsAPI.OnPostHouseCreate( (tileX, tileY) => {
@@ -26,24 +27,20 @@ namespace AdventureMode.Mods {
 					return;
 				}
 
-				PrefabKitsConfig.Instance.OverlayChanges( new PrefabKitsConfig {
-					CustomFurnitureTile = furnDef.TileType,
-				} );
+				prefabKitsConfig.SetOverride( nameof(PrefabKitsConfig.CustomFurnitureTile), furnDef.TileType );
 
 				myworld.HouseKitFurnitureIdx++;
 			} );
 
-			PrefabKitsConfig.Instance.OverlayChanges(
-				new PrefabKitsConfig {
-					CustomFurnitureTile = TileID.Containers,
-					CustomWallMount1Tile = (ushort)ModContent.TileType<MountedMagicMirrorTile>(),
-					CustomFloorTile = TileID.Mudstone,
-					HouseFramingKitPrice = 100000,
-					HouseFurnishingKitPrice = 100000,
-					TrackDeploymentKitRecipeTile = -1,
-					TrackDeploymentKitRecipeExtraIngredient = new List<ItemDefinition>()
-				}
-			);
+			ushort mirrorTileType = (ushort)ModContent.TileType<MountedMagicMirrorTile>();
+
+			prefabKitsConfig.SetOverride( nameof(PrefabKitsConfig.CustomFurnitureTile), TileID.Containers );
+			prefabKitsConfig.SetOverride( nameof(PrefabKitsConfig.CustomWallMount1Tile), mirrorTileType );
+			prefabKitsConfig.SetOverride( nameof(PrefabKitsConfig.CustomFloorTile), TileID.Mudstone );
+			prefabKitsConfig.SetOverride( nameof(PrefabKitsConfig.HouseFramingKitPrice), 100000 );
+			prefabKitsConfig.SetOverride( nameof(PrefabKitsConfig.HouseFurnishingKitPrice), 100000 );
+			prefabKitsConfig.SetOverride( nameof(PrefabKitsConfig.TrackDeploymentKitRecipeTile), -1 );
+			prefabKitsConfig.SetOverride( nameof(PrefabKitsConfig.TrackDeploymentKitRecipeExtraIngredient), new List<ItemDefinition>() );
 		}
 	}
 }

@@ -10,7 +10,7 @@ namespace AdventureMode.Mods {
 				WhipLedgePullStrength = 0f
 			};
 
-			BullwhipConfig.Instance.OverlayChanges( config );
+			BullwhipConfig.Instance.SetOverride( nameof(BullwhipConfig.WhipLedgePullStrength), 0f );
 		}
 	}
 }

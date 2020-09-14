@@ -35,6 +35,8 @@ namespace AdventureMode.Mods {
 		////////////////
 
 		private void ApplyNihilismFilters() {
+			var config = AdventureModeConfig.Instance;
+
 			NihilismAPI.ClearFiltersForCurrentWorld( true );
 
 			//
@@ -49,7 +51,7 @@ namespace AdventureMode.Mods {
 			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyNonOreCraftedEquipment, true );
 			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyOreBar, true );
 
-			if( AdventureModeConfig.Instance.EnableAlchemyRecipes ) {
+			if( config.EnableAlchemyRecipes ) {
 				NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyPotion, true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Bottle), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BottledHoney), true );
@@ -124,11 +126,11 @@ namespace AdventureMode.Mods {
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.PDA), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.CellPhone), true );
 
-			if( AdventureModeConfig.Instance.EnableTorchRecipes ) {
+			if( config.EnableTorchRecipes ) {
 				NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyWallTorch, true );
 			}
-			if( AdventureModeConfig.Instance.EnableBossItemRecipes ) {
-				if( !AdventureModeConfig.Instance.EnableAlchemyRecipes ) {
+			if( config.EnableBossItemRecipes ) {
+				if( !config.EnableAlchemyRecipes ) {
 					NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BottledHoney), true );
 				}
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.GoldCrown), true );
@@ -147,7 +149,7 @@ namespace AdventureMode.Mods {
 
 			//
 
-			if( AdventureModeConfig.Instance.RemoveRecipeTileRequirements ) {
+			if( config.RemoveRecipeTileRequirements ) {
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Furnace), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Hellforge), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.AdamantiteForge), true );

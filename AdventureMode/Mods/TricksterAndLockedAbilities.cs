@@ -9,9 +9,8 @@ using LockedAbilities.Items.Consumable;
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
 		public void LoadTricksterAndLockedAbilies() {
-			var config = TheTricksterConfig.Instance;
-			config.SetOverride(
-				nameof( TheTricksterConfig.DropsOnDefeat ),
+			TheTricksterConfig.Instance.SetOverride(
+				nameof(TheTricksterConfig.DropsOnDefeat),
 				new ItemDefinition( ModContent.ItemType<DarkHeartPieceItem>() )
 			);
 		}
