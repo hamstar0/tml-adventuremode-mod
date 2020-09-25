@@ -32,17 +32,48 @@ v1
 		-	Add mod tags text scale adjusting
 		-	Add toggle button to UI
 		-	@Update tag moderation page
--	Set Adventure Mode mod to allow other mods on a whitelist-only basis
+-	@Begin final beta test
 -	@Set git repos public
--	@Begin another beta test
+-	Add allowed-mod whitelist (configurable)
 -	Final
-	-	Add allowed-mod whitelist (configurable)
 	-	Fix Guide's false recipe reports?
 	-	Add "Adventure Mode" watermark to inventory backdrop
+[v0.12.0]
+-	@Begin another beta test
+-	@B&D progression controls
+-	Progress changes
+	-	@B&D Witch Doctor having Necrotis heal ability
+	-	Remove patches of orbs (white orbs?)
+	-	Prevent voodoo demons from spawning until Witch Doctor spawned
+	-	Set mechanic to spawn in lowest part of dungeon
+	-	Set goblin tinkerer to only spawn in one general area (marked on map)
+-	Implement Mod Helpers library for marking on the map
 [v0.11.0]
 -	@Test TMR, Trickster, Orbs (especially MP)
+-	Prevent playing a non-AM world
+-	Prevent playing a non-AM player
+-	Add flashing item tooltip to indicate it can be placed
+-	Transcribe AM game mode rules to a book in starter barrel
+-	Add wood platforms to starter barrel
+-	Add control panel display for objectives (including hotkey)
+-	@Necrosis
+	-	@B&D positive use for stored up ectoplasm
+	-	Tweak font of ankh's mouse hover text
+-	@The Mad Ranger
+	-	Use bold (thickened) crosshair when aim is ready
+	-	Do not disrupt aim from cursor movement
+	-	Increase manual reload speed
+	-	Do not alter damage with misaim
+-	Implement jungle dangers
+	-	Being near jungle spores causes poison
+	-	Touching jungle water causes Leeches debuff (bleeding effect)
+	-	Touching jungle brambles causes poison
+	-	Add worldgen sign on jungle border informing of dangers
 
 
+-	Add recognition for player and world as belonging to AM
+-	@Add Adventure Mode Lore w/ objectives
+-	@Add Objectives mod
 -	@Powerful Magic
 	-	Add alert when trying to cast with mana sickness
 	-	Add special fx to make magic appear more dramatic (darken screen, shake screen)

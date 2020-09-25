@@ -14,14 +14,13 @@ namespace AdventureMode {
 		private bool IsAlertedToBossesWhileDead = false;
 		private bool IsChaosStateChecked = false;
 
-
-		////////////////
-
-		internal ISet<string> IntroducedNpcUniqueKeys { get; } = new HashSet<string>();
+		////
 
 		public float NecrotisAmount { get; internal set; } = 0f;
 
-		////////////////
+		public bool IsAdventurer { get; private set; } = false;
+
+		////
 
 		public override bool CloneNewInstances => false;
 
@@ -30,30 +29,13 @@ namespace AdventureMode {
 		////////////////
 
 		public override void Load( TagCompound tag ) {
-			this.IntroducedNpcUniqueKeys.Clear();
-
-			if( tag.ContainsKey( "introduced_npc_count" ) ) {
-				int count = tag.GetInt( "introduced_npc_count" );
-
-				for( int i = 0; i < count; i++ ) {
-					string uniqueKey = tag.GetString( "introduced_npc_" + i );
-					this.IntroducedNpcUniqueKeys.Add( uniqueKey );
-				}
+			if( tag.ContainsKey("is_adventurer") ) {
+				this.IsAdventurer = tag.GetBool( "is_adventurer" );
 			}
 		}
-		
+
 		public override TagCompound Save() {
-			var tag = new TagCompound {
-				{ "introduced_npc_count", this.IntroducedNpcUniqueKeys.Count }
-			};
-
-			int i = 0;
-			foreach( string key in this.IntroducedNpcUniqueKeys ) {
-				tag["introduced_npc_" + i] = key;
-				i++;
-			}
-
-			return tag;
+			return new TagCompound { { "is_adventurer", this.IsAdventurer } };
 		}
 
 
@@ -108,6 +90,8 @@ namespace AdventureMode {
 			}
 
 			if( !mediumcoreDeath ) {
+				this.IsAdventurer = true;
+
 				addItem( ItemID.WoodenHammer, 1 );
 				if( !AdventureModeConfig.Instance.EnableTorchRecipes ) {
 					addItem( ItemID.Torch, 10 );
@@ -132,7 +116,8 @@ namespace AdventureMode {
 			return enabled;
 		}
 
-		////
+
+		////////////////
 
 		private bool CheckRodOfDiscord() {
 			int buffIdx = this.player.FindBuffIndex( BuffID.ChaosState );
