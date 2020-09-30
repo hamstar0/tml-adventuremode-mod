@@ -53,14 +53,14 @@ namespace AdventureMode {
 					spiderType = NPCID.BlackRecluse;
 				}
 
-				int npcWho = NPC.NewNPC( i << 4, ( j + 1 ) << 4, spiderType );
+				int npcWho = NPC.NewNPC( i * 16, (j + 1) * 16, spiderType );
 				NPC npc = Main.npc[npcWho];
 				npc.life = npc.lifeMax / 4;
 				npc.netUpdate = true;
 
-				Timers.SetTimer( "AdventureModePotSurprise", 2, false, () => {
+				Timers.SetTimer( "AdventureModePotSurprise", 4, false, () => {
 					npc = Main.npc[npcWho];
-					if( !npc.active || npc.type != spiderType ) {
+					if( npc?.active != true || npc.type != spiderType ) {
 						return false;
 					}
 

@@ -45,7 +45,7 @@ namespace AdventureMode {
 						IReadOnlySet<int> grp;
 						EntityGroups.TryGetItemGroup( ItemGroupIDs.AnyOreBar, out grp );  // Modded bar?
 						//EntityGroups.TryGetItemGroup( ItemGroupIDs.AnyVanillaGem, out grp );
-						if( grp.Contains( item.type ) ) {
+						if( grp?.Contains( item.type ) ?? false ) {
 							item.value *= 2;
 						}
 					}

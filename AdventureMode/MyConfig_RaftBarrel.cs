@@ -12,6 +12,7 @@ using PrefabKits.Items;
 namespace AdventureMode {
 	public class ItemQuantityDefinition {
 		public ItemDefinition Item { get; set; }
+
 		public int Quantity { get; set; }
 
 

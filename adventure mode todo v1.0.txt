@@ -38,15 +38,16 @@ v1
 -	Final
 	-	Fix Guide's false recipe reports?
 	-	Add "Adventure Mode" watermark to inventory backdrop
+	-	Switch raft to use TileStructure
 [v0.12.0]
+-	@B&D progression controls (gates, etc.)
 -	@Begin another beta test
--	@B&D progression controls
 -	Progress changes
-	-	@B&D Witch Doctor having Necrotis heal ability
+	-	@Necrotis: Add Witch Doctor Necrotis heal ability
 	-	Remove patches of orbs (white orbs?)
-	-	Prevent voodoo demons from spawning until Witch Doctor spawned
-	-	Set mechanic to spawn in lowest part of dungeon
-	-	Set goblin tinkerer to only spawn in one general area (marked on map)
+	-	Prevent voodoo demons from spawning until Witch Doctor objective activated
+	-	Set mechanic to spawn in lowest part of dungeon (marked on map)
+	-	Set goblin tinkerer to only spawn in center of underground desert (marked on map)
 -	Implement Mod Helpers library for marking on the map
 [v0.11.0]
 -	@Test TMR, Trickster, Orbs (especially MP)
@@ -55,22 +56,43 @@ v1
 -	Add flashing item tooltip to indicate it can be placed
 -	Transcribe AM game mode rules to a book in starter barrel
 -	Add wood platforms to starter barrel
--	Add control panel display for objectives (including hotkey)
--	@Necrosis
-	-	@B&D positive use for stored up ectoplasm
-	-	Tweak font of ankh's mouse hover text
--	@The Mad Ranger
-	-	Use bold (thickened) crosshair when aim is ready
-	-	Do not disrupt aim from cursor movement
-	-	Increase manual reload speed
-	-	Do not alter damage with misaim
 -	Implement jungle dangers
+	-	Implement dryad-sold accessory to enter jungle without negative effects (also lightens bramble overlay)
 	-	Being near jungle spores causes poison
 	-	Touching jungle water causes Leeches debuff (bleeding effect)
 	-	Touching jungle brambles causes poison
 	-	Add worldgen sign on jungle border informing of dangers
+-	Add periodic supply restocking in spawn barrel
+-	Fixes and tweaks
+	-	Tone down trickster spawn rate
+	-	Fix whip graphics glitch
+	-	Binocs fail to locate orb chunks
+	-	Shortsword needs to be removed
+	-	@Terrain Remixer: Crevaces way too thick
+	-	@Necrotis: Add sound effect for ectoplasm pickup
+	-	@Trickster: Fix making permanent ugly white rectangles in front of player upon encounter
+	-	@TMR: Fix accessory drawing overlay
 
 
+	-	Confirm guide dialogue + objectives
+	-	Add blink to ankh hover text
+-	@Necrotis
+	-	Allow picking up ectoplasm only when hands are empty
+	-	Scale all drain/recover rates by 0.25
+	-	At high necrotis, increase player's speed (via. passive Enlivened buff)
+		-	Apply buff when ankh is 80% or more
+		-	Create buff effects
+		-	Create buff
+	-	Tweak font of ankh's mouse hover text
+-	@The Mad Ranger
+	-	Fix check for bandolier accessory (did not find it beyond acc. slot 1)
+	-	Allow chaining aim mode shots
+	-	Use bold (thickened) crosshair when aim is ready
+	-	Do not disrupt aim from cursor movement
+	-	Increase manual reload speed
+	-	Do not alter damage with misaim
+-	@Objectives
+	-	Use inbox messages to indicate new objectives
 -	Add recognition for player and world as belonging to AM
 -	@Add Adventure Mode Lore w/ objectives
 -	@Add Objectives mod
