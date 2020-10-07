@@ -6,6 +6,8 @@ Future considerations
 -	@Add KO mod
 -	@B&D Add grapple reload function on return to ground (otherwise only works on wood)
 -	@Add Anomalies mod (only adds Gravitational Anomalies, for now)
+-	@Add Fleeting Goodies mod (coins disappear)
+-	@Add Lurking Foes mod (monsters are still in the dark until lit)
 
 
 
@@ -20,7 +22,7 @@ Future considerations
 [v1.5.0]
 -	@Add Dragon Lairs (uses Orbs, features Elemental Dragon bosses)
 [v1.4.0]
--	@Add Lucky Hat mod
+-	@Add Lucky Hat mod (adds QTEs for every major hit to avoid them)
 [v1.3.0]
 -	Add compatibility with Lives mod to generate the world with extra lives in chests
 -	Implement difficulty select (sub-modes)
@@ -29,11 +31,12 @@ Future considerations
 		-	Hard
 			-	Life Crystals give half health
 [v1.2.0]
--	@Add Lurking Foes mod (monsters are still in the dark until lit)
 -	@B&D Blackness covering any area that is unreachable
 [v1.1.0]
 -	Add color for custom tooltips (?)
 -	Set WoF to drop Soul of Mole (consumable; enables breaking dirt)
--	@Add Fleeting Goodies mod (coins disappear)
--	@Bullwhip
-	-	Allow picking up items inside walls
+-	@Orbs
+	-	Pull cell data from @Terrain Remixer and generate color squares 75% as cells
+-	@Terrain Remixer
+	-	Draw rock veins along cell walls
+	-	Generate cells of a fixed set of "colors"

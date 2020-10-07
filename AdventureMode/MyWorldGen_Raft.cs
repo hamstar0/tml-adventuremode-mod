@@ -129,8 +129,10 @@ namespace AdventureMode {
 			}
 
 			int i = 0;
+			Item[] chestItems = Main.chest[chestIdx].item;
+
 			foreach( ItemQuantityDefinition def in AdventureModeConfig.Instance.RaftBarrelContents ) {
-				Main.chest[chestIdx].item[i++] = def.GetItem();
+				chestItems[i++] = def.GetItem();
 			}
 		}
 

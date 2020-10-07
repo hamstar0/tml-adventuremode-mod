@@ -10,7 +10,9 @@ namespace AdventureMode.Mods {
 			var terrainRemixerConfig = TerrainRemixerConfig.Instance;
 			var list = new List<TerrainRemixerGenPassSpec> {
 				new TerrainRemixerGenPassSpec {
-					NoiseScale = 0.007f,
+					NoiseFrequency = 0.1f,
+					WormsMode = FractalType.Billow,
+					Sharpness = 0.3f,
 					NoiseValueMinimumUntilTileRemoval = 0.3f,
 					VerticalDistancePercentFromCenterBeforeBlending = 0.7f,
 					HorizontalDistancePercentFromCenterBeforeBlending = 0.9f,

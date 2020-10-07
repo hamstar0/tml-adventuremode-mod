@@ -19,7 +19,8 @@ namespace AdventureMode.Mods {
 			config.SetOverride( nameof(OrbsConfig.OnlyGenOrbsInUndergroundChests), false );
 			config.SetOverride( nameof(OrbsConfig.AnyOrbPercentChancePerChest), 0.5f );
 			config.SetOverride( nameof(OrbsConfig.WhiteOrbPercentChanceForOrbChest), 0f );
-			config.SetOverride( nameof(OrbsConfig.IsGeoResonantOrbSoldByDryad), false );    // Mod Helpers adds this
+			config.SetOverride( nameof(OrbsConfig.IsGeoResonantOrbSoldByDryad), false );
+			config.SetOverride( nameof(OrbsConfig.PinkOrbRecipeStack), 0 );
 		}
 	}
 }

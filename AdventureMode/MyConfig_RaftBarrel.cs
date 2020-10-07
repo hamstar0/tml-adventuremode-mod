@@ -31,7 +31,7 @@ namespace AdventureMode {
 		public Item GetItem() {
 			Item item;
 			item = new Item();
-			item.SetDefaults( this.Item.Type );
+			item.SetDefaults( this.Item.Type, true );
 			item.stack = this.Quantity;
 			return item;
 		}

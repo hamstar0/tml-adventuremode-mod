@@ -39,22 +39,24 @@ v1
 	-	Fix Guide's false recipe reports?
 	-	Add "Adventure Mode" watermark to inventory backdrop
 	-	Switch raft to use TileStructure
-[v0.12.0]
--	@B&D progression controls (gates, etc.)
--	@Begin another beta test
+[v0.14.0]
+-	@Beta
+-	@Test MP
+-	@Add Boss Challenges (bosses can only be found in designated areas)
 -	Progress changes
 	-	@Necrotis: Add Witch Doctor Necrotis heal ability
 	-	Remove patches of orbs (white orbs?)
 	-	Prevent voodoo demons from spawning until Witch Doctor objective activated
 	-	Set mechanic to spawn in lowest part of dungeon (marked on map)
 	-	Set goblin tinkerer to only spawn in center of underground desert (marked on map)
--	Implement Mod Helpers library for marking on the map
-[v0.11.0]
--	@Test TMR, Trickster, Orbs (especially MP)
--	Prevent playing a non-AM world
--	Prevent playing a non-AM player
--	Add flashing item tooltip to indicate it can be placed
+[v0.13.0]
 -	Transcribe AM game mode rules to a book in starter barrel
+-	@Trickster
+	-	Set trickster to not re-appear near a previous defeat (add mark on map)
+-	Generate 'failed expeditions' (marked on the map) that give lore dumps and ability unlocking accessories
+-	@Implement Mod Helpers library for marking on the map
+[v0.12.0]
+-	Add periodic supply restocking in spawn barrel (random)
 -	Add wood platforms to starter barrel
 -	Implement jungle dangers
 	-	Implement dryad-sold accessory to enter jungle without negative effects (also lightens bramble overlay)
@@ -62,18 +64,35 @@ v1
 	-	Touching jungle water causes Leeches debuff (bleeding effect)
 	-	Touching jungle brambles causes poison
 	-	Add worldgen sign on jungle border informing of dangers
--	Add periodic supply restocking in spawn barrel
+[v0.11.0]
+-	@Terrain Remixer: Add solid terrain worms (increasing in density with depth)
+
+
+-	@Orbs
+	-	Add orb recipes using ingredients from major equipment tiers
+		-	@Plan
+			-	Yellow: Meteor ore
+			-	Red: Hellstone ore
+			-	Green: Jungle spores
+			-	Blue: Water candles
+			-	Purple: Shadow Scales/Tissue Samples
+			-	Pink: Pink Gels
+			-	Cyan: Harpy feathers?
+			-	Teal: Fossils
+			-	White: Voodoo Dolls
+			-	Yellow: Bee Wax
 -	Fixes and tweaks
-	-	Tone down trickster spawn rate
-	-	Fix whip graphics glitch
-	-	Binocs fail to locate orb chunks
-	-	Shortsword needs to be removed
+	-	Set pink orbs to not be craftable
+	-	@Bullwhip: Allow picking up items inside walls
+	-	@Orbs: Binocs fail to locate orb chunks
 	-	@Terrain Remixer: Crevaces way too thick
+		-	Create setting to make strand-like noise
 	-	@Necrotis: Add sound effect for ectoplasm pickup
-	-	@Trickster: Fix making permanent ugly white rectangles in front of player upon encounter
+	-	@Locked Abilities: Update sprites
+	-	Fix barrel planks
+	-	Implement dialogue saving
+	-	Fix objective persistence
 	-	@TMR: Fix accessory drawing overlay
-
-
 	-	Confirm guide dialogue + objectives
 	-	Add blink to ankh hover text
 -	@Necrotis
