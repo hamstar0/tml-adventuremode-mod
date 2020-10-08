@@ -59,18 +59,18 @@ namespace AdventureMode {
 			int boatLeft, boatTop;
 			AdventureModeWorldGen.GetBoatCoordinates( out boatLeft, out boatTop );
 
-			AdventureModeWorldGen.PlaceTiles( progress, boatLeft, boatTop, AdventureModeWorldGen.RaftImageTiles );
-			AdventureModeWorldGen.PlaceWalls( progress, boatLeft, boatTop, AdventureModeWorldGen.RaftImageWalls );
-			AdventureModeWorldGen.PlaceTiles( progress, boatLeft, boatTop, AdventureModeWorldGen.RaftImageTiles );
-			AdventureModeWorldGen.ProcessTiles( progress, boatLeft, boatTop, AdventureModeWorldGen.RaftImageTiles );
+			AdventureModeWorldGen.PlaceTiles( progress, 0.25f, boatLeft, boatTop, AdventureModeWorldGen.RaftImageTiles );
+			AdventureModeWorldGen.PlaceWalls( progress, 0.25f, boatLeft, boatTop, AdventureModeWorldGen.RaftImageWalls );
+			AdventureModeWorldGen.PlaceTiles( progress, 0.25f, boatLeft, boatTop, AdventureModeWorldGen.RaftImageTiles );
+			AdventureModeWorldGen.ProcessTiles( progress, 0.25f, boatLeft, boatTop, AdventureModeWorldGen.RaftImageTiles );
 		}
 
 
 		////
 
-		public static void PlaceTiles( GenerationProgress progress, int left, int top, int[][] tiles ) {
+		public static void PlaceTiles( GenerationProgress progress, float progressStep, int left, int top, int[][] tiles ) {
 			for( int y = 0; y < tiles.Length; y++ ) {
-				progress.Value = (float)y / ( (float)tiles.Length * 3f );
+				progress.Value += progressStep / (float)tiles.Length;
 
 				for( int x = 0; x < tiles[y].Length; x++ ) {
 					if( tiles[y][x] == 0 ) { continue; }
@@ -104,9 +104,9 @@ namespace AdventureMode {
 			}
 		}
 
-		public static void ProcessTiles( GenerationProgress progress, int left, int top, int[][] tiles ) {
+		public static void ProcessTiles( GenerationProgress progress, float progressStep, int left, int top, int[][] tiles ) {
 			for( int y = 0; y < tiles.Length; y++ ) {
-				progress.Value = (float)y / ( (float)tiles.Length * 3f );
+				progress.Value += progressStep / (float)tiles.Length;
 
 				for( int x = 0; x < tiles[y].Length; x++ ) {
 					if( tiles[y][x] == 0 ) { continue; }
@@ -136,9 +136,9 @@ namespace AdventureMode {
 			}
 		}
 
-		public static void PlaceWalls( GenerationProgress progress, int left, int top, int[][] walls ) {
+		public static void PlaceWalls( GenerationProgress progress, float progressStep, int left, int top, int[][] walls ) {
 			for( int y = 0; y < walls.Length; y++ ) {
-				progress.Value = (float)y / (float)walls.Length;
+				progress.Value += progressStep / (float)walls.Length;
 
 				for( int x = 0; x < walls[y].Length; x++ ) {
 					if( walls[y][x] == 0 ) { continue; }

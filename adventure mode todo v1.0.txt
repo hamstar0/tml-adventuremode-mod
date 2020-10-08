@@ -61,13 +61,14 @@ v1
 -	Implement jungle dangers
 	-	Implement dryad-sold accessory to enter jungle without negative effects (also lightens bramble overlay)
 	-	Being near jungle spores causes poison
-	-	Touching jungle water causes Leeches debuff (bleeding effect)
+	-	Touching jungle water causes Leeches debuff (reduced regen, slight damage effect)
 	-	Touching jungle brambles causes poison
+	-	Set sign proximity to trigger objective completion
+
+
 	-	Add worldgen sign on jungle border informing of dangers
 [v0.11.0]
 -	@Terrain Remixer: Add solid terrain worms (increasing in density with depth)
-
-
 -	@Orbs
 	-	Add orb recipes using ingredients from major equipment tiers
 		-	@Plan

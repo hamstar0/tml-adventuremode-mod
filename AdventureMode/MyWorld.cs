@@ -79,6 +79,11 @@ namespace AdventureMode {
 				AdventureModeWorldGen.PlaceRaft( progress );
 				progress.Value = 1f;
 			} ) );
+
+			tasks.Add( new PassLegacy( "Adventure Mode: Create Jungle Sign", ( progress ) => {
+				AdventureModeWorldGen.PlaceJungleSign( progress );
+				progress.Value = 1f;
+			} ) );
 		}
 
 		public override void PostWorldGen() {
