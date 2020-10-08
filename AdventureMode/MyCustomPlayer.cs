@@ -19,7 +19,7 @@ namespace AdventureMode {
 			var myplayer = this.Player.GetModPlayer<AdventureModePlayer>();
 			var myworld = ModContent.GetInstance<AdventureModeWorld>();
 			bool isNotAdventurer = myplayer.IsAdventurer;
-			bool isNotAdventureWorld = myworld.IsAdventure;
+			bool isNotAdventureWorld = myworld.IsCurrentWorldAdventure;
 
 			if( !isNotAdventurer ) {
 				Main.NewText( "Your character is not initialized for Adventure Mode. Exiting to menu in 15 seconds...", Color.Yellow );

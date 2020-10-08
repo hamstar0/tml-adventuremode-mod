@@ -9,35 +9,45 @@ using HamstarHelpers.Helpers.Debug;
 
 
 namespace AdventureMode {
-	class AdventureModeWorld : ModWorld {
+	public class AdventureModeWorld : ModWorld {
+		public bool IsCurrentWorldAdventure { get; internal set; } = false;
+
 		public int HouseKitFurnitureIdx { get; internal set; } = 0;
 
-		public bool IsAdventure { get; internal set; } = false;
+		public (int TileX, int TileY) JungleSignLocation { get; internal set; } = (0, 0);
 
 
 
 		////////////////
 
 		public override void Initialize() {
+			this.IsCurrentWorldAdventure = false;
 			this.HouseKitFurnitureIdx = 0;
-			this.IsAdventure = false;
+			this.JungleSignLocation = (0, 0);
 		}
 
 		////
 
 		public override void Load( TagCompound tag ) {
 			if( tag.ContainsKey( "is_adventure" ) ) {
-				this.IsAdventure = tag.GetBool( "is_adventure" );
+				this.IsCurrentWorldAdventure = tag.GetBool( "is_adventure" );
 			}
 			if( tag.ContainsKey( "house_kit_furniture_idx" ) ) {
 				this.HouseKitFurnitureIdx = tag.GetInt( "house_kit_furniture_idx" );
+			}
+			if( tag.ContainsKey( "jungle_sign_loc_x" ) ) {
+				int x = tag.GetInt( "jungle_sign_loc_x" );
+				int y = tag.GetInt( "jungle_sign_loc_y" );
+				this.JungleSignLocation = (x, y);
 			}
 		}
 
 		public override TagCompound Save() {
 			var tag = new TagCompound {
-				{ "is_adventure", this.IsAdventure },
-				{ "house_kit_furniture_idx", this.HouseKitFurnitureIdx }
+				{ "is_adventure", this.IsCurrentWorldAdventure },
+				{ "house_kit_furniture_idx", this.HouseKitFurnitureIdx },
+				{ "jungle_sign_loc_x", this.JungleSignLocation.TileX },
+				{ "jungle_sign_loc_y", this.JungleSignLocation.TileY }
 			};
 
 			return tag;
@@ -48,15 +58,21 @@ namespace AdventureMode {
 
 		public override void NetReceive( BinaryReader reader ) {
 			try {
-				this.IsAdventure = reader.ReadBoolean();
+				this.IsCurrentWorldAdventure = reader.ReadBoolean();
 				this.HouseKitFurnitureIdx = reader.ReadInt32();
+
+				int signX = reader.ReadInt32();
+				int signY = reader.ReadInt32();
+				this.JungleSignLocation = (signX, signY);
 			} catch { }
 		}
 
 		public override void NetSend( BinaryWriter writer ) {
 			try {
-				writer.Write( (bool)this.IsAdventure );
+				writer.Write( (bool)this.IsCurrentWorldAdventure );
 				writer.Write( (int)this.HouseKitFurnitureIdx );
+				writer.Write( (int)this.JungleSignLocation.TileX );
+				writer.Write( (int)this.JungleSignLocation.TileY );
 			} catch { }
 		}
 
@@ -87,7 +103,7 @@ namespace AdventureMode {
 		}
 
 		public override void PostWorldGen() {
-			this.IsAdventure = true;
+			this.IsCurrentWorldAdventure = true;
 		}
 	}
 }

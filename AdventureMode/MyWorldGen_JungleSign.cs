@@ -1,6 +1,7 @@
 ﻿using System;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 using Terraria.World.Generation;
 using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.World;
@@ -92,6 +93,9 @@ namespace AdventureMode {
 					LogHelpers.Alert( "Could not place jungle sign." );
 				}
 			}
+
+			var myworld = ModContent.GetInstance<AdventureModeWorld>();
+			myworld.JungleSignLocation = (left, top);
 
 			progress.Set( 1f );
 		}
