@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.World.Generation;
+using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.Tiles;
 using MountedMagicMirrors.Tiles;
 
@@ -123,7 +124,7 @@ namespace AdventureMode {
 		}
 
 		public static void PlaceStarterBarrel( int x, int y ) {
-			int chestIdx = WorldGen.PlaceChest( x, y, 21, false, 5 );
+			int chestIdx = WorldGen.PlaceChest( x, y, TileID.Containers, false, 5 );
 			if( chestIdx == -1 ) {
 				return; // this occurs on the first pass
 			}
@@ -132,7 +133,8 @@ namespace AdventureMode {
 			Item[] chestItems = Main.chest[chestIdx].item;
 
 			foreach( ItemQuantityDefinition def in AdventureModeConfig.Instance.RaftBarrelContents ) {
-				chestItems[i++] = def.GetItem();
+				chestItems[i] = def.GetItem();
+				i++;
 			}
 		}
 

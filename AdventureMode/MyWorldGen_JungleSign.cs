@@ -72,10 +72,13 @@ namespace AdventureMode {
 			
 			Main.tile[left-1, top-1].ClearEverything();
 			Main.tile[left-1, top-2].ClearEverything();
+			Main.tile[left-1, top-3].ClearEverything();
 			Main.tile[left, top-1].ClearEverything();
 			Main.tile[left, top-2].ClearEverything();
+			Main.tile[left, top-3].ClearEverything();
 			Main.tile[left+1, top-1].ClearEverything();
 			Main.tile[left+1, top-2].ClearEverything();
+			Main.tile[left+1, top-3].ClearEverything();
 
 			int highest = top - 4;
 			for( top += 1; top > highest; top-- ) {	// lazy

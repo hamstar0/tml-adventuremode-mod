@@ -58,6 +58,7 @@ v1
 [v0.12.0]
 -	Add periodic supply restocking in spawn barrel (random)
 -	Add wood platforms to starter barrel
+-	Fix barrel planks again
 -	Implement jungle dangers
 	-	Implement dryad-sold accessory to enter jungle without negative effects (also lightens bramble overlay)
 	-	Being near jungle spores causes poison

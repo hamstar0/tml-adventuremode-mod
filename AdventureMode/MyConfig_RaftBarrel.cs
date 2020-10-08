@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 using AdventureMode.Items;
-using MountedMagicMirrors.Items;
 using PrefabKits.Items;
+using MountedMagicMirrors.Items;
 
 
 namespace AdventureMode {
@@ -21,16 +20,15 @@ namespace AdventureMode {
 
 		public ItemQuantityDefinition() { }
 
-		public ItemQuantityDefinition( int itemType, int quantity=1 ) {
-			this.Item = new ItemDefinition( itemType );
+		public ItemQuantityDefinition( string mod, string name, int quantity=1 ) {
+			this.Item = new ItemDefinition( mod, name );
 			this.Quantity = quantity;
 		}
 
 		////////////////
 
 		public Item GetItem() {
-			Item item;
-			item = new Item();
+			Item item = new Item();
 			item.SetDefaults( this.Item.Type, true );
 			item.stack = this.Quantity;
 			return item;
@@ -42,15 +40,15 @@ namespace AdventureMode {
 
 	public partial class AdventureModeConfig : ModConfig {
 		public List<ItemQuantityDefinition> RaftBarrelContents { get; set; } = new List<ItemQuantityDefinition> {
-			new ItemQuantityDefinition( ItemID.Wood, 50 ),
-			new ItemQuantityDefinition( ModContent.ItemType<FramingPlankItem>(), 50 ),
-			new ItemQuantityDefinition( ModContent.ItemType<HouseFurnishingKitItem>() ),
-			new ItemQuantityDefinition( ModContent.ItemType<HouseFurnishingKitItem>() ),
-			new ItemQuantityDefinition( ModContent.ItemType<HouseFurnishingKitItem>() ),
-			new ItemQuantityDefinition( ModContent.ItemType<HouseFramingKitItem>() ),
-			new ItemQuantityDefinition( ModContent.ItemType<HouseFramingKitItem>() ),
-			new ItemQuantityDefinition( ModContent.ItemType<MountableMagicMirrorTileItem>(), 5 ),
-			new ItemQuantityDefinition( ModContent.ItemType<TrackDeploymentKitItem>(), 12 )
+			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.Wood), 50 ),
+			new ItemQuantityDefinition( nameof(AdventureMode), nameof(FramingPlankItem), 50 ),
+			new ItemQuantityDefinition( nameof(PrefabKits), nameof(HouseFurnishingKitItem) ),
+			new ItemQuantityDefinition( nameof(PrefabKits), nameof(HouseFurnishingKitItem) ),
+			new ItemQuantityDefinition( nameof(PrefabKits), nameof(HouseFurnishingKitItem) ),
+			new ItemQuantityDefinition( nameof(PrefabKits), nameof(HouseFramingKitItem) ),
+			new ItemQuantityDefinition( nameof(PrefabKits), nameof(HouseFramingKitItem) ),
+			new ItemQuantityDefinition( nameof(MountedMagicMirrors), nameof(MountableMagicMirrorTileItem), 5 ),
+			new ItemQuantityDefinition( nameof(PrefabKits), nameof(TrackDeploymentKitItem), 12 )
 		};
 	}
 }
