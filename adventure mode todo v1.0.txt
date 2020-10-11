@@ -58,16 +58,22 @@ v1
 [v0.12.0]
 -	Add periodic supply restocking in spawn barrel (random)
 -	Add wood platforms to starter barrel
--	Fix barrel planks again
--	Implement jungle dangers
+-	@Add Green Hell (implements jungle dangers)
 	-	Implement dryad-sold accessory to enter jungle without negative effects (also lightens bramble overlay)
 	-	Being near jungle spores causes poison
 	-	Touching jungle water causes Leeches debuff (reduced regen, slight damage effect)
-	-	Touching jungle brambles causes poison
-	-	Set sign proximity to trigger objective completion
+	-	Implement grass snakes
+		-	Implement lunge
+			-	Launch snake at player when <3 blocks nearby
+			-	Begin 'warning state' when player <6 blocks nearby (plays sound)
 
 
+		-	Define snake
+		-	Create sprite
+	-	Touching jungle brambles causes poison, slow
 	-	Add worldgen sign on jungle border informing of dangers
+	-	@Separate jungle badness into new mod (Green Hell)
+-	Fix barrel planks again
 [v0.11.0]
 -	@Terrain Remixer: Add solid terrain worms (increasing in density with depth)
 -	@Orbs

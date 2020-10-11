@@ -85,7 +85,7 @@ namespace AdventureMode {
 			for( top += 1; top > highest; top-- ) {	// lazy
 				if( WorldGen.PlaceSign( left, top, TileID.Signs ) ) {
 					int signIdx = Sign.ReadSign( left, top, true );
-					Main.sign[signIdx].text = "Beware! Poisonous jungle and swamps ahead.";
+					Main.sign[signIdx].text = "Beware!\nPoisonous jungle and swamps ahead. Protective gear advised.";
 
 					LogHelpers.Log( "Jungle sign placed at " + left + ", " + top );
 					break;
