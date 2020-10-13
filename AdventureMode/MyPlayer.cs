@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using HamstarHelpers.Helpers.Debug;
+using AdventureMode.Logic;
 
 
 namespace AdventureMode {
 	partial class AdventureModePlayer : ModPlayer {
-		private bool IsAlertedToBossesWhileDead = false;
-		private bool IsChaosStateChecked = false;
+		internal bool IsAlertedToBossesWhileDead = false;
+		internal bool IsChaosStateChecked = false;
 
 		////
 
 		public float NecrotisAmount { get; internal set; } = 0f;
 
-		public bool IsAdventurer { get; private set; } = false;
+		public bool IsAdventurer { get; internal set; } = false;
 
 		////
 
@@ -40,22 +40,7 @@ namespace AdventureMode {
 		////////////////
 
 		public override void SetupStartInventory( IList<Item> items, bool mediumcoreDeath ) {
-			void addItem( int itemType, int stack ) {
-				var item = new Item();
-				item.SetDefaults( itemType );
-				item.stack = stack;
-				items.Add( item );
-			}
-
-			if( !mediumcoreDeath ) {
-				this.IsAdventurer = true;
-
-				addItem( ItemID.WoodenHammer, 1 );
-				if( !AdventureModeConfig.Instance.EnableTorchRecipes ) {
-					addItem( ItemID.Torch, 10 );
-				}
-				addItem( ItemID.RopeCoil, 20 );
-			}
+			PlayerLogic.SetupStartInventory( this, items, mediumcoreDeath );
 		}
 	}
 }

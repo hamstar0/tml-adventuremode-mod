@@ -1,46 +1,45 @@
-using System;
+﻿using System;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.Draw;
 using HamstarHelpers.Helpers.Players;
 using HamstarHelpers.Services.AnimatedColor;
-using AdventureMode.Tiles;
 using AdventureMode.Items;
+using AdventureMode.Tiles;
 
 
-namespace AdventureMode {
-	partial class AdventureModeMod : Mod {
-		private (int X, int Y) PlacementOutlineTile = (0, 0);
-		private int PlacementOutlineLinger = 0;
+namespace AdventureMode.Logic {
+	static partial class InterfaceLogic {
+		private static (int X, int Y) PlacementOutlineTile = (0, 0);
+		private static int PlacementOutlineLinger = 0;
 
 
 
 		////////////////
 
-		private void DrawCurrentTilePlacementOutline() {
+		public static void DrawCurrentTilePlacementOutline() {
 			int mouseWorldX = (int)Main.screenPosition.X + Main.mouseX;
 			int mouseWorldY = (int)Main.screenPosition.Y + Main.mouseY;
 
-			if( !PlayerInteractionHelpers.IsWithinTilePlacementReach(mouseWorldX, mouseWorldY) ) {
+			if( !PlayerInteractionHelpers.IsWithinTilePlacementReach( mouseWorldX, mouseWorldY ) ) {
 				return;
 			}
 
 			int mouseTileX = mouseWorldX >> 4;
 			int mouseTileY = mouseWorldY >> 4;
 			float outlineIntensity = 1f;
-			
-			if( this.PlacementOutlineTile.X == mouseTileX && this.PlacementOutlineTile.Y == mouseTileY ) {
-				outlineIntensity = 1f - ((float)this.PlacementOutlineLinger / 60f);
+
+			if( InterfaceLogic.PlacementOutlineTile.X == mouseTileX && InterfaceLogic.PlacementOutlineTile.Y == mouseTileY ) {
+				outlineIntensity = 1f - ( (float)InterfaceLogic.PlacementOutlineLinger / 60f );
 				if( outlineIntensity < 0.1f ) {
 					outlineIntensity = 0.1f;
 				}
-				this.PlacementOutlineLinger++;
+				InterfaceLogic.PlacementOutlineLinger++;
 			} else {
-				this.PlacementOutlineTile = (mouseTileX, mouseTileY);
-				this.PlacementOutlineLinger = 0;
+				InterfaceLogic.PlacementOutlineTile = (mouseTileX, mouseTileY);
+				InterfaceLogic.PlacementOutlineLinger = 0;
 			}
 
 			Item heldItem = Main.LocalPlayer.HeldItem;
@@ -92,17 +91,17 @@ namespace AdventureMode {
 			case ItemID.MoonglowPlanterBox:
 			case ItemID.ShiverthornPlanterBox:
 			case ItemID.WaterleafPlanterBox:
-				this.DrawPlatformTilePlacementOutline( outlineIntensity );
+				InterfaceLogic.DrawPlatformTilePlacementOutline( outlineIntensity );
 				break;
 			case ItemID.Rope:
 			case ItemID.SilkRope:
 			case ItemID.VineRope:
 			case ItemID.WebRope:
-				this.DrawRopeTilePlacementOutline( outlineIntensity );
+				InterfaceLogic.DrawRopeTilePlacementOutline( outlineIntensity );
 				break;
 			default:
 				if( heldItem.type == ModContent.ItemType<FramingPlankItem>() ) {
-					this.DrawPlankTilePlacementOutline( outlineIntensity );
+					InterfaceLogic.DrawPlankTilePlacementOutline( outlineIntensity );
 				}
 				break;
 			}
@@ -111,7 +110,7 @@ namespace AdventureMode {
 
 		////////////////
 
-		private void DrawPlatformTilePlacementOutline( float outlineIntensity ) {
+		private static void DrawPlatformTilePlacementOutline( float outlineIntensity ) {
 			int maxLength = AdventureModeConfig.Instance.MaxPlatformBridgeLength;
 			int tileX = ( (int)Main.screenPosition.X + Main.mouseX ) >> 4;
 			int tileY = ( (int)Main.screenPosition.Y + Main.mouseY ) >> 4;
@@ -141,24 +140,24 @@ namespace AdventureMode {
 			}
 
 			//
-
-			if( !isAnchor( tileX, tileY ) ) {
+			
+			if( !isAnchor(tileX, tileY) ) {
 				if( isAnchor( tileX - 1, tileY ) ) {
-					this.DrawTilePlacementOutline( outlineIntensity, new Rectangle( tileX, tileY, traceRight(), 1 ) );
-				} else if( isAnchor( tileX + 1, tileY ) ) {
+					InterfaceLogic.DrawTilePlacementOutline( outlineIntensity, new Rectangle(tileX, tileY, traceRight(), 1) );
+				} else if( isAnchor(tileX + 1, tileY) ) {
 					int width = traceLeft();
-					this.DrawTilePlacementOutline( outlineIntensity, new Rectangle( ( tileX - width ) + 1, tileY, width, 1 ) );
+					InterfaceLogic.DrawTilePlacementOutline( outlineIntensity, new Rectangle((tileX - width) + 1, tileY, width, 1) );
 				} else {
-					if( isAnchor( tileX, tileY - 1 ) || isAnchor( tileX, tileY + 1 ) ) {
-						this.DrawTilePlacementOutline( outlineIntensity, new Rectangle( tileX, tileY, 1, 1 ), false );
+					if( isAnchor(tileX, tileY - 1) || isAnchor(tileX, tileY + 1) ) {
+						InterfaceLogic.DrawTilePlacementOutline( outlineIntensity, new Rectangle(tileX, tileY, 1, 1), false );
 					}
 				}
 			}
 		}
 
-		private void DrawRopeTilePlacementOutline( float outlineIntensity ) { }
+		private static void DrawRopeTilePlacementOutline( float outlineIntensity ) { }
 
-		private void DrawPlankTilePlacementOutline( float outlineIntensity ) {
+		private static void DrawPlankTilePlacementOutline( float outlineIntensity ) {
 			int tileX = ( (int)Main.screenPosition.X + Main.mouseX ) >> 4;
 			int tileY = ( (int)Main.screenPosition.Y + Main.mouseY ) >> 4;
 			int plankTileType = ModContent.TileType<FramingPlankTile>();
@@ -192,17 +191,17 @@ namespace AdventureMode {
 
 			if( !isAnchor( tileX, tileY ) ) {
 				if( isAnchor( tileX - 1, tileY ) ) {
-					this.DrawTilePlacementOutline( outlineIntensity, new Rectangle( tileX, tileY, trace( 1, 0 ), 1 ) );
+					InterfaceLogic.DrawTilePlacementOutline( outlineIntensity, new Rectangle( tileX, tileY, trace( 1, 0 ), 1 ) );
 				} else if( isAnchor( tileX + 1, tileY ) ) {
 					int width = trace( -1, 0 );
-					this.DrawTilePlacementOutline( outlineIntensity, new Rectangle( ( tileX - width ) + 1, tileY, width, 1 ) );
+					InterfaceLogic.DrawTilePlacementOutline( outlineIntensity, new Rectangle( ( tileX - width ) + 1, tileY, width, 1 ) );
 				}
 
 				if( isAnchor( tileX, tileY - 1 ) ) {
-					this.DrawTilePlacementOutline( outlineIntensity, new Rectangle( tileX, tileY, 1, trace( 0, 1 ) ) );
+					InterfaceLogic.DrawTilePlacementOutline( outlineIntensity, new Rectangle( tileX, tileY, 1, trace( 0, 1 ) ) );
 				} else if( isAnchor( tileX, tileY + 1 ) ) {
 					int height = trace( 0, -1 );
-					this.DrawTilePlacementOutline( outlineIntensity, new Rectangle( tileX, ( tileY - height ) + 1, 1, height ) );
+					InterfaceLogic.DrawTilePlacementOutline( outlineIntensity, new Rectangle( tileX, ( tileY - height ) + 1, 1, height ) );
 				}
 			}
 		}
@@ -210,7 +209,7 @@ namespace AdventureMode {
 
 		////////////////
 
-		private void DrawTilePlacementOutline( float outlineIntensity, Rectangle tileRect, bool isValid = true ) {
+		private static void DrawTilePlacementOutline( float outlineIntensity, Rectangle tileRect, bool isValid = true ) {
 			var scrRect = new Rectangle {
 				X = ( tileRect.X << 4 ) - (int)Main.screenPosition.X,
 				Y = ( tileRect.Y << 4 ) - (int)Main.screenPosition.Y,

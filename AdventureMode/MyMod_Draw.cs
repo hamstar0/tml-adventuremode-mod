@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.UI;
 using HamstarHelpers.Helpers.Debug;
+using AdventureMode.Logic;
 
 
 namespace AdventureMode {
@@ -13,7 +14,7 @@ namespace AdventureMode {
 			if( idx == -1 ) { return; }
 
 			GameInterfaceDrawMethod placementUI = () => {
-				this.DrawCurrentTilePlacementOutline();
+				InterfaceLogic.DrawCurrentTilePlacementOutline();
 				return true;
 			};
 

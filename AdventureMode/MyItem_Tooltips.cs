@@ -54,20 +54,5 @@ namespace AdventureMode {
 				break;
 			}
 		}
-
-
-		////////////////
-
-		private void ModifyPopupText() {
-			for( int idx = 0; idx < Main.combatText.Length; idx++ ) {
-				CombatText txt = Main.combatText[idx];
-				if( txt == null || !txt.active ) { continue; }
-
-				if( txt.text.Equals( "20" ) ) {
-					txt.text = "10";
-					break;
-				}
-			}
-		}
 	}
 }

@@ -4,6 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using HamstarHelpers.Helpers.Items.Attributes;
 using HamstarHelpers.Services.Messages.Inbox;
+using AdventureMode.Logic;
 
 
 namespace AdventureMode {
@@ -31,10 +32,7 @@ namespace AdventureMode {
 				this.ModifyPopupText();
 				break;*/	//<- Implemented via FindableManaCrystals mod
 			case ItemID.LifeCrystal:
-				if( AdventureModeConfig.Instance.ReducedLifeCrystalStatIncrease ) {
-					player.statLifeMax -= 10;
-					this.ModifyPopupText();
-				}
+				ItemLogic.OnLifeCrystalConsume( player );
 				break;
 			}
 		}
