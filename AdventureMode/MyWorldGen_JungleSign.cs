@@ -95,7 +95,7 @@ namespace AdventureMode {
 			}
 
 			var myworld = ModContent.GetInstance<AdventureModeWorld>();
-			myworld.JungleSignLocation = (left, top);
+			myworld.JungleSignTile = (left, top);
 
 			progress.Set( 1f );
 		}

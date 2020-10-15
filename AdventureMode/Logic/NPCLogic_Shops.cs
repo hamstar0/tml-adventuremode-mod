@@ -38,7 +38,7 @@ namespace AdventureMode.Logic {
 			var npcDef = new NPCDefinition( npcType );
 
 			if( AdventureModeConfig.Instance.ShopWhitelists.ContainsKey( npcDef ) ) {
-				AdventureModeNPC.FilterShop( shopItems, AdventureModeConfig.Instance.ShopWhitelists[npcDef], ref nextSlot );
+				NPCLogic.FilterShop( shopItems, AdventureModeConfig.Instance.ShopWhitelists[npcDef], ref nextSlot );
 			}
 		}
 

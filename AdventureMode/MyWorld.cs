@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using Terraria;
 using Terraria.GameContent.Generation;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.World.Generation;
 using HamstarHelpers.Helpers.Debug;
+using AdventureMode.Logic;
 
 
 namespace AdventureMode {
@@ -14,7 +16,9 @@ namespace AdventureMode {
 
 		public int HouseKitFurnitureIdx { get; internal set; } = 0;
 
-		public (int TileX, int TileY) JungleSignLocation { get; internal set; } = (0, 0);
+		public (int TileX, int TileY) JungleSignTile { get; internal set; } = (0, 0);
+
+		public (int TileX, int TileY) RaftBarrelTile { get; internal set; } = (0, 0);
 
 
 
@@ -23,7 +27,7 @@ namespace AdventureMode {
 		public override void Initialize() {
 			this.IsCurrentWorldAdventure = false;
 			this.HouseKitFurnitureIdx = 0;
-			this.JungleSignLocation = (0, 0);
+			this.JungleSignTile = (0, 0);
 		}
 
 		////
@@ -38,17 +42,21 @@ namespace AdventureMode {
 			if( tag.ContainsKey( "jungle_sign_loc_x" ) ) {
 				int x = tag.GetInt( "jungle_sign_loc_x" );
 				int y = tag.GetInt( "jungle_sign_loc_y" );
-				this.JungleSignLocation = (x, y);
+				this.JungleSignTile = (x, y);
 			}
+
+			WorldLogic.LoadRaftRestockInfo( tag );
 		}
 
 		public override TagCompound Save() {
 			var tag = new TagCompound {
 				{ "is_adventure", this.IsCurrentWorldAdventure },
 				{ "house_kit_furniture_idx", this.HouseKitFurnitureIdx },
-				{ "jungle_sign_loc_x", this.JungleSignLocation.TileX },
-				{ "jungle_sign_loc_y", this.JungleSignLocation.TileY }
+				{ "jungle_sign_loc_x", this.JungleSignTile.TileX },
+				{ "jungle_sign_loc_y", this.JungleSignTile.TileY }
 			};
+
+			WorldLogic.SaveRaftRestockInfo( tag );
 
 			return tag;
 		}
@@ -63,7 +71,7 @@ namespace AdventureMode {
 
 				int signX = reader.ReadInt32();
 				int signY = reader.ReadInt32();
-				this.JungleSignLocation = (signX, signY);
+				this.JungleSignTile = (signX, signY);
 			} catch { }
 		}
 
@@ -71,8 +79,8 @@ namespace AdventureMode {
 			try {
 				writer.Write( (bool)this.IsCurrentWorldAdventure );
 				writer.Write( (int)this.HouseKitFurnitureIdx );
-				writer.Write( (int)this.JungleSignLocation.TileX );
-				writer.Write( (int)this.JungleSignLocation.TileY );
+				writer.Write( (int)this.JungleSignTile.TileX );
+				writer.Write( (int)this.JungleSignTile.TileY );
 			} catch { }
 		}
 
@@ -90,9 +98,9 @@ namespace AdventureMode {
 					} ) );
 				}
 			}
-
+			
 			tasks.Add( new PassLegacy( "Adventure Mode: Create Spawn Boat", ( progress ) => {
-				AdventureModeWorldGen.PlaceRaft( progress );
+				AdventureModeWorldGen.PlaceRaft( this, progress );
 				progress.Value = 1f;
 			} ) );
 
@@ -104,6 +112,13 @@ namespace AdventureMode {
 
 		public override void PostWorldGen() {
 			this.IsCurrentWorldAdventure = true;
+		}
+
+
+		////////////////
+
+		public int GetRaftBarrelChestIndex() {
+			return Chest.FindChest( this.RaftBarrelTile.TileX, this.RaftBarrelTile.TileY );
 		}
 	}
 }

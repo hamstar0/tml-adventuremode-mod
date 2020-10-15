@@ -56,20 +56,26 @@ namespace AdventureMode {
 
 		////////////////
 
-		public static void PlaceRaft( GenerationProgress progress ) {
+		public static void PlaceRaft( AdventureModeWorld myworld, GenerationProgress progress ) {
 			int boatLeft, boatTop;
 			AdventureModeWorldGen.GetBoatCoordinates( out boatLeft, out boatTop );
 
-			AdventureModeWorldGen.PlaceTiles( progress, 0.25f, boatLeft, boatTop, AdventureModeWorldGen.RaftImageTiles );
-			AdventureModeWorldGen.PlaceWalls( progress, 0.25f, boatLeft, boatTop, AdventureModeWorldGen.RaftImageWalls );
-			AdventureModeWorldGen.PlaceTiles( progress, 0.25f, boatLeft, boatTop, AdventureModeWorldGen.RaftImageTiles );
-			AdventureModeWorldGen.ProcessTiles( progress, 0.25f, boatLeft, boatTop, AdventureModeWorldGen.RaftImageTiles );
+			AdventureModeWorldGen.PlaceTiles( myworld, progress, 0.25f, boatLeft, boatTop, AdventureModeWorldGen.RaftImageTiles );
+			AdventureModeWorldGen.PlaceWalls( myworld, progress, 0.25f, boatLeft, boatTop, AdventureModeWorldGen.RaftImageWalls );
+			AdventureModeWorldGen.PlaceTiles( myworld, progress, 0.25f, boatLeft, boatTop, AdventureModeWorldGen.RaftImageTiles );
+			AdventureModeWorldGen.ProcessTiles( myworld, progress, 0.25f, boatLeft, boatTop, AdventureModeWorldGen.RaftImageTiles );
 		}
 
 
 		////
 
-		public static void PlaceTiles( GenerationProgress progress, float progressStep, int left, int top, int[][] tiles ) {
+		public static void PlaceTiles(
+					AdventureModeWorld myworld,
+					GenerationProgress progress,
+					float progressStep,
+					int left,
+					int top,
+					int[][] tiles ) {
 			for( int y = 0; y < tiles.Length; y++ ) {
 				progress.Value += progressStep / (float)tiles.Length;
 
@@ -79,7 +85,7 @@ namespace AdventureMode {
 					if( tiles[y][x] > 0 ) {
 						switch( tiles[y][x] ) {
 						case TileID.Containers:
-							AdventureModeWorldGen.PlaceStarterBarrel( left + x, top + y );
+							AdventureModeWorldGen.PlaceStarterBarrel( myworld, left + x, top + y );
 							break;
 						case TileID.Cog:
 							WorldGen.PlaceTile( left + x, top + y, tiles[y][x] );
@@ -105,7 +111,13 @@ namespace AdventureMode {
 			}
 		}
 
-		public static void ProcessTiles( GenerationProgress progress, float progressStep, int left, int top, int[][] tiles ) {
+		public static void ProcessTiles(
+					AdventureModeWorld myworld, 
+					GenerationProgress progress,
+					float progressStep,
+					int left,
+					int top,
+					int[][] tiles ) {
 			for( int y = 0; y < tiles.Length; y++ ) {
 				progress.Value += progressStep / (float)tiles.Length;
 
@@ -123,7 +135,7 @@ namespace AdventureMode {
 			}
 		}
 
-		public static void PlaceStarterBarrel( int x, int y ) {
+		public static void PlaceStarterBarrel( AdventureModeWorld myworld, int x, int y ) {
 			int chestIdx = WorldGen.PlaceChest( x, y, TileID.Containers, false, 5 );
 			if( chestIdx == -1 ) {
 				return; // this occurs on the first pass
@@ -136,9 +148,17 @@ namespace AdventureMode {
 				chestItems[i] = def.GetItem();
 				i++;
 			}
+
+			myworld.RaftBarrelTile = (x, y);
 		}
 
-		public static void PlaceWalls( GenerationProgress progress, float progressStep, int left, int top, int[][] walls ) {
+		public static void PlaceWalls(
+					AdventureModeWorld myworld, 
+					GenerationProgress progress,
+					float progressStep,
+					int left,
+					int top,
+					int[][] walls ) {
 			for( int y = 0; y < walls.Length; y++ ) {
 				progress.Value += progressStep / (float)walls.Length;
 
