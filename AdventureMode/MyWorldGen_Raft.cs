@@ -7,6 +7,7 @@ using Terraria.World.Generation;
 using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.Tiles;
 using MountedMagicMirrors.Tiles;
+using ReadableBooks.Items.ReadableBookItem;
 
 
 namespace AdventureMode {
@@ -22,9 +23,12 @@ namespace AdventureMode {
 			new int[] { 0,      42,     42,     42,     42,     42,     42,     42,     42,     42 },
 		};
 		private static int[][] RaftImageTiles = new int[][] {	//124
+			//new int[] { 0,      0,      -1,		-1,     -1,     272,    4,      0,      0,      0,      0 },
+			//new int[] { 0,      0,      -1,		-1,     -1,     272,    55,     55,     0,      0,      0 },
+			//new int[] { 0,      0,      -1,		-1,     -1,     272,    55,     55,     0,      0,      0 },
 			new int[] { 0,      0,      -1,		-1,     -1,     272,    4,      0,      0,      0,      0 },
-			new int[] { 0,      0,      -1,		-1,     -1,     272,    55,     55,     0,      0,      0 },
-			new int[] { 0,      0,      -1,		-1,     -1,     272,    55,     55,     0,      0,      0 },
+			new int[] { 0,      0,      -1,		-1,     -1,     272,    0,		0,		0,		0,		0 },
+			new int[] { 0,      0,      -1,		-1,     -1,     272,    0,		0,		0,		0,		0 },
 			new int[] { 0,      0,      0,      0,      0,      272,    0,      0,      0,      0,      0 },
 			new int[] { 0,      0,      0,      0,      0,      272,    0,      0,      0,      0,      0 },
 			new int[] { 0,      0,      0,      0,      0,      272,    0,      0,      0,      0,      0 },
@@ -93,12 +97,12 @@ namespace AdventureMode {
 						case TileID.PlanterBox:
 							WorldGen.PlaceTile( left + x, top + y, tiles[y][x], false, false, -1, 6 );
 							break;
-						case TileID.Signs:
+						/*case TileID.Signs:
 							if( WorldGen.PlaceSign( left + x, top + y, TileID.Signs ) ) {
 								int signIdx = Sign.ReadSign( left + x, top + y, true );
 								Main.sign[signIdx].text = AdventureModeWorldGen.GetIntroText();
 							}
-							break;
+							break;*/
 						default:
 							WorldGen.PlaceTile( left + x, top + y, tiles[y][x] );
 							break;
@@ -149,6 +153,13 @@ namespace AdventureMode {
 				i++;
 			}
 
+			chestItems[i] = new Item();
+			chestItems[i].SetDefaults( ModContent.ItemType<ReadableBookItem>(), true );
+			((ReadableBookItem)chestItems[i].modItem).SetTitleAndPages(
+				title: "Intro To Adventure Mode",
+				pages: AdventureModeWorldGen.GetIntroTextBookPages()
+			);
+
 			myworld.RaftBarrelTile = (x, y);
 		}
 
@@ -174,15 +185,22 @@ namespace AdventureMode {
 
 		////////////////
 
-		public static string GetIntroText() {
-			var texts = new List<string> { "Welcome to Adventure Mode!",	//[c/00FF00:
-				"- Building and digging disabled (some exceptions).",		//, e.g. treasures)."
+		public static IList<string> GetIntroTextLines() {
+			var texts = new List<string> {
+				// Page 1
+				"Welcome to Adventure Mode! This is a game mode built around journeying and exploration.",
+				"This is designed to create a new experience upon existing content, but with a few twists.",
+				"There's a lot of important new features and changes from the base game to note:",
+				// Page 2
+				"- Building and digging disabled (some exceptions).",
 				"- Use house kits to create NPC houses, beds, crafting stations, and fast travel points.",
 				"- Crafting stations are either found or kit-made.",
+				// Page 3
 				"- Use platforms, planks, and ropes to get around.",
 				"- Get Orbs from chests or challenges to progress.",
 				//"- Grappling only works on platforms.",
 				"- Read item descriptions for more info.",
+				// Page 4
 				"- Talk to the Guide for further help.",
 				"- Do not whip the slimes!",
 			};
@@ -195,7 +213,24 @@ namespace AdventureMode {
 				texts.Insert( 2, "- Alchemy and non-equipment recipes disabled." );
 			}
 
-			return string.Join( "\n", texts );
+			return texts;
+		}
+
+		public static string[] GetIntroTextBookPages() {
+			IList<string> rawPages = AdventureModeWorldGen.GetIntroTextLines();
+			string[] pages = new string[rawPages.Count / 3];
+
+			for( int j = 0; j < pages.Length; j++ ) {
+				pages[j] = rawPages[j * 3];
+				if( ( j * 3 ) + 1 < rawPages.Count ) {
+					pages[j] += "\n" + rawPages[( j * 3 ) + 1];
+				}
+				if( ( j * 3 ) + 2 < rawPages.Count ) {
+					pages[j] += "\n" + rawPages[( j * 3 ) + 2];
+				}
+			}
+
+			return pages;
 		}
 	}
 }

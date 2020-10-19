@@ -37,5 +37,13 @@ namespace AdventureMode {
 				Timers.RunNow( () => NPCLogic.SetInvasionDefaults(npc) );
 			}
 		}
+
+
+		////////////////
+
+		public override bool PreNPCLoot( NPC npc ) {
+			NPCLogic.ApplyForbiddenLoot();
+			return true;
+		}
 	}
 }

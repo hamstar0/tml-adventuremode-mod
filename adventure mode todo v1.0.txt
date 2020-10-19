@@ -39,29 +39,35 @@ v1
 	-	Fix Guide's false recipe reports?
 	-	Add "Adventure Mode" watermark to inventory backdrop
 	-	Switch raft to use TileStructure
-[v0.15.0]
+[v0.14.0]
 -	@Beta
 -	@Test MP
--	@Add Boss Challenges (bosses can only be found in designated areas)
+-	@Add Meet The Boss mod: Bosses can only be found in designated areas, and must be fought repeatedly for all drops
 -	Progress changes
 	-	@Necrotis: Add Witch Doctor Necrotis heal ability
-	-	Remove patches of orbs
+	-	Set some orb types to be rare (white, cyan)
 	-	Prevent voodoo demons from spawning until Witch Doctor objective activated
 	-	Set mechanic to spawn in lowest part of dungeon (marked on map)
 	-	Set goblin tinkerer to only spawn in center of underground desert (marked on map)
-[v0.14.0]
--	@Locked Abilities
-	-	Add 2 custom accessory slots for enabler accessories
--	Transcribe AM game mode rules to a book in starter barrel
 [v0.13.0]
+-	@Locked Abilities
+	-	@AM: Remove gem hooks, hook item drops
+
+
+	-	Implement ability accessory equips (overlay accessory slots)
+		-	@AM: Remove all ability locking accessories; only ability slots are locked
+		-	Revert 'implicit' ability accessories
+		-	Set equipped ability accessories to become 'implicit' (removed from slots, but still active)
+-	Transcribe AM game mode rules to a book in starter barrel
 -	@Trickster
 	-	Set trickster to not re-appear near a previous defeat (add mark on map)
--	Generate 'failed expeditions' (marked on the map) that give lore dumps and ability unlocking accessories
+		-	Add icons to indicate defeat locations
+		-	Prevent spawning near a defeat location
+		-	Memorize defeat locations
 -	@Implement Mod Helpers library for marking on the map
+	-	Implement marking management
 	-	Import code (from Nectrotis?) for drawing a given sprite to the screen
 	-	Define service
-
-
 -	Add periodic supply restocking in spawn barrel (random; use manual timer)
 -	Add wood platforms to starter barrel
 [v0.12.0]

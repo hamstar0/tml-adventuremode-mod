@@ -8,7 +8,8 @@ using AdventureMode.Logic;
 namespace AdventureMode {
 	partial class AdventureModeMod : Mod {
 		public override void AddRecipes() {
-			RecipeLogic.AddNewRecipes();
+			RecipeLogic.AddRoDRecipes();
+			RecipeLogic.RemoveVanillaBasicHookRecipes();
 		}
 
 		public override void PostAddRecipes() {

@@ -44,6 +44,9 @@
     <Reference Include="PrefabKits">
       <HintPath>..\..\..\Prefab Kits\Project\PrefabKits\bin\Release\net452\PrefabKits.dll</HintPath>
     </Reference>
+    <Reference Include="ReadableBooks">
+      <HintPath>..\..\..\ReadableBooks\Project\ReadableBooks\bin\Release\net452\ReadableBooks.dll</HintPath>
+    </Reference>
     <Reference Include="TerrainRemixer">
       <HintPath>..\..\..\Terrain Remixer\Project\TerrainRemixer\bin\Release\net452\TerrainRemixer.dll</HintPath>
     </Reference>

@@ -56,6 +56,8 @@ namespace AdventureMode.Mods {
 				);
 			}
 
+			////
+
 			implantsConfig.SetOverride(
 				nameof(ChestImplantsConfig.AllFromSetChestImplanterDefinitions),
 				implanterDefs

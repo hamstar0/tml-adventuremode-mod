@@ -8,6 +8,10 @@ Future considerations
 -	@Add Anomalies mod (only adds Gravitational Anomalies, for now)
 -	@Add Fleeting Goodies mod (coins disappear)
 -	@Add Lurking Foes mod (monsters are still in the dark until lit)
+-	Generate 'failed expeditions' (marked on the map) that give lore dumps and ability unlocking accessories
+	-	Mark each expedition on the map
+	-	Add notes and 2 random ability accessories to each barrel
+	-	Find flat spots and generate tent, campfire, and barrel (10)
 
 
 
