@@ -1,11 +1,11 @@
-﻿using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Helpers.World;
-using System;
+﻿using System;
 using Terraria;
 using Terraria.World.Generation;
+using HamstarHelpers.Helpers.Debug;
+using HamstarHelpers.Helpers.World;
 
 
-namespace AdventureMode {
+namespace AdventureMode.WorldGeneration {
 	partial class AdventureModeWorldGen {
 		private static void SetSpawn( int x, int y ) {
 			LogHelpers.Alert( "Spawn relocated to " + x + ", " + y );

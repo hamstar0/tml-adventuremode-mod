@@ -10,7 +10,7 @@ using MountedMagicMirrors.Tiles;
 using ReadableBooks.Items.ReadableBookItem;
 
 
-namespace AdventureMode {
+namespace AdventureMode.WorldGeneration {
 	partial class AdventureModeWorldGen {
 		private static int[][] RaftImageWalls = new int[][] {
 			new int[] {  },

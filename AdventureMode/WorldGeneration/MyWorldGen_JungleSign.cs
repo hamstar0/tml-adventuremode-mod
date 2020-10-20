@@ -7,7 +7,7 @@ using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.World;
 
 
-namespace AdventureMode {
+namespace AdventureMode.WorldGeneration {
 	partial class AdventureModeWorldGen {
 		public static bool GetJungleSignBaseCoordinates( out int tileX, out int tileY ) {
 			int checkColumn( int myTileX ) {

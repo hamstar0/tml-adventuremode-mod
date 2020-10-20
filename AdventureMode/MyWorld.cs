@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.GameContent.Generation;
 using Terraria.ModLoader;
@@ -8,6 +9,7 @@ using Terraria.ModLoader.IO;
 using Terraria.World.Generation;
 using HamstarHelpers.Helpers.Debug;
 using AdventureMode.Logic;
+using AdventureMode.WorldGeneration;
 
 
 namespace AdventureMode {
@@ -16,9 +18,15 @@ namespace AdventureMode {
 
 		public int HouseKitFurnitureIdx { get; internal set; } = 0;
 
+
 		public (int TileX, int TileY) JungleSignTile { get; internal set; } = (0, 0);
 
 		public (int TileX, int TileY) RaftBarrelTile { get; internal set; } = (0, 0);
+
+
+		public Rectangle UndergroundDesertBounds { get; internal set; } = default( Rectangle );
+
+		public (int tileX, int tileY) DungeonBottom { get; internal set; } = (0, 0);
 
 
 
@@ -106,6 +114,16 @@ namespace AdventureMode {
 
 			tasks.Add( new PassLegacy( "Adventure Mode: Create Jungle Sign", ( progress ) => {
 				AdventureModeWorldGen.PlaceJungleSign( progress );
+				progress.Value = 1f;
+			} ) );
+
+			tasks.Add( new PassLegacy( "Adventure Mode: Underground Desert Scan", ( progress ) => {
+				AdventureModeWorldGen.ScanUndergroundDesert( progress );
+				progress.Value = 1f;
+			} ) );
+
+			tasks.Add( new PassLegacy( "Adventure Mode: Dungeon Scan", ( progress ) => {
+				AdventureModeWorldGen.ScanDungeon( progress );
 				progress.Value = 1f;
 			} ) );
 		}

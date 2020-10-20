@@ -48,12 +48,20 @@ v1
 	-	Set some orb types to be rare (white, cyan)
 	-	Prevent voodoo demons from spawning until Witch Doctor objective activated
 	-	Set mechanic to spawn in lowest part of dungeon (marked on map)
+		-	When mechanic rescued, remove marker
+		-	When player is near location, add mechanic to spawn pool
+		-	When mechanic objective enabled, add marker on map (while mechanic isnt rescued)
+		-	Locate point on map for mechanic
 	-	Set goblin tinkerer to only spawn in center of underground desert (marked on map)
+		-	When goblin rescued, remove marker
+		-	When player is near location, add goblin to spawn pool
+		-	When goblin objective enabled, add marker on map (while goblin isnt rescued)
+
+
+		-	Locate point on map for goblin
 [v0.13.0]
 -	@Locked Abilities
 	-	@AM: Remove gem hooks, hook item drops
-
-
 	-	Implement ability accessory equips (overlay accessory slots)
 		-	@AM: Remove all ability locking accessories; only ability slots are locked
 		-	Revert 'implicit' ability accessories
