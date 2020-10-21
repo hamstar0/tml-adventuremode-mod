@@ -49,16 +49,16 @@ v1
 	-	@Necrotis: Add Witch Doctor Necrotis heal ability
 	-	Set some orb types to be rare (white, cyan)
 	-	Prevent voodoo demons from spawning until Witch Doctor objective activated
+
+
 	-	Set mechanic to spawn in lowest part of dungeon (marked on map)
-		-	When mechanic rescued, remove marker
 		-	When player is near location, add mechanic to spawn pool
+		-	When mechanic rescued, remove marker
 		-	When mechanic objective enabled (via. subscription), add marker on map (while mechanic isnt rescued)
 		-	Locate point on map for mechanic
-
-
 	-	Set goblin tinkerer to only spawn in center of underground desert (marked on map)
-		-	When goblin rescued, remove marker
 		-	When player is near location, add goblin to spawn pool
+		-	When goblin rescued, remove marker
 		-	When goblin objective enabled (via. subscription), add marker on map (while goblin isnt rescued)
 		-	@Objectives: Add subscriptions
 		-	Import Objectives into AM

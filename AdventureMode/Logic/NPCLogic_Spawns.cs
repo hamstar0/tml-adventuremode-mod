@@ -22,5 +22,20 @@ namespace AdventureMode.Logic {
 				pool[ NPCID.BoundGoblin ] = 1f;
 			}
 		}
+
+		public static void EditSpawnPoolForBoundMechanic( IDictionary<int, float> pool, NPCSpawnInfo spawnInfo ) {
+			var myworld = ModContent.GetInstance<AdventureModeWorld>();
+			int mechanicTileX = myworld.DungeonBottom.tileX;
+			int mechanicTileY = myworld.DungeonBottom.tileY;
+			var mechanicPos = new Vector2( mechanicTileX * 16, mechanicTileY * 16 );
+			float minDistSqr = 32 * 16;	// 32 blocks
+			minDistSqr *= minDistSqr;
+
+			if( (spawnInfo.player.position - mechanicPos).LengthSquared() >= minDistSqr ) {
+				pool.Remove( NPCID.BoundMechanic );
+			} else {
+				pool[ NPCID.BoundMechanic] = 1f;
+			}
+		}
 	}
 }
