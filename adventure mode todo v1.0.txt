@@ -38,11 +38,13 @@ v1
 -	Final
 	-	Fix Guide's false recipe reports?
 	-	Add "Adventure Mode" watermark to inventory backdrop
-	-	Switch raft to use TileStructure
+[v0.15.0]
+-	@Add Meet The Boss mod: Bosses can only be found in designated areas, and must be fought repeatedly for all drops
 [v0.14.0]
 -	@Beta
 -	@Test MP
--	@Add Meet The Boss mod: Bosses can only be found in designated areas, and must be fought repeatedly for all drops
+	-	Goblin icon + rescue
+-	Show chat alerts as map icons
 -	Progress changes
 	-	@Necrotis: Add Witch Doctor Necrotis heal ability
 	-	Set some orb types to be rare (white, cyan)
@@ -50,14 +52,16 @@ v1
 	-	Set mechanic to spawn in lowest part of dungeon (marked on map)
 		-	When mechanic rescued, remove marker
 		-	When player is near location, add mechanic to spawn pool
-		-	When mechanic objective enabled, add marker on map (while mechanic isnt rescued)
+		-	When mechanic objective enabled (via. subscription), add marker on map (while mechanic isnt rescued)
 		-	Locate point on map for mechanic
+
+
 	-	Set goblin tinkerer to only spawn in center of underground desert (marked on map)
 		-	When goblin rescued, remove marker
 		-	When player is near location, add goblin to spawn pool
-		-	When goblin objective enabled, add marker on map (while goblin isnt rescued)
-
-
+		-	When goblin objective enabled (via. subscription), add marker on map (while goblin isnt rescued)
+		-	@Objectives: Add subscriptions
+		-	Import Objectives into AM
 		-	Locate point on map for goblin
 [v0.13.0]
 -	@Locked Abilities

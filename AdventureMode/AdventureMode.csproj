@@ -11,6 +11,9 @@
     <Exec Command="&quot;$(tMLBuildServerPath)&quot; -build $(ProjectDir) -eac $(TargetPath) -define $(DefineConstants) -unsafe $(AllowUnsafeBlocks)" />
   </Target>
   <ItemGroup>
+    <Reference Include="AdventureModeLore">
+      <HintPath>..\..\..\Adventure Mode Lore\Project\AdventureModeLore\bin\Release\net452\AdventureModeLore.dll</HintPath>
+    </Reference>
     <Reference Include="Bullwhip">
       <HintPath>..\..\..\Bullwhip\Project\Bullwhip\bin\Release\net452\Bullwhip.dll</HintPath>
     </Reference>
@@ -37,6 +40,9 @@
     </Reference>
     <Reference Include="Nihilism">
       <HintPath>..\..\..\Nihilism\Nihilism\bin\Release\net452\Nihilism.dll</HintPath>
+    </Reference>
+    <Reference Include="Objectives">
+      <HintPath>..\..\..\Objectives\Project\Objectives\bin\Release\net452\Objectives.dll</HintPath>
     </Reference>
     <Reference Include="Orbs">
       <HintPath>..\..\..\Orbs\Project\Orbs\bin\Release\net452\Orbs.dll</HintPath>

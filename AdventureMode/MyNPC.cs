@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -35,6 +36,15 @@ namespace AdventureMode {
 			}
 			if( Main.invasionSize > 0 && !npc.friendly ) {
 				Timers.RunNow( () => NPCLogic.SetInvasionDefaults(npc) );
+			}
+		}
+
+
+		////////////////
+
+		public override void EditSpawnPool( IDictionary<int, float> pool, NPCSpawnInfo spawnInfo ) {
+			if( NPC.downedGoblins && pool.ContainsKey(NPCID.BoundGoblin) ) {
+				NPCLogic.EditSpawnPoolForBoundGoblin( pool, spawnInfo );
 			}
 		}
 

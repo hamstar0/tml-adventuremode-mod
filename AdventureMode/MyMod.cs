@@ -43,6 +43,7 @@ namespace AdventureMode {
 			this.ModInteractions.LoadLockedAbilities();
 			this.ModInteractions.LoadOrbs();
 			this.ModInteractions.LoadTerrainRemixer();
+			this.ModInteractions.LoadLoreAndObjectives();
 		}
 
 		////
