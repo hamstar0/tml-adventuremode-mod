@@ -17,19 +17,6 @@ namespace AdventureMode {
 
 		////////////////
 
-		public override void SetupShop( int type, Chest shop, ref int nextSlot ) {
-			NPCLogic.FilterShops( type, shop.item, ref nextSlot );
-
-			switch( type ) {
-			case NPCID.Merchant:
-				NPCLogic.SetupMerchantShop( shop, ref nextSlot );
-				break;
-			}
-		}
-
-
-		////////////////
-
 		public override void SetDefaults( NPC npc ) {
 			if( npc.boss ) {
 				NPCLogic.SetBossDefaults( npc );
@@ -48,6 +35,22 @@ namespace AdventureMode {
 			}
 			if( /*NPC.downedBoss3 &&*/ pool.ContainsKey(NPCID.BoundMechanic) ) {
 				NPCLogic.EditSpawnPoolForBoundMechanic( pool, spawnInfo );
+			}
+			if( pool.ContainsKey(NPCID.VoodooDemon) ) {
+				NPCLogic.EditSpawnPoolForVoodooDemon( pool, spawnInfo );
+			}
+		}
+
+
+		////////////////
+
+		public override void SetupShop( int type, Chest shop, ref int nextSlot ) {
+			NPCLogic.FilterShops( type, shop.item, ref nextSlot );
+
+			switch( type ) {
+			case NPCID.Merchant:
+				NPCLogic.SetupMerchantShop( shop, ref nextSlot );
+				break;
 			}
 		}
 

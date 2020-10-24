@@ -4,6 +4,9 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Objectives;
+using Objectives.Definitions;
+using AdventureModeLore.Logic;
 
 
 namespace AdventureMode.Logic {
@@ -35,6 +38,17 @@ namespace AdventureMode.Logic {
 				pool.Remove( NPCID.BoundMechanic );
 			} else {
 				pool[ NPCID.BoundMechanic] = 1f;
+			}
+		}
+
+		public static void EditSpawnPoolForVoodooDemon( IDictionary<int, float> pool, NPCSpawnInfo spawnInfo ) {
+			if( Main.hardMode ) {
+				return;
+			}
+
+			Objective wofObj = ObjectivesAPI.GetObjective( AMLLogic.SummonWoFTitle );
+			if( wofObj == null ) {
+				pool.Remove( NPCID.VoodooDemon );
 			}
 		}
 	}

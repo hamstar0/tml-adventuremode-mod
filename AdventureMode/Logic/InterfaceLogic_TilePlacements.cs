@@ -140,16 +140,16 @@ namespace AdventureMode.Logic {
 			}
 
 			//
-			
-			if( !isAnchor(tileX, tileY) ) {
+
+			if( !isAnchor( tileX, tileY ) ) {
 				if( isAnchor( tileX - 1, tileY ) ) {
-					InterfaceLogic.DrawTilePlacementOutline( outlineIntensity, new Rectangle(tileX, tileY, traceRight(), 1) );
-				} else if( isAnchor(tileX + 1, tileY) ) {
+					InterfaceLogic.DrawTilePlacementOutline( outlineIntensity, new Rectangle( tileX, tileY, traceRight(), 1 ) );
+				} else if( isAnchor( tileX + 1, tileY ) ) {
 					int width = traceLeft();
-					InterfaceLogic.DrawTilePlacementOutline( outlineIntensity, new Rectangle((tileX - width) + 1, tileY, width, 1) );
+					InterfaceLogic.DrawTilePlacementOutline( outlineIntensity, new Rectangle( ( tileX - width ) + 1, tileY, width, 1 ) );
 				} else {
-					if( isAnchor(tileX, tileY - 1) || isAnchor(tileX, tileY + 1) ) {
-						InterfaceLogic.DrawTilePlacementOutline( outlineIntensity, new Rectangle(tileX, tileY, 1, 1), false );
+					if( isAnchor( tileX, tileY - 1 ) || isAnchor( tileX, tileY + 1 ) ) {
+						InterfaceLogic.DrawTilePlacementOutline( outlineIntensity, new Rectangle( tileX, tileY, 1, 1 ), false );
 					}
 				}
 			}

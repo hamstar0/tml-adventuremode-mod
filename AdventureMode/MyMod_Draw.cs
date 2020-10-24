@@ -11,15 +11,20 @@ namespace AdventureMode {
 	partial class AdventureModeMod : Mod {
 		public override void ModifyInterfaceLayers( List<GameInterfaceLayer> layers ) {
 			int idx = layers.FindIndex( layer => layer.Name.Equals( "Vanilla: Inventory" ) );
-			if( idx == -1 ) { return; }
+			if( idx != -1 ) {
+				this.AddTilePlacementInterfaceLayer( layers, idx + 1 );
+			}
+		}
 
-			GameInterfaceDrawMethod placementUI = () => {
+
+		private void AddTilePlacementInterfaceLayer( List<GameInterfaceLayer> layers, int layerIdx ) {
+			bool placementUI() {
 				InterfaceLogic.DrawCurrentTilePlacementOutline();
 				return true;
 			};
 
 			var tradeLayer = new LegacyGameInterfaceLayer( "AdventureMode: Placement Indicators", placementUI, InterfaceScaleType.UI );
-			layers.Insert( idx + 1, tradeLayer );
+			layers.Insert( layerIdx, tradeLayer );
 		}
 	}
 }

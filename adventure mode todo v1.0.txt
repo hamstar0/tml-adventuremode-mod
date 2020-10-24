@@ -32,25 +32,34 @@ v1
 		-	Add mod tags text scale adjusting
 		-	Add toggle button to UI
 		-	@Update tag moderation page
+	-	Refactor mod hook-level code into a Logic abstraction
 -	@Begin final beta test
 -	@Set git repos public
 -	Add allowed-mod whitelist (configurable)
 -	Final
 	-	Fix Guide's false recipe reports?
 	-	Add "Adventure Mode" watermark to inventory backdrop
+	-	Cleanup Ankh sprite
 [v0.15.0]
 -	@Add Meet The Boss mod: Bosses can only be found in designated areas, and must be fought repeatedly for all drops
 [v0.14.0]
 -	@Beta
 -	@Test MP
+	-	Re-test AM-only worlds and players
 	-	Goblin icon + rescue
--	Show chat alerts as map icons
+	-	Removed ability items
+	-	Trickster defeats on map
+	-	Barrel restocking
+	-	Verdant Blessing
+	-	Infection, Parasites
+	-	Whip getting items inside walls
+-	Double check if orb recipes are disabled
 -	Progress changes
 	-	@Necrotis: Add Witch Doctor Necrotis heal ability
-	-	Set some orb types to be rare (white, cyan)
+
+
+	-	Set some orb types to be rare (white never (but craftable), cyan rare)
 	-	Prevent voodoo demons from spawning until Witch Doctor objective activated
-
-
 	-	Set mechanic to spawn in lowest part of dungeon (marked on map)
 		-	When player is near location, add mechanic to spawn pool
 		-	When mechanic rescued, remove marker
@@ -63,6 +72,9 @@ v1
 		-	@Objectives: Add subscriptions
 		-	Import Objectives into AM
 		-	Locate point on map for goblin
+-	@MH: Show chat alerts as map icons
+	-	Use update function to check status of 'dynamic chat' alerts to display map icons
+	-	Refactor 'priority chat' into 'dynamic chat'
 [v0.13.0]
 -	@Locked Abilities
 	-	@AM: Remove gem hooks, hook item drops
@@ -160,6 +172,7 @@ v1
 	-	Add tile brush service and commands
 	-	Add NPC controls service
 	-	Add camera controls service
+-	@Remove PDYB mod
 -	@Add Pirates Demand Your Booty! mod
 [v0.10.1]
 -	@Powerful Magic: Add 'Focus' ability to recharge mana
