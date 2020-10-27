@@ -45,19 +45,39 @@ v1
 [v0.14.0]
 -	@Beta
 -	@Test MP
-	-	Re-test AM-only worlds and players
+-	@Test SP
+	-	Witch Doctor
 	-	Goblin icon + rescue
 	-	Removed ability items
 	-	Trickster defeats on map
-	-	Barrel restocking
 	-	Verdant Blessing
 	-	Infection, Parasites
 	-	Whip getting items inside walls
--	Double check if orb recipes are disabled
+	-	Barrel restocking
+	-	Test pre-aim mode
+
+
+	-	Re-test AM-only worlds and players
+-	F&T
+	-	Add barrel restock messages
+	-	@TMR
+		-	Reload gun on death
+		-	Reducted aim mode walk speed
+		-	Implement pre-aim mode (slows movement while aiming, does not interrupt on move)
+		-	Tweak gun tooltip
+	-	@Surroundings
+		-	Fix mouse-held binocs (not zoomed) causing Surroundings to disappear
+		-	Lower forest overlay and darken floor
+	-	Framing plank sprite is not sharp enough
+	-	Remove angler, painter completely
+	-	Re-implement torch recipe
+	-	Reduce scale and damage of pot spiders
+	-	Fix guide not appearing at spawn on world creation
 -	Progress changes
 	-	@Necrotis: Add Witch Doctor Necrotis heal ability
-
-
+		-	Show price
+		-	Implement button
+		-	Draw button
 	-	Set some orb types to be rare (white never (but craftable), cyan rare)
 	-	Prevent voodoo demons from spawning until Witch Doctor objective activated
 	-	Set mechanic to spawn in lowest part of dungeon (marked on map)

@@ -1,32 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
-using Terraria;
 using Microsoft.Xna.Framework;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.World.Generation;
+using HamstarHelpers.Classes.Errors;
+using HamstarHelpers.Classes.Tiles.TilePattern;
 using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.Tiles;
-using HamstarHelpers.Classes.Tiles.TilePattern;
 
 
 namespace AdventureMode.WorldGeneration {
 	partial class AdventureModeWorldGen {
 		public static void ScanDungeon( GenerationProgress progress ) {
 			var pattern = new TilePattern( new TilePatternBuilder {
-				IsAnyOfType = new HashSet<int> { TileID.BlueDungeonBrick, TileID.GreenDungeonBrick, TileID.PinkDungeonBrick }
+				IsActive = true,
+				IsAnyOfType = new HashSet<int> {
+					TileID.BlueDungeonBrick,
+					TileID.GreenDungeonBrick,
+					TileID.PinkDungeonBrick
+				}
 			} );
 			Rectangle? bounds = TileFinderHelpers.FindBoxForAllOf( pattern: pattern );
 
 			var myworld = ModContent.GetInstance<AdventureModeWorld>();
-			(int, int)? point = AdventureModeWorldGen.ScanForDungeonBottom( bounds.Value );
+			(int, int)? point = AdventureModeWorldGen.ScanForDungeonBottom( bounds.Value, out int scanCount );
+			if( !point.HasValue ) {
+				throw new ModHelpersException( "Could not locate viable bottom point within the dungeon "
+					+"(scanned "+scanCount+" tiles within "+bounds.Value+")." );
+			}
+
 			myworld.DungeonBottom = point.Value;
 
 			progress.Set( 1f );
 		}
 
 
-		private static (int tileX, int tileY)? ScanForDungeonBottom( Rectangle bounds ) {
+		private static (int tileX, int tileY)? ScanForDungeonBottom( Rectangle bounds, out int scanCount ) {
 			var pattern = new TilePattern( new TilePatternBuilder {
 				IsActive = false,
 				IsAnyOfWallType = new HashSet<int> {
@@ -37,11 +48,13 @@ namespace AdventureMode.WorldGeneration {
 					WallID.PinkDungeonSlabUnsafe,
 					WallID.PinkDungeonTileUnsafe,
 				},
-				AreaFromCenter = new Rectangle(-1, 1, 3, 3)
+				//AreaFromCenter = new Rectangle(-1, -1, 3, 3)
 			} );
+			scanCount = 0;
 
 			for( int y=bounds.Bottom; y>bounds.Top; y-- ) {
-				for( int x=bounds.Left; x>bounds.Right; x++ ) {
+				for( int x=bounds.Left; x<bounds.Right; x++ ) {
+					scanCount++;
 					if( !pattern.Check(x, y) ) {
 						continue;
 					}

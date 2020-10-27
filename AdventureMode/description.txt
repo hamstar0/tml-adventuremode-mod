@@ -1,8 +1,10 @@
 Adventure Mode creates a progression-oriented journey designed to replace Terraria's sandbox mode. You will need good decision making, quick wits, and awareness of your surroundings in order to succeed.
 
 Credits:
-  Templates:
-    mcmanybucks (raft)
+  Raft concept:
+    mcmanybucks
+  Plank sprite tweak:
+    Vampyroknight
   Testers:
     Putan (beta)
     CrabBar (beta)

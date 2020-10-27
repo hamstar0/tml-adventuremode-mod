@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader.IO;
 using Terraria.ModLoader;
@@ -24,7 +25,11 @@ namespace AdventureMode.Logic {
 			int timer = tag.GetInt( "raft_restock_timer" );
 
 			Timers.SetTimer( "AdventureModeRaftRestock", timer, false, () => {
-				WorldLogic.RestockRaft();
+				if( WorldLogic.RestockRaft() ) {
+					Main.NewText( "Raft barrel restocked.", Color.Lime );
+				} else {
+					Main.NewText( "No barrel to restock.", Color.Yellow );
+				}
 
 				return AdventureModeConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
 			} );

@@ -9,7 +9,6 @@ namespace AdventureMode {
 	partial class AdventureModeMod : Mod {
 		public override void AddRecipes() {
 			RecipeLogic.AddRoDRecipes();
-			RecipeLogic.RemoveVanillaBasicHookRecipes();
 		}
 
 		public override void PostAddRecipes() {

@@ -108,7 +108,6 @@ namespace AdventureMode.Mods {
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.HeartLantern), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.MagicLantern), true );
 			//
-			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.GrapplingHook), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Minecart), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.MinecartMech), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ModContent.ItemType<UtilitarianBeltItem>()), true );
@@ -155,6 +154,25 @@ namespace AdventureMode.Mods {
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.AdamantiteForge), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.TitaniumForge), true );
 			}
+
+			//
+
+			if( config.EnableBasicGrappleItemRecipes ) {
+				NihilismAPI.SetRecipeBlacklist2Entry( new ItemDefinition(ItemID.GrapplingHook), true );
+				NihilismAPI.SetRecipeBlacklist2Entry( new ItemDefinition(ItemID.AmethystHook), true );
+				NihilismAPI.SetRecipeBlacklist2Entry( new ItemDefinition(ItemID.SapphireHook), true );
+				NihilismAPI.SetRecipeBlacklist2Entry( new ItemDefinition(ItemID.TopazHook), true );
+				NihilismAPI.SetRecipeBlacklist2Entry( new ItemDefinition(ItemID.EmeraldHook), true );
+				NihilismAPI.SetRecipeBlacklist2Entry( new ItemDefinition(ItemID.RubyHook), true );
+				NihilismAPI.SetRecipeBlacklist2Entry( new ItemDefinition(ItemID.DiamondHook), true );
+			}
+
+			//
+
+			NihilismAPI.SetNpcBlacklistEntry( new NPCDefinition(NPCID.Angler), true );
+			NihilismAPI.SetNpcBlacklistEntry( new NPCDefinition(NPCID.Painter), true );
+
+			////
 
 			NihilismAPI.NihilateCurrentWorld( true );
 		}

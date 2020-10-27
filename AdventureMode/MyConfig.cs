@@ -70,9 +70,13 @@ namespace AdventureMode {
 		[ReloadRequired]
 		public bool EnableBossItemRecipes { get; set; } = true;
 
+		[DefaultValue( true )]
+		[ReloadRequired]
+		public bool EnableTorchRecipes { get; set; } = true;
+
 		[DefaultValue( false )]
 		[ReloadRequired]
-		public bool EnableTorchRecipes { get; set; } = false;
+		public bool EnableBasicGrappleItemRecipes { get; set; } = false;
 		
 		////
 

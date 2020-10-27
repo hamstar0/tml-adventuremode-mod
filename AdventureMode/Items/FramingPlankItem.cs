@@ -17,7 +17,7 @@ namespace AdventureMode.Items {
 		}
 
 		public override void SetDefaults() {
-			this.item.width = 12;
+			this.item.width = 24;
 			this.item.height = 12;
 			this.item.maxStack = 999;
 			this.item.useTurn = true;

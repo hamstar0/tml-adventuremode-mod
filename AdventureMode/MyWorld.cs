@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.GameContent.Generation;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -130,6 +131,11 @@ namespace AdventureMode {
 
 		public override void PostWorldGen() {
 			this.IsCurrentWorldAdventure = true;
+
+			int guideWho = NPC.FindFirstNPC( NPCID.Guide );
+			if( guideWho != -1 ) {
+				Main.npc[ guideWho ].Center = new Vector2( Main.spawnTileX, Main.spawnTileY - 1 ) * 16f;
+			}
 		}
 
 

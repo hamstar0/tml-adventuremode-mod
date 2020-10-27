@@ -1,7 +1,6 @@
 ﻿using System;
 using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
 using AdventureMode.Recipes;
 
 
@@ -13,29 +12,6 @@ namespace AdventureMode.Logic {
 
 			var newRoDRecipe2 = new RodOfDiscordRecipe( true );
 			newRoDRecipe2.AddRecipe();
-		}
-
-
-		////
-
-		public static void RemoveVanillaBasicHookRecipes() {
-			int[] hookTypes = new int[] {
-				ItemID.GrapplingHook,
-				ItemID.AmethystHook,
-				ItemID.SapphireHook,
-				ItemID.TopazHook,
-				ItemID.EmeraldHook,
-				ItemID.RubyHook,
-				ItemID.DiamondHook
-			};
-
-			foreach( int itemType in hookTypes ) {
-				var finder = new RecipeFinder();
-				finder.SetResult( itemType );
-
-				RecipeEditor editor = new RecipeEditor( finder.FindExactRecipe() );
-				editor.DeleteRecipe();
-			}
 		}
 
 
@@ -56,6 +32,9 @@ namespace AdventureMode.Logic {
 				}
 			}
 		}
+
+
+		////////////////
 
 		public static void TweakBowlRecipe() {
 			for( int i = 0; i < Main.recipe.Length; i++ ) {
