@@ -44,6 +44,26 @@ namespace AdventureMode.Logic {
 
 
 		public static void SetupMerchantShop( Chest shop, ref int nextSlot ) {
+			NPCLogic.SetupMerchantShopPrices( shop, nextSlot );
+			NPCLogic.SetupMerchantShopNewInventory( shop, nextSlot );
+		}
+
+		private static void SetupMerchantShopPrices( Chest shop, int nextSlot ) {
+			for( int i=0; i<nextSlot; i++ ) {
+				Item item = shop.item[i];
+				if( item?.active != true ) { continue; }
+
+				switch( item.type ) {
+				case ItemID.Rope:
+				case ItemID.Torch:
+				case ItemID.LesserHealingPotion:
+					item.value *= 3;
+					break;
+				}
+			}
+		}
+
+		private static void SetupMerchantShopNewInventory( Chest shop, int nextSlot ) {
 			var frameKit = new Item();
 			var furnKit = new Item();
 			var whip = new Item();

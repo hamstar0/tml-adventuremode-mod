@@ -7,10 +7,10 @@ using HamstarHelpers.Helpers.TModLoader;
 using HamstarHelpers.Services.EntityGroups;
 using HamstarHelpers.Services.EntityGroups.Definitions;
 using HamstarHelpers.Services.Hooks.LoadHooks;
+using Nihilism;
 using AdventureMode.Items;
 using LockedAbilities.Items.Consumable;
 using LockedAbilities.Items.Accessories;
-using Nihilism;
 using PrefabKits.Items;
 
 
@@ -59,12 +59,12 @@ namespace AdventureMode.Mods {
 			}
 
 			//
-			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.EnchantedNightcrawler), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.EnchantedNightcrawler ), true );
 			//
-			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.CopperCoin), true );
-			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.SilverCoin), true );
-			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.GoldCoin), true );
-			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.PlatinumCoin), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.CopperCoin ), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.SilverCoin ), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.GoldCoin ), true );
+			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.PlatinumCoin ), true );
 			//
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.Chain ), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.SilkRope ), true );
@@ -135,15 +135,15 @@ namespace AdventureMode.Mods {
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.GoldCrown), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.PlatinumCrown), true );
 				//
-				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.SlimeCrown ), true );
-				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.SuspiciousLookingEye ), true );
-				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.WormFood ), true );
-				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.BloodySpine ), true );
-				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.Abeemination ), true );
-				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.MechanicalWorm ), true );
-				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.MechanicalSkull ), true );
-				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.MechanicalEye ), true );
-				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.CelestialSigil ), true );
+				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.SlimeCrown), true );
+				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.SuspiciousLookingEye), true );
+				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.WormFood), true );
+				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BloodySpine), true );
+				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Abeemination), true );
+				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.MechanicalWorm), true );
+				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.MechanicalSkull), true );
+				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.MechanicalEye), true );
+				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.CelestialSigil), true );
 			}
 
 			//
@@ -170,6 +170,7 @@ namespace AdventureMode.Mods {
 			//
 
 			NihilismAPI.SetNpcBlacklistEntry( new NPCDefinition(NPCID.Angler), true );
+			NihilismAPI.SetNpcBlacklistEntry( new NPCDefinition(NPCID.SleepingAngler), true );
 			NihilismAPI.SetNpcBlacklistEntry( new NPCDefinition(NPCID.Painter), true );
 
 			////

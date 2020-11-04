@@ -134,7 +134,7 @@ namespace AdventureMode {
 
 			int guideWho = NPC.FindFirstNPC( NPCID.Guide );
 			if( guideWho != -1 ) {
-				Main.npc[ guideWho ].Center = new Vector2( Main.spawnTileX, Main.spawnTileY - 1 ) * 16f;
+				Main.npc[ guideWho ].Center = new Vector2(Main.spawnTileX, Main.spawnTileY - 1) * 16f;
 			}
 		}
 
@@ -142,7 +142,17 @@ namespace AdventureMode {
 		////////////////
 
 		public int GetRaftBarrelChestIndex() {
-			return Chest.FindChest( this.RaftBarrelTile.TileX, this.RaftBarrelTile.TileY );
+			int raftX = this.RaftBarrelTile.TileX - 1;
+			int raftY = this.RaftBarrelTile.TileY - 1;
+
+			for( int i=0; i<2; i++ ) {
+				for( int j=0; j<2; j++ ) {
+					int chestIdx = Chest.FindChest( raftX + i, raftY + j );
+					if( chestIdx != -1 ) { return chestIdx; }
+				}
+			}
+
+			return -1;
 		}
 	}
 }

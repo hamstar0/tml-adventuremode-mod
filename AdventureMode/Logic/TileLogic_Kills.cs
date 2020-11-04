@@ -11,13 +11,21 @@ using FindableManaCrystals.Tiles;
 
 namespace AdventureMode.Logic {
 	static partial class TileLogic {
-		private static void OnKillTile( int i, int j, int type, ref bool fail, ref bool effectOnly, ref bool noItem, bool nonGameplay ) {
+		private static void OnKillTile(
+					int i,
+					int j,
+					int type,
+					ref bool fail,
+					ref bool effectOnly,
+					ref bool noItem,
+					bool nonGameplay ) {
 			if( Main.gameMenu ) {
 				return;
 			}
 			if( noItem ) {
 				return;
 			}
+
 			if( nonGameplay ) {
 				noItem = type != TileID.Pots && type != TileID.Heart && type != ModContent.TileType<ManaCrystalShardTile>();
 				return;

@@ -12,6 +12,7 @@ Future considerations
 	-	Mark each expedition on the map
 	-	Add notes and 2 random ability accessories to each barrel
 	-	Find flat spots and generate tent, campfire, and barrel (10)
+-	@Add Weapon Exhaustion mod: Weapons have X uses before needing to be cleaned/sharpened/sown/hammered/oiled
 
 
 

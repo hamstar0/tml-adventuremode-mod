@@ -7,7 +7,7 @@ using Terraria.World.Generation;
 using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.Tiles;
 using MountedMagicMirrors.Tiles;
-using ReadableBooks.Items.ReadableBookItem;
+using ReadableBooks.Items.ReadableBook;
 
 
 namespace AdventureMode.WorldGeneration {
@@ -153,9 +153,7 @@ namespace AdventureMode.WorldGeneration {
 				i++;
 			}
 
-			chestItems[i] = new Item();
-			chestItems[i].SetDefaults( ModContent.ItemType<ReadableBookItem>(), true );
-			((ReadableBookItem)chestItems[i].modItem).SetTitleAndPages(
+			chestItems[i] = ReadableBookItem.CreateBook(
 				title: "Intro To Adventure Mode",
 				pages: AdventureModeWorldGen.GetIntroTextBookPages()
 			);
