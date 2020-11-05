@@ -111,7 +111,7 @@ namespace AdventureMode.Logic {
 		////////////////
 
 		private static void DrawPlatformTilePlacementOutline( float outlineIntensity ) {
-			int maxLength = AdventureModeConfig.Instance.MaxPlatformBridgeLength;
+			int maxLength = AMConfig.Instance.MaxPlatformBridgeLength;
 			int tileX = ( (int)Main.screenPosition.X + Main.mouseX ) >> 4;
 			int tileY = ( (int)Main.screenPosition.Y + Main.mouseY ) >> 4;
 
@@ -176,8 +176,8 @@ namespace AdventureMode.Logic {
 
 			int trace( int dirX, int dirY ) {
 				int max = dirY != 0
-					? AdventureModeConfig.Instance.MaxFramingPlankVerticalLength
-					: AdventureModeConfig.Instance.MaxFramingPlankHorizontalLength;
+					? AMConfig.Instance.MaxFramingPlankVerticalLength
+					: AMConfig.Instance.MaxFramingPlankHorizontalLength;
 
 				for( int i = 0; i < max; i++ ) {
 					if( isAnchor( tileX + ( i * dirX ), tileY + ( i * dirY ) ) ) {

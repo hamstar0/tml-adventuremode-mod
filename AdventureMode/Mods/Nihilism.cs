@@ -35,7 +35,7 @@ namespace AdventureMode.Mods {
 		////////////////
 
 		private void ApplyNihilismFilters() {
-			var config = AdventureModeConfig.Instance;
+			var config = AMConfig.Instance;
 
 			NihilismAPI.ClearFiltersForCurrentWorld( true );
 

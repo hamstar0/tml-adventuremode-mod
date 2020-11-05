@@ -8,7 +8,7 @@ using AdventureMode.Logic;
 
 
 namespace AdventureMode {
-	partial class AdventureModeMod : Mod {
+	partial class AMMod : Mod {
 		public override void ModifyInterfaceLayers( List<GameInterfaceLayer> layers ) {
 			int idx = layers.FindIndex( layer => layer.Name.Equals( "Vanilla: Inventory" ) );
 			if( idx != -1 ) {

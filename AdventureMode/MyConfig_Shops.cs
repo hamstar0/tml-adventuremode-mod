@@ -8,7 +8,7 @@ using PrefabKits.Items;
 
 
 namespace AdventureMode {
-	public partial class AdventureModeConfig : ModConfig {
+	public partial class AMConfig : ModConfig {
 		//[ReloadRequired]
 		public Dictionary<NPCDefinition, List<ItemDefinition>> ShopWhitelists { get; set; } = new Dictionary<NPCDefinition, List<ItemDefinition>> {
 			{

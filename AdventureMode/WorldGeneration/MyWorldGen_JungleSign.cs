@@ -8,7 +8,7 @@ using HamstarHelpers.Helpers.World;
 
 
 namespace AdventureMode.WorldGeneration {
-	partial class AdventureModeWorldGen {
+	partial class AMWorldGen {
 		public static bool GetJungleSignBaseCoordinates( out int tileX, out int tileY ) {
 			int checkColumn( int myTileX ) {
 				for( int myTileY=40; myTileY<WorldHelpers.DirtLayerTopTileY; myTileY++ ) {
@@ -59,7 +59,7 @@ namespace AdventureMode.WorldGeneration {
 
 		public static void PlaceJungleSign( GenerationProgress progress ) {
 			int left, top;
-			if( !AdventureModeWorldGen.GetJungleSignBaseCoordinates( out left, out top ) ) {
+			if( !AMWorldGen.GetJungleSignBaseCoordinates( out left, out top ) ) {
 				LogHelpers.Alert( "Could not find jungle." );
 				return;
 			}
@@ -94,7 +94,7 @@ namespace AdventureMode.WorldGeneration {
 				}
 			}
 
-			var myworld = ModContent.GetInstance<AdventureModeWorld>();
+			var myworld = ModContent.GetInstance<AMWorld>();
 			myworld.JungleSignTile = (left, top);
 
 			progress.Set( 1f );

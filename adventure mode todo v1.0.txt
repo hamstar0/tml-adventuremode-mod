@@ -40,9 +40,14 @@ v1
 	-	Fix Guide's false recipe reports?
 	-	Add "Adventure Mode" watermark to inventory backdrop
 	-	Cleanup Ankh sprite
-[v0.16.0]
--	@B&D: Climbing rope to replace regular ropes
+[v0.17.0]
+-	@Beta
 -	@Add Meet The Boss mod: Bosses can only be summoned (via. item) in designated areas
+[v0.16.0]
+-	@Beta
+-	@Test MP (EoW/BoC)
+-	@B&D: Climbing rope to replace regular ropes
+-	@Add Item Overuse mod: Items become temporarily locked if 'overused'
 -	@Findable Mana Crystals
 	-	Set Terrathyst to be destroyed only with magic burst attacks
 	-	If Powerful Magic, Terrain Remixer mod exist
@@ -50,9 +55,12 @@ v1
 -	@Powerful Magic
 	-	Add magic burst attack when unarmed
 [v0.15.0]
--	@Beta
--	@Test MP (EoW/BoC)
 -	Add 'extreme hills' to center of map
+-	Modify Smoke Bombs: Causes confusion to enemies and lightly repels them
+	-	Implement projectile neutralizing (within area only)
+	-	Implement enemy repellant behavior
+	-	Add recipe: Bomb, 
+	-	Remove from party girl's shop
 -	@Lore
 	-	Add failed expeditions to world gen (include lore notes, revolver quickloaders, and canopic jars)
 -	@Necrotis
@@ -73,6 +81,14 @@ v1
 	-	Barrel restocking
 	-	Test pre-aim mode
 	-	Re-test AM-only worlds and players
+-	@Necrotis
+	-	Fix 'anima' hover label
+-	@Prefab Kits
+	-	Add horizontal smoothing to rail sections between peaks
+	-	Verify floor space requirement for furnishing kit (cabins are too small?)
+-	F&T
+	-	Reduce rate of ectoplasm drops from pots
+	-	Ability items are not correctly disabling
 
 
 -	Set rope coil projectile to use less velocity

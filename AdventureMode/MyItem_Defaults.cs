@@ -9,17 +9,17 @@ using HamstarHelpers.Services.EntityGroups.Definitions;
 
 
 namespace AdventureMode {
-	partial class AdventureModeItem : GlobalItem {
+	partial class AMItem : GlobalItem {
 		public override void SetDefaults( Item item ) {
 			switch( item.type ) {
 			case ItemID.ReaverShark:
-				if( AdventureModeConfig.Instance.NerfReaverShark ) {
+				if( AMConfig.Instance.NerfReaverShark ) {
 					item.pick = 50;
 				}
 				break;
 			case ItemID.RocketBoots:
-				if( AdventureModeConfig.Instance.RocketBootsCost >= 0 ) {
-					item.value = AdventureModeConfig.Instance.RocketBootsCost;
+				if( AMConfig.Instance.RocketBootsCost >= 0 ) {
+					item.value = AMConfig.Instance.RocketBootsCost;
 				}
 				break;
 			case ItemID.LesserHealingPotion:

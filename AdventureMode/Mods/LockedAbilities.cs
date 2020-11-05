@@ -6,7 +6,7 @@ using LockedAbilities;
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
 		public void LoadLockedAbilities() {
-			var config = AdventureModeConfig.Instance;
+			var config = AMConfig.Instance;
 			var laConfig = LockedAbilitiesConfig.Instance;
 
 			if( config.WorldGenRemoveDarkHeartPieces ) {

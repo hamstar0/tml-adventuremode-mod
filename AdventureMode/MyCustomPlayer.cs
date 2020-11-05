@@ -10,14 +10,14 @@ using HamstarHelpers.Services.Timers;
 
 
 namespace AdventureMode {
-	class MyCustomPlayer : CustomPlayerData {
+	class AMCustomPlayer : CustomPlayerData {
 		protected override void OnEnter( bool isCurrentPlayer, object data ) {
 			if( !isCurrentPlayer ) {
 				return;
 			}
 
-			var myplayer = this.Player.GetModPlayer<AdventureModePlayer>();
-			var myworld = ModContent.GetInstance<AdventureModeWorld>();
+			var myplayer = this.Player.GetModPlayer<AMPlayer>();
+			var myworld = ModContent.GetInstance<AMWorld>();
 			bool isNotAdventurer = myplayer.IsAdventurer;
 			bool isNotAdventureWorld = myworld.IsCurrentWorldAdventure;
 

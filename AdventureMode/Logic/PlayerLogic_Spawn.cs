@@ -6,7 +6,7 @@ using Terraria.ID;
 
 namespace AdventureMode.Logic {
 	static partial class PlayerLogic {
-		public static void SetupStartInventory( AdventureModePlayer myplayer, IList<Item> items, bool mediumcoreDeath ) {
+		public static void SetupStartInventory( AMPlayer myplayer, IList<Item> items, bool mediumcoreDeath ) {
 			void addItem( int itemType, int stack ) {
 				var item = new Item();
 				item.SetDefaults( itemType );
@@ -18,7 +18,7 @@ namespace AdventureMode.Logic {
 				myplayer.IsAdventurer = true;
 
 				addItem( ItemID.WoodenHammer, 1 );
-				if( !AdventureModeConfig.Instance.EnableTorchRecipes ) {
+				if( !AMConfig.Instance.EnableTorchRecipes ) {
 					addItem( ItemID.Torch, 10 );
 				}
 				addItem( ItemID.RopeCoil, 20 );

@@ -1,6 +1,6 @@
 displayName = Adventure Mode
 author = hamstar
-version = 0.13.5
+version = 0.13.6
 modReferences = HamstarHelpers@5.9.5, AdventureModeLore@0.3.1, Objectives@0.4.0, Bullwhip@1.1.1, TheMadRanger@1.4.0, FindableManaCrystals@1.1.0, PrefabKits@1.1.0, PowerfulMagic@1.5.3, MountedMagicMirrors@1.1.5, Orbs@1.2.0, Necrotis@1.4.0, Enraged@0.7.0, LockedAbilities@1.2.0, TheTrickster@1.2.1, GreenHell@0.4.0, ReadableBooks@1.1.0, ChestImplants@1.1.2, TerrainRemixer@0.9.0, Nihilism@3.2.0
 buildIgnore = *.csproj, *.user, *.bat, obj\*, bin\*, .vs\*, .git\*
 homepage = https://forums.terraria.org/index.php?threads/adventure-mode.85140/

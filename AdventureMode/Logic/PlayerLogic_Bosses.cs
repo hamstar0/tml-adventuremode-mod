@@ -7,8 +7,8 @@ using Terraria.ID;
 
 namespace AdventureMode.Logic {
 	static partial class PlayerLogic {
-		public static void UpdateDeadDuringBoss( AdventureModePlayer myplayer ) {
-			if( !AdventureModeConfig.Instance.RespawnBlockedDuringBosses ) {
+		public static void UpdateDeadDuringBoss( AMPlayer myplayer ) {
+			if( !AMConfig.Instance.RespawnBlockedDuringBosses ) {
 				return;
 			}
 

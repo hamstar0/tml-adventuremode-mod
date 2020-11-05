@@ -11,7 +11,7 @@ using ReadableBooks.Items.ReadableBook;
 
 
 namespace AdventureMode.WorldGeneration {
-	partial class AdventureModeWorldGen {
+	partial class AMWorldGen {
 		private static int[][] RaftImageWalls = new int[][] {
 			new int[] {  },
 			new int[] { 0,      0,      148,    148,    148 },
@@ -55,26 +55,26 @@ namespace AdventureMode.WorldGeneration {
 				tile = Framing.GetTileSafely( boatLeft, ++boatTop ) ) {
 			}
 
-			boatTop -= AdventureModeWorldGen.RaftImageTiles.Length - 1;
+			boatTop -= AMWorldGen.RaftImageTiles.Length - 1;
 		}
 
 		////////////////
 
-		public static void PlaceRaft( AdventureModeWorld myworld, GenerationProgress progress ) {
+		public static void PlaceRaft( AMWorld myworld, GenerationProgress progress ) {
 			int boatLeft, boatTop;
-			AdventureModeWorldGen.GetBoatCoordinates( out boatLeft, out boatTop );
+			AMWorldGen.GetBoatCoordinates( out boatLeft, out boatTop );
 
-			AdventureModeWorldGen.PlaceTiles( myworld, progress, 0.25f, boatLeft, boatTop, AdventureModeWorldGen.RaftImageTiles );
-			AdventureModeWorldGen.PlaceWalls( myworld, progress, 0.25f, boatLeft, boatTop, AdventureModeWorldGen.RaftImageWalls );
-			AdventureModeWorldGen.PlaceTiles( myworld, progress, 0.25f, boatLeft, boatTop, AdventureModeWorldGen.RaftImageTiles );
-			AdventureModeWorldGen.ProcessTiles( myworld, progress, 0.25f, boatLeft, boatTop, AdventureModeWorldGen.RaftImageTiles );
+			AMWorldGen.PlaceTiles( myworld, progress, 0.25f, boatLeft, boatTop, AMWorldGen.RaftImageTiles );
+			AMWorldGen.PlaceWalls( myworld, progress, 0.25f, boatLeft, boatTop, AMWorldGen.RaftImageWalls );
+			AMWorldGen.PlaceTiles( myworld, progress, 0.25f, boatLeft, boatTop, AMWorldGen.RaftImageTiles );
+			AMWorldGen.ProcessTiles( myworld, progress, 0.25f, boatLeft, boatTop, AMWorldGen.RaftImageTiles );
 		}
 
 
 		////
 
 		public static void PlaceTiles(
-					AdventureModeWorld myworld,
+					AMWorld myworld,
 					GenerationProgress progress,
 					float progressStep,
 					int left,
@@ -89,7 +89,7 @@ namespace AdventureMode.WorldGeneration {
 					if( tiles[y][x] > 0 ) {
 						switch( tiles[y][x] ) {
 						case TileID.Containers:
-							AdventureModeWorldGen.PlaceStarterBarrel( myworld, left + x, top + y );
+							AMWorldGen.PlaceStarterBarrel( myworld, left + x, top + y );
 							break;
 						case TileID.Cog:
 							WorldGen.PlaceTile( left + x, top + y, tiles[y][x] );
@@ -116,7 +116,7 @@ namespace AdventureMode.WorldGeneration {
 		}
 
 		public static void ProcessTiles(
-					AdventureModeWorld myworld, 
+					AMWorld myworld, 
 					GenerationProgress progress,
 					float progressStep,
 					int left,
@@ -139,7 +139,7 @@ namespace AdventureMode.WorldGeneration {
 			}
 		}
 
-		public static void PlaceStarterBarrel( AdventureModeWorld myworld, int x, int y ) {
+		public static void PlaceStarterBarrel( AMWorld myworld, int x, int y ) {
 			int chestIdx = WorldGen.PlaceChest( x, y, TileID.Containers, false, 5 );
 			if( chestIdx == -1 ) {
 				return; // this occurs on the first pass
@@ -148,21 +148,21 @@ namespace AdventureMode.WorldGeneration {
 			int i = 0;
 			Item[] chestItems = Main.chest[chestIdx].item;
 
-			foreach( ItemQuantityDefinition def in AdventureModeConfig.Instance.RaftBarrelContents ) {
+			foreach( ItemQuantityDefinition def in AMConfig.Instance.RaftBarrelContents ) {
 				chestItems[i] = def.GetItem();
 				i++;
 			}
 
 			chestItems[i] = ReadableBookItem.CreateBook(
 				title: "Intro To Adventure Mode",
-				pages: AdventureModeWorldGen.GetIntroTextBookPages()
+				pages: AMWorldGen.GetIntroTextBookPages()
 			);
 
 			myworld.RaftBarrelTile = (x, y);
 		}
 
 		public static void PlaceWalls(
-					AdventureModeWorld myworld, 
+					AMWorld myworld, 
 					GenerationProgress progress,
 					float progressStep,
 					int left,
@@ -203,11 +203,11 @@ namespace AdventureMode.WorldGeneration {
 				"- Do not whip the slimes!",
 			};
 
-			if( AdventureModeConfig.Instance.RemoveRecipeTileRequirements ) {
+			if( AMConfig.Instance.RemoveRecipeTileRequirements ) {
 				texts[2] = "- Use house kits to create NPC houses, beds, storage, and fast travel points.";
 				texts.RemoveAt( 3 );
 			}
-			if( !AdventureModeConfig.Instance.EnableAlchemyRecipes ) {
+			if( !AMConfig.Instance.EnableAlchemyRecipes ) {
 				texts.Insert( 2, "- Alchemy and non-equipment recipes disabled." );
 			}
 
@@ -215,7 +215,7 @@ namespace AdventureMode.WorldGeneration {
 		}
 
 		public static string[] GetIntroTextBookPages() {
-			IList<string> rawPages = AdventureModeWorldGen.GetIntroTextLines();
+			IList<string> rawPages = AMWorldGen.GetIntroTextLines();
 			string[] pages = new string[rawPages.Count / 3];
 
 			for( int j = 0; j < pages.Length; j++ ) {

@@ -51,7 +51,7 @@ namespace AdventureMode.Logic {
 			}
 
 			UnifiedRandom rand = TmlHelpers.SafelyGetRand();
-			if( rand.NextFloat() >= AdventureModeConfig.Instance.PotSurprisePercentChance ) {
+			if( rand.NextFloat() >= AMConfig.Instance.PotSurprisePercentChance ) {
 				return;
 			}
 

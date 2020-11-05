@@ -11,7 +11,7 @@ using HamstarHelpers.Services.Timers;
 namespace AdventureMode.Logic {
 	static partial class WorldLogic {
 		public static void LoadRaftRestockInfo( TagCompound tag ) {
-			var myworld = ModContent.GetInstance<AdventureModeWorld>();
+			var myworld = ModContent.GetInstance<AMWorld>();
 			if( !tag.ContainsKey("raft_x") ) {
 				LogHelpers.Alert( "World has no raft barrel." );
 				return;
@@ -31,12 +31,12 @@ namespace AdventureMode.Logic {
 					Main.NewText( "No barrel to restock.", Color.Yellow );
 				}
 
-				return AdventureModeConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
+				return AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
 			} );
 		}
 
 		public static void SaveRaftRestockInfo( TagCompound tag ) {
-			var myworld = ModContent.GetInstance<AdventureModeWorld>();
+			var myworld = ModContent.GetInstance<AMWorld>();
 			int restockTicks = Timers.GetTimerTickDuration( "AdventureModeRaftRestock" );
 
 			tag["raft_x"] = myworld.RaftBarrelTile.TileX;
@@ -48,12 +48,12 @@ namespace AdventureMode.Logic {
 		////////////////
 
 		public static bool RestockRaft() {
-			var config = AdventureModeConfig.Instance;
+			var config = AMConfig.Instance;
 			int optionCount = config.RaftBarrelRestockSelection.Count;
 			ItemQuantityDefinition def = config.RaftBarrelRestockSelection[ Main.rand.Next(optionCount) ];
 			Item newItem = def.GetItem();
 
-			var myworld = ModContent.GetInstance<AdventureModeWorld>();
+			var myworld = ModContent.GetInstance<AMWorld>();
 			int chestIdx = myworld.GetRaftBarrelChestIndex();
 			if( chestIdx == -1 ) {
 				LogHelpers.Alert( "No raft barrel found." );

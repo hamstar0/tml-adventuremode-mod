@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace AdventureMode.Recipes {
 	class RodOfDiscordRecipe : ModRecipe {
-		public RodOfDiscordRecipe( bool isAlt ) : base( AdventureModeMod.Instance ) {
+		public RodOfDiscordRecipe( bool isAlt ) : base( AMMod.Instance ) {
 			this.AddIngredient( ItemID.SoulofLight, 10 );
 			this.AddIngredient( ItemID.SoulofNight, 10 );
 			this.AddIngredient( ItemID.TeleportationPotion, 10 );
@@ -23,7 +23,7 @@ namespace AdventureMode.Recipes {
 
 
 		public override bool RecipeAvailable() {
-			return AdventureModeConfig.Instance.AddRodOfDiscordRecipe;
+			return AMConfig.Instance.AddRodOfDiscordRecipe;
 		}
 	}
 }

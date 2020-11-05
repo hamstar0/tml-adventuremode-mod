@@ -9,7 +9,7 @@ namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
 		private void LoadLoreAndObjectives_BoundMechanic( bool isNew, bool isDone ) {
 			if( isNew && !isDone && !NPC.savedMech ) {
-				var myworld = ModContent.GetInstance<AdventureModeWorld>();
+				var myworld = ModContent.GetInstance<AMWorld>();
 
 				Main.instance.LoadNPC( NPCID.BoundMechanic );
 

@@ -31,7 +31,7 @@ namespace AdventureMode.Logic {
 				if( tile.type == ModContent.TileType<FramingPlankTile>() ) {
 					return true;
 				}
-				return !AdventureModeConfig.Instance.GrappleOnlyWoodAndPlatforms;
+				return !AMConfig.Instance.GrappleOnlyWoodAndPlatforms;
 			}
 		}
 
@@ -40,7 +40,7 @@ namespace AdventureMode.Logic {
 		////////////////
 
 		public static void UpdateForGrapple( Projectile projectile ) {
-			if( AdventureModeConfig.Instance.GrappleOnlyWoodAndPlatforms ) {
+			if( AMConfig.Instance.GrappleOnlyWoodAndPlatforms ) {
 				ProjectileLogic.AdjustGrappleAttachState( projectile );
 			}
 		}

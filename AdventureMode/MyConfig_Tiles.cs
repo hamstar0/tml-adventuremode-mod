@@ -34,7 +34,7 @@ namespace AdventureMode {
 
 
 
-	public partial class AdventureModeConfig : ModConfig {
+	public partial class AMConfig : ModConfig {
 		public List<string> TilePlaceWhitelist { get; set; } = new List<string> {
 			//
 			TileID.GetUniqueKey( TileID.Rope ),

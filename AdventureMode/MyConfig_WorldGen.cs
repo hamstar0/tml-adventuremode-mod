@@ -4,7 +4,7 @@ using Terraria.ModLoader.Config;
 
 
 namespace AdventureMode {
-	public partial class AdventureModeConfig : ModConfig {
+	public partial class AMConfig : ModConfig {
 		[DefaultValue( true )]
 		[ReloadRequired]
 		public bool SetDefaultSpawnToBeach { get; set; } = true;

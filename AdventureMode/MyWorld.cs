@@ -14,7 +14,7 @@ using AdventureMode.WorldGeneration;
 
 
 namespace AdventureMode {
-	public class AdventureModeWorld : ModWorld {
+	public class AMWorld : ModWorld {
 		public bool IsCurrentWorldAdventure { get; internal set; } = false;
 
 		public int HouseKitFurnitureIdx { get; internal set; } = 0;
@@ -100,31 +100,31 @@ namespace AdventureMode {
 			int idx = tasks.FindIndex( pass => pass.Name.Equals("Grass Wall") );
 
 			if( idx != -1 ) {
-				if( AdventureModeConfig.Instance.SetDefaultSpawnToBeach ) {
+				if( AMConfig.Instance.SetDefaultSpawnToBeach ) {
 					tasks.Insert( idx + 1, new PassLegacy( "Adventure Mode: Set Default Spawn", ( progress ) => {
-						AdventureModeWorldGen.SetBeachSpawn( progress );
+						AMWorldGen.SetBeachSpawn( progress );
 						progress.Value = 1f;
 					} ) );
 				}
 			}
 			
 			tasks.Add( new PassLegacy( "Adventure Mode: Create Spawn Boat", ( progress ) => {
-				AdventureModeWorldGen.PlaceRaft( this, progress );
+				AMWorldGen.PlaceRaft( this, progress );
 				progress.Value = 1f;
 			} ) );
 
 			tasks.Add( new PassLegacy( "Adventure Mode: Create Jungle Sign", ( progress ) => {
-				AdventureModeWorldGen.PlaceJungleSign( progress );
+				AMWorldGen.PlaceJungleSign( progress );
 				progress.Value = 1f;
 			} ) );
 
 			tasks.Add( new PassLegacy( "Adventure Mode: Underground Desert Scan", ( progress ) => {
-				AdventureModeWorldGen.ScanUndergroundDesert( progress );
+				AMWorldGen.ScanUndergroundDesert( progress );
 				progress.Value = 1f;
 			} ) );
 
 			tasks.Add( new PassLegacy( "Adventure Mode: Dungeon Scan", ( progress ) => {
-				AdventureModeWorldGen.ScanDungeon( progress );
+				AMWorldGen.ScanDungeon( progress );
 				progress.Value = 1f;
 			} ) );
 		}

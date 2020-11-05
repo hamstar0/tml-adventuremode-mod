@@ -12,8 +12,8 @@ namespace AdventureMode {
 
 
 
-	public partial class AdventureModeConfig : ModConfig {
-		public static AdventureModeConfig Instance => ModContent.GetInstance<AdventureModeConfig>();
+	public partial class AMConfig : ModConfig {
+		public static AMConfig Instance => ModContent.GetInstance<AMConfig>();
 
 
 

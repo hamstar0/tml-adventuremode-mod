@@ -18,7 +18,7 @@ namespace AdventureMode.Logic {
 		////////////////
 
 		public static void RemoveTileRequirements() {
-			if( !AdventureModeConfig.Instance.RemoveRecipeTileRequirements ) {
+			if( !AMConfig.Instance.RemoveRecipeTileRequirements ) {
 				return;
 			}
 

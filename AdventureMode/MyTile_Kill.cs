@@ -22,6 +22,6 @@ namespace AdventureMode {
 
 
 
-	partial class AdventureModeTile : GlobalTile {
-	}
+	//partial class AMTile : GlobalTile {
+	//}
 }

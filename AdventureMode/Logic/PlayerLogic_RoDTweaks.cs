@@ -5,8 +5,8 @@ using Terraria.ID;
 
 namespace AdventureMode.Logic {
 	static partial class PlayerLogic {
-		public static bool UpdateRodOfDiscordUse( AdventureModePlayer myplayer ) {
-			if( !AdventureModeConfig.Instance.RodOfDiscordChaosStateBlocksBlink ) {
+		public static bool UpdateRodOfDiscordUse( AMPlayer myplayer ) {
+			if( !AMConfig.Instance.RodOfDiscordChaosStateBlocksBlink ) {
 				return true;
 			}
 
@@ -26,7 +26,7 @@ namespace AdventureMode.Logic {
 						PlayerHelpers.RawHurt( this.player, reason, dmg, 0 );
 					}*/
 
-					myplayer.player.AddBuff( BuffID.ChaosState, AdventureModeConfig.Instance.AddedRodOfDiscordChaosStateTime );
+					myplayer.player.AddBuff( BuffID.ChaosState, AMConfig.Instance.AddedRodOfDiscordChaosStateTime );
 				}
 			} else {
 				myplayer.IsChaosStateChecked = false;

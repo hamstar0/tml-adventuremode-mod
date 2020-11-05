@@ -11,7 +11,7 @@ using System.Collections.Generic;
 
 
 namespace AdventureMode.WorldGeneration {
-	partial class AdventureModeWorldGen {
+	partial class AMWorldGen {
 		public static void ScanUndergroundDesert( GenerationProgress progress ) {
 			Rectangle? bounds = TileFinderHelpers.FindBoxForAllOf(
 				pattern: new TilePattern( new TilePatternBuilder {
@@ -19,7 +19,7 @@ namespace AdventureMode.WorldGeneration {
 				} )
 			);
 
-			var myworld = ModContent.GetInstance<AdventureModeWorld>();
+			var myworld = ModContent.GetInstance<AMWorld>();
 			myworld.UndergroundDesertBounds = bounds.Value;
 
 			progress.Set( 1f );

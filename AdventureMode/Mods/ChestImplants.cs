@@ -36,10 +36,10 @@ namespace AdventureMode.Mods {
 
 			//
 
-			if( !AdventureModeConfig.Instance.EnableAlchemyRecipes ) {
+			if( !AMConfig.Instance.EnableAlchemyRecipes ) {
 				addItemImplanter( ItemID.Bottle, -1 );
 			}
-			if( AdventureModeConfig.Instance.WorldGenRemoveMagicMirrors ) {
+			if( AMConfig.Instance.WorldGenRemoveMagicMirrors ) {
 				addItemImplanter( ItemID.MagicMirror, -1 );
 				addItemImplanter( ItemID.IceMirror, -1 );
 			}
@@ -48,11 +48,11 @@ namespace AdventureMode.Mods {
 			addItemImplanter( ItemID.LivingMahoganyWand, -1 );
 			addItemImplanter( ItemID.LivingMahoganyLeafWand, -1 );
 
-			if( AdventureModeConfig.Instance.WorldGenAddedMountedMagicMirrorChance > 0f ) {
+			if( AMConfig.Instance.WorldGenAddedMountedMagicMirrorChance > 0f ) {
 				addItemImplanter(
 					ModContent.ItemType<MountableMagicMirrorTileItem>(),
 					1,
-					AdventureModeConfig.Instance.WorldGenAddedMountedMagicMirrorChance
+					AMConfig.Instance.WorldGenAddedMountedMagicMirrorChance
 				);
 			}
 

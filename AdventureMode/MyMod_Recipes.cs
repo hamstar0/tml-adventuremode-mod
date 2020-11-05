@@ -6,7 +6,7 @@ using AdventureMode.Logic;
 
 
 namespace AdventureMode {
-	partial class AdventureModeMod : Mod {
+	partial class AMMod : Mod {
 		public override void AddRecipes() {
 			RecipeLogic.AddRoDRecipes();
 		}

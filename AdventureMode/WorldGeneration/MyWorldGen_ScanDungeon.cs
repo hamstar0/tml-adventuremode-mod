@@ -12,7 +12,7 @@ using HamstarHelpers.Helpers.Tiles;
 
 
 namespace AdventureMode.WorldGeneration {
-	partial class AdventureModeWorldGen {
+	partial class AMWorldGen {
 		public static void ScanDungeon( GenerationProgress progress ) {
 			var pattern = new TilePattern( new TilePatternBuilder {
 				IsActive = true,
@@ -24,8 +24,8 @@ namespace AdventureMode.WorldGeneration {
 			} );
 			Rectangle? bounds = TileFinderHelpers.FindBoxForAllOf( pattern: pattern );
 
-			var myworld = ModContent.GetInstance<AdventureModeWorld>();
-			(int, int)? point = AdventureModeWorldGen.ScanForDungeonBottom( bounds.Value, out int scanCount );
+			var myworld = ModContent.GetInstance<AMWorld>();
+			(int, int)? point = AMWorldGen.ScanForDungeonBottom( bounds.Value, out int scanCount );
 			if( !point.HasValue ) {
 				throw new ModHelpersException( "Could not locate viable bottom point within the dungeon "
 					+"(scanned "+scanCount+" tiles within "+bounds.Value+")." );

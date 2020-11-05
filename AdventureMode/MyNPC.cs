@@ -4,12 +4,12 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using HamstarHelpers.Helpers.Debug;
-using AdventureMode.Logic;
 using HamstarHelpers.Services.Timers;
+using AdventureMode.Logic;
 
 
 namespace AdventureMode {
-	partial class AdventureModeNPC : GlobalNPC {
+	partial class AMNPC : GlobalNPC {
 		public override bool CloneNewInstances => false;
 		public override bool InstancePerEntity => true;
 

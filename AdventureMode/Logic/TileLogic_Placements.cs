@@ -8,7 +8,7 @@ using AdventureMode.Tiles;
 namespace AdventureMode.Logic {
 	static partial class TileLogic {
 		public static bool IsSuitableForPlatform( int tileX, int tileY, int dirX ) {
-			int max = AdventureModeConfig.Instance.MaxPlatformBridgeLength;
+			int max = AMConfig.Instance.MaxPlatformBridgeLength;
 			if( max < 0 ) {
 				return true;
 			}
@@ -75,7 +75,7 @@ namespace AdventureMode.Logic {
 			}
 
 			bool foundGap = false;
-			int maxGapCheck = AdventureModeConfig.Instance.MaxTrackGapPatchWidth;
+			int maxGapCheck = AMConfig.Instance.MaxTrackGapPatchWidth;
 			if( maxGapCheck == -1 ) {
 				return true;
 			}
@@ -113,8 +113,8 @@ namespace AdventureMode.Logic {
 
 		public static bool IsSuitableForFramingPlank( int tileX, int tileY, int dirX, int dirY ) {
 			int max = dirY != 0
-				? AdventureModeConfig.Instance.MaxFramingPlankVerticalLength
-				: AdventureModeConfig.Instance.MaxFramingPlankHorizontalLength;
+				? AMConfig.Instance.MaxFramingPlankVerticalLength
+				: AMConfig.Instance.MaxFramingPlankHorizontalLength;
 			if( max < 0 ) {
 				return true;
 			}
@@ -161,7 +161,7 @@ namespace AdventureMode.Logic {
 		}
 
 		public static bool CanPlaceOther( int i, int j, int type ) {
-			if( AdventureModeConfig.Instance.TilePlaceWhitelist.Contains( TileID.GetUniqueKey( type ) ) ) {
+			if( AMConfig.Instance.TilePlaceWhitelist.Contains( TileID.GetUniqueKey( type ) ) ) {
 				return true;
 			}
 

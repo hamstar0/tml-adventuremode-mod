@@ -8,7 +8,7 @@ using AdventureMode.Tiles;
 
 
 namespace AdventureMode {
-	partial class AdventureModeTile : GlobalTile {
+	partial class AMTile : GlobalTile {
 		public override bool CanPlace( int i, int j, int type ) {
 			// World gen?
 			if( Main.gameMenu || !LoadHelpers.IsCurrentPlayerInGame() ) {

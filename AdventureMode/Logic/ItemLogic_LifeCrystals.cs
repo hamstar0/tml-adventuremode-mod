@@ -5,7 +5,7 @@ using Terraria;
 namespace AdventureMode.Logic {
 	static partial class ItemLogic {
 		public static void OnLifeCrystalConsume( Player player ) {
-			if( AdventureModeConfig.Instance.ReducedLifeCrystalStatIncrease ) {
+			if( AMConfig.Instance.ReducedLifeCrystalStatIncrease ) {
 				player.statLifeMax -= 10;
 				ItemLogic.ModifyLifeCrystalPopupText();
 			}

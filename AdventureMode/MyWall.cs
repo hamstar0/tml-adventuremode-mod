@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 
 namespace AdventureMode {
-	class AdventureModeWall : GlobalWall {
+	class AMWall : GlobalWall {
 		/*public override void KillWall( int i, int j, int type, ref bool fail ) {
 			if( !Main.gameMenu ) {
 				fail = true;	//!nonGameplay

@@ -7,7 +7,7 @@ using AdventureMode.Logic;
 
 
 namespace AdventureMode {
-	partial class AdventureModePlayer : ModPlayer {
+	partial class AMPlayer : ModPlayer {
 		public override void PreUpdate() {
 /*int guide = NPC.FindFirstNPC( NPCID.Guide );
 if( guide != -1 ) {

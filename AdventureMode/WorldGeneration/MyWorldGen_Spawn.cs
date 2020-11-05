@@ -6,7 +6,7 @@ using HamstarHelpers.Helpers.World;
 
 
 namespace AdventureMode.WorldGeneration {
-	partial class AdventureModeWorldGen {
+	partial class AMWorldGen {
 		private static void SetSpawn( int x, int y ) {
 			LogHelpers.Alert( "Spawn relocated to " + x + ", " + y );
 			Main.spawnTileX = x;
@@ -26,7 +26,7 @@ namespace AdventureMode.WorldGeneration {
 						break;
 					}
 
-					AdventureModeWorldGen.SetSpawn( x, y - 2 );
+					AMWorldGen.SetSpawn( x, y - 2 );
 					return true;
 				}
 				return false;

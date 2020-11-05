@@ -9,7 +9,7 @@ namespace AdventureMode.Logic {
 			int dangBuffIds = player.FindBuffIndex( BuffID.Dangersense );
 
 			if( dangBuffIds != -1 ) {
-				int maxDuration = AdventureModeConfig.Instance.MaximumDangersenseBuffDuration;
+				int maxDuration = AMConfig.Instance.MaximumDangersenseBuffDuration;
 
 				if( player.buffTime[dangBuffIds] > maxDuration ) {
 					player.buffTime[dangBuffIds] = maxDuration;

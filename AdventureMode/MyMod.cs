@@ -7,14 +7,14 @@ using HamstarHelpers.Services.EntityGroups;
 
 
 namespace AdventureMode {
-	partial class AdventureModeMod : Mod {
+	partial class AMMod : Mod {
 		public static string GithubUserName => "hamstar0";
 		public static string GithubProjectName => "tml-adventuremode-mod";
 
 
 		////////////////
 
-		public static AdventureModeMod Instance { get; private set; }
+		public static AMMod Instance { get; private set; }
 
 
 
@@ -26,8 +26,8 @@ namespace AdventureMode {
 
 		////////////////
 
-		public AdventureModeMod() {
-			AdventureModeMod.Instance = this;
+		public AMMod() {
+			AMMod.Instance = this;
 		}
 
 		////////////////
@@ -49,7 +49,7 @@ namespace AdventureMode {
 		////
 
 		public override void Unload() {
-			AdventureModeMod.Instance = null;
+			AMMod.Instance = null;
 		}
 
 

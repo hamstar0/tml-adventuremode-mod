@@ -8,7 +8,7 @@ using AdventureMode.Logic;
 
 
 namespace AdventureMode {
-	partial class AdventureModeItem : GlobalItem {
+	partial class AMItem : GlobalItem {
 		public override bool OnPickup( Item item, Player player ) {
 			if( ItemAttributeHelpers.IsGrapple(item) ) {
 				InboxMessages.SetMessage(

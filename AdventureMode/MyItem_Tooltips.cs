@@ -8,14 +8,14 @@ using MountedMagicMirrors.Items;
 
 
 namespace AdventureMode {
-	partial class AdventureModeItem : GlobalItem {
+	partial class AMItem : GlobalItem {
 		public override void ModifyTooltips( Item item, List<TooltipLine> tooltips ) {
-			AdventureModeConfig config = AdventureModeConfig.Instance;
+			AMConfig config = AMConfig.Instance;
 			TooltipLine tip;
 
 			switch( item.type ) {
 			case ItemID.WoodPlatform:
-				if( AdventureModeConfig.Instance.MaxPlatformBridgeLength > 0 ) {
+				if( AMConfig.Instance.MaxPlatformBridgeLength > 0 ) {
 					tip = new TooltipLine( this.mod, "AdventureModePlatform", "Only placeable in short ledges attached to something solid" );
 					ItemInformationAttributeHelpers.ApplyTooltipAt( tooltips, tip );
 				}
@@ -47,7 +47,7 @@ namespace AdventureMode {
 					tip = new TooltipLine( this.mod, "AdventureModeMMM", "May be placed once, but NOT removed!" );
 					ItemInformationAttributeHelpers.ApplyTooltipAt( tooltips, tip );
 				}
-				if( ItemAttributeHelpers.IsGrapple(item) && AdventureModeConfig.Instance.GrappleOnlyWoodAndPlatforms ) {
+				if( ItemAttributeHelpers.IsGrapple(item) && AMConfig.Instance.GrappleOnlyWoodAndPlatforms ) {
 					tip = new TooltipLine( this.mod, "AdventureModeGrapple", "Only works on wood and platforms" );
 					ItemInformationAttributeHelpers.ApplyTooltipAt( tooltips, tip );
 				}

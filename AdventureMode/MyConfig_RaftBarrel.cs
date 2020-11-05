@@ -39,10 +39,10 @@ namespace AdventureMode {
 
 
 
-	public partial class AdventureModeConfig : ModConfig {
+	public partial class AMConfig : ModConfig {
 		public List<ItemQuantityDefinition> RaftBarrelContents { get; set; } = new List<ItemQuantityDefinition> {
-			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.Wood), 25 ),
-			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.WoodPlatform), 25 ),
+			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.Wood), 50 ),
+			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.WoodPlatform), 50 ),
 			new ItemQuantityDefinition( nameof(AdventureMode), nameof(FramingPlankItem), 50 ),
 			new ItemQuantityDefinition( nameof(PrefabKits), nameof(HouseFurnishingKitItem) ),
 			new ItemQuantityDefinition( nameof(PrefabKits), nameof(HouseFurnishingKitItem) ),
@@ -59,14 +59,19 @@ namespace AdventureMode {
 
 		public List<ItemQuantityDefinition> RaftBarrelRestockSelection { get; set; } = new List<ItemQuantityDefinition> {
 			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.Wood), 25 ),
+			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.Wood), 25 ),
+			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.WoodPlatform), 25 ),
 			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.WoodPlatform), 25 ),
 			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.Rope), 50 ),
+			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.Rope), 50 ),
 			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.Torch), 25 ),
+			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.Torch), 25 ),
+			new ItemQuantityDefinition( nameof(AdventureMode), nameof(FramingPlankItem), 25 ),
 			new ItemQuantityDefinition( nameof(AdventureMode), nameof(FramingPlankItem), 25 ),
 			new ItemQuantityDefinition( nameof(PrefabKits), nameof(HouseFurnishingKitItem), 1 ),
 			new ItemQuantityDefinition( nameof(PrefabKits), nameof(HouseFramingKitItem), 1 ),
 			new ItemQuantityDefinition( nameof(MountedMagicMirrors), nameof(MountableMagicMirrorTileItem), 1 ),
-			new ItemQuantityDefinition( nameof(PrefabKits), nameof(TrackDeploymentKitItem), 3 )
+			new ItemQuantityDefinition( nameof(PrefabKits), nameof(TrackDeploymentKitItem), 2 )
 		};
 	}
 }

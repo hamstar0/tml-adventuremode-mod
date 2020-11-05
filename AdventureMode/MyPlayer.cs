@@ -8,7 +8,7 @@ using AdventureMode.Logic;
 
 
 namespace AdventureMode {
-	partial class AdventureModePlayer : ModPlayer {
+	partial class AMPlayer : ModPlayer {
 		internal bool IsAlertedToBossesWhileDead = false;
 		internal bool IsChaosStateChecked = false;
 
