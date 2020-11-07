@@ -25,6 +25,10 @@ namespace AdventureMode.Logic {
 			int timer = tag.GetInt( "raft_restock_timer" );
 
 			Timers.SetTimer( "AdventureModeRaftRestock", timer, false, () => {
+				if( Main.gameMenu && !Main.dedServ && Main.netMode != NetmodeID.Server ) {
+					return 0;
+				}
+
 				if( WorldLogic.RestockRaft() ) {
 					Main.NewText( "Raft barrel restocked.", Color.Lime );
 				} else {

@@ -16,10 +16,11 @@ namespace AdventureMode {
 				return;
 			}
 
+			var config = AMConfig.Instance;
 			var myplayer = this.Player.GetModPlayer<AMPlayer>();
 			var myworld = ModContent.GetInstance<AMWorld>();
-			bool isNotAdventurer = myplayer.IsAdventurer;
-			bool isNotAdventureWorld = myworld.IsCurrentWorldAdventure;
+			bool isNotAdventurer = myplayer.IsAdventurer || config.DebugModeSkipPlayerValidityCheck;
+			bool isNotAdventureWorld = myworld.IsCurrentWorldAdventure || config.DebugModeSkipWorldValidityCheck;
 
 			if( !isNotAdventurer ) {
 				Main.NewText( "Your character is not initialized for Adventure Mode. Exiting to menu in 15 seconds...", Color.Yellow );

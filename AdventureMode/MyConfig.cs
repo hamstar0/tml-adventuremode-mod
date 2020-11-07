@@ -26,6 +26,11 @@ namespace AdventureMode {
 
 		public bool DebugModeInfo { get; set; } = false;
 
+		public bool DebugModeSkipPlayerValidityCheck { get; set; } = false;
+
+		public bool DebugModeSkipWorldValidityCheck { get; set; } = false;
+
+
 		////
 
 		[DefaultValue( true )]

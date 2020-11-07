@@ -35,7 +35,7 @@ namespace AdventureMode.Logic {
 						return isActive;
 					}, false );
 
-					projectile.velocity *= 0.5f;
+					projectile.velocity *= 0.65f;
 				}
 				break;
 			}

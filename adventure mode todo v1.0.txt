@@ -46,21 +46,15 @@ v1
 [v0.16.0]
 -	@Beta
 -	@Test MP (EoW/BoC)
--	@B&D: Climbing rope to replace regular ropes
--	@Add Item Overuse mod: Items become temporarily locked if 'overused'
 -	@Findable Mana Crystals
 	-	Set Terrathyst to be destroyed only with magic burst attacks
 	-	If Powerful Magic, Terrain Remixer mod exist
 		-	Add Terrathyst veins to world gen (via. Terrain Remixer)
 -	@Powerful Magic
 	-	Add magic burst attack when unarmed
+-	@Add Item Overuse mod: Items become temporarily locked if 'overused'
 [v0.15.0]
 -	Add 'extreme hills' to center of map
--	Modify Smoke Bombs: Causes confusion to enemies and lightly repels them
-	-	Implement projectile neutralizing (within area only)
-	-	Implement enemy repellant behavior
-	-	Add recipe: Bomb, 
-	-	Remove from party girl's shop
 -	@Lore
 	-	Add failed expeditions to world gen (include lore notes, revolver quickloaders, and canopic jars)
 -	@Necrotis
@@ -75,22 +69,31 @@ v1
 	-	Trickster defeats on map
 	-	Verdant Blessing
 	-	Infection, Parasites
+
+
 	-	Whip getting items inside walls
-...
 	-	Removed ability items
 	-	Barrel restocking
 	-	Test pre-aim mode
 	-	Re-test AM-only worlds and players
--	@Necrotis
-	-	Fix 'anima' hover label
+-	Add debug settings to disable world or player 'AM mode' checks
+-	F&T
+	-	@Orbs
+		-	Prevent dropping pressure plate items from broken blocks
+	-	@Green Hell
+		-	Too many snakes!
+-	Add only 1 framing kit to barrel at start
+-	Set barrel restock timer changes to not be remembered on forced game exit
+-	Prevent ectoplasm from drifting upwards on load
 -	@Prefab Kits
 	-	Add horizontal smoothing to rail sections between peaks
 	-	Verify floor space requirement for furnishing kit (cabins are too small?)
 -	F&T
-	-	Reduce rate of ectoplasm drops from pots
-	-	Ability items are not correctly disabling
-
-
+	-	@Necrotis
+		-	Reduce rate of ectoplasm drops from pots
+		-	Fix 'anima' hover label
+	-	@Locked Abilities
+		-	Ability items are not correctly disabling
 -	Set rope coil projectile to use less velocity
 -	Increase price of ropes, torches, potions
 -	F&T
