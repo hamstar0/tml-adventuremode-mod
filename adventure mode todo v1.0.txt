@@ -42,6 +42,7 @@ v1
 	-	Cleanup Ankh sprite
 [v0.17.0]
 -	@Beta
+-	@Add Evil Depths mod: Difficulty and surroundings intensify with depth
 -	@Add Meet The Boss mod: Bosses can only be summoned (via. item) in designated areas
 [v0.16.0]
 -	@Beta
@@ -54,23 +55,53 @@ v1
 	-	Add magic burst attack when unarmed
 -	@Add Item Overuse mod: Items become temporarily locked if 'overused'
 [v0.15.0]
--	Add 'extreme hills' to center of map
--	@Lore
-	-	Add failed expeditions to world gen (include lore notes, revolver quickloaders, and canopic jars)
--	@Necrotis
-	-	Implement canopic jars
-	-	Set Shine Potion and Miner's Hat (stackable) to reduce rate of bramble generation
-	-	Set brambles to start appearing near the player when necrotis resist% (anima?) is drained
-	-	Remove negative resist% value
-[v0.14.0]
--	@Test SP (EoC)
+-	@Test (EoC)
 	-	Witch Doctor
 	-	Goblin icon + rescue
 	-	Trickster defeats on map
 	-	Verdant Blessing
 	-	Infection, Parasites
+-	Add 'extreme hills' to center of map
+-	@Lore
+	-	Add Guide objective for finding failed expeditions
+	-	Add failed expeditions to world gen (include lore notes, revolver quickloaders, and canopic jars)
+-	@Necrotis
+	-	Implement canopic jars
+	-	Set Shine Potion and Miner's Hat (stackable) to reduce rate of bramble generation
+	-	Set brambles to start appearing near the player when necrotis resist% (anima?) is drained
+	-	Show anima in full (no hidden negative amounts)
+[v0.14.0]
+-	Set all station-based recipes to use a workbench
+-	Add 'Adventure Mode recipes available!' tooltips to relevant items
+-	B&D
+	-	Time limit (not necrotis?)
+	-	Depth difficulty
+	-	Mob populations
+-	F&T
+	-	Add Surroundings as dependency
+	-	Fix pickaxe tooltip not appearing for all pickaxes
+	-	@Green Hell
+		-	Drastically reduce snake spawn rate and stats
 
 
+	-	@Prefab Kits
+		-	Increase iron cost of rail kits to 4, add chains and wooden beams as ingredients
+		-	Increase cost of framing kit
+	-	Merchant has a gap in inventory slots
+	-	@Bullwhip
+		-	Debug rails super speed + damage
+	-	@TMR
+		-	Prevent aim lock without holding gun
+		-	Reduce rate of aim loss from movement
+		-	Reduce aim lock movement speed
+	-	@Surroundings
+		-	Lower snow biome tree FG
+		-	Increase scroll speed of closest trees layer
+	-	@Orbs
+		-	Make Cyan more distinct from Teal (teal = brown?)
+		-	Fix weird colored chunk highlighting glitches when holding an orb (sometimes nothing or extra colors)
+		-	Fix pressure plate item drops
+-	@Test SP
 	-	Whip getting items inside walls
 	-	Removed ability items
 	-	Barrel restocking

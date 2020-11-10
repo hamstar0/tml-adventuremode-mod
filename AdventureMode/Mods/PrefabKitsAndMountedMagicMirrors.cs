@@ -37,10 +37,15 @@ namespace AdventureMode.Mods {
 			prefabKitsConfig.SetOverride( nameof(PrefabKitsConfig.CustomFurnitureTile), TileID.Containers );
 			prefabKitsConfig.SetOverride( nameof(PrefabKitsConfig.CustomWallMount1Tile), mirrorTileType );
 			prefabKitsConfig.SetOverride( nameof(PrefabKitsConfig.CustomFloorTile), TileID.Mudstone );
-			prefabKitsConfig.SetOverride( nameof(PrefabKitsConfig.HouseFramingKitPrice), 100000 );
+			prefabKitsConfig.SetOverride( nameof(PrefabKitsConfig.HouseFramingKitPrice), 150000 );
 			prefabKitsConfig.SetOverride( nameof(PrefabKitsConfig.HouseFurnishingKitPrice), 100000 );
 			prefabKitsConfig.SetOverride( nameof(PrefabKitsConfig.TrackDeploymentKitRecipeTile), -1 );
-			prefabKitsConfig.SetOverride( nameof(PrefabKitsConfig.TrackDeploymentKitRecipeExtraIngredient), new List<ItemDefinition>() );
+			prefabKitsConfig.SetOverride( nameof(PrefabKitsConfig.TrackDeploymentKitRecipeExtraIngredient), new Dictionary<ItemDefinition, int> {
+				{ new ItemDefinition(ItemID.SilkRopeCoil), 30 },
+				{ new ItemDefinition(ItemID.Chain), 30 },
+				{ new ItemDefinition(ItemID.Minecart), 1 },
+				{ new ItemDefinition(ItemID.WoodenBeam), 100 }
+			} );
 		}
 	}
 }

@@ -110,7 +110,6 @@ namespace AdventureMode.Mods {
 			//
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.Minecart), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.MinecartMech), true );
-			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ModContent.ItemType<UtilitarianBeltItem>()), true );
 
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.CopperWatch), true );
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.TinWatch), true );
