@@ -28,7 +28,10 @@ namespace AdventureMode.Logic {
 
 				for( int j = 0; j < recipe.requiredTile.Length; j++ ) {
 					//if( recipe.requiredTile[j] != TileID.Furnaces ) {
-					recipe.requiredTile[j] = -1;
+					if( recipe.requiredTile[j] != -1 ) {
+						recipe.requiredTile[j] = TileID.WorkBenches;
+					}
+					//recipe.requiredTile[j] = -1;
 				}
 			}
 		}
@@ -47,6 +50,7 @@ namespace AdventureMode.Logic {
 					item.type = ItemID.Wood;
 					break;
 				}
+
 				break;
 			}
 		}

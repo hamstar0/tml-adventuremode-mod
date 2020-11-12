@@ -12,12 +12,13 @@ Future considerations
 	-	Mark each expedition on the map
 	-	Add notes and 2 random ability accessories to each barrel
 	-	Find flat spots and generate tent, campfire, and barrel (10)
--	@Add Weapon Exhaustion mod: Weapons have X uses before needing to be cleaned/sharpened/sown/hammered/oiled
 -	Modify Smoke Bombs: Causes confusion to enemies and lightly repels them
 	-	Implement projectile neutralizing (within area only)
 	-	Implement enemy repellant behavior
 	-	Add recipe: Bomb, 
 	-	Remove from party girl's shop
+-	@Powerful Magic
+	-	Add magic burst attack when unarmed
 
 
 
@@ -50,3 +51,5 @@ Future considerations
 -	@Terrain Remixer
 	-	Draw rock veins along cell walls
 	-	Generate cells of a fixed set of "colors"
+-	@Trickster
+	-	Increase spawn rate when near torches (indicated by Dryad dialogue)

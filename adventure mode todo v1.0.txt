@@ -40,50 +40,62 @@ v1
 	-	Fix Guide's false recipe reports?
 	-	Add "Adventure Mode" watermark to inventory backdrop
 	-	Cleanup Ankh sprite
+[v0.18.0]
+-	@Beta
+-	@Add Meet The Boss mod: Bosses can only be summoned (via. item) in designated areas
 [v0.17.0]
 -	@Beta
--	@Add Evil Depths mod: Difficulty and surroundings intensify with depth
--	@Add Meet The Boss mod: Bosses can only be summoned (via. item) in designated areas
-[v0.16.0]
--	@Beta
 -	@Test MP (EoW/BoC)
--	@Findable Mana Crystals
-	-	Set Terrathyst to be destroyed only with magic burst attacks
-	-	If Powerful Magic, Terrain Remixer mod exist
-		-	Add Terrathyst veins to world gen (via. Terrain Remixer)
--	@Powerful Magic
-	-	Add magic burst attack when unarmed
--	@Add Item Overuse mod: Items become temporarily locked if 'overused'
-[v0.15.0]
+-	@Add Equipment Upkeep mod: Items randomly fail with use, needing repair kits
+[v0.16.0]
 -	@Test (EoC)
 	-	Witch Doctor
 	-	Goblin icon + rescue
 	-	Trickster defeats on map
 	-	Verdant Blessing
 	-	Infection, Parasites
--	Add 'extreme hills' to center of map
+	-	Terrathyst
 -	@Lore
 	-	Add Guide objective for finding failed expeditions
-	-	Add failed expeditions to world gen (include lore notes, revolver quickloaders, and canopic jars)
+	-	Add failed expeditions to world gen
+		-	Generate camps proportional to world size (see Wormholes)
+		-	Fill barrel: Lore note, revolver quickloader, canopic jar
+		-	Generate a tent, an extinguished campfire, a workbench, a mirror, and a barrel
+		-	Locate open areas with a high ceiling and moderately flat surface
+	-	Add Demolitionist objective to find mana crystal shards (he then explains Terrathyst)
+	-	Add Nurse dialogue explaining Dilluted Ectoplasm
+-	Terrathyst
+	-	Add Terrathyst veins to world gen (via. Terrain Remixer)
+	-	Implement Terrathyst
+		-	Implement behavior
+			-	Implement mana absorption
+				-	Implement absorption
+				-	Implement saturation fx
+				-	@Plan
+					-	Terrathyst charge quickly evaporates without new mana
+					-	Saturated terrathyst shatters when no unsaturated neighbors within 3 tiles
+					-	Saturated terrathyst tiles transfer some charge to nearby terrathyst tiles
+					-	Instantly drains mana when near and "saturates"
+			-	Not mineable, not orbable
+		-	Create tile graphic
+		-	Define tile
+[v0.15.0]
 -	@Necrotis
-	-	Implement canopic jars
+	-	Implement canopic jars (allows storing ectoplasm)
 	-	Set Shine Potion and Miner's Hat (stackable) to reduce rate of bramble generation
 	-	Set brambles to start appearing near the player when necrotis resist% (anima?) is drained
-	-	Show anima in full (no hidden negative amounts)
+	-	Show anima in full (no hidden negative amounts)\
+-	Remove asphalt as a recipe
+
+
 [v0.14.0]
--	Set all station-based recipes to use a workbench
+-	Add 'extreme hills' to center of map
 -	Add 'Adventure Mode recipes available!' tooltips to relevant items
--	B&D
-	-	Time limit (not necrotis?)
-	-	Depth difficulty
-	-	Mob populations
+-	Set all station-based recipes to use a workbench
 -	F&T
 	-	Add Surroundings as dependency
-	-	Fix pickaxe tooltip not appearing for all pickaxes
 	-	@Green Hell
 		-	Drastically reduce snake spawn rate and stats
-
-
 	-	@Prefab Kits
 		-	Increase iron cost of rail kits to 4, add chains and wooden beams as ingredients
 		-	Increase cost of framing kit
