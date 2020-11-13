@@ -10,7 +10,7 @@ using MountedMagicMirrors.Items;
 namespace AdventureMode {
 	partial class AMItem : GlobalItem {
 		public override void ModifyTooltips( Item item, List<TooltipLine> tooltips ) {
-			string modName = "[c / FFFF88" + AMMod.Instance.DisplayName + ":] ";
+			string modName = "[c/FFFF88" + AMMod.Instance.DisplayName + ":] ";
 			AMConfig config = AMConfig.Instance;
 			TooltipLine tip;
 

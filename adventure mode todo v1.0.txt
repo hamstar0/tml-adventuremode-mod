@@ -84,10 +84,13 @@ v1
 	-	Implement canopic jars (allows storing ectoplasm)
 	-	Set Shine Potion and Miner's Hat (stackable) to reduce rate of bramble generation
 	-	Set brambles to start appearing near the player when necrotis resist% (anima?) is drained
-	-	Show anima in full (no hidden negative amounts)\
--	Remove asphalt as a recipe
 
 
+	-	Add anima sync param to SubtractAnimaPercent
+	-	Draw ankh ohm when bottomed out
+	-	Improve ankh fx
+	-	Show anima in full (no hidden negative amounts)
+	-	Cleanup ankh sprite
 [v0.14.0]
 -	Add 'extreme hills' to center of map
 -	Add 'Adventure Mode recipes available!' tooltips to relevant items
