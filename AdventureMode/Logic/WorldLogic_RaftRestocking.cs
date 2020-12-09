@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader.IO;
@@ -52,11 +53,6 @@ namespace AdventureMode.Logic {
 		////////////////
 
 		public static bool RestockRaft() {
-			var config = AMConfig.Instance;
-			int optionCount = config.RaftBarrelRestockSelection.Count;
-			ItemQuantityDefinition def = config.RaftBarrelRestockSelection[ Main.rand.Next(optionCount) ];
-			Item newItem = def.GetItem();
-
 			var myworld = ModContent.GetInstance<AMWorld>();
 			int chestIdx = myworld.GetRaftBarrelChestIndex();
 			if( chestIdx == -1 ) {
@@ -64,6 +60,8 @@ namespace AdventureMode.Logic {
 				return false;
 			}
 
+			ItemQuantityDefinition def = WorldLogic.PickItemForRaft();
+			Item newItem = def.GetItem();
 			Chest chest = Main.chest[ chestIdx ];
 
 			for( int i=0; i<chest.item.Length; i++ ) {
@@ -89,6 +87,26 @@ namespace AdventureMode.Logic {
 			}
 
 			return false;
+		}
+
+
+		////
+
+		private static ItemQuantityDefinition PickItemForRaft() {
+			var config = AMConfig.Instance;
+			float totalWeight = config.RaftBarrelRestockSelection.Sum( def => def.Weight );
+
+			float randWeightPos = Main.rand.NextFloat( totalWeight );
+
+			float countedWeights = 0;
+			foreach( ItemQuantityDefinition def in config.RaftBarrelRestockSelection ) {
+				countedWeights += def.Weight;
+				if( countedWeights >= randWeightPos ) {
+					return def;
+				}
+			}
+
+			return null;
 		}
 	}
 }

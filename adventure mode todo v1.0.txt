@@ -54,10 +54,8 @@ v1
 	-	Infection, Parasites
 	-	NPC dialogue alerts visible on the map
 	-	Extreme hills
--	Set all orbs chunks to be locked after 6 + 3 days without a boss kill (use PKE meter)
--	Set raft chest to supply orbs (use weighted random values from now on)
 -	@Lore
-	-	Add mission briefing (via. book in raft)
+	-	Add mission briefing (via. book in raft; add Guide dialogue to refer to it)
 		-	@Instructions
 			-	"Your ultimate goal is to end the undeath plague emanating from this island."
 			-	1. Search for clues about undeath plague's source
@@ -66,14 +64,18 @@ v1
 				-	Progress may become halted until phenomena is eliminated
 			-	4. Powerful entities sighted; possible link to plague phenomena - discover why
 	-	Add Arms Dealer dialogue to admire your antique revolver
-	-	Add Guide objective for finding failed expeditions
-	-	Add Demolitionist objective to find mana crystal shards (he then explains Terrathyst)
 	-	Add Nurse dialogue explaining Dilluted Ectoplasm (if Necrotis active)
+-	@Orbs, PKE: Set all orbs chunks to be locked after 6 + 3 days without a boss kill (use PKE meter)
+	-	@PKE Meter: Show exclamation icon when PKE is measuring high on a channel
+	-	Set boss kills to reduce PKE (though less per value of boss)
+	-	Set PKE meter to detect background PKE
+	-	Implement background PKE (rises to max after 3 days)
+
+
+-	Set raft chest to supply orbs (use weighted random values from now on)
 [v0.16.0]
 -	@PKE Meter: Implement meter
 	-	Add as requirement for AM, AM Lore
-
-
 	-	Yellow: Tricksters
 		-	When a Trickster has spawned and is active, increase reading a lot
 		-	When a Trickster has spawned but is hiding, stabilize fluctuations, but indicate proximity
