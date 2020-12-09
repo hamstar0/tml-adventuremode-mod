@@ -39,53 +39,117 @@ v1
 -	Final
 	-	Fix Guide's false recipe reports?
 	-	Add "Adventure Mode" watermark to inventory backdrop
-	-	Cleanup Ankh sprite
-[v0.18.0]
--	@Beta
--	@Add Meet The Boss mod: Bosses can only be summoned (via. item) in designated areas
+	-	Implement remaining lore notes
+-	@TMR
+	-	Add a button to toggle quick draw mode (but disables holster twirl)?
+	-	Set aim mode to be a hotkey button (defaults to right-click)
 [v0.17.0]
--	@Beta
+-	@Beta (Decide: keep Necrotis?)
 -	@Test MP (EoW/BoC)
--	@Add Equipment Upkeep mod: Items randomly fail with use, needing repair kits
-[v0.16.0]
--	@Test (EoC)
 	-	Witch Doctor
+-	@Test (EoC)
 	-	Goblin icon + rescue
 	-	Trickster defeats on map
 	-	Verdant Blessing
 	-	Infection, Parasites
-	-	Terrathyst
+	-	NPC dialogue alerts visible on the map
+	-	Extreme hills
+-	Set all orbs chunks to be locked after 6 + 3 days without a boss kill (use PKE meter)
+-	Set raft chest to supply orbs (use weighted random values from now on)
 -	@Lore
+	-	Add mission briefing (via. book in raft)
+		-	@Instructions
+			-	"Your ultimate goal is to end the undeath plague emanating from this island."
+			-	1. Search for clues about undeath plague's source
+			-	2. Find remains of previous expeditions
+			-	3. Work quickly; "undeath phenomena" increases with nearby prolonged living activity
+				-	Progress may become halted until phenomena is eliminated
+			-	4. Powerful entities sighted; possible link to plague phenomena - discover why
+	-	Add Arms Dealer dialogue to admire your antique revolver
 	-	Add Guide objective for finding failed expeditions
-	-	Add failed expeditions to world gen
-		-	Generate camps proportional to world size (see Wormholes)
-		-	Fill barrel: Lore note, revolver quickloader, canopic jar
-		-	Generate a tent, an extinguished campfire, a workbench, a mirror, and a barrel
-		-	Locate open areas with a high ceiling and moderately flat surface
 	-	Add Demolitionist objective to find mana crystal shards (he then explains Terrathyst)
-	-	Add Nurse dialogue explaining Dilluted Ectoplasm
--	Terrathyst
-	-	Add Terrathyst veins to world gen (via. Terrain Remixer)
-	-	Implement Terrathyst
-		-	Implement behavior
-			-	Implement mana absorption
-				-	Implement absorption
-				-	Implement saturation fx
-				-	@Plan
-					-	Terrathyst charge quickly evaporates without new mana
-					-	Saturated terrathyst shatters when no unsaturated neighbors within 3 tiles
-					-	Saturated terrathyst tiles transfer some charge to nearby terrathyst tiles
-					-	Instantly drains mana when near and "saturates"
-			-	Not mineable, not orbable
-		-	Create tile graphic
-		-	Define tile
+	-	Add Nurse dialogue explaining Dilluted Ectoplasm (if Necrotis active)
+[v0.16.0]
+-	@PKE Meter: Implement meter
+	-	Add as requirement for AM, AM Lore
+
+
+	-	Yellow: Tricksters
+		-	When a Trickster has spawned and is active, increase reading a lot
+		-	When a Trickster has spawned but is hiding, stabilize fluctuations, but indicate proximity
+		-	When not near a Trickster kill location, but in valid spawn area, give fluctuating signal
+	-	Green: Canopic Jars (locations of failed expeditions)
+		-	Detect proximity to a given location
+		-	Store each expedition location
+	-	Blue: Mana crystal shards (check tiles nearby player every 1s)
+-	@Lore (cont.)
+	-	Add failed expeditions to world gen (cont.)
+		-	Always generate a camp at jungle-side beach
+		-	Always generate a camp in center of map (with PKE Meter, note with instructions)
+		-	Ensure camps are not on surface or underworld (except for 2 mentioned)
+-	@Add PKE Meter mod
+	-	Implement API
+	-	Implement HUD display (add credits)
+		-	Implement animation of lit bars
+		-	Draw lit bars for each gauge
+		-	Draw HUD element
+	-	Create item graphic
+	-	Define item
+	-	Create HUD graphic
+	-	Begin project
+-	@Lore
+	-	Add failed expeditions to world gen
+		-	Fill barrel: Orbs, canopic jar (if Necrotis active)
+		-	Implement lore notes
+		-	Fill barrel: Lore note, revolver quickloader
+		-	Generate a tent, an extinguished campfire, a mirror, and a barrel
+		-	Generate camps proportional to world size (see Wormholes)
+		-	Find suitable camp spots in underground
+		-	@Algorithm
+			-	Pick random spot, drop to floor
+			-	Check if valid: No obstacles, high enough, no liquids, no spider walls
+			-	Scan horizontally in both directions for wide enough space
+				-	If too far a drop, stop scan in in that direction
+				-	If too high of a rise from lowest scanned point, stop scan
+			-	Flatten scanned area at highest point, filling gaps with surrounding tile type
+			-	Generate tent, campfire, mirror, barrel
 [v0.15.0]
+-	Set all recipes requiring demon altars to continue needing demon altars
+-	Disable canopic jar recipe (CanopicJarRecipeEnabled)
 -	@Necrotis
+	-	@Cursed Brambles: Set many nearby brambles to stop players from warping (minimum 4 in 24 tile radius)
+	-	@Add Warp Control mod: Adds stoppers to mirrors, cellphones, recall pots, wormhole pos, and teleport pots
+	-	Necrotis Omnis: Add Chaos State (stops mirrors/recall potions) and The Shadow debuff (automatic)
+	-	Set Necrotis to exist as 2 debuffs: Necrotis Natus, and Necrotis Omnis
+	-	@Cursed Brambles: Add The Shadow debuff (indicates bramble stalking)
+	-	Implement Elixir of Life: Reduces anima loss (recipe: shine pot, live critter, gold coin @ demon altar)
+		-	Implement buff
+		-	Implement recipe
+		-	Define elixir buff
+		-	Create recipe
+		-	Create graphic
+		-	Define item
 	-	Implement canopic jars (allows storing ectoplasm)
-	-	Set Shine Potion and Miner's Hat (stackable) to reduce rate of bramble generation
+		-	Implement filled usage (use house kit for reference)
+		-	Implement empty usage
+		-	Define items (empty and filled)
 	-	Set brambles to start appearing near the player when necrotis resist% (anima?) is drained
-
-
+		-	Implement bramble trail for player with no anima
+		-	Add API for accessing player generation
+		-	Create algorithm
+		-	@Algorithm
+			-	Every 15 ticks, generate a bramble within a 100 tile range
+			-	Pick a random tile of 16 random locations, if random is solid, skip (can optimize)
+			-	Pick highest weight option the up-to-16 non-solid remaining options:
+				-	Weighs less being close to player or close to max range
+				-	Weighs more being close to a solid tile, but not too many
+				-	Weighs more being close to at most 2 other brambles, but no solid tiles
+	-	@Create Cursed Brambles mod
+		-	@Apply Cursed Brambles to Enraged as a dependency
+		-	Create player trail generation
+		-	Import mob trail generation from Enraged
+		-	Import brambles from Enraged mod
+		-	Define mod
 	-	Add anima sync param to SubtractAnimaPercent
 	-	Draw ankh ohm when bottomed out
 	-	Improve ankh fx

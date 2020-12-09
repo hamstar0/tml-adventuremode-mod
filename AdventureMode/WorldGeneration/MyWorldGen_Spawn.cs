@@ -32,9 +32,11 @@ namespace AdventureMode.WorldGeneration {
 				return false;
 			}
 
+			//
+
 			int reach = 40;//340;
 
-			if( Main.dungeonX > Main.maxTilesX / 2 ) {
+			if( Main.dungeonX > (Main.maxTilesX / 2) ) {
 				int max = (Main.maxTilesX - reach) - Main.dungeonX;
 
 				for( int x = Main.maxTilesX - reach; x > Main.dungeonX; x-- ) {

@@ -37,6 +37,8 @@ namespace AdventureMode {
 
 			this.ModInteractions.LoadBullwhip();
 			this.ModInteractions.LoadNihilism();
+			this.ModInteractions.LoadNecrotis();
+			this.ModInteractions.LoadCursedBrambles();
 			this.ModInteractions.LoadChestImplants();
 			this.ModInteractions.LoadPrefabsKitAndMountedMagicMirrors();
 			this.ModInteractions.LoadTricksterAndLockedAbilies();

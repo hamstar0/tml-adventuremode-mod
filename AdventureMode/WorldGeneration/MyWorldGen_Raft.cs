@@ -44,7 +44,7 @@ namespace AdventureMode.WorldGeneration {
 			boatLeft = Main.spawnTileX;
 			boatTop = Main.spawnTileY;
 
-			if( Main.spawnTileX < ( Main.maxTilesX / 2 ) ) {
+			if( Main.spawnTileX < (Main.maxTilesX / 2) ) {
 				boatLeft -= 20;
 			} else {
 				boatLeft += 8;

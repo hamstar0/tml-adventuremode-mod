@@ -15,10 +15,14 @@ Future considerations
 -	Modify Smoke Bombs: Causes confusion to enemies and lightly repels them
 	-	Implement projectile neutralizing (within area only)
 	-	Implement enemy repellant behavior
-	-	Add recipe: Bomb, 
+	-	Add recipe: Bomb, ...
 	-	Remove from party girl's shop
 -	@Powerful Magic
 	-	Add magic burst attack when unarmed
+-	@Necrotis
+	-	Set Shine Potion and Miner's Hat (stackable) to reduce rate of bramble generation
+-	@B&D Add Meet The Boss mod?
+	-	Bosses can only be summoned (via. item) in designated areas
 
 
 
@@ -43,13 +47,30 @@ Future considerations
 			-	Life Crystals give half health
 [v1.2.0]
 -	@B&D Blackness covering any area that is unreachable
+-	B&D: Terrathyst?
+	-	Add Terrathyst veins to world gen (via. Regions)
+	-	Implement Terrathyst
+		-	Implement behavior
+			-	Implement mana absorption
+				-	Implement absorption
+				-	Implement saturation fx
+				-	@Plan
+					-	Color indicates saturation capacity
+					-	Saturation immediately wears off, if tile is not destroyed
+					-	When fully saturated, terrathyst is destroyed (along with its neighbors)
+					-	Instantly drains mana when near and "saturates"
+			-	Comes in different colors
+			-	Not mineable, not orb-able
+		-	Create tile graphic
+		-	Define tile
 [v1.1.0]
--	Add color for custom tooltips (?)
 -	Set WoF to drop Soul of Mole (consumable; enables breaking dirt)
 -	@Orbs
 	-	Pull cell data from @Terrain Remixer and generate color squares 75% as cells
 -	@Terrain Remixer
-	-	Draw rock veins along cell walls
-	-	Generate cells of a fixed set of "colors"
+	-	@Add Regions mod: Generate cells of a fixed set of "colors"
 -	@Trickster
-	-	Increase spawn rate when near torches (indicated by Dryad dialogue)
+	-	Decide: Increase spawn rate when near torches (indicated by Dryad dialogue)?
+-	@Prefab Kits: Add Defensive Fortification Kit: A tall wall with a chain on one side, a jump pad on the other
+-	B&D: @Add Equipment Upkeep mod?
+-	Add 'Life Pool' to the inside of giant trees (charges up over time to emit an ectoplasm when near)

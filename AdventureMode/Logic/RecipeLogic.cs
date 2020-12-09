@@ -14,6 +14,11 @@ namespace AdventureMode.Logic {
 			newRoDRecipe2.AddRecipe();
 		}
 
+		////
+
+		//public static void RemoveCanopicJarRecipe() {	<- See Mods/Necrotis.cs
+		//}
+
 
 		////////////////
 
@@ -28,7 +33,7 @@ namespace AdventureMode.Logic {
 
 				for( int j = 0; j < recipe.requiredTile.Length; j++ ) {
 					//if( recipe.requiredTile[j] != TileID.Furnaces ) {
-					if( recipe.requiredTile[j] != -1 ) {
+					if( recipe.requiredTile[j] != -1 && recipe.requiredTile[j] != TileID.DemonAltar ) {
 						recipe.requiredTile[j] = TileID.WorkBenches;
 					}
 					//recipe.requiredTile[j] = -1;
