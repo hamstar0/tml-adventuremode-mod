@@ -39,11 +39,12 @@ v1
 -	Final
 	-	Fix Guide's false recipe reports?
 	-	Add "Adventure Mode" watermark to inventory backdrop
-	-	Implement remaining lore notes
+	-	Implement remaining lore notes (add 'Island Hungers', 'Anima')
 -	@TMR
 	-	Add a button to toggle quick draw mode (but disables holster twirl)?
 	-	Set aim mode to be a hotkey button (defaults to right-click)
 [v0.17.0]
+-	@SORT MOD TAGS!!!!
 -	@Beta (Decide: keep Necrotis?)
 -	@Test MP (EoW/BoC)
 	-	Witch Doctor
@@ -54,6 +55,8 @@ v1
 	-	Infection, Parasites
 	-	NPC dialogue alerts visible on the map
 	-	Extreme hills
+
+
 -	@Lore
 	-	Add mission briefing (via. book in raft; add Guide dialogue to refer to it)
 		-	@Instructions
@@ -64,14 +67,22 @@ v1
 				-	Progress may become halted until phenomena is eliminated
 			-	4. Powerful entities sighted; possible link to plague phenomena - discover why
 	-	Add Arms Dealer dialogue to admire your antique revolver
-	-	Add Nurse dialogue explaining Dilluted Ectoplasm (if Necrotis active)
+	-	Add Nurse dialogue explaining witch doctor healing
 -	@Orbs, PKE: Set all orbs chunks to be locked after 6 + 3 days without a boss kill (use PKE meter)
-	-	@PKE Meter: Show exclamation icon when PKE is measuring high on a channel
-	-	Set boss kills to reduce PKE (though less per value of boss)
-	-	Set PKE meter to detect background PKE
-	-	Implement background PKE (rises to max after 3 days)
-
-
+	-	Add PKE messages
+		-	On high red: WARNING - CLASS V+ ENTITIES AT LARGE
+		-	On high yellow: CLASS VI (VII) TRANSDIM ELEVATED ORGANIC
+		-	On high green: CLASS III ECTOPLASM AGGREGATE VESSEL
+		-	On high blue: CLASS II ETHEREAL GEOFORM
+	-	@Add Boss Reign mod
+	-	@PKE Meter mod: Add info display to meter
+		-	Add API to render descriptions of phenonema
+		-	Implement lettering display on bottom
+	-	@Decide effects at max PKE
+		-	Brambles appear: Island is 'hungry' and sees no obstacle in anima
+		-	Tremors occur: Generic ominous portentions
+		-	Monsters buffed: A red glow appears upon each enemy; stat buffs all around
+		-	Toxic droplets appear in caves
 -	Set raft chest to supply orbs (use weighted random values from now on)
 [v0.16.0]
 -	@PKE Meter: Implement meter

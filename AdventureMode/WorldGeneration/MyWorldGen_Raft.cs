@@ -148,15 +148,20 @@ namespace AdventureMode.WorldGeneration {
 			int i = 0;
 			Item[] chestItems = Main.chest[chestIdx].item;
 
+			chestItems[i++] = ReadableBookItem.CreateBook(
+				title: "- Intro To Adventure Mode -",
+				pages: AMWorldGen.GetBookPages( AMWorldGen.GetIntroTextLines() )
+			);
+
+			chestItems[i++] = ReadableBookItem.CreateBook(
+				title: "Your mission on Terraria",
+				pages: AMWorldGen.GetBookPages( AMWorldGen.GetBriefingTextLines() )
+			);
+
 			foreach( ItemQuantityDefinition def in AMConfig.Instance.RaftBarrelContents ) {
 				chestItems[i] = def.GetItem();
 				i++;
 			}
-
-			chestItems[i] = ReadableBookItem.CreateBook(
-				title: "Intro To Adventure Mode",
-				pages: AMWorldGen.GetIntroTextBookPages()
-			);
 
 			myworld.RaftBarrelTile = (x, y);
 		}
@@ -178,57 +183,6 @@ namespace AdventureMode.WorldGeneration {
 					//Main.tile[boatLeft + x, boatTop + y].wall = (ushort)boatWalls[y][x];
 				}
 			}
-		}
-
-
-		////////////////
-
-		public static IList<string> GetIntroTextLines() {
-			var texts = new List<string> {
-				// Page 1
-				"Welcome to Adventure Mode! This is a game mode built around journeying and exploration.",
-				"This is designed to create a new experience upon existing content, but with a few twists.",
-				"There's a lot of important new features and changes from the base game to note:",
-				// Page 2
-				"- Building and digging disabled (some exceptions).",
-				"- Use house kits to create NPC houses, beds, crafting stations, and fast travel points.",
-				"- Crafting stations are either found or kit-made.",
-				// Page 3
-				"- Use platforms, planks, and ropes to get around.",
-				"- Get Orbs from chests or challenges to progress.",
-				//"- Grappling only works on platforms.",
-				"- Read item descriptions for more info.",
-				// Page 4
-				"- Talk to the Guide for further help.",
-				"- Do not whip the slimes!",
-			};
-
-			if( AMConfig.Instance.RemoveRecipeTileRequirements ) {
-				texts[2] = "- Use house kits to create NPC houses, beds, storage, and fast travel points.";
-				texts.RemoveAt( 3 );
-			}
-			if( !AMConfig.Instance.EnableAlchemyRecipes ) {
-				texts.Insert( 2, "- Alchemy and non-equipment recipes disabled." );
-			}
-
-			return texts;
-		}
-
-		public static string[] GetIntroTextBookPages() {
-			IList<string> rawPages = AMWorldGen.GetIntroTextLines();
-			string[] pages = new string[rawPages.Count / 3];
-
-			for( int j = 0; j < pages.Length; j++ ) {
-				pages[j] = rawPages[j * 3];
-				if( ( j * 3 ) + 1 < rawPages.Count ) {
-					pages[j] += "\n" + rawPages[( j * 3 ) + 1];
-				}
-				if( ( j * 3 ) + 2 < rawPages.Count ) {
-					pages[j] += "\n" + rawPages[( j * 3 ) + 2];
-				}
-			}
-
-			return pages;
 		}
 	}
 }

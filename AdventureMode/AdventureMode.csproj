@@ -14,6 +14,12 @@
     <Reference Include="AdventureModeLore">
       <HintPath>..\..\..\Adventure Mode Lore\Project\AdventureModeLore\bin\Release\net452\AdventureModeLore.dll</HintPath>
     </Reference>
+    <Reference Include="BossChecklist">
+      <HintPath>..\..\..\..\..\..\My Games\Terraria\ModLoader\Mod Reader\BossChecklist\BossChecklist.FNA.dll</HintPath>
+    </Reference>
+    <Reference Include="BossReigns">
+      <HintPath>..\..\..\Boss Reigns\Project\BossReigns\bin\Release\net452\BossReigns.dll</HintPath>
+    </Reference>
     <Reference Include="Bullwhip">
       <HintPath>..\..\..\Bullwhip\Project\Bullwhip\bin\Release\net452\Bullwhip.dll</HintPath>
     </Reference>
