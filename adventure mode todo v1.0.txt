@@ -55,8 +55,14 @@ v1
 	-	Infection, Parasites
 	-	NPC dialogue alerts visible on the map
 	-	Extreme hills
+-	Fixes
+	-	Fix premature barrel restock
 
 
+	-	Fix book page widths
+	-	Fix trippy orbs tile chunk colors
+	-	Fix book covers
+	-	Extreme hills
 -	@Lore
 	-	Add mission briefing (via. book in raft; add Guide dialogue to refer to it)
 		-	@Instructions

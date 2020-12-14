@@ -10,6 +10,7 @@ namespace AdventureMode.Mods {
 		public void LoadTerrainRemixer() {
 			var terrainRemixerConfig = TerrainRemixerConfig.Instance;
 			var list = new List<TerrainRemixerGenPassSpec> {
+				// Upper caves softening
 				new TerrainRemixerGenPassSpec {
 					LayerName = "Tunnels",
 					NoiseFrequency = 0.005f,	//0.01f
@@ -25,6 +26,7 @@ namespace AdventureMode.Mods {
 					BoundsBottomPercentStart = 0.75f,
 					FillTiles = new List<int> { -1 }
 				},
+				// Deep caves blocking
 				new TerrainRemixerGenPassSpec {
 					LayerName = "Grass",
 					NoiseFrequency = 0.0075f,	//0.01f
@@ -38,7 +40,21 @@ namespace AdventureMode.Mods {
 					BoundsLeftPercentStart = 0f,
 					BoundsRightPercentStart = 1f,
 					FillTiles = new List<int> { TileID.Stone }
-				}
+				},
+				// Extreme hills in map center
+				new TerrainRemixerGenPassSpec {
+					LayerName = "Tunnels",
+					NoiseFrequency = 0.01f,
+					NoiseValueMinimumUntilTileRemoval = 0.6f,
+					BoundsTopStart = WorldDepth.SkyTop,
+					BoundsBottomStart = WorldDepth.UnderworldTop,
+					HorizontalDistancePercentFromCenterBeforeBlending = 0.8f,
+					VerticalDistancePercentFromCenterBeforeBlending = 0f,	//was 0.7f
+					BoundsLeftPercentStart = 0.35f,
+					BoundsRightPercentStart = 0.65f,
+					FillTiles = new List<int> { -1 },
+					FillWalls = new List<int> { }
+				},
 			};
 
 			terrainRemixerConfig.SetOverride( nameof(TerrainRemixerConfig.Passes), list );
