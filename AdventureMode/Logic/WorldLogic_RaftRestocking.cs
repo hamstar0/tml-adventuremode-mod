@@ -31,7 +31,7 @@ namespace AdventureMode.Logic {
 				}
 
 				if( WorldLogic.RestockRaft() ) {
-					Main.NewText( "Raft barrel restocked.", Color.Lime );
+					Main.NewText( "Raft barrel has received new items!", Color.Lime );
 				} else {
 					Main.NewText( "No barrel to restock.", Color.Yellow );
 				}
@@ -43,6 +43,10 @@ namespace AdventureMode.Logic {
 		public static void SaveRaftRestockInfo( TagCompound tag ) {
 			var myworld = ModContent.GetInstance<AMWorld>();
 			int restockTicks = Timers.GetTimerTickDuration( "AdventureModeRaftRestock" );
+
+			if( restockTicks <= 0 ) {
+				restockTicks = AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
+			}
 
 			tag["raft_x"] = myworld.RaftBarrelTile.TileX;
 			tag["raft_y"] = myworld.RaftBarrelTile.TileY;

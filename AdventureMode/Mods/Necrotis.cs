@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using Terraria.ID;
-using Terraria.ModLoader;
-using AdventureMode.Tiles;
 using Necrotis;
 
 

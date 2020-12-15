@@ -49,16 +49,37 @@ v1
 -	@Test MP (EoW/BoC)
 	-	Witch Doctor
 -	@Test (EoC)
+	-	Boss enrage + reduced hp
 	-	Goblin icon + rescue
 	-	Trickster defeats on map
 	-	Verdant Blessing
 	-	Infection, Parasites
 	-	NPC dialogue alerts visible on the map
+
+
 	-	Extreme hills
--	Fixes
+-	Remove present drops
+-	Disable all fishing (add tooltips against needing bait items)
+-	@Lore
+	-	Add debug option to show failed expeditions on maps
+-	F&T
+	-	@Necrotis
+		-	Fix full necrotis debuff adding permanent chaos state
+		-	Fix unusable canopic jars
+		-	Fix picking up ectoplasm
+	-	@Prefab Kids
+		-	Fix furnishing kit not resetting existing tiles fully (traces of slopes)
+		-	Fix house furnishing kit not filling all corners properly
+	-	@Cursed Brambles
+		-	Fix cursed brambles not producing an effect
+		-	Enable pickaxing cursed brambles
+
+
+	-	Change "the merchant" to "a merchant"
+	-	Fix color labels of tooltips for all modified items (rope, binoc, etc)
+	-	Slim down extreme hills horizontally by 30%, reduce thickness
+	-	Reduce ectoplasm drop rates from pots
 	-	Fix premature barrel restock
-
-
 	-	Fix book page widths
 	-	Fix trippy orbs tile chunk colors
 	-	Fix book covers

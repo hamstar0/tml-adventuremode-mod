@@ -45,13 +45,14 @@ namespace AdventureMode.Mods {
 				new TerrainRemixerGenPassSpec {
 					LayerName = "Tunnels",
 					NoiseFrequency = 0.01f,
-					NoiseValueMinimumUntilTileRemoval = 0.6f,
+					WormsMode = FractalType.FBM,
+					NoiseValueMinimumUntilTileRemoval = 0.7f,
 					BoundsTopStart = WorldDepth.SkyTop,
 					BoundsBottomStart = WorldDepth.UnderworldTop,
 					HorizontalDistancePercentFromCenterBeforeBlending = 0.8f,
 					VerticalDistancePercentFromCenterBeforeBlending = 0f,	//was 0.7f
-					BoundsLeftPercentStart = 0.35f,
-					BoundsRightPercentStart = 0.65f,
+					BoundsLeftPercentStart = 0.4f,
+					BoundsRightPercentStart = 0.6f,
 					FillTiles = new List<int> { -1 },
 					FillWalls = new List<int> { }
 				},
