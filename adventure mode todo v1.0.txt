@@ -55,26 +55,27 @@ v1
 	-	Verdant Blessing
 	-	Infection, Parasites
 	-	NPC dialogue alerts visible on the map
-
-
+!
+!
 	-	Extreme hills
--	Remove present drops
--	Disable all fishing (add tooltips against needing bait items)
 -	@Lore
 	-	Add debug option to show failed expeditions on maps
+
+
+-	Remove present drops
+-	Disable all fishing (add tooltips against needing bait items; item.fishingPole)
 -	F&T
+	-	@CursedBrambles
+		-	Fix full necrotis debuff adding permanent chaos state (should instead by brambles)
 	-	@Necrotis
-		-	Fix full necrotis debuff adding permanent chaos state
-		-	Fix unusable canopic jars
+		-	Fix unusable canopic jars?
 		-	Fix picking up ectoplasm
 	-	@Prefab Kids
-		-	Fix furnishing kit not resetting existing tiles fully (traces of slopes)
 		-	Fix house furnishing kit not filling all corners properly
+		-	Fix furnishing kit not resetting existing tiles fully (traces of slopes)
 	-	@Cursed Brambles
 		-	Fix cursed brambles not producing an effect
 		-	Enable pickaxing cursed brambles
-
-
 	-	Change "the merchant" to "a merchant"
 	-	Fix color labels of tooltips for all modified items (rope, binoc, etc)
 	-	Slim down extreme hills horizontally by 30%, reduce thickness

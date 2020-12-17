@@ -51,6 +51,12 @@ namespace AdventureMode {
 			case NPCID.Merchant:
 				NPCLogic.SetupMerchantShop( shop, ref nextSlot );
 				break;
+			case NPCID.Mechanic:
+				NPCLogic.SetupMechanicShop( shop, ref nextSlot );
+				break;
+			case NPCID.TravellingMerchant:
+				NPCLogic.SetupTravellingMerchantShop( shop, ref nextSlot );
+				break;
 			}
 		}
 

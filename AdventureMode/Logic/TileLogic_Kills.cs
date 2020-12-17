@@ -38,7 +38,7 @@ namespace AdventureMode.Logic {
 				return;
 			}
 
-			// Arachnophobes, rejoince!
+			// Arachnophobes, rejoice!
 			if( type == TileID.Pots ) {
 				TileLogic.KillPotTile( i, j, ref noItem );
 			}

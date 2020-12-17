@@ -4,6 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using AdventureMode.Tiles;
 using FindableManaCrystals.Tiles;
+using CursedBrambles.Tiles;
 using Orbs;
 
 
@@ -14,6 +15,7 @@ namespace AdventureMode.Mods {
 			var myTileKillWhitelist = new List<string>( config.TileKillWhitelist );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey( ModContent.TileType<FramingPlankTile>() ) );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey( ModContent.TileType<ManaCrystalShardTile>() ) );
+			myTileKillWhitelist.Add( TileID.GetUniqueKey( ModContent.TileType<CursedBrambleTile>() ) );
 
 			config.SetOverride( nameof(config.TileKillWhitelist), myTileKillWhitelist );
 			config.SetOverride( nameof(config.OnlyGenOrbsInUndergroundChests), false );
