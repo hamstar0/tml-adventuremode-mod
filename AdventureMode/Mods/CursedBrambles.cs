@@ -8,7 +8,7 @@ namespace AdventureMode.Mods {
 			var config = CursedBramblesConfig.Instance;
 
 			config.SetOverride( nameof(config.BossesCreateBrambleTrail), false );
-			config.SetOverride( nameof(config.PlayersCreateBrambleTrail), false );
+			config.SetOverride( nameof(config.PlayersCreateDefaultBrambleTrail), false );
 		}
 	}
 }

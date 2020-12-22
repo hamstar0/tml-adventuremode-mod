@@ -18,8 +18,9 @@ namespace AdventureMode.Mods {
 				MapMarkers.AddFullScreenMapMarker(
 					tileX: goblinX,
 					tileY: goblinY,
-					label: "AdventureMode_Spawn_BoundGoblin",
-					icon: Main.npcTexture[NPCID.BoundGoblin]
+					id: "AdventureMode_Spawn_BoundGoblin",
+					icon: Main.npcTexture[NPCID.BoundGoblin],
+					scale: 1f
 				);
 			}
 

@@ -16,8 +16,9 @@ namespace AdventureMode.Mods {
 				MapMarkers.AddFullScreenMapMarker(
 					tileX: myworld.DungeonBottom.tileX * 16,
 					tileY: myworld.DungeonBottom.tileY * 16,
-					label: "AdventureMode_Spawn_BoundMechanic",
-					icon: Main.npcTexture[NPCID.BoundMechanic]
+					id: "AdventureMode_Spawn_BoundMechanic",
+					icon: Main.npcTexture[NPCID.BoundMechanic],
+					scale: 1f
 				);
 			}
 

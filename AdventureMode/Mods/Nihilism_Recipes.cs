@@ -24,7 +24,6 @@ namespace AdventureMode.Mods {
 			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyOreEquipment, true );
 			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyNonOreCraftedEquipment, true );
 			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyOreBar, true );
-			NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyFishingPole, true );
 
 			if( config.EnableAlchemyRecipes ) {
 				NihilismAPI.SetRecipeWhitelistGroupEntry( ItemGroupIDs.AnyPotion, true );
@@ -32,6 +31,10 @@ namespace AdventureMode.Mods {
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BottledHoney), true );
 				NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition(ItemID.BottledWater), true );
 			}
+
+			//
+
+			NihilismAPI.SetRecipeBlacklist2GroupEntry( ItemGroupIDs.AnyFishingPole, true );
 
 			//
 			NihilismAPI.SetRecipeWhitelistEntry( new ItemDefinition( ItemID.EnchantedNightcrawler ), true );

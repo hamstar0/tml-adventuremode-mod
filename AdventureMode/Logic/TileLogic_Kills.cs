@@ -58,7 +58,7 @@ namespace AdventureMode.Logic {
 			//
 
 			void modifySpiderNpc( NPC spiderNpc ) {
-				spiderNpc.life = spiderNpc.lifeMax / 4;
+				spiderNpc.life = spiderNpc.lifeMax / 6;
 				spiderNpc.damage = spiderNpc.damage / 2;
 				spiderNpc.scale = 0.75f;
 				spiderNpc.width = (int)( spiderNpc.width * 0.75f );

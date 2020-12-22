@@ -48,20 +48,81 @@ v1
 -	@Beta (Decide: keep Necrotis?)
 -	@Test MP (EoW/BoC)
 	-	Witch Doctor
+-	F&T 3
+	-	@Necrotis
+		-	Reduce crimson/corruption drain rate
 -	@Test (EoC)
 	-	Boss enrage + reduced hp
 	-	Goblin icon + rescue
 	-	Trickster defeats on map
+	-	Boss reign duration
 	-	Verdant Blessing
 	-	Infection, Parasites
+	-	Verify FE debug map markers
+!
+!
+	-	The Shadow debuff
 	-	NPC dialogue alerts visible on the map
-!
-!
 	-	Extreme hills
+-	F&T 2
+	-	Add guide message about using track kits to bridge large gaps
+
+
+	-	Raise extreme hills height, lower intensity
+	-	Reduce pot spider hp
+	-	Ensure jungle sign definitely places
+	-	Set town NPC alert map icons to follow NPCs
+	-	@Green Hell
+		-	Explain jungle debuffs (tooltips)
+	-	@Prefab Kits
+		-	"Valid town house space found" <- edit this
+		-	Increase cost of framing kits
+	-	@Necrotis
+		-	Revamp drain/gain mechanics
+		-	Increase ankh refill particle duration
+		-	Fix debuff descriptions
+		-	Shift ankh yet some more (40?)
+		-	Halt brambles when dead
+		-	Recover anima being in a town
+		-	Fix necrotis heal only at beach (?)
+		-	Add glow to max necrotis buff icon
+		-	Increase illumination of canopic jar sprite
+		-	Give ectoplasm an animation/glow (rotates in place? emits dull light?)
+		-	Shift ankh position when in inventory screen
+		-	Increase ectoplasm drop rate
+		-	Prevent anima gain/loss when dead
+		-	Indicate % of last max HP with necrotis debuff (also tweak descriptions)
+		-	Fix canopic jar dupe glitch/not being consumed
+		-	Ensure clients cannot create @cursed brambles
+		-	Fix shadow debuff when player has non-zero anima
+		-	Fix ankh refill droplets
+		-	Add warning message when necrotis max "Necrotis sets in. A shadow approaches..."
+	-	@Surroundings
+		-	Lower crimson foreground trees
+		-	Set ice cave foreground bottom half to be lower and not as intense
+	-	@Cursed Brambles
+		-	Set brambles to clear out quicker
+		-	Reduce damage from brambles
+	-	@Orbs
+		-	Fix fullscreen map toggle button
+	-	@Lore
+		-	Fix campfire frames
+		-	Fix PKE books linespaces
+		-	Fix FE having malformed campfires
+		-	Turn off FE campfires
+		-	Fix FEs not generating
+		-	Fix lore book line breaks
+	-	@TMR
+		-	Fix reload sequence not being interrupted sometimes
+	-	@Orbs
+		-	Resonations not working properly; sometimes don't appear when holding orb
+	-	Debug furnishing kit floor failure
+	-	Increase size of npc alert map icon
+	-	Fix recipe blocking for wood fishing pole
+	-	Prevent "Only bare hands etc" message when actually using bare hands
+	-	Fix missing The Shadow effect and debuff
 -	@Lore
 	-	Add debug option to show failed expeditions on maps
-
-
 -	Remove present drops
 -	Disable all fishing (add tooltips against needing bait items; item.fishingPole)
 -	F&T

@@ -64,6 +64,9 @@ namespace AdventureMode.WorldGeneration {
 				return;
 			}
 
+			Main.tile[left - 1, top].ClearEverything();
+			Main.tile[left, top].ClearEverything();
+			Main.tile[left + 1, top].ClearEverything();
 			Main.tile[left - 1, top].active( true );
 			Main.tile[left, top].active( true );
 			Main.tile[left + 1, top].active( true );

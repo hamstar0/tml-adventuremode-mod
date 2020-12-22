@@ -46,7 +46,7 @@ namespace AdventureMode {
 
 		public override void SetupShop( int type, Chest shop, ref int nextSlot ) {
 			NPCLogic.FilterShops( type, shop.item, ref nextSlot );
-
+			
 			switch( type ) {
 			case NPCID.Merchant:
 				NPCLogic.SetupMerchantShop( shop, ref nextSlot );

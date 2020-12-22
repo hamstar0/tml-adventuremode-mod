@@ -142,7 +142,7 @@ namespace AdventureMode.WorldGeneration {
 		public static void PlaceStarterBarrel( AMWorld myworld, int x, int y ) {
 			int chestIdx = WorldGen.PlaceChest( x, y, TileID.Containers, false, 5 );
 			if( chestIdx == -1 ) {
-				return; // this occurs on the first pass
+				return; // this occurs on the first pass (until raft floor exists)
 			}
 
 			int i = 0;
