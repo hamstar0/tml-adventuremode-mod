@@ -44,13 +44,27 @@ v1
 	-	Add a button to toggle quick draw mode (but disables holster twirl)?
 	-	Set aim mode to be a hotkey button (defaults to right-click)
 [v0.17.0]
+-	B&D
+	-	Other uses for ores
+	-	Durability concept
+-	@Prefab Kits
+	-	Add Excavation Kits
+		-	Craft Excavation Kits from copper/tin, iron/lead, silver/tungsten, gold/platinum, amethyst, dynamite
+		-	Demolitionist trades Excavation Kits for ores
+		-	Implement item use
+		-	Create item graphic (shaped explosives?)
+		-	Define item
+		-	@Plan
+			-	Turns bedrock into rock
+			-	Excavates a path through rock, turning it into silt
+-	Add bedrock veins to world gen
+-	@Mod Helpers
+	-	Add Bedrock tile (generic unbreakable tile)
+[v0.17.0]
 -	@SORT MOD TAGS!!!!
 -	@Beta (Decide: keep Necrotis?)
 -	@Test MP (EoW/BoC)
 	-	Witch Doctor
--	F&T 3
-	-	@Necrotis
-		-	Reduce crimson/corruption drain rate
 -	@Test (EoC)
 	-	Boss enrage + reduced hp
 	-	Goblin icon + rescue
@@ -64,10 +78,46 @@ v1
 	-	The Shadow debuff
 	-	NPC dialogue alerts visible on the map
 	-	Extreme hills
+-	@TMR
+	-	Add bandit mob
+-	@Boss Reigns
+	-	Block all warp items when reign in progress
+-	@Mounted Magic Mirrors
+	-	Block use of mirrors when bosses are active
+-	F&T 3
+	-	@Green Hell
+		-	Change infection from max hp loss to light hp loss
+	-	@Necrotis
+		-	Set all surface areas to regen anima
+		-	Raise ankh 24 units and shift further left in inventory mode
+		-	Reduce crimson/corruption drain rate
+		-	Start player with full anima
+		-	Reduce drain/gain rates (at beach + night, also)
+		-	Fix redundant debuff descriptions (max hp reduced to 100 when only 100)
+		-	Recover some anima on death
+		-	Clear ankh particle fx when changing between inventory and normal
+	-	@Findable Mana Crystals
+		-	Remove tile from map
+		-	Fix binoc tooltip
+	-	@Orbs
+		-	Fix binoc tooltip
+	-	Increase ectoplasm pot drop rate
+	-	Add sign before first corruption to recommend using track deployment kit
+
+
+	-	Show sell price for item in tooltip
+	-	Lighten up extreme hills area even more
+	-	Tweak guide instructions on accessing areas (fix erroneous extra alert)
+	-	@Lore
+		-	Add colored texts for each respective PKE gauge in instruction book
+		-	Clarify PKE "Mission Briefing" is for *another* group (also Specimen -> specimen)
+		-	Fix camp gens
+	-	@PKE Meter
+		-	Show meter when held as mouse item
+	-	Fix trickster PKE text hogging
+	-	Fix PKE readings
 -	F&T 2
-	-	Add guide message about using track kits to bridge large gaps
-
-
+	-	Add guide message (with alert) about using track kits to bridge large gaps
 	-	Raise extreme hills height, lower intensity
 	-	Reduce pot spider hp
 	-	Ensure jungle sign definitely places

@@ -5,12 +5,13 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using HamstarHelpers.Helpers.Items.Attributes;
 using MountedMagicMirrors.Items;
+using HamstarHelpers.Helpers.Items;
 
 
 namespace AdventureMode {
 	partial class AMItem : GlobalItem {
 		public override void ModifyTooltips( Item item, List<TooltipLine> tooltips ) {
-			string modName = "[c/FFFF88:" + AMMod.Instance.DisplayName + "] ";
+			string modName = "[c/FFFF88:" + AMMod.Instance.DisplayName + "] - ";
 			AMConfig config = AMConfig.Instance;
 			TooltipLine tip;
 
@@ -59,6 +60,14 @@ namespace AdventureMode {
 					ItemInformationAttributeHelpers.ApplyTooltipAt( tooltips, tip );
 				}
 				break;
+			}
+
+			if( item.value > 0 ) {
+				string[] renderedValueDenoms = ItemMoneyHelpers.RenderMoneyDenominations( item.value / 5, true, true );
+				string renderedValue = string.Join( ", ", renderedValueDenoms );
+
+				tip = new TooltipLine( this.mod, "AdventureModeValue", "Sells for "+renderedValue );
+				ItemInformationAttributeHelpers.ApplyTooltipAt( tooltips, tip );
 			}
 		}
 	}
