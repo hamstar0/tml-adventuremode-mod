@@ -118,6 +118,11 @@ namespace AdventureMode {
 				progress.Value = 1f;
 			} ) );
 
+			tasks.Add( new PassLegacy( "Adventure Mode: Create Corrupt Sign", ( progress ) => {
+				AMWorldGen.PlaceCorruptionSign( progress );
+				progress.Value = 1f;
+			} ) );
+
 			tasks.Add( new PassLegacy( "Adventure Mode: Underground Desert Scan", ( progress ) => {
 				AMWorldGen.ScanUndergroundDesert( progress );
 				progress.Value = 1f;

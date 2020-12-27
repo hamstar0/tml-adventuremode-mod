@@ -64,41 +64,13 @@ namespace AdventureMode.WorldGeneration {
 				return;
 			}
 
-			Main.tile[left - 1, top].ClearEverything();
-			Main.tile[left, top].ClearEverything();
-			Main.tile[left + 1, top].ClearEverything();
-			Main.tile[left - 1, top].active( true );
-			Main.tile[left, top].active( true );
-			Main.tile[left + 1, top].active( true );
-			Main.tile[left - 1, top].type = TileID.Mudstone;
-			Main.tile[left, top].type = TileID.Mudstone;
-			Main.tile[left + 1, top].type = TileID.Mudstone;
-			
-			Main.tile[left-1, top-1].ClearEverything();
-			Main.tile[left-1, top-2].ClearEverything();
-			Main.tile[left-1, top-3].ClearEverything();
-			Main.tile[left, top-1].ClearEverything();
-			Main.tile[left, top-2].ClearEverything();
-			Main.tile[left, top-3].ClearEverything();
-			Main.tile[left+1, top-1].ClearEverything();
-			Main.tile[left+1, top-2].ClearEverything();
-			Main.tile[left+1, top-3].ClearEverything();
+			string text = "Beware!\nPoisonous jungle and swamps ahead. Protective gear advised.";
+			(int, int)? signAt = AMWorldGen.PlaceSign( left, top, "Jungle", text );
 
-			int highest = top - 4;
-			for( top += 1; top > highest; top-- ) {	// lazy
-				if( WorldGen.PlaceSign( left, top, TileID.Signs ) ) {
-					int signIdx = Sign.ReadSign( left, top, true );
-					Main.sign[signIdx].text = "Beware!\nPoisonous jungle and swamps ahead. Protective gear advised.";
-
-					LogHelpers.Log( "Jungle sign placed at " + left + ", " + top );
-					break;
-				} else {
-					LogHelpers.Alert( "Could not place jungle sign." );
-				}
+			if( signAt.HasValue ) {
+				var myworld = ModContent.GetInstance<AMWorld>();
+				myworld.JungleSignTile = signAt.Value;
 			}
-
-			var myworld = ModContent.GetInstance<AMWorld>();
-			myworld.JungleSignTile = (left, top);
 
 			progress.Set( 1f );
 		}

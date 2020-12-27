@@ -102,9 +102,9 @@ v1
 	-	@Orbs
 		-	Fix binoc tooltip
 	-	Increase ectoplasm pot drop rate
+
+
 	-	Add sign before first corruption to recommend using track deployment kit
-
-
 	-	Show sell price for item in tooltip
 	-	Lighten up extreme hills area even more
 	-	Tweak guide instructions on accessing areas (fix erroneous extra alert)
