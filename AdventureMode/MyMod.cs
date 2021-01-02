@@ -46,6 +46,7 @@ namespace AdventureMode {
 			this.ModInteractions.LoadOrbs();
 			this.ModInteractions.LoadTerrainRemixer();
 			this.ModInteractions.LoadLoreAndObjectives();
+			this.ModInteractions.LoadTheMadRanger();
 		}
 
 		////

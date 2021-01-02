@@ -35,7 +35,7 @@ namespace AdventureMode {
 
 		[DefaultValue( true )]
 		[ReloadRequired]
-		public bool RemoveRecipeTileRequirements { get; set; } = true;
+		public bool OverrideRecipeTileRequirements { get; set; } = true;
 
 		////
 

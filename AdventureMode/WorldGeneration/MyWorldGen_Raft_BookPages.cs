@@ -30,7 +30,7 @@ namespace AdventureMode.WorldGeneration {
 				},
 			};
 
-			if( AMConfig.Instance.RemoveRecipeTileRequirements ) {
+			if( AMConfig.Instance.OverrideRecipeTileRequirements ) {
 				texts[1].Add( "- Use house kits to create NPC houses, beds, storage, and fast travel points." );
 				texts[1].RemoveAt( 3 );
 			}

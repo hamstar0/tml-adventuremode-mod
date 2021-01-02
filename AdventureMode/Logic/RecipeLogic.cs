@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 using AdventureMode.Recipes;
 
 
@@ -22,23 +24,11 @@ namespace AdventureMode.Logic {
 
 		////////////////
 
-		public static void RemoveTileRequirements() {
-			if( !AMConfig.Instance.RemoveRecipeTileRequirements ) {
-				return;
-			}
+		public static void ApplyRecipeWhitelistingAndNewTileRequirements() {
+			bool overrideTile = AMConfig.Instance.OverrideRecipeTileRequirements;
+			ISet<int> whitelistTypes = RecipeLogic.GetWhitelistedRecipes();
 
-			for( int i = 0; i < Main.recipe.Length; i++ ) {
-				Recipe recipe = Main.recipe[i];
-				if( recipe == null ) { continue; }
-
-				for( int j = 0; j < recipe.requiredTile.Length; j++ ) {
-					//if( recipe.requiredTile[j] != TileID.Furnaces ) {
-					if( recipe.requiredTile[j] != -1 && recipe.requiredTile[j] != TileID.DemonAltar ) {
-						recipe.requiredTile[j] = TileID.WorkBenches;
-					}
-					//recipe.requiredTile[j] = -1;
-				}
-			}
+			RecipeLogic.ApplyRecipeWhitelistingAndNewTileRequirements( overrideTile, whitelistTypes );
 		}
 
 

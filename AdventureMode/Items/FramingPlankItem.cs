@@ -8,7 +8,7 @@ namespace AdventureMode.Items {
 	public class FramingPlankItem : ModItem {
 		public override void SetStaticDefaults() {
 			string text = "May be used for light patching or small structures";
-			if( !AMConfig.Instance.RemoveRecipeTileRequirements ) {
+			if( !AMConfig.Instance.OverrideRecipeTileRequirements ) {
 				text += "\n" + "Crafted with a sawmill station";
 			}
 

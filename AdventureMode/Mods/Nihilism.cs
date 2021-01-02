@@ -34,7 +34,6 @@ namespace AdventureMode.Mods {
 
 			//
 
-			this.ApplyNihilismRecipeFilters();
 			this.ApplyNihilismNPCFilters();
 			this.ApplyNihilismItemFilters();
 

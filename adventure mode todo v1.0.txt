@@ -47,19 +47,35 @@ v1
 -	B&D
 	-	Other uses for ores
 	-	Durability concept
+	-	Whitelist ash blocks for breaking?
+-	Add extra lava on lower levels
 -	@Prefab Kits
+	-	Implement type of Excavation Kits
+	-	Demolitionist trades Excavation Kits for ores
+		-	@Plan
+			-	Copper/tin for ice and mud excavator
+			-	Iron/lead for sandstone excavator
+			-	Silver/tungsten for granite and marble excavator
+			-	Gold/platinum for water-submerged rock excavator
+			-	Demonite/crimtane for lava-submerged rock excavator
+			-	Hellstone for bedrock excavator
 	-	Add Excavation Kits
-		-	Craft Excavation Kits from copper/tin, iron/lead, silver/tungsten, gold/platinum, amethyst, dynamite
-		-	Demolitionist trades Excavation Kits for ores
 		-	Implement item use
 		-	Create item graphic (shaped explosives?)
 		-	Define item
 		-	@Plan
+			-	Turns mud into silt and sand
+			-	Turns sandstone into sand
+			-	Turns ice into slush and snow
+			-	Turns granite and marble into silt
+			-	Turns rock into silt
 			-	Turns bedrock into rock
-			-	Excavates a path through rock, turning it into silt
 -	Add bedrock veins to world gen
 -	@Mod Helpers
 	-	Add Bedrock tile (generic unbreakable tile)
+-	@Surroundings
+	-	Experiment with cave-like tree scrolling
+-	@B&D: Excavation Kits vs Drones
 [v0.17.0]
 -	@SORT MOD TAGS!!!!
 -	@Beta (Decide: keep Necrotis?)
@@ -73,25 +89,35 @@ v1
 	-	Verdant Blessing
 	-	Infection, Parasites
 	-	Verify FE debug map markers
-!
-!
+
+
 	-	The Shadow debuff
 	-	NPC dialogue alerts visible on the map
 	-	Extreme hills
+-	Convert all Nihilism recipes to RecipeEditor
+-	Adjust TMR settings
+	-	RecipeAvailableForSpeedloader = false
+	-	BanditLootGunDropPercentChance = 0f
+	-	BanditLootSpeedloaderDropPercentChance = 0.01f
+	-	BanditLootBandolierDropPercentChance = 0f
+-	@Green Hell
+	-	Change infection from max hp loss to damage-on-move
 -	@TMR
+	-	Gun draw: drawpos.Y += player.gfxOffY
 	-	Add bandit mob
--	@Boss Reigns
-	-	Block all warp items when reign in progress
--	@Mounted Magic Mirrors
-	-	Block use of mirrors when bosses are active
+		-	Add settings to drop revolver-relevant items rarely (otherwise commonly low money, uncommonly high)
+		-	Set to spawn rarely in forest during day
+		-	Implement AI
+			-	Add fleeing behavior when player gets near or damage taken (cuts off after X time)
+			-	Customize projectile (use regular bullet with relatively high damage)
+			-	Import skeleton sniper AI
+		-	Define NPC (based on skeleton sniper?)
+		-	Create graphic
 -	F&T 3
-	-	@Green Hell
-		-	Change infection from max hp loss to light hp loss
 	-	@Necrotis
-		-	Set all surface areas to regen anima
+		-	Set all surface regions to regen anima
 		-	Raise ankh 24 units and shift further left in inventory mode
-		-	Reduce crimson/corruption drain rate
-		-	Start player with full anima
+		-	Start player with just over half anima
 		-	Reduce drain/gain rates (at beach + night, also)
 		-	Fix redundant debuff descriptions (max hp reduced to 100 when only 100)
 		-	Recover some anima on death
@@ -102,8 +128,6 @@ v1
 	-	@Orbs
 		-	Fix binoc tooltip
 	-	Increase ectoplasm pot drop rate
-
-
 	-	Add sign before first corruption to recommend using track deployment kit
 	-	Show sell price for item in tooltip
 	-	Lighten up extreme hills area even more

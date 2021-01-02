@@ -171,7 +171,7 @@ namespace AdventureMode {
 		////////////////
 
 		private void OnLoadedTiles() {
-			if( !this.RemoveRecipeTileRequirements ) {
+			if( !this.OverrideRecipeTileRequirements ) {
 				this.HouseKitFurnitureSuccession.AddRange( new HouseKitFurnitureDefinition[] {
 					new HouseKitFurnitureDefinition { TileType = TileID.Tables, IsHardMode = false },
 					new HouseKitFurnitureDefinition { TileType = TileID.Anvils, IsHardMode = false },

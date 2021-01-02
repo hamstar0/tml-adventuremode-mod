@@ -12,7 +12,7 @@ namespace AdventureMode {
 		}
 
 		public override void PostAddRecipes() {
-			RecipeLogic.RemoveTileRequirements();
+			RecipeLogic.ApplyRecipeWhitelistingAndNewTileRequirements();
 			RecipeLogic.TweakBowlRecipe();
 		}
 	}
