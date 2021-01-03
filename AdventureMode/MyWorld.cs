@@ -123,6 +123,11 @@ namespace AdventureMode {
 				progress.Value = 1f;
 			} ) );
 
+			tasks.Add( new PassLegacy( "Adventure Mode: Create Snow Sign", ( progress ) => {
+				AMWorldGen.PlaceSnowSign( progress );
+				progress.Value = 1f;
+			} ) );
+
 			tasks.Add( new PassLegacy( "Adventure Mode: Underground Desert Scan", ( progress ) => {
 				AMWorldGen.ScanUndergroundDesert( progress );
 				progress.Value = 1f;

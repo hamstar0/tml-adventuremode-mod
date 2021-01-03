@@ -97,13 +97,13 @@ v1
 	-	NPC dialogue alerts visible on the map
 	-	Extreme hills
 -	F&T 4
-	-	Add sign before snow biome to indicate sand and snow are soft
 	-	@Orbs
 		-	Tweak tooltips
 	-	@TMR
 		-	Fix premature cursor disappear
 
 
+	-	Add sign before snow biome to indicate sand and snow are soft
 	-	Fix broken recipes (e.g. no platforms)
 	-	Fix FE markers debug display
 -	Convert all Nihilism recipes to RecipeEditor
