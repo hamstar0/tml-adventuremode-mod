@@ -27,11 +27,13 @@ namespace AdventureMode.Logic {
 				}
 
 				if( overrideTile ) {
+					bool usesTile = false;
 					bool isDemonAltar = false;
 
 					foreach( int tileId in recipe.requiredTile ) {
 						if( tileId < 0 ) { continue; }
 
+						usesTile = true;
 						isDemonAltar = tileId == TileID.DemonAltar;
 
 						if( !isDemonAltar ) {
@@ -39,7 +41,7 @@ namespace AdventureMode.Logic {
 						}
 					}
 
-					if( !isDemonAltar ) {
+					if( usesTile && !isDemonAltar ) {
 						re.AddTile( TileID.WorkBenches );
 					}
 				}
