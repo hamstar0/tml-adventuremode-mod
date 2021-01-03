@@ -2,6 +2,7 @@ using System;
 using Terraria;
 using Terraria.ModLoader;
 using HamstarHelpers.Helpers.Debug;
+using HamstarHelpers.Services.Hooks.LoadHooks;
 using AdventureMode.Logic;
 
 
@@ -12,8 +13,11 @@ namespace AdventureMode {
 		}
 
 		public override void PostAddRecipes() {
-			RecipeLogic.ApplyRecipeWhitelistingAndNewTileRequirements();
 			RecipeLogic.TweakBowlRecipe();
+
+			LoadHooks.AddPostModLoadHook( () => {
+				RecipeLogic.ApplyRecipeWhitelistingAndNewTileRequirements();
+			} );
 		}
 	}
 }

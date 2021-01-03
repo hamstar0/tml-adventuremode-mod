@@ -20,17 +20,28 @@ namespace AdventureMode.Logic {
 				var re = new RecipeEditor( recipe );
 				int itemType = recipe.createItem.type;
 
-				if( whitelistTypes.Contains( itemType ) ) {
-					if( overrideTile ) {
-						foreach( int tileId in recipe.requiredTile ) {
-							if( tileId < 0 ) { continue; }
-							if( tileId == TileID.DemonAltar ) { break; }
+				if( !whitelistTypes.Contains( itemType ) ) {
+					re.DeleteRecipe();
+
+					continue;
+				}
+
+				if( overrideTile ) {
+					bool isDemonAltar = false;
+
+					foreach( int tileId in recipe.requiredTile ) {
+						if( tileId < 0 ) { continue; }
+
+						isDemonAltar = tileId == TileID.DemonAltar;
+
+						if( !isDemonAltar ) {
 							re.DeleteTile( tileId );
 						}
 					}
-					re.AddTile( TileID.WorkBenches );
-				} else {
-					re.DeleteRecipe();
+
+					if( !isDemonAltar ) {
+						re.AddTile( TileID.WorkBenches );
+					}
 				}
 			}
 		}
@@ -47,7 +58,7 @@ namespace AdventureMode.Logic {
 			//
 
 			void unionGroup( ISet<int> itemTypes, string grpName ) {
-				if( EntityGroups.TryGetItemGroup( ItemGroupIDs.AnyAccessory, out IReadOnlySet<int> roGrp ) ) {
+				if( EntityGroups.TryGetItemGroup(grpName, out IReadOnlySet<int> roGrp) ) {
 					itemTypes.UnionWith( roGrp );
 				}
 			}
@@ -175,12 +186,10 @@ namespace AdventureMode.Logic {
 				blacklistTypes.Add( ItemID.DiamondHook );
 			}
 
-			//
-
 			unionGroup( blacklistTypes, ItemGroupIDs.AnyFishingPole );
 
 			//
-
+			
 			whitelistTypes.ExceptWith( blacklistTypes );
 
 			return whitelistTypes;
@@ -190,7 +199,7 @@ namespace AdventureMode.Logic {
 		////
 
 		private static ISet<int> GetRecipeWhitelistForPlatforms() {
-			return new HashSet<int> {
+			var platforms = new HashSet<int> {
 				ItemID.BlueBrickPlatform,
 				ItemID.BonePlatform,
 				ItemID.BorealWoodPlatform,
@@ -230,6 +239,7 @@ namespace AdventureMode.Logic {
 				ItemID.TeamBlockYellowPlatform,
 				ItemID.WoodPlatform,
 			};
+			return platforms;
 		}
 	}
 }

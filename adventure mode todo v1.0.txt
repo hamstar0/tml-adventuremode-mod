@@ -33,6 +33,7 @@ v1
 		-	Add toggle button to UI
 		-	@Update tag moderation page
 	-	Refactor mod hook-level code into a Logic abstraction
+	-	Adjust mod list in control panel to make number ids not overlap name
 -	@Begin final beta test
 -	@Set git repos public
 -	Add allowed-mod whitelist (configurable)
@@ -76,24 +77,35 @@ v1
 -	@Surroundings
 	-	Experiment with cave-like tree scrolling
 -	@B&D: Excavation Kits vs Drones
-[v0.17.0]
 -	@SORT MOD TAGS!!!!
--	@Beta (Decide: keep Necrotis?)
+[v0.17.0]
+-	@Beta
 -	@Test MP (EoW/BoC)
 	-	Witch Doctor
 -	@Test (EoC)
+	-	Verdant Blessing
 	-	Boss enrage + reduced hp
 	-	Goblin icon + rescue
 	-	Trickster defeats on map
+	-	Bandit spawns
 	-	Boss reign duration
-	-	Verdant Blessing
 	-	Infection, Parasites
 	-	Verify FE debug map markers
-
-
+!
+!
 	-	The Shadow debuff
 	-	NPC dialogue alerts visible on the map
 	-	Extreme hills
+-	F&T 4
+	-	Add sign before snow biome to indicate sand and snow are soft
+	-	@Orbs
+		-	Tweak tooltips
+	-	@TMR
+		-	Fix premature cursor disappear
+
+
+	-	Fix broken recipes (e.g. no platforms)
+	-	Fix FE markers debug display
 -	Convert all Nihilism recipes to RecipeEditor
 -	Adjust TMR settings
 	-	RecipeAvailableForSpeedloader = false
