@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using HamstarHelpers.Helpers.Debug;
+using HamstarHelpers.Helpers.Items;
 using HamstarHelpers.Helpers.Items.Attributes;
 using MountedMagicMirrors.Items;
-using HamstarHelpers.Helpers.Items;
 
 
 namespace AdventureMode {
@@ -62,12 +63,12 @@ namespace AdventureMode {
 				break;
 			}
 
-			if( item.value > 0 ) {
+			if( Main.npcShop == 0 && item.value > 0 ) {
 				string[] renderedValueDenoms = ItemMoneyHelpers.RenderMoneyDenominations( item.value / 5, true, true );
 				string renderedValue = string.Join( ", ", renderedValueDenoms );
 
-				tip = new TooltipLine( this.mod, "AdventureModeValue", "Sells for "+renderedValue );
-				ItemInformationAttributeHelpers.ApplyTooltipAt( tooltips, tip );
+				tip = new TooltipLine( this.mod, "AdventureModeValue", "Sells for " + renderedValue );
+				ItemInformationAttributeHelpers.AppendTooltip( tooltips, tip );
 			}
 		}
 	}

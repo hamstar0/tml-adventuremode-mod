@@ -19,6 +19,17 @@ namespace AdventureMode.WorldGeneration {
 				return -1;
 			}
 
+			bool isValidSignColumn( int myTileX, int myTileY ) {
+				int top = myTileY - 16;
+				for( int y = myTileY - 3; y > top; y-- ) {
+					Tile tile = Main.tile[myTileX, y];
+					if( tile?.active() == true || tile.wall > 0 ) {
+						return false;
+					}
+				}
+				return true;
+			}
+
 			//
 
 			int mid = Main.maxTilesX / 2;
@@ -34,7 +45,7 @@ namespace AdventureMode.WorldGeneration {
 			for( int i=0; i<mid; i++ ) {
 				tileX = start + (i * dir);
 				tileY = checkColumn( tileX );
-				if( tileY == -1 ) {
+				if( tileY == -1 || !isValidSignColumn(tileX, tileY) ) {
 					continue;
 				}
 

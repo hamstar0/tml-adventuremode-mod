@@ -28,21 +28,23 @@ namespace AdventureMode.Logic {
 
 				if( overrideTile ) {
 					bool usesTile = false;
-					bool isDemonAltar = false;
+					bool usesDemonAltar = false;
 
-					foreach( int tileId in recipe.requiredTile ) {
-						if( tileId < 0 ) { continue; }
+					foreach( int reqTileId in recipe.requiredTile ) {
+						if( reqTileId < 0 ) { continue; }
 
 						usesTile = true;
-						isDemonAltar = tileId == TileID.DemonAltar;
+						usesDemonAltar = reqTileId == TileID.DemonAltar;
 
-						if( !isDemonAltar ) {
-							re.DeleteTile( tileId );
+						if( !usesDemonAltar ) {
+							re.DeleteTile( reqTileId );
 						}
 					}
 
-					if( usesTile && !isDemonAltar ) {
-						re.AddTile( TileID.WorkBenches );
+					if( usesTile ) {
+						if( !usesDemonAltar ) {
+							re.AddTile( TileID.WorkBenches );
+						}
 					}
 				}
 			}
@@ -63,6 +65,7 @@ namespace AdventureMode.Logic {
 				if( EntityGroups.TryGetItemGroup(grpName, out IReadOnlySet<int> roGrp) ) {
 					itemTypes.UnionWith( roGrp );
 				}
+LogHelpers.Log( grpName+" - " + (roGrp != null ? string.Join(", ", roGrp) : "") );
 			}
 
 			//
@@ -176,7 +179,7 @@ namespace AdventureMode.Logic {
 				whitelistTypes.Add( ItemID.TitaniumForge );
 			}
 
-			//
+			////
 
 			if( config.EnableBasicGrappleItemRecipes ) {
 				blacklistTypes.Add( ItemID.GrapplingHook );
@@ -188,11 +191,14 @@ namespace AdventureMode.Logic {
 				blacklistTypes.Add( ItemID.DiamondHook );
 			}
 
+			unionGroup( blacklistTypes, ItemGroupIDs.AnyWorkbench );
 			unionGroup( blacklistTypes, ItemGroupIDs.AnyFishingPole );
 
-			//
+			////
 			
+LogHelpers.Log( "before " + string.Join(", ", whitelistTypes) );
 			whitelistTypes.ExceptWith( blacklistTypes );
+LogHelpers.Log( "after  " + string.Join(", ", whitelistTypes) );
 
 			return whitelistTypes;
 		}

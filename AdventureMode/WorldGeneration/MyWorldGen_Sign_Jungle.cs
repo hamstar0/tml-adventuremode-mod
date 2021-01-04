@@ -20,6 +20,17 @@ namespace AdventureMode.WorldGeneration {
 				return -1;
 			}
 
+			bool isValidSignColumn( int myTileX, int myTileY ) {
+				int top = myTileY - 16;
+				for( int y = myTileY - 3; y > top; y-- ) {
+					Tile tile = Main.tile[ myTileX, y ];
+					if( tile?.active() == true || tile.wall > 0 ) {
+						return false;
+					}
+				}
+				return true;
+			}
+
 			//
 
 			int jungleCount = 0;
@@ -40,7 +51,7 @@ namespace AdventureMode.WorldGeneration {
 			} else {    // Dungeon on right, jungle on left
 				for( tileX=Main.maxTilesX/2; tileX>0; tileX-- ) {
 					tileY = checkColumn( tileX );
-					if( tileY == -1 ) {
+					if( tileY == -1 || !isValidSignColumn(tileX, tileY) ) {
 						continue;
 					}
 

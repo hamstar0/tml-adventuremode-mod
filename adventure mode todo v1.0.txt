@@ -90,19 +90,29 @@ v1
 	-	Bandit spawns
 	-	Boss reign duration
 	-	Infection, Parasites
+!
+!
 	-	Verify FE debug map markers
-!
-!
 	-	The Shadow debuff
 	-	NPC dialogue alerts visible on the map
 	-	Extreme hills
 -	F&T 4
+	-	@Powerful Magic
+		-	Fix tooltips
+	-	@Lore
+		-	Fix old man's dialogue
+	-	@Prefab Kits
+		-	Fix mirror blocking
+	-	Set sign gen to require open sky
+
+
+	-	Fix ores not showing their value
+	-	Remove workbench, fishing pole recipes
+	-	Add torch recipe (!)
 	-	@Orbs
 		-	Tweak tooltips
 	-	@TMR
 		-	Fix premature cursor disappear
-
-
 	-	Add sign before snow biome to indicate sand and snow are soft
 	-	Fix broken recipes (e.g. no platforms)
 	-	Fix FE markers debug display
