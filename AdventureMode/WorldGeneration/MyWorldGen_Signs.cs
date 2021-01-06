@@ -8,9 +8,18 @@ using HamstarHelpers.Helpers.Debug;
 namespace AdventureMode.WorldGeneration {
 	partial class AMWorldGen {
 		public static (int tileX, int tileY)? PlaceSign( int left, int top, string signType, string text ) {
-			Main.tile[left - 1, top].ClearEverything();
-			Main.tile[left, top].ClearEverything();
-			Main.tile[left + 1, top].ClearEverything();
+			void clearTile( int x, int y ) {
+				try {
+					WorldGen.KillTile( x, y, false, false, true );
+					Main.tile[ x, y ].ClearEverything();
+				} catch { }
+			}
+
+			//
+
+			clearTile( left-1, top );
+			clearTile( left, top );
+			clearTile( left+1, top );
 			Main.tile[left - 1, top].active( true );
 			Main.tile[left, top].active( true );
 			Main.tile[left + 1, top].active( true );
@@ -18,15 +27,15 @@ namespace AdventureMode.WorldGeneration {
 			Main.tile[left, top].type = TileID.Mudstone;
 			Main.tile[left + 1, top].type = TileID.Mudstone;
 			
-			Main.tile[left-1, top-1].ClearEverything();
-			Main.tile[left-1, top-2].ClearEverything();
-			Main.tile[left-1, top-3].ClearEverything();
-			Main.tile[left, top-1].ClearEverything();
-			Main.tile[left, top-2].ClearEverything();
-			Main.tile[left, top-3].ClearEverything();
-			Main.tile[left+1, top-1].ClearEverything();
-			Main.tile[left+1, top-2].ClearEverything();
-			Main.tile[left+1, top-3].ClearEverything();
+			clearTile( left-1, top-1 );
+			clearTile( left, top-1 );
+			clearTile( left+1, top-1 );
+			clearTile( left-1, top-2 );
+			clearTile( left, top-2 );
+			clearTile( left+1, top-2 );
+			clearTile( left-1, top-3 );
+			clearTile( left, top-3 );
+			clearTile( left+1, top-3 );
 
 			bool placed = false;
 			int highest = top - 4;

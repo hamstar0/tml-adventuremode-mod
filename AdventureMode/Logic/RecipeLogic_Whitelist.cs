@@ -65,7 +65,6 @@ namespace AdventureMode.Logic {
 				if( EntityGroups.TryGetItemGroup(grpName, out IReadOnlySet<int> roGrp) ) {
 					itemTypes.UnionWith( roGrp );
 				}
-LogHelpers.Log( grpName+" - " + (roGrp != null ? string.Join(", ", roGrp) : "") );
 			}
 
 			//
@@ -196,9 +195,7 @@ LogHelpers.Log( grpName+" - " + (roGrp != null ? string.Join(", ", roGrp) : "") 
 
 			////
 			
-LogHelpers.Log( "before " + string.Join(", ", whitelistTypes) );
 			whitelistTypes.ExceptWith( blacklistTypes );
-LogHelpers.Log( "after  " + string.Join(", ", whitelistTypes) );
 
 			return whitelistTypes;
 		}

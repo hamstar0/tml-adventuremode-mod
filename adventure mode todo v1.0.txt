@@ -50,6 +50,8 @@ v1
 	-	Durability concept
 	-	Whitelist ash blocks for breaking?
 -	Add extra lava on lower levels
+-	@TMR
+	-	Show held gun only when aiming
 -	@Prefab Kits
 	-	Implement type of Excavation Kits
 	-	Demolitionist trades Excavation Kits for ores
@@ -90,13 +92,14 @@ v1
 	-	Bandit spawns
 	-	Boss reign duration
 	-	Infection, Parasites
-!
-!
+
+
 	-	Verify FE debug map markers
 	-	The Shadow debuff
 	-	NPC dialogue alerts visible on the map
 	-	Extreme hills
 -	F&T 4
+	-	Set sign gen to destroy trees
 	-	@Powerful Magic
 		-	Fix tooltips
 	-	@Lore
@@ -104,8 +107,6 @@ v1
 	-	@Prefab Kits
 		-	Fix mirror blocking
 	-	Set sign gen to require open sky
-
-
 	-	Fix ores not showing their value
 	-	Remove workbench, fishing pole recipes
 	-	Add torch recipe (!)
