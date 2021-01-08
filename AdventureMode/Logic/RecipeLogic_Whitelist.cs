@@ -15,38 +15,50 @@ using AdventureMode.Items;
 namespace AdventureMode.Logic {
 	static partial class RecipeLogic {
 		private static void ApplyRecipeWhitelistingAndNewTileRequirements( bool overrideTile, ISet<int> whitelistTypes ) {
+			var toDelete = new List<Recipe>();
+
 			for( int i = 0; i < Main.recipe.Length; i++ ) {
 				Recipe recipe = Main.recipe[i];
-				var re = new RecipeEditor( recipe );
 				int itemType = recipe.createItem.type;
+				if( itemType == 0 ) {
+					continue;
+				}
 
 				if( !whitelistTypes.Contains( itemType ) ) {
-					re.DeleteRecipe();
+					toDelete.Add( recipe );
 
 					continue;
 				}
 
-				if( overrideTile ) {
-					bool usesTile = false;
-					bool usesDemonAltar = false;
+				if( !overrideTile ) {
+					continue;
+				}
 
-					foreach( int reqTileId in recipe.requiredTile ) {
-						if( reqTileId < 0 ) { continue; }
+				var re = new RecipeEditor( recipe );
+				bool usesTile = false;
+				bool usesDemonAltar = false;
 
-						usesTile = true;
-						usesDemonAltar = reqTileId == TileID.DemonAltar;
+				foreach( int reqTileId in recipe.requiredTile ) {
+					if( reqTileId < 0 ) { continue; }
 
-						if( !usesDemonAltar ) {
-							re.DeleteTile( reqTileId );
-						}
-					}
+					usesTile = true;
+					usesDemonAltar = reqTileId == TileID.DemonAltar;
 
-					if( usesTile ) {
-						if( !usesDemonAltar ) {
-							re.AddTile( TileID.WorkBenches );
-						}
+					if( !usesDemonAltar ) {
+						re.DeleteTile( reqTileId );
 					}
 				}
+
+				if( usesTile ) {
+					if( !usesDemonAltar ) {
+						re.AddTile( TileID.WorkBenches );
+					}
+				}
+			}
+
+			foreach( Recipe recipe in toDelete ) {
+				RecipeEditor re = new RecipeEditor( recipe );
+				re.DeleteRecipe();
 			}
 		}
 

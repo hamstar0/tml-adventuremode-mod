@@ -46,7 +46,7 @@ namespace AdventureMode.Mods {
 					LayerName = "Tunnels",
 					NoiseFrequency = 0.01f,
 					WormsMode = FractalType.FBM,
-					NoiseValueMinimumUntilTileRemoval = 0.365f,
+					NoiseValueMinimumUntilTileRemoval = 0.36f, //lower is thinner
 					BoundsTopStart = WorldDepth.SkyTop,
 					BoundsBottomStart = WorldDepth.UnderworldTop,
 					HorizontalDistancePercentFromCenterBeforeBlending = 0.8f,

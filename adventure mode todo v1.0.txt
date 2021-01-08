@@ -81,23 +81,54 @@ v1
 -	@B&D: Excavation Kits vs Drones
 -	@SORT MOD TAGS!!!!
 [v0.17.0]
--	@Beta
 -	@Test MP (EoW/BoC)
+	-	Goblin icon + rescue
 	-	Witch Doctor
+-	@Beta
 -	@Test (EoC)
 	-	Verdant Blessing
 	-	Boss enrage + reduced hp
-	-	Goblin icon + rescue
 	-	Trickster defeats on map
-	-	Bandit spawns
 	-	Boss reign duration
+	-	Bandit spawns
+!
+!
 	-	Infection, Parasites
-
-
 	-	Verify FE debug map markers
 	-	The Shadow debuff
 	-	NPC dialogue alerts visible on the map
 	-	Extreme hills
+-	@Lore
+	-	Add fallen cyborg next to PKE camp (credit koolaidlemonade)
+	-	Set PKE FE to have lit campfire and rename Mission Briefing book
+	-	Add guide objective to build a network of 10 mounted mirrors
+-	F&T 5
+	-	Reduce extreme hills a bit more
+
+
+	-	Tweak 'Lihzarhd', Lunatic Cult lore
+	-	Tweak merchant's dialogue
+	-	Increase npc alert icon size on map
+	-	Set sale price tooltip for stacks to reflect stack size and appear at bottom of list
+	-	Reduce price of furnishing kit
+	-	@TMR
+		-	Increase bandit spawn rates
+		-	Increase sell price for speedloaders
+	-	@Cursed Brambles
+		-	Set brambles to emit particles
+		-	Set brambles to strongly favor veins
+	-	@Trickster
+		-	Fix message hogging for yellow bar (Trickster)
+	-	@PKE
+		-	Alter API to add priorities with texts
+	-	@Necrotis
+		-	Increase rate of cursed brambles
+		-	Set all underground areas to drain anima
+		-	Shift inventory screen ankh to the left 24
+		-	Fix canopic jar dupe bug (again?)
+	-	@Green Hell
+		-	Fix infection damage (add velocity minimum, alert to damage taken, make damage silent)
+	-	Remove wood fishing pole recipe
 -	F&T 4
 	-	Set sign gen to destroy trees
 	-	@Powerful Magic

@@ -12,25 +12,38 @@ using MountedMagicMirrors.Items;
 namespace AdventureMode {
 	partial class AMItem : GlobalItem {
 		public override void ModifyTooltips( Item item, List<TooltipLine> tooltips ) {
-			string modName = "[c/FFFF88:" + AMMod.Instance.DisplayName + "] - ";
+			this.AddCustomTooltips( item, tooltips );
+			this.AddPriceTooltip( item, tooltips );
+		}
+
+
+		////////////////
+
+		private void AddCustomTooltips( Item item, List<TooltipLine> tooltips ) {
 			AMConfig config = AMConfig.Instance;
-			TooltipLine tip;
+			string modName = "[c/FFFF88:" + AMMod.Instance.DisplayName + "] - ";
+
+			//
+
+			void addTip( string ctx, string desc ) {
+				TooltipLine tip = new TooltipLine( this.mod, "AdventureMode"+ctx, modName + desc );
+				ItemInformationAttributeHelpers.ApplyTooltipAt( tooltips, tip );
+			}
+
+			//
 
 			switch( item.type ) {
 			case ItemID.Wood:
-				tip = new TooltipLine( this.mod, "AdventureModeWood", modName+"May be used to craft framing planks" );
-				ItemInformationAttributeHelpers.ApplyTooltipAt( tooltips, tip );
+				addTip( "Wood", "May be used to craft framing planks" );
 				break;
 			case ItemID.WoodPlatform:
 				if( AMConfig.Instance.MaxPlatformBridgeLength > 0 ) {
-					tip = new TooltipLine( this.mod, "AdventureModePlatform", modName+"Only placeable in short ledges attached to something solid" );
-					ItemInformationAttributeHelpers.ApplyTooltipAt( tooltips, tip );
+					addTip( "Platform", "Only placeable in short ledges attached to something solid" );
 				}
 				break;
 			case ItemID.RodofDiscord:
 				if( config.RodOfDiscordChaosStateBlocksBlink ) {
-					tip = new TooltipLine( this.mod, "AdventureModeRoD", modName+"Cannot be used while Chaos State is active" );
-					ItemInformationAttributeHelpers.ApplyTooltipAt( tooltips, tip );
+					addTip( "RoD", "Cannot be used while Chaos State is active" );
 				}
 				break;
 			case ItemID.Rope:
@@ -38,36 +51,31 @@ namespace AdventureMode {
 			case ItemID.VineRope:
 			case ItemID.WebRope:
 			case ItemID.Chain:
-				tip = new TooltipLine( this.mod, "AdventureModeRope", modName+"Can only be lowered, unless placed against walls" );
-				ItemInformationAttributeHelpers.ApplyTooltipAt( tooltips, tip );
+				addTip( "Rope", "Can only be lowered, unless placed against walls" );
 				break;
 			case ItemID.MinecartTrack:
-				tip = new TooltipLine( this.mod, "AdventureModeTrack1", modName+"Can only bridge gaps or be placed downwards" );
-				ItemInformationAttributeHelpers.ApplyTooltipAt( tooltips, tip );
-				tip = new TooltipLine( this.mod, "AdventureModeTrack2", modName+"May be used to craft track deployment kits" );
-				ItemInformationAttributeHelpers.ApplyTooltipAt( tooltips, tip );
+				addTip( "Track1", "Can only bridge gaps or be placed downwards" );
+				addTip( "Track2", "May be used to craft track deployment kits" );
 				break;
 			default:
 				/*if( config.GrappleChainAmmoRate > 0 && ItemAttributeHelpers.IsGrapple( item ) ) {
-					tip = new TooltipLine( this.mod, modName+"Consumes " + config.GrappleChainAmmoRate + " chain(s) per use" );
-					ItemInformationAttributeHelpers.ApplyTooltipAt( tooltips, tip );
+					addTip( "Chains", "Consumes " + config.GrappleChainAmmoRate + " chain(s) per use" );
 				}*/
 				if( item.type == ModContent.ItemType<MountableMagicMirrorTileItem>() ) {
-					tip = new TooltipLine( this.mod, "AdventureModeMMM", modName+"May be placed once, but NOT removed!" );
-					ItemInformationAttributeHelpers.ApplyTooltipAt( tooltips, tip );
-				}
-				if( ItemAttributeHelpers.IsGrapple(item) && AMConfig.Instance.GrappleOnlyWoodAndPlatforms ) {
-					tip = new TooltipLine( this.mod, "AdventureModeGrapple", modName+"Only works on wood and platforms" );
-					ItemInformationAttributeHelpers.ApplyTooltipAt( tooltips, tip );
+					addTip( "MMM", "May be placed once, but NOT removed!" );
+				} else if( ItemAttributeHelpers.IsGrapple(item) && AMConfig.Instance.GrappleOnlyWoodAndPlatforms ) {
+					addTip( "Grapple", "Only works on wood and platforms" );
 				}
 				break;
 			}
+		}
 
+		private void AddPriceTooltip( Item item, List<TooltipLine> tooltips ) {
 			if( Main.npcShop == 0 && item.value > 0 ) {
 				string[] renderedValueDenoms = ItemMoneyHelpers.RenderMoneyDenominations( item.value / 5, true, true );
 				string renderedValue = string.Join( ", ", renderedValueDenoms );
 
-				tip = new TooltipLine( this.mod, "AdventureModeValue", "Sells for " + renderedValue );
+				var tip = new TooltipLine( this.mod, "AdventureModeValue", "Sells for " + renderedValue );
 				ItemInformationAttributeHelpers.AppendTooltip( tooltips, tip );
 			}
 		}
