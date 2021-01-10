@@ -6,7 +6,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Objectives;
 using Objectives.Definitions;
-using AdventureModeLore.Logic;
+using AdventureModeLore.Lore;
 
 
 namespace AdventureMode.Logic {
@@ -46,7 +46,7 @@ namespace AdventureMode.Logic {
 				return;
 			}
 
-			Objective wofObj = ObjectivesAPI.GetObjective( AMLLogic.SummonWoFTitle );
+			Objective wofObj = ObjectivesAPI.GetObjective( LoreEvents.ObjectiveTitle_SummonWoF );
 			if( wofObj == null ) {
 				pool.Remove( NPCID.VoodooDemon );
 			}

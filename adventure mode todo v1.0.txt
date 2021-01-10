@@ -78,7 +78,7 @@ v1
 	-	Add Bedrock tile (generic unbreakable tile)
 -	@Surroundings
 	-	Experiment with cave-like tree scrolling
--	@B&D: Excavation Kits vs Drones
+-	@B&D: Use for ores
 -	@SORT MOD TAGS!!!!
 [v0.17.0]
 -	@Test MP (EoW/BoC)
@@ -90,22 +90,34 @@ v1
 	-	Boss enrage + reduced hp
 	-	Trickster defeats on map
 	-	Boss reign duration
+	-	Infection
+	-	PKE
+	-	Dead Cyborg
+!!
+!!
+	-	Lore
 	-	Bandit spawns
-!
-!
 	-	Infection, Parasites
 	-	Verify FE debug map markers
 	-	The Shadow debuff
 	-	NPC dialogue alerts visible on the map
 	-	Extreme hills
+-	F&T 6
+	-	@PKE
+		-	Give alert when a reading is reaching critical
+	-	Set red PKE message to appear only when full
+	-	@Lore
+		-	Verify NPCs with skipped sub stages do not make alerts
+	-	Fix NPC alert icons on map
+
+
 -	@Lore
 	-	Add fallen cyborg next to PKE camp (credit koolaidlemonade)
-	-	Set PKE FE to have lit campfire and rename Mission Briefing book
+	-	Rename Mission Briefing book
 	-	Add guide objective to build a network of 10 mounted mirrors
+	-	Refactor lore into defs
 -	F&T 5
 	-	Reduce extreme hills a bit more
-
-
 	-	Tweak 'Lihzarhd', Lunatic Cult lore
 	-	Tweak merchant's dialogue
 	-	Increase npc alert icon size on map
