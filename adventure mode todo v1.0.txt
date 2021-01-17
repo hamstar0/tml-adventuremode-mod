@@ -41,44 +41,32 @@ v1
 	-	Fix Guide's false recipe reports?
 	-	Add "Adventure Mode" watermark to inventory backdrop
 	-	Implement remaining lore notes (add 'Island Hungers', 'Anima')
+	-	@Lore
+		-	Fix rapid re-chats to NPCs triggering repeats of objectives dialogues
+	-	@TMR
+		-	Set bandits to make non-zombie noises
+-	Lock players to worlds
+-	@Trickster
+	-	Allow recovering stolen items?
 -	@TMR
 	-	Add a button to toggle quick draw mode (but disables holster twirl)?
 	-	Set aim mode to be a hotkey button (defaults to right-click)
 [v0.17.0]
--	B&D
-	-	Other uses for ores
-	-	Durability concept
-	-	Whitelist ash blocks for breaking?
 -	Add extra lava on lower levels
 -	@TMR
-	-	Show held gun only when aiming
--	@Prefab Kits
-	-	Implement type of Excavation Kits
-	-	Demolitionist trades Excavation Kits for ores
-		-	@Plan
-			-	Copper/tin for ice and mud excavator
-			-	Iron/lead for sandstone excavator
-			-	Silver/tungsten for granite and marble excavator
-			-	Gold/platinum for water-submerged rock excavator
-			-	Demonite/crimtane for lava-submerged rock excavator
-			-	Hellstone for bedrock excavator
-	-	Add Excavation Kits
-		-	Implement item use
-		-	Create item graphic (shaped explosives?)
-		-	Define item
-		-	@Plan
-			-	Turns mud into silt and sand
-			-	Turns sandstone into sand
-			-	Turns ice into slush and snow
-			-	Turns granite and marble into silt
-			-	Turns rock into silt
-			-	Turns bedrock into rock
--	Add bedrock veins to world gen
--	@Mod Helpers
-	-	Add Bedrock tile (generic unbreakable tile)
+	-	Show held gun only when aiming?
 -	@Surroundings
 	-	Experiment with cave-like tree scrolling
--	@B&D: Use for ores
+-	@B&D
+	-	Durability concept
+	-	Bedrock veins (via Mod Helpers?)
+	-	A use for ores (excavation kits?)
+-	Add skull piles
+	-	Set blood moons to generate these on the surface (with an "incubation" time)
+	-	Drop ectoplasm and anti-nectrotis potions on break
+	-	Implement projectile shooting (skeletron skulls, but they cause curse)
+	-	Add to world gen
+	-	Implement tile sheet
 -	@SORT MOD TAGS!!!!
 [v0.17.0]
 -	@Test MP (EoW/BoC)
@@ -88,13 +76,14 @@ v1
 -	@Test (EoC)
 	-	Verdant Blessing
 	-	Boss enrage + reduced hp
-	-	Trickster defeats on map
-	-	Boss reign duration
+	-	Boss reign duration after boss kill
 	-	Infection
+!!
+!!
+	-	Trickster defeats on map
 	-	PKE
+	-	Tricksters
 	-	Dead Cyborg
-!!
-!!
 	-	Lore
 	-	Bandit spawns
 	-	Infection, Parasites
@@ -102,15 +91,72 @@ v1
 	-	The Shadow debuff
 	-	NPC dialogue alerts visible on the map
 	-	Extreme hills
+-	@Necrotis
+	-	Add red (black?) (un)glow for ankh during debuff
+-	@Lore
+	-	Set FEs to be omitted from PKE when "discovered"
 -	F&T 6
+	-	@AM
+		-	Show price of full stack
+		-	Why is there a bound goblin outside of the world?
+		-	Set (Powerful Magic's) FocusManaChargeMaxRatePerSecond to 1
+
+
+		-	Verify pink orb drops for Trickster (move to AM)
+	-	@Boss Reigns
+		-	Increase time before initial max BG PKE
+	-	@Locked Abilities
+		-	Tweak Dark Heart description
+	-	@TMR
+		-	Reset pre-aim mode when missed shot made
+		-	Slightly increase inaccuracy angle width
+	-	@Bullwhip
+		-	Set downed fliers to use slime AI when in water
+		-	Reduce knockback
+	-	@Green Hell
+		-	Fix premature infection state (dead or cured)
+		-	Increase severity of infection
+	-	@Trickster
+		-	Add glow to bats
+		-	Add subtle hint for invisible trickster
+		-	Prevent spawning on surface in corruption/crimson, hallow, or blizzard/sandstorm
+	-	@Powerful Magic
+		-	Set slow falls to not interrupt charging
+		-	Fix mana pickup drops (again)
+	-	@Trickster
+		-	Fix PKE reading next to kill
+		-	Fix trickster kills not registering
 	-	@PKE
-		-	Give alert when a reading is reaching critical
-	-	Set red PKE message to appear only when full
+		-	Fix HUD rendering flickering
+	-	@Findable Mana Crystals
+		-	Set PKE reading to increase when crystal is triggered
+		-	Fix binoc tooltip length
+		-	Set text outputs to base on real distance, not flickering PKE
+	-	@Powerful Magic
+		-	Reduce mob drops of mana stars
+		-	Set charge to be interrupted by falls or hits
+		-	Reduce charge rate
+		-	Ease up on tooltip colors
+	-	@Trickster
+		-	Fix incorrect spawn blocking from nearby defeats
 	-	@Lore
-		-	Verify NPCs with skipped sub stages do not make alerts
+		-	Edit 'The Plague'
+		-	Fix PKE green bar
+		-	Fix empty stages showing alerts
+	-	@PKE
+		-	Remember HUD on/off state between sessions
+		-	Display lights for maxed readings
+		-	Display meter as an information accessory
+	-	Fix sale value tooltip display
+	-	@Boss Reigns
+		-	Set red PKE message to appear only when full
+	-	@Lore
+		-	Mark lore event stages as complete per world
+		-	Fix long book titles
+		-	Fix linespaces in PKE manual
+		-	Fix NPC alert lingering
+	-	Set prices tooltip to actually be at bottom of list
 	-	Fix NPC alert icons on map
-
-
 -	@Lore
 	-	Add fallen cyborg next to PKE camp (credit koolaidlemonade)
 	-	Rename Mission Briefing book

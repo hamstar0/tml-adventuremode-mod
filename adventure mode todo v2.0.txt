@@ -23,6 +23,27 @@ Future considerations
 	-	Set Shine Potion and Miner's Hat (stackable) to reduce rate of bramble generation
 -	@B&D Add Meet The Boss mod?
 	-	Bosses can only be summoned (via. item) in designated areas
+-	@Prefab Kits
+	-	Implement type of Excavation Kits
+	-	Demolitionist trades Excavation Kits for ores
+		-	@Plan
+			-	Copper/tin for ice and mud excavator
+			-	Iron/lead for sandstone excavator
+			-	Silver/tungsten for granite and marble excavator
+			-	Gold/platinum for water-submerged rock excavator
+			-	Demonite/crimtane for lava-submerged rock excavator
+			-	Hellstone for bedrock excavator
+	-	Add Excavation Kits
+		-	Implement item use
+		-	Create item graphic (shaped explosives?)
+		-	Define item
+		-	@Plan
+			-	Turns mud into silt and sand
+			-	Turns sandstone into sand
+			-	Turns ice into slush and snow
+			-	Turns granite and marble into silt
+			-	Turns rock into silt
+			-	Turns bedrock into rock
 
 
 

@@ -67,5 +67,9 @@ namespace AdventureMode {
 			NPCLogic.ApplyForbiddenLoot();
 			return true;
 		}
+
+		public override void NPCLoot( NPC npc ) {
+			NPCLogic.ApplyLoot( npc );
+		}
 	}
 }

@@ -76,7 +76,7 @@ namespace AdventureMode {
 			new ItemQuantityDefinition( nameof(MountedMagicMirrors), nameof(MountableMagicMirrorTileItem), 1, 0.5f ),
 			new ItemQuantityDefinition( nameof(PrefabKits), nameof(TrackDeploymentKitItem), 2, 1f ),
 			new ItemQuantityDefinition( nameof(Orbs), nameof(BlueOrbItem), 1, 0.5f ),
-			new ItemQuantityDefinition( nameof(Orbs), nameof(BrownOrbItem), 1, 0.5f ),
+			//new ItemQuantityDefinition( nameof(Orbs), nameof(BrownOrbItem), 1, 0.5f ),
 			new ItemQuantityDefinition( nameof(Orbs), nameof(CyanOrbItem), 1, 0.5f ),
 			new ItemQuantityDefinition( nameof(Orbs), nameof(GreenOrbItem), 1, 0.5f ),
 			new ItemQuantityDefinition( nameof(Orbs), nameof(PinkOrbItem), 1, 0.5f ),

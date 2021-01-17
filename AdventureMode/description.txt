@@ -1,6 +1,7 @@
 Adventure Mode replaces Terraria's default sandbox mode with a explore-to-progress journeying mode. Good decision making and awareness of your surroundings will be needed to succeed.
 
 
+
 This mode also requires the following mods:
   Mod Helpers
   Adventure Mode Lore
