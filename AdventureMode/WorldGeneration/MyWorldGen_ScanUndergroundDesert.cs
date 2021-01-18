@@ -22,6 +22,10 @@ namespace AdventureMode.WorldGeneration {
 			var myworld = ModContent.GetInstance<AMWorld>();
 			myworld.UndergroundDesertBounds = bounds.Value;
 
+			if( AMConfig.Instance.DebugModeInfo ) {
+				LogHelpers.Log( "Underground desert occupies tile range " + bounds.Value.ToString() );
+			}
+
 			progress.Set( 1f );
 		}
 	}

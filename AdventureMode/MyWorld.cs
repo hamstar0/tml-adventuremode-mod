@@ -27,7 +27,7 @@ namespace AdventureMode {
 
 		public Rectangle UndergroundDesertBounds { get; internal set; } = default( Rectangle );
 
-		public (int tileX, int tileY) DungeonBottom { get; internal set; } = (0, 0);
+		public (int TileX, int TileY) DungeonBottom { get; internal set; } = (0, 0);
 
 
 
@@ -53,6 +53,18 @@ namespace AdventureMode {
 				int y = tag.GetInt( "jungle_sign_loc_y" );
 				this.JungleSignTile = (x, y);
 			}
+			if( tag.ContainsKey( "und_des_zone_x" ) ) {
+				int x = tag.GetInt( "und_des_zone_x" );
+				int y = tag.GetInt( "und_des_zone_y" );
+				int wid = tag.GetInt( "und_des_zone_wid" );
+				int hei = tag.GetInt( "und_des_zone_hei" );
+				this.UndergroundDesertBounds = new Rectangle( x, y, wid, hei );
+			}
+			if( tag.ContainsKey( "dung_bot_x" ) ) {
+				int x = tag.GetInt( "dung_bot_x" );
+				int y = tag.GetInt( "dung_bot_y" );
+				this.DungeonBottom = (x, y);
+			}
 
 			WorldLogic.LoadRaftRestockInfo( tag );
 		}
@@ -62,7 +74,13 @@ namespace AdventureMode {
 				{ "is_adventure", this.IsCurrentWorldAdventure },
 				{ "house_kit_furniture_idx", this.HouseKitFurnitureIdx },
 				{ "jungle_sign_loc_x", this.JungleSignTile.TileX },
-				{ "jungle_sign_loc_y", this.JungleSignTile.TileY }
+				{ "jungle_sign_loc_y", this.JungleSignTile.TileY },
+				{ "und_des_zone_x", this.UndergroundDesertBounds.X },
+				{ "und_des_zone_y", this.UndergroundDesertBounds.Y },
+				{ "und_des_zone_wid", this.UndergroundDesertBounds.Width },
+				{ "und_des_zone_hei", this.UndergroundDesertBounds.Height },
+				{ "dung_bot_x", this.DungeonBottom.TileX },
+				{ "dung_bot_y", this.DungeonBottom.TileY }
 			};
 
 			WorldLogic.SaveRaftRestockInfo( tag );
@@ -81,6 +99,16 @@ namespace AdventureMode {
 				int signX = reader.ReadInt32();
 				int signY = reader.ReadInt32();
 				this.JungleSignTile = (signX, signY);
+
+				int undX = reader.ReadInt32();
+				int undY = reader.ReadInt32();
+				int undWid = reader.ReadInt32();
+				int undHei = reader.ReadInt32();
+				this.UndergroundDesertBounds = new Rectangle( undX, undY, undWid, undHei );
+
+				int dunX = reader.ReadInt32();
+				int dunY = reader.ReadInt32();
+				this.DungeonBottom = (dunX, dunY);
 			} catch { }
 		}
 
@@ -90,6 +118,12 @@ namespace AdventureMode {
 				writer.Write( (int)this.HouseKitFurnitureIdx );
 				writer.Write( (int)this.JungleSignTile.TileX );
 				writer.Write( (int)this.JungleSignTile.TileY );
+				writer.Write( (int)this.UndergroundDesertBounds.X );
+				writer.Write( (int)this.UndergroundDesertBounds.Y );
+				writer.Write( (int)this.UndergroundDesertBounds.Width );
+				writer.Write( (int)this.UndergroundDesertBounds.Height );
+				writer.Write( (int)this.DungeonBottom.TileX );
+				writer.Write( (int)this.DungeonBottom.TileY );
 			} catch { }
 		}
 

@@ -72,10 +72,22 @@ namespace AdventureMode {
 
 		private void AddPriceTooltip( Item item, List<TooltipLine> tooltips ) {
 			if( Main.npcShop == 0 && item.value > 0 ) {
-				string[] renderedValueDenoms = ItemMoneyHelpers.RenderMoneyDenominations( item.value / 5, true, true );
-				string renderedValue = string.Join( ", ", renderedValueDenoms );
+				long unitSellValue = item.value / 5;
+				long stackSellValue = unitSellValue * item.stack;
 
-				var tip = new TooltipLine( this.mod, "AdventureModeValue", "Sells for " + renderedValue );
+				string[] renderedSellValueDenoms = ItemMoneyHelpers.RenderMoneyDenominations( stackSellValue, true, true );
+				string renderedSellValue = string.Join( ", ", renderedSellValueDenoms );
+
+				string tipText = "Sells for " + renderedSellValue;
+
+				if( item.stack > 1 ) {
+					string[] renderedUnitSellValueDenoms = ItemMoneyHelpers.RenderMoneyDenominations( unitSellValue, false, true );
+					string renderedUnitSellValue = string.Join( ", ", renderedUnitSellValueDenoms );
+
+					tipText += " ("+renderedUnitSellValue+" each)";
+				}
+
+				var tip = new TooltipLine( this.mod, "AdventureModeValue", tipText );
 				ItemInformationAttributeHelpers.AppendTooltip( tooltips, tip );
 			}
 		}

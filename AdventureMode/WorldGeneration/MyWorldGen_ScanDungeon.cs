@@ -33,6 +33,10 @@ namespace AdventureMode.WorldGeneration {
 
 			myworld.DungeonBottom = point.Value;
 
+			if( AMConfig.Instance.DebugModeInfo ) {
+				LogHelpers.Log( "Dungeon occupies tile range " + bounds.Value.ToString() );
+			}
+
 			progress.Set( 1f );
 		}
 

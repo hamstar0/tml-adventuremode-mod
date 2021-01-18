@@ -59,6 +59,9 @@
     <Reference Include="PKEMeter">
       <HintPath>..\..\..\PKE Meter\Project\PKEMeter\bin\Release\net452\PKEMeter.dll</HintPath>
     </Reference>
+    <Reference Include="PowerfulMagic">
+      <HintPath>..\..\..\Powerful Magic\Project\PowerfulMagic\bin\Release\net452\PowerfulMagic.dll</HintPath>
+    </Reference>
     <Reference Include="PrefabKits">
       <HintPath>..\..\..\Prefab Kits\Project\PrefabKits\bin\Release\net452\PrefabKits.dll</HintPath>
     </Reference>

@@ -7,7 +7,7 @@ using HamstarHelpers.Services.Maps;
 
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
-		private void LoadLoreAndObjectives_BoundGoblin( bool isNew, bool isDone ) {
+		private void ApplyLoreAndObjectives_BoundGoblin( bool isNew, bool isDone ) {
 			if( isNew && !isDone && !NPC.savedGoblin ) {
 				var myworld = ModContent.GetInstance<AMWorld>();
 				int goblinX = myworld.UndergroundDesertBounds.X + (myworld.UndergroundDesertBounds.Width / 2);
@@ -15,10 +15,10 @@ namespace AdventureMode.Mods {
 
 				Main.instance.LoadNPC( NPCID.BoundGoblin );
 
-				MapMarkers.AddFullScreenMapMarker(
+				MapMarkers.SetFullScreenMapMarker(
+					id: "AdventureMode_Spawn_BoundGoblin",
 					tileX: goblinX,
 					tileY: goblinY,
-					id: "AdventureMode_Spawn_BoundGoblin",
 					icon: Main.npcTexture[NPCID.BoundGoblin],
 					scale: 1f
 				);

@@ -9,10 +9,10 @@ namespace AdventureMode.Mods {
 		public void LoadLoreAndObjectives() {
 			ObjectivesAPI.AddSubscription( "AdventureMode", (string objectiveName, bool isNew, bool isDone) => {
 				if( objectiveName.Equals(LoreEvents.ObjectiveTitle_TalkToGoblin) ) {
-					this.LoadLoreAndObjectives_BoundGoblin( isNew, isDone );
+					this.ApplyLoreAndObjectives_BoundGoblin( isNew, isDone );
 				}
 				if( objectiveName.Equals( LoreEvents.ObjectiveTitle_FindMechanic) ) {
-					this.LoadLoreAndObjectives_BoundMechanic( isNew, isDone );
+					this.ApplyLoreAndObjectives_BoundMechanic( isNew, isDone );
 				}
 			} );
 		}

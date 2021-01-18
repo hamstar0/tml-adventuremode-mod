@@ -57,6 +57,8 @@ v1
 	-	Show held gun only when aiming?
 -	@Surroundings
 	-	Experiment with cave-like tree scrolling
+-	@Lore
+	-	Set FEs to be omitted from PKE when "discovered"
 -	@B&D
 	-	Durability concept
 	-	Bedrock veins (via Mod Helpers?)
@@ -93,15 +95,13 @@ v1
 	-	Extreme hills
 -	@Necrotis
 	-	Add red (black?) (un)glow for ankh during debuff
--	@Lore
-	-	Set FEs to be omitted from PKE when "discovered"
 -	F&T 6
 	-	@AM
+		-	Fix bound goblin map icon outside of world
+
+
 		-	Show price of full stack
-		-	Why is there a bound goblin outside of the world?
 		-	Set (Powerful Magic's) FocusManaChargeMaxRatePerSecond to 1
-
-
 		-	Verify pink orb drops for Trickster (move to AM)
 	-	@Boss Reigns
 		-	Increase time before initial max BG PKE

@@ -7,16 +7,16 @@ using HamstarHelpers.Services.Maps;
 
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
-		private void LoadLoreAndObjectives_BoundMechanic( bool isNew, bool isDone ) {
+		private void ApplyLoreAndObjectives_BoundMechanic( bool isNew, bool isDone ) {
 			if( isNew && !isDone && !NPC.savedMech ) {
 				var myworld = ModContent.GetInstance<AMWorld>();
 
 				Main.instance.LoadNPC( NPCID.BoundMechanic );
 
-				MapMarkers.AddFullScreenMapMarker(
+				MapMarkers.SetFullScreenMapMarker(
+					id: "AdventureMode_Spawn_BoundMechanic",
 					tileX: myworld.DungeonBottom.tileX * 16,
 					tileY: myworld.DungeonBottom.tileY * 16,
-					id: "AdventureMode_Spawn_BoundMechanic",
 					icon: Main.npcTexture[NPCID.BoundMechanic],
 					scale: 1f
 				);
