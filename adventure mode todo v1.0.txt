@@ -95,11 +95,11 @@ v1
 	-	Extreme hills
 -	@Necrotis
 	-	Add red (black?) (un)glow for ankh during debuff
+
+
 -	F&T 6
 	-	@AM
 		-	Fix bound goblin map icon outside of world
-
-
 		-	Show price of full stack
 		-	Set (Powerful Magic's) FocusManaChargeMaxRatePerSecond to 1
 		-	Verify pink orb drops for Trickster (move to AM)
