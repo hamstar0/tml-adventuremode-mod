@@ -80,6 +80,7 @@ v1
 	-	Boss enrage + reduced hp
 	-	Boss reign duration after boss kill
 	-	Infection
+	-	Whip vs Trickster
 !!
 !!
 	-	Trickster defeats on map
@@ -93,10 +94,39 @@ v1
 	-	The Shadow debuff
 	-	NPC dialogue alerts visible on the map
 	-	Extreme hills
+-	F&T 7
+	-	Increase ammo (arrows, bullets, grenades) costs drastically
+	-	Mention ammo being limited
+	-	Set framing planks to not need a workbench
+	-	Increase amount of worldgen terrain backfill
+	-	Reduce width of extreme hills
+	-	@Trickster
+		-	Reduce duration of invincibility from trickster's attack
+		-	Increase visibility when hidden
+		-	Reduce max hp
+		-	Reduce charge up speed increase
+		-	Increase spawn block radius
+		-	Reduce trickster spawn rate on surface
+		-	Set trickster bats to disappear after 10s
+		-	Set surface tricksters to only spawn when background tiles present
+		-	Set tricksters to not break out of hiding longer
+	-	@Necrotis
+		-	Set max necrotis to add darkness debuff
+	-	@Green Hell
+		-	Fix infection debuff tooltip
+		-	Fix "Movements agitate your condition" unnecessary repeats
+		-	Fix artificially persistent infection
+	-	@TMR
+		-	Add TMR tooltip to mention speedloaders
+
+
+	-	@Prefab Kits
+		-	Verify track kit recipe
+	-	@Lore
+		-	Shorten guide dialogue texts
+		-	Debug merchant dialogue (cleanup alert marker with empty custom dialogue)
 -	@Necrotis
-	-	Add red (black?) (un)glow for ankh during debuff
-
-
+	-	Add red (un)glow for ankh during debuff
 -	F&T 6
 	-	@AM
 		-	Fix bound goblin map icon outside of world

@@ -28,8 +28,8 @@ namespace AdventureMode.Logic {
 
 		public static void EditSpawnPoolForBoundMechanic( IDictionary<int, float> pool, NPCSpawnInfo spawnInfo ) {
 			var myworld = ModContent.GetInstance<AMWorld>();
-			int mechanicTileX = myworld.DungeonBottom.tileX;
-			int mechanicTileY = myworld.DungeonBottom.tileY;
+			int mechanicTileX = myworld.DungeonBottom.TileX;
+			int mechanicTileY = myworld.DungeonBottom.TileY;
 			var mechanicPos = new Vector2( mechanicTileX * 16, mechanicTileY * 16 );
 			float minDistSqr = 32 * 16;	// 32 blocks
 			minDistSqr *= minDistSqr;
