@@ -13,10 +13,10 @@ namespace AdventureMode.Mods {
 				// Upper caves softening
 				new TerrainRemixerGenPassSpec {
 					LayerName = "Tunnels",
-					NoiseFrequency = 0.005f,	//0.01f
+					NoiseFrequency = 0.005f,
 					WormsMode = FractalType.Billow,
 					Sharpness = 0.3f,
-					NoiseValueMinimumUntilTileRemoval = 0.175f,	//0.3f
+					NoiseValueMinimumUntilTileRemoval = 0.175f,
 					VerticalDistancePercentFromCenterBeforeBlending = 0.7f,
 					HorizontalDistancePercentFromCenterBeforeBlending = 0.9f,
 					BoundsTopStart = WorldDepth.SkyTop,
@@ -32,7 +32,7 @@ namespace AdventureMode.Mods {
 					NoiseFrequency = 0.0075f,	//0.01f
 					WormsMode = FractalType.Billow,
 					Sharpness = 0.3f,
-					NoiseValueMinimumUntilTileRemoval = 0.175f,	//0.3f
+					NoiseValueMinimumUntilTileRemoval = 0.2f,	//was 0.175f
 					VerticalDistancePercentFromCenterBeforeBlending = 0.8f,
 					HorizontalDistancePercentFromCenterBeforeBlending = 0.9f,
 					BoundsTopStart = WorldDepth.UndergroundDirtTop,
@@ -51,8 +51,8 @@ namespace AdventureMode.Mods {
 					BoundsBottomStart = WorldDepth.UnderworldTop,
 					HorizontalDistancePercentFromCenterBeforeBlending = 0.8f,
 					VerticalDistancePercentFromCenterBeforeBlending = 0.5f,	//was 0.7f
-					BoundsLeftPercentStart = 0.4f,
-					BoundsRightPercentStart = 0.6f,
+					BoundsLeftPercentStart = 0.45f,	//was 0.4
+					BoundsRightPercentStart = 0.55f,	//was 0.6
 					FillTiles = new List<int> { -1 },
 					FillWalls = new List<int> { }
 				},

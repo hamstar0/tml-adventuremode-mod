@@ -51,7 +51,7 @@ v1
 -	@TMR
 	-	Add a button to toggle quick draw mode (but disables holster twirl)?
 	-	Set aim mode to be a hotkey button (defaults to right-click)
-[v0.17.0]
+[v0.19.0]
 -	Add extra lava on lower levels
 -	@TMR
 	-	Show held gun only when aiming?
@@ -70,10 +70,11 @@ v1
 	-	Add to world gen
 	-	Implement tile sheet
 -	@SORT MOD TAGS!!!!
-[v0.17.0]
+[v0.18.0]
 -	@Test MP (EoW/BoC)
+	-	Infection buff sync (use output messages)
 	-	Goblin icon + rescue
-	-	Witch Doctor
+	-	Lore events
 -	@Beta
 -	@Test (EoC)
 	-	Verdant Blessing
@@ -94,22 +95,31 @@ v1
 	-	The Shadow debuff
 	-	NPC dialogue alerts visible on the map
 	-	Extreme hills
+-	Set all chest items and NPC drops to have a custom "Ruined" prefix
+	-	Set tinkerer to have high chance of reforging items into 'ruined'
+	-	Prevent ruined items from being used at all
+	-	Define prefix
+
+
+[v0.17.0]
+-	Increase sell price of ores and gems
+-	Increase ammo (arrows, bullets, grenades) costs a lot
+-	Mention ammo being limited in game mode intructions
 -	F&T 7
-	-	Increase ammo (arrows, bullets, grenades) costs drastically
-	-	Mention ammo being limited
 	-	Set framing planks to not need a workbench
 	-	Increase amount of worldgen terrain backfill
 	-	Reduce width of extreme hills
 	-	@Trickster
-		-	Reduce duration of invincibility from trickster's attack
+		-	Reduce duration of NPC invincibility from trickster's attack
 		-	Increase visibility when hidden
 		-	Reduce max hp
-		-	Reduce charge up speed increase
-		-	Increase spawn block radius
-		-	Reduce trickster spawn rate on surface
+		-	Set highest level attack charge up speed to not be as quick
+		-	Increase spawn block radius away from previous defeats
+		-	Reduce spawn rate underground
 		-	Set trickster bats to disappear after 10s
 		-	Set surface tricksters to only spawn when background tiles present
 		-	Set tricksters to not break out of hiding longer
+		-	Better emphasize trickster theft alert message
 	-	@Necrotis
 		-	Set max necrotis to add darkness debuff
 	-	@Green Hell
@@ -118,8 +128,6 @@ v1
 		-	Fix artificially persistent infection
 	-	@TMR
 		-	Add TMR tooltip to mention speedloaders
-
-
 	-	@Prefab Kits
 		-	Verify track kit recipe
 	-	@Lore

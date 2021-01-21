@@ -16,15 +16,16 @@ namespace AdventureMode.WorldGeneration {
 				new List<string> {
 					"- Building and digging disabled (some exceptions).",
 					"- Use house kits to create NPC houses, beds, crafting stations, and fast travel points.",
-					"- Crafting stations are either found or kit-made.",
+					"- All crafting is now handled at workbenches.",
 				},
 				new List<string> {
-					"- Use platforms, planks, and ropes to get around.",
-					"- Get Orbs from chests or challenges to progress.",
+					"- Use platforms, planks, ropes, and rails kits to get around.",
+					"- Use Orbs (found in chests) to open new areas.",
 					//"- Grappling only works on platforms.",
-					"- Read item descriptions for more info.",
+					"- Ammo is more expensive; use wisely.",
 				},
 				new List<string> {
+					"- Read item descriptions for more info.",
 					"- Talk to the Guide for further help.",
 					"- Do not whip the slimes!",
 				},
