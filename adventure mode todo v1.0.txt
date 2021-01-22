@@ -82,8 +82,8 @@ v1
 	-	Boss reign duration after boss kill
 	-	Infection
 	-	Whip vs Trickster
-!!
-!!
+
+
 	-	Trickster defeats on map
 	-	PKE
 	-	Tricksters
@@ -95,12 +95,13 @@ v1
 	-	The Shadow debuff
 	-	NPC dialogue alerts visible on the map
 	-	Extreme hills
--	Set all chest items and NPC drops to have a custom "Ruined" prefix
+-	Add Ruined Items mod to AM
+-	@Ruined Items mod
+	-	Set all NPC drops to be ruined
+	-	Set all chest items to be ruined
 	-	Set tinkerer to have high chance of reforging items into 'ruined'
 	-	Prevent ruined items from being used at all
 	-	Define prefix
-
-
 [v0.17.0]
 -	Increase sell price of ores and gems
 -	Increase ammo (arrows, bullets, grenades) costs a lot

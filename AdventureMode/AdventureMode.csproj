@@ -48,7 +48,7 @@
       <HintPath>..\..\..\Necrotis\Project\Necrotis\bin\Release\net452\Necrotis.dll</HintPath>
     </Reference>
     <Reference Include="Nihilism">
-      <HintPath>..\..\..\Nihilism\Nihilism\bin\Release\net452\Nihilism.dll</HintPath>
+      <HintPath>..\..\..\Nihilism\Project\Nihilism\bin\Release\net452\Nihilism.dll</HintPath>
     </Reference>
     <Reference Include="Objectives">
       <HintPath>..\..\..\Objectives\Project\Objectives\bin\Release\net452\Objectives.dll</HintPath>
@@ -67,6 +67,9 @@
     </Reference>
     <Reference Include="ReadableBooks">
       <HintPath>..\..\..\Readable Books\Project\ReadableBooks\bin\Release\net452\ReadableBooks.dll</HintPath>
+    </Reference>
+    <Reference Include="RuinedItems">
+      <HintPath>..\..\..\Ruined Items\Project\RuinedItems\bin\Release\net452\RuinedItems.dll</HintPath>
     </Reference>
     <Reference Include="TerrainRemixer">
       <HintPath>..\..\..\Terrain Remixer\Project\TerrainRemixer\bin\Release\net452\TerrainRemixer.dll</HintPath>
