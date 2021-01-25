@@ -52,6 +52,7 @@ v1
 	-	Add a button to toggle quick draw mode (but disables holster twirl)?
 	-	Set aim mode to be a hotkey button (defaults to right-click)
 [v0.19.0]
+-	Set right-click placement of platforms and planks to make a quick span
 -	Add extra lava on lower levels
 -	@TMR
 	-	Show held gun only when aiming?
@@ -80,10 +81,10 @@ v1
 	-	Verdant Blessing
 	-	Boss enrage + reduced hp
 	-	Boss reign duration after boss kill
-	-	Infection
 	-	Whip vs Trickster
 
 
+	-	Infection
 	-	Trickster defeats on map
 	-	PKE
 	-	Tricksters
@@ -95,6 +96,37 @@ v1
 	-	The Shadow debuff
 	-	NPC dialogue alerts visible on the map
 	-	Extreme hills
+-	F&T 8
+	-	Fix corruption sign on ice biome (or else desert?)
+	-	Remove wood supports from rail kit recipe
+	-	Verify raft barrel deliveries
+	-	Remove granite block drops from granite mobs
+	-	Set bandits to rarely drop speedloaders
+	-	@Boss Reigns (1.0.3)
+	-	@PKE (1.4.0)
+		-	Add labels to text labels API (GEOFORM, CONCENTRATE, SPECIMEN, AMBIENT)
+	-	@Ruined Items
+		-	Show ruined items with dull colors instead
+		-	Display cross out only if item is locked
+	-	@Trickster (1.4.1)
+		-	Reduce trickster laugh volume
+	-	@Green Hell
+		-	Remove infection damage when mounted
+	-	@Necrotis (1.8.0)
+		-	Reduce anima regen sources
+		-	Lighten up necrotis darkness effect
+		-	When anima regenerating, add glowing tip to ankh
+		-	Give canopic jar better description
+	-	@TMR (1.5.2.1)
+		-	Fix TMR interrupting during reload and emptying all ammo
+-	@Ruined Items
+	-	Combo reforges of ruined items have higher chance to re-roll ruined items
+	-	Set the ruined prefix to propagate when crafting new items with ruined ingredients
+	-	Add setting for purchased items to be ruined
+	-	Add tooltips
+	-	Implement accessory stats (-10% crit, -10% melee speed, -10% damage, -10% movement, -10 max mana)
+	-	Implement weapon stats (-20% size, -20% damage, -20% speed, -20% crit, -20% velocity)
+	-	Add RuinedItemsLockedOnly setting
 -	Add Ruined Items mod to AM
 -	@Ruined Items mod
 	-	Set all NPC drops to be ruined

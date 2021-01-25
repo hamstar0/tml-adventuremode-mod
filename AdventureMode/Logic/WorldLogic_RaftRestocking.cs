@@ -60,7 +60,8 @@ namespace AdventureMode.Logic {
 			var myworld = ModContent.GetInstance<AMWorld>();
 			int chestIdx = myworld.GetRaftBarrelChestIndex();
 			if( chestIdx == -1 ) {
-				LogHelpers.Alert( "No raft barrel found." );
+				LogHelpers.Alert( "No raft barrel found to restock!" );
+				Main.NewText( "No raft barrel found to restock!", Color.Red );
 				return false;
 			}
 

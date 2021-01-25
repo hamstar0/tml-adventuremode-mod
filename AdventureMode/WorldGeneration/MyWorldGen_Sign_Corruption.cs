@@ -12,7 +12,16 @@ namespace AdventureMode.WorldGeneration {
 			int checkColumn( int myTileX ) {
 				for( int myTileY=40; myTileY<WorldHelpers.DirtLayerTopTileY; myTileY++ ) {
 					Tile tile = Main.tile[myTileX, myTileY];
-					if( tile?.active() == true && (tile.type == TileID.CorruptGrass || tile.type == TileID.FleshGrass) ) {
+					if( tile?.active() != true ) {
+						continue;
+					}
+					switch( tile.type ) {
+					case TileID.CorruptGrass:
+					case TileID.FleshGrass:
+					case TileID.FleshIce:
+					case TileID.CorruptIce:
+					case TileID.Ebonsand:
+					case TileID.Crimsand:
 						return myTileY;
 					}
 				}
@@ -37,12 +46,12 @@ namespace AdventureMode.WorldGeneration {
 				? -1
 				: 1;
 			int start = Main.spawnTileX > mid
-				? Main.maxTilesX - 10
-				: 1000;
+				? Main.maxTilesX
+				: 0;
 
 			int corrCount = 0;
 
-			for( int i=0; i<mid; i++ ) {
+			for( int i=40; i<Main.maxTilesX; i++ ) {
 				tileX = start + (i * dir);
 				tileY = checkColumn( tileX );
 				if( tileY == -1 || !isValidSignColumn(tileX, tileY) ) {

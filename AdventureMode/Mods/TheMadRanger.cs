@@ -8,7 +8,7 @@ namespace AdventureMode.Mods {
 			var config = TMRConfig.Instance;
 
 			config.SetOverride( nameof( config.BanditLootBandolierDropPercentChance ), 0f );
-			config.SetOverride( nameof( config.BanditLootSpeedloaderDropPercentChance ), 0.01f );
+			config.SetOverride( nameof( config.BanditLootSpeedloaderDropPercentChance ), 0.02f );
 			config.SetOverride( nameof( config.BanditLootGunDropPercentChance ), 0f );
 			config.SetOverride( nameof( config.RecipeAvailableForSpeedloader ), false );
 		}

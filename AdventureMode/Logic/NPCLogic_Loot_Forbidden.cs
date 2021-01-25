@@ -9,6 +9,7 @@ namespace AdventureMode.Logic {
 		public static void ApplyForbiddenLoot() {
 			NPCLoader.blockLoot.Add( ItemID.Hook );
 			NPCLoader.blockLoot.Add( ItemID.Present );
+			NPCLoader.blockLoot.Add( ItemID.Granite );
 		}
 	}
 }

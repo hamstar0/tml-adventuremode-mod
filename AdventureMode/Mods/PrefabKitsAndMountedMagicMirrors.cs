@@ -44,7 +44,7 @@ namespace AdventureMode.Mods {
 				//{ new ItemDefinition(ItemID.SilkRopeCoil), 30 },
 				{ new ItemDefinition(ItemID.Chain), 15 },
 				//{ new ItemDefinition(ItemID.Minecart), 1 },
-				{ new ItemDefinition(ItemID.WoodenBeam), 50 }
+				//{ new ItemDefinition(ItemID.WoodenBeam), 50 }
 			} );
 		}
 	}
