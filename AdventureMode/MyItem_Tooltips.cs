@@ -81,7 +81,12 @@ namespace AdventureMode {
 				string tipText = "Sells for " + renderedSellValue;
 
 				if( item.stack > 1 ) {
-					string[] renderedUnitSellValueDenoms = ItemMoneyHelpers.RenderMoneyDenominations( unitSellValue, false, true );
+					string[] renderedUnitSellValueDenoms = ItemMoneyHelpers.RenderMoneyDenominations( unitSellValue, true, true );
+					for( int i=0; i<renderedUnitSellValueDenoms.Length; i++ ) {
+						string[] segs = renderedUnitSellValueDenoms[i].Split( ' ' );
+						renderedUnitSellValueDenoms[i] = segs[0] + segs[1][0] + "]";
+					}
+
 					string renderedUnitSellValue = string.Join( ", ", renderedUnitSellValueDenoms );
 
 					tipText += " ("+renderedUnitSellValue+" each)";

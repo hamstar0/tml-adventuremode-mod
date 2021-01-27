@@ -1,6 +1,6 @@
 displayName = Adventure Mode
 author = hamstar
-version = 0.17.1
-modReferences = HamstarHelpers@5.10.1, AdventureModeLore@0.6.2, Orbs@1.2.3, LockedAbilities@1.2.0, Objectives@0.5.0, ChestImplants@1.1.2, TerrainRemixer@0.10.0, Nihilism@3.2.0, Bullwhip@1.1.3, TheMadRanger@1.5.2, FindableManaCrystals@1.2.2, PrefabKits@1.2.1, PowerfulMagic@1.6.0, MountedMagicMirrors@1.1.7, CursedBrambles@0.5.5, Necrotis@1.8.0, Enraged@0.7.1, TheTrickster@1.4.1, GreenHell@0.5.1, ReadableBooks@1.2.1, Surroundings@1.0.4, PKEMeter@1.4.0, BossReigns@1.0.3, RuinedItems@2.2.1, BossChecklist@1.1.4
+version = 0.17.2
+modReferences = HamstarHelpers@5.10.1, AdventureModeLore@0.6.2, Orbs@1.2.3, LockedAbilities@1.2.0, Objectives@0.5.0, ChestImplants@1.1.2, TerrainRemixer@0.10.0, Nihilism@3.2.0, Bullwhip@1.1.3, TheMadRanger@1.5.2, FindableManaCrystals@1.2.2, PrefabKits@1.2.1, PowerfulMagic@1.6.0, MountedMagicMirrors@1.1.7, CursedBrambles@0.5.5, Necrotis@1.8.1, Enraged@0.7.1, TheTrickster@1.4.1, GreenHell@0.5.1, ReadableBooks@1.2.1, Surroundings@1.0.4, PKEMeter@1.4.0, BossReigns@1.0.3, RuinedItems@2.2.1, BossChecklist@1.1.4
 buildIgnore = *.csproj, *.user, *.bat, obj\*, bin\*, .vs\*, .git\*
 homepage = https://forums.terraria.org/index.php?threads/adventure-mode.85140/

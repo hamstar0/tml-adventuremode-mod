@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.ModLoader.Config;
 using HamstarHelpers.Classes.DataStructures;
 using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Services.EntityGroups;
@@ -41,32 +42,20 @@ namespace AdventureMode {
 		////////////////
 
 		public override void SetDefaults( Item item ) {
+			var config = AMConfig.Instance;
+			var itemDef = new ItemDefinition( item.type );
+
+			if( config.ShopPriceScales.ContainsKey(itemDef) ) {
+				item.value = (int)((float)item.value * config.ShopPriceScales[ itemDef ].Scale);
+			} else if( AMItem.ItemIsValuable(item) ) {
+				item.value = (int)((float)item.value * config.ValueablesShopPriceScale);
+			}
+
 			switch( item.type ) {
 			case ItemID.ReaverShark:
-				if( AMConfig.Instance.NerfReaverShark ) {
+				if( config.NerfReaverShark ) {
 					item.pick = 50;
 				}
-				break;
-			case ItemID.RocketBoots:
-				if( AMConfig.Instance.RocketBootsCost >= 0 ) {
-					item.value = AMConfig.Instance.RocketBootsCost;
-				}
-				break;
-			case ItemID.LesserHealingPotion:
-				item.value *= 2;
-				break;
-			case ItemID.Torch:
-				item.value *= 2;
-				break;
-			// Jack up ammo prices
-			case ItemID.Grenade:
-				item.value *= 3;
-				break;
-			case ItemID.WoodenArrow:
-				item.value *= 5;
-				break;
-			case ItemID.MusketBall:
-				item.value *= 5;
 				break;
 			default:
 				if( AMItem.ItemIsValuable(item) ) {

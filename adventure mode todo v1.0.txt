@@ -60,16 +60,19 @@ v1
 	-	Experiment with cave-like tree scrolling
 -	@Lore
 	-	Set FEs to be omitted from PKE when "discovered"
--	@B&D
-	-	Durability concept
-	-	Bedrock veins (via Mod Helpers?)
-	-	A use for ores (excavation kits?)
 -	Add skull piles
 	-	Set blood moons to generate these on the surface (with an "incubation" time)
 	-	Drop ectoplasm and anti-nectrotis potions on break
 	-	Implement projectile shooting (skeletron skulls, but they cause curse)
 	-	Add to world gen
 	-	Implement tile sheet
+-	When background PKE set to max, add sudden, periodic waves of "death winds" (increases Necrotis)
+-	@B&D
+	-	Durability concept
+	-	Bedrock veins (via Mod Helpers?)
+	-	A use for silk?
+	-	A use for ores (excavation kits?)
+	-	Max background PKE (waves of darkness?)
 -	@SORT MOD TAGS!!!!
 [v0.18.0]
 -	@Test MP (EoW/BoC)
@@ -82,8 +85,9 @@ v1
 	-	Boss enrage + reduced hp
 	-	Boss reign duration after boss kill
 	-	Whip vs Trickster
-
-
+	-	Trickster spawns (again)
+~~
+~~
 	-	Infection
 	-	Trickster defeats on map
 	-	PKE
@@ -96,7 +100,38 @@ v1
 	-	The Shadow debuff
 	-	NPC dialogue alerts visible on the map
 	-	Extreme hills
+-	@Prefab Kits
+	-	Add Scaffolding Kit
+		-	@Plan
+			-	Form: 2 wood supports (6 high), 3x platform row, 1 board at end of row
+			-	Placed only on ground
+			-	Costs 1g
+-	F&T 9
+	-	Set town NPCs to be invincible
+	-	Alter merchant's objective about orbs to specify at least 1 of each color
+	-	Add a guide objective when max BG PKE occures and player has a PKE meter
+
+
+	-	Tone down ore sale prices
+	-	Tweak sale price per-unit denom labels
+	-	@Ruined Items
+		-	Set ruined item blink to be softer, but color tint darker
+	-	@Trickster
+		-	Increase spawn rates slightly
+		-	Reduce trickster previous defeat spawn block distance
+	-	@PKE
+		-	Tweak PKE tooltips: Add quotes, replace "label" with "bar"
+		-	Fix PKE tooltips for non-blue colors
+	-	@Necrotis (1.8.1)
+		-	Mention necrotis as a result of low anima in debuff description
+		-	Add light level tooltip to necrotis debuffs
+	-	Fix orphaned alert icon
 -	F&T 8
+	-	@B&D a way to fix ruined items before goblin
+	-	Disable gem hook recipes
+	-	Remove marshmallow from merchant shop
+	-	Tweak canopic jar tooltip
+	-	If shop items are ruined, show them as ruined in the shop
 	-	Fix corruption sign on ice biome (or else desert?)
 	-	Remove wood supports from rail kit recipe
 	-	Verify raft barrel deliveries
