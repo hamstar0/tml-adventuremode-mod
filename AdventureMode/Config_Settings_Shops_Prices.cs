@@ -12,6 +12,14 @@ namespace AdventureMode {
 		[DefaultValue( 1f )]
 		[CustomModConfigItem( typeof( MyFloatInputElement ) )]
 		public float Scale { get; set; } = 1f;
+
+
+
+		public ScaleSetting() { }
+
+		public ScaleSetting( float scale ) {
+			this.Scale = scale;
+		}
 	}
 
 

@@ -34,6 +34,12 @@ namespace AdventureMode {
 			this.Weight = weight;
 		}
 
+		public ItemQuantityDefinition( ItemQuantityDefinition clone ) {
+			this.Item = new ItemDefinition( clone.Item.mod, clone.Item.name );
+			this.Quantity = clone.Quantity;
+			this.Weight = clone.Weight;
+		}
+
 		////////////////
 
 		public Item GetItem() {
