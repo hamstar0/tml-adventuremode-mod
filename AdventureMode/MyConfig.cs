@@ -138,6 +138,11 @@ namespace AdventureMode {
 		[DefaultValue( 1 )]
 		public int TricksterPinkOrbDrops { get; set; } = 1;
 
+		////
+
+		[DefaultValue( true )]
+		public bool InvincibleTownNPCs { get; set; } = true;
+
 
 
 		////////////////
