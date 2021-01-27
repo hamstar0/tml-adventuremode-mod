@@ -64,7 +64,7 @@ namespace AdventureMode {
 		[Range( 0, 60 * 25 * 30 )]
 		[DefaultValue( 60 * 25 * 3 )]
 		public int RaftBarrelRestockSecondsDuration { get; set; } = 60 * 25 * 3;  // 3 days
-
+		
 		public List<ItemQuantityDefinition> RaftBarrelRestockSelection { get; set; } = new List<ItemQuantityDefinition> {
 			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.Wood), 25, 2f ),
 			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.WoodPlatform), 25, 1f ),

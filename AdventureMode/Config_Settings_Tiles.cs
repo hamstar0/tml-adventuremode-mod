@@ -33,7 +33,7 @@ namespace AdventureMode {
 
 
 
-
+	
 	public partial class AMConfig : ModConfig {
 		public List<string> TilePlaceWhitelist { get; set; } = new List<string> {
 			//

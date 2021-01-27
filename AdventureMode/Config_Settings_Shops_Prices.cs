@@ -29,7 +29,7 @@ namespace AdventureMode {
 			{ new ItemDefinition(ItemID.WoodenArrow), new ScaleSetting { Scale = 5f } },
 			{ new ItemDefinition(ItemID.MusketBall), new ScaleSetting { Scale = 5f } }
 		};
-
+		
 
 		[Range( 0f, 100f )]
 		[DefaultValue( 2.5f )]

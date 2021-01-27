@@ -106,12 +106,12 @@ v1
 			-	Form: 2 wood supports (6 high), 3x platform row, 1 board at end of row
 			-	Placed only on ground
 			-	Costs 1g
+-	@Lore
+	-	Alter merchant's objective about orbs to specify at least 1 of each color
+	-	Add a guide objective when max BG PKE occures and player has a PKE meter
+
+
 -	F&T 9
-	-	@Lore
-		-	Alter merchant's objective about orbs to specify at least 1 of each color
-		-	Add a guide objective when max BG PKE occures and player has a PKE meter
-
-
 	-	Set town NPCs to be invincible
 	-	Tone down ore sale prices
 	-	Tweak sale price per-unit denom labels
