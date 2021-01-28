@@ -33,29 +33,10 @@ namespace AdventureMode {
 			//
 
 			switch( item.type ) {
-			case ItemID.Wood:
-				addTip( "Wood", "May be used to craft framing planks" );
-				break;
-			case ItemID.WoodPlatform:
-				if( AMConfig.Instance.MaxPlatformBridgeLength > 0 ) {
-					addTip( "Platform", "Only placeable in short ledges attached to something solid" );
-				}
-				break;
 			case ItemID.RodofDiscord:
 				if( config.RodOfDiscordChaosStateBlocksBlink ) {
 					addTip( "RoD", "Cannot be used while Chaos State is active" );
 				}
-				break;
-			case ItemID.Rope:
-			case ItemID.SilkRope:
-			case ItemID.VineRope:
-			case ItemID.WebRope:
-			case ItemID.Chain:
-				addTip( "Rope", "Can only be lowered, unless placed against walls" );
-				break;
-			case ItemID.MinecartTrack:
-				addTip( "Track1", "Can only bridge gaps or be placed downwards" );
-				addTip( "Track2", "May be used to craft track deployment kits" );
 				break;
 			default:
 				/*if( config.GrappleChainAmmoRate > 0 && ItemAttributeHelpers.IsGrapple( item ) ) {

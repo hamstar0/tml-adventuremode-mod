@@ -48,7 +48,6 @@ namespace AdventureMode {
 					.Select( i => new ItemDefinition( i.mod, i.name ) )
 					.ToList()
 			);
-			clone.TilePlaceWhitelist = this.TilePlaceWhitelist.ToList();
 
 			return clone;
 		}

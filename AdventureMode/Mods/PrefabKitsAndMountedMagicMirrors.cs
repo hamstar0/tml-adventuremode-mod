@@ -6,16 +6,16 @@ using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 using HamstarHelpers.Helpers.Debug;
 using MountedMagicMirrors.Tiles;
-using PrefabKits;
+using Ergophobia;
 
 
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
 		public void LoadPrefabsKitAndMountedMagicMirrors() {
-			var pkConfig = PrefabKitsConfig.Instance;
+			var pkConfig = ErgophobiaConfig.Instance;
 			IList<HouseKitFurnitureDefinition> cycle = AMConfig.Instance.HouseKitFurnitureSuccession;
 
-			PrefabKitsAPI.OnPostHouseCreate( (tileX, tileY) => {
+			ErgophobiaAPI.OnPostHouseCreate( (tileX, tileY) => {
 				var myworld = ModContent.GetInstance<AMWorld>();
 
 				if( myworld.HouseKitFurnitureIdx >= cycle.Count ) {

@@ -8,8 +8,7 @@ using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Services.EntityGroups;
 using HamstarHelpers.Services.EntityGroups.Definitions;
 using LockedAbilities.Items.Consumable;
-using PrefabKits.Items;
-using AdventureMode.Items;
+using Ergophobia.Items;
 
 
 namespace AdventureMode.Logic {

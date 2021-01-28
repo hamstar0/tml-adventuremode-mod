@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using Terraria.ID;
 using Terraria.ModLoader;
-using AdventureMode.Tiles;
-using FindableManaCrystals.Tiles;
 using CursedBrambles.Tiles;
+using Ergophobia.Tiles;
+using FindableManaCrystals.Tiles;
 using Orbs;
 
 

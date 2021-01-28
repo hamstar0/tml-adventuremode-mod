@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using AdventureMode.Tiles;
+using Ergophobia.Tiles;
 
 
 namespace AdventureMode.Logic {

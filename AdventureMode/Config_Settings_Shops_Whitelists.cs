@@ -4,7 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 using HamstarHelpers.Helpers.Debug;
-using PrefabKits.Items;
+using Ergophobia.Items;
 
 
 namespace AdventureMode {

@@ -102,15 +102,30 @@ v1
 	-	Extreme hills
 -	@Prefab Kits
 	-	Add Scaffolding Kit
+		-	Implement placement rules
+		-	Implement placement of structure
+		-	Create sprite
+		-	Define item
 		-	@Plan
-			-	Form: 2 wood supports (6 high), 3x platform row, 1 board at end of row
+			-	Form: 2 wood supports (6 high), 4x platform row, 1 solid (wood) in the middle
 			-	Placed only on ground
-			-	Costs 1g
+			-	Costs 1g 50s
+			-	Placement rules (OR'd):
+				-	Must be placed on a solid tile
+				-	Must have at least 1 solid tile within 5 tiles horizontally
+				-	Must have at least 4 non-wood solid tiles within 30 tiles below
+				-	Must have at least 10 solid tiles within 30 tiles horizontally
+	-	Migrate Framing Planks from AM to Prefab Kits (disabled by config default)
 -	@Lore
 	-	Alter merchant's objective about orbs to specify at least 1 of each color
 	-	Add a guide objective when max BG PKE occures and player has a PKE meter
+-	Change @Prefab Kits to Ergophobia
+	-	Set AM to add mounted mirrors to Ergo's whitelist
 
 
+	-	Import all tile placement whitelist stuff from AM
+	-	Import framing planks
+	-	Rename mod
 -	F&T 9
 	-	Set town NPCs to be invincible
 	-	Tone down ore sale prices

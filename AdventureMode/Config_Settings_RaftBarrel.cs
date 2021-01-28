@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader.Config;
-using AdventureMode.Items;
-using PrefabKits.Items;
+using Ergophobia.Items;
 using MountedMagicMirrors.Items;
 using Orbs.Items;
 
@@ -58,13 +57,13 @@ namespace AdventureMode {
 			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.Wood), 50 ),
 			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.WoodPlatform), 50 ),
 			new ItemQuantityDefinition( nameof(AdventureMode), nameof(FramingPlankItem), 50 ),
-			new ItemQuantityDefinition( nameof(PrefabKits), nameof(HouseFurnishingKitItem), 1 ),
-			new ItemQuantityDefinition( nameof(PrefabKits), nameof(HouseFurnishingKitItem), 1 ),
-			new ItemQuantityDefinition( nameof(PrefabKits), nameof(HouseFurnishingKitItem), 1 ),
-			new ItemQuantityDefinition( nameof(PrefabKits), nameof(HouseFramingKitItem), 1 ),
-			new ItemQuantityDefinition( nameof(PrefabKits), nameof(HouseFramingKitItem), 1 ),
+			new ItemQuantityDefinition( nameof(Ergophobia), nameof(HouseFurnishingKitItem), 1 ),
+			new ItemQuantityDefinition( nameof(Ergophobia), nameof(HouseFurnishingKitItem), 1 ),
+			new ItemQuantityDefinition( nameof(Ergophobia), nameof(HouseFurnishingKitItem), 1 ),
+			new ItemQuantityDefinition( nameof(Ergophobia), nameof(HouseFramingKitItem), 1 ),
+			new ItemQuantityDefinition( nameof(Ergophobia), nameof(HouseFramingKitItem), 1 ),
 			new ItemQuantityDefinition( nameof(MountedMagicMirrors), nameof(MountableMagicMirrorTileItem), 5 ),
-			new ItemQuantityDefinition( nameof(PrefabKits), nameof(TrackDeploymentKitItem), 12 )
+			new ItemQuantityDefinition( nameof(Ergophobia), nameof(TrackDeploymentKitItem), 12 )
 		};
 
 		[Range( 0, 60 * 25 * 30 )]
@@ -77,10 +76,10 @@ namespace AdventureMode {
 			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.Rope), 50, 1f ),
 			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.Torch), 25, 1f ),
 			new ItemQuantityDefinition( nameof(AdventureMode), nameof(FramingPlankItem), 25, 1f ),
-			new ItemQuantityDefinition( nameof(PrefabKits), nameof(HouseFurnishingKitItem), 1, 1f ),
-			new ItemQuantityDefinition( nameof(PrefabKits), nameof(HouseFramingKitItem), 1, 0.5f ),
+			new ItemQuantityDefinition( nameof(Ergophobia), nameof(HouseFurnishingKitItem), 1, 1f ),
+			new ItemQuantityDefinition( nameof(Ergophobia), nameof(HouseFramingKitItem), 1, 0.5f ),
 			new ItemQuantityDefinition( nameof(MountedMagicMirrors), nameof(MountableMagicMirrorTileItem), 1, 0.5f ),
-			new ItemQuantityDefinition( nameof(PrefabKits), nameof(TrackDeploymentKitItem), 2, 1f ),
+			new ItemQuantityDefinition( nameof(Ergophobia), nameof(TrackDeploymentKitItem), 2, 1f ),
 			new ItemQuantityDefinition( nameof(Orbs), nameof(BlueOrbItem), 1, 0.5f ),
 			//new ItemQuantityDefinition( nameof(Orbs), nameof(BrownOrbItem), 1, 0.5f ),
 			new ItemQuantityDefinition( nameof(Orbs), nameof(CyanOrbItem), 1, 0.5f ),

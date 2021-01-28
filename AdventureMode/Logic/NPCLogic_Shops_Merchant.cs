@@ -2,7 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using PrefabKits.Items;
+using Ergophobia.Items;
 using Bullwhip.Items;
 
 

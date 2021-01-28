@@ -32,6 +32,9 @@
     <Reference Include="Enraged">
       <HintPath>..\..\..\Enraged\Project\Enraged\bin\Release\net452\Enraged.dll</HintPath>
     </Reference>
+    <Reference Include="Ergophobia">
+      <HintPath>..\..\..\Ergophobia\Project\Ergophobia\bin\Release\net452\Ergophobia.dll</HintPath>
+    </Reference>
     <Reference Include="FindableManaCrystals">
       <HintPath>..\..\..\Findable Mana Crystals\Project\FindableManaCrystals\bin\Release\net452\FindableManaCrystals.dll</HintPath>
     </Reference>
@@ -61,9 +64,6 @@
     </Reference>
     <Reference Include="PowerfulMagic">
       <HintPath>..\..\..\Powerful Magic\Project\PowerfulMagic\bin\Release\net452\PowerfulMagic.dll</HintPath>
-    </Reference>
-    <Reference Include="PrefabKits">
-      <HintPath>..\..\..\Prefab Kits\Project\PrefabKits\bin\Release\net452\PrefabKits.dll</HintPath>
     </Reference>
     <Reference Include="ReadableBooks">
       <HintPath>..\..\..\Readable Books\Project\ReadableBooks\bin\Release\net452\ReadableBooks.dll</HintPath>
