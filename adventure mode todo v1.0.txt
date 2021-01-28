@@ -119,10 +119,10 @@ v1
 -	@Lore
 	-	Alter merchant's objective about orbs to specify at least 1 of each color
 	-	Add a guide objective when max BG PKE occures and player has a PKE meter
+
+
 -	Change @Prefab Kits to Ergophobia
 	-	Set AM to add mounted mirrors to Ergo's whitelist
-
-
 	-	Import all tile placement whitelist stuff from AM
 	-	Import framing planks
 	-	Rename mod

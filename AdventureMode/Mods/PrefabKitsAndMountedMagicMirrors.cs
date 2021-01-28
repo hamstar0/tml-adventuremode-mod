@@ -34,6 +34,8 @@ namespace AdventureMode.Mods {
 
 			ushort mirrorTileType = (ushort)ModContent.TileType<MountedMagicMirrorTile>();
 
+			pkConfig.SetOverride( nameof(pkConfig.TilePlaceWhitelist), mirrorTileType );
+
 			pkConfig.SetOverride( nameof(pkConfig.CustomFurnitureTile), TileID.Containers );
 			pkConfig.SetOverride( nameof(pkConfig.CustomWallMount1Tile), mirrorTileType );
 			pkConfig.SetOverride( nameof(pkConfig.CustomFloorTile), TileID.Mudstone );
