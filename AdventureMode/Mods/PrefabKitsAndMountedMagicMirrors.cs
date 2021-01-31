@@ -42,7 +42,7 @@ namespace AdventureMode.Mods {
 				wl.Add( mirrorUid );
 			}
 
-			ergConfig.SetOverride( nameof(ergConfig.TilePlaceWhitelist), mirrorTileType );
+			ergConfig.SetOverride( nameof(ergConfig.TilePlaceWhitelist), wl );
 
 			ergConfig.SetOverride( nameof(ergConfig.CustomFurnitureTile), TileID.Containers );
 			ergConfig.SetOverride( nameof(ergConfig.CustomWallMount1Tile), mirrorTileType );
