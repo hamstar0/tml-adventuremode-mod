@@ -7,22 +7,23 @@ using Terraria.ModLoader.Config;
 
 namespace AdventureMode.Logic {
 	static partial class NPCLogic {
-		public static void FilterShop( Item[] shop, IList<ItemDefinition> whitelist, ref int nextSlot ) {
-			for( int i = 0; i < shop.Length; i++ ) {
-				Item item = shop[i];
-				if( item == null || item.IsAir ) {
+		public static void FilterShop( Item[] shopItems, IList<ItemDefinition> whitelist, ref int nextSlot ) {
+			for( int i = 0; i < shopItems.Length; i++ ) {
+				Item shopItem = shopItems[i];
+				if( shopItem?.active != true ) {
 					continue;
 				}
 
-				if( !whitelist.Any( itemDef => itemDef.Type == item.type ) ) {
-					for( int j = i; j < shop.Length - 1; j++ ) {
-						shop[j] = shop[j + 1];
-					}
-					shop[shop.Length - 1] = new Item();
-
-					nextSlot--;
-					i--;
+				if( whitelist.Any( idef => idef.Type == shopItem.type ) ) {
+					continue;
 				}
+
+				for( int j = i; j < (shopItems.Length - 1); j++ ) {
+					shopItems[ j ] = shopItems[ j+1 ];
+				}
+				shopItems[ shopItems.Length - 1 ] = new Item();
+
+				nextSlot--;
 			}
 		}
 

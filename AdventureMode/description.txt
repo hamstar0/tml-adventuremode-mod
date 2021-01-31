@@ -14,7 +14,7 @@ This mode also requires the following mods:
   Bullwhip
   The Mad Ranger
   Findable Mana Crystals
-  Prefab Kits
+  Ergophobia
   Powerful Magic
   Mounted Magic Mirrors
   Cursed Brambles

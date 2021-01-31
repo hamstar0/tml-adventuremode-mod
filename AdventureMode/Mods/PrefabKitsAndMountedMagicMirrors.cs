@@ -11,7 +11,7 @@ using Ergophobia;
 
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
-		public void LoadPrefabsKitAndMountedMagicMirrors() {
+		public void LoadErgophobiaAndMountedMagicMirrors() {
 			var ergConfig = ErgophobiaConfig.Instance;
 			IList<HouseKitFurnitureDefinition> cycle = AMConfig.Instance.HouseKitFurnitureSuccession;
 

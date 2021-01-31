@@ -40,7 +40,7 @@ namespace AdventureMode {
 			this.ModInteractions.LoadNecrotis();
 			this.ModInteractions.LoadCursedBrambles();
 			this.ModInteractions.LoadChestImplants();
-			this.ModInteractions.LoadPrefabsKitAndMountedMagicMirrors();
+			this.ModInteractions.LoadErgophobiaAndMountedMagicMirrors();
 			this.ModInteractions.LoadTricksterAndLockedAbilies();
 			this.ModInteractions.LoadLockedAbilities();
 			this.ModInteractions.LoadOrbs();

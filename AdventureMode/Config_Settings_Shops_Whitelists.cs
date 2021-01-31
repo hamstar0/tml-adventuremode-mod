@@ -38,6 +38,7 @@ namespace AdventureMode {
 					new ItemDefinition( ItemID.TaxCollectorPants ),
 					new ItemDefinition( ModContent.ItemType<HouseFramingKitItem>() ),
 					new ItemDefinition( ModContent.ItemType<HouseFurnishingKitItem>() ),
+					new ItemDefinition( ModContent.ItemType<ScaffoldingErectorKitItem>() ),
 				}
 			},
 			{
