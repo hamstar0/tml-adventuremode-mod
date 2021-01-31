@@ -35,6 +35,12 @@ namespace AdventureMode.Mods {
 			ergConfig.SetOverride( nameof(ergConfig.TrackKitSoldByMerchant), false );
 
 			ushort mirrorTileType = (ushort)ModContent.TileType<MountedMagicMirrorTile>();
+			string mirrorUid = TileID.GetUniqueKey( mirrorTileType );
+			List<string> wl = ergConfig.Get<List<string>>( nameof(ergConfig.TilePlaceWhitelist) );
+
+			if( !wl.Contains(mirrorUid) ) {
+				wl.Add( mirrorUid );
+			}
 
 			ergConfig.SetOverride( nameof(ergConfig.TilePlaceWhitelist), mirrorTileType );
 
