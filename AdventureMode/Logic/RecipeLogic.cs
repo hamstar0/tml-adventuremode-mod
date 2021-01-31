@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 using AdventureMode.Recipes;
+using Ergophobia.Items;
 
 
 namespace AdventureMode.Logic {
@@ -34,18 +36,24 @@ namespace AdventureMode.Logic {
 		////////////////
 
 		public static void TweakBowlRecipe() {
-			for( int i = 0; i < Main.recipe.Length; i++ ) {
-				Recipe recipe = Main.recipe[i];
-				if( recipe?.createItem?.type != ItemID.Bowl ) { continue; }
+			var rf = new RecipeFinder();
+			rf.SetResult( ItemID.Bowl );
 
-				foreach( Item item in recipe.requiredItem ) {
-					if( item?.type == ItemID.ClayBlock ) { continue; }
-
-					item.type = ItemID.Wood;
-					break;
+			foreach( Recipe r in rf.SearchRecipes() ) {
+				var re = new RecipeEditor( r );
+				if( re.DeleteIngredient(ItemID.ClayBlock) ) {
+					re.AddIngredient( ItemID.Wood, 5 );
 				}
+			}
+		}
 
-				break;
+		public static void TweakFramingPlankRecipe() {
+			var rf = new RecipeFinder();
+			rf.SetResult( ModContent.ItemType<FramingPlankItem>() );
+
+			foreach( Recipe r in rf.SearchRecipes() ) {
+				var re = new RecipeEditor( r );
+				re.DeleteTile( TileID.Sawmill );
 			}
 		}
 	}

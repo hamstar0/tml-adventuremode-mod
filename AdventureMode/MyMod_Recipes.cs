@@ -15,6 +15,7 @@ namespace AdventureMode {
 
 		public override void PostAddRecipes() {
 			RecipeLogic.TweakBowlRecipe();
+			RecipeLogic.TweakFramingPlankRecipe();
 			
 			CustomLoadHooks.AddHook( EntityGroups.LoadedAllValidator, ( _ ) => {
 				RecipeLogic.ApplyRecipeWhitelistingAndNewTileRequirements();
