@@ -86,8 +86,9 @@ v1
 	-	Boss reign duration after boss kill
 	-	Whip vs Trickster
 	-	Trickster spawns (again)
-~~
-~~
+	-	Arenas
+
+
 	-	Infection
 	-	Trickster defeats on map
 	-	PKE
@@ -100,32 +101,30 @@ v1
 	-	The Shadow debuff
 	-	NPC dialogue alerts visible on the map
 	-	Extreme hills
--	@Prefab Kits
+-	@Boss Reigns (1.1.0)
+-	@Objectives (0.6.0)
+-	@Lore (0.7.0)
+	-	Alter merchant's objective about orbs to specify at least 1 of each color
+	-	Add a guide objective when max BG PKE occures and player has a PKE meter
+-	@Ergophobia (1.4.0)
 	-	Add Scaffolding Kit
 		-	Implement placement rules
+			-	Must have at least 1 non-wood solid tiles within 24 tiles below
+			-	Must be placed on a solid tile
 		-	Implement placement of structure
-		-	Create sprite
 		-	Define item
+		-	Create sprite
 		-	@Plan
-			-	Form: 2 wood supports (6 high), 4x platform row, 1 solid (wood) in the middle
+			-	Form: 2 wood supports (6 high), 5x platform row
 			-	Placed only on ground
 			-	Costs 1g 50s
 			-	Placement rules (OR'd):
 				-	Must be placed on a solid tile
-				-	Must have at least 1 solid tile within 5 tiles horizontally
 				-	Must have at least 4 non-wood solid tiles within 30 tiles below
-				-	Must have at least 10 solid tiles within 30 tiles horizontally
-	-	Migrate Framing Planks from AM to Prefab Kits (disabled by config default)
--	@Lore
-	-	Alter merchant's objective about orbs to specify at least 1 of each color
-	-	Add a guide objective when max BG PKE occures and player has a PKE meter
-
-
--	Change @Prefab Kits to Ergophobia
 	-	Set AM to add mounted mirrors to Ergo's whitelist
 	-	Import all tile placement whitelist stuff from AM
 	-	Import framing planks
-	-	Rename mod
+	-	Rename Prefab Kits to Ergophobia
 -	F&T 9
 	-	Set town NPCs to be invincible
 	-	Tone down ore sale prices

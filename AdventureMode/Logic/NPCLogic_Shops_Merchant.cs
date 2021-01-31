@@ -33,11 +33,13 @@ namespace AdventureMode.Logic {
 		private static void SetupMerchantShopNewInventory( Chest shop, int nextSlot ) {
 			var frameKit = new Item();
 			var furnKit = new Item();
+			var scaffKit = new Item();
 			var whip = new Item();
 			var binocs = new Item();
 
 			frameKit.SetDefaults( ModContent.ItemType<HouseFramingKitItem>() );
 			furnKit.SetDefaults( ModContent.ItemType<HouseFurnishingKitItem>() );
+			scaffKit.SetDefaults( ModContent.ItemType<ScaffoldingErectorKitItem>() );
 			whip.SetDefaults( ModContent.ItemType<BullwhipItem>() );
 			binocs.SetDefaults( ItemID.Binoculars );
 
@@ -46,6 +48,9 @@ namespace AdventureMode.Logic {
 			}
 			if( nextSlot < shop.item.Length ) {
 				shop.item[nextSlot++] = furnKit;
+			}
+			if( nextSlot < shop.item.Length ) {
+				shop.item[nextSlot++] = scaffKit;
 			}
 			if( nextSlot < shop.item.Length ) {
 				shop.item[nextSlot++] = whip;
