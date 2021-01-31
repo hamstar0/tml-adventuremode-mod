@@ -9,7 +9,7 @@ namespace AdventureMode.Logic {
 	static partial class NPCLogic {
 		public static void SetupMerchantShop( Chest shop, ref int nextSlot ) {
 			NPCLogic.SetupMerchantShopPrices( shop, nextSlot );
-			NPCLogic.SetupMerchantShopNewInventory( shop, nextSlot );
+			NPCLogic.SetupMerchantShopNewInventory( shop, ref nextSlot );
 		}
 
 		////
@@ -29,7 +29,7 @@ namespace AdventureMode.Logic {
 			}
 		}
 
-		private static void SetupMerchantShopNewInventory( Chest shop, int nextSlot ) {
+		private static void SetupMerchantShopNewInventory( Chest shop, ref int nextSlot ) {
 			var whip = new Item();
 			var binocs = new Item();
 
