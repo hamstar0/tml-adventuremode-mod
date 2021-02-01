@@ -182,7 +182,7 @@ namespace AdventureMode.Logic {
 
 			//
 
-			if( config.OverrideRecipeTileRequirements ) {
+			if( !config.OverrideRecipeTileRequirements ) {
 				whitelistTypes.Add( ItemID.Furnace );
 				whitelistTypes.Add( ItemID.Hellforge );
 				whitelistTypes.Add( ItemID.AdamantiteForge );
@@ -191,7 +191,7 @@ namespace AdventureMode.Logic {
 
 			////
 
-			if( config.EnableBasicGrappleItemRecipes ) {
+			if( !config.EnableBasicGrappleItemRecipes ) {
 				blacklistTypes.Add( ItemID.GrapplingHook );
 				blacklistTypes.Add( ItemID.AmethystHook );
 				blacklistTypes.Add( ItemID.SapphireHook );

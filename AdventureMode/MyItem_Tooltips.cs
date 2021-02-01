@@ -52,30 +52,32 @@ namespace AdventureMode {
 		}
 
 		private void AddPriceTooltip( Item item, List<TooltipLine> tooltips ) {
-			if( Main.npcShop == 0 && item.value > 0 ) {
-				long unitSellValue = item.value / 5;
-				long stackSellValue = unitSellValue * item.stack;
+			if( Main.npcShop != 0 || item.value == 0 ) {
+				return;
+			}
 
-				string[] renderedSellValueDenoms = ItemMoneyHelpers.RenderMoneyDenominations( stackSellValue, true, true );
-				string renderedSellValue = string.Join( ", ", renderedSellValueDenoms );
+			long unitSellValue = item.value / 5;
+			long stackSellValue = unitSellValue * item.stack;
 
-				string tipText = "Sells for " + renderedSellValue;
+			string[] renderedSellValueDenoms = ItemMoneyHelpers.RenderMoneyDenominations( stackSellValue, true, true );
+			string renderedSellValue = string.Join( ", ", renderedSellValueDenoms );
 
-				if( item.stack > 1 ) {
-					string[] renderedUnitSellValueDenoms = ItemMoneyHelpers.RenderMoneyDenominations( unitSellValue, true, true );
-					for( int i=0; i<renderedUnitSellValueDenoms.Length; i++ ) {
-						string[] segs = renderedUnitSellValueDenoms[i].Split( ' ' );
-						renderedUnitSellValueDenoms[i] = segs[0] + segs[1][0] + "]";
-					}
+			string tipText = "Sells for " + renderedSellValue;
 
-					string renderedUnitSellValue = string.Join( ", ", renderedUnitSellValueDenoms );
-
-					tipText += " ("+renderedUnitSellValue+" each)";
+			if( item.stack > 1 ) {
+				string[] renderedUnitSellValueDenoms = ItemMoneyHelpers.RenderMoneyDenominations( unitSellValue, true, true );
+				for( int i=0; i<renderedUnitSellValueDenoms.Length; i++ ) {
+					string[] segs = renderedUnitSellValueDenoms[i].Split( ' ' );
+					renderedUnitSellValueDenoms[i] = segs[0] + segs[1][0] + "]";
 				}
 
-				var tip = new TooltipLine( this.mod, "AdventureModeValue", tipText );
-				ItemInformationAttributeHelpers.AppendTooltip( tooltips, tip );
+				string renderedUnitSellValue = string.Join( ", ", renderedUnitSellValueDenoms );
+
+				tipText += " ("+renderedUnitSellValue+" each)";
 			}
+
+			var tip = new TooltipLine( this.mod, "AdventureModeValue", tipText );
+			ItemInformationAttributeHelpers.AppendTooltipToFurthest( tooltips, tip );
 		}
 	}
 }

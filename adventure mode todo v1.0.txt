@@ -38,6 +38,7 @@ v1
 -	@Set git repos public
 -	Add allowed-mod whitelist (configurable)
 -	Final
+	-	Whitelist pink block breaking
 	-	Fix Guide's false recipe reports?
 	-	Add "Adventure Mode" watermark to inventory backdrop
 	-	Implement remaining lore notes (add 'Island Hungers', 'Anima')
@@ -82,13 +83,13 @@ v1
 -	@Beta
 -	@Test (EoC)
 	-	Verdant Blessing
-	-	Boss enrage + reduced hp
-	-	Boss reign duration after boss kill
 	-	Whip vs Trickster
 	-	Trickster spawns (again)
+
+
+	-	Boss enrage + reduced hp
+	-	Boss reign duration after boss kill
 	-	Arenas
-
-
 	-	Infection
 	-	Trickster defeats on map
 	-	PKE
@@ -101,6 +102,18 @@ v1
 	-	The Shadow debuff
 	-	NPC dialogue alerts visible on the map
 	-	Extreme hills
+-	F&T 10
+	-	Shuriken not showing price
+	-	Remove gem hooks from recipes list
+	-	Increase boss health
+	-	@MH (5.11.0)
+	-	@TMR (1.6.0)
+		-	Reduce damage against bosses and large targets :(
+	-	@Ruined Loot (2.2.2)
+		-	Set boss loot from treasure bags to be ruined
+	-	Debug BG PKE not dropping due to boss kill
+	-	@Enraged (0.8.0)
+		-	Debug brambles not generating
 -	@Boss Reigns (1.1.0)
 -	@Objectives (0.6.0)
 -	@Lore (0.7.0)

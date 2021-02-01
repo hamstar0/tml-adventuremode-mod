@@ -14,9 +14,9 @@ namespace AdventureMode {
 		////
 
 		[Range( 0f, 1f )]
-		[DefaultValue( 0.5f )]
+		[DefaultValue( 0.65f )]
 		[CustomModConfigItem( typeof( MyFloatInputElement ) )]
-		public float BossMaxLifePercentOnSpawn { get; set; } = 0.5f;
+		public float BossMaxLifePercentOnSpawn { get; set; } = 0.65f;
 
 
 		////
