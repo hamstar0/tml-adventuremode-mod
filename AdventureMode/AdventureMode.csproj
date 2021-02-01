@@ -38,6 +38,9 @@
     <Reference Include="FindableManaCrystals">
       <HintPath>..\..\..\Findable Mana Crystals\Project\FindableManaCrystals\bin\Release\net452\FindableManaCrystals.dll</HintPath>
     </Reference>
+    <Reference Include="GreenHell">
+      <HintPath>..\..\..\Green Hell\Project\GreenHell\bin\Release\net452\GreenHell.dll</HintPath>
+    </Reference>
     <Reference Include="HamstarHelpers">
       <HintPath>..\..\..\Mod Helpers\Project\HamstarHelpers\bin\Release\net452\HamstarHelpers.dll</HintPath>
     </Reference>
