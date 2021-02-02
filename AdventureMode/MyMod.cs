@@ -35,6 +35,7 @@ namespace AdventureMode {
 		public override void Load() {
 			EntityGroups.Enable();
 
+			this.ModInteractions.LoadGreenHell();
 			this.ModInteractions.LoadBullwhip();
 			this.ModInteractions.LoadNihilism();
 			this.ModInteractions.LoadNecrotis();
