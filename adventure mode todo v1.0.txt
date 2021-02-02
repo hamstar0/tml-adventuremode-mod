@@ -79,14 +79,16 @@ v1
 -	@Test MP (EoW/BoC)
 	-	Infection buff sync (use output messages)
 	-	Goblin icon + rescue
+	-	Whip vs Trickster
+	-	Trickster spawns (again)
 	-	Lore events
+-	F&T 11
+	-	Shop whitelist issues
+
+
 -	@Beta
 -	@Test (EoC)
 	-	Verdant Blessing
-	-	Whip vs Trickster
-	-	Trickster spawns (again)
-
-
 	-	Boss enrage + reduced hp
 	-	Boss reign duration after boss kill
 	-	Arenas

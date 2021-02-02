@@ -5,6 +5,7 @@ using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 using HamstarHelpers.Helpers.Debug;
 using Ergophobia.Items;
+using GreenHell.Items;
 
 
 namespace AdventureMode {
@@ -66,6 +67,8 @@ namespace AdventureMode {
 					new ItemDefinition( ItemID.MushroomGrassSeeds ),
 					new ItemDefinition( ItemID.DryadCoverings ),
 					new ItemDefinition( ItemID.DryadLoincloth ),
+					new ItemDefinition( ModContent.ItemType<VerdantBlessingItem>() ),
+					new ItemDefinition( ModContent.ItemType<PanaceaItem>() ),
 					//new ItemDefinition( ModContent.ItemType<StaffOfGaiaItem>() ),
 					//new ItemDefinition( ModContent.ItemType<GeoResonantOrbItem>() ),
 				}
@@ -92,6 +95,7 @@ namespace AdventureMode {
 					new ItemDefinition( ItemID.HerculesBeetle ),
 					new ItemDefinition( ItemID.ImbuingStation ),
 					new ItemDefinition( ItemID.BewitchingTable ),
+					new ItemDefinition( ModContent.ItemType<PanaceaItem>() ),
 				}
 			}
 		};
