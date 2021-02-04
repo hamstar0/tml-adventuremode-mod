@@ -75,17 +75,54 @@ v1
 	-	A use for ores (excavation kits?)
 	-	Max background PKE (waves of darkness?)
 -	@SORT MOD TAGS!!!!
-[v0.18.0]
+[v0.19.0]
 -	@Test MP (EoW/BoC)
 	-	Infection buff sync (use output messages)
 	-	Goblin icon + rescue
 	-	Whip vs Trickster
 	-	Trickster spawns (again)
 	-	Lore events
+-	Add Fractured Magic Mirror mod
+-	@Trickster
+	-	Make trickster appear near the player, but then simply disappear and laugh
+-	@Lore
+	-	Save dialogue states
 -	F&T 11
+	-	@MH
+		-	Set inbox message number to display further away from envelope
+	-	Label raft mirror as a discoverable thing
+	-	Improve visibility of platform highlight
+	-	Spawn players with the AM guide book
+	-	Tweak jungle sign to indicate danger better
+	-	Set invasions to switch to the center of the map
+	-	Enable goblin standard recipe
+	-	Verify suspicious eye recipe
+	-	@Bullwhip
+		-	Fix torso direction when whipping
+	-	@Objectives
+		-	Add a checkmark to indicate quest completion
+	-	@Surroundings
+		-	Fix issue with overlays in that one display mode (disable when in that mode?)
+	-	@Ergophobia
+		-	Make furnishing kits and framing kits stackable
+		-	Add a way to jump out of framed rooms
+		-	Fix framing kit doors
+	-	@TMR
+		-	Change 'reduced damage per 32' tooltip to something simpler
+		-	`player.ChangeDir((x coord of mouse world to player > 0).ToDirectionInt())`
+		-	Research a way to alter draw order of gun (so it follows with player smoothly)
+		-	Hide gun when not aiming
+		-	Tone down bandit attacks
+	-	@Locked Abilities
+		-	Fix slot block graphics
+	-	@Trickster
+		-	Prevent re-upping invincibility until after a cooldown
+		-	Reduce time for bat AI mobs to be invincible
+
+
 	-	Shop whitelist issues
-
-
+	-	Fix rescueable goblin icon
+[v0.18.0]
 -	@Beta
 -	@Test (EoC)
 	-	Verdant Blessing

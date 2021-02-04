@@ -10,13 +10,14 @@ namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
 		private void ApplyLoreAndObjectives_BoundGoblin( bool isNew, bool isDone ) {
 			string markerName = "AdventureMode_Spawn_BoundGoblin";
-
+			
 			if( !isDone && !NPC.savedGoblin ) {
 				Timers.RunUntil( () => {
 					if( NPC.downedGoblins && !NPC.savedGoblin ) {
-						this.AddBoundGoblinMapMarker(  markerName );
+						this.AddBoundGoblinMapMarker( markerName );
+						return false;
 					}
-					return !NPC.downedGoblins && !NPC.savedGoblin;
+					return true;
 				}, false );
 			} else {
 				MapMarkers.RemoveFullScreenMapMarker( markerName );
@@ -26,7 +27,7 @@ namespace AdventureMode.Mods {
 		private void AddBoundGoblinMapMarker( string markerName ) {
 			var myworld = ModContent.GetInstance<AMWorld>();
 			int goblinX = myworld.UndergroundDesertBounds.X + (myworld.UndergroundDesertBounds.Width / 2);
-			int goblinY = myworld.UndergroundDesertBounds.Y + ((2 * myworld.UndergroundDesertBounds.Width) / 3);
+			int goblinY = myworld.UndergroundDesertBounds.Y + ((2 * myworld.UndergroundDesertBounds.Height) / 3);
 
 			Main.instance.LoadNPC( NPCID.BoundGoblin );
 

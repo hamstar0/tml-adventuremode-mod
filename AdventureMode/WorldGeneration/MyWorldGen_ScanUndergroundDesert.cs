@@ -1,29 +1,35 @@
 ﻿using System;
-using Terraria;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Xna.Framework;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.World.Generation;
 using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.Tiles;
 using HamstarHelpers.Classes.Tiles.TilePattern;
-using System.Collections.Generic;
 
 
 namespace AdventureMode.WorldGeneration {
 	partial class AMWorldGen {
 		public static void ScanUndergroundDesert( GenerationProgress progress ) {
-			Rectangle? bounds = TileFinderHelpers.FindBoxForAllOf(
+			ISet<Rectangle> boxes = TileFinderHelpers.FindBoxesOfAllContiguousMatches(
 				pattern: new TilePattern( new TilePatternBuilder {
 					IsAnyOfType = new HashSet<int> { TileID.HardenedSand, TileID.Sandstone }
 				} )
 			);
 
-			var myworld = ModContent.GetInstance<AMWorld>();
-			myworld.UndergroundDesertBounds = bounds.Value;
+			if( boxes.Count > 0 ) {
+				Rectangle box = boxes
+					.Aggregate( (b1, b2) => (b1.Width * b1.Height) > (b2.Width * b2.Height) ? b1 : b2 );
 
-			if( AMConfig.Instance.DebugModeInfo ) {
-				LogHelpers.Log( "Underground desert occupies tile range " + bounds.Value.ToString() );
+				var myworld = ModContent.GetInstance<AMWorld>();
+				myworld.UndergroundDesertBounds = box;
+
+				if( AMConfig.Instance.DebugModeInfo ) {
+					LogHelpers.Log( "Underground desert occupies tile range " + box.ToString() );
+				}
 			}
 
 			progress.Set( 1f );

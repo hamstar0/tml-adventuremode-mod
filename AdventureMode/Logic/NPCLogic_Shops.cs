@@ -14,7 +14,7 @@ namespace AdventureMode.Logic {
 					continue;
 				}
 
-				if( whitelist.Any( idef => idef.Type == shopItem.type ) ) {
+				if( whitelist.Any(def => def.Type == shopItem.type) ) {
 					continue;
 				}
 
@@ -24,6 +24,7 @@ namespace AdventureMode.Logic {
 				shopItems[ shopItems.Length - 1 ] = new Item();
 
 				nextSlot--;
+				i--;
 			}
 		}
 
