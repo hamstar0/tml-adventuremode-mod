@@ -33,22 +33,32 @@ namespace AdventureMode {
 		////////////////
 
 		public override void Load() {
+			void loadMod( string modName, Action loader ) {
+				try {
+					loader();
+				} catch( Exception e ) {
+					LogHelpers.Warn( "Error loading "+modName+" - "+e.ToString() );
+				}
+			}
+
+			//
+
 			EntityGroups.Enable();
 
-			this.ModInteractions.LoadGreenHell();
-			this.ModInteractions.LoadBullwhip();
-			this.ModInteractions.LoadNihilism();
-			this.ModInteractions.LoadNecrotis();
-			this.ModInteractions.LoadCursedBrambles();
-			this.ModInteractions.LoadChestImplants();
-			this.ModInteractions.LoadErgophobiaAndMountedMagicMirrors();
-			this.ModInteractions.LoadTricksterAndLockedAbilies();
-			this.ModInteractions.LoadLockedAbilities();
-			this.ModInteractions.LoadOrbs();
-			this.ModInteractions.LoadTerrainRemixer();
-			this.ModInteractions.LoadLoreAndObjectives();
-			this.ModInteractions.LoadTheMadRanger();
-			this.ModInteractions.LoadPowerfulMagic();
+			loadMod( "GreenHell", this.ModInteractions.LoadGreenHell );
+			loadMod( "Bullwhip", this.ModInteractions.LoadBullwhip );
+			loadMod( "Nihilism", this.ModInteractions.LoadNihilism );
+			loadMod( "Necrotis", this.ModInteractions.LoadNecrotis );
+			loadMod( "CursedBrambles", this.ModInteractions.LoadCursedBrambles );
+			loadMod( "ChestImplants", this.ModInteractions.LoadChestImplants );
+			loadMod( "ErgophobiaAndMMM", this.ModInteractions.LoadErgophobiaAndMountedMagicMirrors );
+			loadMod( "TricksterAndLockedAbilies", this.ModInteractions.LoadTricksterAndLockedAbilies );
+			loadMod( "LockedAbilities", this.ModInteractions.LoadLockedAbilities );
+			loadMod( "Orbs", this.ModInteractions.LoadOrbs );
+			loadMod( "TerrainRemixer", this.ModInteractions.LoadTerrainRemixer );
+			loadMod( "LoreAndObjectives", this.ModInteractions.LoadLoreAndObjectives );
+			loadMod( "TheMadRanger", this.ModInteractions.LoadTheMadRanger );
+			loadMod( "PowerfulMagic", this.ModInteractions.LoadPowerfulMagic );
 		}
 
 		////

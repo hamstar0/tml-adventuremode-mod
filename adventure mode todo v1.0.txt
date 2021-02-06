@@ -61,6 +61,7 @@ v1
 	-	Experiment with cave-like tree scrolling
 -	@Lore
 	-	Set FEs to be omitted from PKE when "discovered"
+-	Add Fractured Magic Mirror mod
 -	Add skull piles
 	-	Set blood moons to generate these on the surface (with an "incubation" time)
 	-	Drop ectoplasm and anti-nectrotis potions on break
@@ -82,7 +83,13 @@ v1
 	-	Whip vs Trickster
 	-	Trickster spawns (again)
 	-	Lore events
--	Add Fractured Magic Mirror mod
+-	@Ruined Items
+	-	Add Epoxy Kits
+		-	@Plan
+			-	Chance to repair an item
+			-	Consumed on use
+			-	Item can only have one attempt at being repaired
+			-	May be randomly found in chests
 -	@Trickster
 	-	Make trickster appear near the player, but then simply disappear and laugh
 -	@Lore
@@ -97,29 +104,28 @@ v1
 	-	Set invasions to switch to the center of the map
 	-	Enable goblin standard recipe
 	-	Verify suspicious eye recipe
-	-	@Bullwhip
-		-	Fix torso direction when whipping
+	-	@Trickster
+		-	Prevent re-upping invincibility until after a cooldown
 	-	@Objectives
 		-	Add a checkmark to indicate quest completion
 	-	@Surroundings
 		-	Fix issue with overlays in that one display mode (disable when in that mode?)
-	-	@Ergophobia
-		-	Make furnishing kits and framing kits stackable
+
+
+	-	@Ergophobia (1.5.0)
+		-	Make furnishing kit and framing kit items stackable
 		-	Add a way to jump out of framed rooms
 		-	Fix framing kit doors
-	-	@TMR
-		-	Change 'reduced damage per 32' tooltip to something simpler
-		-	`player.ChangeDir((x coord of mouse world to player > 0).ToDirectionInt())`
-		-	Research a way to alter draw order of gun (so it follows with player smoothly)
-		-	Hide gun when not aiming
-		-	Tone down bandit attacks
 	-	@Locked Abilities
 		-	Fix slot block graphics
-	-	@Trickster
-		-	Prevent re-upping invincibility until after a cooldown
+	-	@TMR (v1.7.0)
+		-	Fix gun drawing smoothness
+		-	Change 'reduced damage per 32' tooltip to something simpler
+		-	Hide gun when not aiming
+		-	`player.ChangeDir((x coord of mouse world to player > 0).ToDirectionInt())`
+		-	Tone down bandit damage
+	-	@Trickster (1.4.2)
 		-	Reduce time for bat AI mobs to be invincible
-
-
 	-	Shop whitelist issues
 	-	Fix rescueable goblin icon
 [v0.18.0]
