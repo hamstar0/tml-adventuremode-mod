@@ -1,13 +1,13 @@
 ﻿using System;
-using TheMadRanger;
+using RuinedItems;
 
 
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
-		/*public void LoadRuinedItems() {
-			//var config = RuinedItemsConfig.Instance;
+		public void LoadRuinedItems() {
+			var config = RuinedItemsConfig.Instance;
 
-			//config.SetOverride( nameof( config.), 0f );
-		}*/
+			config.SetOverride( nameof(config.RuinedItemsLockedFromUse), false );
+		}
 	}
 }

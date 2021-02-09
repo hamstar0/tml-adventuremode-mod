@@ -34,10 +34,10 @@ namespace AdventureMode {
 		////////////////
 
 		public override void EditSpawnPool( IDictionary<int, float> pool, NPCSpawnInfo spawnInfo ) {
-			if( /*NPC.downedGoblins &&*/ pool.ContainsKey(NPCID.BoundGoblin) ) {
+			if( pool.ContainsKey(NPCID.BoundGoblin) ) {	//NPC.downedGoblins
 				NPCLogic.EditSpawnPoolForBoundGoblin( pool, spawnInfo );
 			}
-			if( /*NPC.downedBoss3 &&*/ pool.ContainsKey(NPCID.BoundMechanic) ) {
+			if( pool.ContainsKey(NPCID.BoundMechanic) ) {	//NPC.downedBoss3
 				NPCLogic.EditSpawnPoolForBoundMechanic( pool, spawnInfo );
 			}
 			if( pool.ContainsKey(NPCID.VoodooDemon) ) {

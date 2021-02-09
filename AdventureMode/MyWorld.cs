@@ -163,6 +163,7 @@ namespace AdventureMode {
 			} ) );
 
 			tasks.Add( new PassLegacy( "Adventure Mode: Underground Desert Scan", ( progress ) => {
+				progress.Message = "Scanning for underground desert expanse";
 				AMWorldGen.ScanUndergroundDesert( progress );
 				progress.Value = 1f;
 			} ) );

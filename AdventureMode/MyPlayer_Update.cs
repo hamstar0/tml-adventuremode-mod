@@ -8,12 +8,12 @@ using AdventureMode.Logic;
 
 namespace AdventureMode {
 	partial class AMPlayer : ModPlayer {
-		public override void PreUpdate() {
-/*int guide = NPC.FindFirstNPC( NPCID.Guide );
-if( guide != -1 ) {
-	DebugHelpers.Print( "guide", Main.npc[guide].position.ToString() );
-}*/
-		}
+		//public override void PreUpdate() {
+//int guide = NPC.FindFirstNPC( NPCID.Guide );
+//if( guide != -1 ) {
+//	DebugHelpers.Print( "guide", Main.npc[guide].position.ToString() );
+//}
+		//}
 
 		public override void PreUpdateBuffs() {
 			PlayerLogic.UpdateBuffs( this.player );

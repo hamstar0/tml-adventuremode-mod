@@ -10,6 +10,7 @@ namespace AdventureMode {
 				fail = true;	//!nonGameplay
 			}
 		}*/
+		
 		public override bool CreateDust( int i, int j, int type, ref int dustType ) {
 			return Main.gameMenu;
 		}

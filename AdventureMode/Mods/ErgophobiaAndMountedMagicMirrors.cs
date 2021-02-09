@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -27,7 +28,7 @@ namespace AdventureMode.Mods {
 					return;
 				}
 
-				ergConfig.SetOverride( nameof(ergConfig.CustomFurnitureTile), furnDef.TileType );
+				ergConfig.SetOverride( nameof(ergConfig.FurnishedCustomFurnitureTile), furnDef.TileType );
 
 				myworld.HouseKitFurnitureIdx++;
 			} );
@@ -36,17 +37,18 @@ namespace AdventureMode.Mods {
 
 			ushort mirrorTileType = (ushort)ModContent.TileType<MountedMagicMirrorTile>();
 			string mirrorUid = TileID.GetUniqueKey( mirrorTileType );
-			List<string> wl = ergConfig.Get<List<string>>( nameof(ergConfig.TilePlaceWhitelist) );
-
+			List<string> wl = ergConfig.Get<List<string>>( nameof(ergConfig.TilePlaceWhitelist) )
+				?? ergConfig.TilePlaceWhitelist.ToList();
+			
 			if( !wl.Contains(mirrorUid) ) {
 				wl.Add( mirrorUid );
 			}
 
 			ergConfig.SetOverride( nameof(ergConfig.TilePlaceWhitelist), wl );
 
-			ergConfig.SetOverride( nameof(ergConfig.CustomFurnitureTile), TileID.Containers );
-			ergConfig.SetOverride( nameof(ergConfig.CustomWallMount1Tile), mirrorTileType );
-			ergConfig.SetOverride( nameof(ergConfig.CustomFloorTile), TileID.Mudstone );
+			ergConfig.SetOverride( nameof(ergConfig.FurnishedCustomFurnitureTile), TileID.Containers );
+			ergConfig.SetOverride( nameof(ergConfig.FurnishedCustomWallMount1Tile), mirrorTileType );
+			ergConfig.SetOverride( nameof(ergConfig.FurnishedCustomFloorTile), TileID.Mudstone );
 			ergConfig.SetOverride( nameof(ergConfig.HouseFramingKitPrice), Item.buyPrice(gold: 20) );
 			ergConfig.SetOverride( nameof(ergConfig.HouseFurnishingKitPrice), Item.buyPrice(gold: 8) );
 			ergConfig.SetOverride( nameof(ergConfig.TrackDeploymentKitRecipeTile), -1 );

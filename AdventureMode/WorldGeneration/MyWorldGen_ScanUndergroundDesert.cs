@@ -6,9 +6,9 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.World.Generation;
+using HamstarHelpers.Classes.Tiles.TilePattern;
 using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.Tiles;
-using HamstarHelpers.Classes.Tiles.TilePattern;
 
 
 namespace AdventureMode.WorldGeneration {
@@ -17,7 +17,8 @@ namespace AdventureMode.WorldGeneration {
 			ISet<Rectangle> boxes = TileFinderHelpers.FindBoxesOfAllContiguousMatches(
 				pattern: new TilePattern( new TilePatternBuilder {
 					IsAnyOfType = new HashSet<int> { TileID.HardenedSand, TileID.Sandstone }
-				} )
+				} ),
+				progress: progress
 			);
 
 			if( boxes.Count > 0 ) {

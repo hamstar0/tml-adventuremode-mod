@@ -55,14 +55,16 @@ v1
 [v0.19.0]
 -	Set right-click placement of platforms and planks to make a quick span
 -	Add extra lava on lower levels
+-	@Necrotis
+	-	Set ankh moveable
 -	@TMR
 	-	Show held gun only when aiming?
 -	@Surroundings
 	-	Experiment with cave-like tree scrolling
 -	@Lore
 	-	Set FEs to be omitted from PKE when "discovered"
--	Add Fractured Magic Mirror mod
--	Add skull piles
+-	Add awakening cyborgs
+-	Add skull piles?
 	-	Set blood moons to generate these on the surface (with an "incubation" time)
 	-	Drop ectoplasm and anti-nectrotis potions on break
 	-	Implement projectile shooting (skeletron skulls, but they cause curse)
@@ -84,12 +86,19 @@ v1
 	-	Trickster spawns (again)
 	-	Lore events
 -	@Ruined Items
-	-	Add Epoxy Kits
+	-	Add Magitech Scrap
+		-	@Lore
+			-	Implement Magitech Scrap drops from cyborgs
+			-	Generate cyborgs around the world
+		-	Implement repair mechanic
+		-	Create graphic
+		-	Define item
 		-	@Plan
 			-	Chance to repair an item
 			-	Consumed on use
 			-	Item can only have one attempt at being repaired
-			-	May be randomly found in chests
+			-	May be randomly found in FEs
+			-	May be found by 'mining' dead cyborgs
 -	@Trickster
 	-	Make trickster appear near the player, but then simply disappear and laugh
 -	@Lore
@@ -97,6 +106,8 @@ v1
 -	F&T 11
 	-	@MH
 		-	Set inbox message number to display further away from envelope
+	-	Start with climbing shoes (replace accessory in chests with orbs)
+	-	Start with grappling hook
 	-	Label raft mirror as a discoverable thing
 	-	Improve visibility of platform highlight
 	-	Spawn players with the AM guide book
@@ -104,14 +115,23 @@ v1
 	-	Set invasions to switch to the center of the map
 	-	Enable goblin standard recipe
 	-	Verify suspicious eye recipe
-	-	@Trickster
-		-	Prevent re-upping invincibility until after a cooldown
-	-	@Objectives
+	-	Fix world gen slowness for ug desert finder
+
+
+	-	Fix WL MMM tile
+	-	@Ruined Items
+		-	Set default to 'disabled', use AM to set it to 'heavily nerfed'
+	-	@MMM (1.1.8)
+		-	Increase distance for mirrors to gen apart
+		-	Fix world gen progress correctness
+	-	@Objectives (0.6.1)
 		-	Add a checkmark to indicate quest completion
-	-	@Surroundings
+	-	@Trickster (1.5.0)
+		-	Fix invalid trickster kill tracking
+		-	Extend post-attack cooldown + add indicator
+	-	@Surroundings (1.0.5)
 		-	Fix issue with overlays in that one display mode (disable when in that mode?)
-
-
+	-	@Ruined Items (2.2.3)
 	-	@Ergophobia (1.5.0)
 		-	Make furnishing kit and framing kit items stackable
 		-	Add a way to jump out of framed rooms

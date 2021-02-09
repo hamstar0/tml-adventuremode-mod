@@ -39,11 +39,11 @@ namespace AdventureMode {
 				}
 				break;
 			default:
-				/*if( config.GrappleChainAmmoRate > 0 && ItemAttributeHelpers.IsGrapple( item ) ) {
-					addTip( "Chains", "Consumes " + config.GrappleChainAmmoRate + " chain(s) per use" );
-				}*/
+				//if( config.GrappleChainAmmoRate > 0 && ItemAttributeHelpers.IsGrapple( item ) ) {
+				//	addTip( "Chains", "Consumes " + config.GrappleChainAmmoRate + " chain(s) per use" );
+				//}
 				if( item.type == ModContent.ItemType<MountableMagicMirrorTileItem>() ) {
-					addTip( "MMM", "May be placed once, but NOT removed!" );
+					addTip( "MMM", "Warning: May be placed once, but NOT removed" );
 				} else if( ItemAttributeHelpers.IsGrapple(item) && AMConfig.Instance.GrappleOnlyWoodAndPlatforms ) {
 					addTip( "Grapple", "Only works on wood and platforms" );
 				}
