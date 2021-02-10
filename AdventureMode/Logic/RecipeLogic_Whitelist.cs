@@ -179,6 +179,11 @@ namespace AdventureMode.Logic {
 				whitelistTypes.Add( ItemID.MechanicalSkull );
 				whitelistTypes.Add( ItemID.MechanicalEye );
 				whitelistTypes.Add( ItemID.CelestialSigil );
+
+				whitelistTypes.Add( ItemID.GoblinBattleStandard );
+				//whitelistTypes.Add( ItemID.SnowGlobe );
+				//whitelistTypes.Add( ItemID.PumpkinMoonMedallion );
+				//whitelistTypes.Add( ItemID.NaughtyPresent );
 			}
 
 			//

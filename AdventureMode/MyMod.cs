@@ -2,8 +2,9 @@ using System;
 using Terraria;
 using Terraria.ModLoader;
 using HamstarHelpers.Helpers.Debug;
-using AdventureMode.Mods;
 using HamstarHelpers.Services.EntityGroups;
+using AdventureMode.Mods;
+using AdventureMode.Logic;
 
 
 namespace AdventureMode {
@@ -81,5 +82,12 @@ namespace AdventureMode {
 				Main.NewText("Lit!");
 			} );
 		}*/
+
+
+		////////////////
+
+		public override void PostUpdateEverything() {
+			WorldLogic.UpdateWorldSpawnForInvasionState();
+		}
 	}
 }

@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -148,15 +148,15 @@ namespace AdventureMode.WorldGeneration {
 			int i = 0;
 			Item[] chestItems = Main.chest[chestIdx].item;
 
-			chestItems[i++] = ReadableBookItem.CreateBook(
-				title: "- Intro To Adventure Mode -",
-				pages: AMWorldGen.GetBookPages( AMWorldGen.GetIntroTextLines() )
-			);
+			string[] pages = AMWorldGen.GetBriefingTextLines()
+				.Select( lines => string.Join( "\n", lines ) )
+				.ToArray();
 
-			chestItems[i++] = ReadableBookItem.CreateBook(
+			chestItems[i] = ReadableBookItem.CreateBook(
 				title: "Your mission on Terraria",
-				pages: AMWorldGen.GetBookPages( AMWorldGen.GetBriefingTextLines() )
+				pages: pages
 			);
+			i++;
 
 			foreach( ItemQuantityDefinition def in AMConfig.Instance.RaftBarrelContents ) {
 				chestItems[i] = def.GetItem();

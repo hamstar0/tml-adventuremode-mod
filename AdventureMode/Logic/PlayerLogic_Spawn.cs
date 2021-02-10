@@ -1,28 +1,84 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.ID;
+using ReadableBooks.Items.ReadableBook;
 
 
 namespace AdventureMode.Logic {
 	static partial class PlayerLogic {
+		public static IList<IList<string>> GetIntroTextLines() {
+			var texts = new List<IList<string>> {
+				new List<string> {
+					"Welcome to Adventure Mode! This is a game mode built around journeying and exploration.",
+					"This is designed to create a new experience upon existing content, but with a few twists.",
+					"There's a lot of important new features and changes from the base game to note:",
+				},
+				new List<string> {
+					"- Building and digging disabled (some exceptions).",
+					"- Use house kits to create NPC houses, beds, crafting stations, and fast travel points.",
+					"- All crafting is now handled at workbenches.",
+				},
+				new List<string> {
+					"- Use platforms, planks, ropes, and rails kits to get around.",
+					"- Use Orbs (found in chests) to open new areas.",
+					//"- Grappling only works on platforms.",
+					"- Ammo is more expensive; use wisely.",
+				},
+				new List<string> {
+					"- Read item descriptions for more info.",
+					"- Talk to the Guide for further help.",
+					"- Do not whip the slimes!",
+				},
+			};
+
+			if( AMConfig.Instance.OverrideRecipeTileRequirements ) {
+				texts[1].Add( "- Use house kits to create NPC houses, beds, storage, and fast travel points." );
+				texts[1].RemoveAt( 3 );
+			}
+			if( !AMConfig.Instance.EnableAlchemyRecipes ) {
+				texts[3].Insert( 0, "- Alchemy and non-equipment recipes disabled." );
+			}
+
+			return texts;
+		}
+
+
+		////////////////
+
 		public static void SetupStartInventory( AMPlayer myplayer, IList<Item> items, bool mediumcoreDeath ) {
-			void addItem( int itemType, int stack ) {
+			if( !mediumcoreDeath ) {
+				PlayerLogic.SetupInitialSpawnInventory( myplayer, items );
+			}
+		}
+
+		private static void SetupInitialSpawnInventory( AMPlayer myplayer, IList<Item> items ) {
+			Item makeItem( int itemType, int stack ) {
 				var item = new Item();
 				item.SetDefaults( itemType );
 				item.stack = stack;
-				items.Add( item );
+				return item;
 			}
 
-			if( !mediumcoreDeath ) {
-				myplayer.IsAdventurer = true;
+			myplayer.IsAdventurer = true;
 
-				addItem( ItemID.WoodenHammer, 1 );
-				if( !AMConfig.Instance.EnableTorchRecipes ) {
-					addItem( ItemID.Torch, 10 );
-				}
-				addItem( ItemID.RopeCoil, 20 );
+			items.Add( makeItem(ItemID.WoodenHammer, 1) );
+			if( !AMConfig.Instance.EnableTorchRecipes ) {
+				items.Add( makeItem(ItemID.Torch, 10) );
 			}
+			items.Add( makeItem(ItemID.RopeCoil, 20) );
+
+			//
+
+			string[] pages = PlayerLogic.GetIntroTextLines()
+				.Select( lines => string.Join("\n", lines) )
+				.ToArray();
+
+			items.Add( ReadableBookItem.CreateBook(
+				title: "- Intro To Adventure Mode -",
+				pages: pages
+			) );
 		}
 	}
 }

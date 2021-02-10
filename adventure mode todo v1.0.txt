@@ -106,22 +106,20 @@ v1
 	-	Save dialogue states
 -	Show count of recipes per item in tooltips
 -	Remove alchemy herbs from tile drops
--	Set boss recipes to require 3 strange plants each
+-	Set boss recipes to require 2 strange plants each (mention in Strange Plant item tooltips)
 -	F&T 11
 	-	@MH
 		-	Set inbox message number to display further away from envelope
 	-	Start with climbing shoes (replace accessory in chests with orbs)
-	-	Start with grappling hook
 	-	Label raft mirror as a discoverable thing
 	-	Improve visibility of platform highlight
-	-	Spawn players with the AM guide book
+
+
+	-	@Lore
+		-	Spawn players with the AM guide book
 	-	Tweak jungle sign to indicate danger better
-	-	Set invasions to switch to the center of the map
 	-	Enable goblin standard recipe
-	-	Modify mech boss recipes
-	-	Modify worm food/bloody spine recipes
-
-
+	-	Set invasions to switch to the center of the map
 	-	Update mod versions
 	-	@More Item Info (1.0.0)
 	-	Verify suspicious eye recipe

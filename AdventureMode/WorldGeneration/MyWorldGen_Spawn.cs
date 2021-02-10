@@ -1,6 +1,7 @@
 ﻿using System;
 using Terraria;
 using Terraria.World.Generation;
+using Terraria.ModLoader;
 using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.World;
 
@@ -8,25 +9,31 @@ using HamstarHelpers.Helpers.World;
 namespace AdventureMode.WorldGeneration {
 	partial class AMWorldGen {
 		private static void SetSpawn( int x, int y ) {
-			LogHelpers.Alert( "Spawn relocated to " + x + ", " + y );
+			var myworld = ModContent.GetInstance<AMWorld>();
+
+			myworld.OldSpawn = (Main.spawnTileX, Main.spawnTileY);
+			myworld.NewSpawn = (x, y);
+
 			Main.spawnTileX = x;
 			Main.spawnTileY = y;
+
+			LogHelpers.Alert( "Spawn relocated to " + x + ", " + y );
 		}
+
 
 		////
 
 		public static void SetBeachSpawn( GenerationProgress progress ) {
-			bool checkColumns( int x ) {
-				for( int y = WorldHelpers.SkyLayerBottomTileY; y < WorldHelpers.SurfaceLayerBottomTileY; y++ ) {
-					Tile tile = Framing.GetTileSafely( x, y );
+			bool checkColumns( int myTileX, out int myTileY ) {
+				for( myTileY = WorldHelpers.SkyLayerBottomTileY; myTileY < WorldHelpers.SurfaceLayerBottomTileY; myTileY++ ) {
+					Tile tile = Framing.GetTileSafely( myTileX, myTileY );
 					if( tile == null || !tile.active() ) {
 						continue;
 					}
-					if( Main.tile[x, y - 1].liquid != 0 ) {
+					if( Main.tile[myTileX, myTileY - 1].liquid != 0 ) {
 						break;
 					}
 
-					AMWorldGen.SetSpawn( x, y - 2 );
 					return true;
 				}
 				return false;
@@ -34,28 +41,36 @@ namespace AdventureMode.WorldGeneration {
 
 			//
 
+			bool foundNewSpawn = false;
 			int reach = 40;//340;
+			int tileX, tileY=0;
 
 			if( Main.dungeonX > (Main.maxTilesX / 2) ) {
 				int max = (Main.maxTilesX - reach) - Main.dungeonX;
 
-				for( int x = Main.maxTilesX - reach; x > Main.dungeonX; x-- ) {
-					progress.Value = (float)(x - Main.dungeonX) / (float)max;
+				for( tileX = Main.maxTilesX - reach; tileX > Main.dungeonX; tileX-- ) {
+					progress.Value = (float)(tileX - Main.dungeonX) / (float)max;
+					foundNewSpawn = checkColumns( tileX, out tileY );
 
-					if( checkColumns( x ) ) {
+					if( foundNewSpawn ) {
 						break;
 					}
 				}
 			} else {
 				int max = Main.dungeonX;
 
-				for( int x = reach; x < max; x++ ) {
-					progress.Value = (float)( x - reach ) / (float)max;
+				for( tileX = reach; tileX < max; tileX++ ) {
+					progress.Value = (float)( tileX - reach ) / (float)max;
+					foundNewSpawn = checkColumns( tileX, out tileY );
 
-					if( checkColumns( x ) ) {
+					if( foundNewSpawn ) {
 						break;
 					}
 				}
+			}
+
+			if( foundNewSpawn ) {
+				AMWorldGen.SetSpawn( tileX, tileY - 2 );
 			}
 		}
 	}

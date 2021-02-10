@@ -6,43 +6,6 @@ using HamstarHelpers.Helpers.Debug;
 
 namespace AdventureMode.WorldGeneration {
 	partial class AMWorldGen {
-		public static IList<IList<string>> GetIntroTextLines() {
-			var texts = new List<IList<string>> {
-				new List<string> {
-					"Welcome to Adventure Mode! This is a game mode built around journeying and exploration.",
-					"This is designed to create a new experience upon existing content, but with a few twists.",
-					"There's a lot of important new features and changes from the base game to note:",
-				},
-				new List<string> {
-					"- Building and digging disabled (some exceptions).",
-					"- Use house kits to create NPC houses, beds, crafting stations, and fast travel points.",
-					"- All crafting is now handled at workbenches.",
-				},
-				new List<string> {
-					"- Use platforms, planks, ropes, and rails kits to get around.",
-					"- Use Orbs (found in chests) to open new areas.",
-					//"- Grappling only works on platforms.",
-					"- Ammo is more expensive; use wisely.",
-				},
-				new List<string> {
-					"- Read item descriptions for more info.",
-					"- Talk to the Guide for further help.",
-					"- Do not whip the slimes!",
-				},
-			};
-
-			if( AMConfig.Instance.OverrideRecipeTileRequirements ) {
-				texts[1].Add( "- Use house kits to create NPC houses, beds, storage, and fast travel points." );
-				texts[1].RemoveAt( 3 );
-			}
-			if( !AMConfig.Instance.EnableAlchemyRecipes ) {
-				texts[3].Insert( 0, "- Alchemy and non-equipment recipes disabled." );
-			}
-
-			return texts;
-		}
-
-		
 		public static IList<IList<string>> GetBriefingTextLines() {
 			var texts = new List<IList<string>> {
 				new List<string> {
@@ -73,20 +36,6 @@ namespace AdventureMode.WorldGeneration {
 			};
 
 			return texts;
-		}
-
-
-		////////////////
-
-		public static string[] GetBookPages( IList<IList<string>> rawPages ) {
-			string[] pages = new string[ rawPages.Count ];
-
-			int i = 0;
-			foreach( IList<string> lines in rawPages ) {
-				pages[i++] = string.Join( "\n", lines );
-			}
-
-			return pages;
 		}
 	}
 }

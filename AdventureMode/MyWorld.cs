@@ -14,7 +14,7 @@ using AdventureMode.WorldGeneration;
 
 
 namespace AdventureMode {
-	public class AMWorld : ModWorld {
+	public partial class AMWorld : ModWorld {
 		public bool IsCurrentWorldAdventure { get; internal set; } = false;
 
 		public int HouseKitFurnitureIdx { get; internal set; } = 0;
@@ -28,6 +28,10 @@ namespace AdventureMode {
 		public Rectangle UndergroundDesertBounds { get; internal set; } = default( Rectangle );
 
 		public (int TileX, int TileY) DungeonBottom { get; internal set; } = (0, 0);
+
+		public (int TileX, int TileY) OldSpawn { get; internal set; } = (0, 0);
+
+		public (int TileX, int TileY) NewSpawn { get; internal set; } = (0, 0);
 
 
 
@@ -65,6 +69,14 @@ namespace AdventureMode {
 				int y = tag.GetInt( "dung_bot_y" );
 				this.DungeonBottom = (x, y);
 			}
+			if( tag.ContainsKey( "old_spawn_x" ) ) {
+				int x = tag.GetInt( "old_spawn_x" );
+				int y = tag.GetInt( "old_spawn_y" );
+				this.OldSpawn = (x, y);
+				x = tag.GetInt( "new_spawn_x" );
+				y = tag.GetInt( "new_spawn_y" );
+				this.NewSpawn = (x, y);
+			}
 
 			WorldLogic.LoadRaftRestockInfo( tag );
 		}
@@ -80,7 +92,11 @@ namespace AdventureMode {
 				{ "und_des_zone_wid", this.UndergroundDesertBounds.Width },
 				{ "und_des_zone_hei", this.UndergroundDesertBounds.Height },
 				{ "dung_bot_x", this.DungeonBottom.TileX },
-				{ "dung_bot_y", this.DungeonBottom.TileY }
+				{ "dung_bot_y", this.DungeonBottom.TileY },
+				{ "old_spawn_x", this.OldSpawn.TileX },
+				{ "old_spawn_y", this.OldSpawn.TileY },
+				{ "new_spawn_x", this.NewSpawn.TileX },
+				{ "new_spawn_y", this.NewSpawn.TileY }
 			};
 
 			WorldLogic.SaveRaftRestockInfo( tag );
@@ -109,6 +125,14 @@ namespace AdventureMode {
 				int dunX = reader.ReadInt32();
 				int dunY = reader.ReadInt32();
 				this.DungeonBottom = (dunX, dunY);
+
+				int oldSX = reader.ReadInt32();
+				int oldSY = reader.ReadInt32();
+				this.OldSpawn = (oldSX, oldSY);
+
+				int newSX = reader.ReadInt32();
+				int newSY = reader.ReadInt32();
+				this.NewSpawn = (newSX, newSY);
 			} catch { }
 		}
 
@@ -125,79 +149,6 @@ namespace AdventureMode {
 				writer.Write( (int)this.DungeonBottom.TileX );
 				writer.Write( (int)this.DungeonBottom.TileY );
 			} catch { }
-		}
-
-
-		////////////////
-
-		public override void ModifyWorldGenTasks( List<GenPass> tasks, ref float totalWeight ) {
-			int idx = tasks.FindIndex( pass => pass.Name.Equals("Grass Wall") );
-
-			if( idx != -1 ) {
-				if( AMConfig.Instance.SetDefaultSpawnToBeach ) {
-					tasks.Insert( idx + 1, new PassLegacy( "Adventure Mode: Set Default Spawn", ( progress ) => {
-						AMWorldGen.SetBeachSpawn( progress );
-						progress.Value = 1f;
-					} ) );
-				}
-			}
-			
-			tasks.Add( new PassLegacy( "Adventure Mode: Create Spawn Boat", ( progress ) => {
-				AMWorldGen.PlaceRaft( this, progress );
-				progress.Value = 1f;
-			} ) );
-
-			tasks.Add( new PassLegacy( "Adventure Mode: Create Jungle Sign", ( progress ) => {
-				AMWorldGen.PlaceJungleSign( progress );
-				progress.Value = 1f;
-			} ) );
-
-			tasks.Add( new PassLegacy( "Adventure Mode: Create Corrupt Sign", ( progress ) => {
-				AMWorldGen.PlaceCorruptionSign( progress );
-				progress.Value = 1f;
-			} ) );
-
-			tasks.Add( new PassLegacy( "Adventure Mode: Create Snow Sign", ( progress ) => {
-				AMWorldGen.PlaceSnowSign( progress );
-				progress.Value = 1f;
-			} ) );
-
-			tasks.Add( new PassLegacy( "Adventure Mode: Underground Desert Scan", ( progress ) => {
-				progress.Message = "Scanning for underground desert expanse";
-				AMWorldGen.ScanUndergroundDesert( progress );
-				progress.Value = 1f;
-			} ) );
-
-			tasks.Add( new PassLegacy( "Adventure Mode: Dungeon Scan", ( progress ) => {
-				AMWorldGen.ScanDungeon( progress );
-				progress.Value = 1f;
-			} ) );
-		}
-
-		public override void PostWorldGen() {
-			this.IsCurrentWorldAdventure = true;
-
-			int guideWho = NPC.FindFirstNPC( NPCID.Guide );
-			if( guideWho != -1 ) {
-				Main.npc[ guideWho ].Center = new Vector2(Main.spawnTileX, Main.spawnTileY - 1) * 16f;
-			}
-		}
-
-
-		////////////////
-
-		public int GetRaftBarrelChestIndex() {
-			int raftX = this.RaftBarrelTile.TileX - 1;
-			int raftY = this.RaftBarrelTile.TileY - 1;
-
-			for( int i=0; i<2; i++ ) {
-				for( int j=0; j<2; j++ ) {
-					int chestIdx = Chest.FindChest( raftX + i, raftY + j );
-					if( chestIdx != -1 ) { return chestIdx; }
-				}
-			}
-
-			return -1;
 		}
 	}
 }
