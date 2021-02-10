@@ -1,16 +1,24 @@
 ﻿using System;
-using System.Linq;
 using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 using Terraria.World.Generation;
 using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Helpers.Tiles;
-using MountedMagicMirrors.Tiles;
-using ReadableBooks.Items.ReadableBook;
 
 
 namespace AdventureMode.WorldGeneration {
+	public class RaftComponents {
+		public (int TileX, int TileY) Barrel { get; internal set; }
+
+		public (int TileX, int TileY) Mirror { get; internal set; }
+
+
+		////////////////
+
+		public bool IsInitialized => this.Barrel != default && this.Mirror != default;
+	}
+
+
+
+
 	partial class AMWorldGen {
 		private static int[][] RaftImageWalls = new int[][] {
 			new int[] {  },
@@ -64,125 +72,12 @@ namespace AdventureMode.WorldGeneration {
 			int boatLeft, boatTop;
 			AMWorldGen.GetBoatCoordinates( out boatLeft, out boatTop );
 
-			AMWorldGen.PlaceTiles( myworld, progress, 0.25f, boatLeft, boatTop, AMWorldGen.RaftImageTiles );
-			AMWorldGen.PlaceWalls( myworld, progress, 0.25f, boatLeft, boatTop, AMWorldGen.RaftImageWalls );
-			AMWorldGen.PlaceTiles( myworld, progress, 0.25f, boatLeft, boatTop, AMWorldGen.RaftImageTiles );
-			AMWorldGen.ProcessTiles( myworld, progress, 0.25f, boatLeft, boatTop, AMWorldGen.RaftImageTiles );
-		}
+			myworld.Raft = new RaftComponents();
 
-
-		////
-
-		public static void PlaceTiles(
-					AMWorld myworld,
-					GenerationProgress progress,
-					float progressStep,
-					int left,
-					int top,
-					int[][] tiles ) {
-			for( int y = 0; y < tiles.Length; y++ ) {
-				progress.Value += progressStep / (float)tiles.Length;
-
-				for( int x = 0; x < tiles[y].Length; x++ ) {
-					if( tiles[y][x] == 0 ) { continue; }
-
-					if( tiles[y][x] > 0 ) {
-						switch( tiles[y][x] ) {
-						case TileID.Containers:
-							AMWorldGen.PlaceStarterBarrel( myworld, left + x, top + y );
-							break;
-						case TileID.Cog:
-							WorldGen.PlaceTile( left + x, top + y, tiles[y][x] );
-							break;
-						case TileID.PlanterBox:
-							WorldGen.PlaceTile( left + x, top + y, tiles[y][x], false, false, -1, 6 );
-							break;
-						/*case TileID.Signs:
-							if( WorldGen.PlaceSign( left + x, top + y, TileID.Signs ) ) {
-								int signIdx = Sign.ReadSign( left + x, top + y, true );
-								Main.sign[signIdx].text = AdventureModeWorldGen.GetIntroText();
-							}
-							break;*/
-						default:
-							WorldGen.PlaceTile( left + x, top + y, tiles[y][x] );
-							break;
-						}
-					} else {
-						//WorldGen.Place3x3Wall( left+x, top+y, (ushort)ModContent.TileType<MountedMagicMirrorTile>(), 0 );	//3,1
-						TilePlacementHelpers.Place3x3Wall( left + x, top + y, (ushort)ModContent.TileType<MountedMagicMirrorTile>() );  //2,1
-					}
-				}
-			}
-		}
-
-		public static void ProcessTiles(
-					AMWorld myworld, 
-					GenerationProgress progress,
-					float progressStep,
-					int left,
-					int top,
-					int[][] tiles ) {
-			for( int y = 0; y < tiles.Length; y++ ) {
-				progress.Value += progressStep / (float)tiles.Length;
-
-				for( int x = 0; x < tiles[y].Length; x++ ) {
-					if( tiles[y][x] == 0 ) { continue; }
-
-					if( tiles[y][x] > 0 ) {
-						switch( tiles[y][x] ) {
-						case TileID.Cog:
-							Main.tile[left + x, top + y].inActive( true );
-							break;
-						}
-					}
-				}
-			}
-		}
-
-		public static void PlaceStarterBarrel( AMWorld myworld, int x, int y ) {
-			int chestIdx = WorldGen.PlaceChest( x, y, TileID.Containers, false, 5 );
-			if( chestIdx == -1 ) {
-				return; // this occurs on the first pass (until raft floor exists)
-			}
-
-			int i = 0;
-			Item[] chestItems = Main.chest[chestIdx].item;
-
-			string[] pages = AMWorldGen.GetBriefingTextLines()
-				.Select( lines => string.Join( "\n", lines ) )
-				.ToArray();
-
-			chestItems[i] = ReadableBookItem.CreateBook(
-				title: "Your mission on Terraria",
-				pages: pages
-			);
-			i++;
-
-			foreach( ItemQuantityDefinition def in AMConfig.Instance.RaftBarrelContents ) {
-				chestItems[i] = def.GetItem();
-				i++;
-			}
-
-			myworld.RaftBarrelTile = (x, y);
-		}
-
-		public static void PlaceWalls(
-					AMWorld myworld, 
-					GenerationProgress progress,
-					float progressStep,
-					int left,
-					int top,
-					int[][] walls ) {
-			for( int y = 0; y < walls.Length; y++ ) {
-				progress.Value += progressStep / (float)walls.Length;
-
-				for( int x = 0; x < walls[y].Length; x++ ) {
-					if( walls[y][x] == 0 ) { continue; }
-
-					WorldGen.PlaceWall( left + x, top + y, walls[y][x] );
-					//Main.tile[boatLeft + x, boatTop + y].wall = (ushort)boatWalls[y][x];
-				}
-			}
+			AMWorldGen.PlaceTiles( myworld, progress, 0.25f, boatLeft, boatTop, AMWorldGen.RaftImageTiles, myworld.Raft );
+			AMWorldGen.PlaceWalls( myworld, progress, 0.25f, boatLeft, boatTop, AMWorldGen.RaftImageWalls, myworld.Raft );
+			AMWorldGen.PlaceTiles( myworld, progress, 0.25f, boatLeft, boatTop, AMWorldGen.RaftImageTiles, myworld.Raft );
+			AMWorldGen.ProcessTiles( myworld, progress, 0.25f, boatLeft, boatTop, AMWorldGen.RaftImageTiles, myworld.Raft );
 		}
 	}
 }

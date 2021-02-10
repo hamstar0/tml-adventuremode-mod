@@ -69,8 +69,8 @@ namespace AdventureMode {
 		////////////////
 		
 		public int GetRaftBarrelChestIndex() {
-			int raftX = this.RaftBarrelTile.TileX - 1;
-			int raftY = this.RaftBarrelTile.TileY - 1;
+			int raftX = this.Raft.Barrel.TileX - 1;
+			int raftY = this.Raft.Barrel.TileY - 1;
 
 			for( int i=0; i<2; i++ ) {
 				for( int j=0; j<2; j++ ) {

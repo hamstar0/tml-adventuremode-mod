@@ -2,60 +2,13 @@
 using System.Linq;
 using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.ModLoader.IO;
 using Terraria.ModLoader;
 using Terraria.ID;
 using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Services.Timers;
 
 
 namespace AdventureMode.Logic {
 	static partial class WorldLogic {
-		public static void LoadRaftRestockInfo( TagCompound tag ) {
-			var myworld = ModContent.GetInstance<AMWorld>();
-			if( !tag.ContainsKey("raft_x") ) {
-				LogHelpers.Alert( "World has no raft barrel." );
-				return;
-			}
-
-			myworld.RaftBarrelTile = (
-				tag.GetInt("raft_x"),
-				tag.GetInt("raft_y")
-			);
-
-			int timer = tag.GetInt( "raft_restock_timer" );
-
-			Timers.SetTimer( "AdventureModeRaftRestock", timer, false, () => {
-				if( Main.gameMenu && !Main.dedServ && Main.netMode != NetmodeID.Server ) {
-					return 0;
-				}
-
-				if( WorldLogic.RestockRaft() ) {
-					Main.NewText( "Raft barrel has received new items!", Color.Lime );
-				} else {
-					Main.NewText( "No barrel to restock.", Color.Yellow );
-				}
-
-				return AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
-			} );
-		}
-
-		public static void SaveRaftRestockInfo( TagCompound tag ) {
-			var myworld = ModContent.GetInstance<AMWorld>();
-			int restockTicks = Timers.GetTimerTickDuration( "AdventureModeRaftRestock" );
-
-			if( restockTicks <= 0 ) {
-				restockTicks = AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
-			}
-
-			tag["raft_x"] = myworld.RaftBarrelTile.TileX;
-			tag["raft_y"] = myworld.RaftBarrelTile.TileY;
-			tag["raft_restock_timer"] = restockTicks;
-		}
-
-
-		////////////////
-
 		public static bool RestockRaft() {
 			var myworld = ModContent.GetInstance<AMWorld>();
 			int chestIdx = myworld.GetRaftBarrelChestIndex();

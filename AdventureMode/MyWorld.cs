@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.ID;
-using Terraria.GameContent.Generation;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
-using Terraria.World.Generation;
 using HamstarHelpers.Helpers.Debug;
 using AdventureMode.Logic;
 using AdventureMode.WorldGeneration;
@@ -22,7 +18,7 @@ namespace AdventureMode {
 
 		public (int TileX, int TileY) JungleSignTile { get; internal set; } = (0, 0);
 
-		public (int TileX, int TileY) RaftBarrelTile { get; internal set; } = (0, 0);
+		public RaftComponents Raft { get; internal set; } = null;
 
 
 		public Rectangle UndergroundDesertBounds { get; internal set; } = default( Rectangle );
@@ -78,7 +74,7 @@ namespace AdventureMode {
 				this.NewSpawn = (x, y);
 			}
 
-			WorldLogic.LoadRaftRestockInfo( tag );
+			WorldLogic.LoadRaftInfo( tag );
 		}
 
 		public override TagCompound Save() {
@@ -99,7 +95,7 @@ namespace AdventureMode {
 				{ "new_spawn_y", this.NewSpawn.TileY }
 			};
 
-			WorldLogic.SaveRaftRestockInfo( tag );
+			WorldLogic.SaveRaftInfo( tag );
 
 			return tag;
 		}

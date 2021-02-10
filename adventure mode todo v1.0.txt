@@ -112,9 +112,9 @@ v1
 		-	Set inbox message number to display further away from envelope
 	-	Start with climbing shoes (replace accessory in chests with orbs)
 	-	Label raft mirror as a discoverable thing
+
+
 	-	Improve visibility of platform highlight
-
-
 	-	@Lore
 		-	Spawn players with the AM guide book
 	-	Tweak jungle sign to indicate danger better
