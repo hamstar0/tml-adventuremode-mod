@@ -47,6 +47,9 @@
     <Reference Include="LockedAbilities">
       <HintPath>..\..\..\Locked Abilities\Project\LockedAbilities\bin\Release\net452\LockedAbilities.dll</HintPath>
     </Reference>
+    <Reference Include="MoreItemInfo">
+      <HintPath>..\..\..\More Item Info\Project\MoreItemInfo\bin\Release\net452\MoreItemInfo.dll</HintPath>
+    </Reference>
     <Reference Include="MountedMagicMirrors">
       <HintPath>..\..\..\Mounted Magic Mirrors\Project\MountedMagicMirrors\bin\Release\net452\MountedMagicMirrors.dll</HintPath>
     </Reference>

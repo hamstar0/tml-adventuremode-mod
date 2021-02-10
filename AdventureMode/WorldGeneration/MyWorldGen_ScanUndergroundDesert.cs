@@ -16,9 +16,10 @@ namespace AdventureMode.WorldGeneration {
 		public static void ScanUndergroundDesert( GenerationProgress progress ) {
 			ISet<Rectangle> boxes = TileFinderHelpers.FindBoxesOfAllContiguousMatches(
 				pattern: new TilePattern( new TilePatternBuilder {
-					IsAnyOfType = new HashSet<int> { TileID.HardenedSand, TileID.Sandstone }
+					IsAnyOfWallType = new HashSet<int> { WallID.HardenedSand, WallID.Sandstone }
 				} ),
-				progress: progress
+				progress: progress,
+				skip: 32
 			);
 
 			if( boxes.Count > 0 ) {

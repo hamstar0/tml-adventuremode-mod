@@ -70,6 +70,7 @@ v1
 	-	Implement projectile shooting (skeletron skulls, but they cause curse)
 	-	Add to world gen
 	-	Implement tile sheet
+-	Remove dye ingredient items from tile and NPC drops
 -	When background PKE set to max, add sudden, periodic waves of "death winds" (increases Necrotis)
 -	@B&D
 	-	Durability concept
@@ -103,6 +104,9 @@ v1
 	-	Make trickster appear near the player, but then simply disappear and laugh
 -	@Lore
 	-	Save dialogue states
+-	Show count of recipes per item in tooltips
+-	Remove alchemy herbs from tile drops
+-	Set boss recipes to require 3 strange plants each
 -	F&T 11
 	-	@MH
 		-	Set inbox message number to display further away from envelope
@@ -114,10 +118,14 @@ v1
 	-	Tweak jungle sign to indicate danger better
 	-	Set invasions to switch to the center of the map
 	-	Enable goblin standard recipe
+	-	Modify mech boss recipes
+	-	Modify worm food/bloody spine recipes
+
+
+	-	Update mod versions
+	-	@More Item Info (1.0.0)
 	-	Verify suspicious eye recipe
 	-	Fix world gen slowness for ug desert finder
-
-
 	-	Fix WL MMM tile
 	-	@Ruined Items
 		-	Set default to 'disabled', use AM to set it to 'heavily nerfed'
@@ -144,7 +152,7 @@ v1
 		-	Hide gun when not aiming
 		-	`player.ChangeDir((x coord of mouse world to player > 0).ToDirectionInt())`
 		-	Tone down bandit damage
-	-	@Trickster (1.4.2)
+	-	@Trickster
 		-	Reduce time for bat AI mobs to be invincible
 	-	Shop whitelist issues
 	-	Fix rescueable goblin icon

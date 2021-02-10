@@ -162,6 +162,7 @@ namespace AdventureMode.Logic {
 			if( config.EnableTorchRecipes ) {
 				unionGroup( whitelistTypes, ItemGroupIDs.AnyWallTorch );
 			}
+
 			if( config.EnableBossItemRecipes ) {
 				if( !config.EnableAlchemyRecipes ) {
 					whitelistTypes.Add( ItemID.BottledHoney );
@@ -170,10 +171,10 @@ namespace AdventureMode.Logic {
 				whitelistTypes.Add( ItemID.PlatinumCrown );
 				//
 				whitelistTypes.Add( ItemID.SlimeCrown );
-				whitelistTypes.Add( ItemID.SuspiciousLookingEye );
-				whitelistTypes.Add( ItemID.WormFood );
-				whitelistTypes.Add( ItemID.BloodySpine );
-				whitelistTypes.Add( ItemID.Abeemination );
+				//whitelistTypes.Add( ItemID.SuspiciousLookingEye );
+				//whitelistTypes.Add( ItemID.WormFood );
+				//whitelistTypes.Add( ItemID.BloodySpine );
+				//whitelistTypes.Add( ItemID.Abeemination );
 				whitelistTypes.Add( ItemID.MechanicalWorm );
 				whitelistTypes.Add( ItemID.MechanicalSkull );
 				whitelistTypes.Add( ItemID.MechanicalEye );
