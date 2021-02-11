@@ -7,10 +7,55 @@ using Terraria.ModLoader.Config;
 using HamstarHelpers.Helpers.Debug;
 using ChestImplants;
 using MountedMagicMirrors.Items;
+using Orbs.Items;
 
 
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
+		private static ChestImplanterDefinition MakeItemImplanter(
+					int itemType,
+					int quantity,
+					float chancePerChest = 1f,
+					string chestType = "Vanilla Underground World Chest" ) {
+			var itemDef = new ChestImplanterItemDefinition {
+				ChestItem = new ItemDefinition( itemType ),
+				MinQuantity = quantity,
+				MaxQuantity = quantity,
+				ChancePerChest = chancePerChest,
+			};
+
+			return new ChestImplanterDefinition {
+				ChestTypes = new List<Ref<string>> { new Ref<string>( chestType ) },
+				ItemDefinitions = new List<ChestImplanterItemDefinition> { itemDef }
+			};
+		}
+
+
+		private static ChestImplanterDefinition MakeItemImplanter(
+					(int itemType, int quantity, float chancePerChest)[] defs,
+					string chestType = "Vanilla Underground World Chest" ) {
+			var itemDefinitions = new List<ChestImplanterItemDefinition>();
+
+			foreach( (int itemType, int quantity, float chancePerChest) in defs ) {
+				var itemDef = new ChestImplanterItemDefinition {
+					ChestItem = new ItemDefinition( itemType ),
+					MinQuantity = quantity,
+					MaxQuantity = quantity,
+					ChancePerChest = chancePerChest,
+				};
+				itemDefinitions.Add( itemDef );
+			}
+
+			return new ChestImplanterDefinition {
+				ChestTypes = new List<Ref<string>> { new Ref<string>( "Vanilla Underground World Chest" ) },
+				ItemDefinitions = itemDefinitions
+			};
+		}
+
+
+
+		////////////////
+
 		public void LoadChestImplants() {
 			var implantsConfig = ChestImplantsConfig.Instance;
 			var implanterDefs = new ChestImplanterSetDefinition( new List<Ref<ChestImplanterDefinition>>() );
@@ -18,19 +63,14 @@ namespace AdventureMode.Mods {
 			//
 
 			void addItemImplanter( int itemType, int quantity, float chancePerChest=1f ) {
-				var itemDef = new ChestImplanterItemDefinition {
-					ChestItem = new ItemDefinition( itemType ),
-					MinQuantity = quantity,
-					MaxQuantity = quantity,
-					ChancePerChest = chancePerChest,
-				};
-				var def = new ChestImplanterDefinition {
-					ChestTypes = new List<Ref<string>> { new Ref<string>( "Vanilla Underground World Chest" ) },
-					ItemDefinitions = new List<ChestImplanterItemDefinition> { itemDef }
-				};
-
 				implanterDefs.Value.Add(
-					new Ref<ChestImplanterDefinition>( def )
+					new Ref<ChestImplanterDefinition>( AdventureModeModInteractions.MakeItemImplanter(itemType, quantity, chancePerChest) )
+				);
+			}
+
+			void addItemImplanter2( (int itemType, int quantity, float chancePerChest)[] defs, string chestType ) {
+				implanterDefs.Value.Add(
+					new Ref<ChestImplanterDefinition>( AdventureModeModInteractions.MakeItemImplanter(defs, chestType) )
 				);
 			}
 
@@ -47,14 +87,27 @@ namespace AdventureMode.Mods {
 			addItemImplanter( ItemID.LeafWand, -1 );
 			addItemImplanter( ItemID.LivingMahoganyWand, -1 );
 			addItemImplanter( ItemID.LivingMahoganyLeafWand, -1 );
+			addItemImplanter( ItemID.LivingMahoganyLeafWand, -1 );
 
 			if( AMConfig.Instance.WorldGenAddedMountedMagicMirrorChance > 0f ) {
 				addItemImplanter(
-					ModContent.ItemType<MountableMagicMirrorTileItem>(),
-					1,
-					AMConfig.Instance.WorldGenAddedMountedMagicMirrorChance
+					itemType: ModContent.ItemType<MountableMagicMirrorTileItem>(),
+					quantity: 1,
+					chancePerChest: AMConfig.Instance.WorldGenAddedMountedMagicMirrorChance
 				);
 			}
+
+			addItemImplanter2( new (int, int, float)[] {
+				(ItemID.ClimbingClaws, -1, 1f),
+				(ModContent.ItemType<BlueOrbItem>(), 1, 1f / 8f),
+				(ModContent.ItemType<CyanOrbItem>(), 1, 1f / 8f),
+				(ModContent.ItemType<GreenOrbItem>(), 1, 1f / 8f),
+				(ModContent.ItemType<PinkOrbItem>(), 1, 1f / 8f),
+				(ModContent.ItemType<PurpleOrbItem>(), 1, 1f / 8f),
+				(ModContent.ItemType<RedOrbItem>(), 1, 1f / 8f),
+				(ModContent.ItemType<YellowOrbItem>(), 1, 1f / 8f),
+				(ModContent.ItemType<WhiteOrbItem>(), 1, 1f / 8f)
+			}, "Chest" );
 
 			////
 

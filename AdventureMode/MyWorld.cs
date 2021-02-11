@@ -18,7 +18,7 @@ namespace AdventureMode {
 
 		public (int TileX, int TileY) JungleSignTile { get; internal set; } = (0, 0);
 
-		public RaftComponents Raft { get; internal set; } = null;
+		public RaftComponents Raft { get; internal set; } = new RaftComponents();
 
 
 		public Rectangle UndergroundDesertBounds { get; internal set; } = default( Rectangle );
@@ -37,6 +37,7 @@ namespace AdventureMode {
 			this.IsCurrentWorldAdventure = false;
 			this.HouseKitFurnitureIdx = 0;
 			this.JungleSignTile = (0, 0);
+			this.Raft = new RaftComponents();
 		}
 
 		////
@@ -102,7 +103,7 @@ namespace AdventureMode {
 
 
 		////////////////
-
+		
 		public override void NetReceive( BinaryReader reader ) {
 			try {
 				this.IsCurrentWorldAdventure = reader.ReadBoolean();
@@ -145,6 +146,13 @@ namespace AdventureMode {
 				writer.Write( (int)this.DungeonBottom.TileX );
 				writer.Write( (int)this.DungeonBottom.TileY );
 			} catch { }
+		}
+
+
+		////////////////
+
+		public override void PostDrawTiles() {
+			WorldLogic.HighlightRaftMirror( this );
 		}
 	}
 }

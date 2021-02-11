@@ -11,6 +11,11 @@ namespace AdventureMode.Logic {
 	static partial class WorldLogic {
 		public static bool RestockRaft() {
 			var myworld = ModContent.GetInstance<AMWorld>();
+			if( !myworld.Raft.IsInitialized ) {
+				LogHelpers.Alert( "Raft barrel not initialized." );
+				return false;
+			}
+
 			int chestIdx = myworld.GetRaftBarrelChestIndex();
 			if( chestIdx == -1 ) {
 				LogHelpers.Alert( "No raft barrel found to restock!" );

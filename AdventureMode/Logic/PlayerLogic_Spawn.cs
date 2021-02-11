@@ -61,24 +61,37 @@ namespace AdventureMode.Logic {
 				return item;
 			}
 
-			myplayer.IsAdventurer = true;
+			//
 
-			items.Add( makeItem(ItemID.WoodenHammer, 1) );
-			if( !AMConfig.Instance.EnableTorchRecipes ) {
-				items.Add( makeItem(ItemID.Torch, 10) );
-			}
-			items.Add( makeItem(ItemID.RopeCoil, 20) );
+			myplayer.IsAdventurer = true;
 
 			//
 
+			items.Add( makeItem(ItemID.WoodenHammer, 1) );
+
+			if( !AMConfig.Instance.EnableTorchRecipes ) {
+				items.Add( makeItem(ItemID.Torch, 15) );
+			}
+
+			items.Add( makeItem(ItemID.RopeCoil, 20) );
+
+			items.Add( makeItem(ItemID.ClimbingClaws, 1) );
+
+			items.Add( PlayerLogic.CreateGuideBook() );
+		}
+
+
+		////
+
+		private static Item CreateGuideBook() {
 			string[] pages = PlayerLogic.GetIntroTextLines()
 				.Select( lines => string.Join("\n", lines) )
 				.ToArray();
 
-			items.Add( ReadableBookItem.CreateBook(
+			return ReadableBookItem.CreateBook(
 				title: "- Intro To Adventure Mode -",
 				pages: pages
-			) );
+			);
 		}
 	}
 }

@@ -63,6 +63,8 @@ v1
 	-	Experiment with cave-like tree scrolling
 -	@Lore
 	-	Set FEs to be omitted from PKE when "discovered"
+-	@Chest Implants
+	-	Add chest defs to config list and API getter
 -	Add awakening cyborgs
 -	Add skull piles?
 	-	Set blood moons to generate these on the surface (with an "incubation" time)
@@ -111,9 +113,9 @@ v1
 	-	@MH
 		-	Set inbox message number to display further away from envelope
 	-	Start with climbing shoes (replace accessory in chests with orbs)
+
+
 	-	Label raft mirror as a discoverable thing
-
-
 	-	Improve visibility of platform highlight
 	-	@Lore
 		-	Spawn players with the AM guide book
