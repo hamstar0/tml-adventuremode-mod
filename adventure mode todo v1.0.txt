@@ -65,6 +65,10 @@ v1
 	-	Set FEs to be omitted from PKE when "discovered"
 -	@Chest Implants
 	-	Add chest defs to config list and API getter
+-	@Trickster
+	-	Make trickster appear near the player, but then simply disappear and laugh
+-	@Lore
+	-	Save dialogue states
 -	Add awakening cyborgs
 -	Add skull piles?
 	-	Set blood moons to generate these on the surface (with an "incubation" time)
@@ -88,13 +92,19 @@ v1
 	-	Whip vs Trickster
 	-	Trickster spawns (again)
 	-	Lore events
+-	@Lore
+	-	Set cyborgs to occasionally blow up when 'mined'
+	-	Implement Magitech Scrap drops from cyborgs
+	-	Generate cyborgs around the world
+	-	Could not generate first 'failed expedition': Could not place barrel at 2000,211
 -	@Ruined Items
 	-	Add Magitech Scrap
-		-	@Lore
-			-	Implement Magitech Scrap drops from cyborgs
-			-	Generate cyborgs around the world
-		-	Implement repair mechanic
-		-	Create graphic
+		-	Implement repair mechanic (right click to arm, click on ruined item to use)
+			-	Implement application
+
+
+			-	Implement activation mode
+			-	Implement activation
 		-	Define item
 		-	@Plan
 			-	Chance to repair an item
@@ -102,15 +112,8 @@ v1
 			-	Item can only have one attempt at being repaired
 			-	May be randomly found in FEs
 			-	May be found by 'mining' dead cyborgs
--	@Trickster
-	-	Make trickster appear near the player, but then simply disappear and laugh
--	@Lore
-	-	Save dialogue states
--	Show count of recipes per item in tooltips
 -	Remove alchemy herbs from tile drops
 -	Set boss recipes to require 2 strange plants each (mention in Strange Plant item tooltips)
-
-
 -	Start with climbing shoes (replace accessory in chests with orbs)
 -	Label raft mirror as a discoverable thing
 -	F&T 11

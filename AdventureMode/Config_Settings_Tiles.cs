@@ -52,9 +52,6 @@ namespace AdventureMode {
 		};
 
 
-		////
-
-
 
 		////////////////
 

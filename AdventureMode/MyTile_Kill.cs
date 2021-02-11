@@ -1,5 +1,6 @@
 ﻿using System;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using HamstarHelpers.Classes.Loadable;
 using HamstarHelpers.Helpers.Debug;
@@ -22,6 +23,18 @@ namespace AdventureMode {
 
 
 
-	//partial class AMTile : GlobalTile {
-	//}
+	partial class AMTile : GlobalTile {
+		public override bool Drop( int i, int j, int type ) {
+			if( !AMConfig.Instance.EnableAlchemyRecipes ) {
+				switch( type ) {
+				case TileID.ImmatureHerbs:
+				case TileID.MatureHerbs:
+				case TileID.BloomingHerbs:
+					return false;
+				}
+			}
+
+			return base.Drop( i, j, type );
+		}
+	}
 }

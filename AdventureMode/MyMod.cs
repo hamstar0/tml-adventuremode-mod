@@ -60,6 +60,7 @@ namespace AdventureMode {
 			loadMod( "LoreAndObjectives", this.ModInteractions.LoadLoreAndObjectives );
 			loadMod( "TheMadRanger", this.ModInteractions.LoadTheMadRanger );
 			loadMod( "PowerfulMagic", this.ModInteractions.LoadPowerfulMagic );
+			loadMod( "RuinedItems", this.ModInteractions.LoadRuinedItems );
 		}
 
 		////
