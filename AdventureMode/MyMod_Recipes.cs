@@ -1,26 +1,32 @@
 using System;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Services.EntityGroups;
-using HamstarHelpers.Services.Hooks.LoadHooks;
 using AdventureMode.Logic;
 
 
 namespace AdventureMode {
 	partial class AMMod : Mod {
+		public override void AddRecipeGroups() {
+			var rg = new RecipeGroup( () => "AdventureMode.StrangePlants",
+				ItemID.StrangePlant1,
+				ItemID.StrangePlant2,
+				ItemID.StrangePlant3,
+				ItemID.StrangePlant4
+			);
+
+			RecipeGroup.RegisterGroup( "Strange Plants", rg );
+		}
+
+		////
+
 		public override void AddRecipes() {
-			RecipeLogic.AddRoDRecipes();
+			RecipeLogic.AddNewRecipes();
 		}
 
 		public override void PostAddRecipes() {
-			RecipeLogic.TweakBowlRecipe();
-			RecipeLogic.TweakFramingPlankRecipe();
-			
-			CustomLoadHooks.AddHook( EntityGroups.LoadedAllValidator, ( _ ) => {
-				RecipeLogic.ApplyRecipeWhitelistingAndNewTileRequirements();
-				return false;
-			} );
+			RecipeLogic.EditExistingRecipes();
 		}
 	}
 }

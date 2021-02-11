@@ -32,5 +32,10 @@ namespace AdventureMode {
 
 		[DefaultValue(true)]
 		public bool AddRodOfDiscordRecipe { get; set; } = true;
+
+		////
+
+		[DefaultValue(2)]
+		public int StrangePlantsAddedPerBossSummonItemRecipe { get; set; } = 2;
 	}
 }
