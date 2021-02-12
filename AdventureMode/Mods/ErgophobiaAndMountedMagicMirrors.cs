@@ -46,9 +46,9 @@ namespace AdventureMode.Mods {
 
 			ergConfig.SetOverride( nameof(ergConfig.TilePlaceWhitelist), wl );
 
-			ergConfig.SetOverride( nameof(ergConfig.FurnishedCustomFurnitureTile), TileID.Containers );
-			ergConfig.SetOverride( nameof(ergConfig.FurnishedCustomWallMount1Tile), mirrorTileType );
-			ergConfig.SetOverride( nameof(ergConfig.FurnishedCustomFloorTile), TileID.Mudstone );
+			ergConfig.SetOverride( nameof(ergConfig.FurnishedCustomFurnitureTile), (int)TileID.Containers );
+			ergConfig.SetOverride( nameof(ergConfig.FurnishedCustomWallMount1Tile), (int)mirrorTileType );
+			ergConfig.SetOverride( nameof(ergConfig.FurnishedCustomFloorTile), (int)TileID.Mudstone );
 			ergConfig.SetOverride( nameof(ergConfig.HouseFramingKitPrice), Item.buyPrice(gold: 20) );
 			ergConfig.SetOverride( nameof(ergConfig.HouseFurnishingKitPrice), Item.buyPrice(gold: 8) );
 			ergConfig.SetOverride( nameof(ergConfig.TrackDeploymentKitRecipeTile), -1 );
