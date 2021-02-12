@@ -102,8 +102,12 @@ v1
 -	F&T
 	-	@TMR
 		-	Remove reticule flicker, soften intensity
+	-	@Objectives
+		-	Use larger 'Completed' font
 	-	Remove herb pouches from chests
 	-	Remove herb seeds from herb sprout drops
+	-	@MH
+		-	Debug "Emitters UI" control panel shifting
 
 
 [v0.19.0]

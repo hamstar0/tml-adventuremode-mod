@@ -28,7 +28,7 @@ namespace AdventureMode.Mods {
 					return;
 				}
 
-				ergConfig.SetOverride( nameof(ergConfig.FurnishedCustomFurnitureTile), furnDef.TileType );
+				ergConfig.SetOverride( nameof(ergConfig.FurnishedCustomFurnitureTile), (int)furnDef.TileType );
 
 				myworld.HouseKitFurnitureIdx++;
 			} );
