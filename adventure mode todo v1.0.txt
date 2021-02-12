@@ -92,17 +92,22 @@ v1
 	-	A use for ores (excavation kits?)
 	-	Max background PKE (waves of darkness?)
 -	@SORT MOD TAGS!!!!
-[v0.19.0]
+[v0.20.0]
 -	@Test MP (EoW/BoC)
 	-	Infection buff sync (use output messages)
 	-	Goblin icon + rescue
 	-	Whip vs Trickster
 	-	Trickster spawns (again)
 	-	Lore events
--	Me: Reset Ruined Items configs
+-	F&T
+	-	@TMR
+		-	Remove reticule flicker, soften intensity
+	-	Remove herb pouches from chests
+	-	Remove herb seeds from herb sprout drops
+
+
+[v0.19.0]
 -	@Beta!
-
-
 -	Adjust default Ruined Items settings to have ALL loots, purchases, etc. be ruined
 	-	PurchasedItemRuinPercentChance
 	-	NPCLootItemRuinPercentChance
