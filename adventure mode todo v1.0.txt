@@ -99,13 +99,16 @@ v1
 	-	Whip vs Trickster
 	-	Trickster spawns (again)
 	-	Lore events
+-	Me: Reset Ruined Items configs
+-	@Beta!
+
+
 -	Adjust default Ruined Items settings to have ALL loots, purchases, etc. be ruined
 	-	PurchasedItemRuinPercentChance
 	-	NPCLootItemRuinPercentChance
 	-	WorldGenChestItemRuinPercentChance
 	-	MagitechScrapPrice
-
-
+-	@Ruined Items (2.4.0)
 -	WL cyborg "mining"
 -	@Lore
 	-	Implement Magitech Scrap drops from cyborgs
