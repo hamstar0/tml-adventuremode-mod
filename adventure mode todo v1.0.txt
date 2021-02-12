@@ -69,6 +69,7 @@ v1
 	-	Make trickster appear near the player, but then simply disappear and laugh
 -	@Lore
 	-	Save dialogue states
+	-	Set cyborgs to occasionally blow up when 'mined'
 -	Add awakening cyborgs
 -	Add skull piles?
 	-	Set blood moons to generate these on the surface (with an "incubation" time)
@@ -98,14 +99,19 @@ v1
 	-	Whip vs Trickster
 	-	Trickster spawns (again)
 	-	Lore events
+-	Adjust default Ruined Items settings to have ALL loots, purchases, etc. be ruined
+	-	PurchasedItemRuinPercentChance
+	-	NPCLootItemRuinPercentChance
+	-	WorldGenChestItemRuinPercentChance
+	-	MagitechScrapPrice
+
+
+-	WL cyborg "mining"
 -	@Lore
-	-	Set cyborgs to occasionally blow up when 'mined'
 	-	Implement Magitech Scrap drops from cyborgs
 	-	Generate cyborgs around the world
 	-	"Could not generate first 'failed expedition': Could not place barrel at 2000,211"
 -	Change Ruined Items vendor NPC for Magitech to the cyborg
-
-
 -	@Ruined Items (2.3.0)
 	-	Add Magitech Scrap
 		-	Designate npc to sell them (default goblin)
