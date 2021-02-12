@@ -52,7 +52,7 @@ v1
 -	@TMR
 	-	Add a button to toggle quick draw mode (but disables holster twirl)?
 	-	Set aim mode to be a hotkey button (defaults to right-click)
-[v0.19.0]
+[v0.20.0]
 -	Set right-click placement of platforms and planks to make a quick span
 -	Add extra lava on lower levels
 -	@Necrotis
@@ -77,7 +77,13 @@ v1
 	-	Add to world gen
 	-	Implement tile sheet
 -	Remove dye ingredient items from tile and NPC drops
--	When background PKE set to max, add sudden, periodic waves of "death winds" (increases Necrotis)
+-	When background PKE set to max
+	-	@Plan
+		-	At random, create "waves of darkness"
+		-	Effects: Distortion debuff, arcs from floor at random, necrotis increases a lot
+		-	Add persistent low quaking effect
+		-	Make quaking build up leading up to waves
+		-	Make all PKE readings surge during waves
 -	@B&D
 	-	Durability concept
 	-	Bedrock veins (via Mod Helpers?)
@@ -96,13 +102,15 @@ v1
 	-	Set cyborgs to occasionally blow up when 'mined'
 	-	Implement Magitech Scrap drops from cyborgs
 	-	Generate cyborgs around the world
-	-	Could not generate first 'failed expedition': Could not place barrel at 2000,211
--	@Ruined Items
+	-	"Could not generate first 'failed expedition': Could not place barrel at 2000,211"
+-	Change Ruined Items vendor NPC for Magitech to the cyborg
+
+
+-	@Ruined Items (2.3.0)
 	-	Add Magitech Scrap
+		-	Designate npc to sell them (default goblin)
 		-	Implement repair mechanic (right click to arm, click on ruined item to use)
 			-	Implement application
-
-
 			-	Implement activation mode
 			-	Implement activation
 		-	Define item
