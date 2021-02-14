@@ -65,8 +65,6 @@ v1
 	-	Set FEs to be omitted from PKE when "discovered"
 -	@Chest Implants
 	-	Add chest defs to config list and API getter
--	@Trickster
-	-	Make trickster appear near the player, but then simply disappear and laugh
 -	@Lore
 	-	Save dialogue states
 	-	Set cyborgs to occasionally blow up when 'mined'
@@ -78,13 +76,6 @@ v1
 	-	Add to world gen
 	-	Implement tile sheet
 -	Remove dye ingredient items from tile and NPC drops
--	When background PKE set to max
-	-	@Plan
-		-	At random, create "waves of darkness"
-		-	Effects: Distortion debuff, arcs from floor at random, necrotis increases a lot
-		-	Add persistent low quaking effect
-		-	Make quaking build up leading up to waves
-		-	Make all PKE readings surge during waves
 -	@B&D
 	-	Durability concept
 	-	Bedrock veins (via Mod Helpers?)
@@ -99,17 +90,103 @@ v1
 	-	Whip vs Trickster
 	-	Trickster spawns (again)
 	-	Lore events
+-	@Boss Reigns
+	-	When background PKE set to max
+		-	@Plan
+			-	//Increase trickster spawn rate in general
+			-	At random, create "waves of darkness"
+				-	Causes distortion debuff, arcs from floor at random, necrotis increases a lot
+			-	Add periodic random low quaking effect (builds up when waves are near)
+			-	Make all PKE readings surge during waves
 -	F&T
+	-	@Boss Reigns
+		-	Fix premature red bar lowering from event?
+	-	@Ruined Items
+		-	Add tooltip to indicate if attempted to fix ruined item
+	-	@Necrotis
+		-	Change darkness effect by 3/4
+		-	Change speed drain by 3/4
+		-	Adjust rates: Slightly slower drain in corruption/crimson
+	-	@MMM
+		-	Do not generate mirrors in corruption or crimson or spider caverns
 	-	@TMR
+		-	Ensure reload possible with speedloaders but no bandolier
+		-	Adjust speedloader X
+		-	Use smaller crosshair when in aim mode (look up 'Synthetik' fx)
+		-	Allow speedloaders to work in ammo slots
 		-	Remove reticule flicker, soften intensity
+		-	Debug king slime premature spawn
 	-	@Objectives
 		-	Use larger 'Completed' font
+	-	@More Item Info
+		-	Remove redundant price display for coins
+		-	Fix price display order
+	-	@Ergophobia
+		-	Failsafe against furnishing house with chest with items
+		-	Lower cost of scaffolding, framing kit
+		-	Fill furnished house step platforms with walls if backdrop walls exist
+		-	Set town npcs to not stand on beds
+	-	@Locked Abilities
+		-	Fix accessory slot overlays
+	-	@Bullwhip
+		-	Fix double whip
+		-	Reduce whip kb against slimes
+	-	@Green Hell
+		-	Increase infection damage a bit
+		-	Clarify verdant pendant thingie in advance?
+	-	@Orbs
+		-	Add indicator of tile chunk color when in map mode
+		-	Add indicator of tile chunk color when using binocs
+	-	@Enraged
+		-	Fix meter draw sync
+	-	@Lore
+		-	Add "furnish houses" objective
+		-	Remove FEs from world memory when discovered by a player
+		-	Set FE camps further apart
+		-	Set orbs objective to check an open chest
+		-	Clarify PKE red bar to not imply simply going to the beach
+		-	Add chat messages for newly-added NPC dialogue alerts
+	-	@B&D
+change tooltips for bombs/dynamites
+set mission objective for orbs to show progress bar
+set gauge to light level of boss
+mention tile placing items as able to place or not
+		-	...
+		-	Increased carrying capacity
+		-	Fix mudstone floors of furnished houses
+		-	Clarify jungle objective
+		-	"Walkie Talkie" item
+		-	Scale ore-made item prices according to ore multiplier? Allow uncrafting armor?
+		-	What to do when background PKE set to max
+		-	Better way to know anima drain/gain
+		-	A way to clarify dryad helps with jungle
+		-	Access to sandstone
+		-	How to add fast rope mod
+	-	Enable hooks
+	-	Increase 'extreme terrain' width a bit
+	-	Fix objective mention for crimson vs corruption
+	-	Remove wall drops from tiles breakage
+	-	Enable grapple hook, gem hooks (with added ingredients)
+	-	Check if old man dialogue has typo
+	-	Reduce strange plants requirement for boss recipes
+	-	Emphasize "read tooltips before selling" in guide handbook
+	-	Add mention of using Strange Plants for boss items (tooltips, guide alerts, handbook)
+	-	Reduce cyborg gen amounts
+	-	Add ore compatibility (some TileID.Set thing)
 	-	Remove herb pouches from chests
 	-	Remove herb seeds from herb sprout drops
+	-	Fix issue with setting spawns for non-AM worlds
+	-	Fix missing silk recipe (!)
+	-	Tweak jungle sign
 	-	@MH
 		-	Debug "Emitters UI" control panel shifting
 
 
+-	@Trickster (1.6.0)
+	-	Implement laugh-only encounters
+	-	Add laugh-only trickster encounters (4 at start, 20% chance after)
+	-	Reduce rate
+	-	Debug spawns
 [v0.19.0]
 -	@Beta!
 -	Adjust default Ruined Items settings to have ALL loots, purchases, etc. be ruined
