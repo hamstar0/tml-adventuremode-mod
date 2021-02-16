@@ -46,6 +46,7 @@ namespace AdventureMode {
 
 			EntityGroups.Enable();
 
+			loadMod( "Grappletech", this.ModInteractions.LoadGrappletech );
 			loadMod( "GreenHell", this.ModInteractions.LoadGreenHell );
 			loadMod( "Bullwhip", this.ModInteractions.LoadBullwhip );
 			loadMod( "Nihilism", this.ModInteractions.LoadNihilism );

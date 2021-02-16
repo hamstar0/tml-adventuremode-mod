@@ -76,20 +76,11 @@ v1
 	-	Add to world gen
 	-	Implement tile sheet
 -	Remove dye ingredient items from tile and NPC drops
--	@B&D
-	-	Durability concept
-	-	Bedrock veins (via Mod Helpers?)
-	-	A use for silk?
-	-	A use for ores (excavation kits?)
-	-	Max background PKE (waves of darkness?)
--	@SORT MOD TAGS!!!!
-[v0.20.0]
--	@Test MP (EoW/BoC)
-	-	Infection buff sync (use output messages)
-	-	Goblin icon + rescue
-	-	Whip vs Trickster
-	-	Trickster spawns (again)
-	-	Lore events
+-	@Walkie Talkie
+	-	@Plan
+		-	A way to clarify dryad helps with jungle
+		-	clarify cyborgs as mineable
+		-	Draw an item icon overlay for items with modified recipes
 -	@Boss Reigns
 	-	When background PKE set to max
 		-	@Plan
@@ -98,70 +89,27 @@ v1
 				-	Causes distortion debuff, arcs from floor at random, necrotis increases a lot
 			-	Add periodic random low quaking effect (builds up when waves are near)
 			-	Make all PKE readings surge during waves
+		-	@B&D more threats
+-	@B&D
+	-	Durability concept
+	-	Bedrock veins (via Mod Helpers?)
+-	@SORT MOD TAGS!!!!
+[v0.20.0]
+-	@Test MP (EoW/BoC)
+	-	Infection buff sync (use output messages)
+	-	Goblin icon + rescue
+	-	Whip vs Trickster
+	-	Trickster spawns (again)
+	-	Lore events
+the idea of Boss Reigns max bg PKE is to make needing to kill a boss/progress ACTUALLY IMPORTANT; think of a way to do this!
+-	Add random potions to raft resupply
+-	Add armor de-craft recipes
+-	@TMR
+	-	Show ammo while aiming
 -	F&T
-	-	@Boss Reigns
-		-	Fix premature red bar lowering from event?
-	-	@Ruined Items
-		-	Add tooltip to indicate if attempted to fix ruined item
-	-	@Necrotis
-		-	Change darkness effect by 3/4
-		-	Change speed drain by 3/4
-		-	Adjust rates: Slightly slower drain in corruption/crimson
-	-	@MMM
-		-	Do not generate mirrors in corruption or crimson or spider caverns
-	-	@TMR
-		-	Ensure reload possible with speedloaders but no bandolier
-		-	Adjust speedloader X
-		-	Use smaller crosshair when in aim mode (look up 'Synthetik' fx)
-		-	Allow speedloaders to work in ammo slots
-		-	Remove reticule flicker, soften intensity
-		-	Debug king slime premature spawn
-	-	@Objectives
-		-	Use larger 'Completed' font
-	-	@More Item Info
-		-	Remove redundant price display for coins
-		-	Fix price display order
-	-	@Ergophobia
-		-	Failsafe against furnishing house with chest with items
-		-	Lower cost of scaffolding, framing kit
-		-	Fill furnished house step platforms with walls if backdrop walls exist
-		-	Set town npcs to not stand on beds
-	-	@Locked Abilities
-		-	Fix accessory slot overlays
-	-	@Bullwhip
-		-	Fix double whip
-		-	Reduce whip kb against slimes
-	-	@Green Hell
-		-	Increase infection damage a bit
-		-	Clarify verdant pendant thingie in advance?
-	-	@Orbs
-		-	Add indicator of tile chunk color when in map mode
-		-	Add indicator of tile chunk color when using binocs
-	-	@Enraged
-		-	Fix meter draw sync
-	-	@Lore
-		-	Add "furnish houses" objective
-		-	Remove FEs from world memory when discovered by a player
-		-	Set FE camps further apart
-		-	Set orbs objective to check an open chest
-		-	Clarify PKE red bar to not imply simply going to the beach
-		-	Add chat messages for newly-added NPC dialogue alerts
-	-	@B&D
-change tooltips for bombs/dynamites
-set mission objective for orbs to show progress bar
-set gauge to light level of boss
-mention tile placing items as able to place or not
-		-	...
-		-	Increased carrying capacity
-		-	Fix mudstone floors of furnished houses
-		-	Clarify jungle objective
-		-	"Walkie Talkie" item
-		-	Scale ore-made item prices according to ore multiplier? Allow uncrafting armor?
-		-	What to do when background PKE set to max
-		-	Better way to know anima drain/gain
-		-	A way to clarify dryad helps with jungle
-		-	Access to sandstone
-		-	How to add fast rope mod
+	-	Enable crafting chests and placing chests
+	-	Lower strange plants recipe cost for summon items
+	-	Binocs reveal empty cave areas
 	-	Enable hooks
 	-	Increase 'extreme terrain' width a bit
 	-	Fix objective mention for crimson vs corruption
@@ -177,12 +125,100 @@ mention tile placing items as able to place or not
 	-	Remove herb seeds from herb sprout drops
 	-	Fix issue with setting spawns for non-AM worlds
 	-	Fix missing silk recipe (!)
-	-	Tweak jungle sign
+	-	Alter jungle sign to clarify danger
+	-	Increase silk sell price
 	-	@MH
 		-	Debug "Emitters UI" control panel shifting
+	-	@Boss Reigns
+		-	Fix premature red bar lowering from event?
+	-	@Ruined Items
+		-	Add tooltip to indicate if attempted to fix ruined item
+	-	@Necrotis
+		-	@B&D: Better way to know current anima drain/gain rate (show rate on hover?)
+		-	Set dying to only add +25 anima
+		-	Remove shine pot ingredient from elixer
+		-	Change darkness effect by 3/4
+		-	Change speed drain by 3/4
+		-	Adjust rates: Slightly slower drain in corruption/crimson
+	-	@MMM
+		-	Do not generate mirrors in corruption or crimson or spider caverns
+	-	@TMR
+		-	Fix reticule for non-TMR guns???
+		-	Fix double penetrate regular bullets
+		-	Ensure reload possible with speedloaders but no bandolier
+		-	Adjust speedloader X
+		-	Use smaller crosshair when in aim mode (look up 'Synthetik' fx)
+		-	Allow speedloaders to work in ammo slots
+		-	Remove reticule flicker, soften intensity
+		-	Debug king slime premature spawn
+	-	@Objectives
+		-	Use larger 'Completed' font
+	-	@More Item Info
+		-	Remove redundant price display for coins
+		-	Fix price display order
+	-	@Ergophobia
+		-	Add platforms under chest amidst mudstone floors of furnished houses
+		-	Add bridging kit (sold by mechanic)
+		-	Failsafe against furnishing house with chest with items
+		-	Lower cost of scaffolding, framing kit
+		-	Fill furnished house step platforms with walls if backdrop walls exist
+		-	Set town npcs to not stand on beds
+		-	Mention tile placing items tooltips as able to place or not
+	-	@Locked Abilities
+		-	Fix accessory slot overlays
+	-	@Bullwhip
+		-	Fix double whip
+		-	Reduce whip kb against slimes
+	-	@Green Hell
+		-	Increase infection damage a bit
+		-	Clarify verdant pendant thingie in advance?
+	-	@Orbs
+		-	Enable breaking obsidian and hellstone bricks
+		-	Change tooltips for bombs/dynamites
+		-	Add indicator of tile chunk color when in map mode
+		-	Add indicator of tile chunk color when using binocs
+	-	@Enraged
+		-	Fix meter draw sync
+		-	Set meter to light level of boss (except dial)
+	-	@PKE
+		-	Clarify 'proximity detector' aspect
+	-	@Lore
+		-	Update guide info about wood as the only breakable material
+		-	Set surface FEs to be recognized by PKE green bar
+		-	Add "furnish houses" objective
+		-	Remove FEs from world memory when discovered by a player
+		-	Set FE camps further apart
+		-	Set orbs objective to check an open chest
+		-	Clarify PKE red bar to not imply simply going to the beach
+		-	Add chat messages for newly-added NPC dialogue alerts
+		-	Set mission objective for orbs to show progress bar
+	-	@B&D
+		-	Loot bag
+		-	How to add fast rope mod
+-	@Add Quick Rope mod
+-	@Pneumatic Hydrothermal Waterjet?
+	-	@Plan
+		-	Cuts sandstone and mud
+		-	Requires water for operation (refills from immersion)
+		-	Recipe: Water Bucket, Lava Bucket, Illegal Gun Parts
 
 
+-	@Grappletech
+	-	@Add FramingPlankTile to grappleable tiles WL
+	-	Add Tensioned Hook Bracer accessory
+		-	Create sprite
+		-	Implement removal of restriction against grappling to any block type
+		-	Define item
+	-	Implement grappleable tiles WL
+	-	Import AM's grapple restrictions
+	-	Create mod
+	-	@Future Plans
+		-	Add grappling items by default only work on platforms
+		-	Accessories needed to make a grapple item work on other materials
+		-	Hooks can also be modded to work on other materials, at expense
 -	@Trickster (1.6.0)
+	-	@Test
+	-	Increase laugh-only chance to 33%
 	-	Implement laugh-only encounters
 	-	Add laugh-only trickster encounters (4 at start, 20% chance after)
 	-	Reduce rate
