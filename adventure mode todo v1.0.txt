@@ -123,10 +123,16 @@ the idea of Boss Reigns max bg PKE is to make needing to kill a boss/progress AC
 	-	Add ore compatibility (some TileID.Set thing)
 	-	Remove herb pouches from chests
 	-	Remove herb seeds from herb sprout drops
+	-	WL candle types
 	-	Fix issue with setting spawns for non-AM worlds
 	-	Fix missing silk recipe (!)
 	-	Alter jungle sign to clarify danger
 	-	Increase silk sell price
+	-	@Cursed Brambles
+		-	Emit miniscule light
+		-	Fix death message
+		-	Reduce damage
+		-	Increase decay rate a lot
 	-	@MH
 		-	Debug "Emitters UI" control panel shifting
 	-	@Boss Reigns
@@ -181,8 +187,10 @@ the idea of Boss Reigns max bg PKE is to make needing to kill a boss/progress AC
 		-	Fix meter draw sync
 		-	Set meter to light level of boss (except dial)
 	-	@PKE
+		-	Increase blue text brightness
 		-	Clarify 'proximity detector' aspect
 	-	@Lore
+		-	Set FEs to be 'discoverable'
 		-	Update guide info about wood as the only breakable material
 		-	Set surface FEs to be recognized by PKE green bar
 		-	Add "furnish houses" objective
@@ -192,17 +200,18 @@ the idea of Boss Reigns max bg PKE is to make needing to kill a boss/progress AC
 		-	Clarify PKE red bar to not imply simply going to the beach
 		-	Add chat messages for newly-added NPC dialogue alerts
 		-	Set mission objective for orbs to show progress bar
+	-	@Trickster
+		-	Fix 'mock' state not checking player proximity
 	-	@B&D
 		-	Loot bag
-		-	How to add fast rope mod
+
+
+-	Add Seismic Charge
+	-	Produce effect on explode: Changes sandstone -> sand in radius
+	-	Create sprite
+	-	Recipe: 12 Bombs, 1 Obsidian, 1 Orb (any)
+	-	Create item
 -	@Add Quick Rope mod
--	@Pneumatic Hydrothermal Waterjet?
-	-	@Plan
-		-	Cuts sandstone and mud
-		-	Requires water for operation (refills from immersion)
-		-	Recipe: Water Bucket, Lava Bucket, Illegal Gun Parts
-
-
 -	@Grappletech
 	-	@Add FramingPlankTile to grappleable tiles WL
 	-	Add Tensioned Hook Bracer accessory

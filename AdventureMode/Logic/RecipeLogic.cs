@@ -89,9 +89,9 @@ namespace AdventureMode.Logic {
 
 		private static void EditBossRecipe( Recipe r ) {
 			var re = new RecipeEditor( r );
-			re.AcceptRecipeGroup( "AdventureMode.StrangePlants" );
+			re.AcceptRecipeGroup( "AdventureMode.StrangePlant" );
 
-			int grpId = RecipeGroup.recipeGroupIDs[ "AdventureMode.StrangePlants" ];
+			int grpId = RecipeGroup.recipeGroupIDs[ "AdventureMode.StrangePlant" ];
 			RecipeGroup rg = RecipeGroup.recipeGroups[ grpId ];
 
 			int grpItemType = rg.ValidItems[ rg.IconicItemIndex ];

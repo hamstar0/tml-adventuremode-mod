@@ -28,6 +28,12 @@ namespace AdventureMode {
 		[ReloadRequired]
 		public bool EnableBasicGrappleItemRecipes { get; set; } = false;
 
+		//
+
+		[DefaultValue( true )]
+		[ReloadRequired]
+		public bool SeismicChargeRecipeEnabled { get; set; } = true;
+
 		////
 
 		[DefaultValue(true)]
