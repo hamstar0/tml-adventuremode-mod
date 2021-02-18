@@ -86,11 +86,14 @@ Future considerations
 		-	Define tile
 [v1.1.0]
 -	Set WoF to drop Soul of Mole (consumable; enables breaking dirt)
+-	@Necrotis
+	-	Set ankh moveable
 -	@Orbs
 	-	Pull cell data from @Terrain Remixer and generate color squares 75% as cells
 -	@Terrain Remixer
 	-	@Add Regions mod: Generate cells of a fixed set of "colors"
 -	@Trickster
+	-	Allow recovering stolen items?
 	-	Decide: Increase spawn rate when near torches (indicated by Dryad dialogue)?
 -	@Prefab Kits: Add Defensive Fortification Kit: A tall wall with a chain on one side, a jump pad on the other
 -	B&D: @Add Equipment Upkeep mod?

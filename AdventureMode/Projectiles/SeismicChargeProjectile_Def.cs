@@ -1,5 +1,4 @@
 ﻿using System;
-using HamstarHelpers.Helpers.Fx;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;

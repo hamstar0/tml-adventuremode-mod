@@ -10,6 +10,13 @@ namespace AdventureMode {
 		[ReloadRequired]
 		public bool OverrideRecipeTileRequirements { get; set; } = true;
 
+
+		////
+
+		[DefaultValue( true )]
+		public bool OreRefundRecipesEnabled { get; set; } = true;
+
+
 		////
 
 		[DefaultValue( false )]

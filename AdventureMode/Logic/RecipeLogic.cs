@@ -17,7 +17,12 @@ namespace AdventureMode.Logic {
 
 			var newRoDRecipe2 = new RodOfDiscordRecipe( true );
 			newRoDRecipe2.AddRecipe();
+
+			foreach( ModRecipe refundRecipe in RecipeLogic.CreateItemRefundRecipes() ) {
+				refundRecipe.AddRecipe();
+			}
 		}
+
 
 		public static void EditExistingRecipes() {
 			RecipeLogic.EditBowlRecipe();

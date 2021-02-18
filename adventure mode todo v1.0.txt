@@ -1,3 +1,13 @@
+Junkyard
+-	Add skull piles?
+	-	Set blood moons to generate these on the surface (with an "incubation" time)
+	-	Drop ectoplasm and anti-nectrotis potions on break
+	-	Implement projectile shooting (skeletron skulls, but they cause curse)
+	-	Add to world gen
+	-	Implement tile sheet
+
+
+
 v1
 -	@Mod Helpers v6
 	-	Change main menu support buttons (PayPal, Patreon, Discord)
@@ -47,40 +57,32 @@ v1
 	-	@TMR
 		-	Set bandits to make non-zombie noises
 -	Lock players to worlds
--	@Trickster
-	-	Allow recovering stolen items?
--	@TMR
-	-	Add a button to toggle quick draw mode (but disables holster twirl)?
-	-	Set aim mode to be a hotkey button (defaults to right-click)
-[v0.20.0]
--	Set right-click placement of platforms and planks to make a quick span
--	Add extra lava on lower levels
--	@Necrotis
-	-	Set ankh moveable
--	@TMR
-	-	Show held gun only when aiming?
--	@Surroundings
-	-	Experiment with cave-like tree scrolling
--	@Lore
-	-	Set FEs to be omitted from PKE when "discovered"
--	@Chest Implants
-	-	Add chest defs to config list and API getter
--	@Lore
-	-	Save dialogue states
-	-	Set cyborgs to occasionally blow up when 'mined'
--	Add awakening cyborgs
--	Add skull piles?
-	-	Set blood moons to generate these on the surface (with an "incubation" time)
-	-	Drop ectoplasm and anti-nectrotis potions on break
-	-	Implement projectile shooting (skeletron skulls, but they cause curse)
-	-	Add to world gen
-	-	Implement tile sheet
--	Remove dye ingredient items from tile and NPC drops
 -	@Walkie Talkie
 	-	@Plan
 		-	A way to clarify dryad helps with jungle
 		-	clarify cyborgs as mineable
 		-	Draw an item icon overlay for items with modified recipes
+[v0.22.0]
+-	@Test MP (EoW/BoC)
+	-	Infection buff sync (use output messages)
+	-	Goblin icon + rescue
+	-	Whip vs Trickster
+	-	Trickster spawns (again)
+	-	Lore events
+[v0.21.0]
+-	@Ergophobia
+	-	Implement r-click fast placement of platform and plank bridges
+-	@TMR
+	-	Show held gun only when aiming?
+-	@Surroundings
+	-	Implement cave-like tree scrolling
+-	@Chest Implants
+	-	Add list of vanilla chest types to config picker and an API getter
+-	@Lore
+	-	Add objective rewards (when applicable)
+	-	Save dialogue states
+	-	Add exploding cyborgs
+	-	Set FEs to be omitted from PKE when "discovered"
 -	@Boss Reigns
 	-	When background PKE set to max
 		-	@Plan
@@ -91,26 +93,18 @@ v1
 			-	Make all PKE readings surge during waves
 		-	@B&D more threats
 -	@B&D
+the idea of Boss Reigns max bg PKE is to make needing to kill a boss/progress ACTUALLY IMPORTANT; think of a way to do this!
 	-	Durability concept
 	-	Bedrock veins (via Mod Helpers?)
+	-	Resupply "requests"
+	-	Loot bag
 -	@SORT MOD TAGS!!!!
 [v0.20.0]
--	@Test MP (EoW/BoC)
-	-	Infection buff sync (use output messages)
-	-	Goblin icon + rescue
-	-	Whip vs Trickster
-	-	Trickster spawns (again)
-	-	Lore events
-the idea of Boss Reigns max bg PKE is to make needing to kill a boss/progress ACTUALLY IMPORTANT; think of a way to do this!
--	Add random potions to raft resupply
--	Add armor de-craft recipes
--	@TMR
-	-	Show ammo while aiming
+-	@Beta
 -	F&T
+	-	Remove dye ingredient items from tile and NPC drops
 	-	Enable crafting chests and placing chests
 	-	Lower strange plants recipe cost for summon items
-	-	Binocs reveal empty cave areas
-	-	Enable hooks
 	-	Increase 'extreme terrain' width a bit
 	-	Fix objective mention for crimson vs corruption
 	-	Remove wall drops from tiles breakage
@@ -120,7 +114,7 @@ the idea of Boss Reigns max bg PKE is to make needing to kill a boss/progress AC
 	-	Emphasize "read tooltips before selling" in guide handbook
 	-	Add mention of using Strange Plants for boss items (tooltips, guide alerts, handbook)
 	-	Reduce cyborg gen amounts
-	-	Add ore compatibility (some TileID.Set thing)
+	-	Add ore compatibility in respecing code (some TileID.Set thing)
 	-	Remove herb pouches from chests
 	-	Remove herb seeds from herb sprout drops
 	-	WL candle types
@@ -141,6 +135,8 @@ the idea of Boss Reigns max bg PKE is to make needing to kill a boss/progress AC
 		-	Add tooltip to indicate if attempted to fix ruined item
 	-	@Necrotis
 		-	@B&D: Better way to know current anima drain/gain rate (show rate on hover?)
+		-	Set buff to apply at +90% anima
+		-	Set ectoplasm to restore 50% anima
 		-	Set dying to only add +25 anima
 		-	Remove shine pot ingredient from elixer
 		-	Change darkness effect by 3/4
@@ -201,11 +197,20 @@ the idea of Boss Reigns max bg PKE is to make needing to kill a boss/progress AC
 		-	Add chat messages for newly-added NPC dialogue alerts
 		-	Set mission objective for orbs to show progress bar
 	-	@Trickster
+		-	Reduce spawn rate
 		-	Fix 'mock' state not checking player proximity
-	-	@B&D
-		-	Loot bag
+-	@TMR
+	-	Show ammo while aiming
+-	Add random potions to raft resupply
 
 
+-	Add armor de-craft recipes
+	-	@Plan
+		-	Find all armor items
+		-	Find all recipes that incorporate ore bars that craft said armors
+		-	Generate recipes for recovering 90% ores
+-	@Orbs (1.3.0)
+	-	Binocs reveal empty cave areas
 -	Add Seismic Charge
 	-	Produce effect on explode: Changes sandstone -> sand in radius
 	-	Create sprite
