@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 using HamstarHelpers.Services.EntityGroups;
 using HamstarHelpers.Services.Hooks.LoadHooks;
 using AdventureMode.Recipes;
-using Ergophobia.Items;
+using Ergophobia.Items.FramingPlank;
 
 
 namespace AdventureMode.Logic {

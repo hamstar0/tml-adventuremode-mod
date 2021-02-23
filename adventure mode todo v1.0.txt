@@ -57,6 +57,12 @@ v1
 	-	@TMR
 		-	Set bandits to make non-zombie noises
 -	Lock players to worlds
+-	@Ergophobia
+	-	Fill furnished house step platforms with walls if backdrop walls exist
+-	@Bullwhip
+	-	Fix double whip
+-	@Orbs
+	-	Add indicator of tile chunk color when holding binocs or orbs (display color at mouse)?
 -	@Walkie Talkie
 	-	@Plan
 		-	A way to clarify dryad helps with jungle
@@ -92,6 +98,8 @@ v1
 			-	Add periodic random low quaking effect (builds up when waves are near)
 			-	Make all PKE readings surge during waves
 		-	@B&D more threats
+-	@MH
+	-	Debug "Emitters UI" control panel shifting
 -	@B&D
 the idea of Boss Reigns max bg PKE is to make needing to kill a boss/progress ACTUALLY IMPORTANT; think of a way to do this!
 	-	Durability concept
@@ -101,6 +109,8 @@ the idea of Boss Reigns max bg PKE is to make needing to kill a boss/progress AC
 -	@SORT MOD TAGS!!!!
 [v0.20.0]
 -	@Beta
+-	@Ergophobia
+	-	Add bridging kit (sold by mechanic)
 -	F&T
 	-	Remove dye ingredient items from tile and NPC drops
 	-	Enable crafting chests and placing chests
@@ -121,19 +131,20 @@ the idea of Boss Reigns max bg PKE is to make needing to kill a boss/progress AC
 	-	Fix issue with setting spawns for non-AM worlds
 	-	Fix missing silk recipe (!)
 	-	Alter jungle sign to clarify danger
-	-	Increase silk sell price
 	-	@Cursed Brambles
 		-	Emit miniscule light
 		-	Fix death message
 		-	Reduce damage
 		-	Increase decay rate a lot
-	-	@MH
-		-	Debug "Emitters UI" control panel shifting
 	-	@Boss Reigns
+		-	Verify if time can be stored for boss kills in advance
+		-	During 'reign' event, set boss summon items to 'resonate' (including added tooltip)
+		-	Add 'reign' start message
 		-	Fix premature red bar lowering from event?
 	-	@Ruined Items
 		-	Add tooltip to indicate if attempted to fix ruined item
 	-	@Necrotis
+		-	Implement dragable ankh
 		-	@B&D: Better way to know current anima drain/gain rate (show rate on hover?)
 		-	Set buff to apply at +90% anima
 		-	Set ectoplasm to restore 50% anima
@@ -151,65 +162,59 @@ the idea of Boss Reigns max bg PKE is to make needing to kill a boss/progress AC
 		-	Adjust speedloader X
 		-	Use smaller crosshair when in aim mode (look up 'Synthetik' fx)
 		-	Allow speedloaders to work in ammo slots
-		-	Remove reticule flicker, soften intensity
 		-	Debug king slime premature spawn
 	-	@Objectives
 		-	Use larger 'Completed' font
 	-	@More Item Info
 		-	Remove redundant price display for coins
 		-	Fix price display order
-	-	@Ergophobia
+
+
+	-	Fix PKE meter position
+	-	@Ergophobia (1.6.0)
 		-	Add platforms under chest amidst mudstone floors of furnished houses
-		-	Add bridging kit (sold by mechanic)
-		-	Failsafe against furnishing house with chest with items
 		-	Lower cost of scaffolding, framing kit
-		-	Fill furnished house step platforms with walls if backdrop walls exist
-		-	Set town npcs to not stand on beds
 		-	Mention tile placing items tooltips as able to place or not
-	-	@Locked Abilities
-		-	Fix accessory slot overlays
-	-	@Bullwhip
-		-	Fix double whip
+		-	Set town npcs to not stand on beds
+		-	Failsafe against furnishing house with chest with items
+	-	@Bullwhip (1.2.0)
 		-	Reduce whip kb against slimes
-	-	@Green Hell
-		-	Increase infection damage a bit
-		-	Clarify verdant pendant thingie in advance?
-	-	@Orbs
-		-	Enable breaking obsidian and hellstone bricks
+	-	@Green Hell (0.6.0)
+		-	Tweak infection debuff tooltips
+		-	Increase infection damage per stage
+		-	Increase infection worsen risk
+	-	@Orbs (1.4.0)
+		-	Enable breaking ash blocks
 		-	Change tooltips for bombs/dynamites
-		-	Add indicator of tile chunk color when in map mode
-		-	Add indicator of tile chunk color when using binocs
-	-	@Enraged
-		-	Fix meter draw sync
+		-	Add intensity to tile chunk colors when in map mode
+	-	@Enraged (0.8.1)
 		-	Set meter to light level of boss (except dial)
 	-	@PKE
 		-	Increase blue text brightness
 		-	Clarify 'proximity detector' aspect
-	-	@Lore
-		-	Set FEs to be 'discoverable'
+	-	@Lore (0.8.0)
 		-	Update guide info about wood as the only breakable material
 		-	Set surface FEs to be recognized by PKE green bar
-		-	Add "furnish houses" objective
 		-	Remove FEs from world memory when discovered by a player
 		-	Set FE camps further apart
-		-	Set orbs objective to check an open chest
-		-	Clarify PKE red bar to not imply simply going to the beach
-		-	Add chat messages for newly-added NPC dialogue alerts
-		-	Set mission objective for orbs to show progress bar
-	-	@Trickster
-		-	Reduce spawn rate
+		-	Remove orbs objective
+	-	@Trickster (1.6.1)
+		-	Reduce surface spawn rate
 		-	Fix 'mock' state not checking player proximity
--	@TMR
+-	@PKE (1.5.0)
+	-	Implement moveable PKE HUD item (while inventory is open)
+-	@TMR (1.8.1)
+	-	Remove reticule flicker, soften intensity
+	-	Implement moveable ammo display (in inventory mode)
+	-	Draw ammo in bottom left
 	-	Show ammo while aiming
 -	Add random potions to raft resupply
-
-
 -	Add armor de-craft recipes
 	-	@Plan
 		-	Find all armor items
 		-	Find all recipes that incorporate ore bars that craft said armors
 		-	Generate recipes for recovering 90% ores
--	@Orbs (1.3.0)
+-	@Orbs
 	-	Binocs reveal empty cave areas
 -	Add Seismic Charge
 	-	Produce effect on explode: Changes sandstone -> sand in radius
@@ -230,7 +235,7 @@ the idea of Boss Reigns max bg PKE is to make needing to kill a boss/progress AC
 		-	Add grappling items by default only work on platforms
 		-	Accessories needed to make a grapple item work on other materials
 		-	Hooks can also be modded to work on other materials, at expense
--	@Trickster (1.6.0)
+-	@Trickster
 	-	@Test
 	-	Increase laugh-only chance to 33%
 	-	Implement laugh-only encounters

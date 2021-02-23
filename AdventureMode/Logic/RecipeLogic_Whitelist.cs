@@ -8,7 +8,8 @@ using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Services.EntityGroups;
 using HamstarHelpers.Services.EntityGroups.Definitions;
 using LockedAbilities.Items.Consumable;
-using Ergophobia.Items;
+using Ergophobia.Items.FramingPlank;
+using Ergophobia.Items.TrackDeploymentKit;
 
 
 namespace AdventureMode.Logic {

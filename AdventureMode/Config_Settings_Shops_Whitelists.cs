@@ -4,7 +4,9 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 using HamstarHelpers.Helpers.Debug;
-using Ergophobia.Items;
+using Ergophobia.Items.HouseFramingKit;
+using Ergophobia.Items.HouseFurnishingKit;
+using Ergophobia.Items.ScaffoldingKit;
 using GreenHell.Items;
 
 

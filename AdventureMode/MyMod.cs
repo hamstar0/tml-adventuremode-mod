@@ -48,6 +48,7 @@ namespace AdventureMode {
 
 			loadMod( "Grappletech", this.ModInteractions.LoadGrappletech );
 			loadMod( "GreenHell", this.ModInteractions.LoadGreenHell );
+			loadMod( "GreenHell", this.ModInteractions.LoadPKEMeter );
 			loadMod( "Bullwhip", this.ModInteractions.LoadBullwhip );
 			loadMod( "Nihilism", this.ModInteractions.LoadNihilism );
 			loadMod( "Necrotis", this.ModInteractions.LoadNecrotis );

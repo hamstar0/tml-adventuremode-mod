@@ -4,7 +4,10 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader.Config;
-using Ergophobia.Items;
+using Ergophobia.Items.FramingPlank;
+using Ergophobia.Items.HouseFurnishingKit;
+using Ergophobia.Items.HouseFramingKit;
+using Ergophobia.Items.TrackDeploymentKit;
 using MountedMagicMirrors.Items;
 using Orbs.Items;
 
