@@ -2,53 +2,17 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.ModLoader.Config;
-using HamstarHelpers.Classes.DataStructures;
 using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Services.EntityGroups;
-using HamstarHelpers.Services.EntityGroups.Definitions;
+using AdventureMode.Logic;
 
 
 namespace AdventureMode {
 	partial class AMItem : GlobalItem {
-		public static bool ItemIsValuable( Item item ) {
-			if( item.createTile == TileID.MetalBars ) {
-				return true;
-			}
-
-			if( item.createTile > 0 && item.createTile < TileID.Sets.Ore.Length && TileID.Sets.Ore[item.createTile] ) {
-				return true;
-			}
-
-			if( EntityGroups.IsLoaded ) {
-				IReadOnlySet<int> grp;
-
-				EntityGroups.TryGetItemGroup( ItemGroupIDs.AnyOreBar, out grp );  // Modded bar?
-				if( grp?.Contains( item.type ) ?? false ) {
-					return true;
-				}
-
-				EntityGroups.TryGetItemGroup( ItemGroupIDs.AnyVanillaGem, out grp );
-				if( grp?.Contains( item.type ) ?? false ) {
-					return true;
-				}
-			}
-
-			return false;
-		}
-
-
-
-		////////////////
-
 		public override void SetDefaults( Item item ) {
 			var config = AMConfig.Instance;
-			var itemDef = new ItemDefinition( item.type );
 
-			if( config.ShopPriceScales.ContainsKey(itemDef) ) {
-				item.value = (int)((float)item.value * config.ShopPriceScales[ itemDef ].Scale);
-			} else if( AMItem.ItemIsValuable(item) ) {
-				item.value = (int)((float)item.value * config.ValueablesShopPriceScale);
+			if( !ItemLogic.ApplyShopPriceRespecIf(item) ) {
+				ItemLogic.ApplyValuablesPriceRespecIf( item );
 			}
 
 			switch( item.type ) {
@@ -57,11 +21,23 @@ namespace AdventureMode {
 					item.pick = 50;
 				}
 				break;
-			default:
-				if( AMItem.ItemIsValuable(item) ) {
-					item.value *= 3;
+			/*//case ItemID.CorruptSeeds:
+			//case ItemID.CrimsonSeeds:
+			//case ItemID.HallowedSeeds:
+			//case ItemID.JungleGrassSeeds:
+			//case ItemID.GrassSeeds:
+			//case ItemID.MushroomGrassSeeds:
+			case ItemID.BlinkrootSeeds:
+			case ItemID.DaybloomSeeds:
+			case ItemID.DeathweedSeeds:
+			case ItemID.FireblossomSeeds:
+			case ItemID.MoonglowSeeds:
+			case ItemID.ShiverthornSeeds:
+			case ItemID.WaterleafSeeds:
+				if( !config.EnableAlchemyRecipes ) {
+					item.TurnToAir();
 				}
-				break;
+				break;*/
 			}
 		}
 	}

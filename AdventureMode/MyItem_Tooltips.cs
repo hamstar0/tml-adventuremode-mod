@@ -36,6 +36,12 @@ namespace AdventureMode {
 					addTip( "RoD", "Cannot be used while Chaos State is active" );
 				}
 				break;
+			case ItemID.StrangePlant1:
+			case ItemID.StrangePlant2:
+			case ItemID.StrangePlant3:
+			case ItemID.StrangePlant4:
+				addTip( "StrangePlant", "Important: This item is now used as an ingredient for boss summon items" );
+				break;
 			default:
 				//if( config.GrappleChainAmmoRate > 0 && ItemAttributeHelpers.IsGrapple( item ) ) {
 				//	addTip( "Chains", "Consumes " + config.GrappleChainAmmoRate + " chain(s) per use" );

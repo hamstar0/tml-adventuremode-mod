@@ -9,6 +9,7 @@ using ReadableBooks.Items.ReadableBook;
 namespace AdventureMode.Logic {
 	static partial class PlayerLogic {
 		public static IList<IList<string>> GetIntroTextLines() {
+			var config = AMConfig.Instance;
 			var texts = new List<IList<string>> {
 				new List<string> {
 					"Welcome to Adventure Mode! This is a game mode built around journeying and exploration.",
@@ -18,7 +19,7 @@ namespace AdventureMode.Logic {
 				new List<string> {
 					"- Building and digging disabled (some exceptions).",
 					"- Use house kits to create NPC houses, beds, crafting stations, and fast travel points.",
-					"- All crafting is now handled at workbenches.",
+					"- All crafting is now handled at workbenches (or demon altars, where applicable).",
 				},
 				new List<string> {
 					"- Use platforms, planks, ropes, and rails kits to get around.",
@@ -27,18 +28,21 @@ namespace AdventureMode.Logic {
 					"- Ammo is more expensive; use wisely.",
 				},
 				new List<string> {
-					"- Read item descriptions for more info.",
+					"- Always read item descriptions. You might find useful new info.",
 					"- Talk to the Guide for further help.",
 					"- Do not whip the slimes!",
 				},
 			};
 
-			if( AMConfig.Instance.OverrideRecipeTileRequirements ) {
+			if( config.OverrideRecipeTileRequirements ) {
 				texts[1].Add( "- Use house kits to create NPC houses, beds, storage, and fast travel points." );
 				texts[1].RemoveAt( 3 );
 			}
-			if( !AMConfig.Instance.EnableAlchemyRecipes ) {
-				texts[3].Insert( 0, "- Alchemy and non-equipment recipes disabled." );
+			if( config.StrangePlantsAddedPerBossSummonItemRecipe > 0 ) {
+				texts[2].Add( "- Boss summon items now require Strange Plants. Don't trade/sell them." );
+			}
+			if( !config.EnableAlchemyRecipes ) {
+				texts[2].Insert( 0, "- Alchemy and non-equipment recipes disabled." );
 			}
 
 			return texts;

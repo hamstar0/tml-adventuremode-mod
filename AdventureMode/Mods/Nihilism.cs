@@ -55,6 +55,13 @@ namespace AdventureMode.Mods {
 		////////////////
 
 		private void ApplyNihilismItemFilters() {
+			NihilismAPI.SetItemBlacklistEntry( new ItemDefinition(ItemID.BlinkrootSeeds), true );
+			NihilismAPI.SetItemBlacklistEntry( new ItemDefinition(ItemID.DaybloomSeeds), true );
+			NihilismAPI.SetItemBlacklistEntry( new ItemDefinition(ItemID.DeathweedSeeds), true );
+			NihilismAPI.SetItemBlacklistEntry( new ItemDefinition(ItemID.FireblossomSeeds), true );
+			NihilismAPI.SetItemBlacklistEntry( new ItemDefinition(ItemID.MoonglowSeeds), true );
+			NihilismAPI.SetItemBlacklistEntry( new ItemDefinition(ItemID.ShiverthornSeeds), true );
+			NihilismAPI.SetItemBlacklistEntry( new ItemDefinition(ItemID.WaterleafSeeds), true );
 			NihilismAPI.SetItemBlacklistGroupEntry( ItemGroupIDs.AnyFishingPole, true );
 		}
 	}

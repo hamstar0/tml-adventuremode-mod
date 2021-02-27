@@ -46,13 +46,13 @@ namespace AdventureMode.Mods {
 					LayerName = "Tunnels",
 					NoiseFrequency = 0.01f,
 					WormsMode = FractalType.FBM,
-					NoiseValueMinimumUntilTileRemoval = 0.36f, //lower is thinner
+					NoiseValueMinimumUntilTileRemoval = 0.38f, //lower is thinner, was 0.36
 					BoundsTopStart = WorldDepth.SkyTop,
 					BoundsBottomStart = WorldDepth.UnderworldTop,
 					HorizontalDistancePercentFromCenterBeforeBlending = 0.8f,
-					VerticalDistancePercentFromCenterBeforeBlending = 0.5f,	//was 0.7f
-					BoundsLeftPercentStart = 0.45f,	//was 0.4
-					BoundsRightPercentStart = 0.55f,	//was 0.6
+					VerticalDistancePercentFromCenterBeforeBlending = 0.5f,	//was 0.7
+					BoundsLeftPercentStart = 0.425f,	//was 0.4
+					BoundsRightPercentStart = 0.575f,	//was 0.6
 					FillTiles = new List<int> { -1 },
 					FillWalls = new List<int> { }
 				},

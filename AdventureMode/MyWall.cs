@@ -17,5 +17,12 @@ namespace AdventureMode {
 		public override bool KillSound( int i, int j, int type ) {
 			return Main.gameMenu;
 		}
+
+
+		////
+
+		public override bool Drop( int i, int j, int type, ref int dropType ) {
+			return false;
+		}
 	}
 }

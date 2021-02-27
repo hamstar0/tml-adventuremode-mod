@@ -96,7 +96,9 @@ v1
 		-	@B&D more threats
 -	@MH
 	-	Debug "Emitters UI" control panel shifting
--	@B&D late game pre-hardmode challenges
+-	@B&D
+	-	A way to acquire grapple accessory by discovery
+	-	Late game pre-hardmode challenges
 -	Set depth charges to have a custom sound
 -	@SORT MOD TAGS!!!!
 [v0.21.0]
@@ -126,23 +128,20 @@ v1
 [v0.20.0]
 -	@Beta
 -	Add debug stuff to track KS spawn and npc.type changes
+
+
 -	F&T
-	-	Lower strange plants recipe cost for summon items
 	-	Increase 'extreme terrain' area and cave width a bit
 	-	Remove wall drops from tiles breakage
 	-	Enable 'Hook' item loot drops
-	-	Enable recipes for grapple hook, gem hooks (with added 'Hook' ingredient)
-	-	Check if old man dialogue has typo
+	-	Enable recipe for grapple hook
 	-	Reduce strange plants requirement for boss recipes
 	-	Emphasize "read tooltips before selling" in guide handbook
-	-	Add mention of using Strange Plants for boss items (tooltips, guide alerts, handbook)
-	-	Add modded ore compatibility in sell price respec code (some TileID.Set thing)
+	-	Add mention of using Strange Plants for boss items (tooltips, handbook)
 	-	Remove herb pouches from chests
 	-	Remove herb seeds from herb sprout drops
 	-	WL candle types
 	-	Fix issue with setting spawns for non-AM worlds
-
-
 	-	Fix missing silk recipe (!)
 	-	Alter jungle sign to clarify danger
 	-	Enable crafting chests and placing chests

@@ -48,7 +48,7 @@ namespace AdventureMode {
 
 		////
 
-		[DefaultValue(2)]
-		public int StrangePlantsAddedPerBossSummonItemRecipe { get; set; } = 2;
+		[DefaultValue(1)]
+		public int StrangePlantsAddedPerBossSummonItemRecipe { get; set; } = 1;
 	}
 }

@@ -74,6 +74,20 @@ namespace AdventureMode.Mods {
 				);
 			}
 
+			void addOrbImplanterReplacer( int itemType, string chestType="Chest" ) {
+				addItemImplanter2( new (int, int, float)[] {
+					(itemType, -1, 1f),
+					(ModContent.ItemType<BlueOrbItem>(), 1, 1f / 8f),
+					(ModContent.ItemType<CyanOrbItem>(), 1, 1f / 8f),
+					(ModContent.ItemType<GreenOrbItem>(), 1, 1f / 8f),
+					(ModContent.ItemType<PinkOrbItem>(), 1, 1f / 8f),
+					(ModContent.ItemType<PurpleOrbItem>(), 1, 1f / 8f),
+					(ModContent.ItemType<RedOrbItem>(), 1, 1f / 8f),
+					(ModContent.ItemType<YellowOrbItem>(), 1, 1f / 8f),
+					(ModContent.ItemType<WhiteOrbItem>(), 1, 1f / 8f)
+				}, chestType );
+			}
+
 			//
 
 			if( !AMConfig.Instance.EnableAlchemyRecipes ) {
@@ -97,17 +111,8 @@ namespace AdventureMode.Mods {
 				);
 			}
 
-			addItemImplanter2( new (int, int, float)[] {
-				(ItemID.ClimbingClaws, -1, 1f),
-				(ModContent.ItemType<BlueOrbItem>(), 1, 1f / 8f),
-				(ModContent.ItemType<CyanOrbItem>(), 1, 1f / 8f),
-				(ModContent.ItemType<GreenOrbItem>(), 1, 1f / 8f),
-				(ModContent.ItemType<PinkOrbItem>(), 1, 1f / 8f),
-				(ModContent.ItemType<PurpleOrbItem>(), 1, 1f / 8f),
-				(ModContent.ItemType<RedOrbItem>(), 1, 1f / 8f),
-				(ModContent.ItemType<YellowOrbItem>(), 1, 1f / 8f),
-				(ModContent.ItemType<WhiteOrbItem>(), 1, 1f / 8f)
-			}, "Chest" );
+			addOrbImplanterReplacer( ItemID.ClimbingClaws );
+			addOrbImplanterReplacer( ItemID.HerbBag );
 
 			////
 

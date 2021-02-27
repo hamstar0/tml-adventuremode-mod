@@ -90,7 +90,7 @@ namespace AdventureMode {
 		////////////////
 
 		public override void PostUpdateEverything() {
-			WorldLogic.UpdateWorldSpawnForInvasionState();
+			WorldLogic.UpdateWorldSpawnForInvasionStateIf();
 		}
 	}
 }
