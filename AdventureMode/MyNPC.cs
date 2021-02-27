@@ -28,6 +28,11 @@ namespace AdventureMode {
 			if( npc.townNPC && AMConfig.Instance.InvincibleTownNPCs ) {
 				npc.dontTakeDamage = true;
 			}
+
+			////DEBUG////
+			if( npc.type == NPCID.KingSlime ) {
+				LogHelpers.Log( "KING SLIME SPAWN DETECTED - "+DebugHelpers.GetCurrentContext() );
+			}
 		}
 
 
