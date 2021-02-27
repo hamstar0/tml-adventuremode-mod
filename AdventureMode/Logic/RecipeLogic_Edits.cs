@@ -5,25 +5,12 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using HamstarHelpers.Services.EntityGroups;
 using HamstarHelpers.Services.Hooks.LoadHooks;
-using AdventureMode.Recipes;
 using Ergophobia.Items.FramingPlank;
+using Necrotis.Items;
 
 
 namespace AdventureMode.Logic {
 	static partial class RecipeLogic {
-		public static void AddNewRecipes() {
-			var newRoDRecipe1 = new RodOfDiscordRecipe( false );
-			newRoDRecipe1.AddRecipe();
-
-			var newRoDRecipe2 = new RodOfDiscordRecipe( true );
-			newRoDRecipe2.AddRecipe();
-
-			foreach( ModRecipe refundRecipe in RecipeLogic.CreateItemRefundRecipes() ) {
-				refundRecipe.AddRecipe();
-			}
-		}
-
-
 		public static void EditExistingRecipes() {
 			RecipeLogic.EditBowlRecipe();
 			RecipeLogic.EditFramingPlankRecipe();
@@ -61,6 +48,16 @@ namespace AdventureMode.Logic {
 			foreach( Recipe r in rf.SearchRecipes() ) {
 				var re = new RecipeEditor( r );
 				re.DeleteTile( TileID.Sawmill );
+			}
+		}
+
+		public static void EditElixirRecipe() {
+			var rf = new RecipeFinder();
+			rf.SetResult( ModContent.ItemType<ElixirOfLifeItem>() );
+
+			foreach( Recipe r in rf.SearchRecipes() ) {
+				var re = new RecipeEditor( r );
+				re.DeleteIngredient( ItemID.ShinePotion );
 			}
 		}
 

@@ -6,8 +6,10 @@ using GreenHell;
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
 		public void LoadGreenHell() {
-			GreenHellConfig.Instance.SetOverride( nameof(GreenHellConfig.VerdantBlessingSoldByDryad), true );
-			GreenHellConfig.Instance.SetOverride( nameof(GreenHellConfig.VerdantBlessingRecipeEnabled), false );
+			var ghConfig = GreenHellConfig.Instance;
+
+			ghConfig.SetOverride( nameof(ghConfig.VerdantBlessingSoldByDryad), true );
+			ghConfig.SetOverride( nameof(ghConfig.VerdantBlessingRecipeEnabled), false );
 		}
 	}
 }

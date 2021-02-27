@@ -76,7 +76,7 @@ namespace AdventureMode.WorldGeneration {
 			}
 
 			string text = "Beware!"
-				+"\nThaumaturgical bio-hazard ahead. Do not enter without the necessary protections!"
+				+"\nDangerous wilderness ahead. Do not enter without the necessary protective items!"
 				+"\n\nP.S. Do not pet the tortoises.";
 			(int, int)? signAt = AMWorldGen.PlaceSign( left, top, "Jungle", text );
 

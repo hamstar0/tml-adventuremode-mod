@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using HamstarHelpers.Helpers.Items.Attributes;
+using AdventureMode.Recipes;
 
 
 namespace AdventureMode.Logic {

@@ -4,6 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using HamstarHelpers.Helpers.Debug;
 using AdventureMode.Logic;
+using AdventureMode.Recipes;
 using Orbs.Items;
 
 
@@ -43,7 +44,15 @@ namespace AdventureMode {
 		////
 
 		public override void AddRecipes() {
-			RecipeLogic.AddNewRecipes();
+			var newRoDRecipe1 = new RodOfDiscordRecipe( false );
+			newRoDRecipe1.AddRecipe();
+
+			var newRoDRecipe2 = new RodOfDiscordRecipe( true );
+			newRoDRecipe2.AddRecipe();
+
+			foreach( ModRecipe refundRecipe in RecipeLogic.CreateItemRefundRecipes() ) {
+				refundRecipe.AddRecipe();
+			}
 		}
 
 		public override void PostAddRecipes() {

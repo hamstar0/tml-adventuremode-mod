@@ -4,7 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 
-namespace AdventureMode.Logic {
+namespace AdventureMode.Recipes {
 	class OreRefundRecipe : ModRecipe {
 		public static OreRefundRecipe CreateRecipe( Item originalRecipeResultItem, Item mostUsedIngredient ) {
 			return new OreRefundRecipe(

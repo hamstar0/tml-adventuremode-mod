@@ -14,6 +14,7 @@ namespace AdventureMode.Mods {
 		public void LoadOrbs() {
 			var config = OrbsConfig.Instance;
 			var myTileKillWhitelist = new List<string>( config.TileKillWhitelist );
+			myTileKillWhitelist.Add( TileID.GetUniqueKey( TileID.Containers ) );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey( ModContent.TileType<FramingPlankTile>() ) );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey( ModContent.TileType<ManaCrystalShardTile>() ) );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey( ModContent.TileType<CursedBrambleTile>() ) );

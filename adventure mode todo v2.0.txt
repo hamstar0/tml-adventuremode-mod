@@ -1,6 +1,5 @@
 Future considerations
 -	Decide: Generate sleeping bosses in large caverns
--	Set Dryad to sell Antidotes (remove poison and add buff against poison)
 -	Set all enemies in dungeon to be strong against all attacks that aren't magic (add Guide tips)
 -	@Add Minecart Cannon mod
 -	@Add KO mod
@@ -8,10 +7,6 @@ Future considerations
 -	@Add Anomalies mod (only adds Gravitational Anomalies, for now)
 -	@Add Fleeting Goodies mod (coins disappear)
 -	@Add Lurking Foes mod (monsters are still in the dark until lit)
--	Generate 'failed expeditions' (marked on the map) that give lore dumps and ability unlocking accessories
-	-	Mark each expedition on the map
-	-	Add notes and 2 random ability accessories to each barrel
-	-	Find flat spots and generate tent, campfire, and barrel (10)
 -	Modify Smoke Bombs: Causes confusion to enemies and lightly repels them
 	-	Implement projectile neutralizing (within area only)
 	-	Implement enemy repellant behavior
@@ -85,9 +80,8 @@ Future considerations
 		-	Create tile graphic
 		-	Define tile
 [v1.1.0]
+-	Set Skeletron Prime to drop Soul of Hole(?) (consumable; enables breaking mud)
 -	Set WoF to drop Soul of Mole (consumable; enables breaking dirt)
--	@Necrotis
-	-	Set ankh moveable
 -	@Orbs
 	-	Pull cell data from @Terrain Remixer and generate color squares 75% as cells
 -	@Terrain Remixer
@@ -96,5 +90,10 @@ Future considerations
 	-	Allow recovering stolen items?
 	-	Decide: Increase spawn rate when near torches (indicated by Dryad dialogue)?
 -	@Prefab Kits: Add Defensive Fortification Kit: A tall wall with a chain on one side, a jump pad on the other
--	B&D: @Add Equipment Upkeep mod?
--	Add 'Life Pool' to the inside of giant trees (charges up over time to emit an ectoplasm when near)
+-	@B&D
+	-	Boss Reigns max bg PKE needs killing boss/progress to be ACTUALLY IMPORTANT; think of a way to do this!
+	-	Durability concept ('Equipment Upkeep')
+	-	Bedrock veins: Uses Regions mod's cells
+	-	Resupply "requests"
+	-	Loot bag
+

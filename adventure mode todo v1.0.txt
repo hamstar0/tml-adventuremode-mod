@@ -57,6 +57,8 @@ v1
 	-	@TMR
 		-	Set bandits to make non-zombie noises
 -	Lock players to worlds
+-	@Lore
+	-	Save dialogue states?
 -	@Ergophobia
 	-	Fill furnished house step platforms with walls if backdrop walls exist
 -	@Bullwhip
@@ -69,16 +71,10 @@ v1
 		-	clarify cyborgs as mineable
 		-	Draw an item icon overlay for items with modified recipes
 [v0.22.0]
--	@Test MP (EoW/BoC)
-	-	Infection buff sync (use output messages)
-	-	Goblin icon + rescue
-	-	Whip vs Trickster
-	-	Trickster spawns (again)
-	-	Lore events
-[v0.21.0]
 -	@Ergophobia
 	-	Implement r-click fast placement of platform and plank bridges
 -	@TMR
+	-	Fix reticule for non-TMR guns???
 	-	Show held gun only when aiming?
 -	@Surroundings
 	-	Implement cave-like tree scrolling
@@ -86,9 +82,9 @@ v1
 	-	Add list of vanilla chest types to config picker and an API getter
 -	@Lore
 	-	Add objective rewards (when applicable)
-	-	Save dialogue states
 	-	Add exploding cyborgs
-	-	Set FEs to be omitted from PKE when "discovered"
+-	@Ergophobia
+	-	Add bridging kit (sold by mechanic)
 -	@Boss Reigns
 	-	When background PKE set to max
 		-	@Plan
@@ -100,76 +96,99 @@ v1
 		-	@B&D more threats
 -	@MH
 	-	Debug "Emitters UI" control panel shifting
--	@B&D
-the idea of Boss Reigns max bg PKE is to make needing to kill a boss/progress ACTUALLY IMPORTANT; think of a way to do this!
-	-	Durability concept
-	-	Bedrock veins (via Mod Helpers?)
-	-	Resupply "requests"
-	-	Loot bag
+-	@B&D late game pre-hardmode challenges
+-	Set depth charges to have a custom sound
 -	@SORT MOD TAGS!!!!
+[v0.21.0]
+-	@Beta
+-	@Test MP
+-	@Necrotis
+	-	Add an item sold by Witch Doctor that changes spirit walk to use mana instead of anima
+	-	Configure 'spirit walk' mode to use anima instead of mana
+-	@Add Spirit Walking mod
+	-	Implement spirit walking mode
+	-	Add 'Shadow Mirror' item
+	-	Create mod
+	-	@Plan
+		-	Uses 20% mana (anima in AM) to activate, drains steadily while active
+		-	Requires 5s activation time while motionless and debuff-less
+		-	Cannot activate during bosses, events, or max "background PKE" state
+		-	Applies 'chaos state' debuff for 60s after use
+		-	While spirit walking, player flies in a given direction at a constant, quick speed
+		-	While spirit walking, player is invincible, but cannot do anything except aim their flight path
+		-	While spirit walking, player is very small, allowing access to tight spaces
+		-	Aborts when:
+			-	Anima is drained
+			-	Player hits a solid tile
+			-	Player enters the underworld
+			-	Player is above ground with no wall
+		-	At the end of the walk, the player makes a short 'jaunt' a few feet, ignoring obstacles
 [v0.20.0]
 -	@Beta
--	@Ergophobia
-	-	Add bridging kit (sold by mechanic)
+-	Add debug stuff to track KS spawn and npc.type changes
 -	F&T
-	-	Remove dye ingredient items from tile and NPC drops
-	-	Enable crafting chests and placing chests
 	-	Lower strange plants recipe cost for summon items
-	-	Increase 'extreme terrain' width a bit
-	-	Fix objective mention for crimson vs corruption
+	-	Increase 'extreme terrain' area and cave width a bit
 	-	Remove wall drops from tiles breakage
-	-	Enable grapple hook, gem hooks (with added ingredients)
+	-	Enable 'Hook' item loot drops
+	-	Enable recipes for grapple hook, gem hooks (with added 'Hook' ingredient)
 	-	Check if old man dialogue has typo
 	-	Reduce strange plants requirement for boss recipes
 	-	Emphasize "read tooltips before selling" in guide handbook
 	-	Add mention of using Strange Plants for boss items (tooltips, guide alerts, handbook)
-	-	Reduce cyborg gen amounts
-	-	Add ore compatibility in respecing code (some TileID.Set thing)
+	-	Add modded ore compatibility in sell price respec code (some TileID.Set thing)
 	-	Remove herb pouches from chests
 	-	Remove herb seeds from herb sprout drops
 	-	WL candle types
 	-	Fix issue with setting spawns for non-AM worlds
+
+
 	-	Fix missing silk recipe (!)
 	-	Alter jungle sign to clarify danger
-	-	@Cursed Brambles
+	-	Enable crafting chests and placing chests
+	-	@Necrotis
+		-	Fix ankh hover text layer
+		-	Fix ankh shift
+	-	@Locked Abilities
+		-	Fix accessory overlays with minimap shown
+	-	@Lore (0.8.1)
+		-	Reduce cyborg item drops
+		-	Fix objective mention for crimson vs corruption
+	-	@Grappletech (1.0.1)
+		-	Enable grappling planter boxes
+	-	@Cursed Brambles (0.6.0)
 		-	Emit miniscule light
 		-	Fix death message
 		-	Reduce damage
 		-	Increase decay rate a lot
-	-	@Boss Reigns
-		-	Verify if time can be stored for boss kills in advance
+	-	@Ruined Items (2.5.0)
+		-	Set reforge to clear 'attempted fix' flag
+		-	Add tooltip to indicate if attempted to fix ruined item
+	-	@Boss Reigns (1.2.0)
 		-	During 'reign' event, set boss summon items to 'resonate' (including added tooltip)
 		-	Add 'reign' start message
-		-	Fix premature red bar lowering from event?
-	-	@Ruined Items
-		-	Add tooltip to indicate if attempted to fix ruined item
-	-	@Necrotis
-		-	Implement dragable ankh
-		-	@B&D: Better way to know current anima drain/gain rate (show rate on hover?)
-		-	Set buff to apply at +90% anima
-		-	Set ectoplasm to restore 50% anima
-		-	Set dying to only add +25 anima
-		-	Remove shine pot ingredient from elixer
-		-	Change darkness effect by 3/4
-		-	Change speed drain by 3/4
+		-	Fix premature red bar lowering from non-progress events (e.g. blood moon)
+	-	@Necrotis (1.9.0)
+		-	Display anima drain/gain rate on ankh hover
+		-	Set ectoplasm to restore +50% anima
+		-	Set dying to only restore up to 20% anima
+		-	Remove shine pot ingredient from elixir
+		-	Change max darkness effect to 0.85
+		-	Change max speed drain to 0.85
 		-	Adjust rates: Slightly slower drain in corruption/crimson
-	-	@MMM
+		-	Implement dragable ankh
+	-	@MMM (1.1.9)
 		-	Do not generate mirrors in corruption or crimson or spider caverns
-	-	@TMR
-		-	Fix reticule for non-TMR guns???
+	-	@TMR (1.8.2)
 		-	Fix double penetrate regular bullets
-		-	Ensure reload possible with speedloaders but no bandolier
 		-	Adjust speedloader X
 		-	Use smaller crosshair when in aim mode (look up 'Synthetik' fx)
 		-	Allow speedloaders to work in ammo slots
-		-	Debug king slime premature spawn
-	-	@Objectives
-		-	Use larger 'Completed' font
-	-	@More Item Info
+	-	@Objectives (0.6.2)
+		-	Use larger font for 'Completed'
+	-	@More Item Info (1.3.1)
 		-	Remove redundant price display for coins
 		-	Fix price display order
-
-
 	-	Fix PKE meter position
 	-	@Ergophobia (1.6.0)
 		-	Add platforms under chest amidst mudstone floors of furnished houses
