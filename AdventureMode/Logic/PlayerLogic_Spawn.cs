@@ -81,6 +81,8 @@ namespace AdventureMode.Logic {
 
 			items.Add( makeItem(ItemID.ClimbingClaws, 1) );
 
+			items.Add( makeItem(ItemID.GrapplingHook, 1) );
+
 			items.Add( PlayerLogic.CreateGuideBook() );
 		}
 

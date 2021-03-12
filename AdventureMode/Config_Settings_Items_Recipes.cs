@@ -31,9 +31,9 @@ namespace AdventureMode {
 		[ReloadRequired]
 		public bool EnableTorchRecipes { get; set; } = true;
 
-		[DefaultValue( false )]
+		[DefaultValue( true )]
 		[ReloadRequired]
-		public bool EnableBasicGrappleItemRecipes { get; set; } = false;
+		public bool EnableBasicGrappleItemRecipes { get; set; } = true;
 
 		//
 

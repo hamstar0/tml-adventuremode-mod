@@ -138,7 +138,7 @@ v1
 		-	At the end of the walk, the player makes a short 'jaunt' a few feet, ignoring obstacles
 [v0.21.0]
 -	@Beta
--	Give grappling hook at start, disable hook drops and recipe
+-	Give grappling hook at start, disable recipe
 
 
 -	@F&T

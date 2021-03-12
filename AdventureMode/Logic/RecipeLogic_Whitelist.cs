@@ -202,7 +202,7 @@ namespace AdventureMode.Logic {
 			////
 
 			if( !config.EnableBasicGrappleItemRecipes ) {
-				//blacklistTypes.Add( ItemID.GrapplingHook );
+				blacklistTypes.Add( ItemID.GrapplingHook );
 				blacklistTypes.Add( ItemID.AmethystHook );
 				blacklistTypes.Add( ItemID.SapphireHook );
 				blacklistTypes.Add( ItemID.TopazHook );
