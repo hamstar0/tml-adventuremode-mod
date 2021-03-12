@@ -1,9 +1,9 @@
 ﻿using System;
-using HamstarHelpers.Helpers.Fx;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using HamstarHelpers.Helpers.Fx;
 
 
 namespace AdventureMode.Projectiles {
@@ -87,6 +87,13 @@ namespace AdventureMode.Projectiles {
 				break;
 			// Mud
 			case TileID.Mud:
+				newTileType = TileID.Silt;
+				break;
+			// Mud
+			case TileID.CrimtaneBrick:
+			case TileID.EbonstoneBrick:
+			case TileID.ObsidianBrick:
+			case TileID.HellstoneBrick:
 				newTileType = TileID.Silt;
 				break;
 			}

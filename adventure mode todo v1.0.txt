@@ -63,19 +63,17 @@ v1
 	-	Fill furnished house step platforms with walls if backdrop walls exist
 -	@Bullwhip
 	-	Fix double whip
--	@Orbs
-	-	Add indicator of tile chunk color when holding binocs or orbs (display color at mouse)?
 -	@Walkie Talkie
 	-	@Plan
 		-	A way to clarify dryad helps with jungle
 		-	clarify cyborgs as mineable
 		-	Draw an item icon overlay for items with modified recipes
-[v0.22.0]
+[v0.23.0]
 -	@Ergophobia
 	-	Implement r-click fast placement of platform and plank bridges
 -	@TMR
+	-	Make an option to quickly reload speeloaders
 	-	Fix reticule for non-TMR guns???
-	-	Show held gun only when aiming?
 -	@Surroundings
 	-	Implement cave-like tree scrolling
 -	@Chest Implants
@@ -84,6 +82,7 @@ v1
 	-	Add objective rewards (when applicable)
 	-	Add exploding cyborgs
 -	@Ergophobia
+	-	Prevent furnishing if unsafe dungeon walls exposed to an area
 	-	Add bridging kit (sold by mechanic)
 -	@Boss Reigns
 	-	When background PKE set to max
@@ -101,10 +100,21 @@ v1
 	-	Late game pre-hardmode challenges
 -	Set depth charges to have a custom sound
 -	@SORT MOD TAGS!!!!
-[v0.21.0]
+[v0.22.0]
 -	@Beta
+-	@F&T
+	-	VERIFY: Fix unlimited track kits
+		-	@Info: "if you hold out the rail thing at the end of a track it just keeps going"
 -	@Test MP
+-	Add chance to make a ruined item from crafting
+-	Add bone piles
+	-	@Plan
+		-	Large caverns occasionally get bone piles generated within them (not underground desert, though)
+		-	Piles shoot skeletron's homing skulls
+		-	Piles spawn biome-appropriate skeletons periodically
+		-	Piles can be mined and drop white orbs and ectoplasms
 -	@Necrotis
+	-	Set each buff to recharge anima slightly
 	-	Add an item sold by Witch Doctor that changes spirit walk to use mana instead of anima
 	-	Configure 'spirit walk' mode to use anima instead of mana
 -	@Add Spirit Walking mod
@@ -112,8 +122,9 @@ v1
 	-	Add 'Shadow Mirror' item
 	-	Create mod
 	-	@Plan
-		-	Uses 20% mana (anima in AM) to activate, drains steadily while active
+		-	Uses 20 mana (anima in AM) to activate, drains steadily while active
 		-	Requires 5s activation time while motionless and debuff-less
+		-	Requires a shadow mirror to activate, found in FEs
 		-	Cannot activate during bosses, events, or max "background PKE" state
 		-	Applies 'chaos state' debuff for 60s after use
 		-	While spirit walking, player flies in a given direction at a constant, quick speed
@@ -125,11 +136,90 @@ v1
 			-	Player enters the underworld
 			-	Player is above ground with no wall
 		-	At the end of the walk, the player makes a short 'jaunt' a few feet, ignoring obstacles
+[v0.21.0]
+-	@Beta
+-	Give grappling hook at start, disable hook drops and recipe
+
+
+-	@F&T
+	-	Increase bandit spawn rate
+	-	Move raft closer to land
+	-	Set raft items to stack
+	-	Set seismic charges to destroy obsidian/hellstone bricks
+	-	Fix kit prices
+	-	@Ruined Items (2.6.0)
+		-	Do not increase prices for reforging; just use lower chance of success
+	-	@Ergo (1.6.1)
+		-	Prevent track kits from placing in water
+		-	Prevent placing track kits on spaces that don't have enough horizontal room for deployment
+		-	Enable placing stairs
+			-	Disable placement if stair tiles exceed allowed platform bridge length
+			-	Enable placement for platform if a platform exists upper left or right
+			-	@Old data: "if smart cursor is active and stair contacts solid after 2 tiles"
+		-	INCOMPLETE? Ensure 'SquareTileFrame' on framing platforms and pillars
+		-	Alert to re-furnishing areas when alerting to furnishable areas
+	-	@HUD (2.1.2)
+		-	Re-enable hover text for controls on element with displacement
+		-	Highlight main box on hover upon displaced box
+		-	Highlight yellow displaced box on main box hover
+	-	@Necrotis (1.10.0)
+		-	@HUDElementsLib: Add hover text editing
+		-	Set ankh via. HUD Elements Lib
+	-	@TMR (1.8.3)
+		-	Update this (and PKE mod) to use HUD Lib
+		-	Set ammo dragable only with alt+click
+		-	Fix reticule in UIs (inventory, book)
+	-	@Lore (0.8.2)
+		-	Verify FEs can't gen on thin ice
+		-	Clarify dungeon objective (find occupants?)
+	-	@PKE (1.5.2)
+		-	Set dragable only with alt+click
+		-	Fix scroll
+-	@Add HUD Elements Lib mod (2.0.0)
+	-	Restore collisions
+	-	Fix interface layering
+	-	Implement custom displacement directions for vanilla elements
+	-	Fix anchors saving and loading
+	-	Enable collisions toggle button for vanilla elements
+	-	Engage player.mouseInterface when clicking controls
+	-	Improve collisions toggle button
+	-	Add button labels for controls
+	-	Implement screen position anchors
+		-	Implement anchor toggles
+		-	Implement collision toggle
+		-	Implement interactivity
+		-	Draw rectangles on elements
+	-	Prevent dragging elements offscreen
+	-	Fix positioning of vanilla elements
+	-	Display displacement rectangles during alt (yellow)
+	-	Implement dynamic positions for elements
+	-	Implement shifting around map, map icons, inventory, chest inventory
+		-	Implement shift directions
+		-	Define vanilla regions for HUD elements (locked)
+		-	Implement loading vanilla HUD elements
+	-	Add rectangle shading
+		-	Locked elements = red shade
+		-	Regular elements = white shade
+	-	Set alt to show HUD boxes
+	-	Implement virtual positions
+	-	Implement enable/disable
+	-	Use different outline for element being dragged
+	-	Implement locking
+	-	Implement displacement handling (AKA no "old position")
+		-	Re-check displacements after a shift ("anchor" already-displaced elements against re-displacement)
+		-	Apply displacement to collisions
+		-	Implement specification for displacement direction with HUDElement
+	-	Implement sliding collisions
+	-	Fix collision handling
+	-	Draw rectangles for collision objects
+	-	Implement collision handling between elements
+	-	Implement saving element offsets with player data
+	-	Implement draggable behavior for HUDElement
+	-	Define HUDElement class
+	-	Create mod
 [v0.20.0]
 -	@Beta
 -	Add debug stuff to track KS spawn and npc.type changes
-
-
 -	F&T
 	-	Increase 'extreme terrain' area and cave width a bit
 	-	Remove wall drops from tiles breakage

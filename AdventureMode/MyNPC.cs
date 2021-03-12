@@ -31,7 +31,7 @@ namespace AdventureMode {
 
 			////DEBUG////
 			if( npc.type == NPCID.KingSlime ) {
-				LogHelpers.Log( "KING SLIME SPAWN DETECTED - "+DebugHelpers.GetCurrentContext() );
+				LogHelpers.Log( "KING SLIME SPAWN DETECTED - "+string.Join("\n ", DebugHelpers.GetContextSlice()) );
 			}
 		}
 

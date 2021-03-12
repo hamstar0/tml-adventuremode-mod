@@ -54,7 +54,7 @@ namespace AdventureMode.Logic {
 		public static bool ApplyValuablesPriceRespecIf( Item item ) {
 			var config = AMConfig.Instance;
 
-			if( ItemLogic.ItemIsValuable( item ) ) {
+			if( !ItemLogic.ItemIsValuable( item ) ) {
 				return false;
 			}
 

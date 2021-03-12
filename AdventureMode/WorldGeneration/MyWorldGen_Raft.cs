@@ -53,9 +53,9 @@ namespace AdventureMode.WorldGeneration {
 			boatTop = Main.spawnTileY;
 
 			if( Main.spawnTileX < (Main.maxTilesX / 2) ) {
-				boatLeft -= 20;
+				boatLeft -= 18;	//20;
 			} else {
-				boatLeft += 8;
+				boatLeft += 6;	//8;
 			}
 
 			for( Tile tile = Framing.GetTileSafely( boatLeft, boatTop );

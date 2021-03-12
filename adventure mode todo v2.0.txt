@@ -39,6 +39,11 @@ Future considerations
 			-	Turns granite and marble into silt
 			-	Turns rock into silt
 			-	Turns bedrock into rock
+-	@Add Mountain Goat mod
+	-	@Plan
+		-	Available from first spawn
+		-	Moves fast, jumps high, [slides along walls?]
+		-	Bucks you if it takes damage, enters water, or goes too far underground
 
 
 

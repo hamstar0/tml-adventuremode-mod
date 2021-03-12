@@ -2,6 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using AdventureMode.Projectiles;
+using AdventureMode.Recipes;
 
 
 namespace AdventureMode.Items {
@@ -11,6 +12,7 @@ namespace AdventureMode.Items {
 			this.Tooltip.SetDefault( "Tossed as a bomb, exploding after a few seconds"
 				+"\nExplosion produces focused tremors that break down certain materials"
 				+"\nBreaks down sandstone into sand, mud into silt, ice into slush"
+				+"\nAlso breaks certain brick types"
 			);
 		}
 
@@ -35,25 +37,6 @@ namespace AdventureMode.Items {
 		public override void AddRecipes() {
 			var recipe = new SeismicChargeRecipe( this );
 			recipe.AddRecipe();
-		}
-	}
-
-
-
-
-	class SeismicChargeRecipe : ModRecipe {
-		public SeismicChargeRecipe( SeismicChargeItem myitem ) : base( AMMod.Instance ) {
-			this.AddTile( TileID.WorkBenches );
-
-			this.AddIngredient( ItemID.Bomb, 12 );
-			this.AddIngredient( ItemID.Obsidian, 1 );
-			this.AddRecipeGroup( "AdventureMode.Orb", 1 );
-
-			this.SetResult( myitem, 6 );
-		}
-
-		public override bool RecipeAvailable() {
-			return AMConfig.Instance.SeismicChargeRecipeEnabled;
 		}
 	}
 }
