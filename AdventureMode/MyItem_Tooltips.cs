@@ -48,8 +48,6 @@ namespace AdventureMode {
 				//}
 				if( item.type == ModContent.ItemType<MountableMagicMirrorTileItem>() ) {
 					addTip( "MMM", "Warning: May be placed once, but NOT removed" );
-				} else if( ItemAttributeHelpers.IsGrapple(item) && AMConfig.Instance.GrappleOnlyWoodAndPlatforms ) {
-					addTip( "Grapple", "Only works on wood and platforms" );
 				}
 				break;
 			}

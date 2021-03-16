@@ -7,11 +7,6 @@ using Terraria.ModLoader.Config;
 namespace AdventureMode {
 	public partial class AMConfig : ModConfig {
 		[DefaultValue( true )]
-		public bool GrappleOnlyWoodAndPlatforms { get; set; } = true;
-
-		////
-
-		[DefaultValue( true )]
 		public bool ReducedLifeCrystalStatIncrease { get; set; } = true;
 
 

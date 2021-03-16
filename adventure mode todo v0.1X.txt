@@ -1,0 +1,798 @@
+[v0.19.0]
+-	@Beta!
+-	Adjust default Ruined Items settings to have ALL loots, purchases, etc. be ruined
+	-	PurchasedItemRuinPercentChance
+	-	NPCLootItemRuinPercentChance
+	-	WorldGenChestItemRuinPercentChance
+	-	MagitechScrapPrice
+-	@Ruined Items (2.4.0)
+-	WL cyborg "mining"
+-	@Lore
+	-	Implement Magitech Scrap drops from cyborgs
+	-	Generate cyborgs around the world
+	-	"Could not generate first 'failed expedition': Could not place barrel at 2000,211"
+-	Change Ruined Items vendor NPC for Magitech to the cyborg
+-	@Ruined Items (2.3.0)
+	-	Add Magitech Scrap
+		-	Designate npc to sell them (default goblin)
+		-	Implement repair mechanic (right click to arm, click on ruined item to use)
+			-	Implement application
+			-	Implement activation mode
+			-	Implement activation
+		-	Define item
+		-	@Plan
+			-	Chance to repair an item
+			-	Consumed on use
+			-	Item can only have one attempt at being repaired
+			-	May be randomly found in FEs
+			-	May be found by 'mining' dead cyborgs
+-	Remove alchemy herbs from tile drops
+-	Set boss recipes to require 2 strange plants each (mention in Strange Plant item tooltips)
+-	Start with climbing shoes (replace accessory in chests with orbs)
+-	Label raft mirror as a discoverable thing
+-	F&T 11
+	-	@MH
+		-	Set inbox message number to display further away from envelope
+	-	Improve visibility of platform highlight
+	-	@Lore
+		-	Spawn players with the AM guide book
+	-	Tweak jungle sign to indicate danger better
+	-	Enable goblin standard recipe
+	-	Set invasions to switch to the center of the map
+	-	Update mod versions
+	-	@More Item Info (1.0.0)
+	-	Verify suspicious eye recipe
+	-	Fix world gen slowness for ug desert finder
+	-	Fix WL MMM tile
+	-	@Ruined Items
+		-	Set default to 'disabled', use AM to set it to 'heavily nerfed'
+	-	@MMM (1.1.8)
+		-	Increase distance for mirrors to gen apart
+		-	Fix world gen progress correctness
+	-	@Objectives (0.6.1)
+		-	Add a checkmark to indicate quest completion
+	-	@Trickster (1.5.0)
+		-	Fix invalid trickster kill tracking
+		-	Extend post-attack cooldown + add indicator
+	-	@Surroundings (1.0.5)
+		-	Fix issue with overlays in that one display mode (disable when in that mode?)
+	-	@Ruined Items (2.2.3)
+	-	@Ergophobia (1.5.0)
+		-	Make furnishing kit and framing kit items stackable
+		-	Add a way to jump out of framed rooms
+		-	Fix framing kit doors
+	-	@Locked Abilities
+		-	Fix slot block graphics
+	-	@TMR (v1.7.0)
+		-	Fix gun drawing smoothness
+		-	Change 'reduced damage per 32' tooltip to something simpler
+		-	Hide gun when not aiming
+		-	`player.ChangeDir((x coord of mouse world to player > 0).ToDirectionInt())`
+		-	Tone down bandit damage
+	-	@Trickster
+		-	Reduce time for bat AI mobs to be invincible
+	-	Shop whitelist issues
+	-	Fix rescueable goblin icon
+[v0.18.0]
+-	@Beta
+-	@Test (EoC)
+	-	Verdant Blessing
+	-	Boss enrage + reduced hp
+	-	Boss reign duration after boss kill
+	-	Arenas
+	-	Infection
+	-	Trickster defeats on map
+	-	PKE
+	-	Tricksters
+	-	Dead Cyborg
+	-	Lore
+	-	Bandit spawns
+	-	Infection, Parasites
+	-	Verify FE debug map markers
+	-	The Shadow debuff
+	-	NPC dialogue alerts visible on the map
+	-	Extreme hills
+-	F&T 10
+	-	Shuriken not showing price
+	-	Remove gem hooks from recipes list
+	-	Increase boss health
+	-	@MH (5.11.0)
+	-	@TMR (1.6.0)
+		-	Reduce damage against bosses and large targets :(
+	-	@Ruined Loot (2.2.2)
+		-	Set boss loot from treasure bags to be ruined
+	-	Debug BG PKE not dropping due to boss kill
+	-	@Enraged (0.8.0)
+		-	Debug brambles not generating
+-	@Boss Reigns (1.1.0)
+-	@Objectives (0.6.0)
+-	@Lore (0.7.0)
+	-	Alter merchant's objective about orbs to specify at least 1 of each color
+	-	Add a guide objective when max BG PKE occures and player has a PKE meter
+-	@Ergophobia (1.4.0)
+	-	Add Scaffolding Kit
+		-	Implement placement rules
+			-	Must have at least 1 non-wood solid tiles within 24 tiles below
+			-	Must be placed on a solid tile
+		-	Implement placement of structure
+		-	Define item
+		-	Create sprite
+		-	@Plan
+			-	Form: 2 wood supports (6 high), 5x platform row
+			-	Placed only on ground
+			-	Costs 1g 50s
+			-	Placement rules (OR'd):
+				-	Must be placed on a solid tile
+				-	Must have at least 4 non-wood solid tiles within 30 tiles below
+	-	Set AM to add mounted mirrors to Ergo's whitelist
+	-	Import all tile placement whitelist stuff from AM
+	-	Import framing planks
+	-	Rename Prefab Kits to Ergophobia
+-	F&T 9
+	-	Set town NPCs to be invincible
+	-	Tone down ore sale prices
+	-	Tweak sale price per-unit denom labels
+	-	@Ruined Items
+		-	Set ruined item blink to be softer, but color tint darker
+	-	@Trickster
+		-	Increase spawn rates slightly
+		-	Reduce trickster previous defeat spawn block distance
+	-	@PKE
+		-	Tweak PKE tooltips: Add quotes, replace "label" with "bar"
+		-	Fix PKE tooltips for non-blue colors
+	-	@Necrotis (1.8.1)
+		-	Mention necrotis as a result of low anima in debuff description
+		-	Add light level tooltip to necrotis debuffs
+	-	Fix orphaned alert icon
+-	F&T 8
+	-	@B&D a way to fix ruined items before goblin
+	-	Disable gem hook recipes
+	-	Remove marshmallow from merchant shop
+	-	Tweak canopic jar tooltip
+	-	If shop items are ruined, show them as ruined in the shop
+	-	Fix corruption sign on ice biome (or else desert?)
+	-	Remove wood supports from rail kit recipe
+	-	Verify raft barrel deliveries
+	-	Remove granite block drops from granite mobs
+	-	Set bandits to rarely drop speedloaders
+	-	@Boss Reigns (1.0.3)
+	-	@PKE (1.4.0)
+		-	Add labels to text labels API (GEOFORM, CONCENTRATE, SPECIMEN, AMBIENT)
+	-	@Ruined Items
+		-	Show ruined items with dull colors instead
+		-	Display cross out only if item is locked
+	-	@Trickster (1.4.1)
+		-	Reduce trickster laugh volume
+	-	@Green Hell
+		-	Remove infection damage when mounted
+	-	@Necrotis (1.8.0)
+		-	Reduce anima regen sources
+		-	Lighten up necrotis darkness effect
+		-	When anima regenerating, add glowing tip to ankh
+		-	Give canopic jar better description
+	-	@TMR (1.5.2.1)
+		-	Fix TMR interrupting during reload and emptying all ammo
+-	@Ruined Items
+	-	Combo reforges of ruined items have higher chance to re-roll ruined items
+	-	Set the ruined prefix to propagate when crafting new items with ruined ingredients
+	-	Add setting for purchased items to be ruined
+	-	Add tooltips
+	-	Implement accessory stats (-10% crit, -10% melee speed, -10% damage, -10% movement, -10 max mana)
+	-	Implement weapon stats (-20% size, -20% damage, -20% speed, -20% crit, -20% velocity)
+	-	Add RuinedItemsLockedOnly setting
+-	Add Ruined Items mod to AM
+-	@Ruined Items mod
+	-	Set all NPC drops to be ruined
+	-	Set all chest items to be ruined
+	-	Set tinkerer to have high chance of reforging items into 'ruined'
+	-	Prevent ruined items from being used at all
+	-	Define prefix
+[v0.17.0]
+-	Increase sell price of ores and gems
+-	Increase ammo (arrows, bullets, grenades) costs a lot
+-	Mention ammo being limited in game mode intructions
+-	F&T 7
+	-	Set framing planks to not need a workbench
+	-	Increase amount of worldgen terrain backfill
+	-	Reduce width of extreme hills
+	-	@Trickster
+		-	Reduce duration of NPC invincibility from trickster's attack
+		-	Increase visibility when hidden
+		-	Reduce max hp
+		-	Set highest level attack charge up speed to not be as quick
+		-	Increase spawn block radius away from previous defeats
+		-	Reduce spawn rate underground
+		-	Set trickster bats to disappear after 10s
+		-	Set surface tricksters to only spawn when background tiles present
+		-	Set tricksters to not break out of hiding longer
+		-	Better emphasize trickster theft alert message
+	-	@Necrotis
+		-	Set max necrotis to add darkness debuff
+	-	@Green Hell
+		-	Fix infection debuff tooltip
+		-	Fix "Movements agitate your condition" unnecessary repeats
+		-	Fix artificially persistent infection
+	-	@TMR
+		-	Add TMR tooltip to mention speedloaders
+	-	@Prefab Kits
+		-	Verify track kit recipe
+	-	@Lore
+		-	Shorten guide dialogue texts
+		-	Debug merchant dialogue (cleanup alert marker with empty custom dialogue)
+-	@Necrotis
+	-	Add red (un)glow for ankh during debuff
+-	F&T 6
+	-	@AM
+		-	Fix bound goblin map icon outside of world
+		-	Show price of full stack
+		-	Set (Powerful Magic's) FocusManaChargeMaxRatePerSecond to 1
+		-	Verify pink orb drops for Trickster (move to AM)
+	-	@Boss Reigns
+		-	Increase time before initial max BG PKE
+	-	@Locked Abilities
+		-	Tweak Dark Heart description
+	-	@TMR
+		-	Reset pre-aim mode when missed shot made
+		-	Slightly increase inaccuracy angle width
+	-	@Bullwhip
+		-	Set downed fliers to use slime AI when in water
+		-	Reduce knockback
+	-	@Green Hell
+		-	Fix premature infection state (dead or cured)
+		-	Increase severity of infection
+	-	@Trickster
+		-	Add glow to bats
+		-	Add subtle hint for invisible trickster
+		-	Prevent spawning on surface in corruption/crimson, hallow, or blizzard/sandstorm
+	-	@Powerful Magic
+		-	Set slow falls to not interrupt charging
+		-	Fix mana pickup drops (again)
+	-	@Trickster
+		-	Fix PKE reading next to kill
+		-	Fix trickster kills not registering
+	-	@PKE
+		-	Fix HUD rendering flickering
+	-	@Findable Mana Crystals
+		-	Set PKE reading to increase when crystal is triggered
+		-	Fix binoc tooltip length
+		-	Set text outputs to base on real distance, not flickering PKE
+	-	@Powerful Magic
+		-	Reduce mob drops of mana stars
+		-	Set charge to be interrupted by falls or hits
+		-	Reduce charge rate
+		-	Ease up on tooltip colors
+	-	@Trickster
+		-	Fix incorrect spawn blocking from nearby defeats
+	-	@Lore
+		-	Edit 'The Plague'
+		-	Fix PKE green bar
+		-	Fix empty stages showing alerts
+	-	@PKE
+		-	Remember HUD on/off state between sessions
+		-	Display lights for maxed readings
+		-	Display meter as an information accessory
+	-	Fix sale value tooltip display
+	-	@Boss Reigns
+		-	Set red PKE message to appear only when full
+	-	@Lore
+		-	Mark lore event stages as complete per world
+		-	Fix long book titles
+		-	Fix linespaces in PKE manual
+		-	Fix NPC alert lingering
+	-	Set prices tooltip to actually be at bottom of list
+	-	Fix NPC alert icons on map
+-	@Lore
+	-	Add fallen cyborg next to PKE camp (credit koolaidlemonade)
+	-	Rename Mission Briefing book
+	-	Add guide objective to build a network of 10 mounted mirrors
+	-	Refactor lore into defs
+-	F&T 5
+	-	Reduce extreme hills a bit more
+	-	Tweak 'Lihzarhd', Lunatic Cult lore
+	-	Tweak merchant's dialogue
+	-	Increase npc alert icon size on map
+	-	Set sale price tooltip for stacks to reflect stack size and appear at bottom of list
+	-	Reduce price of furnishing kit
+	-	@TMR
+		-	Increase bandit spawn rates
+		-	Increase sell price for speedloaders
+	-	@Cursed Brambles
+		-	Set brambles to emit particles
+		-	Set brambles to strongly favor veins
+	-	@Trickster
+		-	Fix message hogging for yellow bar (Trickster)
+	-	@PKE
+		-	Alter API to add priorities with texts
+	-	@Necrotis
+		-	Increase rate of cursed brambles
+		-	Set all underground areas to drain anima
+		-	Shift inventory screen ankh to the left 24
+		-	Fix canopic jar dupe bug (again?)
+	-	@Green Hell
+		-	Fix infection damage (add velocity minimum, alert to damage taken, make damage silent)
+	-	Remove wood fishing pole recipe
+-	F&T 4
+	-	Set sign gen to destroy trees
+	-	@Powerful Magic
+		-	Fix tooltips
+	-	@Lore
+		-	Fix old man's dialogue
+	-	@Prefab Kits
+		-	Fix mirror blocking
+	-	Set sign gen to require open sky
+	-	Fix ores not showing their value
+	-	Remove workbench, fishing pole recipes
+	-	Add torch recipe (!)
+	-	@Orbs
+		-	Tweak tooltips
+	-	@TMR
+		-	Fix premature cursor disappear
+	-	Add sign before snow biome to indicate sand and snow are soft
+	-	Fix broken recipes (e.g. no platforms)
+	-	Fix FE markers debug display
+-	Convert all Nihilism recipes to RecipeEditor
+-	Adjust TMR settings
+	-	RecipeAvailableForSpeedloader = false
+	-	BanditLootGunDropPercentChance = 0f
+	-	BanditLootSpeedloaderDropPercentChance = 0.01f
+	-	BanditLootBandolierDropPercentChance = 0f
+-	@Green Hell
+	-	Change infection from max hp loss to damage-on-move
+-	@TMR
+	-	Gun draw: drawpos.Y += player.gfxOffY
+	-	Add bandit mob
+		-	Add settings to drop revolver-relevant items rarely (otherwise commonly low money, uncommonly high)
+		-	Set to spawn rarely in forest during day
+		-	Implement AI
+			-	Add fleeing behavior when player gets near or damage taken (cuts off after X time)
+			-	Customize projectile (use regular bullet with relatively high damage)
+			-	Import skeleton sniper AI
+		-	Define NPC (based on skeleton sniper?)
+		-	Create graphic
+-	F&T 3
+	-	@Necrotis
+		-	Set all surface regions to regen anima
+		-	Raise ankh 24 units and shift further left in inventory mode
+		-	Start player with just over half anima
+		-	Reduce drain/gain rates (at beach + night, also)
+		-	Fix redundant debuff descriptions (max hp reduced to 100 when only 100)
+		-	Recover some anima on death
+		-	Clear ankh particle fx when changing between inventory and normal
+	-	@Findable Mana Crystals
+		-	Remove tile from map
+		-	Fix binoc tooltip
+	-	@Orbs
+		-	Fix binoc tooltip
+	-	Increase ectoplasm pot drop rate
+	-	Add sign before first corruption to recommend using track deployment kit
+	-	Show sell price for item in tooltip
+	-	Lighten up extreme hills area even more
+	-	Tweak guide instructions on accessing areas (fix erroneous extra alert)
+	-	@Lore
+		-	Add colored texts for each respective PKE gauge in instruction book
+		-	Clarify PKE "Mission Briefing" is for *another* group (also Specimen -> specimen)
+		-	Fix camp gens
+	-	@PKE Meter
+		-	Show meter when held as mouse item
+	-	Fix trickster PKE text hogging
+	-	Fix PKE readings
+-	F&T 2
+	-	Add guide message (with alert) about using track kits to bridge large gaps
+	-	Raise extreme hills height, lower intensity
+	-	Reduce pot spider hp
+	-	Ensure jungle sign definitely places
+	-	Set town NPC alert map icons to follow NPCs
+	-	@Green Hell
+		-	Explain jungle debuffs (tooltips)
+	-	@Prefab Kits
+		-	"Valid town house space found" <- edit this
+		-	Increase cost of framing kits
+	-	@Necrotis
+		-	Revamp drain/gain mechanics
+		-	Increase ankh refill particle duration
+		-	Fix debuff descriptions
+		-	Shift ankh yet some more (40?)
+		-	Halt brambles when dead
+		-	Recover anima being in a town
+		-	Fix necrotis heal only at beach (?)
+		-	Add glow to max necrotis buff icon
+		-	Increase illumination of canopic jar sprite
+		-	Give ectoplasm an animation/glow (rotates in place? emits dull light?)
+		-	Shift ankh position when in inventory screen
+		-	Increase ectoplasm drop rate
+		-	Prevent anima gain/loss when dead
+		-	Indicate % of last max HP with necrotis debuff (also tweak descriptions)
+		-	Fix canopic jar dupe glitch/not being consumed
+		-	Ensure clients cannot create @cursed brambles
+		-	Fix shadow debuff when player has non-zero anima
+		-	Fix ankh refill droplets
+		-	Add warning message when necrotis max "Necrotis sets in. A shadow approaches..."
+	-	@Surroundings
+		-	Lower crimson foreground trees
+		-	Set ice cave foreground bottom half to be lower and not as intense
+	-	@Cursed Brambles
+		-	Set brambles to clear out quicker
+		-	Reduce damage from brambles
+	-	@Orbs
+		-	Fix fullscreen map toggle button
+	-	@Lore
+		-	Fix campfire frames
+		-	Fix PKE books linespaces
+		-	Fix FE having malformed campfires
+		-	Turn off FE campfires
+		-	Fix FEs not generating
+		-	Fix lore book line breaks
+	-	@TMR
+		-	Fix reload sequence not being interrupted sometimes
+	-	@Orbs
+		-	Resonations not working properly; sometimes don't appear when holding orb
+	-	Debug furnishing kit floor failure
+	-	Increase size of npc alert map icon
+	-	Fix recipe blocking for wood fishing pole
+	-	Prevent "Only bare hands etc" message when actually using bare hands
+	-	Fix missing The Shadow effect and debuff
+-	@Lore
+	-	Add debug option to show failed expeditions on maps
+-	Remove present drops
+-	Disable all fishing (add tooltips against needing bait items; item.fishingPole)
+-	F&T
+	-	@CursedBrambles
+		-	Fix full necrotis debuff adding permanent chaos state (should instead by brambles)
+	-	@Necrotis
+		-	Fix unusable canopic jars?
+		-	Fix picking up ectoplasm
+	-	@Prefab Kids
+		-	Fix house furnishing kit not filling all corners properly
+		-	Fix furnishing kit not resetting existing tiles fully (traces of slopes)
+	-	@Cursed Brambles
+		-	Fix cursed brambles not producing an effect
+		-	Enable pickaxing cursed brambles
+	-	Change "the merchant" to "a merchant"
+	-	Fix color labels of tooltips for all modified items (rope, binoc, etc)
+	-	Slim down extreme hills horizontally by 30%, reduce thickness
+	-	Reduce ectoplasm drop rates from pots
+	-	Fix premature barrel restock
+	-	Fix book page widths
+	-	Fix trippy orbs tile chunk colors
+	-	Fix book covers
+	-	Extreme hills
+-	@Lore
+	-	Add mission briefing (via. book in raft; add Guide dialogue to refer to it)
+		-	@Instructions
+			-	"Your ultimate goal is to end the undeath plague emanating from this island."
+			-	1. Search for clues about undeath plague's source
+			-	2. Find remains of previous expeditions
+			-	3. Work quickly; "undeath phenomena" increases with nearby prolonged living activity
+				-	Progress may become halted until phenomena is eliminated
+			-	4. Powerful entities sighted; possible link to plague phenomena - discover why
+	-	Add Arms Dealer dialogue to admire your antique revolver
+	-	Add Nurse dialogue explaining witch doctor healing
+-	@Orbs, PKE: Set all orbs chunks to be locked after 6 + 3 days without a boss kill (use PKE meter)
+	-	Add PKE messages
+		-	On high red: WARNING - CLASS V+ ENTITIES AT LARGE
+		-	On high yellow: CLASS VI (VII) TRANSDIM ELEVATED ORGANIC
+		-	On high green: CLASS III ECTOPLASM AGGREGATE VESSEL
+		-	On high blue: CLASS II ETHEREAL GEOFORM
+	-	@Add Boss Reign mod
+	-	@PKE Meter mod: Add info display to meter
+		-	Add API to render descriptions of phenonema
+		-	Implement lettering display on bottom
+	-	@Decide effects at max PKE
+		-	Brambles appear: Island is 'hungry' and sees no obstacle in anima
+		-	Tremors occur: Generic ominous portentions
+		-	Monsters buffed: A red glow appears upon each enemy; stat buffs all around
+		-	Toxic droplets appear in caves
+-	Set raft chest to supply orbs (use weighted random values from now on)
+[v0.16.0]
+-	@PKE Meter: Implement meter
+	-	Add as requirement for AM, AM Lore
+	-	Yellow: Tricksters
+		-	When a Trickster has spawned and is active, increase reading a lot
+		-	When a Trickster has spawned but is hiding, stabilize fluctuations, but indicate proximity
+		-	When not near a Trickster kill location, but in valid spawn area, give fluctuating signal
+	-	Green: Canopic Jars (locations of failed expeditions)
+		-	Detect proximity to a given location
+		-	Store each expedition location
+	-	Blue: Mana crystal shards (check tiles nearby player every 1s)
+-	@Lore (cont.)
+	-	Add failed expeditions to world gen (cont.)
+		-	Always generate a camp at jungle-side beach
+		-	Always generate a camp in center of map (with PKE Meter, note with instructions)
+		-	Ensure camps are not on surface or underworld (except for 2 mentioned)
+-	@Add PKE Meter mod
+	-	Implement API
+	-	Implement HUD display (add credits)
+		-	Implement animation of lit bars
+		-	Draw lit bars for each gauge
+		-	Draw HUD element
+	-	Create item graphic
+	-	Define item
+	-	Create HUD graphic
+	-	Begin project
+-	@Lore
+	-	Add failed expeditions to world gen
+		-	Fill barrel: Orbs, canopic jar (if Necrotis active)
+		-	Implement lore notes
+		-	Fill barrel: Lore note, revolver quickloader
+		-	Generate a tent, an extinguished campfire, a mirror, and a barrel
+		-	Generate camps proportional to world size (see Wormholes)
+		-	Find suitable camp spots in underground
+		-	@Algorithm
+			-	Pick random spot, drop to floor
+			-	Check if valid: No obstacles, high enough, no liquids, no spider walls
+			-	Scan horizontally in both directions for wide enough space
+				-	If too far a drop, stop scan in in that direction
+				-	If too high of a rise from lowest scanned point, stop scan
+			-	Flatten scanned area at highest point, filling gaps with surrounding tile type
+			-	Generate tent, campfire, mirror, barrel
+[v0.15.0]
+-	Set all recipes requiring demon altars to continue needing demon altars
+-	Disable canopic jar recipe (CanopicJarRecipeEnabled)
+-	@Necrotis
+	-	@Cursed Brambles: Set many nearby brambles to stop players from warping (minimum 4 in 24 tile radius)
+	-	@Add Warp Control mod: Adds stoppers to mirrors, cellphones, recall pots, wormhole pos, and teleport pots
+	-	Necrotis Omnis: Add Chaos State (stops mirrors/recall potions) and The Shadow debuff (automatic)
+	-	Set Necrotis to exist as 2 debuffs: Necrotis Natus, and Necrotis Omnis
+	-	@Cursed Brambles: Add The Shadow debuff (indicates bramble stalking)
+	-	Implement Elixir of Life: Reduces anima loss (recipe: shine pot, live critter, gold coin @ demon altar)
+		-	Implement buff
+		-	Implement recipe
+		-	Define elixir buff
+		-	Create recipe
+		-	Create graphic
+		-	Define item
+	-	Implement canopic jars (allows storing ectoplasm)
+		-	Implement filled usage (use house kit for reference)
+		-	Implement empty usage
+		-	Define items (empty and filled)
+	-	Set brambles to start appearing near the player when necrotis resist% (anima?) is drained
+		-	Implement bramble trail for player with no anima
+		-	Add API for accessing player generation
+		-	Create algorithm
+		-	@Algorithm
+			-	Every 15 ticks, generate a bramble within a 100 tile range
+			-	Pick a random tile of 16 random locations, if random is solid, skip (can optimize)
+			-	Pick highest weight option the up-to-16 non-solid remaining options:
+				-	Weighs less being close to player or close to max range
+				-	Weighs more being close to a solid tile, but not too many
+				-	Weighs more being close to at most 2 other brambles, but no solid tiles
+	-	@Create Cursed Brambles mod
+		-	@Apply Cursed Brambles to Enraged as a dependency
+		-	Create player trail generation
+		-	Import mob trail generation from Enraged
+		-	Import brambles from Enraged mod
+		-	Define mod
+	-	Add anima sync param to SubtractAnimaPercent
+	-	Draw ankh ohm when bottomed out
+	-	Improve ankh fx
+	-	Show anima in full (no hidden negative amounts)
+	-	Cleanup ankh sprite
+[v0.14.0]
+-	Add 'extreme hills' to center of map
+-	Add 'Adventure Mode recipes available!' tooltips to relevant items
+-	Set all station-based recipes to use a workbench
+-	F&T
+	-	Add Surroundings as dependency
+	-	@Green Hell
+		-	Drastically reduce snake spawn rate and stats
+	-	@Prefab Kits
+		-	Increase iron cost of rail kits to 4, add chains and wooden beams as ingredients
+		-	Increase cost of framing kit
+	-	Merchant has a gap in inventory slots
+	-	@Bullwhip
+		-	Debug rails super speed + damage
+	-	@TMR
+		-	Prevent aim lock without holding gun
+		-	Reduce rate of aim loss from movement
+		-	Reduce aim lock movement speed
+	-	@Surroundings
+		-	Lower snow biome tree FG
+		-	Increase scroll speed of closest trees layer
+	-	@Orbs
+		-	Make Cyan more distinct from Teal (teal = brown?)
+		-	Fix weird colored chunk highlighting glitches when holding an orb (sometimes nothing or extra colors)
+		-	Fix pressure plate item drops
+-	@Test SP
+	-	Whip getting items inside walls
+	-	Removed ability items
+	-	Barrel restocking
+	-	Test pre-aim mode
+	-	Re-test AM-only worlds and players
+-	Add debug settings to disable world or player 'AM mode' checks
+-	F&T
+	-	@Orbs
+		-	Prevent dropping pressure plate items from broken blocks
+	-	@Green Hell
+		-	Too many snakes!
+-	Add only 1 framing kit to barrel at start
+-	Set barrel restock timer changes to not be remembered on forced game exit
+-	Prevent ectoplasm from drifting upwards on load
+-	@Prefab Kits
+	-	Add horizontal smoothing to rail sections between peaks
+	-	Verify floor space requirement for furnishing kit (cabins are too small?)
+-	F&T
+	-	@Necrotis
+		-	Reduce rate of ectoplasm drops from pots
+		-	Fix 'anima' hover label
+	-	@Locked Abilities
+		-	Ability items are not correctly disabling
+-	Set rope coil projectile to use less velocity
+-	Increase price of ropes, torches, potions
+-	F&T
+	-	@Bullwhip
+		-	Fix wall item pickups
+	-	@Prefab Kits
+		-	Fix house furnishing kit (see exception)
+	-	@Necrotis
+		-	Don't build up ankh sparks when paused
+		-	Rename Resist% to 'anima'
+	-	@TMR
+		-	Reduce twirl duration slightly
+		-	~~Add temporary resistance to movement drain on quick draw hits (Sure Shot buff?)~~
+		-	Remove pre-aim mode when reloading
+		-	Fix broken aim mode buildup (see screenshot)
+		-	Preserve quick draw aim mode simply by shooting (and not by needing shots to connect)
+	-	@Readable Books
+		-	Fix book title in inventory (needs to update display name)
+	-	@Green Hell
+		-	Fix premature infection outside of jungle
+	-	@Orbs
+		-	Allow breaking pressure plates
+	-	Remove guide's dialogue about 'artifacts of power'
+	-	Fix failure to locate raft barrel
+	-	Fix dialogue alert icon for guide
+	-	Fix mirror find crash
+	-	Add sleeping angler to blacklist
+	-	Where is the guide????
+	-	Add barrel restock messages
+	-	@TMR
+		-	Reload gun on death
+		-	Reducted aim mode walk speed
+		-	Implement pre-aim mode (slows movement while aiming, does not interrupt on move)
+		-	Tweak gun tooltip
+	-	@Surroundings
+		-	Fix mouse-held binocs (not zoomed) causing Surroundings to disappear
+		-	Lower forest overlay and darken floor
+	-	Framing plank sprite is not sharp enough
+	-	Remove angler, painter completely
+	-	Re-implement torch recipe
+	-	Reduce scale and damage of pot spiders
+	-	Fix guide not appearing at spawn on world creation
+-	Progress changes
+	-	@Necrotis: Add Witch Doctor Necrotis heal ability
+		-	Show price
+		-	Implement button
+		-	Draw button
+	-	Set some orb types to be rare (white never (but craftable), cyan rare)
+	-	Prevent voodoo demons from spawning until Witch Doctor objective activated
+	-	Set mechanic to spawn in lowest part of dungeon (marked on map)
+		-	When player is near location, add mechanic to spawn pool
+		-	When mechanic rescued, remove marker
+		-	When mechanic objective enabled (via. subscription), add marker on map (while mechanic isnt rescued)
+		-	Locate point on map for mechanic
+	-	Set goblin tinkerer to only spawn in center of underground desert (marked on map)
+		-	When player is near location, add goblin to spawn pool
+		-	When goblin rescued, remove marker
+		-	When goblin objective enabled (via. subscription), add marker on map (while goblin isnt rescued)
+		-	@Objectives: Add subscriptions
+		-	Import Objectives into AM
+		-	Locate point on map for goblin
+-	@MH: Show chat alerts as map icons
+	-	Use update function to check status of 'dynamic chat' alerts to display map icons
+	-	Refactor 'priority chat' into 'dynamic chat'
+[v0.13.0]
+-	@Locked Abilities
+	-	@AM: Remove gem hooks, hook item drops
+	-	Implement ability accessory equips (overlay accessory slots)
+		-	@AM: Remove all ability locking accessories; only ability slots are locked
+		-	Revert 'implicit' ability accessories
+		-	Set equipped ability accessories to become 'implicit' (removed from slots, but still active)
+-	Transcribe AM game mode rules to a book in starter barrel
+-	@Trickster
+	-	Set trickster to not re-appear near a previous defeat (add mark on map)
+		-	Add icons to indicate defeat locations
+		-	Prevent spawning near a defeat location
+		-	Memorize defeat locations
+-	@Implement Mod Helpers library for marking on the map
+	-	Implement marking management
+	-	Import code (from Nectrotis?) for drawing a given sprite to the screen
+	-	Define service
+-	Add periodic supply restocking in spawn barrel (random; use manual timer)
+-	Add wood platforms to starter barrel
+[v0.12.0]
+-	Refactor AM to use logic classes
+-	@Add Green Hell (implements jungle dangers)
+	-	Set witch doctor to sell antidotes
+	-	Implement dryad-sold accessory to enter jungle without negative effects (also lightens bramble overlay)
+		-	Implement effects (no parasites, brambles, snakes don't aggro)
+		-	Create sprite
+		-	Define item
+	-	Injuries result in risk of Infection debuff
+	-	Touching jungle water causes Parasites debuff (reduced regen, random bleeding)
+	-	Implement grass snakes
+		-	Deploy snakes from grass at random
+		-	Implement lunge
+			-	Launch snake at player when <3 blocks nearby
+			-	Begin 'warning state' when player <6 blocks nearby (plays sound)
+		-	Define snake
+		-	Create sprite
+	-	Touching jungle brambles causes poison, slow
+	-	Add worldgen sign on jungle border informing of dangers
+	-	@Separate jungle badness into new mod (Green Hell)
+-	Fix barrel planks again
+[v0.11.0]
+-	@Terrain Remixer: Add solid terrain worms (increasing in density with depth)
+-	@Orbs
+	-	Add orb recipes using ingredients from major equipment tiers
+		-	@Plan
+			-	Yellow: Meteor ore
+			-	Red: Hellstone ore
+			-	Green: Jungle spores
+			-	Blue: Water candles
+			-	Purple: Shadow Scales/Tissue Samples
+			-	Pink: Pink Gels
+			-	Cyan: Harpy feathers?
+			-	Teal: Fossils
+			-	White: Voodoo Dolls
+			-	Yellow: Bee Wax
+-	Fixes and tweaks
+	-	Set pink orbs to not be craftable
+	-	@Bullwhip: Allow picking up items inside walls
+	-	@Orbs: Binocs fail to locate orb chunks
+	-	@Terrain Remixer: Crevaces way too thick
+		-	Create setting to make strand-like noise
+	-	@Necrotis: Add sound effect for ectoplasm pickup
+	-	@Locked Abilities: Update sprites
+	-	Fix barrel planks
+	-	Implement dialogue saving
+	-	Fix objective persistence
+	-	@TMR: Fix accessory drawing overlay
+	-	Confirm guide dialogue + objectives
+	-	Add blink to ankh hover text
+-	@Necrotis
+	-	Allow picking up ectoplasm only when hands are empty
+	-	Scale all drain/recover rates by 0.25
+	-	At high necrotis, increase player's speed (via. passive Enlivened buff)
+		-	Apply buff when ankh is 80% or more
+		-	Create buff effects
+		-	Create buff
+	-	Tweak font of ankh's mouse hover text
+-	@The Mad Ranger
+	-	Fix check for bandolier accessory (did not find it beyond acc. slot 1)
+	-	Allow chaining aim mode shots
+	-	Use bold (thickened) crosshair when aim is ready
+	-	Do not disrupt aim from cursor movement
+	-	Increase manual reload speed
+	-	Do not alter damage with misaim
+-	@Objectives
+	-	Use inbox messages to indicate new objectives
+-	Add recognition for player and world as belonging to AM
+-	@Add Adventure Mode Lore w/ objectives
+-	@Add Objectives mod
+-	@Powerful Magic
+	-	Add alert when trying to cast with mana sickness
+	-	Add special fx to make magic appear more dramatic (darken screen, shake screen)
+-	@Implement Note item (via. MH)
+-	@MH
+	-	Add tile brush service and commands
+	-	Add NPC controls service
+	-	Add camera controls service
+-	@Remove PDYB mod
+-	@Add Pirates Demand Your Booty! mod
+[v0.10.1]
+-	@Powerful Magic: Add 'Focus' ability to recharge mana
+	-	Slowdown player movement
+	-	Implement mana recharge (increases with focus duration)
+	-	Implement hold visual
+-	@Bullwhip: Fix whip hitbox against large npcs
+-	On first grapple item acquire, add inbox message about grapple change
+-	Increase ores, gems, grenade, torch, potion prices
+[v0.10.0]
+-	Set Necrotis ankh hover text to overlay
+-	Fix The Mad Ranger
+-	Update Necrotis to 1.1
+-	Integrate Enraged
+-	Integrate Terrain Remixer
+-	Integrate Necrotis
+-	@Add Enraged mod (become invincible for a time, leave trail of brambles)
+-	@Add Porous Terrain mod (makes surface porous, islandy)

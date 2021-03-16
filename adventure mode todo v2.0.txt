@@ -87,6 +87,8 @@ Future considerations
 [v1.1.0]
 -	Set Skeletron Prime to drop Soul of Hole(?) (consumable; enables breaking mud)
 -	Set WoF to drop Soul of Mole (consumable; enables breaking dirt)
+-	@Ergophobia
+	-	Implement r-click fast placement of platform and plank bridges
 -	@Orbs
 	-	Pull cell data from @Terrain Remixer and generate color squares 75% as cells
 -	@Terrain Remixer
@@ -95,6 +97,20 @@ Future considerations
 	-	Allow recovering stolen items?
 	-	Decide: Increase spawn rate when near torches (indicated by Dryad dialogue)?
 -	@Prefab Kits: Add Defensive Fortification Kit: A tall wall with a chain on one side, a jump pad on the other
+-	@Add Push n' Pull mod
+	-	@Plan
+		-	Bound hotkey invokes either push or pull
+		-	To push, hold down key and release when enemies near
+		-	To pull, tap key when enemies near
+		-	Push
+			-	Causes enemies to fly back
+			-	Causes player to launch back
+			-	Causes momentary invincibility frames
+			-	Slows movement while charging
+		-	Pull
+			-	Applies pull force to nearest enemy to the player
+			-	Launches player forward
+			-	Player has invincibility frames while launching past enemies
 -	@B&D
 	-	Boss Reigns max bg PKE needs killing boss/progress to be ACTUALLY IMPORTANT; think of a way to do this!
 	-	Durability concept ('Equipment Upkeep')
