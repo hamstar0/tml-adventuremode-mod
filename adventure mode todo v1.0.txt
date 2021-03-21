@@ -44,6 +44,8 @@ v1
 		-	@Update tag moderation page
 	-	Refactor mod hook-level code into a Logic abstraction
 	-	Adjust mod list in control panel to make number ids not overlap name
+	-	Add more space for mod CP list enumerator
+	-	Remove 'trailing separator' in mod CP list
 -	@Begin final beta test
 -	@Set git repos public
 -	Add allowed-mod whitelist (configurable)
@@ -68,7 +70,7 @@ v1
 		-	A way to clarify dryad helps with jungle
 		-	clarify cyborgs as mineable
 		-	Draw an item icon overlay for items with modified recipes
-[v0.24.0]
+[v0.25.0]
 -	Add bone piles
 	-	@Plan
 		-	Large caverns occasionally get bone piles generated within them (not underground desert, though)
@@ -99,19 +101,21 @@ v1
 			-	Add periodic random low quaking effect (builds up when waves are near)
 			-	Make all PKE readings surge during waves
 		-	@B&D more threats
+-	@Orbs
+	-	Set seismic charges to have custom sound
+	-	Import seismic charges
 -	@B&D
 	-	A way to acquire grapple accessory by discovery
 	-	Late game pre-hardmode challenges
--	Set depth charges to have a custom sound
--	@SORT MOD TAGS!!!!
-[v0.23.0]
+[v0.24.0]
 -	@Beta
 -	@F&T
 	-	VERIFY: Fix unlimited track kits
 		-	@Info: "if you hold out the rail thing at the end of a track it just keeps going"
 -	@Test MP
+	-	Balance anima drain/gain rates
 	-	Verify binocs work in MP
-[v0.22.0]
+[v0.23.0]
 -	@Beta
 -	Add chance to make a ruined item from crafting
 -	@Necrotis
@@ -127,6 +131,11 @@ v1
 		-	Implement flight behavior
 		-	Create spirit sprite
 	-	Add 'Shadow Mirror' item
+		-	Implement use effect
+		-	Create sprite
+~~
+~~
+		-	Define item
 	-	Create mod
 	-	@Plan
 		-	Uses 20 mana (anima in AM) to activate, drains steadily while active
@@ -145,8 +154,60 @@ v1
 			-	Player enters the underworld
 			-	Player is above ground with no wall
 		-	At the end of the walk, the player makes a short 'jaunt' a few feet, ignoring obstacles
+~~
+~~
+[v0.22.0]
+-	@Necrotis
+	-	Reduce surface corruption anima loss
+	-	Make eating an ectoplasm add a resistance buff for 45s
+-	Set guide to mention seismic charges
+-	@Lore
+	-	Set demo man to mention goblin rescue and Seismic Charges
+-	F&T
+	-	@Cursed Brambles
+		-	Increase decay rate a lot
+	-	Fix spawns not getting a chance to revert before invasion begins proper
+	-	Set bats to no longer use slime AI in water?
+	-	Debug raft resupplies taking too long
+	-	Mention with furnishing kits: patch floor and wall holes (change "Not enough floor space")
+	-	Fix herb bags in world gen chests
+	-	Fix bound goblin spawning improperly
+	-	Fix PKE interference when red bar not filled (!)
+	-	@Green Hell
+		-	Fix panacea
+	-	Fix seismic charges
+	-	Fix seismic charge recipe
+	-	Remove Chest Implants mod; use in-line chest editing
 
 
+	-	@MH
+		-	Set custom float element to be more readable
+		-	Create world chest editing helpers
+	-	Scale starting rope and track kits with world size
+	-	@HUD (3.0.1)
+		-	Add remaining vanilla HUD boxes
+	-	@Powerful Magic (1.6.2)
+		-	Fix alignment for magic guns
+	-	@Green Hell (0.6.1)
+		-	Reduce infection alert spam
+		-	Nerf jungle snake venom
+	-	@Lore (0.8.3)
+		-	Increase cyborg scrap drops
+		-	Fix missing punctuation on PKE tutorial page about red meter
+		-	Do not generate camps on leaf blocks
+	-	@Ergophobia (1.7.0)
+		-	Add scaffolding kit sound (Item_69)
+		-	Add framing kit sound (Item_108)
+		-	Remove style from platforms tiles produced by furnishing kit
+		-	Fix stair placement going downward
+	-	Debug unresponsive attack: (player.itemTime, player.itemAnimation, player.CCed, mouseInterface)
+	-	@Ruined Items (2.7.0)
+		-	Alert to successful craft
+		-	Improve right-click icon
+		-	Fix 'glowing green' inventory suggestion for only first item found
+		-	Import Intrinsics mod method of "scribe mode" for applying magitech scrap repairs
+		-	Clarify 'needs reforge' if scrap option available
+		-	Fix non-per-instance scrap fail flag
 -	F&T
 	-	@Orbs (1.4.1)
 		-	Mention binocs new function

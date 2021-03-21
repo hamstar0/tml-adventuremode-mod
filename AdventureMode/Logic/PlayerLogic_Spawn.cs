@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Terraria;
 using Terraria.ID;
+using HamstarHelpers.Helpers.World;
 using ReadableBooks.Items.ReadableBook;
 
 
@@ -51,13 +52,7 @@ namespace AdventureMode.Logic {
 
 		////////////////
 
-		public static void SetupStartInventory( AMPlayer myplayer, IList<Item> items, bool mediumcoreDeath ) {
-			if( !mediumcoreDeath ) {
-				PlayerLogic.SetupInitialSpawnInventory( myplayer, items );
-			}
-		}
-
-		private static void SetupInitialSpawnInventory( AMPlayer myplayer, IList<Item> items ) {
+		internal static void SetupInitialSpawnInventory( AMPlayer myplayer, IList<Item> items ) {
 			Item makeItem( int itemType, int stack ) {
 				var item = new Item();
 				item.SetDefaults( itemType );
@@ -77,7 +72,23 @@ namespace AdventureMode.Logic {
 				items.Add( makeItem(ItemID.Torch, 15) );
 			}
 
-			items.Add( makeItem(ItemID.RopeCoil, 20) );
+			switch( WorldHelpers.GetSize() ) {
+			case WorldSize.SubSmall:
+				items.Add( makeItem( ItemID.RopeCoil, 15 ) );
+				break;
+			case WorldSize.Small:
+				items.Add( makeItem( ItemID.RopeCoil, 20 ) );
+				break;
+			case WorldSize.Medium:
+				items.Add( makeItem( ItemID.RopeCoil, 30 ) );
+				break;
+			case WorldSize.Large:
+				items.Add( makeItem( ItemID.RopeCoil, 40 ) );
+				break;
+			case WorldSize.SuperLarge:
+				items.Add( makeItem( ItemID.RopeCoil, 45 ) );
+				break;
+			}
 
 			items.Add( makeItem(ItemID.ClimbingClaws, 1) );
 

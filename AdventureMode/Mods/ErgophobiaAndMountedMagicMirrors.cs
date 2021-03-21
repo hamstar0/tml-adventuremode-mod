@@ -63,9 +63,11 @@ namespace AdventureMode.Mods {
 				Tile tileU = Framing.GetTileSafely( i, floorY );
 				Tile tileD = Framing.GetTileSafely( i, floorY+1 );
 
-				if( tileU.type == TileID.Containers ) {
+				if( tileU.type == TileID.Containers && tileD.type == TileID.Mudstone ) {
 					tileD.type = TileID.Platforms;
-					WorldGen.SquareTileFrame( i, floorY );
+					tileD.frameX = 0;
+					tileD.frameY = 0;
+					WorldGen.SquareTileFrame( i, floorY+1 );
 				}
 			}
 		}

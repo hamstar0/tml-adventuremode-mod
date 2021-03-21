@@ -90,6 +90,7 @@ namespace AdventureMode {
 		////////////////
 
 		public override void PostUpdateEverything() {
+//DebugHelpers.Print( "use item debuf", "ia:"+plr.itemAnimation+", it:"+plr.itemTime+", cc:"+plr.CCed+", int:"+plr.mouseInterface );
 			WorldLogic.UpdateWorldSpawnForInvasionStateIf();
 		}
 	}
