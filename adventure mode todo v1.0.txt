@@ -163,6 +163,7 @@ v1
 -	Set guide to mention seismic charges
 -	@Lore
 	-	Set demo man to mention goblin rescue and Seismic Charges
+	-	Fix FE distribution throughout the map
 -	F&T
 	-	@Cursed Brambles
 		-	Increase decay rate a lot
@@ -175,11 +176,12 @@ v1
 	-	Fix PKE interference when red bar not filled (!)
 	-	@Green Hell
 		-	Fix panacea
+
+
 	-	Fix seismic charges
 	-	Fix seismic charge recipe
+	-	@Orbs (1.4.2)
 	-	Remove Chest Implants mod; use in-line chest editing
-
-
 	-	@MH
 		-	Set custom float element to be more readable
 		-	Create world chest editing helpers

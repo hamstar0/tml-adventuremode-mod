@@ -53,7 +53,6 @@ namespace AdventureMode {
 			loadMod( "Nihilism", this.ModInteractions.LoadNihilism );
 			loadMod( "Necrotis", this.ModInteractions.LoadNecrotis );
 			loadMod( "CursedBrambles", this.ModInteractions.LoadCursedBrambles );
-			loadMod( "ChestImplants", this.ModInteractions.LoadChestImplants );
 			loadMod( "ErgophobiaAndMMM", this.ModInteractions.LoadErgophobiaAndMountedMagicMirrors );
 			loadMod( "TricksterAndLockedAbilies", this.ModInteractions.LoadTricksterAndLockedAbilies );
 			loadMod( "LockedAbilities", this.ModInteractions.LoadLockedAbilities );

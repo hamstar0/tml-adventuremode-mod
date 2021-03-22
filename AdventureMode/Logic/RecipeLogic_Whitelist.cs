@@ -10,6 +10,7 @@ using HamstarHelpers.Services.EntityGroups.Definitions;
 using LockedAbilities.Items.Consumable;
 using Ergophobia.Items.FramingPlank;
 using Ergophobia.Items.TrackDeploymentKit;
+using AdventureMode.Items;
 
 
 namespace AdventureMode.Logic {
@@ -122,6 +123,7 @@ namespace AdventureMode.Logic {
 			whitelistTypes.Add( ItemID.BouncyGlowstick );
 			whitelistTypes.Add( ItemID.ViciousPowder );
 			whitelistTypes.Add( ItemID.VilePowder );
+			whitelistTypes.Add( ModContent.ItemType<SeismicChargeItem>() );
 			//
 			whitelistTypes.Add( ItemID.ManaCrystal );
 			whitelistTypes.Add( ModContent.ItemType<DarkHeartItem>() );

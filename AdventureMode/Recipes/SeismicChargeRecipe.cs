@@ -9,11 +9,11 @@ namespace AdventureMode.Recipes {
 		public SeismicChargeRecipe( SeismicChargeItem myitem ) : base( AMMod.Instance ) {
 			this.AddTile( TileID.WorkBenches );
 
-			this.AddIngredient( ItemID.Bomb, 10 );
+			this.AddIngredient( ItemID.Bomb, 16 );
 			this.AddIngredient( ItemID.Obsidian, 1 );
 			this.AddRecipeGroup( "AdventureMode.Orb", 1 );
 
-			this.SetResult( myitem, 5 );
+			this.SetResult( myitem, 8 );
 		}
 
 		public override bool RecipeAvailable() {

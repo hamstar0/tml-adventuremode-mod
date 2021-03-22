@@ -15,8 +15,8 @@ namespace AdventureMode.Projectiles {
 		}
 
 		public override void SetDefaults() {
-			this.projectile.width = 22;
-			this.projectile.height = 22;
+			this.projectile.width = 8;
+			this.projectile.height = 8;
 			this.projectile.aiStyle = 16;
 			this.projectile.friendly = true;
 			this.projectile.penetrate = -1;
@@ -101,12 +101,12 @@ namespace AdventureMode.Projectiles {
 			gore4.velocity.Y -= 1f;
 
 			if( timeLeft == 0 ) {
+				int tileX = (int)this.projectile.Center.X / 16;
+				int tileY = (int)this.projectile.Center.Y / 16;
+
+				SeismicChargeProjectile.CreateExplosion( tileX, tileY );
+
 				if( Main.netMode == NetmodeID.Server ) {
-					int tileX = (int)this.projectile.Center.X / 16;
-					int tileY = (int)this.projectile.Center.Y / 16;
-
-					SeismicChargeProjectile.CreateExplosion( tileX, tileY );
-
 					NetMessage.SendData( MessageID.KillProjectile, -1, -1, null, proj.identity, (float)proj.owner, 0f, 0f, 0, 0, 0 );
 				}
 			}

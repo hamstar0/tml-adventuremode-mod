@@ -17,7 +17,8 @@ namespace AdventureMode {
 
 				var rg = new RecipeGroup( () => displayName, itemTypes );
 
-				RecipeGroup.RegisterGroup( grpName, rg );
+				int grpIdx = RecipeGroup.RegisterGroup( grpName, rg );
+//this.Logger.Info( "dname: "+displayName+", gname: "+grpName+", grp: "+rg.IconicItemIndex+", idx: "+grpIdx+", items: "+string.Join(",", itemTypes) );
 			}
 
 			//
@@ -28,6 +29,7 @@ namespace AdventureMode {
 				ItemID.StrangePlant3,
 				ItemID.StrangePlant4
 			);
+
 			AddRG( "Orb",
 				ModContent.ItemType<BlueOrbItem>(),
 				ModContent.ItemType<CyanOrbItem>(),
