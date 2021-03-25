@@ -22,7 +22,7 @@ namespace AdventureMode.WorldGeneration {
 				WorldChestHelpers.AddToWorldChests( fillDef );
 			}
 
-			void addOrbImplanterReplacer( int itemType, string chestType="Chest" ) {
+			void addOrbImplanterReplacer( int itemType ) {  //string chestType="Chest"
 				var unfillDef = new ChestFillDefinition( new ChestFillItemDefinition(itemType, 1, 1) );
 				var orbFillDef = new ChestFillDefinition( new (float weight, ChestFillItemDefinition def)[] {
 					( 1f / 8f, new ChestFillItemDefinition(ModContent.ItemType<BlueOrbItem>()) ),

@@ -6,34 +6,26 @@ using Terraria.ModLoader.IO;
 using Terraria.ID;
 using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Services.Timers;
+using HamstarHelpers.Services.Hooks.LoadHooks;
 using AdventureMode.WorldGeneration;
 
 
 namespace AdventureMode.Logic {
 	static partial class WorldLogic {
-		public static void LoadRaftInfo( TagCompound tag ) {
-			var myworld = ModContent.GetInstance<AMWorld>();
+		private static int? _RaftBarrelRestockTimerSinceLastLoad = null;
 
-			myworld.Raft = new RaftComponents();
 
-			WorldLogic.LoadRaftBarrel( myworld, tag );
-			WorldLogic.LoadRaftMirror( myworld, tag );
-		}
 
-		////
+		////////////////
 
-		private static void LoadRaftBarrel( AMWorld myworld, TagCompound tag ) {
-			if( !tag.ContainsKey("raft_barrel_x") ) {
-				LogHelpers.Alert( "World has no raft barrel." );
+		private static void BeginOrResumeRaftRestockTimer( int? remainingTime ) {
+			int timer = remainingTime.HasValue
+				? remainingTime.Value
+				: AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
+			
+			if( Timers.GetTimerTickDuration("AdventureModeRaftRestock") > 0 ) {
 				return;
 			}
-
-			myworld.Raft.Barrel = (
-				tag.GetInt("raft_barrel_x"),
-				tag.GetInt("raft_barrel_y")
-			);
-
-			int timer = tag.GetInt( "raft_barrel_restock_timer" );
 
 			Timers.SetTimer( "AdventureModeRaftRestock", timer, false, () => {
 				if( Main.gameMenu && !Main.dedServ && Main.netMode != NetmodeID.Server ) {
@@ -47,6 +39,38 @@ namespace AdventureMode.Logic {
 				}
 
 				return AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
+			} );
+		}
+
+
+		////////////////
+
+		public static void LoadRaftInfo( TagCompound tag ) {
+			var myworld = ModContent.GetInstance<AMWorld>();
+
+			myworld.Raft = new RaftComponents();
+
+			WorldLogic.LoadRaftBarrel( myworld, tag );
+			WorldLogic.LoadRaftMirror( myworld, tag );
+		}
+
+		////
+
+		private static void LoadRaftBarrel( AMWorld myworld, TagCompound tag ) {
+			if( tag.ContainsKey("raft_barrel_x") ) {
+				myworld.Raft.Barrel = (
+					tag.GetInt( "raft_barrel_x" ),
+					tag.GetInt( "raft_barrel_y" )
+				);
+
+				WorldLogic._RaftBarrelRestockTimerSinceLastLoad = tag.GetInt( "raft_barrel_restock_timer" );
+			} else {
+				LogHelpers.Alert( "World has no raft barrel." );
+			}
+
+			LoadHooks.AddPostWorldLoadEachHook( () => {
+				WorldLogic.BeginOrResumeRaftRestockTimer( WorldLogic._RaftBarrelRestockTimerSinceLastLoad );
+				WorldLogic._RaftBarrelRestockTimerSinceLastLoad = null;
 			} );
 		}
 

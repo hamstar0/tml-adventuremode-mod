@@ -165,22 +165,25 @@ v1
 	-	Set demo man to mention goblin rescue and Seismic Charges
 	-	Fix FE distribution throughout the map
 -	F&T
-	-	@Cursed Brambles
-		-	Increase decay rate a lot
-	-	Fix spawns not getting a chance to revert before invasion begins proper
-	-	Set bats to no longer use slime AI in water?
+	-	Fix spawns not getting a chance to revert before invasion begins proper (use IL?)
+	-	@Bullwhip
+		-	Set bats to no longer use slime AI in water?
+	-	@Ergo
+		-	Mention with furnishing kits: patch floor and wall holes (change "Not enough floor space")
+
+
 	-	Debug raft resupplies taking too long
-	-	Mention with furnishing kits: patch floor and wall holes (change "Not enough floor space")
 	-	Fix herb bags in world gen chests
 	-	Fix bound goblin spawning improperly
-	-	Fix PKE interference when red bar not filled (!)
-	-	@Green Hell
+	-	@Boss Reigns (1.2.1)
+		-	Fix PKE interference when red bar not filled (!)
+	-	@Orbs (1.4.2)
+	-	@Cursed Brambles (0.6.1)
+		-	Increase decay rate a lot
+	-	@Green Hell (0.6.2)
 		-	Fix panacea
-
-
 	-	Fix seismic charges
 	-	Fix seismic charge recipe
-	-	@Orbs (1.4.2)
 	-	Remove Chest Implants mod; use in-line chest editing
 	-	@MH
 		-	Set custom float element to be more readable

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -13,6 +12,14 @@ namespace AdventureMode {
 		public override bool CloneNewInstances => false;
 		public override bool InstancePerEntity => true;
 
+
+
+		////////////////
+
+		public override bool Autoload( ref string name ) {
+			this.InitializeSpawnHooks();
+			return base.Autoload( ref name );
+		}
 
 
 		////////////////
@@ -32,21 +39,6 @@ namespace AdventureMode {
 			////DEBUG////
 			if( npc.type == NPCID.KingSlime ) {
 				LogHelpers.Log( "KING SLIME SPAWN DETECTED - "+string.Join("\n ", DebugHelpers.GetContextSlice()) );
-			}
-		}
-
-
-		////////////////
-
-		public override void EditSpawnPool( IDictionary<int, float> pool, NPCSpawnInfo spawnInfo ) {
-			if( pool.ContainsKey(NPCID.BoundGoblin) ) {	//NPC.downedGoblins
-				NPCLogic.EditSpawnPoolForBoundGoblin( pool, spawnInfo );
-			}
-			if( pool.ContainsKey(NPCID.BoundMechanic) ) {	//NPC.downedBoss3
-				NPCLogic.EditSpawnPoolForBoundMechanic( pool, spawnInfo );
-			}
-			if( pool.ContainsKey(NPCID.VoodooDemon) ) {
-				NPCLogic.EditSpawnPoolForVoodooDemon( pool, spawnInfo );
 			}
 		}
 
