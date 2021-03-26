@@ -113,6 +113,7 @@ v1
 	-	VERIFY: Fix unlimited track kits
 		-	@Info: "if you hold out the rail thing at the end of a track it just keeps going"
 -	@Test MP
+	-	Verify invasion correctly repositions to map center
 	-	Balance anima drain/gain rates
 	-	Verify binocs work in MP
 [v0.23.0]
@@ -157,21 +158,22 @@ v1
 ~~
 ~~
 [v0.22.0]
--	@Necrotis
+-	@Beta (remove Chest Implants from pack)
+
+
+-	Update versions
+-	@Necrotis (1.11.0)
 	-	Reduce surface corruption anima loss
-	-	Make eating an ectoplasm add a resistance buff for 45s
--	Set guide to mention seismic charges
--	@Lore
+	-	Make eating an ectoplasm add a resistance buff for 30s
+-	@Lore (0.8.4)
+	-	Set demoman to mention seismic charges upon bound goblin objective
 	-	Set demo man to mention goblin rescue and Seismic Charges
 	-	Fix FE distribution throughout the map
 -	F&T
-	-	Fix spawns not getting a chance to revert before invasion begins proper (use IL?)
-	-	@Bullwhip
-		-	Set bats to no longer use slime AI in water?
+	-	@Bullwhip (1.2.2)
+		-	Set bats to no longer use slime AI in water
 	-	@Ergo
 		-	Mention with furnishing kits: patch floor and wall holes (change "Not enough floor space")
-
-
 	-	Debug raft resupplies taking too long
 	-	Fix herb bags in world gen chests
 	-	Fix bound goblin spawning improperly
