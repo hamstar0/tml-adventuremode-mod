@@ -58,6 +58,9 @@ namespace AdventureMode {
 			case NPCID.TravellingMerchant:
 				NPCLogic.SetupTravellingMerchantShop( shop, ref nextSlot );
 				break;
+			case NPCID.GoblinTinkerer:
+				NPCLogic.SetupGoblinTinkererShop( shop, ref nextSlot );
+				break;
 			}
 		}
 

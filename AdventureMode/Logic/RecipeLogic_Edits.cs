@@ -107,7 +107,8 @@ namespace AdventureMode.Logic {
 			bool overrideTile = AMConfig.Instance.OverrideRecipeTileRequirements;
 			ISet<int> whitelistTypes = RecipeLogic.GetWhitelistedRecipes();
 
-			RecipeLogic.ApplyRecipeWhitelistingAndNewTileRequirements( overrideTile, whitelistTypes );
+			RecipeLogic.ApplyRecipeWhitelisting( whitelistTypes );
+			RecipeLogic.ApplyNewTileRequirements( whitelistTypes );
 		}
 	}
 }
