@@ -66,6 +66,8 @@ v1
 -	@Bullwhip
 	-	Fix double whip
 -	@Walkie Talkie
+	-	Add objective to find cyborgs (from mysterious caller)
+	-	...
 	-	@Plan
 		-	A way to clarify dryad helps with jungle
 		-	clarify cyborgs as mineable
@@ -105,6 +107,7 @@ v1
 	-	Set seismic charges to have custom sound
 	-	Import seismic charges
 -	@B&D
+	-	Allow crafting Automated Drill Kits (via. magitech; makes a limited distance dropshaft)
 	-	A way to acquire grapple accessory by discovery
 	-	Late game pre-hardmode challenges
 [v0.24.0]
@@ -155,12 +158,46 @@ v1
 			-	Player enters the underworld
 			-	Player is above ground with no wall
 		-	At the end of the walk, the player makes a short 'jaunt' a few feet, ignoring obstacles
-~~
-~~
+-	Seismic charges
+	-	Add defoliation charge
+		-	Destroys mud, mushroom grass, jungle grass, and any mushrooms or vegetation
+		-	Crafted from seismic charges and green orbs
+	-	Add thermal charge
+		-	Melt ice blocks, creating snow and slush
+		-	Crafted from seismic charges and red orbs
+	-	Set seismic charges to cause low-grade cave ins (lots of falling sand blocks)
+	-	Set seismic charges to only affect sandstone and brick
+-	Add duct tape item sold from goblin, required for all tinkerer's workshop items
+
+
+-	@MH: Release 5.12
+-	F&T
+	-	@HUD Lib (3.0.2)
+		-	Scale hotbar size when inventory on
+	-	@Powerful Magic (1.6.3)
+		-	Increase size of magic projectiles
+	-	@Ergo (1.7.1)
+		-	Fix house validity message appears correctly
+	-	@Enraged (0.9.0)
+		-	Change rage rate hooks to enraged behavior hooks
+		-	Restructure code files
+		-	Prevent enrage from happening during charging sequences
+		-	Added bosses whitelist
+		-	@Researched rage states:
+			-	Fishron:		a0 == 1
+			-	Twins:			a1 > 0
+			-	Skeletron/prime:	a1 > 0
+			-	BoC:			a0 < 0
+			-	Bee:			a0 == 0
+			-	EoC:			a1 > 0
+	-	@Cursed Brambles (0.6.2)
+		-	Increase decay rate of cursed brambles
+	-	Debug canopic jar dupe
+	-	"HamstarHelpers.TilePattern.CheckPoint - 0:000 - 000128.64         Tile out of Y range."
+	-	Remove CI dependency from LA
+	-	Tweak speech bubble alignment (move right)
 [v0.22.0]
 -	@Beta (remove Chest Implants from pack)
-
-
 -	Update versions
 -	@Necrotis (1.11.0)
 	-	Reduce surface corruption anima loss
