@@ -167,9 +167,9 @@ v1
 		-	Crafted from seismic charges and red orbs
 	-	Set seismic charges to cause low-grade cave ins (lots of falling sand blocks)
 	-	Set seismic charges to only affect sandstone and brick
+
+
 -	Add duct tape item sold from goblin, required for all tinkerer's workshop items
-
-
 -	@MH: Release 5.12
 -	F&T
 	-	@HUD Lib (3.0.2)
