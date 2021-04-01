@@ -1,4 +1,5 @@
 Junkyard
+-	Set seismic charges to cause low-grade cave ins (lots of falling sand blocks)
 -	Add skull piles?
 	-	Set blood moons to generate these on the surface (with an "incubation" time)
 	-	Drop ectoplasm and anti-nectrotis potions on break
@@ -159,14 +160,17 @@ v1
 			-	Player is above ground with no wall
 		-	At the end of the walk, the player makes a short 'jaunt' a few feet, ignoring obstacles
 -	Seismic charges
+	-	Set seismic charges to only affect sandstone and brick
 	-	Add defoliation charge
 		-	Destroys mud, mushroom grass, jungle grass, and any mushrooms or vegetation
 		-	Crafted from seismic charges and green orbs
+		-	Define item + graphic
+		-	Define projectile
 	-	Add thermal charge
 		-	Melt ice blocks, creating snow and slush
 		-	Crafted from seismic charges and red orbs
-	-	Set seismic charges to cause low-grade cave ins (lots of falling sand blocks)
-	-	Set seismic charges to only affect sandstone and brick
+		-	Define projectile
+		-	Define item + graphic
 
 
 -	Add duct tape item sold from goblin, required for all tinkerer's workshop items

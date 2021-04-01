@@ -7,7 +7,7 @@ using HamstarHelpers.Helpers.Fx;
 
 
 namespace AdventureMode.Projectiles {
-	public partial class SeismicChargeProjectile : ModProjectile {
+	public partial class ThermalChargeProjectile : ModProjectile {
 		public static void CreateExplosion( int tileX, int tileY ) {
 			int radius = 7;
 			int radiusSqr = radius * radius;
@@ -23,7 +23,7 @@ namespace AdventureMode.Projectiles {
 					int distSqr = ((xDiff * xDiff) + (yDiff * yDiff));
 
 					if( distSqr < radiusSqr ) {
-						SeismicChargeProjectile.ProcessTileUnsynced( i, j, (float)Math.Sqrt( distSqr ), radius );
+						ThermalChargeProjectile.ProcessTileUnsynced( i, j, (float)Math.Sqrt( distSqr ), radius );
 					}
 				}
 			}
@@ -52,38 +52,12 @@ namespace AdventureMode.Projectiles {
 			ushort newTileType = tile.type;
 
 			switch( tile.type ) {
-			// Sandstone
-			case TileID.Sandstone:
-				newTileType = TileID.Sand;
-				break;
-			case TileID.CorruptSandstone:
-				newTileType = TileID.Ebonsand;
-				break;
-			case TileID.CrimsonSandstone:
-				newTileType = TileID.Crimsand;
-				break;
-			case TileID.HallowSandstone:
-				newTileType = TileID.Pearlsand;
-				break;
-			// Hardened sand
-			case TileID.HardenedSand:
-				newTileType = TileID.Sandstone;
-				break;
-			case TileID.CorruptHardenedSand:
-				newTileType = TileID.CorruptSandstone;
-				break;
-			case TileID.CrimsonHardenedSand:
-				newTileType = TileID.CrimsonSandstone;
-				break;
-			case TileID.HallowHardenedSand:
-				newTileType = TileID.HallowSandstone;
-				break;
-			// Bricks
-			case TileID.CrimtaneBrick:
-			case TileID.EbonstoneBrick:
-			case TileID.ObsidianBrick:
-			case TileID.HellstoneBrick:
-				newTileType = TileID.Silt;
+			// Ice
+			case TileID.IceBlock:
+			case TileID.CorruptIce:
+			case TileID.FleshIce:
+			case TileID.HallowedIce:
+				newTileType = TileID.Slush;
 				break;
 			}
 

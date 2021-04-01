@@ -1,42 +1,51 @@
-Adventure Mode replaces Terraria's default sandbox mode with a explore-to-progress journeying mode. Good decision making and awareness of your surroundings will be needed to succeed.
+Welcome to Adventure Mode! This is a game mode built around journeying and exploration, but also accomplishing goals. This is designed to create a new experience upon existing content, but with a few twists. There's a lot of new features and changes from the base game. Here's a few important ones to note:
+- Building and digging disabled (some exceptions).
+- Use house kits to create NPC houses, beds, crafting stations, and fast travel points.
+- All crafting is now handled at workbenches.
+- Use platforms, planks, ropes, and rails kits to get around.
+- Use Orbs (found in chests) to open new areas.
+- Ammo is more expensive; use wisely.
+- Talk to the Guide for further help.
 
 
 
 This mode also requires the following mods:
-  Mod Helpers
   Adventure Mode Lore
-  Orbs
-  Locked Abilities
-  Objectives
-  Chest Implants
-  Terrain Remixer
-  Nihilism
-  Bullwhip
-  The Mad Ranger
-  Findable Mana Crystals
-  Ergophobia
-  Powerful Magic
-  Mounted Magic Mirrors
-  Cursed Brambles
-  Necrotis
-  Enraged
-  The Trickster
-  Green Hell
-  Readable Books
-  Surroundings
-  PKE Meter
-  Boss Reigns
   Boss Checklist
+  Boss Reigns
+  Bullwhip
+  Cursed Brambles
+  Enraged
+  Ergophobia
+  Findable Mana Crystals
+  Grappletech
+  Green Hell
+  HUD Elements Lib
+  Locked Abilities
+  Mod Helpers
+  More Item Info
+  Mounted Magic Mirrors
+  Necrotis
+  Nihilism
+  Objectives
+  Orbs
+  PKE Meter
+  Powerful Magic
+  Readable Books
+  Ruined Items
+  Surroundings
+  Terrain Remixer
+  The Mad Ranger
+  The Trickster
 
 
 Credits:
-  Raft tile prototype:
-    mcmanybucks
-  Plank sprite tweak:
-    Vampyroknight
+  Templates:
+    mcmanybucks (raft)
   Testers:
-    Putan (beta)
-    CrabBar (beta)
-    FuryForged (beta)
-    BlueJay T Gaming (beta)
-    Agrair (beta)
+    Putan
+    CrabBar
+    FuryForged
+    BlueJay T Gaming
+    Agrair
+    Arcri

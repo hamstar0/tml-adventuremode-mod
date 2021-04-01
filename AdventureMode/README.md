@@ -1,15 +1,56 @@
 # Adventure Mode
 
-Adventure Mode creates a progression-oriented journey designed to replace Terraria's sandbox mode. You will need good decision making, quick wits, and awareness of your surroundings in order to succeed.
+Welcome to Adventure Mode! This is a game mode built around journeying and exploration, but also accomplishing goals. This is designed to create a new experience upon existing content, but with a few twists. There's a lot of new features and changes from the base game. Here's a few important ones to note:
+- Building and digging disabled (some exceptions).
+- Use house kits to create NPC houses, beds, crafting stations, and fast travel points.
+- All crafting is now handled at workbenches.
+- Use platforms, planks, ropes, and rails kits to get around.
+- Use Orbs (found in chests) to open new areas.
+- Ammo is more expensive; use wisely.
+- Talk to the Guide for further help.
+
+
+
+This mode also requires the following mods:
+  Adventure Mode Lore
+  Boss Checklist
+  Boss Reigns
+  Bullwhip
+  Cursed Brambles
+  Enraged
+  Ergophobia
+  Findable Mana Crystals
+  Grappletech
+  Green Hell
+  HUD Elements Lib
+  Locked Abilities
+  Mod Helpers
+  More Item Info
+  Mounted Magic Mirrors
+  Necrotis
+  Nihilism
+  Objectives
+  Orbs
+  PKE Meter
+  Powerful Magic
+  Readable Books
+  Ruined Items
+  Surroundings
+  Terrain Remixer
+  The Mad Ranger
+  The Trickster
+
+
 
 Credits:
   Templates:
     mcmanybucks (raft)
   Testers:
-    Putan (beta)
-    CrabBar (beta)
-    FuryForged (beta)
-    BlueJay T Gaming (beta)
-    Agrair (beta)
+    Putan
+    CrabBar
+    FuryForged
+    BlueJay T Gaming
+    Agrair
+    Arcri
 
 https://forums.terraria.org/index.php?threads/adventure-mode.85140/

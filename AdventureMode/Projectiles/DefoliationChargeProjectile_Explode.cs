@@ -7,7 +7,7 @@ using HamstarHelpers.Helpers.Fx;
 
 
 namespace AdventureMode.Projectiles {
-	public partial class SeismicChargeProjectile : ModProjectile {
+	public partial class DefoliationChargeProjectile : ModProjectile {
 		public static void CreateExplosion( int tileX, int tileY ) {
 			int radius = 7;
 			int radiusSqr = radius * radius;
@@ -23,7 +23,7 @@ namespace AdventureMode.Projectiles {
 					int distSqr = ((xDiff * xDiff) + (yDiff * yDiff));
 
 					if( distSqr < radiusSqr ) {
-						SeismicChargeProjectile.ProcessTileUnsynced( i, j, (float)Math.Sqrt( distSqr ), radius );
+						DefoliationChargeProjectile.ProcessTileUnsynced( i, j, (float)Math.Sqrt( distSqr ), radius );
 					}
 				}
 			}
@@ -49,45 +49,52 @@ namespace AdventureMode.Projectiles {
 				return;
 			}
 
-			ushort newTileType = tile.type;
+			ushort? newTileType = tile.type;
 
 			switch( tile.type ) {
-			// Sandstone
-			case TileID.Sandstone:
-				newTileType = TileID.Sand;
+			case TileID.VineFlowers:
+			case TileID.Vines:
+			case TileID.CrimsonVines:
+			case TileID.HallowedVines:
+			case TileID.JungleVines:
+			case TileID.FleshWeeds:
+			case TileID.CorruptPlants:
+			case TileID.PlantDetritus:
+			case TileID.HallowedPlants:
+			case TileID.HallowedPlants2:
+			case TileID.LongMoss:
+			case TileID.JunglePlants:
+			case TileID.JunglePlants2:
+			case TileID.Plants:
+			case TileID.Plants2:
+			case TileID.ImmatureHerbs:
+			case TileID.MatureHerbs:
+			case TileID.BloomingHerbs:
+			case TileID.Trees:
+			case TileID.MushroomTrees:
+			case TileID.PalmTree:
+				newTileType = null;
 				break;
-			case TileID.CorruptSandstone:
-				newTileType = TileID.Ebonsand;
+			case TileID.Grass:
+			case TileID.CorruptGrass:
+			case TileID.FleshGrass:
+			case TileID.HallowedGrass:
+				newTileType = TileID.Dirt;
 				break;
-			case TileID.CrimsonSandstone:
-				newTileType = TileID.Crimsand;
+			case TileID.JungleGrass:
+			case TileID.MushroomGrass:
+				newTileType = TileID.Mud;
 				break;
-			case TileID.HallowSandstone:
-				newTileType = TileID.Pearlsand;
-				break;
-			// Hardened sand
-			case TileID.HardenedSand:
-				newTileType = TileID.Sandstone;
-				break;
-			case TileID.CorruptHardenedSand:
-				newTileType = TileID.CorruptSandstone;
-				break;
-			case TileID.CrimsonHardenedSand:
-				newTileType = TileID.CrimsonSandstone;
-				break;
-			case TileID.HallowHardenedSand:
-				newTileType = TileID.HallowSandstone;
-				break;
-			// Bricks
-			case TileID.CrimtaneBrick:
-			case TileID.EbonstoneBrick:
-			case TileID.ObsidianBrick:
-			case TileID.HellstoneBrick:
+			case TileID.Mud:
 				newTileType = TileID.Silt;
 				break;
 			}
 
-			tile.type = newTileType;
+			if( newTileType.HasValue ) {
+				tile.type = newTileType.Value;
+			} else {
+				WorldGen.KillTile( tileX, tileY, false, false, true );
+			}
 
 			ParticleFxHelpers.MakeDustCloud( new Vector2((tileX*16) + 8, (tileY*16) + 8), 1, 0.3f, 0.65f );
 
