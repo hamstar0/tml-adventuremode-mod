@@ -166,17 +166,18 @@ v1
 		-	At the end of the walk, the player makes a short 'jaunt' a few feet, ignoring obstacles
 ~~
 ~~
--	Set charges to all be 'sticky' (use Stick Bombs in recipe)
 -	F&T
-	-	Fix orbs failing to integrate into boss recipes
-	-	Ease up on ReforgeComboRuinPercentChance and alert player
-	-	Debug 'ruined' prefix removal fail via goblin
-	-	Debug whip projectile stopping (malfunctioning double-whip failsafe?)
-	-	Debug tricksters with decreasing hp
+	-	@Ruined Items
+		-	Ease up on ReforgeComboRuinPercentChance and alert player
+	-	@Bullwhip
+		-	Debug whip projectile stopping when parasited (malfunctioning double-whip failsafe?)
+	-	@Trickster
+		-	Debug tricksters with decreasing hp and weird diahhrea fx
+
+
+	-	Fix strange plants failing to integrate into boss recipes
 	-	Set charges sub-type recipes to craft larger quantities
 	-	Set charges to have more uniform radius
-
-
 -	Seismic charges
 	-	Set seismic charges to only affect sandstone and brick
 	-	Add defoliation charge

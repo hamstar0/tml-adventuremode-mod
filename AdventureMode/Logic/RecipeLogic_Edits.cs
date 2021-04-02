@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Services.EntityGroups;
 using HamstarHelpers.Services.Hooks.LoadHooks;
 using Ergophobia.Items.FramingPlank;
@@ -14,6 +15,8 @@ namespace AdventureMode.Logic {
 		public static void EditExistingRecipes() {
 			RecipeLogic.EditBowlRecipe();
 			RecipeLogic.EditFramingPlankRecipe();
+			RecipeLogic.EditElixirRecipe();
+			RecipeLogic.EditBossRecipes();
 
 			CustomLoadHooks.AddHook( EntityGroups.LoadedAllValidator, ( _ ) => {
 				RecipeLogic.ApplyRecipeWhitelistingAndNewTileRequirements();
@@ -41,6 +44,8 @@ namespace AdventureMode.Logic {
 			}
 		}
 
+		////
+
 		public static void EditFramingPlankRecipe() {
 			var rf = new RecipeFinder();
 			rf.SetResult( ModContent.ItemType<FramingPlankItem>() );
@@ -51,6 +56,8 @@ namespace AdventureMode.Logic {
 			}
 		}
 
+		////
+		
 		public static void EditElixirRecipe() {
 			var rf = new RecipeFinder();
 			rf.SetResult( ModContent.ItemType<ElixirOfLifeItem>() );
@@ -60,6 +67,8 @@ namespace AdventureMode.Logic {
 				re.DeleteIngredient( ItemID.ShinePotion );
 			}
 		}
+
+		////
 
 		public static void EditBossRecipes() {
 			if( AMConfig.Instance.StrangePlantsAddedPerBossSummonItemRecipe <= 0 ) {
@@ -80,14 +89,13 @@ namespace AdventureMode.Logic {
 			foreach( int bossItemType in bossItemTypes ) {
 				var rf = new RecipeFinder();
 				rf.SetResult( bossItemType );
+//LogHelpers.Log( "boss item "+bossItemType+" recipes: "+rf.SearchRecipes().Count );
 
 				foreach( Recipe r in rf.SearchRecipes() ) {
 					RecipeLogic.EditBossRecipe( r );
 				}
 			}
 		}
-
-		////
 
 		private static void EditBossRecipe( Recipe r ) {
 			var re = new RecipeEditor( r );
@@ -97,6 +105,7 @@ namespace AdventureMode.Logic {
 			RecipeGroup rg = RecipeGroup.recipeGroups[ grpId ];
 
 			int grpItemType = rg.ValidItems[ rg.IconicItemIndex ];
+//LogHelpers.Log( "grpId:"+grpId+ " - rg:"+string.Join(",", rg.ValidItems)+" - grpItemType:"+grpItemType );
 			re.AddIngredient( grpItemType, AMConfig.Instance.StrangePlantsAddedPerBossSummonItemRecipe );
 		}
 
@@ -104,7 +113,7 @@ namespace AdventureMode.Logic {
 		////////////////
 
 		public static void ApplyRecipeWhitelistingAndNewTileRequirements() {
-			bool overrideTile = AMConfig.Instance.OverrideRecipeTileRequirements;
+			bool _overrideTile = AMConfig.Instance.OverrideRecipeTileRequirements;
 			ISet<int> whitelistTypes = RecipeLogic.GetWhitelistedRecipes();
 
 			RecipeLogic.ApplyRecipeWhitelisting( whitelistTypes );

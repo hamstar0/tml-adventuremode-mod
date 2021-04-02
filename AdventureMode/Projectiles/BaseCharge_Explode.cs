@@ -49,8 +49,9 @@ namespace AdventureMode.Projectiles {
 				return;
 			}
 
-			float distPerc = (float)dist / (float)maxDist;
-			if( Main.rand.NextFloat() < distPerc ) {
+			//float distPerc = (float)dist / (float)maxDist;
+			//if( Main.rand.NextFloat() < distPerc ) {
+			if( dist > maxDist ) {
 				return;
 			}
 

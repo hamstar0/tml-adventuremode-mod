@@ -10,10 +10,10 @@ namespace AdventureMode.Recipes {
 		public ThermalChargeRecipe( ThermalChargeItem myitem ) : base( AMMod.Instance ) {
 			this.AddTile( TileID.WorkBenches );
 
-			this.AddIngredient( ModContent.ItemType<SeismicChargeItem>(), 1 );
+			this.AddIngredient( ModContent.ItemType<SeismicChargeItem>(), SeismicChargeRecipe.GetStackAmount );
 			this.AddIngredient( ModContent.ItemType<RedOrbItem>(), 1 );
 
-			this.SetResult( myitem, 1 );
+			this.SetResult( myitem, SeismicChargeRecipe.GetStackAmount );
 		}
 
 		public override bool RecipeAvailable() {
