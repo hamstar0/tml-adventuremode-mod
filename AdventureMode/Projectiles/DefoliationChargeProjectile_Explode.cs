@@ -1,57 +1,12 @@
 ﻿using System;
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
-using HamstarHelpers.Helpers.Fx;
 
 
 namespace AdventureMode.Projectiles {
-	public partial class DefoliationChargeProjectile : ModProjectile {
-		public static void CreateExplosion( int tileX, int tileY ) {
-			int radius = 7;
-			int radiusSqr = radius * radius;
-			int left = tileX - radius;
-			int right = tileX + radius;
-			int top = tileY - radius;
-			int bot = tileY + radius;
-
-			for( int i=left; i<right; i++ ) {
-				for( int j=top; j<bot; j++ ) {
-					int xDiff = i - tileX;
-					int yDiff = j - tileY;
-					int distSqr = ((xDiff * xDiff) + (yDiff * yDiff));
-
-					if( distSqr < radiusSqr ) {
-						DefoliationChargeProjectile.ProcessTileUnsynced( i, j, (float)Math.Sqrt( distSqr ), radius );
-					}
-				}
-			}
-
-			if( Main.netMode == NetmodeID.Server ) {
-				NetMessage.SendTileSquare( -1, left, top, radius * 2 );
-			}
-		}
-
-
-		public static void ProcessTileUnsynced( int tileX, int tileY, float dist, int maxDist ) {
-			if( !WorldGen.InWorld(tileX, tileY) ) {
-				return;
-			}
-
-			Tile tile = Main.tile[ tileX, tileY ];
-			if( !tile.active() ) {
-				return;
-			}
-
-			float distPerc = (float)dist / (float)maxDist;
-			if( Main.rand.NextFloat() < distPerc ) {
-				return;
-			}
-
-			ushort? newTileType = tile.type;
-
-			switch( tile.type ) {
+	public partial class DefoliationChargeProjectile : BaseExplosiveChargeProjectile {
+		public override ushort? GetReplacementTileType( int tileType ) {
+			switch( tileType ) {
 			case TileID.VineFlowers:
 			case TileID.Vines:
 			case TileID.CrimsonVines:
@@ -73,32 +28,20 @@ namespace AdventureMode.Projectiles {
 			case TileID.Trees:
 			case TileID.MushroomTrees:
 			case TileID.PalmTree:
-				newTileType = null;
-				break;
+				return null;
 			case TileID.Grass:
 			case TileID.CorruptGrass:
 			case TileID.FleshGrass:
 			case TileID.HallowedGrass:
-				newTileType = TileID.Dirt;
-				break;
+				return TileID.Dirt;
 			case TileID.JungleGrass:
 			case TileID.MushroomGrass:
-				newTileType = TileID.Mud;
-				break;
+				return TileID.Mud;
 			case TileID.Mud:
-				newTileType = TileID.Silt;
-				break;
+				return TileID.Silt;
+			default:
+				return null;
 			}
-
-			if( newTileType.HasValue ) {
-				tile.type = newTileType.Value;
-			} else {
-				WorldGen.KillTile( tileX, tileY, false, false, true );
-			}
-
-			ParticleFxHelpers.MakeDustCloud( new Vector2((tileX*16) + 8, (tileY*16) + 8), 1, 0.3f, 0.65f );
-
-			WorldGen.SquareTileFrame( tileX, tileY, true );
 		}
 	}
 }

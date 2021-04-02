@@ -123,23 +123,28 @@ v1
 [v0.23.0]
 -	@Beta
 -	Add chance to make a ruined item from crafting
--	@Necrotis
+-	@Necrotis (1.11.1)
 	-	Set each buff to recharge anima slightly
 	-	Add an item sold by Witch Doctor that changes spirit walk to use mana instead of anima
 	-	Configure 'spirit walk' mode to use anima instead of mana
 -	@Add Spirit Walking mod
+	-	Add to AM
 	-	Generate 'soul pellets' at random that regenerate anima/mana (non-renewable)
 	-	Implement spirit walking mode
 		-	Apply spirit fx
 		-	Apply spirit world fx
-		-	Implement collision behavior
+		-	Implement finishing dash move (skips past tiles, consumes anima/mana)
+		-	Implement collision behavior (movement halted, rapid loss of anima/mana)
 		-	Implement flight behavior
-		-	Create spirit sprite
+		-	Add music
+		-	Implement mode deactivate
+		-	Setup mode (remove player draw, draw a dungeon spirit, make player invincible and debilitated)
+		-	Implement mode activate (costs 20% mana/anima)
+~~
+~~
 	-	Add 'Shadow Mirror' item
 		-	Implement use effect
 		-	Create sprite
-~~
-~~
 		-	Define item
 	-	Create mod
 	-	@Plan
@@ -159,6 +164,19 @@ v1
 			-	Player enters the underworld
 			-	Player is above ground with no wall
 		-	At the end of the walk, the player makes a short 'jaunt' a few feet, ignoring obstacles
+~~
+~~
+-	Set charges to all be 'sticky' (use Stick Bombs in recipe)
+-	F&T
+	-	Fix orbs failing to integrate into boss recipes
+	-	Ease up on ReforgeComboRuinPercentChance and alert player
+	-	Debug 'ruined' prefix removal fail via goblin
+	-	Debug whip projectile stopping (malfunctioning double-whip failsafe?)
+	-	Debug tricksters with decreasing hp
+	-	Set charges sub-type recipes to craft larger quantities
+	-	Set charges to have more uniform radius
+
+
 -	Seismic charges
 	-	Set seismic charges to only affect sandstone and brick
 	-	Add defoliation charge
@@ -171,8 +189,6 @@ v1
 		-	Crafted from seismic charges and red orbs
 		-	Define projectile
 		-	Define item + graphic
-
-
 -	Add duct tape item sold from goblin, required for all tinkerer's workshop items
 -	@MH: Release 5.12
 -	F&T
