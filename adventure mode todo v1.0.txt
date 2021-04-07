@@ -73,7 +73,7 @@ v1
 		-	A way to clarify dryad helps with jungle
 		-	clarify cyborgs as mineable
 		-	Draw an item icon overlay for items with modified recipes
-[v0.25.0]
+[v0.26.0]
 -	Add bone piles
 	-	@Plan
 		-	Large caverns occasionally get bone piles generated within them (not underground desert, though)
@@ -111,7 +111,7 @@ v1
 	-	Allow crafting Automated Drill Kits (via. magitech; makes a limited distance dropshaft)
 	-	A way to acquire grapple accessory by discovery
 	-	Late game pre-hardmode challenges
-[v0.24.0]
+[v0.25.0]
 -	@Beta
 -	@F&T
 	-	VERIFY: Fix unlimited track kits
@@ -120,9 +120,7 @@ v1
 	-	Verify invasion correctly repositions to map center
 	-	Balance anima drain/gain rates
 	-	Verify binocs work in MP
-[v0.23.0]
--	@Beta
--	Add chance to make a ruined item from crafting
+[v0.24.0]
 -	@Necrotis (1.11.1)
 	-	Set each buff to recharge anima slightly
 	-	Add an item sold by Witch Doctor that changes spirit walk to use mana instead of anima
@@ -166,15 +164,70 @@ v1
 		-	At the end of the walk, the player makes a short 'jaunt' a few feet, ignoring obstacles
 ~~
 ~~
+[v0.23.0]
+-	@Beta
+-	@Objectives
+	-	Add noise for new objectives
+-	@Orbs
+	-	Add r-click to quick switch orbs 
+-	Set undead enemies to rarely drop dilluted ectoplasm
+-	Change jungle fishing poles to other type of jungle loot
+-	Add chance to make a ruined item from crafting
+-	Reduce sell value of boss-dropped ores
+-	Add setting to enable Painter NPC
+-	Set ectoplasm to randomly turn into "Tinted Slime Blocks" (break = ectoplasm item drop)
+-	Set space gun to overheat meteor armor and cause burning until removed (add tooltip)
 -	F&T
+	-	Add recall pots to raft barrel restock pool
+	-	Enable placing bewitching table
+	-	Enable placing and breaking eternia crystal stand
+	-	Set underworld pots to not drop ectoplasm
+	-	Set underworld pots to not have spiders
+	-	Remove Painter from spawns (don't simply block via. Nihilism mod)
+	-	Verify candles can be placed (in particular water candles)
+	-	@Enraged
+		-	Reduce rage time for skeletron
+	-	@Necrotis
+		-	Enable both canopic jar types to stack
+		-	Add jar eat cooldown + mouse click lock until release
+		-	Add ectoplasm eat cooldown
+	-	@Ergo
+		-	Draw line for minimum height indication of scaffold
+		-	Adjust height of scaffold
+		-	Do not make grass obstruct scaffolds
+	-	@Orbs
+		-	Set purification powder to change ebon/crimstone into regular stone (and ice, sandstone, etc)
+		-	Make corruption/crimson tiles fail to actuate from orb use (add tooltip)
+		-	Copper bricks don't actuate from orb use?
 	-	@Ruined Items
+		-	Remove scrap fail chance
+		-	Do not apply prefix to voodoo dolls
 		-	Ease up on ReforgeComboRuinPercentChance and alert player
-	-	@Bullwhip
-		-	Debug whip projectile stopping when parasited (malfunctioning double-whip failsafe?)
-	-	@Trickster
+		-	Verify reforge combo chance isn't malfunctioning
+
+
+	-	Debug failure to make map icon or spawn bound mechanic at dungeon bottom
+	-	@Lore (0.8.5)
+		-	Add mechanic rescue objective
+		-	Fix cyborg gen spacing
+		-	Prevent cyborgs from genning in dungeon/temple
+		-	Fix dialogues for demoman
+	-	@Objectives (0.6.2.1)
+		-	Prevent adding empty objectives
+	-	@MH (v5.13.0)
+		-	Fix NPC dialogue icon at high zoom-in
+		-	Fix CP zoom (again?)
+	-	@Bullwhip (1.2.2.1)
+		-	Debug whip projectile stopping with 'weak' debuff (malfunctioning double-whip failsafe?)
+	-	@Powerful Magic (1.6.3.1)
+	-	@Trickster (1.6.2)
+		-	Increase minimum distance between spawns
+		-	Prevent teleporting into lava
 		-	Debug tricksters with decreasing hp and weird diahhrea fx
-
-
+	-	@Locked Abilities (1.2.2)
+		-	Verify Slime Mount when mounts disabled
+	-	@Grappletech (1.0.4)
+		-	Ignore actuated blocks
 	-	Fix strange plants failing to integrate into boss recipes
 	-	Set charges sub-type recipes to craft larger quantities
 	-	Set charges to have more uniform radius
@@ -198,7 +251,7 @@ v1
 	-	@Powerful Magic (1.6.3)
 		-	Increase size of magic projectiles
 	-	@Ergo (1.7.1)
-		-	Fix house validity message appears correctly
+		-	Fix house validity message appearing incorrectly
 	-	@Enraged (0.9.0)
 		-	Change rage rate hooks to enraged behavior hooks
 		-	Restructure code files

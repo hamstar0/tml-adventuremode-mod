@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
@@ -25,11 +24,12 @@ namespace AdventureMode.Logic {
 		public static bool CanBoundGoblinSpawn( NPCSpawnInfo spawnInfo ) {
 			(int x, int y) goblinTile = NPCLogic.GetBoundGoblinOrigin();
 			var goblinPos = new Vector2(goblinTile.x, goblinTile.y) * 16f;
+			float distSqr = (spawnInfo.player.position - goblinPos).LengthSquared();
 
 			float minDist = 64 * 16;    // 64 blocks
 			float minDistSqr = minDist * minDist;
 
-			return (spawnInfo.player.position - goblinPos).LengthSquared() < minDistSqr;
+			return distSqr < minDistSqr;
 		}
 
 		public static bool CanBoundMechanicSpawn( NPCSpawnInfo spawnInfo ) {
@@ -37,10 +37,12 @@ namespace AdventureMode.Logic {
 			int mechanicTileX = myworld.DungeonBottom.TileX;
 			int mechanicTileY = myworld.DungeonBottom.TileY;
 			var mechanicPos = new Vector2( mechanicTileX * 16, mechanicTileY * 16 );
-			float minDistSqr = 32 * 16;	// 32 blocks
-			minDistSqr *= minDistSqr;
+			float distSqr = (spawnInfo.player.position - mechanicPos).LengthSquared();
 
-			return (spawnInfo.player.position - mechanicPos).LengthSquared() < minDistSqr;
+			float minDist = 96 * 16;    // 96 blocks
+			float minDistSqr = minDist * minDist;
+
+			return distSqr < minDistSqr;
 		}
 
 		public static bool CanVoodooDemonSpawn( NPCSpawnInfo spawnInfo ) {

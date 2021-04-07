@@ -15,8 +15,9 @@ namespace AdventureMode.Mods {
 				Timers.RunUntil( () => {
 					if( NPC.downedBoss3 && !NPC.savedMech ) {
 						this.AddBoundMechanicMapMarker( markerName );
+						return false;
 					}
-					return !NPC.downedBoss3 && !NPC.savedMech;
+					return true;
 				}, false );
 			} else {
 				MapMarkers.RemoveFullScreenMapMarker( markerName );
@@ -30,9 +31,9 @@ namespace AdventureMode.Mods {
 
 			MapMarkers.SetFullScreenMapMarker(
 				id: markerName,
-				tileX: myworld.DungeonBottom.TileX * 16,
-				tileY: myworld.DungeonBottom.TileY * 16,
-				icon: Main.npcTexture[NPCID.BoundMechanic],
+				tileX: myworld.DungeonBottom.TileX,
+				tileY: myworld.DungeonBottom.TileY,
+				icon: Main.npcTexture[ NPCID.BoundMechanic ],
 				scale: 1f
 			);
 		}
