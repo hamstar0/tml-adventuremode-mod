@@ -1,12 +1,12 @@
 Future considerations
 -	Decide: Generate sleeping bosses in large caverns
 -	Set all enemies in dungeon to be strong against all attacks that aren't magic (add Guide tips)
--	@Add Minecart Cannon mod
+-	@Minecart Cannon mod
 -	@Add KO mod
 -	@B&D Add grapple reload function on return to ground (otherwise only works on wood)
--	@Add Anomalies mod (only adds Gravitational Anomalies, for now)
--	@Add Fleeting Goodies mod (coins disappear)
--	@Add Lurking Foes mod (monsters are still in the dark until lit)
+-	@Anomalies mod (only adds Gravitational Anomalies, for now)
+-	@Fleeting Goodies mod (coins disappear)
+-	@Lurking Foes mod (monsters are still in the dark until lit)
 -	Modify Smoke Bombs: Causes confusion to enemies and lightly repels them
 	-	Implement projectile neutralizing (within area only)
 	-	Implement enemy repellant behavior
@@ -39,11 +39,28 @@ Future considerations
 			-	Turns granite and marble into silt
 			-	Turns rock into silt
 			-	Turns bedrock into rock
--	@Add Mountain Goat mod
+-	@Mountain Goat mod
 	-	@Plan
 		-	Available from first spawn
 		-	Moves fast, jumps high, [slides along walls?]
 		-	Bucks you if it takes damage, enters water, or goes too far underground
+-	@Malfunctioning Items mod
+	-	Implement overheat fx (smoke from gun, sprite pulses black)
+	-	Implement overheat behavior and cooldown (6s)
+	-	Implement overheat activation
+	-	Implement temperature gauge on weapon (tint sprite red + add vibration)
+	-	Implement list of overheat weapons
+		-	S.D.M.G: 2x
+		-	Last Prism: 2x
+		-	Vortex Beater: 1.5x
+		-	Chain Gun: 1.5x
+		-	Gatligator: 1x
+		-	Uzi: 1x
+		-	Megashark: 1x
+		-	Minishark: 1x
+		-	Laser Rifle: 1x
+		-	Space Gun: 1x
+	-	Define mod
 
 
 

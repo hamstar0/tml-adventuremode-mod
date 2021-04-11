@@ -5,26 +5,35 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using HamstarHelpers.Helpers.Debug;
 using HamstarHelpers.Helpers.World;
-using HamstarHelpers.Helpers.Tiles;
 using MountedMagicMirrors.Items;
 using Orbs.Items;
 
 
 namespace AdventureMode.WorldGeneration {
 	partial class AMWorldGen {
-		public void LoadChestImplants() {
-			void addItemImplanter( int itemType, int quantity, float chancePerChest=1f ) {
-				var fillDef = new ChestFillDefinition(
-					single: new ChestFillItemDefinition(itemType, quantity, quantity),
-					percentChance: chancePerChest
-				);
+		private void AddItemToWorldChests( int itemType, int quantity, float chancePerChest = 1f ) {
+			var fillDef = new ChestFillDefinition(
+				single: new ChestFillItemDefinition( itemType, quantity, quantity ),
+				percentChance: chancePerChest
+			);
 
-				WorldChestHelpers.AddToWorldChests( fillDef );
-			}
+			WorldChestHelpers.AddToWorldChests( fillDef );
+		}
 
-			void addOrbImplanterReplacer( int itemType ) {  //string chestType="Chest"
-				var unfillDef = new ChestFillDefinition( new ChestFillItemDefinition(itemType, 1, 1) );
-				var orbFillDef = new ChestFillDefinition( new (float weight, ChestFillItemDefinition def)[] {
+		
+		private void RemoveItemFromWorldChests( int itemType, float chancePerChest = 1f ) {
+			var fillDef = new ChestFillDefinition(
+				single: new ChestFillItemDefinition( itemType, 1, 1 ),
+				percentChance: chancePerChest
+			);
+
+			WorldChestHelpers.RemoveFromWorldChests( fillDef );
+		}
+
+		
+		private void ReplaceItemWithOrbsInWorldChests( int itemType ) {  //string chestType="Chest"
+			var unfillDef = new ChestFillDefinition( new ChestFillItemDefinition( itemType, 1, 1 ) );
+			var orbFillDef = new ChestFillDefinition( new (float weight, ChestFillItemDefinition def)[] {
 					( 1f / 8f, new ChestFillItemDefinition(ModContent.ItemType<BlueOrbItem>()) ),
 					( 1f / 8f, new ChestFillItemDefinition(ModContent.ItemType<CyanOrbItem>()) ),
 					( 1f / 8f, new ChestFillItemDefinition(ModContent.ItemType<GreenOrbItem>()) ),
@@ -34,39 +43,60 @@ namespace AdventureMode.WorldGeneration {
 					( 1f / 8f, new ChestFillItemDefinition(ModContent.ItemType<YellowOrbItem>()) ),
 					( 1f / 8f, new ChestFillItemDefinition(ModContent.ItemType<WhiteOrbItem>()) ),
 				} );
-				var chestDef = new ChestTypeDefinition( TileID.Containers, TileFrameHelpers.PlainChestFrame );
+			var chestDef = new ChestTypeDefinition( TileID.Containers, null );
 
-				IList<Chest> modifiedChests = WorldChestHelpers.RemoveFromWorldChests( unfillDef, chestDef );
-				foreach( Chest chest in modifiedChests ) {
-					orbFillDef.Fill( chest );
-				}
+			IList<Chest> modifiedChests = WorldChestHelpers.RemoveFromWorldChests( unfillDef, chestDef );
+			foreach( Chest chest in modifiedChests ) {
+				orbFillDef.Fill( chest );
 			}
+		}
 
-			//
 
-			if( !AMConfig.Instance.EnableAlchemyRecipes ) {
-				addItemImplanter( ItemID.Bottle, -1 );
+		////
+
+		public void LoadChestImplants() {
+			var config = AMConfig.Instance;
+
+			if( !config.EnableAlchemyRecipes ) {
+				this.RemoveItemFromWorldChests( ItemID.Bottle );
 			}
-			if( AMConfig.Instance.WorldGenRemoveMagicMirrors ) {
-				addItemImplanter( ItemID.MagicMirror, -1 );
-				addItemImplanter( ItemID.IceMirror, -1 );
+			if( config.WorldGenRemoveMagicMirrors ) {
+				this.RemoveItemFromWorldChests( ItemID.MagicMirror );
+				this.RemoveItemFromWorldChests( ItemID.IceMirror );
 			}
-			addItemImplanter( ItemID.LivingWoodWand, -1 );
-			addItemImplanter( ItemID.LeafWand, -1 );
-			addItemImplanter( ItemID.LivingMahoganyWand, -1 );
-			addItemImplanter( ItemID.LivingMahoganyLeafWand, -1 );
-			addItemImplanter( ItemID.LivingMahoganyLeafWand, -1 );
+			this.RemoveItemFromWorldChests( ItemID.LivingWoodWand );
+			this.RemoveItemFromWorldChests( ItemID.LeafWand );
+			this.RemoveItemFromWorldChests( ItemID.LivingMahoganyWand );
+			this.RemoveItemFromWorldChests( ItemID.LivingMahoganyLeafWand );
+			this.RemoveItemFromWorldChests( ItemID.LivingMahoganyLeafWand );
 
-			if( AMConfig.Instance.WorldGenAddedMountedMagicMirrorChance > 0f ) {
-				addItemImplanter(
+			if( config.WorldGenAddedMountedMagicMirrorChance > 0f ) {
+				this.AddItemToWorldChests(
 					itemType: ModContent.ItemType<MountableMagicMirrorTileItem>(),
 					quantity: 1,
-					chancePerChest: AMConfig.Instance.WorldGenAddedMountedMagicMirrorChance
+					chancePerChest: config.WorldGenAddedMountedMagicMirrorChance
 				);
 			}
 
-			addOrbImplanterReplacer( ItemID.ClimbingClaws );
-			addOrbImplanterReplacer( ItemID.HerbBag );
+			this.ReplaceItemWithOrbsInWorldChests( ItemID.ClimbingClaws );
+			this.ReplaceItemWithOrbsInWorldChests( ItemID.HerbBag );
+			this.ReplaceItemWithOrbsInWorldChests( ItemID.FiberglassFishingPole );
+
+			//
+
+			var chestDef = new ChestTypeDefinition( TileID.Containers, null );
+			float chestPotionMul = config.WorldGenChestPotionMultiplier;
+
+			// Double all potions in world chests
+			foreach( Chest chest in chestDef.GetMatchingWorldChests() ) {
+				foreach( Item item in chest.item ) {
+					if( item?.active != true || (!item.potion && (item.healLife == 0 && item.healMana == 0)) ) {
+						continue;
+					}
+
+					item.stack = (int)((float)item.stack * chestPotionMul);
+				}
+			}
 		}
 	}
 }

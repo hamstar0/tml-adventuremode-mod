@@ -12,8 +12,9 @@ namespace AdventureMode.Mods {
 			var config = RuinedItemsConfig.Instance;
 
 			config.SetOverride( nameof(config.RuinedItemsLockedFromUse), false );
-			config.SetOverride( nameof(config.PurchasedItemRuinPercentChance), 1f );
-			config.SetOverride( nameof(config.NPCLootItemRuinPercentChance), 1f );
+			config.SetOverride( nameof(config.CraftRuinPercentChance), 0.1f );
+			config.SetOverride( nameof(config.PurchasedItemRuinPercentChance), 0.9f );
+			config.SetOverride( nameof(config.NPCLootItemRuinPercentChance), 0.9f );
 			config.SetOverride( nameof(config.WorldGenChestItemRuinPercentChance), 1f );
 			config.SetOverride( nameof(config.MagitechScrapPrice), Item.buyPrice(0, 3, 0, 0) );
 

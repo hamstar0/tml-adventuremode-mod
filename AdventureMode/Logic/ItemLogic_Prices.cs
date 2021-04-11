@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader.Config;
@@ -9,7 +10,23 @@ using HamstarHelpers.Services.EntityGroups.Definitions;
 
 namespace AdventureMode.Logic {
 	static partial class ItemLogic {
+		private static ISet<int> ValueableItemBlacklist = new HashSet<int> {
+			ItemID.DemoniteOre,
+			ItemID.DemoniteBar,
+			ItemID.CrimtaneOre,
+			ItemID.CrimtaneBar,
+			ItemID.HallowedBar,
+		};
+
+
+
+		////////////////
+
 		public static bool ItemIsValuable( Item item ) {
+			if( ItemLogic.ValueableItemBlacklist.Contains(item.type) ) {
+				return false;
+			}
+
 			if( item.createTile == TileID.MetalBars ) {
 				return true;
 			}

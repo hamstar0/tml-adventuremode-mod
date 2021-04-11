@@ -4,6 +4,7 @@ using Terraria.ID;
 using Terraria.Utilities;
 using Terraria.ModLoader;
 using HamstarHelpers.Helpers.TModLoader;
+using HamstarHelpers.Helpers.World;
 using HamstarHelpers.Services.Hooks.ExtendedHooks;
 using HamstarHelpers.Services.Timers;
 using FindableManaCrystals.Tiles;
@@ -34,7 +35,7 @@ namespace AdventureMode.Logic {
 			if( fail || effectOnly ) {
 				return;
 			}
-			if( Main.netMode != 2 && !LoadHelpers.IsCurrentPlayerInGame() ) {
+			if( Main.netMode != NetmodeID.Server && !LoadHelpers.IsCurrentPlayerInGame() ) {
 				return;
 			}
 
@@ -46,7 +47,12 @@ namespace AdventureMode.Logic {
 
 
 		private static void KillPotTile( int i, int j, ref bool noItem ) {
-			if( Main.netMode == 1 ) {
+			if( Main.netMode == NetmodeID.MultiplayerClient ) {
+				return;
+			}
+
+			// No spiders in underworld
+			if( j >= WorldHelpers.UnderworldLayerTopTileY ) {
 				return;
 			}
 
@@ -59,7 +65,7 @@ namespace AdventureMode.Logic {
 
 			void modifySpiderNpc( NPC spiderNpc ) {
 				spiderNpc.life = spiderNpc.lifeMax / 6;
-				spiderNpc.damage = spiderNpc.damage / 2;
+				spiderNpc.damage /= 2;
 				spiderNpc.scale = 0.75f;
 				spiderNpc.width = (int)( spiderNpc.width * 0.75f );
 				spiderNpc.height = (int)( spiderNpc.height * 0.75f );
@@ -87,7 +93,7 @@ namespace AdventureMode.Logic {
 
 				modifySpiderNpc( npc );
 
-				if( Main.netMode != 0 ) {
+				if( Main.netMode != NetmodeID.SinglePlayer ) {
 					NetMessage.SendData( MessageID.SyncNPC, -1, -1, null, npcWho, 0f, 0f, 0f, 0, 0, 0 );
 				}
 				return false;

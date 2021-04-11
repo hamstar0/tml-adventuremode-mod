@@ -51,6 +51,7 @@ v1
 -	@Set git repos public
 -	Add allowed-mod whitelist (configurable)
 -	Final
+	-	Remove Painter from spawns (don't simply block via. Nihilism mod)
 	-	Whitelist pink block breaking
 	-	Fix Guide's false recipe reports?
 	-	Add "Adventure Mode" watermark to inventory backdrop
@@ -59,6 +60,7 @@ v1
 		-	Fix rapid re-chats to NPCs triggering repeats of objectives dialogues
 	-	@TMR
 		-	Set bandits to make non-zombie noises
+-	Set ectoplasm to randomly turn into "Tinted Slime Blocks"? (break = ectoplasm item drop)
 -	Lock players to worlds
 -	@Lore
 	-	Save dialogue states?
@@ -121,7 +123,12 @@ v1
 	-	Balance anima drain/gain rates
 	-	Verify binocs work in MP
 [v0.24.0]
+-	@TMR
+	-	Tweak crosshair to look more thematically-relevant
+-	@Objectives
+	-	Add noise for new objectives
 -	@Necrotis (1.11.1)
+	-	Set undead enemies to rarely drop dilluted ectoplasm
 	-	Set each buff to recharge anima slightly
 	-	Add an item sold by Witch Doctor that changes spirit walk to use mana instead of anima
 	-	Configure 'spirit walk' mode to use anima instead of mana
@@ -162,50 +169,45 @@ v1
 			-	Player enters the underworld
 			-	Player is above ground with no wall
 		-	At the end of the walk, the player makes a short 'jaunt' a few feet, ignoring obstacles
-~~
-~~
+
+
 [v0.23.0]
 -	@Beta
--	@Objectives
-	-	Add noise for new objectives
--	@Orbs
-	-	Add r-click to quick switch orbs 
--	Set undead enemies to rarely drop dilluted ectoplasm
+-	@Powerful Magic
+	-	Increase mana focus mode regen rate
+-	Add more potions to chests
 -	Change jungle fishing poles to other type of jungle loot
 -	Add chance to make a ruined item from crafting
 -	Reduce sell value of boss-dropped ores
--	Add setting to enable Painter NPC
--	Set ectoplasm to randomly turn into "Tinted Slime Blocks" (break = ectoplasm item drop)
--	Set space gun to overheat meteor armor and cause burning until removed (add tooltip)
+-	@Powerful Magic (1.7.0)
+	-	Set meteor armor to overheat with overuse of space gun or laser rifle
 -	F&T
 	-	Add recall pots to raft barrel restock pool
-	-	Enable placing bewitching table
+	-	Enable placing and breaking bewitching table
 	-	Enable placing and breaking eternia crystal stand
-	-	Set underworld pots to not drop ectoplasm
 	-	Set underworld pots to not have spiders
-	-	Remove Painter from spawns (don't simply block via. Nihilism mod)
-	-	Verify candles can be placed (in particular water candles)
-	-	@Enraged
+	-	@Enraged (0.10.0)
 		-	Reduce rage time for skeletron
-	-	@Necrotis
-		-	Enable both canopic jar types to stack
+	-	@Necrotis (1.11.2)
+		-	Set underworld pots to not drop ectoplasm
+		-	Enable both types of canopic jar stacking
 		-	Add jar eat cooldown + mouse click lock until release
 		-	Add ectoplasm eat cooldown
-	-	@Ergo
-		-	Draw line for minimum height indication of scaffold
-		-	Adjust height of scaffold
+	-	@Trickster (1.6.3)
+		-	Reduce post-attack cooldown duration
+	-	@Ergo (1.9.1)
+		-	Enable candles to be placed
+		-	Implement adjusting height of scaffold (right-click)
+		-	Draw line for maximum ground height indicator for scaffold
 		-	Do not make grass obstruct scaffolds
-	-	@Orbs
+	-	@Orbs (1.5.0)
 		-	Set purification powder to change ebon/crimstone into regular stone (and ice, sandstone, etc)
 		-	Make corruption/crimson tiles fail to actuate from orb use (add tooltip)
-		-	Copper bricks don't actuate from orb use?
-	-	@Ruined Items
+	-	@Ruined Items (2.8.0)
 		-	Remove scrap fail chance
-		-	Do not apply prefix to voodoo dolls
+		-	Do not apply prefix to voodoo dolls or info accessories
 		-	Ease up on ReforgeComboRuinPercentChance and alert player
 		-	Verify reforge combo chance isn't malfunctioning
-
-
 	-	Debug failure to make map icon or spawn bound mechanic at dungeon bottom
 	-	@Lore (0.8.5)
 		-	Add mechanic rescue objective
@@ -214,7 +216,7 @@ v1
 		-	Fix dialogues for demoman
 	-	@Objectives (0.6.2.1)
 		-	Prevent adding empty objectives
-	-	@MH (v5.13.0)
+	-	@MH (5.13.0)
 		-	Fix NPC dialogue icon at high zoom-in
 		-	Fix CP zoom (again?)
 	-	@Bullwhip (1.2.2.1)
