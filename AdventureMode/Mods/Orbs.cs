@@ -13,7 +13,7 @@ namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
 		public void LoadOrbs() {
 			var config = OrbsConfig.Instance;
-			var myTileKillWhitelist = new List<string>( config.TileKillWhitelist );
+			var myTileKillWhitelist = new List<string>( config.BreakableTilesWhitelist );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey( TileID.Candles ) );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey( TileID.WaterCandle ) );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey( TileID.PeaceCandle ) );
@@ -23,7 +23,7 @@ namespace AdventureMode.Mods {
 			myTileKillWhitelist.Add( TileID.GetUniqueKey( ModContent.TileType<CursedBrambleTile>() ) );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey( ModContent.TileType<FallenCyborgTile>() ) );
 
-			config.SetOverride( nameof(config.TileKillWhitelist), myTileKillWhitelist );
+			config.SetOverride( nameof(config.BreakableTilesWhitelist), myTileKillWhitelist );
 			config.SetOverride( nameof(config.OnlyGenOrbsInUndergroundChests), false );
 			config.SetOverride( nameof(config.AnyOrbPercentChancePerChest), 0.5f );
 			config.SetOverride( nameof(config.CyanOrbWeightPerOrbChest), 0.25f );
