@@ -1,6 +1,6 @@
 displayName = Adventure Mode
 author = hamstar
-version = 0.23.0
-modReferences = AdventureModeLore@0.8.5, BossChecklist@1.1.4, BossReigns@1.2.1, Bullwhip@1.2.2.1, CursedBrambles@0.6.2, Enraged@0.9.0, Ergophobia@1.9.1, FindableManaCrystals@1.2.2, Grappletech@1.0.4, GreenHell@0.6.2, HamstarHelpers@5.13.0, HUDElementsLib@3.0.2, LockedAbilities@1.2.2, MoreItemInfo@1.3.1, MountedMagicMirrors@1.1.9, Necrotis@1.11.2, Nihilism@3.2.0, Objectives@0.6.2.1, Orbs@1.5.0, PKEMeter@1.5.3, PowerfulMagic@1.7.0, ReadableBooks@1.2.1, RuinedItems@2.8.0, Surroundings@1.0.5, TerrainRemixer@0.10.0, TheMadRanger@1.8.5, TheTrickster@1.6.3
+version = 0.24.0
+modReferences = AdventureModeLore@0.9.0, BossChecklist@1.1.4, BossReigns@1.2.1, Bullwhip@1.2.2.1, CursedBrambles@0.7.0, Enraged@0.9.0, Ergophobia@1.9.1, FindableManaCrystals@1.2.2, Grappletech@1.0.4, GreenHell@0.6.2, HamstarHelpers@5.13.0, HUDElementsLib@3.1.0, LockedAbilities@1.2.2.1, MoreItemInfo@1.3.1, MountedMagicMirrors@1.1.9, Necrotis@1.11.3, Nihilism@3.2.0, Objectives@0.6.3, Orbs@1.5.0, PKEMeter@1.5.3, PowerfulMagic@1.7.0, ReadableBooks@1.2.1, RuinedItems@2.8.0, SpiritWalking@1.0.0, Surroundings@1.0.5, TerrainRemixer@0.10.0, TheMadRanger@1.8.5, TheTrickster@1.6.3
 buildIgnore = *.csproj, *.user, *.bat, obj\*, bin\*, .vs\*, .git\*
 homepage = https://forums.terraria.org/index.php?threads/adventure-mode.85140/

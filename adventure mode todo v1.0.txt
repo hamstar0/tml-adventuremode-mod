@@ -51,6 +51,8 @@ v1
 -	@Set git repos public
 -	Add allowed-mod whitelist (configurable)
 -	Final
+	-	@Enraged
+		-	Meter needs smooth tracking
 	-	Remove Painter from spawns (don't simply block via. Nihilism mod)
 	-	Whitelist pink block breaking
 	-	Fix Guide's false recipe reports?
@@ -110,43 +112,97 @@ v1
 	-	Set seismic charges to have custom sound
 	-	Import seismic charges
 -	@B&D
+	-	Add an item sold by Witch Doctor that changes spirit walk to use mana instead of anima
 	-	Allow crafting Automated Drill Kits (via. magitech; makes a limited distance dropshaft)
 	-	A way to acquire grapple accessory by discovery
 	-	Late game pre-hardmode challenges
+-	@TMR
+	-	Tweak crosshair to look more thematically-relevant
 [v0.25.0]
 -	@Beta
 -	@F&T
 	-	VERIFY: Fix unlimited track kits
 		-	@Info: "if you hold out the rail thing at the end of a track it just keeps going"
+-	@B&D: Warps
 -	@Test MP
 	-	Verify invasion correctly repositions to map center
 	-	Balance anima drain/gain rates
 	-	Verify binocs work in MP
 [v0.24.0]
--	@TMR
-	-	Tweak crosshair to look more thematically-relevant
--	@Objectives
+-	@Objectives (0.6.3)
 	-	Add noise for new objectives
--	@Necrotis (1.11.1)
-	-	Set undead enemies to rarely drop dilluted ectoplasm
-	-	Set each buff to recharge anima slightly
-	-	Add an item sold by Witch Doctor that changes spirit walk to use mana instead of anima
-	-	Configure 'spirit walk' mode to use anima instead of mana
+-	F&T
+	-	@Cursed Brambles (0.7.0)
+		-	When a given bramble decays, make its neighbors decay at random intervals too
+	-	@Necrotis (1.11.3)
+		-	Fix jar dupes (again)
+-	@Lore (0.9.0)
+	-	Add Shadow Mirrors to underground FEs
 -	@Add Spirit Walking mod
-	-	Add to AM
+	-	@Add to AM
+	-	Create custom mana emulation
+	-	Set player view to follow projectile via. hook
+	-	@Test with mana, not anima
+	-	Add activation particle explosion
+	-	Reduce pickup radius of red pellets
+	-	Add blackout debuff
+	-	Remove open air pellets
+	-	Implement player collision removal (0 width)
+	-	End walk if player dead
+	-	Fix spike hits causing player damage
+	-	Fix HUD element hiding
 	-	Generate 'soul pellets' at random that regenerate anima/mana (non-renewable)
+		-	Add pellet pickup blocker for 3 seconds after walk start (make sprite flash)
+		-	Implement pellet pickup memory (local player only)
+		-	Implement pellet pickup effects
+		-	Draw pellets
+		-	Implement pellet caching (per walk)
+		-	Implement pellets
+		-	Randomize pellet point randomizer
+	-	Fix spirit sprite misaligning with trail fx (does not get near solids)
+	-	Show anima hud element (add API function to hide elements)
+	-	Refactor energy use settings to separate mana and anima
+	-	Add mirror effects
+	-	Change mirror to gold
+	-	Prevent mirror use in open air
 	-	Implement spirit walking mode
-		-	Apply spirit fx
-		-	Apply spirit world fx
 		-	Implement finishing dash move (skips past tiles, consumes anima/mana)
-		-	Implement collision behavior (movement halted, rapid loss of anima/mana)
+			-	Create charge-up fx
+			-	Create tele-dash sequence (brief pause, teleport 12 blocks ahead, end walk)
+		-	Fix speedup/slowdown fx
+		-	Fix drowning vulnerability
+		-	Fix incorrect velocity
+		-	Fix rotation
+		-	Fix open air drain fail
+		-	Emit light
+		-	Add spirit ball expiration failsafe
+		-	Implement collision behavior
+			-	On open air collide, bleed energy (add tooltip)
+			-	Add trail fx
+			-	Fix weird skyrocketing bug
+			-	On tile collide, bleed energy
+			-	Replace mount with invisible projectile
+				-	Tie player's movement to projectile
+				-	Create projectile (no gravity, low bounce, small size)
+				-	Remove mount
+			-	Apply a custom mount to make hitbox small
+				-	Make hitbox small
+				-	Define mount
 		-	Implement flight behavior
+			-	Limit accelerate and deaccelerate use to bursts
+			-	Accelerate/deaccelerate with vertical arrows
+			-	Aim with horizontal arrows
+			-	Implement constant directional velocity
+		-	Play sound for flight
+		-	Disable UI layers
+		-	Disable spawns
+		-	Apply spirit world fx
+		-	Add particle trail
+		-	Cleanup fx (suppress armor particles, center spirit sprite)
 		-	Add music
-		-	Implement mode deactivate
-		-	Setup mode (remove player draw, draw a dungeon spirit, make player invincible and debilitated)
+		-	Draw player as dungeon spirit
+		-	Setup mode (make player invincible and debilitated)
 		-	Implement mode activate (costs 20% mana/anima)
-~~
-~~
 	-	Add 'Shadow Mirror' item
 		-	Implement use effect
 		-	Create sprite
@@ -168,9 +224,9 @@ v1
 			-	Player hits a solid tile
 			-	Player enters the underworld
 			-	Player is above ground with no wall
-		-	At the end of the walk, the player makes a short 'jaunt' a few feet, ignoring obstacles
-
-
+		-	At the end of the walk, the player makes a short 'jaunt' a few feet, ignoring obstacle
+-	@HUD Elements Lib (3.1.0)
+-	@Locked Abilities (1.2.2.1)
 [v0.23.0]
 -	@Beta
 -	@Powerful Magic

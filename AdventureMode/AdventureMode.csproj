@@ -83,6 +83,9 @@
     <Reference Include="RuinedItems">
       <HintPath>..\..\..\Ruined Items\Project\RuinedItems\bin\Release\net452\RuinedItems.dll</HintPath>
     </Reference>
+    <Reference Include="SpiritWalking">
+      <HintPath>..\..\..\Spirit Walking\Project\SpiritWalking\bin\Release\net452\SpiritWalking.dll</HintPath>
+    </Reference>
     <Reference Include="TerrainRemixer">
       <HintPath>..\..\..\Terrain Remixer\Project\TerrainRemixer\bin\Release\net452\TerrainRemixer.dll</HintPath>
     </Reference>
