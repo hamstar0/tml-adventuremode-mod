@@ -33,6 +33,7 @@ This mode also requires the following mods:
   Powerful Magic
   Readable Books
   Ruined Items
+  Spirit Walking
   Surroundings
   Terrain Remixer
   The Mad Ranger

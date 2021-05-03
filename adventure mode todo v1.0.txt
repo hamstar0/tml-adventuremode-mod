@@ -111,23 +111,59 @@ v1
 -	@Orbs
 	-	Set seismic charges to have custom sound
 	-	Import seismic charges
+-	@TMR
+	-	Tweak crosshair to look more thematically-relevant
 -	@B&D
 	-	Add an item sold by Witch Doctor that changes spirit walk to use mana instead of anima
 	-	Allow crafting Automated Drill Kits (via. magitech; makes a limited distance dropshaft)
 	-	A way to acquire grapple accessory by discovery
 	-	Late game pre-hardmode challenges
--	@TMR
-	-	Tweak crosshair to look more thematically-relevant
+	-	@Spirit Walking: Spirit Warps
 [v0.25.0]
 -	@Beta
--	@F&T
-	-	VERIFY: Fix unlimited track kits
-		-	@Info: "if you hold out the rail thing at the end of a track it just keeps going"
--	@B&D: Warps
 -	@Test MP
 	-	Verify invasion correctly repositions to map center
 	-	Balance anima drain/gain rates
 	-	Verify binocs work in MP
+-	MP F&T 1
+	-	Fix angler not being removed
+	-	Fix pots failing to drop spiders
+	-	Weeds grown?
+	-	Cyborgs can't be mined?
+	-	Shadow mirror failed to load?
+	-	@Nihilism
+		-	Debug Nihilism.NetProtocol.FiltersProtocol
+	-	@Grappletech
+		-	Add inbox and chat alert on equipping a hook that it has new behavior
+	-	@Trickster
+		-	Premature TricksterStateProtocol send?
+	-	@MH
+		-	Debug CursorPositionProtocol spam
+	-	@Lore
+		-	Shadow mirror inside PKE FE?
+		-	PKE FE on top of big tree?
+	-	@Necrotis
+		-	Fix pots dropping multiple ectos
+	-	@TMR
+		-	Verify no premature multi-hitting
+		-	Use low res ammo on HUD
+		-	Missing ammo on HUD?
+	-	@Locked Abilities
+		-	Fix ability item duping on failed accessory equip
+		-	Fix ability items not checking properly for grapple (in MP only?)
+	-	@Ergo
+		-	Debug lag from using furnishing kit
+		-	Debug missing mirror in furnishing kit
+		-	Fix mirror placement failure (whitelist fail?)
+	-	Fix missing client mods (MoreItemInfo, Surroundings?)
+??
+??
+	-	Fix missing raft item
+	-	Fix current log errors
+-	Create mod pack mod
+
+
+-	Spirit Walking (1.0.0.1)
 [v0.24.0]
 -	@Objectives (0.6.3)
 	-	Add noise for new objectives

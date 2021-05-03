@@ -3,13 +3,12 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
-using RuinedItems;
 
 
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
 		public void LoadRuinedItems() {
-			var config = RuinedItemsConfig.Instance;
+			var config = RuinedItems.RuinedItemsConfig.Instance;
 
 			config.SetOverride( nameof(config.RuinedItemsLockedFromUse), false );
 			config.SetOverride( nameof(config.CraftRuinPercentChance), 0.1f );

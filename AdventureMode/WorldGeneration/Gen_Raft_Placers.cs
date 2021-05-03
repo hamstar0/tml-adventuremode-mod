@@ -129,6 +129,8 @@ namespace AdventureMode.WorldGeneration {
 			int i = 0;
 			Item[] chestItems = Main.chest[chestIdx].item;
 
+			//
+
 			string[] pages = AMWorldGen.GetBriefingTextLines()
 				.Select( lines => string.Join( "\n", lines ) )
 				.ToArray();
@@ -138,6 +140,8 @@ namespace AdventureMode.WorldGeneration {
 				pages: pages
 			);
 			i++;
+
+			//
 
 			foreach( ItemQuantityDefinition def in AMConfig.Instance.RaftBarrelContents ) {
 				chestItems[i] = def.GetItem();

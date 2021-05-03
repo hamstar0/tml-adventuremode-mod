@@ -31,45 +31,6 @@ namespace AdventureMode {
 			AMMod.Instance = this;
 		}
 
-		////////////////
-
-		public override void Load() {
-			void loadMod( string modName, Action loader ) {
-				try {
-					loader();
-				} catch( Exception e ) {
-					LogHelpers.Warn( "Error loading "+modName+" - "+e.ToString() );
-				}
-			}
-
-			//
-
-			EntityGroups.Enable();
-
-			loadMod( "Grappletech", this.ModInteractions.LoadGrappletech );
-			loadMod( "GreenHell", this.ModInteractions.LoadGreenHell );
-			loadMod( "GreenHell", this.ModInteractions.LoadPKEMeter );
-			loadMod( "Bullwhip", this.ModInteractions.LoadBullwhip );
-			loadMod( "Nihilism", this.ModInteractions.LoadNihilism );
-			loadMod( "Necrotis", this.ModInteractions.LoadNecrotis );
-			loadMod( "CursedBrambles", this.ModInteractions.LoadCursedBrambles );
-			loadMod( "ErgophobiaAndMMM", this.ModInteractions.LoadErgophobiaAndMountedMagicMirrors );
-			loadMod( "TricksterAndLockedAbilies", this.ModInteractions.LoadTricksterAndLockedAbilies );
-			loadMod( "LockedAbilities", this.ModInteractions.LoadLockedAbilities );
-			loadMod( "Orbs", this.ModInteractions.LoadOrbs );
-			loadMod( "TerrainRemixer", this.ModInteractions.LoadTerrainRemixer );
-			loadMod( "LoreAndObjectives", this.ModInteractions.LoadLoreAndObjectives );
-			loadMod( "TheMadRanger", this.ModInteractions.LoadTheMadRanger );
-			loadMod( "PowerfulMagic", this.ModInteractions.LoadPowerfulMagic );
-			loadMod( "RuinedItems", this.ModInteractions.LoadRuinedItems );
-		}
-
-		////
-
-		public override void Unload() {
-			AMMod.Instance = null;
-		}
-
 
 		////////////////
 
