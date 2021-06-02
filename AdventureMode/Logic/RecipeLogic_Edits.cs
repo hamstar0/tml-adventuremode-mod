@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Services.EntityGroups;
-using HamstarHelpers.Services.Hooks.LoadHooks;
+using ModLibsCore.Libraries.Debug;
+using ModLibsEntityGroups.Services.EntityGroups;
 using Ergophobia.Items.FramingPlank;
 using Necrotis.Items;
 
@@ -18,10 +17,7 @@ namespace AdventureMode.Logic {
 			RecipeLogic.EditElixirRecipe();
 			RecipeLogic.EditBossRecipes();
 
-			CustomLoadHooks.AddHook( EntityGroups.LoadedAllValidator, ( _ ) => {
-				RecipeLogic.ApplyRecipeWhitelistingAndNewTileRequirements();
-				return false;
-			} );
+			RecipeLogic.ApplyRecipeWhitelistingAndNewTileRequirements();
 		}
 
 		////
@@ -89,7 +85,7 @@ namespace AdventureMode.Logic {
 			foreach( int bossItemType in bossItemTypes ) {
 				var rf = new RecipeFinder();
 				rf.SetResult( bossItemType );
-//LogHelpers.Log( "boss item "+bossItemType+" recipes: "+rf.SearchRecipes().Count );
+//LogLibraries.Log( "boss item "+bossItemType+" recipes: "+rf.SearchRecipes().Count );
 
 				foreach( Recipe r in rf.SearchRecipes() ) {
 					RecipeLogic.EditBossRecipe( r );
@@ -105,7 +101,7 @@ namespace AdventureMode.Logic {
 			RecipeGroup rg = RecipeGroup.recipeGroups[ grpId ];
 
 			int grpItemType = rg.ValidItems[ rg.IconicItemIndex ];
-//LogHelpers.Log( "grpId:"+grpId+ " - rg:"+string.Join(",", rg.ValidItems)+" - grpItemType:"+grpItemType );
+//LogLibraries.Log( "grpId:"+grpId+ " - rg:"+string.Join(",", rg.ValidItems)+" - grpItemType:"+grpItemType );
 			re.AddIngredient( grpItemType, AMConfig.Instance.StrangePlantsAddedPerBossSummonItemRecipe );
 		}
 

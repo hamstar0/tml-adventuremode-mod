@@ -4,9 +4,9 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.ID;
-using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Services.Timers;
-using HamstarHelpers.Services.Hooks.LoadHooks;
+using ModLibsCore.Libraries.Debug;
+using ModLibsCore.Services.Timers;
+using ModLibsCore.Services.Hooks.LoadHooks;
 using AdventureMode.WorldGeneration;
 
 
@@ -65,7 +65,7 @@ namespace AdventureMode.Logic {
 
 				WorldLogic._RaftBarrelRestockTimerSinceLastLoad = tag.GetInt( "raft_barrel_restock_timer" );
 			} else {
-				LogHelpers.Alert( "World has no raft barrel." );
+				LogLibraries.Alert( "World has no raft barrel." );
 			}
 
 			LoadHooks.AddPostWorldLoadEachHook( () => {
@@ -76,7 +76,7 @@ namespace AdventureMode.Logic {
 
 		private static void LoadRaftMirror( AMWorld myworld, TagCompound tag ) {
 			if( !tag.ContainsKey("raft_mirror_x") ) {
-				LogHelpers.Alert( "World has no raft mirror." );
+				LogLibraries.Alert( "World has no raft mirror." );
 				return;
 			}
 
@@ -92,7 +92,7 @@ namespace AdventureMode.Logic {
 		public static void SaveRaftInfo( TagCompound tag ) {
 			var myworld = ModContent.GetInstance<AMWorld>();
 			if( !myworld.Raft.IsInitialized ) {
-				LogHelpers.Warn( "Could not save raft info." );
+				LogLibraries.Warn( "Could not save raft info." );
 				return;
 			}
 

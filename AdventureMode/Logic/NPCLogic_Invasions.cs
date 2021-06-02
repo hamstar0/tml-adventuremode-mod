@@ -1,20 +1,20 @@
 ﻿using System;
 using Terraria;
-using HamstarHelpers.Helpers.NPCs;
-using HamstarHelpers.Helpers.World;
+using ModLibsGeneral.Libraries.NPCs;
+using ModLibsGeneral.Libraries.World;
 
 
 namespace AdventureMode.Logic {
 	static partial class NPCLogic {
 		public static void SetInvasionDefaults( NPC npc ) {
-			//DebugHelpers.Print( "invasionstate", "invasionSize:"+Main.invasionSize
+			//DebugLibraries.Print( "invasionstate", "invasionSize:"+Main.invasionSize
 			//	+", invasionProgress:"+Main.invasionProgress
 			//	+", invasionProgressMax:"+Main.invasionProgressMax
 			//	+", invasionType:"+Main.invasionType
-			//	+", y:"+(npc.position.Y < WorldHelpers.DirtLayerTopTileY)
+			//	+", y:"+(npc.position.Y < WorldLibraries.DirtLayerTopTileY)
 			//	+", wet:"+npc.wet);
-			if( npc.position.Y < (WorldHelpers.DirtLayerTopTileY * 16) && npc.wet ) {
-				NPCHelpers.Remove( npc );
+			if( npc.position.Y < (WorldLocationLibraries.DirtLayerTopTileY * 16) && npc.wet ) {
+				NPCLibraries.Remove( npc );
 			}
 		}
 	}

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Terraria;
 using Terraria.ID;
-using HamstarHelpers.Helpers.World;
+using ModLibsGeneral.Libraries.World;
 using ReadableBooks.Items.ReadableBook;
 
 
@@ -72,7 +72,7 @@ namespace AdventureMode.Logic {
 				items.Add( makeItem(ItemID.Torch, 15) );
 			}
 
-			switch( WorldHelpers.GetSize() ) {
+			switch( WorldLibraries.GetSize() ) {
 			case WorldSize.SubSmall:
 				items.Add( makeItem( ItemID.RopeCoil, 15 ) );
 				break;

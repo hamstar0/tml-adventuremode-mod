@@ -1,8 +1,7 @@
 ﻿using System;
 using Terraria;
 using Terraria.ID;
-using Terraria.World.Generation;
-using HamstarHelpers.Helpers.Debug;
+using ModLibsCore.Libraries.Debug;
 
 
 namespace AdventureMode.WorldGeneration {
@@ -45,12 +44,12 @@ namespace AdventureMode.WorldGeneration {
 					int signIdx = Sign.ReadSign( left, top, true );
 					Main.sign[signIdx].text = text;
 
-					LogHelpers.Log( signType+" sign placed at " + left + ", " + top );
+					LogLibraries.Log( signType+" sign placed at " + left + ", " + top );
 
 					placed = true;
 					break;
 				} else {
-					LogHelpers.Alert( "Could not place "+signType+" sign." );
+					LogLibraries.Alert( "Could not place "+signType+" sign." );
 				}
 			}
 

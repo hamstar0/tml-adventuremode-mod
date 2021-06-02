@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Concurrent;
 using Terraria;
 using Terraria.ID;
-using HamstarHelpers.Services.Timers;
+using ModLibsCore.Services.Timers;
 
 
 namespace AdventureMode.Logic {

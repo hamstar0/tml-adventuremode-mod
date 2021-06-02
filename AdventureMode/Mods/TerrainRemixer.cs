@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Terraria.ID;
-using HamstarHelpers.Helpers.Debug;
+using ModLibsCore.Libraries.Debug;
 using TerrainRemixer;
 
 

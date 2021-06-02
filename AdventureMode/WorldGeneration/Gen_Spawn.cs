@@ -2,8 +2,8 @@
 using Terraria;
 using Terraria.World.Generation;
 using Terraria.ModLoader;
-using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Helpers.World;
+using ModLibsCore.Libraries.Debug;
+using ModLibsGeneral.Libraries.World;
 
 
 namespace AdventureMode.WorldGeneration {
@@ -17,15 +17,17 @@ namespace AdventureMode.WorldGeneration {
 			Main.spawnTileX = x;
 			Main.spawnTileY = y;
 
-			LogHelpers.Alert( "Spawn relocated to " + x + ", " + y );
+			LogLibraries.Alert( "Spawn relocated to " + x + ", " + y );
 		}
 
 
 		////
 
 		public static void SetBeachSpawn( GenerationProgress progress ) {
+			int skyBot = WorldLocationLibraries.SkyLayerBottomTileY;
+
 			bool checkColumns( int myTileX, out int myTileY ) {
-				for( myTileY = WorldHelpers.SkyLayerBottomTileY; myTileY < WorldHelpers.SurfaceLayerBottomTileY; myTileY++ ) {
+				for( myTileY = skyBot; myTileY < skyBot; myTileY++ ) {
 					Tile tile = Framing.GetTileSafely( myTileX, myTileY );
 					if( tile == null || !tile.active() ) {
 						continue;

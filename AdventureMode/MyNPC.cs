@@ -2,8 +2,8 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Services.Timers;
+using ModLibsCore.Libraries.Debug;
+using ModLibsCore.Services.Timers;
 using AdventureMode.Logic;
 
 
@@ -38,7 +38,7 @@ namespace AdventureMode {
 
 			////DEBUG////
 			if( npc.type == NPCID.KingSlime ) {
-				LogHelpers.Log( "KING SLIME SPAWN DETECTED - "+string.Join("\n ", DebugHelpers.GetContextSlice()) );
+				LogLibraries.Log( "KING SLIME SPAWN DETECTED - "+string.Join("\n ", DebugLibraries.GetContextSlice()) );
 			}
 		}
 

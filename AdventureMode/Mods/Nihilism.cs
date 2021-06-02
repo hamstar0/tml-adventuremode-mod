@@ -1,22 +1,19 @@
 using System;
 using Terraria.ID;
 using Terraria.ModLoader.Config;
-using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Helpers.TModLoader;
-using HamstarHelpers.Services.EntityGroups;
-using HamstarHelpers.Services.EntityGroups.Definitions;
-using HamstarHelpers.Services.Hooks.LoadHooks;
+using ModLibsCore.Libraries.Debug;
+using ModLibsCore.Libraries.TModLoader;
+using ModLibsCore.Services.Hooks.LoadHooks;
+using ModLibsEntityGroups.Services.EntityGroups.Definitions;
 using Nihilism;
 
 
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
 		public void LoadNihilism() {
-			EntityGroups.Enable();
-
 			NihilismAPI.InstancedFiltersOn();
 			NihilismAPI.OnSyncOrWorldLoad( ( isSync ) => {
-				if( isSync && LoadHelpers.IsWorldBeingPlayed() ) {
+				if( isSync && LoadLibraries.IsWorldBeingPlayed() ) {
 					return;
 				}
 

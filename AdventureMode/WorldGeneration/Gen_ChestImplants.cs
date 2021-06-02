@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Helpers.World;
+using ModLibsCore.Libraries.Debug;
+using ModLibsGeneral.Libraries.World;
 using MountedMagicMirrors.Items;
 using Orbs.Items;
 
@@ -17,7 +17,7 @@ namespace AdventureMode.WorldGeneration {
 				percentChance: chancePerChest
 			);
 
-			WorldChestHelpers.AddToWorldChests( fillDef );
+			WorldChestLibraries.AddToWorldChests( fillDef );
 		}
 
 		
@@ -27,7 +27,7 @@ namespace AdventureMode.WorldGeneration {
 				percentChance: chancePerChest
 			);
 
-			WorldChestHelpers.RemoveFromWorldChests( fillDef );
+			WorldChestLibraries.RemoveFromWorldChests( fillDef );
 		}
 
 		
@@ -45,7 +45,7 @@ namespace AdventureMode.WorldGeneration {
 				} );
 			var chestDef = new ChestTypeDefinition( TileID.Containers, null );
 
-			IList<Chest> modifiedChests = WorldChestHelpers.RemoveFromWorldChests( unfillDef, chestDef );
+			IList<Chest> modifiedChests = WorldChestLibraries.RemoveFromWorldChests( unfillDef, chestDef );
 			foreach( Chest chest in modifiedChests ) {
 				orbFillDef.Fill( chest );
 			}

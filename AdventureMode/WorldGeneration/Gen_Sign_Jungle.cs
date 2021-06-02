@@ -3,15 +3,17 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.World.Generation;
-using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Helpers.World;
+using ModLibsCore.Libraries.Debug;
+using ModLibsGeneral.Libraries.World;
 
 
 namespace AdventureMode.WorldGeneration {
 	partial class AMWorldGen {
 		public static bool GetJungleSignBaseCoordinates( out int tileX, out int tileY ) {
+			int dirtTop = WorldLocationLibraries.DirtLayerTopTileY;
+
 			int checkColumn( int myTileX ) {
-				for( int myTileY=40; myTileY<WorldHelpers.DirtLayerTopTileY; myTileY++ ) {
+				for( int myTileY=40; myTileY< dirtTop; myTileY++ ) {
 					Tile tile = Main.tile[myTileX, myTileY];
 					if( tile?.active() == true && tile.type == TileID.JungleGrass ) {
 						return myTileY;
@@ -71,7 +73,7 @@ namespace AdventureMode.WorldGeneration {
 		public static void PlaceJungleSign( GenerationProgress progress ) {
 			int left, top;
 			if( !AMWorldGen.GetJungleSignBaseCoordinates( out left, out top ) ) {
-				LogHelpers.Alert( "Could not find jungle." );
+				LogLibraries.Alert( "Could not find jungle." );
 				return;
 			}
 

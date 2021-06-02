@@ -2,7 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HamstarHelpers.Helpers.Debug;
+using ModLibsCore.Libraries.Debug;
 using AdventureMode.Logic;
 
 
@@ -11,7 +11,7 @@ namespace AdventureMode {
 		//public override void PreUpdate() {
 //int guide = NPC.FindFirstNPC( NPCID.Guide );
 //if( guide != -1 ) {
-//	DebugHelpers.Print( "guide", Main.npc[guide].position.ToString() );
+//	DebugLibraries.Print( "guide", Main.npc[guide].position.ToString() );
 //}
 		//}
 

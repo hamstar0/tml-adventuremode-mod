@@ -5,10 +5,10 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.World.Generation;
-using HamstarHelpers.Classes.Errors;
-using HamstarHelpers.Classes.Tiles.TilePattern;
-using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Helpers.Tiles;
+using ModLibsCore.Classes.Errors;
+using ModLibsCore.Libraries.Debug;
+using ModLibsTiles.Classes.Tiles.TilePattern;
+using ModLibsTiles.Libraries.Tiles;
 
 
 namespace AdventureMode.WorldGeneration {
@@ -22,19 +22,19 @@ namespace AdventureMode.WorldGeneration {
 					TileID.PinkDungeonBrick
 				}
 			} );
-			Rectangle? bounds = TileFinderHelpers.FindBoxForAllOf( pattern: pattern );
+			Rectangle? bounds = TileFinderLibraries.FindBoxForAllOf( pattern: pattern );
 
 			var myworld = ModContent.GetInstance<AMWorld>();
 			(int, int)? point = AMWorldGen.ScanForDungeonBottom( bounds.Value, out int scanCount );
 			if( !point.HasValue ) {
-				throw new ModHelpersException( "Could not locate viable bottom point within the dungeon "
+				throw new ModLibsException( "Could not locate viable bottom point within the dungeon "
 					+"(scanned "+scanCount+" tiles within "+bounds.Value+")." );
 			}
 
 			myworld.DungeonBottom = point.Value;
 
 			if( AMConfig.Instance.DebugModeInfo ) {
-				LogHelpers.Log( "Dungeon occupies tile range " + bounds.Value.ToString() );
+				LogLibraries.Log( "Dungeon occupies tile range " + bounds.Value.ToString() );
 			}
 
 			progress.Set( 1f );

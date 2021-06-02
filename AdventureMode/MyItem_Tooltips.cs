@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Helpers.Items.Attributes;
+using ModLibsCore.Libraries.Debug;
+using ModLibsGeneral.Libraries.Items.Attributes;
 using MountedMagicMirrors.Items;
 
 
@@ -25,7 +25,7 @@ namespace AdventureMode {
 
 			void addTip( string ctx, string desc ) {
 				TooltipLine tip = new TooltipLine( this.mod, "AdventureMode"+ctx, modName + desc );
-				ItemInformationAttributeHelpers.ApplyTooltipAt( tooltips, tip );
+				ItemInformationAttributeLibraries.ApplyTooltipAt( tooltips, tip );
 			}
 
 			//
@@ -43,7 +43,7 @@ namespace AdventureMode {
 				addTip( "StrangePlant", "Important: This item is now used as an ingredient for boss summon items" );
 				break;
 			default:
-				//if( config.GrappleChainAmmoRate > 0 && ItemAttributeHelpers.IsGrapple( item ) ) {
+				//if( config.GrappleChainAmmoRate > 0 && ItemAttributeLibraries.IsGrapple( item ) ) {
 				//	addTip( "Chains", "Consumes " + config.GrappleChainAmmoRate + " chain(s) per use" );
 				//}
 				if( item.type == ModContent.ItemType<MountableMagicMirrorTileItem>() ) {

@@ -3,10 +3,10 @@ using Terraria;
 using Terraria.ID;
 using Terraria.Utilities;
 using Terraria.ModLoader;
-using HamstarHelpers.Helpers.TModLoader;
-using HamstarHelpers.Helpers.World;
-using HamstarHelpers.Services.Hooks.ExtendedHooks;
-using HamstarHelpers.Services.Timers;
+using ModLibsCore.Libraries.TModLoader;
+using ModLibsGeneral.Libraries.World;
+using ModLibsGeneral.Services.Hooks.ExtendedHooks;
+using ModLibsCore.Services.Timers;
 using FindableManaCrystals.Tiles;
 
 
@@ -35,7 +35,7 @@ namespace AdventureMode.Logic {
 			if( fail || effectOnly ) {
 				return;
 			}
-			if( Main.netMode != NetmodeID.Server && !LoadHelpers.IsCurrentPlayerInGame() ) {
+			if( Main.netMode != NetmodeID.Server && !LoadLibraries.IsCurrentPlayerInGame() ) {
 				return;
 			}
 
@@ -52,11 +52,11 @@ namespace AdventureMode.Logic {
 			}
 
 			// No spiders in underworld
-			if( j >= WorldHelpers.UnderworldLayerTopTileY ) {
+			if( j >= WorldLocationLibraries.UnderworldLayerTopTileY ) {
 				return;
 			}
 
-			UnifiedRandom rand = TmlHelpers.SafelyGetRand();
+			UnifiedRandom rand = TmlLibraries.SafelyGetRand();
 			if( rand.NextFloat() >= AMConfig.Instance.PotSurprisePercentChance ) {
 				return;
 			}

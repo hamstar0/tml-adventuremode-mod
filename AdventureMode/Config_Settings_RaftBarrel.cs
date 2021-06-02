@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader.Config;
-using HamstarHelpers.Helpers.World;
+using ModLibsGeneral.Libraries.World;
 using Ergophobia.Items.FramingPlank;
 using Ergophobia.Items.HouseFurnishingKit;
 using Ergophobia.Items.HouseFramingKit;
@@ -61,7 +61,7 @@ namespace AdventureMode {
 			item.stack = this.Quantity;
 
 			if( this.ScaleQuantityByWorldSize ) {
-				switch( WorldHelpers.GetSize() ) {
+				switch( WorldLibraries.GetSize() ) {
 				case WorldSize.SubSmall:
 					item.stack = (int)((float)item.stack * 0.75f);
 					break;

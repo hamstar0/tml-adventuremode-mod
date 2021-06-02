@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader.Config;
-using HamstarHelpers.Classes.DataStructures;
-using HamstarHelpers.Services.EntityGroups;
-using HamstarHelpers.Services.EntityGroups.Definitions;
+using ModLibsCore.Classes.DataStructures;
+using ModLibsEntityGroups.Services.EntityGroups;
+using ModLibsEntityGroups.Services.EntityGroups.Definitions;
 
 
 namespace AdventureMode.Logic {
@@ -35,18 +35,16 @@ namespace AdventureMode.Logic {
 				return true;
 			}
 
-			if( EntityGroups.IsLoaded ) {
-				IReadOnlySet<int> grp;
+			IReadOnlySet<int> grp;
 
-				EntityGroups.TryGetItemGroup( ItemGroupIDs.AnyOreBar, out grp );  // Modded bar?
-				if( grp?.Contains( item.type ) ?? false ) {
-					return true;
-				}
+			EntityGroups.TryGetItemGroup( ItemGroupIDs.AnyOreBar, out grp );  // Modded bar?
+			if( grp?.Contains( item.type ) ?? false ) {
+				return true;
+			}
 
-				EntityGroups.TryGetItemGroup( ItemGroupIDs.AnyVanillaGem, out grp );
-				if( grp?.Contains( item.type ) ?? false ) {
-					return true;
-				}
+			EntityGroups.TryGetItemGroup( ItemGroupIDs.AnyVanillaGem, out grp );
+			if( grp?.Contains( item.type ) ?? false ) {
+				return true;
 			}
 
 			return false;

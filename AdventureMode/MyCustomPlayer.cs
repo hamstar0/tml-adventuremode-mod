@@ -3,10 +3,10 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HamstarHelpers.Classes.PlayerData;
-using HamstarHelpers.Helpers.TModLoader;
-using HamstarHelpers.Services.Messages.Inbox;
-using HamstarHelpers.Services.Timers;
+using ModLibsCore.Classes.PlayerData;
+using ModLibsCore.Libraries.TModLoader;
+using ModLibsCore.Services.Timers;
+using ModLibsInterMod.Libraries.Mods.APIMirrors.ModHelpersAPIMirrors;
 
 
 namespace AdventureMode {
@@ -31,16 +31,16 @@ namespace AdventureMode {
 
 			Timers.SetTimer( 2 * 60, false, () => {
 				string _;
-				InboxMessages.ReadMessage( "nihilism_init", out _ );
+				InboxAPIMirrorsLibraries.ReadMessage( "nihilism_init", out _ );
 				return false;
 			} );
 
 			Timers.SetTimer( 15 * 60, true, () => {
 				if( !isNotAdventurer || !isNotAdventureWorld ) {
 					if( Main.netMode == NetmodeID.SinglePlayer || Main.netMode == NetmodeID.MultiplayerClient ) {
-						TmlHelpers.ExitToMenu( false );
+						TmlLibraries.ExitToMenu( false );
 					} else if( Main.netMode == NetmodeID.Server ) {
-						TmlHelpers.ExitToDesktop( false );
+						TmlLibraries.ExitToDesktop( false );
 					}
 				}
 				return false;

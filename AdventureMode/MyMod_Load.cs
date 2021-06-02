@@ -1,8 +1,8 @@
 using System;
 using Terraria;
 using Terraria.ModLoader;
-using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Services.EntityGroups;
+using ModLibsCore.Libraries.Debug;
+using ModLibsEntityGroups.Services.EntityGroups;
 
 
 namespace AdventureMode {
@@ -13,7 +13,7 @@ namespace AdventureMode {
 			void loadMod( string[] modNames, Action loader ) {
 				foreach( string modName in modNames ) {
 					if( ModLoader.GetMod(modName) == null ) {
-						LogHelpers.Warn( "Error loading missing mod "+ modName );
+						LogLibraries.Warn( "Error loading missing mod "+ modName );
 						return;
 					}
 				}
@@ -21,13 +21,11 @@ namespace AdventureMode {
 				try {
 					loader();
 				} catch( Exception e ) {
-					LogHelpers.Warn( "Error loading "+string.Join(", ", modNames)+" - "+e.ToString() );
+					LogLibraries.Warn( "Error loading "+string.Join(", ", modNames)+" - "+e.ToString() );
 				}
 			}
 
 			//
-
-			EntityGroups.Enable();
 
 			loadMod(
 				new string[] { "Grappletech" },

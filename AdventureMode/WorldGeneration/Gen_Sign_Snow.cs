@@ -2,15 +2,15 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.World.Generation;
-using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Helpers.World;
+using ModLibsCore.Libraries.Debug;
+using ModLibsGeneral.Libraries.World;
 
 
 namespace AdventureMode.WorldGeneration {
 	partial class AMWorldGen {
 		public static bool GetSnowSignBaseCoordinates( out int tileX, out int tileY ) {
 			int findTileInColumn( int myTileX ) {
-				for( int myTileY=40; myTileY<WorldHelpers.DirtLayerTopTileY; myTileY++ ) {
+				for( int myTileY=40; myTileY<WorldLocationLibraries.DirtLayerTopTileY; myTileY++ ) {
 					Tile tile = Main.tile[ myTileX, myTileY ];
 					if( tile?.active() == true && tile.type == TileID.SnowBlock ) {
 						return myTileY;
@@ -65,7 +65,7 @@ namespace AdventureMode.WorldGeneration {
 		public static void PlaceSnowSign( GenerationProgress progress ) {
 			int left, top;
 			if( !AMWorldGen.GetSnowSignBaseCoordinates( out left, out top ) ) {
-				LogHelpers.Alert( "Could not find snow biome." );
+				LogLibraries.Alert( "Could not find snow biome." );
 				return;
 			}
 

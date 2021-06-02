@@ -4,8 +4,8 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.World.Generation;
-using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Helpers.Tiles;
+using ModLibsCore.Libraries.Debug;
+using ModLibsGeneral.Libraries.Tiles;
 using MountedMagicMirrors.Tiles;
 using ReadableBooks.Items.ReadableBook;
 
@@ -56,7 +56,7 @@ namespace AdventureMode.WorldGeneration {
 						var mirrorType = (ushort)ModContent.TileType<MountedMagicMirrorTile>();
 
 						//WorldGen.Place3x3Wall( left+x, top+y, (ushort)ModContent.TileType<MountedMagicMirrorTile>(), 0 );	//3,1
-						TilePlacementHelpers.Place3x3Wall( tileX, tileY, mirrorType );  //2,1
+						TilePlacementLibraries.Place3x3Wall( tileX, tileY, mirrorType );  //2,1
 
 						if( Main.tile[tileX, tileY].type == mirrorType ) {
 							components.Mirror = (tileX, tileY);

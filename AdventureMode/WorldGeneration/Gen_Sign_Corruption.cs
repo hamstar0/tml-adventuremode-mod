@@ -2,15 +2,17 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.World.Generation;
-using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Helpers.World;
+using ModLibsCore.Libraries.Debug;
+using ModLibsGeneral.Libraries.World;
 
 
 namespace AdventureMode.WorldGeneration {
 	partial class AMWorldGen {
 		public static bool GetCorruptionSignBaseCoordinates( out int tileX, out int tileY ) {
+			int dirtTop = WorldLocationLibraries.DirtLayerTopTileY;
+
 			int checkColumn( int myTileX ) {
-				for( int myTileY=40; myTileY<WorldHelpers.DirtLayerTopTileY; myTileY++ ) {
+				for( int myTileY=40; myTileY<dirtTop; myTileY++ ) {
 					Tile tile = Main.tile[myTileX, myTileY];
 					if( tile?.active() != true ) {
 						continue;
@@ -74,7 +76,7 @@ namespace AdventureMode.WorldGeneration {
 		public static void PlaceCorruptionSign( GenerationProgress progress ) {
 			int left, top;
 			if( !AMWorldGen.GetCorruptionSignBaseCoordinates( out left, out top ) ) {
-				LogHelpers.Alert( "Could not find corruption/crimson." );
+				LogLibraries.Alert( "Could not find corruption/crimson." );
 				return;
 			}
 

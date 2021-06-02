@@ -24,7 +24,7 @@ This mode also requires the following mods:
   Green Hell
   HUD Elements Lib
   Locked Abilities
-  Mod Helpers
+  Mod Libs (pack)
   More Item Info
   Mounted Magic Mirrors
   Necrotis

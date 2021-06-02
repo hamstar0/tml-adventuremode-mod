@@ -6,7 +6,7 @@ using Terraria.ID;
 using Terraria.GameContent.Generation;
 using Terraria.ModLoader;
 using Terraria.World.Generation;
-using HamstarHelpers.Helpers.Debug;
+using ModLibsCore.Libraries.Debug;
 using AdventureMode.WorldGeneration;
 
 

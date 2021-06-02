@@ -6,15 +6,15 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.World.Generation;
-using HamstarHelpers.Classes.Tiles.TilePattern;
-using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Helpers.Tiles;
+using ModLibsCore.Libraries.Debug;
+using ModLibsTiles.Libraries.Tiles;
+using ModLibsTiles.Classes.Tiles.TilePattern;
 
 
 namespace AdventureMode.WorldGeneration {
 	partial class AMWorldGen {
 		public static void ScanUndergroundDesert( GenerationProgress progress ) {
-			ISet<Rectangle> boxes = TileFinderHelpers.FindBoxesOfAllContiguousMatches(
+			ISet<Rectangle> boxes = TileFinderLibraries.FindBoxesOfAllContiguousMatches(
 				pattern: new TilePattern( new TilePatternBuilder {
 					IsAnyOfWallType = new HashSet<int> { WallID.HardenedSand, WallID.Sandstone }
 				} ),
@@ -30,7 +30,7 @@ namespace AdventureMode.WorldGeneration {
 				myworld.UndergroundDesertBounds = box;
 
 				if( AMConfig.Instance.DebugModeInfo ) {
-					LogHelpers.Log( "Underground desert occupies tile range " + box.ToString() );
+					LogLibraries.Log( "Underground desert occupies tile range " + box.ToString() );
 				}
 			}
 

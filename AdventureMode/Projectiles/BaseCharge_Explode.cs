@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HamstarHelpers.Helpers.Fx;
+using ModLibsGeneral.Libraries.Fx;
 
 
 namespace AdventureMode.Projectiles {
@@ -58,7 +58,7 @@ namespace AdventureMode.Projectiles {
 			tile.type = this.GetReplacementTileType( tile.type )
 				?? tile.type;
 
-			ParticleFxHelpers.MakeDustCloud( new Vector2((tileX*16) + 8, (tileY*16) + 8), 1, 0.3f, 0.65f );
+			ParticleFxLibraries.MakeDustCloud( new Vector2((tileX*16) + 8, (tileY*16) + 8), 1, 0.3f, 0.65f );
 
 			WorldGen.SquareTileFrame( tileX, tileY, true );
 		}

@@ -2,7 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HamstarHelpers.Helpers.Debug;
+using ModLibsCore.Libraries.Debug;
 
 
 namespace AdventureMode.Logic {
@@ -16,7 +16,7 @@ namespace AdventureMode.Logic {
 			binocs.SetDefaults( ItemID.Binoculars );
 
 			if( nextSlot >= shop.item.Length ) {
-				LogHelpers.Alert( "Merchant shop could not finish setup." );
+				LogLibraries.Alert( "Merchant shop could not finish setup." );
 				return;
 			}
 			shop.item[ nextSlot++ ] = binocs;
@@ -29,7 +29,7 @@ namespace AdventureMode.Logic {
 			whip.SetDefaults( ModContent.ItemType<Bullwhip.Items.BullwhipItem>() );
 
 			if( nextSlot >= shop.item.Length ) {
-				LogHelpers.Alert( "Merchant shop could not finish setup." );
+				LogLibraries.Alert( "Merchant shop could not finish setup." );
 				return;
 			}
 			shop.item[nextSlot++] = whip;

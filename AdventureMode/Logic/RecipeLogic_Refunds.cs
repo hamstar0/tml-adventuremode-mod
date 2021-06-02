@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HamstarHelpers.Helpers.Items.Attributes;
+using ModLibsGeneral.Libraries.Items.Attributes;
 using AdventureMode.Recipes;
 
 
@@ -71,7 +71,7 @@ namespace AdventureMode.Logic {
 
 			foreach( Recipe recipe in Main.recipe ) {
 				if( recipe.requiredItem.Any( i => !i.IsAir && oreMadeItemTypes.Contains( i.type ) ) ) {
-					if( ItemAttributeHelpers.IsArmor( recipe.createItem ) ) {
+					if( ItemAttributeLibraries.IsArmor( recipe.createItem ) ) {
 						oreArmorRecipes.Add( recipe );
 					}
 				}

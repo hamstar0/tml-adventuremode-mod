@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
-using HamstarHelpers.Helpers.Debug;
+using ModLibsCore.Libraries.Debug;
 using AdventureMode.Logic;
 using AdventureMode.WorldGeneration;
 
@@ -144,7 +144,11 @@ namespace AdventureMode {
 				writer.Write( (int)this.UndergroundDesertBounds.Width );
 				writer.Write( (int)this.UndergroundDesertBounds.Height );
 				writer.Write( (int)this.DungeonBottom.TileX );
-				writer.Write( (int)this.DungeonBottom.TileY );
+				writer.Write( (int)this.DungeonBottom.TileX );
+				writer.Write( (int)this.OldSpawn.TileX );
+				writer.Write( (int)this.OldSpawn.TileY );
+				writer.Write( (int)this.NewSpawn.TileX );
+				writer.Write( (int)this.NewSpawn.TileY );
 			} catch { }
 		}
 

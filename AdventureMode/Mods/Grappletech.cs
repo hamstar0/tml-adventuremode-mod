@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HamstarHelpers.Helpers.Debug;
+using ModLibsCore.Libraries.Debug;
 using Ergophobia.Tiles;
 
 

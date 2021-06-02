@@ -23,7 +23,7 @@ namespace AdventureMode.Logic {
 					//dmg = (int)((float)dmg * AdventureModeConfig.Instance.RodOfDiscordPainIncreaseMultiplier);
 					//
 					//if( dmg > 0 ) {
-					//	PlayerHelpers.RawHurt( this.player, reason, dmg, 0 );
+					//	PlayerLibraries.RawHurt( this.player, reason, dmg, 0 );
 					//}
 
 					myplayer.player.AddBuff( BuffID.ChaosState, AMConfig.Instance.AddedRodOfDiscordChaosStateTime );

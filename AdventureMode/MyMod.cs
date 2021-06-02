@@ -1,8 +1,7 @@
 using System;
 using Terraria;
 using Terraria.ModLoader;
-using HamstarHelpers.Helpers.Debug;
-using HamstarHelpers.Services.EntityGroups;
+using ModLibsCore.Libraries.Debug;
 using AdventureMode.Mods;
 using AdventureMode.Logic;
 
@@ -50,7 +49,7 @@ namespace AdventureMode {
 		////////////////
 
 		public override void PostUpdateEverything() {
-//DebugHelpers.Print( "use item debuf", "ia:"+plr.itemAnimation+", it:"+plr.itemTime+", cc:"+plr.CCed+", int:"+plr.mouseInterface );
+//DebugLibraries.Print( "use item debuf", "ia:"+plr.itemAnimation+", it:"+plr.itemTime+", cc:"+plr.CCed+", int:"+plr.mouseInterface );
 			WorldLogic.UpdateWorldSpawnForInvasionStateIf();
 		}
 	}

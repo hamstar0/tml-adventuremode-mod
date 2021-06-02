@@ -44,14 +44,50 @@
     <Reference Include="GreenHell">
       <HintPath>..\..\..\Green Hell\Project\GreenHell\bin\Release\net452\GreenHell.dll</HintPath>
     </Reference>
-    <Reference Include="HamstarHelpers">
-      <HintPath>..\..\..\Mod Helpers\Project\HamstarHelpers\bin\Release\net452\HamstarHelpers.dll</HintPath>
-    </Reference>
     <Reference Include="HUDElementsLib">
       <HintPath>..\..\..\HUD Elements Lib\Project\HUDElementsLib\bin\Release\net45\HUDElementsLib.dll</HintPath>
     </Reference>
     <Reference Include="LockedAbilities">
       <HintPath>..\..\..\Locked Abilities\Project\LockedAbilities\bin\Release\net452\LockedAbilities.dll</HintPath>
+    </Reference>
+    <Reference Include="ModControlPanel">
+      <HintPath>..\..\..\Mod Libs\Mod Control Panel\Project\ModControlPanel\bin\Release\net452\ModControlPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="ModLibsAudio">
+      <HintPath>..\..\..\Mod Libs\Mod Libs Services Audio\Project\ModLibsAudio\bin\Release\net452\ModLibsAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="ModLibsCamera">
+      <HintPath>..\..\..\Mod Libs\Mod Libs Services Camera Controls\Project\ModLibsCamera\bin\Release\net452\ModLibsCamera.dll</HintPath>
+    </Reference>
+    <Reference Include="ModLibsCore">
+      <HintPath>..\..\..\Mod Libs\Mod Libs Core\Project\ModLibsCore\bin\Release\net452\ModLibsCore.dll</HintPath>
+    </Reference>
+    <Reference Include="ModLibsEntityGroups">
+      <HintPath>..\..\..\Mod Libs\Mod Libs Services Entity Groups\Project\ModLibsEntityGroups\bin\Release\net452\ModLibsEntityGroups.dll</HintPath>
+    </Reference>
+    <Reference Include="ModLibsGeneral">
+      <HintPath>..\..\..\Mod Libs\Mod Libs General\Project\ModLibsGeneral\bin\Release\net452\ModLibsGeneral.dll</HintPath>
+    </Reference>
+    <Reference Include="ModLibsInterMod">
+      <HintPath>..\..\..\Mod Libs\Mod Libs Services Inter-Mod\Project\ModLibsInterMod\bin\Release\net452\ModLibsInterMod.dll</HintPath>
+    </Reference>
+    <Reference Include="ModLibsMaps">
+      <HintPath>..\..\..\Mod Libs\Mod Libs Services Maps\Project\ModLibsMaps\bin\Release\net452\ModLibsMaps.dll</HintPath>
+    </Reference>
+    <Reference Include="ModLibsNet">
+      <HintPath>..\..\..\Mod Libs\Mod Libs Services Network\Project\ModLibsNet\bin\Release\net452\ModLibsNet.dll</HintPath>
+    </Reference>
+    <Reference Include="ModLibsNPCDialogue">
+      <HintPath>..\..\..\Mod Libs\Mod Libs Services NPC Dialogue\Project\ModLibsNPCDialogue\bin\Release\net452\ModLibsNPCDialogue.dll</HintPath>
+    </Reference>
+    <Reference Include="ModLibsTiles">
+      <HintPath>..\..\..\Mod Libs\Mod Libs Libraries Tiles\Project\ModLibsTiles\bin\Release\net452\ModLibsTiles.dll</HintPath>
+    </Reference>
+    <Reference Include="ModLibsUI">
+      <HintPath>..\..\..\Mod Libs\Mod Libs Libraries UI\Project\ModLibsUI\bin\Release\net452\ModLibsUI.dll</HintPath>
+    </Reference>
+    <Reference Include="ModLibsUtilityContent">
+      <HintPath>..\..\..\Mod Libs\Mod Libs Utility Content\Project\ModLibsUtilityContent\bin\Release\net452\ModLibsUtilityContent.dll</HintPath>
     </Reference>
     <Reference Include="MoreItemInfo">
       <HintPath>..\..\..\More Item Info\Project\MoreItemInfo\bin\Release\net452\MoreItemInfo.dll</HintPath>

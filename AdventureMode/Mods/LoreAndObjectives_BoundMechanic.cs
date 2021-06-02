@@ -2,8 +2,8 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HamstarHelpers.Services.Maps;
-using HamstarHelpers.Services.Timers;
+using ModLibsCore.Services.Timers;
+using ModLibsMaps.Services.Maps;
 
 
 namespace AdventureMode.Mods {

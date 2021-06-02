@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
-using HamstarHelpers.Helpers.Debug;
+using ModLibsCore.Libraries.Debug;
 
 
 namespace AdventureMode.Logic {
@@ -12,13 +12,13 @@ namespace AdventureMode.Logic {
 		public static bool RestockRaft() {
 			var myworld = ModContent.GetInstance<AMWorld>();
 			if( !myworld.Raft.IsInitialized ) {
-				LogHelpers.Alert( "Raft barrel not initialized." );
+				LogLibraries.Alert( "Raft barrel not initialized." );
 				return false;
 			}
 
 			int chestIdx = myworld.GetRaftBarrelChestIndex();
 			if( chestIdx == -1 ) {
-				LogHelpers.Alert( "No raft barrel found to restock!" );
+				LogLibraries.Alert( "No raft barrel found to restock!" );
 				Main.NewText( "No raft barrel found to restock!", Color.Red );
 				return false;
 			}

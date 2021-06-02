@@ -10,14 +10,11 @@ Junkyard
 
 
 v1
--	@Mod Helpers v6
-	-	Change main menu support buttons (PayPal, Patreon, Discord)
+-	@Mod Helpers v7
 	-	Migrate TileDrawDefinition to a Class
-	-	Set to not look up IPs unless config says to do so
 	-	Implement CancellationTokens for tasks
 	-	Remove obsolete crap (reconsider TileDraw stuff)
 	-	Add "Find Depending Mods Of" button
-	-	@Take down github tutorials (for now)
 	-	Separate "common conditions" into a new category?
 	-	Debug
 		-	Debug MH "bad mods" route
@@ -44,9 +41,6 @@ v1
 		-	Add toggle button to UI
 		-	@Update tag moderation page
 	-	Refactor mod hook-level code into a Logic abstraction
-	-	Adjust mod list in control panel to make number ids not overlap name
-	-	Add more space for mod CP list enumerator
-	-	Remove 'trailing separator' in mod CP list
 -	@Begin final beta test
 -	@Set git repos public
 -	Add allowed-mod whitelist (configurable)
@@ -62,6 +56,8 @@ v1
 		-	Fix rapid re-chats to NPCs triggering repeats of objectives dialogues
 	-	@TMR
 		-	Set bandits to make non-zombie noises
+	-	@Locked Abilities
+		-	Fix ability item duping on failed accessory equip
 -	Set ectoplasm to randomly turn into "Tinted Slime Blocks"? (break = ectoplasm item drop)
 -	Lock players to worlds
 -	@Lore
@@ -77,13 +73,25 @@ v1
 		-	A way to clarify dryad helps with jungle
 		-	clarify cyborgs as mineable
 		-	Draw an item icon overlay for items with modified recipes
-[v0.26.0]
--	Add bone piles
-	-	@Plan
-		-	Large caverns occasionally get bone piles generated within them (not underground desert, though)
-		-	Piles shoot skeletron's homing skulls
-		-	Piles spawn biome-appropriate skeletons periodically
-		-	Piles can be mined and drop white orbs and ectoplasms
+[v0.28.0]
+-	@Beta
+-	@MH (6.0.0)
+	-	Change main menu support buttons (PayPal, Patreon, Discord)
+	-	Set to not look up IPs unless config says to do so
+	-	@Take down github tutorials (for now)
+	-	Add more space for mod CP list enumerator
+	-	Remove 'trailing separator' in mod CP list
+	-	Divide!
+[v0.27.0]
+-	@Beta
+-	@Miasma
+	-	Add bone piles
+		-	@Plan
+			-	Large caverns occasionally get bone piles generated within them (not underground desert, though)
+			-	Piles shoot skeletron's homing skulls
+			-	Piles spawn biome-appropriate skeletons periodically
+			-	Piles can be mined and drop white orbs and ectoplasms
+	-	@Create plan... (phase sabers vs choking clouds sourced from bone piles)
 -	@TMR
 	-	Make an option to quickly reload speeloaders
 	-	Fix reticule for non-TMR guns???
@@ -119,51 +127,49 @@ v1
 	-	A way to acquire grapple accessory by discovery
 	-	Late game pre-hardmode challenges
 	-	@Spirit Walking: Spirit Warps
+[v0.26.0]
+-	@First public beta
+-	@Test MP WoF playthrough
 [v0.25.0]
--	@Beta
+-	@First MP beta
 -	@Test MP
 	-	Verify invasion correctly repositions to map center
 	-	Balance anima drain/gain rates
 	-	Verify binocs work in MP
--	MP F&T 1
-	-	Fix angler not being removed
-	-	Fix pots failing to drop spiders
-	-	Weeds grown?
-	-	Cyborgs can't be mined?
-	-	Shadow mirror failed to load?
-	-	@Nihilism
-		-	Debug Nihilism.NetProtocol.FiltersProtocol
+-	@Add Enemy Attractors (mining attracts enemies)
+-	@Ruined Items
+	-	Reduce weapon damage 50%
+-	MP F&T 2
 	-	@Grappletech
 		-	Add inbox and chat alert on equipping a hook that it has new behavior
 	-	@Trickster
 		-	Premature TricksterStateProtocol send?
-	-	@MH
+-	@Update each mod to Mod Libs
+
+
+-	MP F&T 1
+	-	@MH (5.13.0)
+		-	Upgrade net protocols into SimplePacket
 		-	Debug CursorPositionProtocol spam
-	-	@Lore
+	-	@Nihilism (3.2.0.1)
+		-	Debug Nihilism.NetProtocol.FiltersProtocol spam
+	-	@Lore (0.9.0.1)
 		-	Shadow mirror inside PKE FE?
-		-	PKE FE on top of big tree?
-	-	@Necrotis
-		-	Fix pots dropping multiple ectos
-	-	@TMR
-		-	Verify no premature multi-hitting
+		-	Prevent FEs from genning on top of big trees
+	-	@TMR (1.8.6)
 		-	Use low res ammo on HUD
-		-	Missing ammo on HUD?
-	-	@Locked Abilities
-		-	Fix ability item duping on failed accessory equip
-		-	Fix ability items not checking properly for grapple (in MP only?)
-	-	@Ergo
-		-	Debug lag from using furnishing kit
-		-	Debug missing mirror in furnishing kit
-		-	Fix mirror placement failure (whitelist fail?)
+		-	Fix missing ammo on HUD
+	-	@Ergo (1.10.0)
+		-	Debug sync
+	-	Fix respawn
 	-	Fix missing client mods (MoreItemInfo, Surroundings?)
-??
-??
 	-	Fix missing raft item
 	-	Fix current log errors
--	Create mod pack mod
-
-
--	Spirit Walking (1.0.0.1)
+-	@Spirit Walking (1.0.0.2)
+-	@Green Hell (0.6.2.1)
+-	@Objectives (0.6.3.1)
+-	Create mod pack mod (Adventure Mode Mod Manager)
+-	@Spirit Walking (1.0.0.1)
 [v0.24.0]
 -	@Objectives (0.6.3)
 	-	Add noise for new objectives

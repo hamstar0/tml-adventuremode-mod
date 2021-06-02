@@ -2,7 +2,7 @@ using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using HamstarHelpers.Helpers.Debug;
+using ModLibsCore.Libraries.Debug;
 using AdventureMode.Logic;
 using AdventureMode.Recipes;
 using Orbs.Items;
