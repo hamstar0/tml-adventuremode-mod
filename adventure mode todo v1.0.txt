@@ -144,9 +144,13 @@ v1
 		-	Add inbox and chat alert on equipping a hook that it has new behavior
 	-	@Trickster
 		-	Premature TricksterStateProtocol send?
+-	Mod Libs F&T
+	-	Cyborg worldgen
+	-	Ectoplasm pickup
+
+
+	-	Player default spawn
 -	@Update each mod to Mod Libs
-
-
 -	MP F&T 1
 	-	@MH (5.13.0)
 		-	Upgrade net protocols into SimplePacket
