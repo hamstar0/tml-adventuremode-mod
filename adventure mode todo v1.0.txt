@@ -73,7 +73,7 @@ v1
 		-	A way to clarify dryad helps with jungle
 		-	clarify cyborgs as mineable
 		-	Draw an item icon overlay for items with modified recipes
-[v0.28.0]
+[v0.29.0]
 -	@Beta
 -	@MH (6.0.0)
 	-	Change main menu support buttons (PayPal, Patreon, Discord)
@@ -82,7 +82,7 @@ v1
 	-	Add more space for mod CP list enumerator
 	-	Remove 'trailing separator' in mod CP list
 	-	Divide!
-[v0.27.0]
+[v0.28.0]
 -	@Beta
 -	@Miasma
 	-	Add bone piles
@@ -127,16 +127,15 @@ v1
 	-	A way to acquire grapple accessory by discovery
 	-	Late game pre-hardmode challenges
 	-	@Spirit Walking: Spirit Warps
-[v0.26.0]
+[v0.27.0]
 -	@First public beta
 -	@Test MP WoF playthrough
-[v0.25.0]
+[v0.26.0]
 -	@First MP beta
 -	@Test MP
 	-	Verify invasion correctly repositions to map center
 	-	Balance anima drain/gain rates
 	-	Verify binocs work in MP
--	@Add Enemy Attractors (mining attracts enemies)
 -	@Ruined Items
 	-	Reduce weapon damage 50%
 -	MP F&T 2
@@ -144,11 +143,14 @@ v1
 		-	Add inbox and chat alert on equipping a hook that it has new behavior
 	-	@Trickster
 		-	Premature TricksterStateProtocol send?
+-	Add mod pack mod to pack
+
+
+[v0.25.0]
 -	Mod Libs F&T
+	-	Fix missing silver bow recipe (debug AM-relevant entity groups?)
 	-	Cyborg worldgen
 	-	Ectoplasm pickup
-
-
 	-	Player default spawn
 -	@Update each mod to Mod Libs
 -	MP F&T 1

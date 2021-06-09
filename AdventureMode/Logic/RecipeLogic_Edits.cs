@@ -4,7 +4,6 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using ModLibsCore.Libraries.Debug;
-using ModLibsEntityGroups.Services.EntityGroups;
 using Ergophobia.Items.FramingPlank;
 using Necrotis.Items;
 
@@ -109,7 +108,6 @@ namespace AdventureMode.Logic {
 		////////////////
 
 		public static void ApplyRecipeWhitelistingAndNewTileRequirements() {
-			bool _overrideTile = AMConfig.Instance.OverrideRecipeTileRequirements;
 			ISet<int> whitelistTypes = RecipeLogic.GetWhitelistedRecipes();
 
 			RecipeLogic.ApplyRecipeWhitelisting( whitelistTypes );
