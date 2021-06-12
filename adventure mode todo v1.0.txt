@@ -131,6 +131,7 @@ v1
 -	@First public beta
 -	@Test MP WoF playthrough
 [v0.26.0]
+-	@B&D: Hammer pulling on TMR
 -	@First MP beta
 -	@Test MP
 	-	Verify invasion correctly repositions to map center

@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using ModLibsCore.Libraries.Debug;
+using ModLibsEntityGroups.Services.EntityGroups;
 using Ergophobia.Items.FramingPlank;
 using Necrotis.Items;
 
@@ -16,7 +17,12 @@ namespace AdventureMode.Logic {
 			RecipeLogic.EditElixirRecipe();
 			RecipeLogic.EditBossRecipes();
 
-			RecipeLogic.ApplyRecipeWhitelistingAndNewTileRequirements();
+			ModContent.GetInstance<EntityGroups>().OnLoad += () => {
+				ISet<int> whitelistTypes = RecipeLogic.GetWhitelistedRecipes();
+
+				RecipeLogic.ApplyRecipeWhitelisting( whitelistTypes );
+				RecipeLogic.ApplyNewTileRequirements( whitelistTypes );
+			};
 		}
 
 		////
@@ -102,16 +108,6 @@ namespace AdventureMode.Logic {
 			int grpItemType = rg.ValidItems[ rg.IconicItemIndex ];
 //LogLibraries.Log( "grpId:"+grpId+ " - rg:"+string.Join(",", rg.ValidItems)+" - grpItemType:"+grpItemType );
 			re.AddIngredient( grpItemType, AMConfig.Instance.StrangePlantsAddedPerBossSummonItemRecipe );
-		}
-
-
-		////////////////
-
-		public static void ApplyRecipeWhitelistingAndNewTileRequirements() {
-			ISet<int> whitelistTypes = RecipeLogic.GetWhitelistedRecipes();
-
-			RecipeLogic.ApplyRecipeWhitelisting( whitelistTypes );
-			RecipeLogic.ApplyNewTileRequirements( whitelistTypes );
 		}
 	}
 }

@@ -14,28 +14,33 @@ namespace AdventureMode.Logic {
 			ISet<int> oreMadeItemTypes = RecipeLogic.GetOreMadeItemRecipes();
 			ISet<Recipe> oreArmorRecipes = RecipeLogic.GetOreArmorRecipesFromOreMadeItems( oreMadeItemTypes );
 
-			return RecipeLogic.CreateOreArmorRefundRecipes( oreArmorRecipes );
+			return RecipeLogic.CreateOreArmorRefundRecipes( oreMadeItemTypes, oreArmorRecipes );
 		}
 
 
 		////
 		
-		private static IEnumerable<ModRecipe> CreateOreArmorRefundRecipes( ISet<Recipe> oreArmorRecipes ) {
+		private static IEnumerable<ModRecipe> CreateOreArmorRefundRecipes(
+					ISet<int> oreMadeItemTypes,
+					ISet<Recipe> oreArmorRecipes ) {
 			var refundRecipes = new List<ModRecipe>();
 
 			foreach( Recipe oreArmorRecipe in oreArmorRecipes ) {
 				Item mostUsedIngredient = oreArmorRecipe.requiredItem.Aggregate( (l, r) => {
-					if( l.IsAir ) {
+					if( l.IsAir || !oreMadeItemTypes.Contains(l.type) ) {
 						return r;
 					}
-					if( r.IsAir ) {
+					if( r.IsAir || !oreMadeItemTypes.Contains(r.type) ) {
 						return l;
 					}
 					return l.stack > r.stack
 						? l : r;
 				} );
 
-				ModRecipe refundRecipe = OreRefundRecipe.CreateRecipe( oreArmorRecipe.createItem, mostUsedIngredient );
+				ModRecipe refundRecipe = OreRefundRecipe.CreateRecipe(
+					oreArmorRecipe.createItem.Clone(),
+					mostUsedIngredient.Clone()
+				);
 				refundRecipes.Add( refundRecipe );
 			}
 
@@ -46,7 +51,7 @@ namespace AdventureMode.Logic {
 		////////////////
 
 		private static ISet<int> GetOreMadeItemRecipes() {
-			var oreItemTypes = new HashSet<int>();
+			var oreItemTypes = new HashSet<int>();	// item ids of ores
 			foreach( Recipe recipe in Main.recipe ) {
 				if( recipe.createItem.createTile <= -1 ) {
 					continue;
@@ -58,7 +63,7 @@ namespace AdventureMode.Logic {
 
 			var oreMadeItemTypes = new HashSet<int>();    // bars, tiles, mythril anvil, adamantite forge, etc.
 			foreach( Recipe recipe in Main.recipe ) {
-				if( recipe.requiredItem.Any( i => !i.IsAir && oreItemTypes.Contains( i.type ) ) ) {
+				if( recipe.requiredItem.Any( i => !i.IsAir && oreItemTypes.Contains(i.type) ) ) {
 					oreMadeItemTypes.Add( recipe.createItem.type );
 				}
 			}
@@ -70,8 +75,8 @@ namespace AdventureMode.Logic {
 			var oreArmorRecipes = new HashSet<Recipe>();
 
 			foreach( Recipe recipe in Main.recipe ) {
-				if( recipe.requiredItem.Any( i => !i.IsAir && oreMadeItemTypes.Contains( i.type ) ) ) {
-					if( ItemAttributeLibraries.IsArmor( recipe.createItem ) ) {
+				if( recipe.requiredItem.Any( i => !i.IsAir && oreMadeItemTypes.Contains(i.type) ) ) {
+					if( ItemAttributeLibraries.IsArmor(recipe.createItem) ) {
 						oreArmorRecipes.Add( recipe );
 					}
 				}

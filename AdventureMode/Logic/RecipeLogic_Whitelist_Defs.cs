@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using ModLibsCore.Classes.DataStructures;
+using ModLibsCore.Classes.Errors;
 using ModLibsCore.Libraries.Debug;
 using ModLibsEntityGroups.Services.EntityGroups;
 using ModLibsEntityGroups.Services.EntityGroups.Definitions;
@@ -26,6 +27,8 @@ namespace AdventureMode.Logic {
 			void unionGroup( ISet<int> itemTypes, string grpName ) {
 				if( EntityGroups.TryGetItemGroup(grpName, out IReadOnlySet<int> roGrp) ) {
 					itemTypes.UnionWith( roGrp );
+				} else {
+					throw new ModLibsException( "Could not load entity group "+grpName );
 				}
 			}
 
