@@ -132,6 +132,7 @@ v1
 -	@Test MP WoF playthrough
 [v0.26.0]
 -	@B&D: Hammer pulling on TMR
+-	Update mod pack
 -	@First MP beta
 -	@Test MP
 	-	Verify invasion correctly repositions to map center
@@ -144,9 +145,15 @@ v1
 		-	Add inbox and chat alert on equipping a hook that it has new behavior
 	-	@Trickster
 		-	Premature TricksterStateProtocol send?
--	Add mod pack mod to pack
+-	@Bullwhip 1.2.4
+-	F&T
+	-	Fix herbs and herb seeds still dropping
 
 
+	-	Fix Trickster not dropping dark heart
+	-	Double boomerang toss
+	-	Bullwhip animation starting, but whip not activating
+	-	No orbs in chests?
 [v0.25.0]
 -	Mod Libs F&T
 	-	Fix missing silver bow recipe (debug AM-relevant entity groups?)

@@ -60,7 +60,7 @@ namespace AdventureMode {
 				this.ModInteractions.LoadErgophobiaAndMountedMagicMirrors
 			);
 			loadMod(
-				new string[] { "Trickster", "LockedAbilies" },
+				new string[] { "TheTrickster", "LockedAbilies" },
 				this.ModInteractions.LoadTricksterAndLockedAbilies
 			);
 			loadMod(

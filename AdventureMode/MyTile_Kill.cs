@@ -22,7 +22,7 @@ namespace AdventureMode {
 
 
 
-
+	
 	partial class AMTile : GlobalTile {
 		public override bool Drop( int i, int j, int type ) {
 			if( !AMConfig.Instance.EnableAlchemyRecipes ) {
