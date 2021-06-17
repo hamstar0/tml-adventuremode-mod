@@ -23,7 +23,7 @@ namespace AdventureMode.WorldGeneration {
 		
 		private void RemoveItemFromWorldChests( int itemType, float chancePerChest = 1f ) {
 			var fillDef = new ChestFillDefinition(
-				single: new ChestFillItemDefinition( itemType, 1, 1 ),
+				single: new ChestFillItemDefinition( itemType, 1, 999 ),
 				percentChance: chancePerChest
 			);
 

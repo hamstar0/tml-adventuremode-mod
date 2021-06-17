@@ -84,6 +84,8 @@ v1
 	-	Divide!
 [v0.28.0]
 -	@Beta
+-	F&T
+	-	Fix herbs and herb seeds still dropping
 -	@Miasma
 	-	Add bone piles
 		-	@Plan
@@ -121,35 +123,55 @@ v1
 	-	Import seismic charges
 -	@TMR
 	-	Tweak crosshair to look more thematically-relevant
+-	@Add Quick Sell Loot mod
+-	@Add Evil Evil Biomes (infection debuffs)
 -	@B&D
 	-	Add an item sold by Witch Doctor that changes spirit walk to use mana instead of anima
 	-	Allow crafting Automated Drill Kits (via. magitech; makes a limited distance dropshaft)
 	-	A way to acquire grapple accessory by discovery
 	-	Late game pre-hardmode challenges
+	-	@TMR: Hammer pulling
 	-	@Spirit Walking: Spirit Warps
 [v0.27.0]
 -	@First public beta
 -	@Test MP WoF playthrough
+-	@Orbs
+	-	Set colored geo orbs to craft from spirit orbs + ores
+-	@Add Alerted Ambushes mod
+-	@Add Cursed Bone Piles mod
+-	@Bullwhip
+	-	Add quick whip hotkey (only activates when no other item is active)
 [v0.26.0]
--	@B&D: Hammer pulling on TMR
 -	Update mod pack
 -	@First MP beta
 -	@Test MP
 	-	Verify invasion correctly repositions to map center
 	-	Balance anima drain/gain rates
-	-	Verify binocs work in MP
--	@Ruined Items
-	-	Reduce weapon damage 50%
+	-	Confirm Trickster ai jank (retreats after beginning attack after wait?)
+	-	Pot spiders not dropping?
+-	@Trickster (1.7.1)
+
+
+-	MP F&T 3
+	-	Remove starting grapple
+	-	Remove bottles from world chests
+	-	Re-review trickster AI sync
+	-	Fix ecto "could not pickup" message fail
+	-	Review Trickster AI sync
+	-	Fix pot spiders
 -	MP F&T 2
-	-	@Grappletech
-		-	Add inbox and chat alert on equipping a hook that it has new behavior
-	-	@Trickster
-		-	Premature TricksterStateProtocol send?
--	@Bullwhip 1.2.4
+	-	Tweak The Great War, The Island of Terraria texts
+	-	Review Trickster sync code
+	-	Desynced bandit when retreat
+	-	Ecto pickup fail
+	-	Fix missing cactus armor recipes
+	-	Fix mining blocks (item only)
+	-	Fix pot spiders not dropping
+	-	Fix double ectos per pot
+-	@Ruined Items (2.10.0)
+	-	Reduce weapon damage 50%
+-	@Bullwhip (1.2.4)
 -	F&T
-	-	Fix herbs and herb seeds still dropping
-
-
 	-	Fix Trickster not dropping dark heart
 	-	Double boomerang toss
 	-	Bullwhip animation starting, but whip not activating
