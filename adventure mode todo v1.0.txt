@@ -123,6 +123,9 @@ v1
 	-	Import seismic charges
 -	@TMR
 	-	Tweak crosshair to look more thematically-relevant
+	-	Add hammer pulling
+-	@Spirit Walking
+	-	Add warps
 -	@Add Quick Sell Loot mod
 -	@Add Evil Evil Biomes (infection debuffs)
 -	@B&D
@@ -130,11 +133,11 @@ v1
 	-	Allow crafting Automated Drill Kits (via. magitech; makes a limited distance dropshaft)
 	-	A way to acquire grapple accessory by discovery
 	-	Late game pre-hardmode challenges
-	-	@TMR: Hammer pulling
-	-	@Spirit Walking: Spirit Warps
 [v0.27.0]
 -	@First public beta
 -	@Test MP WoF playthrough
+-	@Ruined Items
+	-	Fix item color after scrap repair
 -	@Orbs
 	-	Set colored geo orbs to craft from spirit orbs + ores
 -	@Add Alerted Ambushes mod
@@ -144,14 +147,23 @@ v1
 [v0.26.0]
 -	Update mod pack
 -	@First MP beta
+-	@AML (0.11.0)
 -	@Test MP
 	-	Verify invasion correctly repositions to map center
 	-	Balance anima drain/gain rates
 	-	Confirm Trickster ai jank (retreats after beginning attack after wait?)
 	-	Pot spiders not dropping?
+-	MP F&T 4
+	-	Fix ecto pickup with jars
+	-	Trickster AI isnt syncing attacks?
+	-	Trickster still doesnt drop dark hearts (again!)
+
+
+	-	Trickster ai still jank
+		-	Sync 'TricksterDecision's
+	-	Ecto still isnt reporting
+	-	Trickster still doesnt drop dark hearts
 -	@Trickster (1.7.1)
-
-
 -	MP F&T 3
 	-	Remove starting grapple
 	-	Remove bottles from world chests

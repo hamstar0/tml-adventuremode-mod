@@ -2,7 +2,6 @@ using System;
 using Terraria;
 using Terraria.ModLoader;
 using ModLibsCore.Libraries.Debug;
-using ModLibsEntityGroups.Services.EntityGroups;
 
 
 namespace AdventureMode {
@@ -60,7 +59,7 @@ namespace AdventureMode {
 				this.ModInteractions.LoadErgophobiaAndMountedMagicMirrors
 			);
 			loadMod(
-				new string[] { "TheTrickster", "LockedAbilies" },
+				new string[] { "TheTrickster", "LockedAbilities" },
 				this.ModInteractions.LoadTricksterAndLockedAbilies
 			);
 			loadMod(
