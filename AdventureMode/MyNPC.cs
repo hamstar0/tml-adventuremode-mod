@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using ModLibsCore.Libraries.Debug;
+using ModLibsCore.Libraries.DotNET.Extensions;
 using ModLibsCore.Services.Timers;
 using AdventureMode.Logic;
 
@@ -38,7 +41,15 @@ namespace AdventureMode {
 
 			////DEBUG////
 			if( npc.type == NPCID.KingSlime ) {
-				LogLibraries.Log( "KING SLIME SPAWN DETECTED - "+string.Join("\n ", DebugLibraries.GetContextSlice()) );
+				List<string> ctx = DebugLibraries.GetContextSlice().ToList();
+				bool isEtc = ctx.Count > 7;
+
+				LogLibraries.Log(
+					"KING SLIME SPAWN DETECTED - "
+					+ ctx.GetRange( 0, (isEtc ? 7 : ctx.Count) )
+						.ToStringJoined("\n ")
+					+ (isEtc ? "\n ..." : "")
+				);
 			}
 		}
 

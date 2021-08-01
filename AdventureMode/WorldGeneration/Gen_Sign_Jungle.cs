@@ -9,11 +9,11 @@ using ModLibsGeneral.Libraries.World;
 
 namespace AdventureMode.WorldGeneration {
 	partial class AMWorldGen {
-		public static bool GetJungleSignBaseCoordinates( out int tileX, out int tileY ) {
+		public static bool GetJungleSignBaseCoordinates( out int leftTileX, out int floorTileY ) {
 			int dirtTop = WorldLocationLibraries.DirtLayerTopTileY;
 
 			int checkColumn( int myTileX ) {
-				for( int myTileY=40; myTileY< dirtTop; myTileY++ ) {
+				for( int myTileY=40; myTileY < dirtTop; myTileY++ ) {
 					Tile tile = Main.tile[myTileX, myTileY];
 					if( tile?.active() == true && tile.type == TileID.JungleGrass ) {
 						return myTileY;
@@ -22,10 +22,11 @@ namespace AdventureMode.WorldGeneration {
 				return -1;
 			}
 
-			bool isValidSignColumn( int myTileX, int myTileY ) {
-				int top = myTileY - 16;
-				for( int y = myTileY - 3; y > top; y-- ) {
-					Tile tile = Main.tile[ myTileX, y ];
+			bool isValidSignColumn( int tileX, int fTileY ) {
+				int top = fTileY - 16;
+				for( int y = fTileY - 3; y > top; y-- ) {
+					Tile tile = Main.tile[ tileX, y ];
+					// No overhanging 'material' or caves
 					if( tile?.active() == true || tile.wall > 0 ) {
 						return false;
 					}
@@ -36,12 +37,12 @@ namespace AdventureMode.WorldGeneration {
 			//
 
 			int jungleCount = 0;
-			tileY = 0;
+			floorTileY = 0;
 
 			if( Main.spawnTileX < (Main.maxTilesX/2) ) {    // Dungeon on left, jungle on right
-				for( tileX=Main.maxTilesX/2; tileX<Main.maxTilesX; tileX++ ) {
-					tileY = checkColumn( tileX );
-					if( tileY == -1 ) {
+				for( leftTileX=Main.maxTilesX/2; leftTileX<Main.maxTilesX; leftTileX++ ) {
+					floorTileY = checkColumn( leftTileX );
+					if( floorTileY == -1 || !isValidSignColumn(leftTileX, floorTileY) ) {
 						continue;
 					}
 
@@ -51,9 +52,9 @@ namespace AdventureMode.WorldGeneration {
 					}
 				}
 			} else {    // Dungeon on right, jungle on left
-				for( tileX=Main.maxTilesX/2; tileX>0; tileX-- ) {
-					tileY = checkColumn( tileX );
-					if( tileY == -1 || !isValidSignColumn(tileX, tileY) ) {
+				for( leftTileX=Main.maxTilesX/2; leftTileX>0; leftTileX-- ) {
+					floorTileY = checkColumn( leftTileX );
+					if( floorTileY == -1 || !isValidSignColumn(leftTileX, floorTileY) ) {
 						continue;
 					}
 
@@ -71,8 +72,8 @@ namespace AdventureMode.WorldGeneration {
 		////////////////
 
 		public static void PlaceJungleSign( GenerationProgress progress ) {
-			int left, top;
-			if( !AMWorldGen.GetJungleSignBaseCoordinates( out left, out top ) ) {
+			int leftX, floorY;
+			if( !AMWorldGen.GetJungleSignBaseCoordinates( out leftX, out floorY ) ) {
 				LogLibraries.Alert( "Could not find jungle." );
 				return;
 			}
@@ -80,7 +81,7 @@ namespace AdventureMode.WorldGeneration {
 			string text = "Beware!"
 				+"\nDangerous wilderness ahead. Do not enter without the necessary protective items!"
 				+"\n\nP.S. Do not pet the tortoises.";
-			(int, int)? signAt = AMWorldGen.PlaceSign( left, top, "Jungle", text );
+			(int, int)? signAt = AMWorldGen.PlaceSign( leftX, floorY, "Jungle", text );
 
 			if( signAt.HasValue ) {
 				var myworld = ModContent.GetInstance<AMWorld>();

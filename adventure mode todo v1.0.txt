@@ -10,20 +10,12 @@ Junkyard
 
 
 v1
--	@Mod Helpers v7
+-	@Finish Mod Libs
 	-	Migrate TileDrawDefinition to a Class
 	-	Implement CancellationTokens for tasks
 	-	Remove obsolete crap (reconsider TileDraw stuff)
 	-	Add "Find Depending Mods Of" button
 	-	Separate "common conditions" into a new category?
-	-	Debug
-		-	Debug MH "bad mods" route
-		-	HasSyncedWorldData: True, HasLoadedOldUID: False
-		-	HasSyncedState does not recur on loading new worlds?
-	-	Add mod reviews
-		-	@Implement wordpress page for adding 
-		-	Define reviews list menu page
-		-	Add button on Mod Info for each mod to show reviews
 	-	Control panel
 		-	Add a button to open config folder to mod configs menu
 		-	Move icon into Settings menu
@@ -31,7 +23,11 @@ v1
 		-	Put inbox in a control panel tab
 		-	Fix control panel and inbox icon compat with Grand Design UI icons
 		-	Set clicks upon control panel button to use player.mouseInterface
-	-	Mod tags
+	-	Mod Tags
+		-	Add mod reviews?
+			-	@Implement wordpress page for adding 
+			-	Define reviews list menu page
+			-	Add button on Mod Info for each mod to show reviews
 		-	Add github backups for tag database
 		-	Add to Mods menu
 		-	Add 'Has Mod Incompat.', 'Library Only' tags
@@ -41,9 +37,11 @@ v1
 		-	Add toggle button to UI
 		-	@Update tag moderation page
 	-	Refactor mod hook-level code into a Logic abstraction
+[v0.32.0]
 -	@Begin final beta test
--	@Set git repos public
 -	Add allowed-mod whitelist (configurable)
+[v0.31.0]
+-	@Set git repos public
 -	Final
 	-	@Enraged
 		-	Meter needs smooth tracking
@@ -73,27 +71,17 @@ v1
 		-	A way to clarify dryad helps with jungle
 		-	clarify cyborgs as mineable
 		-	Draw an item icon overlay for items with modified recipes
-[v0.29.0]
--	@Beta
--	@MH (6.0.0)
+[v0.30.0]
+-	@Mod Helpers (via. Mod Libs)
 	-	Change main menu support buttons (PayPal, Patreon, Discord)
 	-	Set to not look up IPs unless config says to do so
 	-	@Take down github tutorials (for now)
 	-	Add more space for mod CP list enumerator
 	-	Remove 'trailing separator' in mod CP list
-	-	Divide!
-[v0.28.0]
+[v0.29.0]
 -	@Beta
 -	F&T
 	-	Fix herbs and herb seeds still dropping
--	@Miasma
-	-	Add bone piles
-		-	@Plan
-			-	Large caverns occasionally get bone piles generated within them (not underground desert, though)
-			-	Piles shoot skeletron's homing skulls
-			-	Piles spawn biome-appropriate skeletons periodically
-			-	Piles can be mined and drop white orbs and ectoplasms
-	-	@Create plan... (phase sabers vs choking clouds sourced from bone piles)
 -	@TMR
 	-	Make an option to quickly reload speeloaders
 	-	Fix reticule for non-TMR guns???
@@ -101,14 +89,14 @@ v1
 	-	Debug unload failure for overlays (?)
 		https://discord.com/channels/498206068753825792/663519463919976469/820043892899840042
 	-	Implement cave-like tree scrolling
--	@Chest Implants
-	-	Add list of vanilla chest types to config picker and an API getter (const values)
 -	@Lore
 	-	Add objective rewards (when applicable)
 	-	Add exploding cyborgs
 -	@Ergophobia
 	-	Prevent furnishing if unsafe dungeon walls exposed to an area
 	-	Add bridging kit (sold by mechanic)
+[v0.28.0]
+-	@Beta
 -	@Boss Reigns
 	-	When background PKE set to max
 		-	@Plan
@@ -124,41 +112,187 @@ v1
 -	@TMR
 	-	Tweak crosshair to look more thematically-relevant
 	-	Add hammer pulling
--	@Spirit Walking
-	-	Add warps
--	@Add Quick Sell Loot mod
--	@Add Evil Evil Biomes (infection debuffs)
 -	@B&D
 	-	Add an item sold by Witch Doctor that changes spirit walk to use mana instead of anima
 	-	Allow crafting Automated Drill Kits (via. magitech; makes a limited distance dropshaft)
 	-	A way to acquire grapple accessory by discovery
 	-	Late game pre-hardmode challenges
+	-	Introduce Orbs
 [v0.27.0]
 -	@First public beta
 -	@Test MP WoF playthrough
--	@Ruined Items
-	-	Fix item color after scrap repair
--	@Orbs
-	-	Set colored geo orbs to craft from spirit orbs + ores
--	@Add Alerted Ambushes mod
--	@Add Cursed Bone Piles mod
--	@Bullwhip
-	-	Add quick whip hotkey (only activates when no other item is active)
+	-	Verify goblin rescue
+	-	Verify invasion correctly repositions to map center
 [v0.26.0]
 -	Update mod pack
--	@First MP beta
--	@AML (0.11.0)
 -	@Test MP
-	-	Verify invasion correctly repositions to map center
-	-	Balance anima drain/gain rates
-	-	Confirm Trickster ai jank (retreats after beginning attack after wait?)
-	-	Pot spiders not dropping?
+-	@MMM
+	-	Fix lost mirrors
+-	@AML (0.11.0)
+-	@Mod Libs Net (1.0.2)
+-	@Bullwhip (1.3.0)
+-	@B&D Skeleton Merchant item to sell
+-	@Ruined Items
+	-	Set items rarity 2 or higher to be 'ruined'
+	-	Fix item color after scrap repair
+-	@TMR
+	-	Experiment with "kick" from shots (disrupts aim state)
+-	@Add Crafting Kits mod (used for all equipment)
+-	@Alerted Ambushes
+	-	@Add to AM; set ambushes to also generate random small patches of cursed bones
+-	@Cursed Bones (0.5.0)
+	-	@Add to AM; set ectoplasms and white orbs to randomly drop from mined bones
+	-	Make patches more diverse (thicker) than flat spots
+	-	Bully vegetation tiles during world gen
+	-	Blend with adjacent slope tiles
+	-	Set bones to resist bombs (ModTile.CanExplode?)
+	-	Cease firing skulls against dead players
+-	@Add World Gates mod
+	-	@Modify Soul Barriers recipe for AM (2 Magitech Scrap instead of 10 Nanites)
+	-	@Add Soul Barriers, World Gates, Messages mods to AM
+
+
+	-	Add config option to spawn player with a PBG
+	-	Add config
+	-	Add message on proximity to world barrier
+	-	Change to AccessBarrier (also debug)
+	-	@Soul Barriers
+		-	Show rectangle barrier hp on mouse hover
+		-	Create access barrier type
+		-	Fix (multiple?) world barrier hang
+	-	Declare world gates
+		-	Underworld (75 hp)
+		-	Lava layer start (40 hp)
+		-	Rock layer start (25 hp)
+		-	Before jungle (30 hp)
+		-	After dungeon (20 hp)
+	-	Setup mod
+-	@Add Messages mod (assumes the role of Inbox as well)
+	-	Clear alert when messages opened
+	-	Shrink message body title size
+	-	Set messages to indicate the mod they belong to
+	-	Add alert message for binding messages hotkey
+	-	Shrink message title text scale and clamp size
+	-	Fix message body scroll
+	-	Show title in description view
+	-	Add scroll bar to description view
+	-	Set right padding to 0
+	-	Fix buggy message select toggling
+	-	Add long string auto-line breaking
+	-	Fix vertical alignment of child elements
+	-	Add preset message categories (including toolbar buttons)
+	-	Add number icon for upstream messages with unread downstream messages
+	-	Improve messages icon
+		-	Hide icon when no unread messages exist
+		-	Change behavior of icon button: Open latest unread message
+		-	Show number of unread messages
+		-	Use soft blinking instead of pulsing
+	-	Improve message tree
+		-	Add indicator of tree open or closed
+	-	Add toolbar: Next Unread, Set All Read, Set Unread
+		-	Implement 'Set Unread'
+		-	Implement 'Set All Read'
+		-	Implement 'Next Unread'
+		-	Define buttons
+	-	Add panel to show message bodies (no longer are messages in the tree view exclusively)
+	-	Set messages tab to order itself after Welcome tab
+	-	@Improve Control Panel
+		-	Implement OnControlPanelInitialize event
+		-	Highlight current tab
+		-	Implement resizeable panel
+		-	Improve tabs bar
+	-	Fix clickable areas
+	-	Fix adding message with parent replacing child elements
+	-	Implement folder view
+	-	Implement message alert (10s animated icon button that appears on bottom of screen)
+	-	Add ids to messages
+	-	Refresh MessageManager
+	-	Implement message reading
+	-	Implement message folding
+	-	Implement message data structure (title, 'order', description)
+	-	Setup mod; import Objectives
+-	@Add Soul Barriers and World Gates mods
+	-	Thicken world barrier fx (scale up dusts, add more, increase range, add init velocity)
+	-	Prevent collisions between inactive barriers
+	-	Fix 0 strength barrier buff
+	-	Add debug command to generate world barrier
+	-	Add barrier hit sounds
+	-	Implement buff icons
+	-	Review barrier syncs
+	-	Implement barrier sync packets
+	-	Implement barrier npc (and "projectile npc") collisions
+	-	Implement barrier player collision (insta-kill?)
+	-	Implement area barrier fx
+	-	Remove "1 hp barriers" (by default)
+	-	Add cooldown debuff (use instead of "overheating")
+	-	Implement barrier-to-barrier collisions
+	-	Fix collisions
+	-	Implement barrier 'max strength' and recharge rate
+	-	Implement world barrier saving/serializing
+	-	Finish implementing API
+	-	Implement area barriers (API only)
+		-	Implement area barrier registry
+		-	Refactor world barriers to support having a host
+		-	Implement area collisions
+		-	Implement area fx
+		-	Define area barriers (world data)
+		-	@Plan
+			-	Runs collision checks in an area
+			-	Animates particles evenly in an area
+			-	Animates particles densely when a player is near
+	-	Add API
+		-	OnAreaBarrierCollide, OnNpcBarrierCollide, OnPlayerBarrierCollide
+		-	SetWorldBarrier, GetWorldBarrier, HitWorldBarrier
+		-	SetNpcBarrier, GetNpcBarrier, HitNpcBarrier
+		-	EnableRecipe, HitPlayerBarrier, GetPlayerBarrier, SetPlayerBarrier
+	-	Show barrier strength on mouse hover
+	-	Add buff for barrier (shows barrier strength in tooltip)
+	-	Implement P.B.G + barrier functionality
+		-	Add overheat effect for P.B.G (redish tint)
+		-	Remove "spiritual" debuffs while barrier on (uses barrier strength)
+		-	Set barrier to fail on death
+		-	Add overheating
+		-	Set barrier to instantly charge
+		-	Implement hit fx
+		-	Implement barrier defenses (stops projectiles, removes certain debuffs)
+		-	Implement use
+		-	Define item
+	-	Implement barrier fx
+	-	Setup mod
+	-	@Plan
+		-	Player can use raw mana to create a "soul barrier" with a P.B.G item
+		-	P.B.G: 2 Magitech Scrap, 1 Umbrella (Umbrella: Spear, 10 Silk, 5 Feather)
+		-	Barrier strength (hp) and color are determined by how much mana is poured in
+		-	Soul barriers protect against anima loss or projectile damage
+		-	Soul barriers can exist in places around the world, or on mobs
+		-	World barriers regenerate quickly until dispelled
+		-	Barriers colliding instantly detract the weaker one's hp from both
+-	@Add Alerted Ambushes mod
+	-	Prevent warping while ambush in session
+	-	Configure alert % chances
+	-	Add alert visual fx
+	-	Adjust ambush rates with depth
+	-	Implement ambushes
+	-	Add detection triggers
+	-	Setup mod
+	-	@Plan
+		-	Alerts: Pickaxe hits, wood chops, bomb explosions, or fall damage
+		-	On a successful alert (percent %), create an ambush
+		-	Ambushes are a 3-15s spawn rush + chance of miniboss
+		-	Ambushes also cause cursed bone tiles to generate nearby
+-	@Add Cursed Bones mod
+	-	Implement item drop hooking
+	-	Implement world gen
+		-	Generate as patches at found positions, including some scattered
+		-	Find walls/floors/ceilings
+	-	Implement cursed block projectile launching
+	-	Define mod + content
+-	@Bullwhip (1.3.0)
+	-	Add quick whip hotkey (only activates when no other item is active)
 -	MP F&T 4
 	-	Fix ecto pickup with jars
-	-	Trickster AI isnt syncing attacks?
+	-	Trickster AI isnt syncing attacks
 	-	Trickster still doesnt drop dark hearts (again!)
-
-
 	-	Trickster ai still jank
 		-	Sync 'TricksterDecision's
 	-	Ecto still isnt reporting

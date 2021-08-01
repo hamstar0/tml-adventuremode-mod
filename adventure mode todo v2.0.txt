@@ -129,9 +129,12 @@ Future considerations
 			-	Launches player forward
 			-	Player has invincibility frames while launching past enemies
 -	@B&D
-	-	Boss Reigns max bg PKE needs killing boss/progress to be ACTUALLY IMPORTANT; think of a way to do this!
-	-	Durability concept ('Equipment Upkeep')
+	-	@Spirit Walking: Add warps
+	-	@Add Quick Sell Loot mod
+	-	@Add Evil Evil Biomes mod (infection debuffs)
+	-	@Boss Reigns max BH PKE needs killing boss/progress to be ACTUALLY IMPORTANT; think of a way to do this!
+	-	A "durability" concept ('Equipment Upkeep')
 	-	Bedrock veins: Uses Regions mod's cells
 	-	Resupply "requests"
-	-	Loot bag
+	-	Loot bag?
 

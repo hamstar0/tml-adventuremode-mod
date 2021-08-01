@@ -30,7 +30,19 @@ namespace AdventureMode.WorldGeneration {
 			WorldChestLibraries.RemoveFromWorldChests( fillDef );
 		}
 
-		
+
+		private void ReplaceItemWithOtherInWorldChests( int itemType, int otherItemType ) {  //string chestType="Chest"
+			var unfillDef = new ChestFillDefinition( new ChestFillItemDefinition( itemType, 1, 1 ) );
+			var otherFillDef = new ChestFillDefinition( new ChestFillItemDefinition( otherItemType, 1, 1 ) );
+			var chestDef = new ChestTypeDefinition( TileID.Containers, null );
+
+			IList<Chest> modifiedChests = WorldChestLibraries.RemoveFromWorldChests( unfillDef, chestDef );
+			foreach( Chest chest in modifiedChests ) {
+				otherFillDef.Fill( chest );
+			}
+		}
+
+
 		private void ReplaceItemWithOrbsInWorldChests( int itemType ) {  //string chestType="Chest"
 			var unfillDef = new ChestFillDefinition( new ChestFillItemDefinition( itemType, 1, 1 ) );
 			var orbFillDef = new ChestFillDefinition( new (float weight, ChestFillItemDefinition def)[] {

@@ -50,6 +50,9 @@
     <Reference Include="LockedAbilities">
       <HintPath>..\..\..\Locked Abilities\Project\LockedAbilities\bin\Release\net452\LockedAbilities.dll</HintPath>
     </Reference>
+    <Reference Include="Messages">
+      <HintPath>..\..\..\Messages\Project\Messages\bin\Release\net452\Messages.dll</HintPath>
+    </Reference>
     <Reference Include="ModControlPanel">
       <HintPath>..\..\..\Mod Libs\Mod Control Panel\Project\ModControlPanel\bin\Release\net452\ModControlPanel.dll</HintPath>
     </Reference>
@@ -119,6 +122,9 @@
     <Reference Include="RuinedItems">
       <HintPath>..\..\..\Ruined Items\Project\RuinedItems\bin\Release\net452\RuinedItems.dll</HintPath>
     </Reference>
+    <Reference Include="SoulBarriers">
+      <HintPath>..\..\..\Soul Barriers\Project\SoulBarriers\bin\Release\net452\SoulBarriers.dll</HintPath>
+    </Reference>
     <Reference Include="SpiritWalking">
       <HintPath>..\..\..\Spirit Walking\Project\SpiritWalking\bin\Release\net452\SpiritWalking.dll</HintPath>
     </Reference>
@@ -130,6 +136,9 @@
     </Reference>
     <Reference Include="TheTrickster">
       <HintPath>..\..\..\The Trickster\Project\TheTrickster\bin\Release\net452\TheTrickster.dll</HintPath>
+    </Reference>
+    <Reference Include="WorldGates">
+      <HintPath>..\..\..\World Gates\Project\WorldGates\bin\Release\net452\WorldGates.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

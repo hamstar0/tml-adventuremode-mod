@@ -6,7 +6,7 @@ using ModLibsCore.Libraries.Debug;
 
 namespace AdventureMode.WorldGeneration {
 	partial class AMWorldGen {
-		public static (int tileX, int tileY)? PlaceSign( int left, int top, string signType, string text ) {
+		public static (int tileX, int tileY)? PlaceSign( int leftX, int floorY, string signType, string text ) {
 			void clearTile( int x, int y ) {
 				try {
 					WorldGen.KillTile( x, y, false, false, true );
@@ -16,35 +16,37 @@ namespace AdventureMode.WorldGeneration {
 
 			//
 
-			clearTile( left-1, top );
-			clearTile( left, top );
-			clearTile( left+1, top );
-			Main.tile[left - 1, top].active( true );
-			Main.tile[left, top].active( true );
-			Main.tile[left + 1, top].active( true );
-			Main.tile[left - 1, top].type = TileID.Mudstone;
-			Main.tile[left, top].type = TileID.Mudstone;
-			Main.tile[left + 1, top].type = TileID.Mudstone;
+			clearTile( leftX-1, floorY );
+			clearTile( leftX, floorY );
+			clearTile( leftX+1, floorY );
+			// Set mudstone base
+			Main.tile[leftX - 1, floorY].active( true );
+			Main.tile[leftX, floorY].active( true );
+			Main.tile[leftX + 1, floorY].active( true );
+			Main.tile[leftX - 1, floorY].type = TileID.Mudstone;
+			Main.tile[leftX, floorY].type = TileID.Mudstone;
+			Main.tile[leftX + 1, floorY].type = TileID.Mudstone;
 			
-			clearTile( left-1, top-1 );
-			clearTile( left, top-1 );
-			clearTile( left+1, top-1 );
-			clearTile( left-1, top-2 );
-			clearTile( left, top-2 );
-			clearTile( left+1, top-2 );
-			clearTile( left-1, top-3 );
-			clearTile( left, top-3 );
-			clearTile( left+1, top-3 );
+			// Clear space above
+			clearTile( leftX-1, floorY-1 );
+			clearTile( leftX, floorY-1 );
+			clearTile( leftX+1, floorY-1 );
+			clearTile( leftX-1, floorY-2 );
+			clearTile( leftX, floorY-2 );
+			clearTile( leftX+1, floorY-2 );
+			clearTile( leftX-1, floorY-3 );
+			clearTile( leftX, floorY-3 );
+			clearTile( leftX+1, floorY-3 );
 
 			bool placed = false;
-			int highest = top - 4;
+			int highest = floorY - 4;
 
-			for( top += 1; top > highest; top-- ) {	// lazy
-				if( WorldGen.PlaceSign( left, top, TileID.Signs ) ) {
-					int signIdx = Sign.ReadSign( left, top, true );
+			for( floorY += 1; floorY > highest; floorY-- ) {	// lazy
+				if( WorldGen.PlaceSign( leftX, floorY, TileID.Signs ) ) {
+					int signIdx = Sign.ReadSign( leftX, floorY, true );
 					Main.sign[signIdx].text = text;
 
-					LogLibraries.Log( signType+" sign placed at " + left + ", " + top );
+					LogLibraries.Log( signType+" sign placed at " + leftX + ", " + floorY );
 
 					placed = true;
 					break;
@@ -54,7 +56,7 @@ namespace AdventureMode.WorldGeneration {
 			}
 
 			(int, int)? at = null;
-			if( placed ) { at = (left, top); }
+			if( placed ) { at = (leftX, floorY); }
 			return at;
 		}
 	}
