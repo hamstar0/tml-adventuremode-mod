@@ -149,9 +149,9 @@ v1
 	-	Cease firing skulls against dead players
 -	@Add World Gates mod
 	-	@Modify Soul Barriers recipe for AM (2 Magitech Scrap instead of 10 Nanites)
+
+
 	-	@Add Soul Barriers, World Gates, Messages mods to AM
-
-
 	-	Add config option to spawn player with a PBG
 	-	Add config
 	-	Add message on proximity to world barrier
