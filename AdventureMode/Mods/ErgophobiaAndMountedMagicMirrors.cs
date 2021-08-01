@@ -6,20 +6,18 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 using ModLibsCore.Libraries.Debug;
-using MountedMagicMirrors.Tiles;
-using Ergophobia;
 
 
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
 		public void LoadErgophobiaAndMountedMagicMirrors() {
-			var ergConfig = ErgophobiaConfig.Instance;
+			var ergConfig = Ergophobia.ErgophobiaConfig.Instance;
 
-			ErgophobiaAPI.OnPostHouseFurnish( this.OnHouseFurnish );
+			Ergophobia.ErgophobiaAPI.OnPostHouseFurnish( this.OnHouseFurnish );
 
 			ergConfig.SetOverride( nameof(ergConfig.TrackKitSoldByMerchant), false );
 
-			ushort mirrorTileType = (ushort)ModContent.TileType<MountedMagicMirrorTile>();
+			ushort mirrorTileType = (ushort)ModContent.TileType<MountedMagicMirrors.Tiles.MountedMagicMirrorTile>();
 			string mirrorUid = TileID.GetUniqueKey( mirrorTileType );
 			List<string> wl = ergConfig.Get<List<string>>( nameof(ergConfig.TilePlaceWhitelist) )
 				?? ergConfig.TilePlaceWhitelist.ToList();
@@ -76,7 +74,7 @@ namespace AdventureMode.Mods {
 		////////////////
 
 		private void CycleCustomFurnishes() {
-			var ergConfig = ErgophobiaConfig.Instance;
+			var ergConfig = Ergophobia.ErgophobiaConfig.Instance;
 			var cycle = ergConfig.Get<List<Ergophobia.HouseKitFurnitureDefinition>>( nameof(ergConfig.HouseKitFurnitureSuccession) );
 			var myworld = ModContent.GetInstance<AMWorld>();
 

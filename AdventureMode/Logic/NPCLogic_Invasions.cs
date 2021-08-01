@@ -7,7 +7,7 @@ using ModLibsGeneral.Libraries.World;
 
 namespace AdventureMode.Logic {
 	static partial class NPCLogic {
-		/*public static void SetInvasionDefaults( NPC npc ) {
+		internal static void PostSetDefaultsForInvasion( NPC npc ) {
 			//DebugLibraries.Print( "invasionstate", "invasionSize:"+Main.invasionSize
 			//	+", invasionProgress:"+Main.invasionProgress
 			//	+", invasionProgressMax:"+Main.invasionProgressMax
@@ -17,11 +17,11 @@ namespace AdventureMode.Logic {
 
 			// Is above ground
 			if( npc.position.Y < (WorldLocationLibraries.DirtLayerTopTileY * 16) ) {
-				// Is wet
+				// Is wet (has spawned underwater)
 				if( npc.wet ) {
 					NPCLibraries.Remove( npc, Main.netMode == NetmodeID.Server );
 				}
 			}
-		}*/
+		}
 	}
 }

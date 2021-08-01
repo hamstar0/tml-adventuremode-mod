@@ -1,12 +1,12 @@
 using System;
 using ModLibsCore.Libraries.Debug;
-using PKEMeter;
 
 
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
 		public void LoadPKEMeter() {
-			PKEMeterConfig.Instance.SetOverride( nameof( PKEMeterConfig.PKEMeterHUDBasePositionX ), -224 );
+			var pkeConfig = PKEMeter.PKEMeterConfig.Instance;
+			pkeConfig.SetOverride( nameof( pkeConfig.PKEMeterHUDBasePositionX ), -224 );
 		}
 	}
 }

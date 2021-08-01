@@ -32,7 +32,7 @@ namespace AdventureMode {
 				NPCLogic.SetBossDefaults( npc );
 			}
 			if( Main.invasionSize > 0 && !npc.friendly ) {
-				Timers.RunNow( () => NPCLogic.SetInvasionDefaults(npc) );
+				Timers.RunNow( () => NPCLogic.PostSetDefaultsForInvasion(npc) );
 			}
 
 			if( npc.townNPC && AMConfig.Instance.InvincibleTownNPCs ) {

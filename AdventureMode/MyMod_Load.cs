@@ -67,8 +67,12 @@ namespace AdventureMode {
 				this.ModInteractions.LoadLockedAbilities
 			);
 			loadMod(
-				new string[] { "Orbs" },
+				new string[] { "Orbs", "Ergophobia", "FindableManaCrystals", "CursedBrambles" },
 				this.ModInteractions.LoadOrbs
+			);
+			loadMod(
+				new string[] { "SoulBarriers", "RuinedItems" },
+				this.ModInteractions.LoadSoulBarriers
 			);
 			loadMod(
 				new string[] { "TerrainRemixer" },
