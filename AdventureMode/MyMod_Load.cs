@@ -51,6 +51,10 @@ namespace AdventureMode {
 				this.ModInteractions.LoadNecrotis
 			);
 			loadMod(
+				new string[] { "CursedBones", "Necrotis", "Orbs" },
+				this.ModInteractions.LoadCursedBones
+			);
+			loadMod(
 				new string[] { "CursedBrambles" },
 				this.ModInteractions.LoadCursedBrambles
 			);

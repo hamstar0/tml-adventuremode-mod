@@ -1,7 +1,7 @@
 displayName = Adventure Mode (Core)
 author = hamstar
-version = 0.25.4
-modReferences = AdventureModeLore@0.10.0, BossChecklist@1.1.4, BossReigns@1.2.2, CursedBrambles@0.8.0, Enraged@0.11.0, Ergophobia@1.11.0, FindableManaCrystals@1.3.0, GreenHell@0.7.0, HUDElementsLib@3.1.1, LockedAbilities@1.3.0, Messages@1.0.0, ModControlPanel@1.0.0, ModLibsAudio@1.0.0, ModLibsCamera@1.0.0, ModLibsCore@1.2.0, ModLibsEntityGroups@1.1.0, ModLibsGeneral@1.2.0, ModLibsInterMod@1.0.0, ModLibsMaps@1.0.0, ModLibsNet@1.0.0, ModLibsNPCDialogue@1.0.0, ModLibsTiles@1.0.0, ModLibsUI@1.0.0, ModLibsUtilityContent@1.0.0, MountedMagicMirrors@1.2.0, Necrotis@1.12.0, Nihilism@4.0.0, Objectives@0.7.0, Orbs@1.6.0, PKEMeter@1.6.0, PotLuck@1.1.0, PowerfulMagic@1.8.0, ReadableBooks@1.3.0, SoulBarriers@0.19.0, TerrainRemixer@0.11.0, TheTrickster@1.7.1, WorldGates@1.0.0
+version = 0.25.5
+modReferences = AdventureModeLore@0.10.0, BossChecklist@1.1.4, BossReigns@1.2.2, CursedBones@0.6.1, CursedBrambles@0.8.0, Enraged@0.11.0, Ergophobia@1.11.0, FindableManaCrystals@1.3.0, GreenHell@0.7.0, HUDElementsLib@3.1.1, LockedAbilities@1.3.0, Messages@1.0.0, ModControlPanel@1.0.0, ModLibsAudio@1.0.0, ModLibsCamera@1.0.0, ModLibsCore@1.2.0, ModLibsEntityGroups@1.1.0, ModLibsGeneral@1.2.0, ModLibsInterMod@1.0.0, ModLibsMaps@1.0.0, ModLibsNet@1.0.0, ModLibsNPCDialogue@1.0.0, ModLibsTiles@1.0.0, ModLibsUI@1.0.0, ModLibsUtilityContent@1.0.0, MountedMagicMirrors@1.2.0, Necrotis@1.12.0, Nihilism@4.0.0, Objectives@0.7.0, Orbs@1.6.0, PKEMeter@1.6.0, PotLuck@1.1.0, PowerfulMagic@1.8.0, ReadableBooks@1.3.0, SoulBarriers@0.19.0, TerrainRemixer@0.11.0, TheTrickster@1.7.1, WorldGates@1.0.0
 weakReferences = Bullwhip@1.2.4, Grappletech@1.1.0, MoreItemInfo@1.3.1, RuinedItems@2.9.0, SpiritWalking@1.1.0, Surroundings@1.1.0, TheMadRanger@1.9.0
 buildIgnore = *.csproj, *.user, *.bat, obj\*, bin\*, .vs\*, .git\*
 homepage = https://forums.terraria.org/index.php?threads/adventure-mode.85140/

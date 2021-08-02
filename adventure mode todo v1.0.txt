@@ -140,7 +140,9 @@ v1
 -	@Add Crafting Kits mod (used for all equipment)
 -	@Alerted Ambushes
 	-	@Add to AM; set ambushes to also generate random small patches of cursed bones
--	@Cursed Bones (0.5.0)
+
+
+-	@Cursed Bones (0.6.1)
 	-	@Add to AM; set ectoplasms and white orbs to randomly drop from mined bones
 	-	Make patches more diverse (thicker) than flat spots
 	-	Bully vegetation tiles during world gen
@@ -149,8 +151,6 @@ v1
 	-	Cease firing skulls against dead players
 -	@Add World Gates mod
 	-	@Modify Soul Barriers recipe for AM (2 Magitech Scrap instead of 10 Nanites)
-
-
 	-	@Add Soul Barriers, World Gates, Messages mods to AM
 	-	Add config option to spawn player with a PBG
 	-	Add config

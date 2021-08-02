@@ -26,6 +26,9 @@
     <Reference Include="Bullwhip">
       <HintPath>..\..\..\Bullwhip\Project\Bullwhip\bin\Release\net452\Bullwhip.dll</HintPath>
     </Reference>
+    <Reference Include="CursedBones">
+      <HintPath>..\..\..\Cursed Bones\Project\CursedBones\bin\Release\net452\CursedBones.dll</HintPath>
+    </Reference>
     <Reference Include="CursedBrambles">
       <HintPath>..\..\..\Cursed Brambles\Project\CursedBrambles\bin\Release\net452\CursedBrambles.dll</HintPath>
     </Reference>
