@@ -57,7 +57,9 @@ namespace AdventureMode.Logic {
 
 		private static ItemQuantityDefinition PickItemForRaft() {
 			var config = AMConfig.Instance;
+
 			float totalWeight = config.RaftBarrelRestockSelection.Sum( def => def.Weight );
+			totalWeight += config.RaftBarrelRestockMagitechScrapChance;
 
 			float randWeightPos = Main.rand.NextFloat( totalWeight );
 
@@ -66,6 +68,16 @@ namespace AdventureMode.Logic {
 				countedWeights += def.Weight;
 				if( countedWeights >= randWeightPos ) {
 					return def;
+				}
+			}
+
+			if( ModLoader.GetMod("RuinedItems") != null ) {
+				if( config.RaftBarrelRestockMagitechScrapChance > 0f ) {
+					return new ItemQuantityDefinition(
+						mod: "RuinedItems",
+						name: "MagitechScrapItem",
+						quantity: 1
+					);
 				}
 			}
 
