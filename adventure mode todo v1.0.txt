@@ -267,7 +267,7 @@ v1
 		-	Soul barriers can exist in places around the world, or on mobs
 		-	World barriers regenerate quickly until dispelled
 		-	Barriers colliding instantly detract the weaker one's hp from both
--	@Add Alerted Ambushes mod
+-	@Create Alerted Ambushes mod
 	-	Prevent warping while ambush in session
 	-	Configure alert % chances
 	-	Add alert visual fx
