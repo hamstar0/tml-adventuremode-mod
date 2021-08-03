@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 using ModLibsCore.Classes.PlayerData;
 using ModLibsCore.Libraries.TModLoader;
 using ModLibsCore.Services.Timers;
-using ModLibsInterMod.Libraries.Mods.APIMirrors.ModHelpersAPIMirrors;
+using Messages;
 
 
 namespace AdventureMode {
@@ -31,7 +31,8 @@ namespace AdventureMode {
 
 			Timers.SetTimer( 2 * 60, false, () => {
 				string _;
-				InboxAPIMirrorsLibraries.ReadMessage( "nihilism_init", out _ );
+				MessagesAPI.GetMessage("nihilism_init")?.SetReadMessage();
+				//InboxAPIMirrorsLibraries.ReadMessage( "nihilism_init", out _ );
 				return false;
 			} );
 

@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using ModLibsGeneral.Libraries.Items.Attributes;
-using ModLibsInterMod.Libraries.Mods.APIMirrors.ModHelpersAPIMirrors;
+using Messages;
 using AdventureMode.Logic;
 
 
@@ -11,10 +11,12 @@ namespace AdventureMode {
 	partial class AMItem : GlobalItem {
 		public override bool OnPickup( Item item, Player player ) {
 			if( ItemAttributeLibraries.IsGrapple(item) ) {
-				InboxAPIMirrorsLibraries.SetMessage(
-					"AdventureModeGrappleChanges",
-					"New to Adventure Mode: Grappling hooks must now be used on only wood objects.",
-					false
+				MessagesAPI.AddMessage(
+					title: "Grappling hook changes",
+					description: "New to Adventure Mode: Grappling hooks must now be used on only wood objects.",
+					modOfOrigin: AMMod.Instance,
+					id: "AdventureModeGrappleChanges",
+					parentMessage: MessagesAPI.ModInfoCategoryMsg
 				);
 			}
 			return base.OnPickup( item, player );

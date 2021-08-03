@@ -72,6 +72,9 @@ v1
 		-	clarify cyborgs as mineable
 		-	Draw an item icon overlay for items with modified recipes
 [v0.30.0]
+-	@Messages
+	-	When opening a message, scroll to its position in the tree list
+	-	Add subtitles to tree items
 -	@Mod Helpers (via. Mod Libs)
 	-	Change main menu support buttons (PayPal, Patreon, Discord)
 	-	Set to not look up IPs unless config says to do so
@@ -120,7 +123,8 @@ v1
 	-	Introduce Orbs
 	-	Skeleton Merchant item to sell
 [v0.27.0]
--	@First public beta
+-	Release mods!
+-	@First public beta 
 -	@Test MP WoF playthrough
 	-	Verify goblin rescue
 	-	Verify invasion correctly repositions to map center
@@ -132,9 +136,12 @@ v1
 [v0.26.0]
 -	@Beta
 -	@Test MP
+
+
+-	@Objectives (0.7.1)
+	-	Set alerts to be priority messages
+-	@Mod Control Panel (1.2.0)
 -	Update mod pack
-
-
 -	Set Magitech Scrap to appear in the raft barrel
 -	@AML (0.11.0)
 -	@Mod Libs Net (1.0.2)
