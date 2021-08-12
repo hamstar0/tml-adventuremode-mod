@@ -37,10 +37,11 @@ v1
 		-	Add toggle button to UI
 		-	@Update tag moderation page
 	-	Refactor mod hook-level code into a Logic abstraction
-[v0.32.0]
+[v0.33.0]
 -	@Begin final beta test
+-	Update config titles for each mod
 -	Add allowed-mod whitelist (configurable)
-[v0.31.0]
+[v0.32.0]
 -	@Set git repos public
 -	Final
 	-	@Enraged
@@ -71,7 +72,7 @@ v1
 		-	A way to clarify dryad helps with jungle
 		-	clarify cyborgs as mineable
 		-	Draw an item icon overlay for items with modified recipes
-[v0.30.0]
+[v0.31.0]
 -	@Messages
 	-	When opening a message, scroll to its position in the tree list
 	-	Add subtitles to tree items
@@ -81,7 +82,7 @@ v1
 	-	@Take down github tutorials (for now)
 	-	Add more space for mod CP list enumerator
 	-	Remove 'trailing separator' in mod CP list
-[v0.29.0]
+[v0.30.0]
 -	@Beta
 -	F&T
 	-	Fix herbs and herb seeds still dropping
@@ -98,7 +99,7 @@ v1
 -	@Ergophobia
 	-	Prevent furnishing if unsafe dungeon walls exposed to an area
 	-	Add bridging kit (sold by mechanic)
-[v0.28.0]
+[v0.29.0]
 -	@Beta
 -	@Boss Reigns
 	-	When background PKE set to max
@@ -122,7 +123,7 @@ v1
 	-	Late game pre-hardmode challenges
 	-	Introduce Orbs
 	-	Skeleton Merchant item to sell
-[v0.27.0]
+[v0.28.0]
 -	Release mods!
 -	@First public beta 
 -	@Test MP WoF playthrough
@@ -133,11 +134,71 @@ v1
 -	@Add Crafting Kits mod (used for all equipment)
 -	@MMM
 	-	Fix lost mirrors?
-[v0.26.0]
+[v0.27.0]
 -	@Beta
 -	@Test MP
+-	@TMR
+	-	Prevent firing gun while aiming, but not having finished completed aim
+-	@Cursed Bones
+	-	Reduce spawn rate per bone
+-	Add messages
+	-	Dilluted Ectoplasm
+-	@B&D a better PBG origin
+[v0.26.0]
+-	@Mod Control Panel
+	-	Refresh tab button colors when switching tabs
+	-	Improve control panel icon again (smaller exclamation, make priority icon pulse instead, flatten border
+-	@Messages
+	-	Add "Zombie 70" for new message alerts
+-	Add PBG to raft chest + add instruction manual
+-	Update dep mod versions
+-	F&T?
+	-	Fix buggy "You discovered a lost expedition" message
+-	@Test
+-	F&T
+	-	Ensure raft gen is at least partially submerged
+	-	Fix terrain remixer settings
+	-	Fix gate barrier collision spam
 
 
+	-	@AML (0.11.1)
+	-	@Cursed Bones (0.7.0)
+		-	Lighten up surface patch size
+		-	Lighten up surface patch density
+		-	Prevent genning on open air
+	-	@Soul Barriers (0.21.0)
+		-	Show max strength for barrier under tooltips
+	-	@World Gates (1.0.1)
+		-	Add message and sound effect for unlocked gates (fail: npc hit 53, open: item 94)
+		-	Add alert for failed gate open attempts
+	-	Refactor LoadLibraries and LoadHooks
+		-	Attempt to remove reliance on any ModFoo hooks (use IL/On)
+		-	Replace 'WorldLogic.IsLoaded' with IL/On
+	-	@Soul Barriers
+		-	Indicate with PBG a need to be at full mana
+		-	Fix particle fx movement
+		-	Fix PBG vs world barrier damage amount
+		-	Fix PBG vs world barriers
+		-	Set barriers to slowly decay
+		-	Fix barriers not stopping skulls or bullets
+		-	Fix world barrier not killing NPCs
+	-	@Cursed Bones
+		-	Prevent world gen burying too deep into ground
+	-	@Trickster
+		-	Fix trickster not going into attack mode on first encounter
+-	@Messages
+	-	Fix new message popup button not going to an unread message
+	-	Prevent using weapon when clicking new message popup button
+-	@Objectives
+	-	Set tab to order after Welcome tab
+-	@Mod Control Panel
+	-	Improve priority alert highlight
+	-	Set tab open to clear alert state
+	-	Highlight alerted tab, use grey for others, white for selected
+	-	Improve control panel icon
+	-	Fix priority border glow
+-	@HUD Elements
+	-	Improve usage message
 -	@Objectives (0.7.1)
 	-	Set alerts to be priority messages
 -	@Mod Control Panel (1.2.0)

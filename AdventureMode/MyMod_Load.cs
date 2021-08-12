@@ -75,10 +75,6 @@ namespace AdventureMode {
 				this.ModInteractions.LoadOrbs
 			);
 			loadMod(
-				new string[] { "SoulBarriers", "RuinedItems" },
-				this.ModInteractions.LoadSoulBarriers
-			);
-			loadMod(
 				new string[] { "TerrainRemixer" },
 				this.ModInteractions.LoadTerrainRemixer
 			);

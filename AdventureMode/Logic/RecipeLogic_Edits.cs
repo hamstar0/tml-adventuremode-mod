@@ -7,6 +7,7 @@ using ModLibsCore.Libraries.Debug;
 using ModLibsEntityGroups.Services.EntityGroups;
 using Ergophobia.Items.FramingPlank;
 using Necrotis.Items;
+using SoulBarriers.Items;
 
 
 namespace AdventureMode.Logic {
@@ -16,6 +17,7 @@ namespace AdventureMode.Logic {
 			RecipeLogic.EditFramingPlankRecipe();
 			RecipeLogic.EditElixirRecipe();
 			RecipeLogic.EditBossRecipes();
+			RecipeLogic.EditPBGRecipeIf();
 
 			ModContent.GetInstance<EntityGroups>().OnLoad += () => {
 				ISet<int> whitelistTypes = RecipeLogic.GetWhitelistedRecipes();
@@ -66,6 +68,25 @@ namespace AdventureMode.Logic {
 			foreach( Recipe r in rf.SearchRecipes() ) {
 				var re = new RecipeEditor( r );
 				re.DeleteIngredient( ItemID.ShinePotion );
+			}
+		}
+
+		////
+		
+		public static void EditPBGRecipeIf() {
+			if( ModLoader.GetMod("RuinedItems") != null ) {
+				RecipeLogic.EditPBGRecipe_WeakRefs();
+			}
+		}
+
+		private static void EditPBGRecipe_WeakRefs() {
+			var rf = new RecipeFinder();
+			rf.SetResult( ModContent.ItemType<PBGItem>() );
+
+			foreach( Recipe r in rf.SearchRecipes() ) {
+				var re = new RecipeEditor( r );
+				re.DeleteIngredient( ItemID.Nanites );
+				re.AddIngredient( ModContent.ItemType<RuinedItems.Items.MagitechScrapItem>(), 2 );
 			}
 		}
 
