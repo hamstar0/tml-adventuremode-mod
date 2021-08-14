@@ -11,7 +11,7 @@ using Orbs.Items;
 
 namespace AdventureMode.WorldGeneration {
 	partial class AMWorldGen {
-		private void AddItemToWorldChests( int itemType, int quantity, float chancePerChest = 1f ) {
+		private static void AddItemToWorldChests( int itemType, int quantity, float chancePerChest = 1f ) {
 			var fillDef = new ChestFillDefinition(
 				single: new ChestFillItemDefinition( itemType, quantity, quantity ),
 				percentChance: chancePerChest
@@ -21,7 +21,7 @@ namespace AdventureMode.WorldGeneration {
 		}
 
 		
-		private void RemoveItemFromWorldChests( int itemType, float chancePerChest = 1f ) {
+		private static void RemoveItemFromWorldChests( int itemType, float chancePerChest = 1f ) {
 			var fillDef = new ChestFillDefinition(
 				single: new ChestFillItemDefinition( itemType, 1, 999 ),
 				percentChance: chancePerChest
@@ -31,7 +31,7 @@ namespace AdventureMode.WorldGeneration {
 		}
 
 
-		private void ReplaceItemWithOtherInWorldChests( int itemType, int otherItemType ) {  //string chestType="Chest"
+		private static void ReplaceItemWithOtherInWorldChests( int itemType, int otherItemType ) {  //string chestType="Chest"
 			var unfillDef = new ChestFillDefinition( new ChestFillItemDefinition( itemType, 1, 1 ) );
 			var otherFillDef = new ChestFillDefinition( new ChestFillItemDefinition( otherItemType, 1, 1 ) );
 			var chestDef = new ChestTypeDefinition( TileID.Containers, null );
@@ -43,7 +43,7 @@ namespace AdventureMode.WorldGeneration {
 		}
 
 
-		private void ReplaceItemWithOrbsInWorldChests( int itemType ) {  //string chestType="Chest"
+		private static void ReplaceItemWithOrbsInWorldChests( int itemType ) {  //string chestType="Chest"
 			var unfillDef = new ChestFillDefinition( new ChestFillItemDefinition( itemType, 1, 1 ) );
 			var orbFillDef = new ChestFillDefinition( new (float weight, ChestFillItemDefinition def)[] {
 					( 1f / 8f, new ChestFillItemDefinition(ModContent.ItemType<BlueOrbItem>()) ),
@@ -64,35 +64,35 @@ namespace AdventureMode.WorldGeneration {
 		}
 
 
-		////
+		////////////////
 
-		public void LoadChestImplants() {
+		public static void LoadChestEdits() {
 			var config = AMConfig.Instance;
 
 			if( !config.EnableAlchemyRecipes ) {
-				this.RemoveItemFromWorldChests( ItemID.Bottle );
+				AMWorldGen.RemoveItemFromWorldChests( ItemID.Bottle );
 			}
 			if( config.WorldGenRemoveMagicMirrors ) {
-				this.RemoveItemFromWorldChests( ItemID.MagicMirror );
-				this.RemoveItemFromWorldChests( ItemID.IceMirror );
+				AMWorldGen.RemoveItemFromWorldChests( ItemID.MagicMirror );
+				AMWorldGen.RemoveItemFromWorldChests( ItemID.IceMirror );
 			}
-			this.RemoveItemFromWorldChests( ItemID.LivingWoodWand );
-			this.RemoveItemFromWorldChests( ItemID.LeafWand );
-			this.RemoveItemFromWorldChests( ItemID.LivingMahoganyWand );
-			this.RemoveItemFromWorldChests( ItemID.LivingMahoganyLeafWand );
-			this.RemoveItemFromWorldChests( ItemID.LivingMahoganyLeafWand );
+			AMWorldGen.RemoveItemFromWorldChests( ItemID.LivingWoodWand );
+			AMWorldGen.RemoveItemFromWorldChests( ItemID.LeafWand );
+			AMWorldGen.RemoveItemFromWorldChests( ItemID.LivingMahoganyWand );
+			AMWorldGen.RemoveItemFromWorldChests( ItemID.LivingMahoganyLeafWand );
+			AMWorldGen.RemoveItemFromWorldChests( ItemID.LivingMahoganyLeafWand );
 
 			if( config.WorldGenAddedMountedMagicMirrorChance > 0f ) {
-				this.AddItemToWorldChests(
+				AMWorldGen.AddItemToWorldChests(
 					itemType: ModContent.ItemType<MountableMagicMirrorTileItem>(),
 					quantity: 1,
 					chancePerChest: config.WorldGenAddedMountedMagicMirrorChance
 				);
 			}
 
-			this.ReplaceItemWithOrbsInWorldChests( ItemID.ClimbingClaws );
-			this.ReplaceItemWithOrbsInWorldChests( ItemID.HerbBag );
-			this.ReplaceItemWithOrbsInWorldChests( ItemID.FiberglassFishingPole );
+			AMWorldGen.ReplaceItemWithOrbsInWorldChests( ItemID.ClimbingClaws );
+			AMWorldGen.ReplaceItemWithOrbsInWorldChests( ItemID.HerbBag );
+			AMWorldGen.ReplaceItemWithOrbsInWorldChests( ItemID.FiberglassFishingPole );
 
 			//
 

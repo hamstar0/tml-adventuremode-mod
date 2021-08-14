@@ -59,7 +59,7 @@ namespace AdventureMode.WorldGeneration {
 			}
 
 			for( Tile tile = Framing.GetTileSafely( boatLeft, boatTop );
-				tile.liquid == 0;
+				tile.liquid < 64;	// Shallow water
 				tile = Framing.GetTileSafely( boatLeft, ++boatTop ) ) {
 			}
 

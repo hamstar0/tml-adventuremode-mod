@@ -125,7 +125,9 @@ v1
 	-	Skeleton Merchant item to sell
 [v0.28.0]
 -	Release mods!
--	@First public beta 
+-	@First public beta
+-	@TMR
+	-	Enable right-clicking quickloader from ammo slots
 -	@Test MP WoF playthrough
 	-	Verify goblin rescue
 	-	Verify invasion correctly repositions to map center
@@ -135,6 +137,8 @@ v1
 -	@MMM
 	-	Fix lost mirrors?
 [v0.27.0]
+-	@B&D
+	-	Add PBG to raft chest + add instruction manual?
 -	@Beta
 -	@Test MP
 -	@TMR
@@ -150,19 +154,32 @@ v1
 	-	Improve control panel icon again (smaller exclamation, make priority icon pulse instead, flatten border
 -	@Messages
 	-	Add "Zombie 70" for new message alerts
--	Add PBG to raft chest + add instruction manual
--	Update dep mod versions
--	F&T?
-	-	Fix buggy "You discovered a lost expedition" message
 -	@Test
+-	Update dep mod versions
+
+
+-	Powerful Magic (1.8.1)
 -	F&T
+	-	Remove herb bags from chests
+	-	@Cursed Bones (0.8.0)
+		-	Increase cursed bones near surface
+		-	Fix cursed bones gen as scattered clusters inside solid matter
+	-	@Soul Barriers
+		-	Remove mouse hover showing barrier stats outside of debug mode
+	-	@TMR
+		-	Reduce bandit spawn rate
+	-	Remove "Remember to set my hotkey" messages from mods (TMR, etc)
+-	F&T
+	-	@Soul Barriers
+		-	Fix PBG barrier fadeout
+		-	Set barriers to kill npcs without drops
+		-	Fix PBG barrier fail
+		-	Reduce PBG cooldown (20s)
+	-	Grammar chat "The Plague" book
 	-	Ensure raft gen is at least partially submerged
-	-	Fix terrain remixer settings
 	-	Fix gate barrier collision spam
-
-
 	-	@AML (0.11.1)
-	-	@Cursed Bones (0.7.0)
+	-	@Cursed Bones
 		-	Lighten up surface patch size
 		-	Lighten up surface patch density
 		-	Prevent genning on open air

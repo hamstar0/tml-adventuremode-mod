@@ -23,6 +23,13 @@ namespace AdventureMode {
 					} ) );
 				}
 			}
+
+			//
+			
+			tasks.Add( new PassLegacy( "Adventure Mode: Edit Chests", ( progress ) => {
+				AMWorldGen.LoadChestEdits();
+				progress.Value = 1f;
+			} ) );
 			
 			tasks.Add( new PassLegacy( "Adventure Mode: Create Spawn Boat", ( progress ) => {
 				AMWorldGen.PlaceRaft( this, progress );
