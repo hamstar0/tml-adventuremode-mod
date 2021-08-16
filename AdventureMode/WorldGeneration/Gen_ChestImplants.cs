@@ -4,7 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using ModLibsCore.Libraries.Debug;
-using ModLibsGeneral.Libraries.World;
+using ModLibsGeneral.Libraries.World.Chests;
 using MountedMagicMirrors.Items;
 using Orbs.Items;
 

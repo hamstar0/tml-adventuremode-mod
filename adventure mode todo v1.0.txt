@@ -155,9 +155,17 @@ v1
 -	@Messages
 	-	Add "Zombie 70" for new message alerts
 -	@Test
+-	F&T
+	-	Reduce price of scaffolding kit to 50s
+	-	Enable pickaxing wooden beams
+	-	Relocate "Beware gate barriers!" message to hints
+
+
+	-	@Cursed Bones
+		-	Fix cursed bones genning inside walls still
+	-	Fix empty chests
+-	@Test
 -	Update dep mod versions
-
-
 -	Powerful Magic (1.8.1)
 -	F&T
 	-	Remove herb bags from chests
