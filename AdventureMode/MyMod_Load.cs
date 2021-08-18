@@ -94,6 +94,10 @@ namespace AdventureMode {
 				new string[] { "RuinedItems" },
 				this.ModInteractions.LoadRuinedItems
 			);
+			loadMod(
+				new string[] { "WorldGates", "SpiritWalking" },
+				this.ModInteractions.LoadWorldGatesAndSpiritWalking
+			);
 		}
 
 		////

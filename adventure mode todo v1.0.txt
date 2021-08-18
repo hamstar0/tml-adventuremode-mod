@@ -6,6 +6,16 @@ Junkyard
 	-	Implement projectile shooting (skeletron skulls, but they cause curse)
 	-	Add to world gen
 	-	Implement tile sheet
+-	@Necrotis
+	-	Implement anima leveling
+		-	Levels add resistence against anima drain
+		-	With each ectoplasm consumed, add exp
+		-	Cap out at level 7
+		-	Add indicator of level to anima
+	-	Hotep Pendant accessory
+		-	Implement short (+20s) mana "overclock" buff (+5 * lvl) + mana heal (+100) at cost of anima (25%?)
+		-	Implement clickable ankh (with hover effect)
+		-	Define item
 
 
 
@@ -123,6 +133,7 @@ v1
 	-	Late game pre-hardmode challenges
 	-	Introduce Orbs
 	-	Skeleton Merchant item to sell
+	-	A better PBG origin (a camp at dungeon?)
 [v0.28.0]
 -	Release mods!
 -	@First public beta
@@ -137,30 +148,60 @@ v1
 -	@MMM
 	-	Fix lost mirrors?
 [v0.27.0]
--	@B&D
-	-	Add PBG to raft chest + add instruction manual?
 -	@Beta
--	@Test MP
+-	@Test MP to first boss
+-	@Test to first boss
 -	@TMR
 	-	Prevent firing gun while aiming, but not having finished completed aim
--	@Cursed Bones
-	-	Reduce spawn rate per bone
 -	Add messages
-	-	Dilluted Ectoplasm
--	@B&D a better PBG origin
-[v0.26.0]
--	@Mod Control Panel
-	-	Refresh tab button colors when switching tabs
-	-	Improve control panel icon again (smaller exclamation, make priority icon pulse instead, flatten border
+	-	Game info: Fallen Cyborgs
+	-	Game info: Dilluted Ectoplasm
+-	Add outcomes for 10 mirrors, 5 LEs, all orbs objectives
+	-	All orbs: Radio message about reaching underworld + route planning
+	-	5 LEs: Radio message about finding mana shards
+	-	10 mirrors: +3 mirrors in raft
+-	Add radio messages from the guide (under Story & Lore)
+	-	On full red bar, mention need to kill a boss
+	-	On acquiring PKE, add alert + story message + objective to discover 5 lost expeditions
+	-	On acquiring shadow mirror, alert
+	-	On encountering cursed bones, alert about defense, bypass, and removal
+	-	On encountering jungle or underground gate, alert about increasing magic power (add story msg about mana)
+	-	On encountering dungeon world gate, alert about it (reformat old message as "game info")
+	-	On finding an orb, alert about its use + add objective
 -	@Messages
+	-	Add "Game Events" category
+	-	Rename "Game" messages to "Game Info"
+	-	Implement "radio" messages (adds sound + added alert animation + icon coloration)
+	-	Add message for Shadow Mirror use to access areas (hint)
 	-	Add "Zombie 70" for new message alerts
+
+
+[v0.26.0]
+-	Objectives (0.7.2)
+-	Messages (1.0.1)
+-	World Gates (1.0.3)
+-	@Mod Utility Panels (1.3.0)
+	-	Refresh tab button colors when switching tabs
+	-	Improve icon again (smaller exclamation, make priority icon pulse instead, flatten border)
+	-	Rename Mod Control Panel to Mod Utility Panels
+-	F&T
+	-	Quick Ropes (0.3.0)
+		-	Disallowing placement vertically
+	-	@Spirit Walking (1.1.1)
+		-	Ensure spirits respect world barriers (add API)
+	-	@TMR (1.9.0.1)
+		-	Remove ammo slot compat for speedloaders (until method is found to enable reloading)
+	-	@Cursed Bones (0.8.2)
+		-	Gen smaller patches
+		-	Reduce projectile rate by half
+	-	@Necrotis (1.12.2)
+		-	Prevent stacked canopic jars from eating multiple ectos
 -	@Test
 -	F&T
-	-	Reduce price of scaffolding kit to 50s
-	-	Enable pickaxing wooden beams
-	-	Relocate "Beware gate barriers!" message to hints
-
-
+	-	@Ergophobia (1.11.1)
+		-	Reduce price of scaffolding kit to 50s
+	-	@World Gates (1.0.2)
+		-	Relocate "Beware gate barriers!" message to hints
 	-	@Cursed Bones
 		-	Fix cursed bones genning inside walls still
 	-	Fix empty chests
