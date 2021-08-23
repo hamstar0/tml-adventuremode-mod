@@ -5,7 +5,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Objectives;
 using Objectives.Definitions;
-using AdventureModeLore.Lore;
+using AdventureModeLore.Lore.Dialogues.Events;
 
 
 namespace AdventureMode.Logic {
@@ -50,7 +50,7 @@ namespace AdventureMode.Logic {
 				return true;
 			}
 
-			Objective wofObj = ObjectivesAPI.GetObjective( LoreEvents.ObjectiveTitle_SummonWoF );
+			Objective wofObj = ObjectivesAPI.GetObjective( DialogueLoreEventDefinitions.ObjectiveTitle_SummonWoF );
 			return wofObj != null;
 		}
 	}

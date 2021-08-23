@@ -1,7 +1,7 @@
 ﻿using System;
 using Terraria;
 using Objectives;
-using AdventureModeLore.Lore;
+using AdventureModeLore.Lore.Dialogues.Events;
 
 
 namespace AdventureMode.Mods {
@@ -17,10 +17,10 @@ namespace AdventureMode.Mods {
 
 		private void ApplyLoreForObjectiveIf( string objectiveName, bool isNew, bool isDone ) {
 			switch( objectiveName ) {
-			case LoreEvents.ObjectiveTitle_TalkToGoblin:
+			case DialogueLoreEventDefinitions.ObjectiveTitle_TalkToGoblin:
 				this.ApplyLoreAndObjectives_BoundGoblin( isNew, isDone );
 				break;
-			case LoreEvents.ObjectiveTitle_FindMechanic:
+			case DialogueLoreEventDefinitions.ObjectiveTitle_FindMechanic:
 				this.ApplyLoreAndObjectives_BoundMechanic( isNew, isDone );
 				break;
 			}
