@@ -6,10 +6,10 @@ using AdventureMode.Recipes;
 
 
 namespace AdventureMode.Items {
-	class DefoliationChargeItem : ModItem {
+	public class DefoliationChargeItem : ModItem {
 		public override void SetStaticDefaults() {
 			this.DisplayName.SetDefault( "Defoliation Charge" );
-			this.Tooltip.SetDefault( "Tossed as a bomb, exploding after a few seconds"
+			this.Tooltip.SetDefault( "Tossed as a bomb; explodes after a few seconds"
 				+"\nExplosion produces dispersal of organics-eroding substance"
 				+"\nBreaks down mud into silt, grass into mud/dirt, and destroys foliage"
 			);

@@ -15,6 +15,8 @@ namespace AdventureMode {
 					title: "Grappling hook changes",
 					description: "New to Adventure Mode: Grappling hooks must now be used on only wood objects.",
 					modOfOrigin: AMMod.Instance,
+					alertPlayer: true,
+					isImportant: false,
 					id: "AdventureModeGrappleChanges",
 					parentMessage: MessagesAPI.ModInfoCategoryMsg
 				);

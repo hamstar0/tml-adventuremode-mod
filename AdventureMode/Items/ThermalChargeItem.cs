@@ -6,10 +6,10 @@ using AdventureMode.Recipes;
 
 
 namespace AdventureMode.Items {
-	class ThermalChargeItem : ModItem {
+	public class ThermalChargeItem : ModItem {
 		public override void SetStaticDefaults() {
 			this.DisplayName.SetDefault( "Thermal Charge" );
-			this.Tooltip.SetDefault( "Tossed as a bomb, exploding after a few seconds"
+			this.Tooltip.SetDefault( "Tossed as a bomb; explodes after a few seconds"
 				+"\nExplosion produces intense heat that degrades meltable materials"
 				+"\nMelts ice into slush"
 			);

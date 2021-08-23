@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 
 namespace AdventureMode.Items {
-	class MagicDuctTapeItem : ModItem {
+	public class MagicDuctTapeItem : ModItem {
 		public override void SetStaticDefaults() {
 			this.DisplayName.SetDefault( "Magic Duct Tape" );
 			this.Tooltip.SetDefault( "Allows jury-rigging accessory item combinations into new types" );

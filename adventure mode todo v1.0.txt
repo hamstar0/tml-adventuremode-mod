@@ -1,181 +1,53 @@
-Junkyard
--	Set seismic charges to cause low-grade cave ins (lots of falling sand blocks)
--	Add skull piles?
-	-	Set blood moons to generate these on the surface (with an "incubation" time)
-	-	Drop ectoplasm and anti-nectrotis potions on break
-	-	Implement projectile shooting (skeletron skulls, but they cause curse)
-	-	Add to world gen
-	-	Implement tile sheet
--	@Necrotis
-	-	Implement anima leveling
-		-	Levels add resistence against anima drain
-		-	With each ectoplasm consumed, add exp
-		-	Cap out at level 7
-		-	Add indicator of level to anima
-	-	Hotep Pendant accessory
-		-	Implement short (+20s) mana "overclock" buff (+5 * lvl) + mana heal (+100) at cost of anima (25%?)
-		-	Implement clickable ankh (with hover effect)
-		-	Define item
-
-
-
 v1
--	@Finish Mod Libs
-	-	Migrate TileDrawDefinition to a Class
-	-	Implement CancellationTokens for tasks
-	-	Remove obsolete crap (reconsider TileDraw stuff)
-	-	Add "Find Depending Mods Of" button
-	-	Separate "common conditions" into a new category?
-	-	Control panel
-		-	Add a button to open config folder to mod configs menu
-		-	Move icon into Settings menu
-		-	Add link to githubs in mod list and control panel list per mod (if present)
-		-	Put inbox in a control panel tab
-		-	Fix control panel and inbox icon compat with Grand Design UI icons
-		-	Set clicks upon control panel button to use player.mouseInterface
-	-	Mod Tags
-		-	Add mod reviews?
-			-	@Implement wordpress page for adding 
-			-	Define reviews list menu page
-			-	Add button on Mod Info for each mod to show reviews
-		-	Add github backups for tag database
-		-	Add to Mods menu
-		-	Add 'Has Mod Incompat.', 'Library Only' tags
-		-	Fix tag modification submit failing when < 3 tags set
-		-	Fix mod browser tags not appearing on support button click
-		-	Add mod tags text scale adjusting
-		-	Add toggle button to UI
-		-	@Update tag moderation page
-	-	Refactor mod hook-level code into a Logic abstraction
-[v0.33.0]
--	@Begin final beta test
--	Update config titles for each mod
--	Add allowed-mod whitelist (configurable)
-[v0.32.0]
--	@Set git repos public
--	Final
-	-	@Enraged
-		-	Meter needs smooth tracking
-	-	Remove Painter from spawns (don't simply block via. Nihilism mod)
-	-	Whitelist pink block breaking
-	-	Fix Guide's false recipe reports?
-	-	Add "Adventure Mode" watermark to inventory backdrop
-	-	Implement remaining lore notes (add 'Island Hungers', 'Anima')
-	-	@Lore
-		-	Fix rapid re-chats to NPCs triggering repeats of objectives dialogues
-	-	@TMR
-		-	Set bandits to make non-zombie noises
-	-	@Locked Abilities
-		-	Fix ability item duping on failed accessory equip
--	Set ectoplasm to randomly turn into "Tinted Slime Blocks"? (break = ectoplasm item drop)
--	Lock players to worlds
--	@Lore
-	-	Save dialogue states?
--	@Ergophobia
-	-	Fill furnished house step platforms with walls if backdrop walls exist
--	@Bullwhip
-	-	Fix double whip
--	@Walkie Talkie
-	-	Add objective to find cyborgs (from mysterious caller)
-	-	...
-	-	@Plan
-		-	A way to clarify dryad helps with jungle
-		-	clarify cyborgs as mineable
-		-	Draw an item icon overlay for items with modified recipes
-[v0.31.0]
--	@Messages
-	-	When opening a message, scroll to its position in the tree list
-	-	Add subtitles to tree items
--	@Mod Helpers (via. Mod Libs)
-	-	Change main menu support buttons (PayPal, Patreon, Discord)
-	-	Set to not look up IPs unless config says to do so
-	-	@Take down github tutorials (for now)
-	-	Add more space for mod CP list enumerator
-	-	Remove 'trailing separator' in mod CP list
-[v0.30.0]
--	@Beta
--	F&T
-	-	Fix herbs and herb seeds still dropping
--	@TMR
-	-	Make an option to quickly reload speeloaders
-	-	Fix reticule for non-TMR guns???
--	@Surroundings
-	-	Debug unload failure for overlays (?)
-		https://discord.com/channels/498206068753825792/663519463919976469/820043892899840042
-	-	Implement cave-like tree scrolling
--	@Lore
-	-	Add objective rewards (when applicable)
-	-	Add exploding cyborgs
--	@Ergophobia
-	-	Prevent furnishing if unsafe dungeon walls exposed to an area
-	-	Add bridging kit (sold by mechanic)
-[v0.29.0]
--	@Beta
--	@Boss Reigns
-	-	When background PKE set to max
-		-	@Plan
-			-	//Increase trickster spawn rate in general
-			-	At random, create "waves of darkness"
-				-	Causes distortion debuff, arcs from floor at random, necrotis increases a lot
-			-	Add periodic random low quaking effect (builds up when waves are near)
-			-	Make all PKE readings surge during waves
-		-	@B&D more threats
--	@Orbs
-	-	Set seismic charges to have custom sound
-	-	Import seismic charges
--	@TMR
-	-	Tweak crosshair to look more thematically-relevant
-	-	Add hammer pulling
--	@B&D
-	-	Add an item sold by Witch Doctor that changes spirit walk to use mana instead of anima
-	-	Allow crafting Automated Drill Kits (via. magitech; makes a limited distance dropshaft)
-	-	A way to acquire grapple accessory by discovery
-	-	Late game pre-hardmode challenges
-	-	Introduce Orbs
-	-	Skeleton Merchant item to sell
-	-	A better PBG origin (a camp at dungeon?)
-[v0.28.0]
 -	Release mods!
 -	@First public beta
--	@TMR
-	-	Enable right-clicking quickloader from ammo slots
--	@Test MP WoF playthrough
+[v0.27.0]
+-	@Test hosted MP WoF playthrough
 	-	Verify goblin rescue
 	-	Verify invasion correctly repositions to map center
--	@Alerted Ambushes
-	-	@Add to AM; set ambushes to also generate random small patches of cursed bones
--	@Add Crafting Kits mod (used for all equipment)
--	@MMM
-	-	Fix lost mirrors?
-[v0.27.0]
--	@Beta
--	@Test MP to first boss
+-	@Test local MP to first boss
 -	@Test to first boss
--	@TMR
-	-	Prevent firing gun while aiming, but not having finished completed aim
--	Add messages
-	-	Game info: Fallen Cyborgs
-	-	Game info: Dilluted Ectoplasm
--	Add outcomes for 10 mirrors, 5 LEs, all orbs objectives
+	-	Verify merchant dialogue + objectives ("lore")
+-	Add outcomes for objectives
 	-	All orbs: Radio message about reaching underworld + route planning
-	-	5 LEs: Radio message about finding mana shards
+	-	3 LEs: Radio message about finding mana shards
 	-	10 mirrors: +3 mirrors in raft
--	Add radio messages from the guide (under Story & Lore)
+
+
+-	@Messages (1.1.1)
+	-	Reduce scale of "important message" icon flash
+	-	Add chat message alerts for important messages
+	-	Set Events category to bottom
+	-	Move "Categories:" text label left 64
+-	@AML (0.13.0)
+-	Add messages
+	-	@Green Hell (0.7.1): Jungle arrival (Game)
+	-	@Spirit Walking (1.2.0)
+		-	@AM: Spirit Walking (Lore; after a walk)
+		-	Spirit Walking (Game; upon mirror get)
+	-	@Necrotis: Dilluted Ectoplasm (Lore)
+	-	@AML: Fallen Cyborgs (Lore)
+-	@AML (0.12.0): Add "radio" messages from the guide (under Events)
+	-	Underground desert (while goblin hunting) - Describe Seismic Charges
+	-	Dungeon - Drains anima
 	-	On full red bar, mention need to kill a boss
-	-	On acquiring PKE, add alert + story message + objective to discover 5 lost expeditions
+	-	On going below ground for more than 60s, alert to mirrors + furnishing kits
+	-	On acquiring PKE, add story message + objective to discover 5 lost expeditions
 	-	On acquiring shadow mirror, alert
 	-	On encountering cursed bones, alert about defense, bypass, and removal
 	-	On encountering jungle or underground gate, alert about increasing magic power (add story msg about mana)
 	-	On encountering dungeon world gate, alert about it (reformat old message as "game info")
-	-	On finding an orb, alert about its use + add objective
--	@Messages
-	-	Add "Game Events" category
-	-	Rename "Game" messages to "Game Info"
-	-	Implement "radio" messages (adds sound + added alert animation + icon coloration)
-	-	Add message for Shadow Mirror use to access areas (hint)
+	-	On finding an orb, alert about its use
+-	@World Gates (1.1.1)
+-	@Mod Utility Panels
+	-	Refine icon (transparent when unlit, darker edges when unlit, popup hover text, etc.)
+-	@Messages (1.1.0)
+	-	Add "Events & Interactions" category
+	-	Implement "important" messages (adds sound + added alert animation + icon coloration)
+		-	Add alert sound (zombie 45, half volume)
+		-	Implement custom alert animation (gold animation, radio "waves")
+		-	Define "important" messages
 	-	Add "Zombie 70" for new message alerts
-
-
 [v0.26.0]
 -	Objectives (0.7.2)
 -	Messages (1.0.1)
@@ -200,7 +72,7 @@ v1
 -	F&T
 	-	@Ergophobia (1.11.1)
 		-	Reduce price of scaffolding kit to 50s
-	-	@World Gates (1.0.2)
+	-	@World Gates
 		-	Relocate "Beware gate barriers!" message to hints
 	-	@Cursed Bones
 		-	Fix cursed bones genning inside walls still

@@ -1,140 +1,139 @@
-Future considerations
--	Decide: Generate sleeping bosses in large caverns
--	Set all enemies in dungeon to be strong against all attacks that aren't magic (add Guide tips)
--	@Minecart Cannon mod
--	@Add KO mod
--	@B&D Add grapple reload function on return to ground (otherwise only works on wood)
--	@Anomalies mod (only adds Gravitational Anomalies, for now)
--	@Fleeting Goodies mod (coins disappear)
--	@Lurking Foes mod (monsters are still in the dark until lit)
--	Modify Smoke Bombs: Causes confusion to enemies and lightly repels them
-	-	Implement projectile neutralizing (within area only)
-	-	Implement enemy repellant behavior
-	-	Add recipe: Bomb, ...
-	-	Remove from party girl's shop
--	@Powerful Magic
-	-	Add magic burst attack when unarmed
+Junkyard
+-	Set seismic charges to cause low-grade cave ins (lots of falling sand blocks)
+-	Add skull piles?
+	-	Set blood moons to generate these on the surface (with an "incubation" time)
+	-	Drop ectoplasm and anti-nectrotis potions on break
+	-	Implement projectile shooting (skeletron skulls, but they cause curse)
+	-	Add to world gen
+	-	Implement tile sheet
 -	@Necrotis
-	-	Set Shine Potion and Miner's Hat (stackable) to reduce rate of bramble generation
--	@B&D Add Meet The Boss mod?
-	-	Bosses can only be summoned (via. item) in designated areas
--	@Prefab Kits
-	-	Implement type of Excavation Kits
-	-	Demolitionist trades Excavation Kits for ores
-		-	@Plan
-			-	Copper/tin for ice and mud excavator
-			-	Iron/lead for sandstone excavator
-			-	Silver/tungsten for granite and marble excavator
-			-	Gold/platinum for water-submerged rock excavator
-			-	Demonite/crimtane for lava-submerged rock excavator
-			-	Hellstone for bedrock excavator
-	-	Add Excavation Kits
-		-	Implement item use
-		-	Create item graphic (shaped explosives?)
+	-	Implement anima leveling
+		-	Levels add resistence against anima drain
+		-	With each ectoplasm consumed, add exp
+		-	Cap out at level 7
+		-	Add indicator of level to anima
+	-	Hotep Pendant accessory
+		-	Implement short (+20s) mana "overclock" buff (+5 * lvl) + mana heal (+100) at cost of anima (25%?)
+		-	Implement clickable ankh (with hover effect)
 		-	Define item
-		-	@Plan
-			-	Turns mud into silt and sand
-			-	Turns sandstone into sand
-			-	Turns ice into slush and snow
-			-	Turns granite and marble into silt
-			-	Turns rock into silt
-			-	Turns bedrock into rock
--	@Mountain Goat mod
-	-	@Plan
-		-	Available from first spawn
-		-	Moves fast, jumps high, [slides along walls?]
-		-	Bucks you if it takes damage, enters water, or goes too far underground
--	@Malfunctioning Items mod
-	-	Implement overheat fx (smoke from gun, sprite pulses black)
-	-	Implement overheat behavior and cooldown (6s)
-	-	Implement overheat activation
-	-	Implement temperature gauge on weapon (tint sprite red + add vibration)
-	-	Implement list of overheat weapons
-		-	S.D.M.G: 2x
-		-	Last Prism: 2x
-		-	Vortex Beater: 1.5x
-		-	Chain Gun: 1.5x
-		-	Gatligator: 1x
-		-	Uzi: 1x
-		-	Megashark: 1x
-		-	Minishark: 1x
-		-	Laser Rifle: 1x
-		-	Space Gun: 1x
-	-	Define mod
 
 
 
-[v2]
--	@Mod Helpers v7
-	-	Implement game mode function with Mod Helpers
-		-	...
-		-	@Plan
-			-	Modes: Vanilla, Adventure, Survival, Brutal, Honor Bound, Creative, Custom
-		-	Add world lock + new world requirement when a non-Custom game mode is set
-	-	Add "Exit without save" button (SP only)
-[v1.5.0]
--	@Add Dragon Lairs (uses Orbs, features Elemental Dragon bosses)
-[v1.4.0]
--	@Add Lucky Hat mod (adds QTEs for every major hit to avoid them)
-[v1.3.0]
--	Add compatibility with Lives mod to generate the world with extra lives in chests
--	Implement difficulty select (sub-modes)
-	-	@Plan
-		-	World create screen adds options to difficulty select
-		-	Hard
-			-	Life Crystals give half health
-[v1.2.0]
--	@B&D Blackness covering any area that is unreachable
--	B&D: Terrathyst?
-	-	Add Terrathyst veins to world gen (via. Regions)
-	-	Implement Terrathyst
-		-	Implement behavior
-			-	Implement mana absorption
-				-	Implement absorption
-				-	Implement saturation fx
-				-	@Plan
-					-	Color indicates saturation capacity
-					-	Saturation immediately wears off, if tile is not destroyed
-					-	When fully saturated, terrathyst is destroyed (along with its neighbors)
-					-	Instantly drains mana when near and "saturates"
-			-	Comes in different colors
-			-	Not mineable, not orb-able
-		-	Create tile graphic
-		-	Define tile
-[v1.1.0]
--	Set Skeletron Prime to drop Soul of Hole(?) (consumable; enables breaking mud)
--	Set WoF to drop Soul of Mole (consumable; enables breaking dirt)
+v2
+-	@Finish Mod Libs
+	-	Migrate TileDrawDefinition to a Class
+	-	Implement CancellationTokens for tasks
+	-	Remove obsolete crap (reconsider TileDraw stuff)
+	-	Add "Find Depending Mods Of" button
+	-	Separate "common conditions" into a new category?
+	-	Control panel
+		-	Add a button to open config folder to mod configs menu
+		-	Move icon into Settings menu
+		-	Add link to githubs in mod list and control panel list per mod (if present)
+		-	Put inbox in a control panel tab
+		-	Fix control panel and inbox icon compat with Grand Design UI icons
+		-	Set clicks upon control panel button to use player.mouseInterface
+	-	Mod Tags
+		-	Add mod reviews?
+			-	@Implement wordpress page for adding 
+			-	Define reviews list menu page
+			-	Add button on Mod Info for each mod to show reviews
+		-	Add github backups for tag database
+		-	Add to Mods menu
+		-	Add 'Has Mod Incompat.', 'Library Only' tags
+		-	Fix tag modification submit failing when < 3 tags set
+		-	Fix mod browser tags not appearing on support button click
+		-	Add mod tags text scale adjusting
+		-	Add toggle button to UI
+		-	@Update tag moderation page
+	-	Refactor mod hook-level code into a Logic abstraction
+[v0.33.0]
+-	@Begin final beta test
+-	Update config titles for each mod
+-	Add allowed-mod whitelist (configurable)
+[v0.32.0]
+-	@Set git repos public
+-	Final
+	-	@Enraged
+		-	Meter needs smooth tracking
+	-	Remove Painter from spawns (don't simply block via. Nihilism mod)
+	-	Whitelist pink block breaking
+	-	Fix Guide's false recipe reports?
+	-	Add "Adventure Mode" watermark to inventory backdrop
+	-	Implement remaining lore notes (add 'Island Hungers', 'Anima')
+	-	@Lore
+		-	Fix rapid re-chats to NPCs triggering repeats of objectives dialogues
+	-	@TMR
+		-	Set bandits to make non-zombie noises
+	-	@Locked Abilities
+		-	Fix ability item duping on failed accessory equip
+-	Set ectoplasm to randomly turn into "Tinted Slime Blocks"? (break = ectoplasm item drop)
+-	Lock players to worlds
+-	@Lore
+	-	Save dialogue states?
 -	@Ergophobia
-	-	Implement r-click fast placement of platform and plank bridges
--	@Orbs
-	-	Pull cell data from @Terrain Remixer and generate color squares 75% as cells
--	@Terrain Remixer
-	-	@Add Regions mod: Generate cells of a fixed set of "colors"
--	@Trickster
-	-	Allow recovering stolen items?
-	-	Decide: Increase spawn rate when near torches (indicated by Dryad dialogue)?
--	@Prefab Kits: Add Defensive Fortification Kit: A tall wall with a chain on one side, a jump pad on the other
--	@Add Push n' Pull mod
+	-	Fill furnished house step platforms with walls if backdrop walls exist
+-	@Bullwhip
+	-	Fix double whip
+-	@Walkie Talkie
+	-	Add objective to find cyborgs (from mysterious caller)
+	-	...
 	-	@Plan
-		-	Bound hotkey invokes either push or pull
-		-	To push, hold down key and release when enemies near
-		-	To pull, tap key when enemies near
-		-	Push
-			-	Causes enemies to fly back
-			-	Causes player to launch back
-			-	Causes momentary invincibility frames
-			-	Slows movement while charging
-		-	Pull
-			-	Applies pull force to nearest enemy to the player
-			-	Launches player forward
-			-	Player has invincibility frames while launching past enemies
+		-	A way to clarify dryad helps with jungle
+		-	clarify cyborgs as mineable
+		-	Draw an item icon overlay for items with modified recipes
+[v0.31.0]
+-	@Messages
+	-	When opening a message, scroll to its position in the tree list
+	-	Add subtitles to tree items
+-	@Mod Helpers (via. Mod Libs)
+	-	Change main menu support buttons (PayPal, Patreon, Discord)
+	-	Set to not look up IPs unless config says to do so
+	-	@Take down github tutorials (for now)
+	-	Add more space for mod CP list enumerator
+	-	Remove 'trailing separator' in mod CP list
+[v0.30.0]
+-	@Beta
+-	F&T
+	-	Fix herbs and herb seeds still dropping
+-	@TMR
+	-	Make an option to quickly reload speeloaders
+	-	Fix reticule for non-TMR guns???
+-	@Surroundings
+	-	Debug unload failure for overlays (?)
+		https://discord.com/channels/498206068753825792/663519463919976469/820043892899840042
+	-	Implement cave-like tree scrolling
+-	@Lore
+	-	Add objective rewards (when applicable)
+	-	Add exploding cyborgs
+-	@Ergophobia
+	-	Prevent furnishing if unsafe dungeon walls exposed to an area
+	-	Add bridging kit (sold by mechanic)
+[v0.29.0]
+-	@Beta
+-	@Boss Reigns
+	-	When background PKE set to max
+		-	@Plan
+			-	//Increase trickster spawn rate in general
+			-	At random, create "waves of darkness"
+				-	Causes distortion debuff, arcs from floor at random, necrotis increases a lot
+			-	Add periodic random low quaking effect (builds up when waves are near)
+			-	Make all PKE readings surge during waves
+		-	@B&D more threats
+-	@Orbs
+	-	Set seismic charges to have custom sound
+	-	Import seismic charges
+-	@TMR
+	-	Tweak crosshair to look more thematically-relevant
+	-	Add hammer pulling
 -	@B&D
-	-	@Spirit Walking: Add warps
-	-	@Add Quick Sell Loot mod
-	-	@Add Evil Evil Biomes mod (infection debuffs)
-	-	@Boss Reigns max BH PKE needs killing boss/progress to be ACTUALLY IMPORTANT; think of a way to do this!
-	-	A "durability" concept ('Equipment Upkeep')
-	-	Bedrock veins: Uses Regions mod's cells
-	-	Resupply "requests"
-	-	Loot bag?
+	-	Add an item sold by Witch Doctor that changes spirit walk to use mana instead of anima
+	-	Allow crafting Automated Drill Kits (via. magitech; makes a limited distance dropshaft)
+	-	A way to acquire grapple accessory by discovery
+	-	Late game pre-hardmode challenges
+	-	Introduce Orbs
+	-	Skeleton Merchant item to sell
+	-	A better PBG origin (a camp at dungeon?)
+	-	@Add Alerted Ambushes mod? (also generates cursed brambles)
+
 

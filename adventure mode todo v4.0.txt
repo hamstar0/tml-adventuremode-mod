@@ -1,36 +1,59 @@
-Future considerations
--	@Add Middle Earth mod
--	Create special minecart type that makes immune to enemies, but disables player attacks
--	@Decide: Add ziplines?
+Ideas:
+-	@Add Throwable Melee Weapons mod
+-	Set each new boss kill to drop 3 Teleporation Potions
+-	@Staff of Gaia
+	-	Add Staff of Aether
+		-	@Plan
+			-	Naturally generated in floating island chests
+			-	Grants unlimited flight for up to 30s, but consumes nearby 'world power' to do so
+			-	Additional flight is possible, but at the cost of additional 'world power' (via. r-click)
+			-	'World power' now only exists where there's solid terrain (still non-renewable)
+			-	While flight active, staff also works as a weapon able to 12 damage, ignoring element resists
+-	Add Caving Harness accessory (start item; auto-deploys a rope to allow quickly returning to the surface)
+-	Allow ducking inside a minecart to avoid damage (but risk derailing; no attacks possible, also)
+-	Underworld
+	-	@Plan: Protective items
+		-	Jester's Motley (via Jungle) - Wards Tricksters (especially nasty in the underworld)
+		-	Vegetative Vestment (via Underground Desert) - Protects against underworld heat
+		-	Mana Circuits (via Dungeon) - Retains mana (underworld drains mana)
+	-	Set Tricksters to slowly regenerate hp and attack slightly quicker
+	-	Add underworld debuff: Heat Prostration (similar to old Necrotis)
+-	@Trickster
+	-	Add surface tricks (item stealing + racing?)
+-	@Mounted Magic Mirrors
+	-	Allow labeling mirrors on the map (and recoloring?)
+-	@Add Elements mod (with elemental gates)
+-	@Add Trusty Steed mod
+-	Blast Mining
+	-	@Add Cave Ins mod
+	-	Set Bomb and Dynamite explosions to destroy tiles with no more than 1 cardinal neighbor (mention in tooltip)
+-	@Add Myconids Attack! mod
+-	@Terrain Remixer
+	-	Add 'middle earth' setting
 
 
 
-v4
--	Implement Rod of Dissonance via. the new recipe
--	Set coins to evaporate after 8 seconds
--	Set fighter-AI monsters to climb on top of each other when blockaded
--	@Bullwhip
-	-	Add a hotkey for using the whip
-	-	Increase bullwhip reach
-	-	Set grab behavior to pull player
-	-	Set it to activate levers
-	-	Kill anything under 20 hp
-	-	Use alternate sound fx for hitting solid tile
-	-	Create Stunning Whip (rename?)
-		-	Makes enemies unable to attack for random duration
-		-	Trickster always flees on hit, and stays away for a while
-		-	Removes Degreelessness Mode from enemies
-		-	Crafted from 3 Dark Hearts, 1 Bullwhip, 50 Pixie Dust
--	@Orbs
-	-	Set orbs to destroy tiles outside of their square in small amounts
-	-	Add gates (requires 4 of a given type crafted into a "Super Orb" to open all of that type)
--	@Add Guarded Meteors mod
-	-	@Decide: Set meteor heads to appear from random meteor blocks directly
-	-	Set meteor heads to seek and self destruct to stop bombs, dynamite
-	-	Set meteor biome to drain mana
-	-	Set meteor heads to phase occasionally (cannot be damaged)
--	@Add Fish Populations mod: Sets fishing to tap out in a given area (add Guide tip correspondingly)
--	@Add Wear And Tear mod (tool use incurs random, stacking negative prefixes)
--	Allow platform stair placing in short stretches (2 long, down only)
--	@Prefab Kits
-	-	Use mouse position for placing house framing kits
+[v3]
+-	Remake trailer
+-	@Add Adventure Mode Lore mod (for now, only intro cutscene)
+
+
+
+Lore plans (rev1)
+-	Add "narrative" (via NPCs)
+	-	(Post-Golem) Learn that the end times are approaching if the ancient cult is not defeated
+	-	(Post-Golem) Learn that Lihzarhds sought power only to oppose the real threat: A cult worshipping elder gods
+	-	(Post-Mech) Learn of a secret tribe of lizard men (lihzarhds) seeking celestial magic and technological might
+	-	(Post-Mech) Learn about an ancient danger brewing in the jungle, maybe elder god power?
+	-	(Hard mode) Learn about mechanical constructs designed to suppress jungle denizens from attaining ancient power
+	-	(Hard mode) Learn about demon altars the guardian itself, not the demon altars, containing elder god power
+	-	Learn about hell's guardian being summoned by a symbolic act of betraying one's humanity
+	-	Learn about the accessories needed to access the underworld
+	-	Learn that powerful ores exist in the corruption/crimson to gain strength needed to win hammer
+	-	Warn of mysterious dark magic resurrecting pieces of elder gods to try to guard the secret of the magic hammer
+	-	Learn about the dungeon existing to originally to seal away pieces of elder gods, but since having become cult
+	-	Learn about migrating slime colonies and undead plagues (blood moons) preventing civilization
+	-	Learn about goblins hoarding advanced technology
+	-	Learn that the hammer is hidden deep underground and guarded well
+	-	Find clues about magic hammer
+	-	Learn about a magic hammer that destroys altars that are being used to summon elder gods

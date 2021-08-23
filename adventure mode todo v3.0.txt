@@ -1,59 +1,105 @@
-Ideas:
--	@Add Throwable Melee Weapons mod
--	Set each new boss kill to drop 3 Teleporation Potions
--	@Staff of Gaia
-	-	Add Staff of Aether
+Future considerations
+-	Decide: Generate sleeping bosses in large caverns
+-	Set all enemies in dungeon to be strong against all attacks that aren't magic (add Guide tips)
+-	@Minecart Cannon mod
+-	@Add KO mod
+-	@B&D Add grapple reload function on return to ground (otherwise only works on wood)
+-	@Anomalies mod (only adds Gravitational Anomalies, for now)
+-	@Fleeting Goodies mod (coins disappear)
+-	@Lurking Foes mod (monsters are still in the dark until lit)
+-	Modify Smoke Bombs: Causes confusion to enemies and lightly repels them
+	-	Implement projectile neutralizing (within area only)
+	-	Implement enemy repellant behavior
+	-	Add recipe: Bomb, ...
+	-	Remove from party girl's shop
+-	@Powerful Magic
+	-	Add magic burst attack when unarmed
+-	@Necrotis
+	-	Set Shine Potion and Miner's Hat (stackable) to reduce rate of bramble generation
+-	@B&D Add Meet The Boss mod?
+	-	Bosses can only be summoned (via. item) in designated areas
+-	@Mountain Goat mod
+	-	@Plan
+		-	Available from first spawn
+		-	Moves fast, jumps high, [slides along walls?]
+		-	Bucks you if it takes damage, enters water, or goes too far underground
+-	@Malfunctioning Items mod
+	-	Implement overheat fx (smoke from gun, sprite pulses black)
+	-	Implement overheat behavior and cooldown (6s)
+	-	Implement overheat activation
+	-	Implement temperature gauge on weapon (tint sprite red + add vibration)
+	-	Implement list of overheat weapons
+		-	S.D.M.G: 2x
+		-	Last Prism: 2x
+		-	Vortex Beater: 1.5x
+		-	Chain Gun: 1.5x
+		-	Gatligator: 1x
+		-	Uzi: 1x
+		-	Megashark: 1x
+		-	Minishark: 1x
+		-	Laser Rifle: 1x
+		-	Space Gun: 1x
+-	@Scrapable Items mod
+	-	@AML: Set pressure plates to drop Scrap
+	-	Set Mechanic to sell Scrap (15s each)
+	-	Add recipes to obtain scrap from all rarity >= 2 tools/armors/accessories (1 for each 2 rarity)
+	-	Add scrap to all tool, armor, and accessory recipes with >= rarity
+	-	Add Scrap item
+	-	@Spirit Walking: Add warps
+
+
+
+[v2]
+-	@Mod Helpers
+	-	Implement game mode function with Mod Helpers
+		-	...
 		-	@Plan
-			-	Naturally generated in floating island chests
-			-	Grants unlimited flight for up to 30s, but consumes nearby 'world power' to do so
-			-	Additional flight is possible, but at the cost of additional 'world power' (via. r-click)
-			-	'World power' now only exists where there's solid terrain (still non-renewable)
-			-	While flight active, staff also works as a weapon able to 12 damage, ignoring element resists
--	Add Caving Harness accessory (start item; auto-deploys a rope to allow quickly returning to the surface)
--	Allow ducking inside a minecart to avoid damage (but risk derailing; no attacks possible, also)
--	Underworld
-	-	@Plan: Protective items
-		-	Jester's Motley (via Jungle) - Wards Tricksters (especially nasty in the underworld)
-		-	Vegetative Vestment (via Underground Desert) - Protects against underworld heat
-		-	Mana Circuits (via Dungeon) - Retains mana (underworld drains mana)
-	-	Set Tricksters to slowly regenerate hp and attack slightly quicker
-	-	Add underworld debuff: Heat Prostration (similar to old Necrotis)
+			-	Modes: Vanilla, Adventure, Survival, Brutal, Honor Bound, Creative, Custom
+		-	Add world lock + new world requirement when a non-Custom game mode is set
+[v1.4.0]
+-	@Add Dragon Lairs (uses Orbs, terrain cells for dragon's lair, and features Elemental Dragon boss)
+[v1.3.0]
+-	@Add Lucky Hat mod (adds QTEs for every major hit to avoid them)
+[v1.2.0]
+-	Add compatibility with Lives mod to generate the world with extra lives in chests
+-	Implement difficulty select (sub-modes)
+	-	@Plan
+		-	World create screen adds options to difficulty select
+		-	Hard
+			-	Life Crystals give half health
+[v1.1.0]
+-	Set WoF to drop Soul of Mole (consumable; enables breaking dirt and mud)
+-	Begin cell-based terrain generation (for future plans)
+	-	@Orbs
+		-	Pull cell data from @Terrain Remixer and generate color squares 75% as cells
+	-	@Terrain Remixer
+		-	@Add Regions mod: Generate cells of a fixed set of "colors"
 -	@Trickster
-	-	Add surface tricks (item stealing + racing?)
--	@Mounted Magic Mirrors
-	-	Allow labeling mirrors on the map (and recoloring?)
--	@Add Elements mod (with elemental gates)
--	@Add Trusty Steed mod
--	Blast Mining
-	-	@Add Cave Ins mod
-	-	Set Bomb and Dynamite explosions to destroy tiles with no more than 1 cardinal neighbor (mention in tooltip)
--	@Add Myconids Attack! mod
--	@Terrain Remixer
-	-	Add 'middle earth' setting
+	-	Allow recovering stolen items?
+	-	Decide: Increase spawn rate when near torches (indicated by Dryad dialogue)?
+-	@B&D
+	-	@Ergophobia
+		-	Implement r-click fast placement of platform and plank bridges
+	-	@Prefab Kits: Defensive Fortification Kit: A tall wall with a chain on one side, a jump pad on the other
+	-	@Add Push n' Pull mod?
+		-	@Plan
+			-	Bound hotkey invokes either push or pull
+			-	To push, hold down key and release when enemies near
+			-	To pull, tap key when enemies near
+			-	Push
+				-	Causes enemies to fly back
+				-	Causes player to launch back
+				-	Causes momentary invincibility frames
+				-	Slows movement while charging
+			-	Pull
+				-	Applies pull force to nearest enemy to the player
+				-	Launches player forward
+				-	Player has invincibility frames while launching past enemies
+	-	@Add Quick Sell Loot mod
+	-	@Add Evil Evil Biomes mod (infection debuffs)
+	-	@Boss Reigns max BH PKE needs killing boss/progress to be ACTUALLY IMPORTANT; think of a way to do this!
+	-	A "durability" concept ('Equipment Upkeep')
+	-	Bedrock veins: Uses Regions mod's cells
+	-	Resupply "requests"
+	-	Loot bag?
 
-
-
-[v3]
--	Remake trailer
--	@Add Adventure Mode Lore mod (for now, only intro cutscene)
-
-
-
-Lore plans (rev1)
--	Add "narrative" (via NPCs)
-	-	(Post-Golem) Learn that the end times are approaching if the ancient cult is not defeated
-	-	(Post-Golem) Learn that Lihzarhds sought power only to oppose the real threat: A cult worshipping elder gods
-	-	(Post-Mech) Learn of a secret tribe of lizard men (lihzarhds) seeking celestial magic and technological might
-	-	(Post-Mech) Learn about an ancient danger brewing in the jungle, maybe elder god power?
-	-	(Hard mode) Learn about mechanical constructs designed to suppress jungle denizens from attaining ancient power
-	-	(Hard mode) Learn about demon altars the guardian itself, not the demon altars, containing elder god power
-	-	Learn about hell's guardian being summoned by a symbolic act of betraying one's humanity
-	-	Learn about the accessories needed to access the underworld
-	-	Learn that powerful ores exist in the corruption/crimson to gain strength needed to win hammer
-	-	Warn of mysterious dark magic resurrecting pieces of elder gods to try to guard the secret of the magic hammer
-	-	Learn about the dungeon existing to originally to seal away pieces of elder gods, but since having become cult
-	-	Learn about migrating slime colonies and undead plagues (blood moons) preventing civilization
-	-	Learn about goblins hoarding advanced technology
-	-	Learn that the hammer is hidden deep underground and guarded well
-	-	Find clues about magic hammer
-	-	Learn about a magic hammer that destroys altars that are being used to summon elder gods

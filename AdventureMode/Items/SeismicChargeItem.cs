@@ -6,11 +6,11 @@ using AdventureMode.Recipes;
 
 
 namespace AdventureMode.Items {
-	class SeismicChargeItem : ModItem {
+	public class SeismicChargeItem : ModItem {
 		public override void SetStaticDefaults() {
 			this.DisplayName.SetDefault( "Seismic Charge" );
-			this.Tooltip.SetDefault( "Tossed as a bomb, exploding after a few seconds"
-				+"\nExplosion produces focused tremors that break down certain materials"
+			this.Tooltip.SetDefault( "Tossed as a bomb; explodes after a few seconds"
+				+"\nExplosion produces vibrations that break down certain materials"
 				+"\nBreaks down sandstone into sand, mud into silt, ice into slush"
 				+"\nAlso breaks certain brick types"
 			);
