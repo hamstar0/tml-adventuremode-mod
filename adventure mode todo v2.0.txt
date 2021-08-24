@@ -47,11 +47,12 @@ v2
 		-	Add toggle button to UI
 		-	@Update tag moderation page
 	-	Refactor mod hook-level code into a Logic abstraction
-[v0.33.0]
+-	@Add Life's A Beach mod (sets spawn to beach)
+v1.5
 -	@Begin final beta test
 -	Update config titles for each mod
 -	Add allowed-mod whitelist (configurable)
-[v0.32.0]
+v1.4
 -	@Set git repos public
 -	Final
 	-	@Enraged
@@ -82,7 +83,7 @@ v2
 		-	A way to clarify dryad helps with jungle
 		-	clarify cyborgs as mineable
 		-	Draw an item icon overlay for items with modified recipes
-[v0.31.0]
+v1.3
 -	@Messages
 	-	When opening a message, scroll to its position in the tree list
 	-	Add subtitles to tree items
@@ -92,7 +93,7 @@ v2
 	-	@Take down github tutorials (for now)
 	-	Add more space for mod CP list enumerator
 	-	Remove 'trailing separator' in mod CP list
-[v0.30.0]
+v1.2
 -	@Beta
 -	F&T
 	-	Fix herbs and herb seeds still dropping
@@ -109,7 +110,7 @@ v2
 -	@Ergophobia
 	-	Prevent furnishing if unsafe dungeon walls exposed to an area
 	-	Add bridging kit (sold by mechanic)
-[v0.29.0]
+v1.1
 -	@Beta
 -	@Boss Reigns
 	-	When background PKE set to max

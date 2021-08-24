@@ -6,14 +6,28 @@ v1
 	-	Verify goblin rescue
 	-	Verify invasion correctly repositions to map center
 -	@Test local MP to first boss
+-	@TMR
+	-	@AM: Add ammo box to raft
+	-	Set ammo box buff to refill bandolier
+	-	Implement ammo limit for bandolier
 -	@Test to first boss
 	-	Verify merchant dialogue + objectives ("lore")
+
+
+-	@F&T
+	-	@Necrotis (1.12.4)
+		-	Reduce ectoplasm pot drop frequency
+	-	@AML (0.13.1)
+	-	@World Gates (1.1.2)
+		-	Move 'World Gates' message to Game Info
+	-	@Messages (1.1.2)
+		-	Make dialogue messages format look more like dialogue
+		-	Reduce important icon pulse size and intensity
+		-	Fix important message sound
+	-	Remove King Slime debug message
 -	Add outcomes for objectives
 	-	All orbs: Radio message about reaching underworld + route planning
 	-	3 LEs: Radio message about finding mana shards
-	-	10 mirrors: +3 mirrors in raft
-
-
 -	@Messages (1.1.1)
 	-	Reduce scale of "important message" icon flash
 	-	Add chat message alerts for important messages
