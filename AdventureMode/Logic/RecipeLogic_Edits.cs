@@ -124,7 +124,18 @@ namespace AdventureMode.Logic {
 			re.AcceptRecipeGroup( "AdventureMode.StrangePlant" );
 
 			int grpId = RecipeGroup.recipeGroupIDs[ "AdventureMode.StrangePlant" ];
+			if( !RecipeGroup.recipeGroups.ContainsKey(grpId) ) {
+				LogLibraries.Warn( "Could not find recipe group #: "+grpId+" (AdventureMode.StrangePlant)" );
+
+				return;
+			}
+
 			RecipeGroup rg = RecipeGroup.recipeGroups[ grpId ];
+			if( rg.IconicItemIndex <= -1 ) {
+				LogLibraries.Warn( "Could not find recipe group's (AdventureMode.StrangePlant) 'iconic item'" );
+
+				return;
+			}
 
 			int grpItemType = rg.ValidItems[ rg.IconicItemIndex ];
 //LogLibraries.Log( "grpId:"+grpId+ " - rg:"+string.Join(",", rg.ValidItems)+" - grpItemType:"+grpItemType );

@@ -21,18 +21,18 @@ Junkyard
 
 v2
 -	@Finish Mod Libs
-	-	Migrate TileDrawDefinition to a Class
+	-	Migrate TileDrawDefinition to a class
 	-	Implement CancellationTokens for tasks
 	-	Remove obsolete crap (reconsider TileDraw stuff)
-	-	Add "Find Depending Mods Of" button
 	-	Separate "common conditions" into a new category?
 	-	Control panel
-		-	Add a button to open config folder to mod configs menu
-		-	Move icon into Settings menu
-		-	Add link to githubs in mod list and control panel list per mod (if present)
-		-	Put inbox in a control panel tab
-		-	Fix control panel and inbox icon compat with Grand Design UI icons
+		-	Add icon to Settings menu
+		-	Fix control panel icon compat with Grand Design UI icons
 		-	Set clicks upon control panel button to use player.mouseInterface
+	-	Mod Helpers
+		-	Add "Find Depending Mods Of" button
+		-	Add a button to open config folder to mod configs menu
+		-	Add link to githubs in mod list and control panel list per mod (if present)
 	-	Mod Tags
 		-	Add mod reviews?
 			-	@Implement wordpress page for adding 
@@ -47,11 +47,11 @@ v2
 		-	Add toggle button to UI
 		-	@Update tag moderation page
 	-	Refactor mod hook-level code into a Logic abstraction
--	@Add Life's A Beach mod (sets spawn to beach)
 v1.5
 -	@Begin final beta test
 -	Update config titles for each mod
 -	Add allowed-mod whitelist (configurable)
+-	@Add Life's A Beach mod (sets spawn to beach)
 v1.4
 -	@Set git repos public
 -	Final
@@ -76,13 +76,6 @@ v1.4
 	-	Fill furnished house step platforms with walls if backdrop walls exist
 -	@Bullwhip
 	-	Fix double whip
--	@Walkie Talkie
-	-	Add objective to find cyborgs (from mysterious caller)
-	-	...
-	-	@Plan
-		-	A way to clarify dryad helps with jungle
-		-	clarify cyborgs as mineable
-		-	Draw an item icon overlay for items with modified recipes
 v1.3
 -	@Messages
 	-	When opening a message, scroll to its position in the tree list
@@ -95,8 +88,6 @@ v1.3
 	-	Remove 'trailing separator' in mod CP list
 v1.2
 -	@Beta
--	F&T
-	-	Fix herbs and herb seeds still dropping
 -	@TMR
 	-	Make an option to quickly reload speeloaders
 	-	Fix reticule for non-TMR guns???
@@ -107,26 +98,25 @@ v1.2
 -	@Lore
 	-	Add objective rewards (when applicable)
 	-	Add exploding cyborgs
--	@Ergophobia
-	-	Prevent furnishing if unsafe dungeon walls exposed to an area
-	-	Add bridging kit (sold by mechanic)
-v1.1
+	-	Add attacking cyborgs
+v1.2
 -	@Beta
 -	@Boss Reigns
 	-	When background PKE set to max
-		-	@Plan
-			-	//Increase trickster spawn rate in general
-			-	At random, create "waves of darkness"
+		-	//Increase trickster spawn rate in general
+		-	Add periodic random low quaking effect (builds up when waves are near)
+		-	"Waves of darkness"
+			-	@Plan
 				-	Causes distortion debuff, arcs from floor at random, necrotis increases a lot
-			-	Add periodic random low quaking effect (builds up when waves are near)
-			-	Make all PKE readings surge during waves
+				-	@B&D a defense measure
+				-	Make all PKE readings surge during waves
 		-	@B&D more threats
--	@Orbs
-	-	Set seismic charges to have custom sound
-	-	Import seismic charges
 -	@TMR
 	-	Tweak crosshair to look more thematically-relevant
 	-	Add hammer pulling
+	-	@AM: Add ammo box to raft
+	-	Set ammo box buff to refill bandolier
+	-	Implement ammo limit for bandolier
 -	@B&D
 	-	Add an item sold by Witch Doctor that changes spirit walk to use mana instead of anima
 	-	Allow crafting Automated Drill Kits (via. magitech; makes a limited distance dropshaft)
@@ -136,5 +126,23 @@ v1.1
 	-	Skeleton Merchant item to sell
 	-	A better PBG origin (a camp at dungeon?)
 	-	@Add Alerted Ambushes mod? (also generates cursed brambles)
+v1.1
+-	F&T
+	-	Fix herbs and herb seeds still dropping
+-	@Messages
+	-	Show count of new messages on "Next Unread" button
+-	@Orbs
+	-	Set seismic charges to have custom sound
+	-	Import seismic charges
+-	@Ergophobia
+	-	Prevent furnishing if unsafe dungeon walls exposed to an area
+	-	Add bridging kit (sold by mechanic)
+-	@Soul Barriers
+	-	Use distinct sound for PBG activation
+-	Add more radio messages
+	-	@Plan
+		-	A way to clarify dryad helps with jungle
+		-	clarify cyborgs as mineable
+		-	Draw an item icon overlay for items with modified recipes
 
 

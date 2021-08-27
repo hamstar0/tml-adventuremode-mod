@@ -123,16 +123,18 @@ namespace AdventureMode.Logic {
 
 			if( config.EnableBossItemRecipes ) {
 				if( !config.EnableAlchemyRecipes ) {
-					whitelistTypes.Add( ItemID.BottledHoney );
+					whitelistTypes.Add( ItemID.BottledHoney );	// Exception I guess
 				}
 				whitelistTypes.Add( ItemID.GoldCrown );
 				whitelistTypes.Add( ItemID.PlatinumCrown );
 				//
 				whitelistTypes.Add( ItemID.SlimeCrown );
-				//whitelistTypes.Add( ItemID.SuspiciousLookingEye );
-				//whitelistTypes.Add( ItemID.WormFood );
-				//whitelistTypes.Add( ItemID.BloodySpine );
-				//whitelistTypes.Add( ItemID.Abeemination );
+				if( config.EnableBiomedBossItemRecipes ) {
+					whitelistTypes.Add( ItemID.SuspiciousLookingEye );	// Technically all biomes; see chests
+					whitelistTypes.Add( ItemID.WormFood );
+					whitelistTypes.Add( ItemID.BloodySpine );
+					whitelistTypes.Add( ItemID.Abeemination );
+				}
 				whitelistTypes.Add( ItemID.MechanicalWorm );
 				whitelistTypes.Add( ItemID.MechanicalSkull );
 				whitelistTypes.Add( ItemID.MechanicalEye );

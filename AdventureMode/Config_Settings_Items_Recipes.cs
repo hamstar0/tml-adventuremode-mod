@@ -29,6 +29,10 @@ namespace AdventureMode {
 
 		[DefaultValue( true )]
 		[ReloadRequired]
+		public bool EnableBiomedBossItemRecipes { get; set; } = true;
+
+		[DefaultValue( true )]
+		[ReloadRequired]
 		public bool EnableTorchRecipes { get; set; } = true;
 
 		[DefaultValue( true )]

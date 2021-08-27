@@ -39,7 +39,7 @@ namespace AdventureMode {
 				npc.dontTakeDamage = true;
 			}
 
-			////DEBUG////
+			/*////DEBUG////
 			if( npc.type == NPCID.KingSlime ) {
 				List<string> ctx = DebugLibraries.GetContextSlice().ToList();
 				bool isEtc = ctx.Count > 7;
@@ -50,7 +50,7 @@ namespace AdventureMode {
 						.ToStringJoined("\n ")
 					+ (isEtc ? "\n ..." : "")
 				);
-			}
+			}*/
 		}
 
 
