@@ -1,20 +1,29 @@
 v1
 -	Release mods!
 -	@First public beta
--	@Soul Barriers
-	-	Implement custom dust FX with option to recolor
-[v0.27.0]
 -	@Test hosted MP WoF playthrough
 	-	Verify goblin rescue
 	-	Verify invasion correctly repositions to map center
+-	@Soul Barriers
+	-	Implement custom dust FX with option to recolor
+	-	Add dramatic effect for barrier v barrier hits
+[v0.27.0]
 -	@Test local MP to first boss
+-	@Beta
 -	@Test to first boss
 	-	Verify merchant dialogue + objectives ("lore")
 	-	Verify Strange Plant ingredient for all boss summon items (or verify enabled summon items (EoC?))
 	-	Verify radio message when in cursed bones proximity
-
-
 -	@F&T
+	-	Fix premature tab alerts for read messages (check all uses of Messages)
+
+
+	-	@FMC (1.3.2)
+		-	Increase blue PKE readings
+	-	@World Gates (1.2.1)
+		-	Adjust hp values according to 10 increments
+	-	@Messages
+		-	Fully suppress chat message if important message is already read
 	-	@FMC (1.3.1)
 		-	Require only 3 mana shards per mana crystal
 	-	Remove king slime debug messages
@@ -37,7 +46,6 @@ v1
 		-	Fix rendering of radio messages (they need quotes)
 		-	Tweak important message alert sound
 	-	Debug why magic weapon isnt working
-|||
 	-	@Necrotis (1.12.4)
 		-	Reduce ectoplasm pot drop frequency
 	-	@AML (0.13.1)

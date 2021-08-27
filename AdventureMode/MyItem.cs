@@ -11,13 +11,14 @@ namespace AdventureMode {
 	partial class AMItem : GlobalItem {
 		public override bool OnPickup( Item item, Player player ) {
 			if( ItemAttributeLibraries.IsGrapple(item) ) {
+				string id = "AdventureModeGrappleChanges";
 				MessagesAPI.AddMessage(
 					title: "Grappling hook changes",
 					description: "New to Adventure Mode: Grappling hooks must now be used on only wood objects.",
 					modOfOrigin: AMMod.Instance,
-					alertPlayer: true,
+					alertPlayer: MessagesAPI.IsUnread( id ),
 					isImportant: false,
-					id: "AdventureModeGrappleChanges",
+					id: id,
 					parentMessage: MessagesAPI.ModInfoCategoryMsg
 				);
 			}
