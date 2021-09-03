@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Terraria;
 using ModLibsCore.Libraries.Debug;
+using ModLibsGeneral.Libraries.UI;
 using MountedMagicMirrors;
 
 
@@ -36,13 +37,19 @@ namespace AdventureMode.Logic {
 			float pulse = (float)Main.mouseTextColor / 255f;
 			Vector2 dim = Main.fontMouseText.MeasureString( "V" );
 
+			Vector2 pos = new Vector2(
+				(mirrorX * 16) - 8 - Main.screenPosition.X,
+				(mirrorY * 16) - 8 - Main.screenPosition.Y
+			);
+			pos = UIZoomLibraries.ApplyZoomFromScreenCenter( pos, null, false, null, null );
+
 			Main.spriteBatch.Begin();
 			Utils.DrawBorderStringFourWay(
 				sb: Main.spriteBatch,
 				font: Main.fontMouseText,
 				text: "V",
-				x: ( mirrorX * 16 ) - 8 - Main.screenPosition.X,
-				y: ( mirrorY * 16 ) - 24 - Main.screenPosition.Y,
+				x: pos.X,
+				y: pos.Y,
 				textColor: Color.Lime * pulse,
 				borderColor: Color.Black * pulse,
 				origin: dim * 0.5f,

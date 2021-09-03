@@ -12,6 +12,7 @@ namespace AdventureMode {
 		public override bool OnPickup( Item item, Player player ) {
 			if( ItemAttributeLibraries.IsGrapple(item) ) {
 				string id = "AdventureModeGrappleChanges";
+
 				MessagesAPI.AddMessage(
 					title: "Grappling hook changes",
 					description: "New to Adventure Mode: Grappling hooks must now be used on only wood objects.",

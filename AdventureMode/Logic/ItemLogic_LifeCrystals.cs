@@ -20,7 +20,7 @@ namespace AdventureMode.Logic {
 				if( txt == null || !txt.active ) { continue; }
 
 				if( txt.text.Equals( "20" ) ) {
-					txt.text = "10";
+					txt.text = "10";	// hackish!
 					break;
 				}
 			}

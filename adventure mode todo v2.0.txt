@@ -16,6 +16,31 @@ Junkyard
 		-	Implement short (+20s) mana "overclock" buff (+5 * lvl) + mana heal (+100) at cost of anima (25%?)
 		-	Implement clickable ankh (with hover effect)
 		-	Define item
+-	@Boss Reigns
+	-	Add radio message from guide during wave peak event (clarify need to kill a boss)
+	-	Implement "waves of darkness"
+		-	Set PBG to block out distortion debuffs and shader
+		-	Implement wave
+			-	Above ground only
+				-	Mild quaking
+				-	Necrotis increases a little
+			-	Underground only
+				-	Heavy quaking
+				-	Necrotis increases a lot
+				-	Harmless arcs from floor at random
+				-	Random distortion debuffs
+				-	Moon lord void shader in effect
+		-	Implement a "Wave of Darkness" debuff (describes phenomena)
+		-	PKE goes haywire ("ERROR")
+	-	Add periodic random low quaking effect (builds up when waves are near)
+	-	Implement item to indicate time until next wave
+		-	@Name candidates
+			-	Apocalypse Stone
+			-	Apocalypse Tome
+			-	Petrified Skull
+			-	Ancient Rosary
+			-	Wilting Flower
+			-	Spooky Goblet
 
 
 
@@ -101,16 +126,6 @@ v1.2
 	-	Add attacking cyborgs
 v1.2
 -	@Beta
--	@Boss Reigns
-	-	When background PKE set to max
-		-	//Increase trickster spawn rate in general
-		-	Add periodic random low quaking effect (builds up when waves are near)
-		-	"Waves of darkness"
-			-	@Plan
-				-	Causes distortion debuff, arcs from floor at random, necrotis increases a lot
-				-	@B&D a defense measure
-				-	Make all PKE readings surge during waves
-		-	@B&D more threats
 -	@TMR
 	-	Tweak crosshair to look more thematically-relevant
 	-	Add hammer pulling

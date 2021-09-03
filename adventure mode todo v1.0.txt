@@ -4,20 +4,76 @@ v1
 -	@Test hosted MP WoF playthrough
 	-	Verify goblin rescue
 	-	Verify invasion correctly repositions to map center
--	@Soul Barriers
-	-	Implement custom dust FX with option to recolor
-	-	Add dramatic effect for barrier v barrier hits
-[v0.27.0]
--	@Test local MP to first boss
+[v0.29.0]
 -	@Beta
--	@Test to first boss
-	-	Verify merchant dialogue + objectives ("lore")
+-	@Test local MP to first boss
+-	Fix "log once" quantity outputs
+-	Debug load hooks in MP
+[v0.28.0]
+-	F&T
+	-	@AMR
+		-	Fix 'About Mana Shards (2)' when no PKE meter
+	-	@Ergophobia
+		-	Fix plank ghost overlay zoom scaling
+	-	@Messages
+		-	Fix pulsing texts
+	-	@Soul Barriers
+		-	Clarify "barrier strength" tooltip
+	-	@TMR
+		-	Fix asymmetric reticule
+	-	@Messages
+		-	Fix important messages not giving ANY alerts (e.g. chat)?
+		-	Fix messages icon not appearing
+
+
+	-	Fix life crystal (and mana crystal?) tooltips
+	-	Fix raft mirror arrow icon zoom
+-	@Unofficial beta
+-	@Mod Libs Camera (1.0.1)
+-	Add radio message about 0% anima
+-	Reduce frequency of quakes
+-	@Soul Barriers (0.24.0)
+	-	Prevent 0hp barriers
+	-	Add dramatic effect for barrier v barrier hits
+	-	Scroll larger, non-hit dusts faster
+	-	Implement custom dust FX with option to recolor
+-	@Boss Reigns - During reign (1.3.0)
+	-	Implement occasional random quakes
+	-	Implement minor anima drain
+	-	Rename "Waves of Darkness" to Fell Spiritual Presence
+	-	Prevent opening chests when not near a town
+-	@AML (0.13.3.2)
+	-	Fix old man radio message
+-	@Soul Barriers (0.23.0)
+	-	Set PBG to indicate cooldown time in tooltips
+	-	Tweak PBG tooltip to not display overly long barrier strength percent
+	-	Clear player barriers on exit to menu
+	-	Fix 'Access granted' fail
+-	World Gates (1.2.3)
+	-	Tweak "Gate barrier too strong" message to not display long numbers
+-	@Necrotis (1.15.0)
+	-	Fix 0% combat text spam
+	-	Fix ankh barrier alignment
+	-	Fix massive anima loss from barrier activation
+	-	Set PBG to absorb necrotis (show ankh sprite)
+	-	Draw ankh overlay when barrier on (@Necrotis)
+		-	Add texture UI element to ankh to draw sprite
+		-	Create barrier overlay sprite
+-	@Soul Barriers (0.22.0)
+	-	Show damage numbers to barrier
+-	@Necrotis (1.13.0)
+	-	Add anima stat changing hooks
+	-	Add ankh draw layer hooking
+-	@World Gates (1.2.2)
+-	@AML (0.13.3)
+	-	After 'Find Jungle' quest, Old Man radios about using magic items to reveal secrets
+[v0.27.0]
+-	@Test
 	-	Verify Strange Plant ingredient for all boss summon items (or verify enabled summon items (EoC?))
+	-	Verify merchant dialogue + objectives ("lore")
 	-	Verify radio message when in cursed bones proximity
 -	@F&T
 	-	Fix premature tab alerts for read messages (check all uses of Messages)
-
-
 	-	@FMC (1.3.2)
 		-	Increase blue PKE readings
 	-	@World Gates (1.2.1)

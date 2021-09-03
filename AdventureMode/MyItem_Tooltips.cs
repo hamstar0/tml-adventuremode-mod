@@ -11,13 +11,6 @@ using MountedMagicMirrors.Items;
 namespace AdventureMode {
 	partial class AMItem : GlobalItem {
 		public override void ModifyTooltips( Item item, List<TooltipLine> tooltips ) {
-			this.AddCustomTooltips( item, tooltips );
-		}
-
-
-		////////////////
-
-		private void AddCustomTooltips( Item item, List<TooltipLine> tooltips ) {
 			AMConfig config = AMConfig.Instance;
 			string modName = "[c/FFFF88:" + AMMod.Instance.DisplayName + "] - ";
 
@@ -34,6 +27,21 @@ namespace AdventureMode {
 			case ItemID.RodofDiscord:
 				if( config.RodOfDiscordChaosStateBlocksBlink ) {
 					addTip( "RoD", "Cannot be used while Chaos State is active" );
+				}
+				break;
+			case ItemID.LifeCrystal:
+				if( config.ReducedLifeCrystalStatIncrease ) {
+					int idx = tooltips.FindIndex( t => t.Name == "LifeCrystal" );
+
+					if( idx >= 0 ) {
+						tooltips[idx] = new TooltipLine(
+							this.mod,
+							"AdventureModeLifeCrysta",
+							modName + "Permanently increases maximum life by 10"
+						);
+					} else {
+						addTip( "LifeCrystal", "Now adds only +10 max life." );
+					}
 				}
 				break;
 			case ItemID.StrangePlant1:
