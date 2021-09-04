@@ -10,25 +10,30 @@ v1
 -	Fix "log once" quantity outputs
 -	Debug load hooks in MP
 [v0.28.0]
+-	@Test beta
+
+
+-	Unofficial beta (0.27.1)
 -	F&T
-	-	@AMR
+	-	@Mod Libs General (1.2.1)
+		-	Fix chest edits not resorting items (plus trade orbs for item removals)
+	-	@AML (0.13.4)
 		-	Fix 'About Mana Shards (2)' when no PKE meter
-	-	@Ergophobia
+	-	@Ergophobia (1.11.2)
 		-	Fix plank ghost overlay zoom scaling
-	-	@Messages
-		-	Fix pulsing texts
-	-	@Soul Barriers
+		-	Fix missing "This tile is not allowed to be placed"
+	-	@Orbs (1.6.0.2)
+	-	@Messages (1.1.5)
+		-	Add debug checking for failed message alerts (not just important messages!)
+		-	Remove pulsing texts
+	-	@Soul Barriers (0.24.1)
 		-	Clarify "barrier strength" tooltip
-	-	@TMR
+	-	@Surroundings (1.1.0.1)
+	-	@TMR (1.9.1)
 		-	Fix asymmetric reticule
-	-	@Messages
-		-	Fix important messages not giving ANY alerts (e.g. chat)?
-		-	Fix messages icon not appearing
-
-
 	-	Fix life crystal (and mana crystal?) tooltips
 	-	Fix raft mirror arrow icon zoom
--	@Unofficial beta
+-	Unofficial beta (0.27.0)
 -	@Mod Libs Camera (1.0.1)
 -	Add radio message about 0% anima
 -	Reduce frequency of quakes

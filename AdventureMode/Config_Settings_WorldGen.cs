@@ -16,7 +16,7 @@ namespace AdventureMode {
 		///
 
 		[DefaultValue( true )]
-		public bool WorldGenRemoveMagicMirrors { get; set; } = true;
+		public bool WorldGenReplaceMagicMirrorsWithShadowMirrorsOrRemove { get; set; } = true;
 
 		[DefaultValue( true )]
 		public bool WorldGenRemoveDarkHeartPieces { get; set; } = true;
