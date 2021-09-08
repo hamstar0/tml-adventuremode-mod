@@ -17,7 +17,7 @@ namespace AdventureMode.Mods {
 
 		////////////////
 
-		private bool DetectWorldGateSpiritBallCollision(
+		/*private bool DetectWorldGateSpiritBallCollision(
 					Projectile proj,
 					float lerpPerc,
 					ref Vector2 intendedVel,
@@ -39,6 +39,6 @@ namespace AdventureMode.Mods {
 			);
 
 			return gates.All( b => !b.WorldArea.Intersects(projArea) );
-		}
+		}*/
 	}
 }

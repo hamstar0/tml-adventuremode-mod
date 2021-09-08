@@ -159,5 +159,14 @@ v1.1
 		-	A way to clarify dryad helps with jungle
 		-	clarify cyborgs as mineable
 		-	Draw an item icon overlay for items with modified recipes
+-	@AML
+	-	For each LE discovered, message "Research notes about world gates allow you to reduce their strength etc."
+	-	For each LE discovered, reduce horizontal gate barriers to 1/2 hp
+	-	@B&D: "Research Notes" vs "PBG Attenuation Sensors"
+-	@Spirit Walking
+	-	Debug diagonal tile stuckage
+	-	Reduce sound volume
+	-	"and my game just stackoverflowed on picking up a red orb when I was at below 33% anima"
+-	Re-add @Spirit Walking
 
 

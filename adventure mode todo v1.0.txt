@@ -7,12 +7,48 @@ v1
 [v0.29.0]
 -	@Beta
 -	@Test local MP to first boss
--	Fix "log once" quantity outputs
--	Debug load hooks in MP
+	-	Test spirit walking
+	-	Test blue PKE gauge
+	-	Test green PKE radio message
+-	Confirm binoculars cavern viewing
+-	@Necrotis
+	-	Fix ecto pickup in MP
+-	@Trickster
+	-	Debug 'Invalid Trickster NPC' packet message spam
+-	@Soul Barriers
+	-	Fix incorrect dust ownership per barrier
+	-	Fix double access barrier collide deaths
+	-	Fix barrier v barrier collisions
 [v0.28.0]
--	@Test beta
+-	@Beta
 
 
+-	Remove @Spirit Walking (until later, at least)
+-	Remove 'Failed to place cyborg' messages
+-	@Orbs (1.6.0.3)
+	-	Remove 'Implanted orb in chest at' log messages unless debug mode
+-	@TMR (1.9.2)
+	-	Preserve quickloader states when dropped
+-	@Ruined Items (2.11.1)
+	-	Fix melee speed affecting boomerangs
+-	@Soul Barriers (0.24.2)
+	-	Exempt boss minions from access barrier kills
+	-	Fix barrier v entity collisions
+	-	Fix syncing gates
+	-	Fix syncing killed npcs from access barriers
+-	@World Gates (1.2.4)
+-	@Mod Libs Core
+	-	Fix 'once' log messages displaying "(1th)"
+	-	Fix 'world in play safe' not activating for MP client
+-	Fix laundry list of exceptions
+-	@AML (0.13.5.1)
+	-	Set guide to radio about each green PKE being important (when it goes > 75% + PKE is owned)
+-	F&T
+	-	@FMC (1.3.2.1)
+		-	Fix mana crystal tooltips
+	-	@ModLibsCore (1.2.0.1)
+		-	Fix "log once" quantity outputs
+		-	Fix 'world load' for clients (simply use the PlayerEnter hooks)
 -	Unofficial beta (0.27.1)
 -	F&T
 	-	@Mod Libs General (1.2.1)
