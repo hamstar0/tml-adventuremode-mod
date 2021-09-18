@@ -48,7 +48,7 @@
       <HintPath>..\..\..\Green Hell\Project\GreenHell\bin\Release\net452\GreenHell.dll</HintPath>
     </Reference>
     <Reference Include="HUDElementsLib">
-      <HintPath>..\..\..\HUD Elements Lib\Project\HUDElementsLib\bin\Release\net45\HUDElementsLib.dll</HintPath>
+      <HintPath>..\..\..\HUD Elements Lib\Project\HUDElementsLib\bin\Release\net452\HUDElementsLib.dll</HintPath>
     </Reference>
     <Reference Include="LockedAbilities">
       <HintPath>..\..\..\Locked Abilities\Project\LockedAbilities\bin\Release\net452\LockedAbilities.dll</HintPath>

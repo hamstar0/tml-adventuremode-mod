@@ -2,6 +2,7 @@ using System;
 using Terraria;
 using Terraria.ModLoader;
 using ModLibsCore.Libraries.Debug;
+using HUDElementsLib.Elements.Samples;
 using AdventureMode.Mods;
 using AdventureMode.Logic;
 
@@ -16,6 +17,11 @@ namespace AdventureMode {
 
 		public static AMMod Instance { get; private set; }
 
+
+
+		////////////////
+
+		internal TimerHUD RaftTimerHUD;
 
 
 		////////////////

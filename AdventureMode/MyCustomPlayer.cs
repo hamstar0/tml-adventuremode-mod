@@ -7,6 +7,8 @@ using ModLibsCore.Classes.PlayerData;
 using ModLibsCore.Libraries.TModLoader;
 using ModLibsCore.Services.Timers;
 using Messages;
+using AdventureMode.Logic;
+using AdventureMode.Packets;
 
 
 namespace AdventureMode {
@@ -29,12 +31,16 @@ namespace AdventureMode {
 				Main.NewText( "This world is not initialized for Adventure Mode. Exiting to menu in 15 seconds...", Color.Yellow );
 			}
 
+			//
+
 			Timers.SetTimer( 2 * 60, false, () => {
 				string _;
 				MessagesAPI.GetMessage("nihilism_init")?.SetReadMessage();
 				//InboxAPIMirrorsLibraries.ReadMessage( "nihilism_init", out _ );
 				return false;
 			} );
+
+			//
 
 			Timers.SetTimer( 15 * 60, true, () => {
 				if( !isNotAdventurer || !isNotAdventureWorld ) {
@@ -46,6 +52,14 @@ namespace AdventureMode {
 				}
 				return false;
 			} );
+
+			//
+
+			if( Main.netMode == NetmodeID.Server ) {
+				int ticks = WorldLogic.GetRaftRestockTimerTicks();
+
+				RaftRestockTimerPacket.SendToClients( ticks, this.PlayerWho );
+			}
 		}
 	}
 }

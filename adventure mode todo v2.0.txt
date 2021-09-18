@@ -132,6 +132,7 @@ v1.2
 	-	@AM: Add ammo box to raft
 	-	Set ammo box buff to refill bandolier
 	-	Implement ammo limit for bandolier
+-	https://discord.com/channels/103110554649894912/832559053515259944/886496707557339146
 -	@B&D
 	-	Add an item sold by Witch Doctor that changes spirit walk to use mana instead of anima
 	-	Allow crafting Automated Drill Kits (via. magitech; makes a limited distance dropshaft)
@@ -141,6 +142,7 @@ v1.2
 	-	Skeleton Merchant item to sell
 	-	A better PBG origin (a camp at dungeon?)
 	-	@Add Alerted Ambushes mod? (also generates cursed brambles)
+	-	@Soul Barriers: Implement "Crystalis" mode with the PBG that allows breathers during bosses
 v1.1
 -	F&T
 	-	Fix herbs and herb seeds still dropping

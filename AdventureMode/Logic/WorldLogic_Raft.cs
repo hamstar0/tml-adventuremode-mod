@@ -1,9 +1,10 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
-using Terraria.ID;
+using Terraria.Localization;
 using ModLibsCore.Libraries.Debug;
 using ModLibsCore.Services.Timers;
 using ModLibsCore.Services.Hooks.LoadHooks;
@@ -18,24 +19,37 @@ namespace AdventureMode.Logic {
 
 		////////////////
 
-		private static void BeginOrResumeRaftRestockTimer( int? remainingTime ) {
-			int timer = remainingTime.HasValue
-				? remainingTime.Value
+		private static void BeginOrResumeRaftRestockTimer( int? remainingTicks ) {
+			int timerTicks = remainingTicks.HasValue
+				? remainingTicks.Value
 				: AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
+
+			WorldLogic.InititalizeTimerHUD( timerTicks );
 			
-			if( Timers.GetTimerTickDuration("AdventureModeRaftRestock") > 0 ) {
+			if( Timers.GetTimerTickDuration(WorldLogic.RaftRestockTimerName) > 0 ) {
 				return;
 			}
 
-			Timers.SetTimer( "AdventureModeRaftRestock", timer, false, () => {
-				if( Main.gameMenu && !Main.dedServ && Main.netMode != NetmodeID.Server ) {
+			Timers.SetTimer( WorldLogic.RaftRestockTimerName, timerTicks, false, () => {
+				if( Main.gameMenu && !Main.dedServ && Main.netMode == NetmodeID.MultiplayerClient ) {
 					return 0;
 				}
 
+				string msg = "Raft barrel has received new items!";
+				Color color;
+
 				if( WorldLogic.RestockRaft() ) {
-					Main.NewText( "Raft barrel has received new items!", Color.Lime );
+					msg = "Raft barrel has received new items!";
+					color = Color.Lime;
 				} else {
-					Main.NewText( "No barrel to restock.", Color.Yellow );
+					msg = "No barrel to restock.";
+					color = Color.Yellow;
+				}
+
+				if( Main.netMode == NetmodeID.Server ) {
+					NetMessage.BroadcastChatMessage( NetworkText.FromLiteral(msg), color, -1 );
+				} else {
+					Main.NewText( msg, color );
 				}
 
 				return AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
@@ -67,10 +81,18 @@ namespace AdventureMode.Logic {
 			} else {
 				LogLibraries.Alert( "World has no raft barrel." );
 			}
-
+			
 			LoadHooks.AddPostWorldLoadEachHook( () => {
-				WorldLogic.BeginOrResumeRaftRestockTimer( WorldLogic._RaftBarrelRestockTimerSinceLastLoad );
-				WorldLogic._RaftBarrelRestockTimerSinceLastLoad = null;
+				if( Main.netMode != NetmodeID.MultiplayerClient ) {
+					if( WorldLogic._RaftBarrelRestockTimerSinceLastLoad == null ) {
+						LogLibraries.Warn( "No raft restock timer provided." );
+
+						return;
+					}
+
+					WorldLogic.BeginOrResumeRaftRestockTimer( WorldLogic._RaftBarrelRestockTimerSinceLastLoad );
+					WorldLogic._RaftBarrelRestockTimerSinceLastLoad = null;
+				}
 			} );
 		}
 
@@ -96,7 +118,7 @@ namespace AdventureMode.Logic {
 				return;
 			}
 
-			int restockTicks = Timers.GetTimerTickDuration( "AdventureModeRaftRestock" );
+			int restockTicks = Timers.GetTimerTickDuration( WorldLogic.RaftRestockTimerName );
 
 			if( restockTicks <= 0 ) {
 				restockTicks = AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;

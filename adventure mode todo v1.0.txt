@@ -1,28 +1,62 @@
 v1
 -	Release mods!
 -	@First public beta
+-	Add "Welcome to Adventure Mode" message
+-	@Trickster
+	-	Increase trickster spawn rates?
 -	@Test hosted MP WoF playthrough
 	-	Verify goblin rescue
 	-	Verify invasion correctly repositions to map center
-[v0.29.0]
--	@Beta
 -	@Test local MP to first boss
 	-	Test spirit walking
 	-	Test blue PKE gauge
 	-	Test green PKE radio message
--	Confirm binoculars cavern viewing
--	@Necrotis
+[v0.29.0]
+-	@Beta
+-	Add raft barrel timer (via. timer widget)
+
+
+-	@HUD Element Libs (3.1.2)
+	-	Add sample timer widget
+-	@Mod Libs UI (1.1.0)
+-	Fix pulsing texts in Messages dialog
+-	@Orbs (1.6.1)
+	-	Set binoculars cavern viewing to work above ground
+-	Set Enraged mod to be weak referenced
+-	@Messages (1.2.0)
+	-	Add category messages (recolored)
+-	@AML (0.14.0)
+	-	Radio message about purification powder corruption/crimson access
+	-	Add radio message about using furnishing kits around the map for mirror networking
+-	@Enraged (0.12.0)
+	-	Add flash when hitting bosses during enrage state
+	-	Prevent spawning brambles near players
+-	@Cursed Brambles (1.0.0)
+	-	Purification powder can now remove brambles
+	-	Set brambles to be removed by barriers
+	-	Implement bramble creation validation
+-	@Mod Libs Core (1.2.0.2)
+	-	Fix alerts and warns not showing context
+-	@Necrotis (1.15.0.1)
 	-	Fix ecto pickup in MP
--	@Trickster
-	-	Debug 'Invalid Trickster NPC' packet message spam
--	@Soul Barriers
+-	@Trickster (1.7.2)
+	-	Prevent spawning or teleporting near world barriers
+-	@Ergophobia (1.11.3)
+	-	Paint scaffold walls
+	-	Reduce scaffold price
+-	@Boss Reigns (1.3.0.1)
+	-	Fix 'fell presence' message not appearing on full red bar
+-	@Soul Barriers (0.24.3)
+	-	Hide barrier stat tooltips when not applicable
+	-	Apply UI scale for barrier hp hover popup
+	-	Exempt silt/slush/sand balls from PBG hits
 	-	Fix incorrect dust ownership per barrier
-	-	Fix double access barrier collide deaths
 	-	Fix barrier v barrier collisions
+-	F&T
+	-	@Ruined Items (2.11.1.1)
+		-	Fix "0%" melee speed
 [v0.28.0]
 -	@Beta
-
-
 -	Remove @Spirit Walking (until later, at least)
 -	Remove 'Failed to place cyborg' messages
 -	@Orbs (1.6.0.3)
