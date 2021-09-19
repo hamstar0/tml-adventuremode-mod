@@ -13,9 +13,10 @@ v1
 	-	Test green PKE radio message
 [v0.29.0]
 -	@Beta
+
+
+-	Set colored message borders darker
 -	Add raft barrel timer (via. timer widget)
-
-
 -	@HUD Element Libs (3.1.2)
 	-	Add sample timer widget
 -	@Mod Libs UI (1.1.0)

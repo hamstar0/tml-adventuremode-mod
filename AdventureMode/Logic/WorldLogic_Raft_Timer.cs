@@ -32,8 +32,11 @@ namespace AdventureMode.Logic {
 			}
 
 			if( AMMod.Instance.RaftTimerHUD == null ) {
-				var dim = new Vector2( 160f, 64f );
-				var pos = new Vector2( Main.screenWidth - (dim.X * 0.5f), 32 );
+				var dim = new Vector2( 176f, 52f );
+				var pos = new Vector2(
+					((float)Main.screenWidth - dim.X) * 0.5f,
+					(float)Main.screenHeight - dim.Y - 32f
+				);
 
 				AMMod.Instance.RaftTimerHUD = new TimerHUD(
 					pos: pos,
