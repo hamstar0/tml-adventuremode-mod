@@ -24,7 +24,9 @@ namespace AdventureMode.Logic {
 				? remainingTicks.Value
 				: AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
 
-			WorldLogic.InititalizeTimerHUD( timerTicks );
+			if( Main.netMode != NetmodeID.Server ) {
+				WorldLogic.InititalizeTimerHUD( timerTicks );
+			}
 			
 			if( Timers.GetTimerTickDuration(WorldLogic.RaftRestockTimerName) > 0 ) {
 				return;

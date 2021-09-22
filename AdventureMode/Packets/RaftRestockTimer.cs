@@ -2,6 +2,7 @@
 using Terraria;
 using Terraria.ID;
 using ModLibsCore.Classes.Errors;
+using ModLibsCore.Libraries.Debug;
 using ModLibsCore.Services.Network.SimplePacket;
 using AdventureMode.Logic;
 
@@ -9,7 +10,9 @@ using AdventureMode.Logic;
 namespace AdventureMode.Packets {
 	class RaftRestockTimerPacket : SimplePacketPayload {
 		public static void SendToClients( long ticks, int toWho=-1 ) {
-			if( Main.netMode != NetmodeID.Server ) { throw new ModLibsException( "Not a server." ); }
+			if( Main.netMode != NetmodeID.Server ) {
+				throw new ModLibsException( "Not server." );
+			}
 
 			var protocol = new RaftRestockTimerPacket( ticks );
 
@@ -35,7 +38,7 @@ namespace AdventureMode.Packets {
 		////////////////
 
 		public override void ReceiveOnServer( int fromWho ) {
-			throw new NotImplementedException();
+			throw new ModLibsException( "Not implemented" );
 		}
 
 		public override void ReceiveOnClient() {

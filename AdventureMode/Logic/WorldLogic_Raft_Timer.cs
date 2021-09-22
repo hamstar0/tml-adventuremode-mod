@@ -1,12 +1,10 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.ID;
 using ModLibsCore.Libraries.Debug;
 using ModLibsCore.Services.Timers;
 using HUDElementsLib;
 using HUDElementsLib.Elements.Samples;
-using AdventureMode.Packets;
 
 
 namespace AdventureMode.Logic {
@@ -25,12 +23,6 @@ namespace AdventureMode.Logic {
 		////////////////
 
 		internal static void InititalizeTimerHUD( int ticks ) {
-			if( Main.netMode == NetmodeID.Server ) {
-				RaftRestockTimerPacket.SendToClients( ticks );
-
-				return;
-			}
-
 			if( AMMod.Instance.RaftTimerHUD == null ) {
 				var dim = new Vector2( 176f, 52f );
 				var pos = new Vector2(

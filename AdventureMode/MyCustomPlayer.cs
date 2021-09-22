@@ -14,10 +14,21 @@ using AdventureMode.Packets;
 namespace AdventureMode {
 	class AMCustomPlayer : CustomPlayerData {
 		protected override void OnEnter( bool isCurrentPlayer, object data ) {
-			if( !isCurrentPlayer ) {
-				return;
+			if( isCurrentPlayer ) {
+				this.OnEnter_CurrentPlayer();
 			}
 
+			//
+
+			if( Main.netMode == NetmodeID.Server ) {
+				int ticks = WorldLogic.GetRaftRestockTimerTicks();
+
+				RaftRestockTimerPacket.SendToClients( ticks, this.PlayerWho );
+			}
+		}
+
+
+		private void OnEnter_CurrentPlayer() {
 			var config = AMConfig.Instance;
 			var myplayer = this.Player.GetModPlayer<AMPlayer>();
 			var myworld = ModContent.GetInstance<AMWorld>();
@@ -52,14 +63,6 @@ namespace AdventureMode {
 				}
 				return false;
 			} );
-
-			//
-
-			if( Main.netMode == NetmodeID.Server ) {
-				int ticks = WorldLogic.GetRaftRestockTimerTicks();
-
-				RaftRestockTimerPacket.SendToClients( ticks, this.PlayerWho );
-			}
 		}
 	}
 }

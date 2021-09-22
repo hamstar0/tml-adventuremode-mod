@@ -2,19 +2,45 @@ v1
 -	Release mods!
 -	@First public beta
 -	Add "Welcome to Adventure Mode" message
--	@Trickster
-	-	Increase trickster spawn rates?
+-	Remove requirement for max mana for PBG
+-	F&T
+	-	@Trickster
+		-	Increase trickster spawn rates?
+	-	Fix world gate double kill (MP): Add respawn buffer timer to prevent kills
+	-	@Soul Barrier
+		-	Fix barrier v barrier missing fx (MP)
+-	Implement server DebugLibraries.Print service?
+[v0.30.0]
 -	@Test hosted MP WoF playthrough
 	-	Verify goblin rescue
 	-	Verify invasion correctly repositions to map center
 -	@Test local MP to first boss
 	-	Test spirit walking
-	-	Test blue PKE gauge
 	-	Test green PKE radio message
+	-	Test PKE gauges (especially blue)
+-	@AML
+	-	Add radio about Tricksters spawning near other tricksters
+	-	Add radio about PBG vs brambles (upon encountering brambles with a PBG in inventory)
+-	F&T
+	-	On small worlds, increase map percent width of center area cavern widener
+
+
+	-	@Terrain Remixer (0.12.0)
+		-	Implement dynamic settings getter hook via API
+	-	@TMR (1.9.2.1)
+		-	Fix bandit bullets being extremely powerful (MP)
+	-	@Cursed Brambles (1.1.1)
+		-	Reduce bramble damage
+		-	Fix brambles vs PBG
+	-	@World Gates (1.2.5)
+		-	Fix 'Access denied.' message (MP)
+	-	@Soul Barrier (0.25.0)
+		-	Fix missing world gate down message (MP)
+		-	Fix 0 hp barrier hit spam (MP?; during night?)
+		-	Fix incorrect damage popup for barrier hits
+	-	Fix missing timer widget in MP
 [v0.29.0]
 -	@Beta
-
-
 -	Set colored message borders darker
 -	Add raft barrel timer (via. timer widget)
 -	@HUD Element Libs (3.1.2)
