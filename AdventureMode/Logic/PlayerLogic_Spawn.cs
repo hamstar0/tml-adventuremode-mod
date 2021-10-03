@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 using ModLibsGeneral.Libraries.World;
 using ReadableBooks.Items.ReadableBook;
+using AdventureMode.Items;
 
 
 namespace AdventureMode.Logic {
@@ -72,21 +74,28 @@ namespace AdventureMode.Logic {
 				items.Add( makeItem(ItemID.Torch, 15) );
 			}
 
+			int resurfPotType = ModContent.ItemType<ResurfacePotionItem>();
+
 			switch( WorldLibraries.GetSize() ) {
 			case WorldSize.SubSmall:
 				items.Add( makeItem( ItemID.RopeCoil, 15 ) );
+				items.Add( makeItem( resurfPotType, 3 ) );
 				break;
 			case WorldSize.Small:
 				items.Add( makeItem( ItemID.RopeCoil, 20 ) );
+				items.Add( makeItem( resurfPotType, 5 ) );
 				break;
 			case WorldSize.Medium:
 				items.Add( makeItem( ItemID.RopeCoil, 30 ) );
+				items.Add( makeItem( resurfPotType, 8 ) );
 				break;
 			case WorldSize.Large:
 				items.Add( makeItem( ItemID.RopeCoil, 40 ) );
+				items.Add( makeItem( resurfPotType, 12 ) );
 				break;
 			case WorldSize.SuperLarge:
 				items.Add( makeItem( ItemID.RopeCoil, 45 ) );
+				items.Add( makeItem( resurfPotType, 15 ) );
 				break;
 			}
 

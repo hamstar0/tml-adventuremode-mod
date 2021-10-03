@@ -121,10 +121,9 @@ namespace AdventureMode.Logic {
 			}
 
 			int restockTicks = Timers.GetTimerTickDuration( WorldLogic.RaftRestockTimerName );
-
-			if( restockTicks <= 0 ) {
-				restockTicks = AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
-			}
+			//if( restockTicks <= 0 ) {
+			//	restockTicks = AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
+			//}
 
 			tag["raft_barrel_x"] = myworld.Raft.Barrel.TileX;
 			tag["raft_barrel_y"] = myworld.Raft.Barrel.TileY;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -17,6 +18,8 @@ namespace AdventureMode {
 		public float NecrotisAmount { get; internal set; } = 0f;
 
 		public bool IsAdventurer { get; internal set; } = false;
+
+		public Vector2 ResurfacePoint { get; internal set; } = default;
 
 		////
 
@@ -38,7 +41,7 @@ namespace AdventureMode {
 
 
 		////////////////
-
+		
 		public override void SetupStartInventory( IList<Item> items, bool mediumcoreDeath ) {
 			if( !mediumcoreDeath ) {
 				PlayerLogic.SetupInitialSpawnInventory( this, items );

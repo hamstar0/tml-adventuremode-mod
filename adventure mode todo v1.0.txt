@@ -1,30 +1,115 @@
 v1
 -	Release mods!
 -	@First public beta
--	Add "Welcome to Adventure Mode" message
+-	Change "Welcome to Adventure Mode" from a book into a Message
 -	Remove requirement for max mana for PBG
+-	@Net Debug
+	-	Fix scroll bar interactivity
+[v0.31.0]
+-	@HUD Element Libs
+	-	Save "collisions enabled" state for elements
 -	F&T
 	-	@Trickster
 		-	Increase trickster spawn rates?
+	-	Fix guide chat dominated by 'unconquered powerful entity' dialogue
+	-	Set beds to be 0 value items
 	-	Fix world gate double kill (MP): Add respawn buffer timer to prevent kills
 	-	@Soul Barrier
 		-	Fix barrier v barrier missing fx (MP)
--	Implement server DebugLibraries.Print service?
-[v0.30.0]
 -	@Test hosted MP WoF playthrough
-	-	Verify goblin rescue
+[v0.30.0]
+-	F&T
+	-	Remove PBG capture of anima drains
+	-	@More Item Info
+		-	Fix tooltip for unit prices
+	-	@FMC
+		-	Reduce blue PKE reading clarity slightly
+	-	@Bullwhip
+		-	Sync relocated items
+-	@Test local MP
+	-	Test goblin rescue
 	-	Verify invasion correctly repositions to map center
--	@Test local MP to first boss
-	-	Test spirit walking
-	-	Test green PKE radio message
-	-	Test PKE gauges (especially blue)
--	@AML
+	-	Test boss fight
+-	@Enraged
+	-	Add 'angry forehead vein' icon to boss when enraged
+	-	Use abstract thermometer icon instead of gauge
+	-	Reduce boss brambles produced
+-	F&T
+	-	Reduce raft restock timer to 1 day
+	-	Add crates to raft restocker
+	-	Add more world gen mirrors
+	-	Ensure Seismic Charge recipe is active
+	-	@Soul Barriers
+		-	Set bees to be omitted from "projectile npc" checks vs barriers
+		-	Make underworld, jungle drain PBG barrier at 3x the normal rate
+	-	@More Item Info
+		-	Ensure recipes are active
+	-	@Orbs
+		-	Increase world chest orb rate
+	-	@AML
+		-	Colorize other radio hints
+		-	Add mention of using scaffolds to build an arena in 'boss reigns' radio (colorize the hint)
+	-	@Cursed Brambles
+		-	Reduce PBG barrier hit amount per bramble
+	-	Set 'important' message alert icon to last much longer
+	-	@Trickster
+		-	Increase spawn rate, reduce adjacent NPC requirement?
+	-	@Necrotis
+		-	Fix anima drain while dead
+	-	@TMR
+		-	Fix bandit spawns (MP)
+
+
+-	Add Resurface Potion
+	-	Add to player start equipment
+	-	Define recipe (3x crafted from 1x Recall Potion)
+	-	Implement sprite
+	-	Implement warp behavior
+	-	Define item
+	-	@Plan v2
+		-	Warps you to the last point where you were touching 'sun or moon light'
+		-	Do not work if below top of lava layer
+	-	@Plan v1
+		-	When <250 tiles below lava layer, warp to lava layer top
+		-	When <250 tiles below rock layer, warp to rock layer top
+		-	When below surface, warp to last point of daylight contact
+		-	Otherwise, prevent use
+-	Add @Net Debug mod (1.3.0)
+	-	Fix duplicate entries
+	-	Set panel see-through
+	-	Display desynced items in list
+	-	Display desynced npcs on list
+	-	Implement NPC/item data send
+	-	Implement NPC/item data receive
+	-	Define mod
+-	F&T
+	-	@Trickster (1.7.4)
+		-	Reduce invinc duration from attack
+	-	@Necrotis (2.0.0)
+		-	Finish debug outputs
+		-	Debug necrotis drain halt (biome is attempting)
+-	@HUD Elements Lib (3.2.0)
+-	@Soul Barriers (0.25.0.2)
+	-	Allow client-side barrier collisions (bad sync overrides barrier values server-side)
+-	@FMC (1.3.3)
+	-	Increase binoc spark hint scale when near crystals
+	-	Make blue PKE gauge clearer
+-	F&T
+	-	@AML (0.15.1)
+		-	Rename 'About mana shards (2)'
+	-	@Orbs
+		-	Prevent breaking raft tiles
+	-	Implement raft resupply timer sync
+	-	Debug pickup fail for ectoplasm (MP)
+	-	Fix PBG fail to stop skulls? (MP)
+-	@Soul Barriers (0.25.0.1)
+	-	Periodically sync barrier from server
+-	@Trickster (1.7.3)
+-	@AML (0.15.0)
 	-	Add radio about Tricksters spawning near other tricksters
 	-	Add radio about PBG vs brambles (upon encountering brambles with a PBG in inventory)
 -	F&T
 	-	On small worlds, increase map percent width of center area cavern widener
-
-
 	-	@Terrain Remixer (0.12.0)
 		-	Implement dynamic settings getter hook via API
 	-	@TMR (1.9.2.1)

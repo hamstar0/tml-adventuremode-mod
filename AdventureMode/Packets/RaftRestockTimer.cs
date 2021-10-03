@@ -9,7 +9,7 @@ using AdventureMode.Logic;
 
 namespace AdventureMode.Packets {
 	class RaftRestockTimerPacket : SimplePacketPayload {
-		public static void SendToClients( long ticks, int toWho=-1 ) {
+		public static void SendToClient( long ticks, int toWho=-1 ) {
 			if( Main.netMode != NetmodeID.Server ) {
 				throw new ModLibsException( "Not server." );
 			}

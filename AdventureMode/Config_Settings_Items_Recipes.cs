@@ -45,6 +45,10 @@ namespace AdventureMode {
 		[ReloadRequired]
 		public bool SeismicChargeRecipeEnabled { get; set; } = true;
 
+		[DefaultValue( true )]
+		[ReloadRequired]
+		public bool ResurfacePotionRecipeEnabled { get; set; } = true;
+
 		////
 
 		[DefaultValue(true)]

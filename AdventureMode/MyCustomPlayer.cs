@@ -23,7 +23,7 @@ namespace AdventureMode {
 			if( Main.netMode == NetmodeID.Server ) {
 				int ticks = WorldLogic.GetRaftRestockTimerTicks();
 
-				RaftRestockTimerPacket.SendToClients( ticks, this.PlayerWho );
+				RaftRestockTimerPacket.SendToClient( ticks, this.PlayerWho );
 			}
 		}
 
@@ -63,6 +63,23 @@ namespace AdventureMode {
 				}
 				return false;
 			} );
+		}
+
+
+		////////////////
+
+		private int _SyncRaftTimerTimer = 60 * 15;
+
+		protected override void Update() {
+			if( Main.netMode == NetmodeID.Server ) {
+				if( this._SyncRaftTimerTimer-- <= 0 ) {
+					this._SyncRaftTimerTimer = 60 * 15;
+
+					int ticks = WorldLogic.GetRaftRestockTimerTicks();
+
+					RaftRestockTimerPacket.SendToClient( ticks, this.PlayerWho );
+				}
+			}
 		}
 	}
 }

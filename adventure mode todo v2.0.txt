@@ -41,6 +41,10 @@ Junkyard
 			-	Ancient Rosary
 			-	Wilting Flower
 			-	Spooky Goblet
+-	Add 'infrastructure' mechanic
+	-	Increase raft resupply rate based on metric
+	-	Increase metric with each furnishing kit, rails kit, ropes
+	-	Add info widget to indicate quantified amount of infrastructure
 
 
 
@@ -146,6 +150,7 @@ v1.2
 v1.1
 -	F&T
 	-	Fix herbs and herb seeds still dropping
+	-	Add failsafe against surprise KS spawns
 -	@Messages
 	-	Show count of new messages on "Next Unread" button
 -	@Orbs
@@ -153,7 +158,13 @@ v1.1
 	-	Import seismic charges
 -	@Ergophobia
 	-	Prevent furnishing if unsafe dungeon walls exposed to an area
+	-	Add rope lasso (craftable from ropes)
 	-	Add bridging kit (sold by mechanic)
+-	@Boss Reigns
+	-	...
+	-	@Plan for "soft lockout" gates
+		-	When reign in progress, generate a special "growing" world gate at world bottom
+		-	Gate has 5hp, but immediately regenerates 1 tile shorter on each PBG collide
 -	@Soul Barriers
 	-	Use distinct sound for PBG activation
 -	Add more radio messages
@@ -166,6 +177,7 @@ v1.1
 	-	For each LE discovered, reduce horizontal gate barriers to 1/2 hp
 	-	@B&D: "Research Notes" vs "PBG Attenuation Sensors"
 -	@Spirit Walking
+	-	Make world upside down while walking
 	-	Debug diagonal tile stuckage
 	-	Reduce sound volume
 	-	"and my game just stackoverflowed on picking up a red orb when I was at below 33% anima"

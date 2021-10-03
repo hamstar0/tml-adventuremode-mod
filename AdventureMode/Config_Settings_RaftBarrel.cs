@@ -97,9 +97,9 @@ namespace AdventureMode {
 			new ItemQuantityDefinition( nameof(Ergophobia), nameof(TrackDeploymentKitItem), 12, true )
 		};
 
-		[Range( 0, 60 * 25 * 30 )]
-		[DefaultValue( 60 * 25 * 3 )]
-		public int RaftBarrelRestockSecondsDuration { get; set; } = 60 * 25 * 3;  // 3 days
+		[Range( 0, 60 * 24 * 30 )]
+		[DefaultValue( 60 * 24 * 1 )]
+		public int RaftBarrelRestockSecondsDuration { get; set; } = 60 * 24 * 1;  // 1 days
 		
 		public List<ItemQuantityDefinition> RaftBarrelRestockSelection { get; set; } = new List<ItemQuantityDefinition> {
 			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.Wood), 25, false, 2f ),
