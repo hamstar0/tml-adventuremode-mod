@@ -5,6 +5,9 @@ v1
 -	Remove requirement for max mana for PBG
 -	@Net Debug
 	-	Fix scroll bar interactivity
+-	@Enraged
+	-	Add 'angry forehead vein' icon to boss when enraged
+	-	Use abstract thermometer icon instead of gauge
 [v0.31.0]
 -	@HUD Element Libs
 	-	Save "collisions enabled" state for elements
@@ -17,6 +20,7 @@ v1
 	-	@Soul Barrier
 		-	Fix barrier v barrier missing fx (MP)
 -	@Test hosted MP WoF playthrough
+-	Setup web server for game server
 [v0.30.0]
 -	F&T
 	-	Remove PBG capture of anima drains
@@ -30,36 +34,33 @@ v1
 	-	Test goblin rescue
 	-	Verify invasion correctly repositions to map center
 	-	Test boss fight
--	@Enraged
-	-	Add 'angry forehead vein' icon to boss when enraged
-	-	Use abstract thermometer icon instead of gauge
-	-	Reduce boss brambles produced
--	F&T
-	-	Reduce raft restock timer to 1 day
-	-	Add crates to raft restocker
-	-	Add more world gen mirrors
 	-	Ensure Seismic Charge recipe is active
-	-	@Soul Barriers
-		-	Set bees to be omitted from "projectile npc" checks vs barriers
-		-	Make underworld, jungle drain PBG barrier at 3x the normal rate
-	-	@More Item Info
-		-	Ensure recipes are active
-	-	@Orbs
-		-	Increase world chest orb rate
-	-	@AML
-		-	Colorize other radio hints
-		-	Add mention of using scaffolds to build an arena in 'boss reigns' radio (colorize the hint)
-	-	@Cursed Brambles
-		-	Reduce PBG barrier hit amount per bramble
-	-	Set 'important' message alert icon to last much longer
-	-	@Trickster
-		-	Increase spawn rate, reduce adjacent NPC requirement?
-	-	@Necrotis
-		-	Fix anima drain while dead
 	-	@TMR
-		-	Fix bandit spawns (MP)
+		-	Debug bandit spawns (MP)
+	-	@Necrotis
+		-	Debug anima drain while dead (MP? during boss?)
 
 
+-	F&T
+	-	@Enraged (0.13.0)
+		-	Reduce boss brambles produced
+	-	@AML (0.16.0)
+		-	Colorize hints within radio messages
+		-	Add mention of using scaffolds to build an arena in 'boss reigns' radio (colorize the hint)
+	-	Reduce raft restock timer to 1 day
+	-	@More Item Info (1.4.0)
+		-	Ensure recipes are active
+	-	Increase world chest orb rate
+	-	@Cursed Brambles (1.1.2)
+		-	Reduce PBG barrier hit amount per bramble
+	-	@Messages
+		-	Set 'important' message alert icon to last much longer
+	-	@Trickster (1.7.5)
+		-	Increase spawn rate, reduce adjacent NPC requirement?
+	-	@Soul Barriers (0.26.0)
+		-	Make underworld, jungle drain PBG barrier at 3x the normal rate
+	-	@Necrotis
+		-	Remove anima drain stoppage from PBG
 -	Add Resurface Potion
 	-	Add to player start equipment
 	-	Define recipe (3x crafted from 1x Recall Potion)
@@ -74,7 +75,7 @@ v1
 		-	When <250 tiles below rock layer, warp to rock layer top
 		-	When below surface, warp to last point of daylight contact
 		-	Otherwise, prevent use
--	Add @Net Debug mod (1.3.0)
+-	Create @Net Debug mod (1.3.0)
 	-	Fix duplicate entries
 	-	Set panel see-through
 	-	Display desynced items in list
