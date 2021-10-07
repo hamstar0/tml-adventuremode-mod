@@ -12,15 +12,13 @@ v1
 -	@HUD Element Libs
 	-	Save "collisions enabled" state for elements
 -	F&T
-	-	@Trickster
-		-	Increase trickster spawn rates?
 	-	Fix guide chat dominated by 'unconquered powerful entity' dialogue
 	-	Set beds to be 0 value items
 	-	Fix world gate double kill (MP): Add respawn buffer timer to prevent kills
 	-	@Soul Barrier
 		-	Fix barrier v barrier missing fx (MP)
 -	@Test hosted MP WoF playthrough
--	Setup web server for game server
+-	Setup web server for game server?
 [v0.31.0]
 -	F&T
 	-	@AML
@@ -31,6 +29,8 @@ v1
 		-	Reduce blue PKE reading clarity slightly
 	-	@Bullwhip
 		-	Sync relocated items
+	-	Address exception noted in log
+	-	Reduce elixirs per LE
 -	@Test local MP
 	-	Test goblin rescue
 	-	Verify invasion correctly repositions to map center
