@@ -11,6 +11,8 @@ using Ergophobia.Items.HouseFramingKit;
 using Ergophobia.Items.TrackDeploymentKit;
 using MountedMagicMirrors.Items;
 using Orbs.Items;
+using Necrotis.Items;
+using AdventureMode.Items;
 
 
 namespace AdventureMode {
@@ -138,6 +140,8 @@ namespace AdventureMode {
 			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.WarmthPotion), 1, false, 0.25f ),
 			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.WaterWalkingPotion), 1, false, 0.25f ),
 			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.WrathPotion), 1, false, 0.125f ),
+			new ItemQuantityDefinition( nameof(AdventureMode), nameof(ResurfacePotionItem), 3, false, 1f ),
+			new ItemQuantityDefinition( nameof(Necrotis), nameof(ElixirOfLifeItem), 1, false, 0.25f ),
 			//
 			new ItemQuantityDefinition( nameof(Ergophobia), nameof(FramingPlankItem), 25, false, 1f ),
 			new ItemQuantityDefinition( nameof(Ergophobia), nameof(HouseFurnishingKitItem), 1, false, 1f ),

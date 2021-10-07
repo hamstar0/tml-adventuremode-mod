@@ -182,5 +182,12 @@ v1.1
 	-	Reduce sound volume
 	-	"and my game just stackoverflowed on picking up a red orb when I was at below 33% anima"
 -	Re-add @Spirit Walking
+-	@Necrotis
+	-	Implement periodic ectoplasm refresh checks to replace removed ecto items
+-	F&T
+	-	@AML
+		-	Reinstate hint colors
+-	@Mod Libs UI
+	-	Implement UIThemedText color tags parsing
 
 

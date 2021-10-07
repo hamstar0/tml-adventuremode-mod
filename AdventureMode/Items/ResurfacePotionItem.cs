@@ -23,15 +23,41 @@ namespace AdventureMode.Items {
 
 
 		////////////////
+		
+		public static bool CanResurface( Player player, out string result ) {
+			int tileX = (int)player.MountedCenter.X / 16;
+			int tileY = (int)player.MountedCenter.Y / 16;
+			Tile tile = Main.tile[tileX, tileY];
+
+			// Cannot resurface if above surface
+			if( tileY < WorldLocationLibraries.SurfaceLayerBottomTileY ) {
+				//if( tile?.wall == 0 ) {
+				result = "Too close to surface.";
+				return false;
+			}
+
+			if( WorldLocationLibraries.IsLavaLayer(player.Center) || tileY >= WorldLocationLibraries.UnderworldLayerTopTileY ) {
+				result = "Too deep.";
+				return false;
+			}
+
+			result = "Resurfacing allowed.";
+			return true;
+		}
+
+
+		////////////////
 
 		public static Vector2? GetResurfacePointIf( Player player ) {
-			int tileX = (int)(player.Center.X / 16f);
-			int tileY = (int)(player.Center.Y / 16f);
+			int tileX = (int)player.Center.X / 16;
+			int tileY = (int)player.Center.Y / 16;
 
-			if( tileY >= WorldLocationLibraries.SurfaceLayerTopTileY ) {
+			// Cannot resurface below surface
+			if( tileY > WorldLocationLibraries.SurfaceLayerBottomTileY ) {
 				return null;
 			}
 
+			// Cannot resurface without open air
 			Tile tile = Main.tile[tileX, tileY];
 			if( tile?.active() == true || tile?.wall != 0 ) {
 				return null;
@@ -122,6 +148,17 @@ namespace AdventureMode.Items {
 		public override void AddRecipes() {
 			var recipe = new ResurfacePotionRecipe( this );
 			recipe.AddRecipe();
+		}
+
+
+		////////////////
+
+		public override bool ConsumeItem( Player player ) {
+			if( !ResurfacePotionItem.CanResurface(player, out string msg) ) {
+				Main.NewText( msg, Color.Yellow );
+				return false;
+			}
+			return true;
 		}
 	}
 }

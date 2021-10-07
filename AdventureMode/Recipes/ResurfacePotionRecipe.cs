@@ -16,6 +16,13 @@ namespace AdventureMode.Recipes {
 			//this.AddTile( TileID.WorkBenches );
 			
 			this.AddIngredient( ItemID.RecallPotion, 1 );
+			this.AddIngredient( ItemID.FallenStar, 1 );
+
+			if( AMConfig.Instance.EnableAlchemyRecipes ) {
+				this.AddIngredient( ItemID.Bottle, 3 );
+			} else {
+				this.AddIngredient( ItemID.LesserHealingPotion, 3 );
+			}
 
 			this.SetResult( myitem, ResurfacePotionRecipe.GetStackAmount );
 		}

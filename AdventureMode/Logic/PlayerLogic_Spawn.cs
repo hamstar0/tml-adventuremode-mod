@@ -104,6 +104,8 @@ namespace AdventureMode.Logic {
 			//items.Add( makeItem(ItemID.GrapplingHook, 1) );
 
 			items.Add( PlayerLogic.CreateGuideBook() );
+
+			items.Add( makeItem(ModContent.ItemType<ResurfacePotionItem>(), 3) );
 		}
 
 

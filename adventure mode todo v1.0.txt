@@ -8,7 +8,7 @@ v1
 -	@Enraged
 	-	Add 'angry forehead vein' icon to boss when enraged
 	-	Use abstract thermometer icon instead of gauge
-[v0.31.0]
+[v0.32.0]
 -	@HUD Element Libs
 	-	Save "collisions enabled" state for elements
 -	F&T
@@ -21,11 +21,12 @@ v1
 		-	Fix barrier v barrier missing fx (MP)
 -	@Test hosted MP WoF playthrough
 -	Setup web server for game server
-[v0.30.0]
+[v0.31.0]
 -	F&T
-	-	Remove PBG capture of anima drains
+	-	@AML
+		-	Edit "Uh oh!" message
 	-	@More Item Info
-		-	Fix tooltip for unit prices
+		-	Fix tooltip for missing unit prices (MP?)
 	-	@FMC
 		-	Reduce blue PKE reading clarity slightly
 	-	@Bullwhip
@@ -41,6 +42,25 @@ v1
 		-	Debug anima drain while dead (MP? during boss?)
 
 
+-	Add elixir to raft restocks
+-	Add missing fail conditions and alerts for resurface potions
+-	Give Resurface Potions to new players
+-	F&T
+	-	Resurface Potions should use stars and bottles, and be craftable anywhere
+	-	@AML (0.16.1)
+		-	Add Elixirs to LEs
+		-	Remove hint colors temporarily (not implemented, yet)
+	-	@TMR (1.9.3)
+		-	Implement bandit bullet damage sync
+	-	@Soul Barriers (1.0.0)
+		-	Don't kill player with access barrier if freshly spawned
+		-	Do not block PBG when not at full mana (but do when below 10 mana)
+	-	@World Gates (v1.2.6)
+		-	Prevent tricksters from hitting barrier (detect also on client)
+	-	@Trickster (1.7.5.1)
+	-	@Necrotis (2.0.1)
+		-	Fix loaded ectoplasms wanting to float up
+		-	Removed shine pot from elixir recipe
 -	F&T
 	-	@Enraged (0.13.0)
 		-	Reduce boss brambles produced
@@ -83,6 +103,7 @@ v1
 	-	Implement NPC/item data send
 	-	Implement NPC/item data receive
 	-	Define mod
+[v0.30.0]
 -	F&T
 	-	@Trickster (1.7.4)
 		-	Reduce invinc duration from attack

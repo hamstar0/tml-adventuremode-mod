@@ -68,7 +68,7 @@ namespace AdventureMode.WorldGeneration {
 
 		public static void LoadChestEdits() {
 			var config = AMConfig.Instance;
-			
+
 			if( !config.EnableAlchemyRecipes ) {
 				AMWorldGen.RemoveItemFromWorldChests( ItemID.Bottle );
 			}
