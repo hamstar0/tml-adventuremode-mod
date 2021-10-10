@@ -117,11 +117,13 @@ namespace AdventureMode.WorldGeneration {
 		}
 
 
-		private static void LoadChestEdits_SpiritWalking() {
-			int shadMirrorType = ModContent.ItemType<SpiritWalking.Items.ShadowMirrorItem>();
-
-			AMWorldGen.ReplaceItemWithOtherInWorldChests( ItemID.MagicMirror, shadMirrorType );
-			AMWorldGen.ReplaceItemWithOtherInWorldChests( ItemID.IceMirror, shadMirrorType );
+		private static void LoadChestEdits_SpiritWalking() {	// <- Shadow Mirrors are found in LEs
+			//int shadMirrorType = ModContent.ItemType<SpiritWalking.Items.ShadowMirrorItem>();
+			//
+			//AMWorldGen.ReplaceItemWithOtherInWorldChests( ItemID.MagicMirror, shadMirrorType );
+			//AMWorldGen.ReplaceItemWithOtherInWorldChests( ItemID.IceMirror, shadMirrorType );
+			AMWorldGen.RemoveItemFromWorldChests( ItemID.MagicMirror );
+			AMWorldGen.RemoveItemFromWorldChests( ItemID.IceMirror );
 		}
 	}
 }

@@ -21,10 +21,16 @@ namespace AdventureMode.Recipes {
 		public OreRefundRecipe( int tileType, (int itemType, int stack) result, params int[] ingredientItemTypes )
 					: base( AMMod.Instance ) {
 			this.AddTile( tileType );
+
 			foreach( int ingredientItemType in ingredientItemTypes ) {
 				this.AddIngredient( ingredientItemType, 1 );
 			}
+
 			this.SetResult( result.itemType, result.stack );
+
+			//
+
+			//AMMod.Instance.AdditionalWhitelistedRecipesByItemType.Add( result.itemType );
 		}
 
 

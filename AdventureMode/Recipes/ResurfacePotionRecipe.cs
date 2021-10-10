@@ -25,6 +25,10 @@ namespace AdventureMode.Recipes {
 			}
 
 			this.SetResult( myitem, ResurfacePotionRecipe.GetStackAmount );
+
+			//
+
+			AMMod.Instance.AdditionalWhitelistedRecipesByItemType.Add( myitem.item.type );
 		}
 
 		public override bool RecipeAvailable() {

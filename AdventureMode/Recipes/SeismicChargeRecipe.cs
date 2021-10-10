@@ -20,6 +20,10 @@ namespace AdventureMode.Recipes {
 			this.AddRecipeGroup( "AdventureMode.Orb", 1 );
 
 			this.SetResult( myitem, SeismicChargeRecipe.GetStackAmount );
+
+			//
+
+			AMMod.Instance.AdditionalWhitelistedRecipesByItemType.Add( myitem.item.type );
 		}
 
 		public override bool RecipeAvailable() {

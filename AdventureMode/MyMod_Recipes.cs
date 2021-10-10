@@ -58,7 +58,9 @@ namespace AdventureMode {
 		}
 
 		public override void PostAddRecipes() {
-			RecipeLogic.EditExistingRecipes();
+			RecipeLogic.EditExistingRecipes( this.AdditionalWhitelistedRecipesByItemType );
+
+			this.AdditionalWhitelistedRecipesByItemType.Clear();
 		}
 	}
 }

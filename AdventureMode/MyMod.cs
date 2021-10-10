@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
 using ModLibsCore.Libraries.Debug;
@@ -27,6 +28,10 @@ namespace AdventureMode {
 		////////////////
 
 		public AdventureModeModInteractions ModInteractions { get; } = new AdventureModeModInteractions();
+
+		////
+
+		internal ISet<int> AdditionalWhitelistedRecipesByItemType { get; } = new HashSet<int>();
 
 
 

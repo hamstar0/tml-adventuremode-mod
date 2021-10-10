@@ -16,7 +16,7 @@ using AdventureMode.Items;
 
 namespace AdventureMode.Logic {
 	static partial class RecipeLogic {
-		private static ISet<int> GetWhitelistedRecipes() {
+		private static ISet<int> GetWhitelistedRecipes( ISet<int> additionalWhitelistedItemTypes ) {
 			var config = AMConfig.Instance;
 
 			var whitelistTypes = new HashSet<int>();
@@ -76,9 +76,13 @@ namespace AdventureMode.Logic {
 			whitelistTypes.Add( ItemID.ViciousPowder );
 			whitelistTypes.Add( ItemID.VilePowder );
 			whitelistTypes.Add( ModContent.ItemType<SeismicChargeItem>() );
+			whitelistTypes.Add( ModContent.ItemType<ThermalChargeItem>() );
+			whitelistTypes.Add( ModContent.ItemType<DefoliationChargeItem>() );
 			//
 			whitelistTypes.Add( ItemID.ManaCrystal );
 			whitelistTypes.Add( ModContent.ItemType<DarkHeartItem>() );
+			//
+			whitelistTypes.Add( ModContent.ItemType<ResurfacePotionItem>() );
 			//
 			whitelistTypes.Add( ItemID.Bowl );
 			whitelistTypes.Add( ItemID.BowlofSoup );
@@ -88,7 +92,7 @@ namespace AdventureMode.Logic {
 			whitelistTypes.Add( ItemID.CookedShrimp );
 			whitelistTypes.Add( ItemID.Sashimi );
 			//
-			whitelistTypes.UnionWith( RecipeLogic.GetRecipeWhitelistForPlatforms() );
+			whitelistTypes.UnionWith( RecipeLogic.GetItemIDsForPlatforms() );
 			whitelistTypes.Add( ItemID.Wood );
 			whitelistTypes.Add( ItemID.MinecartTrack );
 			whitelistTypes.Add( ItemID.BoosterTrack );
@@ -155,6 +159,10 @@ namespace AdventureMode.Logic {
 				whitelistTypes.Add( ItemID.TitaniumForge );
 			}
 
+			//
+
+			whitelistTypes.UnionWith( additionalWhitelistedItemTypes );
+
 			////
 
 			if( !config.EnableBasicGrappleItemRecipes ) {
@@ -171,16 +179,16 @@ namespace AdventureMode.Logic {
 			unionGroup( blacklistTypes, ItemGroupIDs.AnyFishingPole );
 
 			////
-			
+
 			whitelistTypes.ExceptWith( blacklistTypes );
 
 			return whitelistTypes;
 		}
 
 
-		////
+		////////////////
 
-		private static ISet<int> GetRecipeWhitelistForPlatforms() {
+		private static ISet<int> GetItemIDsForPlatforms() {
 			var platforms = new HashSet<int> {
 				ItemID.BlueBrickPlatform,
 				ItemID.BonePlatform,

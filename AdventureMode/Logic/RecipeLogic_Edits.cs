@@ -12,7 +12,7 @@ using SoulBarriers.Items;
 
 namespace AdventureMode.Logic {
 	static partial class RecipeLogic {
-		public static void EditExistingRecipes() {
+		public static void EditExistingRecipes( ISet<int> additionalWhitelistedItemTypes ) {
 			RecipeLogic.EditBowlRecipe();
 			RecipeLogic.EditFramingPlankRecipe();
 			RecipeLogic.EditElixirRecipe();
@@ -20,7 +20,7 @@ namespace AdventureMode.Logic {
 			RecipeLogic.EditPBGRecipeIf();
 
 			ModContent.GetInstance<EntityGroups>().OnLoad += () => {
-				ISet<int> whitelistTypes = RecipeLogic.GetWhitelistedRecipes();
+				ISet<int> whitelistTypes = RecipeLogic.GetWhitelistedRecipes( additionalWhitelistedItemTypes );
 
 				RecipeLogic.ApplyRecipeWhitelisting( whitelistTypes );
 				RecipeLogic.ApplyNewTileRequirements( whitelistTypes );
