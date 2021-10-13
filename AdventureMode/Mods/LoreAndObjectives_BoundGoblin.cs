@@ -2,13 +2,25 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using ModLibsCore.Libraries.Debug;
 using ModLibsCore.Services.Timers;
 using ModLibsMaps.Services.Maps;
 
 
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
+		private bool HasBoundGoblinAlert = false;
+
+
+
+		////////////////
+
 		private void ApplyLoreAndObjectives_BoundGoblin( bool isNew, bool isDone ) {
+			if( this.HasBoundGoblinAlert ) {
+				return;
+			}
+			this.HasBoundGoblinAlert = true;
+
 			string markerName = "AdventureMode_Spawn_BoundGoblin";
 			
 			if( !isDone && !NPC.savedGoblin ) {
@@ -20,9 +32,10 @@ namespace AdventureMode.Mods {
 					return true;
 				}, false );
 			} else {
-				MapMarkers.RemoveFullScreenMapMarker( markerName );
+				MapMarkersAPI.RemoveFullScreenMapMarker( markerName );
 			}
 		}
+
 
 		private void AddBoundGoblinMapMarker( string markerName ) {
 			var myworld = ModContent.GetInstance<AMWorld>();
@@ -30,12 +43,12 @@ namespace AdventureMode.Mods {
 			int goblinY = myworld.UndergroundDesertBounds.Y + ((2 * myworld.UndergroundDesertBounds.Height) / 3);
 
 			Main.instance.LoadNPC( NPCID.BoundGoblin );
-
-			MapMarkers.SetFullScreenMapMarker(
+			
+			MapMarkersAPI.SetFullScreenMapMarker(
 				id: markerName,
 				tileX: goblinX,
 				tileY: goblinY,
-				icon: Main.npcTexture[NPCID.BoundGoblin],
+				icon: Main.npcTexture[ NPCID.BoundGoblin ],
 				scale: 1f
 			);
 		}

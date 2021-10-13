@@ -20,7 +20,7 @@ namespace AdventureMode.Mods {
 					return true;
 				}, false );
 			} else {
-				MapMarkers.RemoveFullScreenMapMarker( markerName );
+				MapMarkersAPI.RemoveFullScreenMapMarker( markerName );
 			}
 		}
 
@@ -29,7 +29,7 @@ namespace AdventureMode.Mods {
 
 			Main.instance.LoadNPC( NPCID.BoundMechanic );
 
-			MapMarkers.SetFullScreenMapMarker(
+			MapMarkersAPI.SetFullScreenMapMarker(
 				id: markerName,
 				tileX: myworld.DungeonBottom.TileX,
 				tileY: myworld.DungeonBottom.TileY,
