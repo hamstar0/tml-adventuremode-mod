@@ -22,8 +22,6 @@ v1
 -	Setup web server for game server?
 [v0.32.0]
 -	@Test local MP
-	-	Goblin rescue objective doesnt add icon to map
-	-	Duplicate accessories from blocked slots (MP)
 	-	Test goblin rescue
 	-	Verify invasion correctly repositions to map center
 	-	Ensure Seismic Charge recipe is active
@@ -32,13 +30,14 @@ v1
 	-	@Necrotis
 		-	Debug anima drain while dead (MP? during boss?)
 -	F&T
+	-	Duplicate accessories from blocked slots (MP)
 	-	Increase PBG decay rate in jungle (also add game Message)
 	-	Fix missing armor uncraft recipes
 	-	Resurface Potions making potion sickness + not consuming when used (but still being used)
+
+
 	-	Re-edit demo man objective dialogue
 	-	Fix goblin rescue icon not appearing in MP
-
-
 	-	@Mod Libs Core (1.2.0.3)
 	-	@AML (0.17.1)
 		-	Edit demo man's objective text?
