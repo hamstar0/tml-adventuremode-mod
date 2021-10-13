@@ -33,9 +33,15 @@ v1
 	-	Duplicate accessories from blocked slots (MP)
 	-	Increase PBG decay rate in jungle (also add game Message)
 	-	Fix missing armor uncraft recipes
-	-	Resurface Potions making potion sickness + not consuming when used (but still being used)
+	-	Reduce world gen orbs to 65%
+	-	Add jungle chest orbs
+	-	Debug trickster spawns
+	-	@Soul Barriers
+		-	Fix super speed dust fx while mounted
+		-	Fix world gates not rendering (or showing hover hp)
 
 
+	-	Remove Resurface Potions making potion sickness + not consuming when used (but still being used)
 	-	Re-edit demo man objective dialogue
 	-	Fix goblin rescue icon not appearing in MP
 	-	@Mod Libs Core (1.2.0.3)

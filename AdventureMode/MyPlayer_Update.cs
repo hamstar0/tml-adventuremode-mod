@@ -37,14 +37,13 @@ namespace AdventureMode {
 		
 		public override bool PreItemCheck() {
 			Item heldItem = this.player.HeldItem;
+
 			if( heldItem?.IsAir != true ) {
 				switch( heldItem.type ) {
 				case ItemID.RodofDiscord:
 					return PlayerLogic.UpdateRodOfDiscordUse( this );
 				default:
-					if( heldItem.type == ModContent.ItemType<ResurfacePotionItem>() ) {
-						ResurfacePotionItem.CheckItemForPlayer( this.player, heldItem );
-					}
+					ResurfacePotionItem.PreItemCheck_RunBehaviorIf( this.player, heldItem );
 					break;
 				}
 			}
