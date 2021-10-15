@@ -48,14 +48,16 @@ namespace AdventureMode.Projectiles {
 			gore4.velocity.X -= 1f;
 			gore4.velocity.Y -= 1f;
 
-			if( timeLeft == 0 ) {
-				int tileX = (int)this.projectile.Center.X / 16;
-				int tileY = (int)this.projectile.Center.Y / 16;
+			if( Main.netMode != NetmodeID.MultiplayerClient ) {
+				if( timeLeft == 0 ) {
+					int tileX = (int)this.projectile.Center.X / 16;
+					int tileY = (int)this.projectile.Center.Y / 16;
 
-				this.CreateExplosion( tileX, tileY );
+					this.CreateExplosion( tileX, tileY );
 
-				if( Main.netMode == NetmodeID.Server ) {
-					NetMessage.SendData( MessageID.KillProjectile, -1, -1, null, proj.identity, (float)proj.owner, 0f, 0f, 0, 0, 0 );
+					if( Main.netMode == NetmodeID.Server ) {
+						NetMessage.SendData( MessageID.KillProjectile, -1, -1, null, proj.identity, (float)proj.owner, 0f, 0f, 0, 0, 0 );
+					}
 				}
 			}
 		}

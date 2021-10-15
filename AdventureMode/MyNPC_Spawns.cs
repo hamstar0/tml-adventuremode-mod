@@ -47,6 +47,14 @@ namespace AdventureMode {
 		////////////////
 		
 		public override void EditSpawnPool( IDictionary<int, float> pool, NPCSpawnInfo spawnInfo ) {
+			if( NPCLogic.CanBoundGoblinSpawn(spawnInfo) && !NPC.AnyNPCs(NPCID.BoundGoblin) ) {
+				pool[ NPCID.BoundGoblin ] = 1f;
+			}
+
+			if( NPCLogic.CanBoundMechanicSpawn(spawnInfo) && !NPC.AnyNPCs(NPCID.BoundMechanic) ) {
+				pool[ NPCID.BoundMechanic ] = 1f;
+			}
+
 			this._CurrentSpawnInfo = spawnInfo;
 		}
 

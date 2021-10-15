@@ -12,9 +12,10 @@ namespace AdventureMode.Logic {
 	static partial class NPCLogic {
 		public static (int tileX, int tileY) GetBoundGoblinOrigin() {
 			var myworld = ModContent.GetInstance<AMWorld>();
-			int goblinX = myworld.UndergroundDesertBounds.X + ( myworld.UndergroundDesertBounds.Width / 2 );
-			int goblinY = myworld.UndergroundDesertBounds.Y + ( ( 2 * myworld.UndergroundDesertBounds.Height ) / 3 );
+			int goblinX = myworld.UndergroundDesertBounds.X + (myworld.UndergroundDesertBounds.Width / 2);
+			int goblinY = myworld.UndergroundDesertBounds.Y + ((2 * myworld.UndergroundDesertBounds.Height) / 3);
 
+			// halfway in, 2/3 down
 			return (goblinX, goblinY);
 		}
 
@@ -22,11 +23,12 @@ namespace AdventureMode.Logic {
 		////////////////
 
 		public static bool CanBoundGoblinSpawn( NPCSpawnInfo spawnInfo ) {
-			(int x, int y) goblinTile = NPCLogic.GetBoundGoblinOrigin();
-			var goblinPos = new Vector2(goblinTile.x, goblinTile.y) * 16f;
-			float distSqr = (spawnInfo.player.position - goblinPos).LengthSquared();
+			(int x, int y) goblinOrigTile = NPCLogic.GetBoundGoblinOrigin();
+			var goblinOrigWldPos = new Vector2(goblinOrigTile.x, goblinOrigTile.y) * 16f;
 
-			float minDist = 64 * 16;    // 64 blocks
+			float distSqr = (spawnInfo.player.position - goblinOrigWldPos).LengthSquared();
+
+			float minDist = 64f * 16f;    // 64 blocks
 			float minDistSqr = minDist * minDist;
 
 			return distSqr < minDistSqr;

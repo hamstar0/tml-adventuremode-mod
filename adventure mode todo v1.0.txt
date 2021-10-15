@@ -1,8 +1,10 @@
 v1
 -	Release mods!
 -	@First public beta
+-	Fix custom config float elements rendering as black
 -	Change "Welcome to Adventure Mode" from a book into a Message
 -	Remove requirement for max mana for PBG
+-	Lower elevation of bound goblin spawn area
 -	@Net Debug
 	-	Fix scroll bar interactivity
 -	@Enraged
@@ -27,9 +29,18 @@ v1
 	-	Bramble decay rate
 	-	@Necrotis
 		-	Debug anima drain while dead (MP? during boss?)
-
-
 -	F&T
+	-	@Powerful Magic
+		-	Try to avoid interrupting charge on short falls
+	-	@Soul Barriers
+		-	Fix weird gaps in bramble collision
+	-	@Cursed Brambles
+		-	Increase decay rate x20
+		-	Fix weird gaps in bramble collision (don't incur drain on client?)
+
+
+	-	Fix goblin spawn
+	-	Fix seismic charge tile sync
 	-	@Locked Abilities (1.3.1)
 		-	Duplicate accessories from blocked slots (MP)
 	-	@AML (0.17.2)
