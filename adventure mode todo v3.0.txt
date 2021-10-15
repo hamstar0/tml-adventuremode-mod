@@ -49,25 +49,25 @@ Future considerations
 
 
 
-[v2]
+v3
 -	@Mod Helpers
 	-	Implement game mode function with Mod Helpers
 		-	...
 		-	@Plan
 			-	Modes: Vanilla, Adventure, Survival, Brutal, Honor Bound, Creative, Custom
 		-	Add world lock + new world requirement when a non-Custom game mode is set
-[v1.4.0]
+v2.4
 -	@Add Dragon Lairs (uses Orbs, terrain cells for dragon's lair, and features Elemental Dragon boss)
-[v1.3.0]
+v2.3
 -	@Add Lucky Hat mod (adds QTEs for every major hit to avoid them)
-[v1.2.0]
+v2.2
 -	Add compatibility with Lives mod to generate the world with extra lives in chests
 -	Implement difficulty select (sub-modes)
 	-	@Plan
 		-	World create screen adds options to difficulty select
 		-	Hard
 			-	Life Crystals give half health
-[v1.1.0]
+v2.1
 -	Set WoF to drop Soul of Mole (consumable; enables breaking dirt and mud)
 -	Begin cell-based terrain generation (for future plans)
 	-	@Orbs

@@ -33,7 +33,7 @@ Ideas:
 
 
 
-[v3]
+v4
 -	Remake trailer
 -	@Add Adventure Mode Lore mod (for now, only intro cutscene)
 

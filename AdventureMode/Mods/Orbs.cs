@@ -21,7 +21,7 @@ namespace AdventureMode.Mods {
 			
 			config.SetOverride( nameof(config.BreakableTilesWhitelist), myTileKillWhitelist );
 			config.SetOverride( nameof(config.OnlyGenOrbsInUndergroundChests), false );
-			config.SetOverride( nameof(config.AnyOrbPercentChancePerChest), 0.75f );
+			config.SetOverride( nameof(config.AnyOrbPercentChancePerChest), 0.65f );
 			config.SetOverride( nameof(config.CyanOrbWeightPerOrbChest), 0.25f );
 			config.SetOverride( nameof(config.WhiteOrbWeightPerOrbChest), 0f );
 			config.SetOverride( nameof(config.IsGeoResonantOrbSoldByDryad), false );

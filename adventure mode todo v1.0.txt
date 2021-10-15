@@ -23,24 +23,23 @@ v1
 [v0.32.0]
 -	@Test local MP
 	-	Test goblin rescue
-	-	Verify invasion correctly repositions to map center
-	-	Ensure Seismic Charge recipe is active
-	-	@More Item Info
-		-	Debug tooltip for missing unit prices (MP?)
+	-	Test mining cursed bones
+	-	Bramble decay rate
 	-	@Necrotis
 		-	Debug anima drain while dead (MP? during boss?)
+
+
 -	F&T
-	-	Duplicate accessories from blocked slots (MP)
-	-	Increase PBG decay rate in jungle (also add game Message)
+	-	@Locked Abilities (1.3.1)
+		-	Duplicate accessories from blocked slots (MP)
+	-	@AML (0.17.2)
+		-	Add game Message about increased PBG decay rate in jungle
 	-	Fix missing armor uncraft recipes
 	-	Reduce world gen orbs to 65%
-	-	Add jungle chest orbs
-	-	Debug trickster spawns
-	-	@Soul Barriers
-		-	Fix super speed dust fx while mounted
+	-	@Cursed Brambles (1.2.1)
+	-	@Soul Barriers (1.2.0)
+		-	Improve PBG tile collision detection (sync from client?)
 		-	Fix world gates not rendering (or showing hover hp)
-
-
 	-	Remove Resurface Potions making potion sickness + not consuming when used (but still being used)
 	-	Re-edit demo man objective dialogue
 	-	Fix goblin rescue icon not appearing in MP

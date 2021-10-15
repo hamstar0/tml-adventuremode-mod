@@ -11,6 +11,69 @@ using Orbs.Items;
 
 namespace AdventureMode.WorldGeneration {
 	partial class AMWorldGen {
+		public static void LoadChestEdits() {
+			var config = AMConfig.Instance;
+
+			if( !config.EnableAlchemyRecipes ) {
+				AMWorldGen.RemoveItemFromWorldChests( ItemID.Bottle );
+				AMWorldGen.ReplaceItemWithOrbsInWorldChests( ItemID.HerbBag );
+			}
+
+			if( config.WorldGenReplaceMagicMirrorsWithShadowMirrorsOrRemove ) {
+				if( ModLoader.GetMod("SpiritWalking") != null ) {
+					AMWorldGen.LoadChestEdits_SpiritWalking_WeakRef();
+				} else {
+					AMWorldGen.ReplaceItemWithOrbsInWorldChests( ItemID.MagicMirror );
+					AMWorldGen.ReplaceItemWithOrbsInWorldChests( ItemID.IceMirror );
+				}
+			}
+			
+			AMWorldGen.ReplaceItemWithOrbsInWorldChests( ItemID.LivingWoodWand );
+			AMWorldGen.RemoveItemFromWorldChests( ItemID.LeafWand );
+			AMWorldGen.ReplaceItemWithOrbsInWorldChests( ItemID.LivingMahoganyWand );
+			AMWorldGen.RemoveItemFromWorldChests( ItemID.LivingMahoganyLeafWand );
+
+			if( config.WorldGenAddedMountedMagicMirrorChance > 0f ) {
+				AMWorldGen.AddItemToWorldChests(
+					itemType: ModContent.ItemType<MountableMagicMirrorTileItem>(),
+					quantity: 1,
+					chancePerChest: config.WorldGenAddedMountedMagicMirrorChance
+				);
+			}
+			
+			AMWorldGen.ReplaceItemWithOrbsInWorldChests( ItemID.ClimbingClaws );
+			AMWorldGen.ReplaceItemWithOrbsInWorldChests( ItemID.FiberglassFishingPole );
+
+			//
+
+			var chestDef = new ChestTypeDefinition( TileID.Containers, null );
+			float chestPotionMul = config.WorldGenChestPotionMultiplier;
+
+			// Double all potions in world chests
+			foreach( Chest chest in chestDef.GetMatchingWorldChests() ) {
+				foreach( Item item in chest.item ) {
+					if( item?.active != true || (!item.potion && (item.healLife == 0 && item.healMana == 0)) ) {
+						continue;
+					}
+
+					item.stack = (int)((float)item.stack * chestPotionMul);
+				}
+			}
+		}
+
+
+		private static void LoadChestEdits_SpiritWalking_WeakRef() {	// <- Shadow Mirrors are now found in LEs!
+			//int shadMirrorType = ModContent.ItemType<SpiritWalking.Items.ShadowMirrorItem>();
+			//
+			//AMWorldGen.ReplaceItemWithOtherInWorldChests( ItemID.MagicMirror, shadMirrorType );
+			//AMWorldGen.ReplaceItemWithOtherInWorldChests( ItemID.IceMirror, shadMirrorType );
+			AMWorldGen.ReplaceItemWithOrbsInWorldChests( ItemID.MagicMirror );
+			AMWorldGen.ReplaceItemWithOrbsInWorldChests( ItemID.IceMirror );
+		}
+
+
+		////////////////
+
 		private static void AddItemToWorldChests( int itemType, int quantity, float chancePerChest = 1f ) {
 			var fillDef = new ChestFillDefinition(
 				single: new ChestFillItemDefinition( itemType, quantity, quantity ),
@@ -20,7 +83,7 @@ namespace AdventureMode.WorldGeneration {
 			WorldChestLibraries.AddToWorldChests( fillDef );
 		}
 
-		
+
 		private static void RemoveItemFromWorldChests( int itemType, float chancePerChest = 1f ) {
 			var fillDef = new ChestFillDefinition(
 				single: new ChestFillItemDefinition( itemType, 1, 999 ),
@@ -61,69 +124,6 @@ namespace AdventureMode.WorldGeneration {
 			foreach( Chest chest in modifiedChests ) {
 				orbFillDef.Fill( chest );
 			}
-		}
-
-
-		////////////////
-
-		public static void LoadChestEdits() {
-			var config = AMConfig.Instance;
-
-			if( !config.EnableAlchemyRecipes ) {
-				AMWorldGen.RemoveItemFromWorldChests( ItemID.Bottle );
-			}
-
-			if( config.WorldGenReplaceMagicMirrorsWithShadowMirrorsOrRemove ) {
-				if( ModLoader.GetMod("SpiritWalking") != null ) {
-					AMWorldGen.LoadChestEdits_SpiritWalking();
-				} else {
-					AMWorldGen.RemoveItemFromWorldChests( ItemID.MagicMirror );
-					AMWorldGen.RemoveItemFromWorldChests( ItemID.IceMirror );
-				}
-			}
-
-			AMWorldGen.ReplaceItemWithOrbsInWorldChests( ItemID.LivingWoodWand );
-			AMWorldGen.RemoveItemFromWorldChests( ItemID.LeafWand );
-			AMWorldGen.ReplaceItemWithOrbsInWorldChests( ItemID.LivingMahoganyWand );
-			AMWorldGen.RemoveItemFromWorldChests( ItemID.LivingMahoganyLeafWand );
-
-			if( config.WorldGenAddedMountedMagicMirrorChance > 0f ) {
-				AMWorldGen.AddItemToWorldChests(
-					itemType: ModContent.ItemType<MountableMagicMirrorTileItem>(),
-					quantity: 1,
-					chancePerChest: config.WorldGenAddedMountedMagicMirrorChance
-				);
-			}
-
-			AMWorldGen.ReplaceItemWithOrbsInWorldChests( ItemID.ClimbingClaws );
-			AMWorldGen.ReplaceItemWithOrbsInWorldChests( ItemID.HerbBag );
-			AMWorldGen.ReplaceItemWithOrbsInWorldChests( ItemID.FiberglassFishingPole );
-
-			//
-
-			var chestDef = new ChestTypeDefinition( TileID.Containers, null );
-			float chestPotionMul = config.WorldGenChestPotionMultiplier;
-
-			// Double all potions in world chests
-			foreach( Chest chest in chestDef.GetMatchingWorldChests() ) {
-				foreach( Item item in chest.item ) {
-					if( item?.active != true || (!item.potion && (item.healLife == 0 && item.healMana == 0)) ) {
-						continue;
-					}
-
-					item.stack = (int)((float)item.stack * chestPotionMul);
-				}
-			}
-		}
-
-
-		private static void LoadChestEdits_SpiritWalking() {	// <- Shadow Mirrors are found in LEs
-			//int shadMirrorType = ModContent.ItemType<SpiritWalking.Items.ShadowMirrorItem>();
-			//
-			//AMWorldGen.ReplaceItemWithOtherInWorldChests( ItemID.MagicMirror, shadMirrorType );
-			//AMWorldGen.ReplaceItemWithOtherInWorldChests( ItemID.IceMirror, shadMirrorType );
-			AMWorldGen.RemoveItemFromWorldChests( ItemID.MagicMirror );
-			AMWorldGen.RemoveItemFromWorldChests( ItemID.IceMirror );
 		}
 	}
 }
