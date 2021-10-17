@@ -9,6 +9,7 @@ using ModLibsCore.Libraries.Debug;
 using ModLibsCore.Services.Timers;
 using ModLibsCore.Services.Hooks.LoadHooks;
 using AdventureMode.WorldGeneration;
+using AdventureMode.Packets;
 
 
 namespace AdventureMode.Logic {
@@ -103,17 +104,17 @@ namespace AdventureMode.Logic {
 				WorldLogic.InititalizeTimerHUD( timerTicks );
 			}
 			
-			if( Timers.GetTimerTickDuration(WorldLogic.RaftRestockTimerName) <= 0 ) {
+			if( WorldLogic.GetRaftRestockTimerTicks() <= 0 ) {
 				Timers.SetTimer(
 					name: WorldLogic.RaftRestockTimerName,
 					tickDuration: timerTicks,
 					runsWhilePaused: false,
-					action: WorldLogic.RestockRaftBarrelAndAlertAndGetTimerTicks
+					action: WorldLogic.RestockRaftBarrelAndAlertAndGetAndSetRestockTimerTicks
 				);
 			}
 		}
 
-		private static int RestockRaftBarrelAndAlertAndGetTimerTicks() {
+		private static int RestockRaftBarrelAndAlertAndGetAndSetRestockTimerTicks() {
 			if( Main.netMode == NetmodeID.MultiplayerClient ) {
 				return 0;   // end timer if player transitions from SP to MP (redundant?)
 			}
@@ -121,15 +122,31 @@ namespace AdventureMode.Logic {
 				return 0;   // end timer if in menu (redundant?)
 			}
 
+			//
+
 			WorldLogic.RestockRaftIf( out string msg, out Color color );
+			
+			//
 
 			if( Main.netMode == NetmodeID.Server ) {
-				NetMessage.BroadcastChatMessage( NetworkText.FromLiteral( msg ), color, -1 );
+				NetMessage.BroadcastChatMessage( NetworkText.FromLiteral(msg), color, -1 );
 			} else {
 				Main.NewText( msg, color );
 			}
 
-			return AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
+			//
+			
+			int restockTicks = AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
+
+			if( Main.netMode == NetmodeID.SinglePlayer ) {
+				AMMod.Instance.RaftTimerHUD.SetTimerTicks( restockTicks );
+			} else if( Main.netMode == NetmodeID.Server ) {
+				RaftRestockTimerPacket.SendToClient( restockTicks, -1 );
+			}
+
+			//
+
+			return restockTicks;
 		}
 	}
 }

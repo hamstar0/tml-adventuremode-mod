@@ -74,17 +74,25 @@ namespace AdventureMode {
 
 		////////////////
 
-		private int _SyncRaftTimerTimer = 60 * 15;
-
 		protected override void Update() {
-			if( Main.netMode == NetmodeID.Server ) {
-				if( this._SyncRaftTimerTimer-- <= 0 ) {
-					this._SyncRaftTimerTimer = 60 * 15;
+			this.UpdateRaftTimerSyncIf();
+		}
 
-					int ticks = WorldLogic.GetRaftRestockTimerTicks();
+		////////////////
 
-					RaftRestockTimerPacket.SendToClient( ticks, this.PlayerWho );
-				}
+		 private int _SyncRaftTimerTimer = 60 * 15;
+
+		private void UpdateRaftTimerSyncIf() {
+			if( Main.netMode != NetmodeID.Server ) {
+				return;
+			}
+
+			if( this._SyncRaftTimerTimer-- <= 0 ) {
+				this._SyncRaftTimerTimer = 60 * 15;
+
+				int ticks = WorldLogic.GetRaftRestockTimerTicks();
+
+				RaftRestockTimerPacket.SendToClient( ticks, this.PlayerWho );
 			}
 		}
 	}
