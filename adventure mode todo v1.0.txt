@@ -10,7 +10,9 @@ v1
 -	@Enraged
 	-	Add 'angry forehead vein' icon to boss when enraged
 	-	Use abstract thermometer icon instead of gauge
--	@B&D self destructing environments
+-	@B&D
+	-	Utility panel to show active timers
+	-	Self destructing environments
 [v0.33.0]
 -	@HUD Element Libs
 	-	Save "collisions enabled" state for elements

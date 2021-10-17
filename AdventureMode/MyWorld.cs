@@ -103,7 +103,7 @@ namespace AdventureMode {
 
 
 		////////////////
-		
+
 		public override void NetReceive( BinaryReader reader ) {
 			try {
 				this.IsCurrentWorldAdventure = reader.ReadBoolean();

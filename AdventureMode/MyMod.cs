@@ -24,6 +24,8 @@ namespace AdventureMode {
 
 		internal TimerHUD RaftTimerHUD;
 
+		internal int RaftRestockTimerSnapshot = 0;
+
 
 		////////////////
 
@@ -62,6 +64,7 @@ namespace AdventureMode {
 		public override void PostUpdateEverything() {
 //DebugLibraries.Print( "use item debuf", "ia:"+plr.itemAnimation+", it:"+plr.itemTime+", cc:"+plr.CCed+", int:"+plr.mouseInterface );
 			WorldLogic.UpdateWorldSpawnForInvasionStateIf();
+			WorldLogic.UpdateRaftRestockTimerSnapshot();
 		}
 	}
 }

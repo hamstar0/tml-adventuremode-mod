@@ -1,15 +1,10 @@
 ﻿using System;
-using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
-using Terraria.Localization;
 using ModLibsCore.Libraries.Debug;
-using ModLibsCore.Services.Timers;
 using ModLibsCore.Services.Hooks.LoadHooks;
 using AdventureMode.WorldGeneration;
-using AdventureMode.Packets;
 
 
 namespace AdventureMode.Logic {
@@ -27,7 +22,7 @@ namespace AdventureMode.Logic {
 		////
 
 		private static void LoadRaftBarrel( AMWorld myworld, TagCompound tag ) {
-			int? _restockTimerSinceLastLoad = null;
+			int? restockTimerSinceLastLoad = null;
 
 			//
 
@@ -37,16 +32,16 @@ namespace AdventureMode.Logic {
 					tag.GetInt( "raft_barrel_y" )
 				);
 
-				_restockTimerSinceLastLoad = tag.GetInt( "raft_barrel_restock_timer" );
+				restockTimerSinceLastLoad = tag.GetInt( "raft_barrel_restock_timer" );
 			} else {
 				LogLibraries.Alert( "World has no raft barrel." );
 			}
 
 			//
-
+			
 			LoadHooks.AddPostWorldLoadOnceHook( () => {
-				if( _restockTimerSinceLastLoad != null ) {
-					WorldLogic.BeginOrResumeRaftRestockTimerIf( _restockTimerSinceLastLoad );
+				if( restockTimerSinceLastLoad != null ) {
+					WorldLogic.BeginOrResumeRaftRestockTimerIf( restockTimerSinceLastLoad );
 				} else {
 					LogLibraries.Warn( "No raft restock timer provided." );
 				}
@@ -75,7 +70,7 @@ namespace AdventureMode.Logic {
 				return;
 			}
 
-			int restockTicks = Timers.GetTimerTickDuration( WorldLogic.RaftRestockTimerName );
+			int restockTicks = WorldLogic.GetRaftRestockTimerTicks();
 			//if( restockTicks <= 0 ) {
 			//	restockTicks = AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
 			//}
@@ -86,67 +81,6 @@ namespace AdventureMode.Logic {
 
 			tag["raft_mirror_x"] = myworld.Raft.Mirror.TileX;
 			tag["raft_mirror_y"] = myworld.Raft.Mirror.TileY;
-		}
-
-
-		////////////////
-
-		private static void BeginOrResumeRaftRestockTimerIf( int? remainingTicks ) {
-			if( Main.netMode == NetmodeID.MultiplayerClient ) {
-				return;
-			}
-
-			int timerTicks = remainingTicks.HasValue
-				? remainingTicks.Value
-				: AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
-
-			if( Main.netMode != NetmodeID.Server ) {
-				WorldLogic.InititalizeTimerHUD( timerTicks );
-			}
-			
-			if( WorldLogic.GetRaftRestockTimerTicks() <= 0 ) {
-				Timers.SetTimer(
-					name: WorldLogic.RaftRestockTimerName,
-					tickDuration: timerTicks,
-					runsWhilePaused: false,
-					action: WorldLogic.RestockRaftBarrelAndAlertAndGetAndSetRestockTimerTicks
-				);
-			}
-		}
-
-		private static int RestockRaftBarrelAndAlertAndGetAndSetRestockTimerTicks() {
-			if( Main.netMode == NetmodeID.MultiplayerClient ) {
-				return 0;   // end timer if player transitions from SP to MP (redundant?)
-			}
-			if( Main.gameMenu && !Main.dedServ ) {
-				return 0;   // end timer if in menu (redundant?)
-			}
-
-			//
-
-			WorldLogic.RestockRaftIf( out string msg, out Color color );
-			
-			//
-
-			if( Main.netMode == NetmodeID.Server ) {
-				NetMessage.BroadcastChatMessage( NetworkText.FromLiteral(msg), color, -1 );
-			} else {
-				Main.NewText( msg, color );
-			}
-
-			//
-			
-			int restockTicks = AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
-
-			if( Main.netMode == NetmodeID.SinglePlayer ) {
-				AMMod.Instance.RaftTimerHUD.SetTimerTicks( restockTicks );
-			} else if( Main.netMode == NetmodeID.Server ) {
-				RaftRestockTimerPacket.SendToClient( restockTicks, -1 );
-			}
-
-			//
-
-			return restockTicks;
 		}
 	}
 }

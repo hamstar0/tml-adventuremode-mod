@@ -9,19 +9,6 @@ using HUDElementsLib.Elements.Samples;
 
 namespace AdventureMode.Logic {
 	static partial class WorldLogic {
-		public const string RaftRestockTimerName = "AdventureModeRaftRestock";
-
-
-
-		////////////////
-
-		public static int GetRaftRestockTimerTicks() {
-			return Timers.GetTimerTickDuration( WorldLogic.RaftRestockTimerName );
-		}
-
-
-		////////////////
-
 		internal static void InititalizeTimerHUD( int ticks ) {
 			if( AMMod.Instance.RaftTimerHUD == null ) {
 				var dim = new Vector2( 176f, 52f );
