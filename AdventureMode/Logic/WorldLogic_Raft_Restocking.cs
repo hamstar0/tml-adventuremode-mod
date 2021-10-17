@@ -9,17 +9,22 @@ using ModLibsCore.Libraries.Debug;
 
 namespace AdventureMode.Logic {
 	static partial class WorldLogic {
-		public static bool RestockRaft() {
+		public static bool RestockRaftIf( out string msg, out Color color ) {
 			var myworld = ModContent.GetInstance<AMWorld>();
 			if( !myworld.Raft.IsInitialized ) {
 				LogLibraries.Alert( "Raft barrel not initialized." );
+
+				msg = "Raft barrel failed to initialize.";
+				color = Color.Red;
 				return false;
 			}
 
 			int chestIdx = myworld.GetRaftBarrelChestIndex();
 			if( chestIdx == -1 ) {
 				LogLibraries.Alert( "No raft barrel found to restock!" );
-				Main.NewText( "No raft barrel found to restock!", Color.Red );
+
+				msg = "No raft barrel found to restock!";
+				color = Color.Red;
 				return false;
 			}
 
@@ -27,29 +32,40 @@ namespace AdventureMode.Logic {
 			Item newItem = def.GetItem();
 			Chest chest = Main.chest[ chestIdx ];
 
+			int emptyChestIdx = -1;
+
 			for( int i=0; i<chest.item.Length; i++ ) {
 				Item currItem = chest.item[i];
 				if( currItem?.active == true ) {
 					continue;
 				}
 
-				chest.item[i] = newItem;
-
-				if( Main.netMode == NetmodeID.Server ) {
-					NetMessage.SendData(
-						msgType: MessageID.SyncChestItem,
-						remoteClient: -1,
-						ignoreClient: -1,
-						text: null,
-						number: chestIdx,
-						number2: (float)i
-					);
-				}
-
-				return true;
+				emptyChestIdx = i;
+				break;
 			}
 
-			return false;
+			if( emptyChestIdx == -1 ) {
+				msg = "Raft barrel cannot be restocked while full!";
+				color = Color.Yellow;
+				return false;
+			}
+
+			chest.item[emptyChestIdx] = newItem;
+
+			if( Main.netMode == NetmodeID.Server ) {
+				NetMessage.SendData(
+					msgType: MessageID.SyncChestItem,
+					remoteClient: -1,
+					ignoreClient: -1,
+					text: null,
+					number: chestIdx,
+					number2: (float)emptyChestIdx
+				);
+			}
+
+			msg = "Raft barrel has received new items!";
+			color = Color.Lime;
+			return true;
 		}
 
 

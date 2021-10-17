@@ -13,54 +13,6 @@ using AdventureMode.WorldGeneration;
 
 namespace AdventureMode.Logic {
 	static partial class WorldLogic {
-		private static int? _RaftBarrelRestockTimerSinceLastLoad = null;
-
-
-
-		////////////////
-
-		private static void BeginOrResumeRaftRestockTimer( int? remainingTicks ) {
-			int timerTicks = remainingTicks.HasValue
-				? remainingTicks.Value
-				: AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
-
-			if( Main.netMode != NetmodeID.Server ) {
-				WorldLogic.InititalizeTimerHUD( timerTicks );
-			}
-			
-			if( Timers.GetTimerTickDuration(WorldLogic.RaftRestockTimerName) > 0 ) {
-				return;
-			}
-
-			Timers.SetTimer( WorldLogic.RaftRestockTimerName, timerTicks, false, () => {
-				if( Main.gameMenu && !Main.dedServ && Main.netMode == NetmodeID.MultiplayerClient ) {
-					return 0;
-				}
-
-				string msg = "Raft barrel has received new items!";
-				Color color;
-
-				if( WorldLogic.RestockRaft() ) {
-					msg = "Raft barrel has received new items!";
-					color = Color.Lime;
-				} else {
-					msg = "No barrel to restock.";
-					color = Color.Yellow;
-				}
-
-				if( Main.netMode == NetmodeID.Server ) {
-					NetMessage.BroadcastChatMessage( NetworkText.FromLiteral(msg), color, -1 );
-				} else {
-					Main.NewText( msg, color );
-				}
-
-				return AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
-			} );
-		}
-
-
-		////////////////
-
 		public static void LoadRaftInfo( TagCompound tag ) {
 			var myworld = ModContent.GetInstance<AMWorld>();
 
@@ -70,30 +22,32 @@ namespace AdventureMode.Logic {
 			WorldLogic.LoadRaftMirror( myworld, tag );
 		}
 
+
 		////
 
 		private static void LoadRaftBarrel( AMWorld myworld, TagCompound tag ) {
+			int? _restockTimerSinceLastLoad = null;
+
+			//
+
 			if( tag.ContainsKey("raft_barrel_x") ) {
 				myworld.Raft.Barrel = (
 					tag.GetInt( "raft_barrel_x" ),
 					tag.GetInt( "raft_barrel_y" )
 				);
 
-				WorldLogic._RaftBarrelRestockTimerSinceLastLoad = tag.GetInt( "raft_barrel_restock_timer" );
+				_restockTimerSinceLastLoad = tag.GetInt( "raft_barrel_restock_timer" );
 			} else {
 				LogLibraries.Alert( "World has no raft barrel." );
 			}
-			
-			LoadHooks.AddPostWorldLoadEachHook( () => {
-				if( Main.netMode != NetmodeID.MultiplayerClient ) {
-					if( WorldLogic._RaftBarrelRestockTimerSinceLastLoad == null ) {
-						LogLibraries.Warn( "No raft restock timer provided." );
 
-						return;
-					}
+			//
 
-					WorldLogic.BeginOrResumeRaftRestockTimer( WorldLogic._RaftBarrelRestockTimerSinceLastLoad );
-					WorldLogic._RaftBarrelRestockTimerSinceLastLoad = null;
+			LoadHooks.AddPostWorldLoadOnceHook( () => {
+				if( _restockTimerSinceLastLoad != null ) {
+					WorldLogic.BeginOrResumeRaftRestockTimerIf( _restockTimerSinceLastLoad );
+				} else {
+					LogLibraries.Warn( "No raft restock timer provided." );
 				}
 			} );
 		}
@@ -131,6 +85,51 @@ namespace AdventureMode.Logic {
 
 			tag["raft_mirror_x"] = myworld.Raft.Mirror.TileX;
 			tag["raft_mirror_y"] = myworld.Raft.Mirror.TileY;
+		}
+
+
+		////////////////
+
+		private static void BeginOrResumeRaftRestockTimerIf( int? remainingTicks ) {
+			if( Main.netMode == NetmodeID.MultiplayerClient ) {
+				return;
+			}
+
+			int timerTicks = remainingTicks.HasValue
+				? remainingTicks.Value
+				: AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
+
+			if( Main.netMode != NetmodeID.Server ) {
+				WorldLogic.InititalizeTimerHUD( timerTicks );
+			}
+			
+			if( Timers.GetTimerTickDuration(WorldLogic.RaftRestockTimerName) <= 0 ) {
+				Timers.SetTimer(
+					name: WorldLogic.RaftRestockTimerName,
+					tickDuration: timerTicks,
+					runsWhilePaused: false,
+					action: WorldLogic.RestockRaftBarrelAndAlertAndGetTimerTicks
+				);
+			}
+		}
+
+		private static int RestockRaftBarrelAndAlertAndGetTimerTicks() {
+			if( Main.netMode == NetmodeID.MultiplayerClient ) {
+				return 0;   // end timer if player transitions from SP to MP (redundant?)
+			}
+			if( Main.gameMenu && !Main.dedServ ) {
+				return 0;   // end timer if in menu (redundant?)
+			}
+
+			WorldLogic.RestockRaftIf( out string msg, out Color color );
+
+			if( Main.netMode == NetmodeID.Server ) {
+				NetMessage.BroadcastChatMessage( NetworkText.FromLiteral( msg ), color, -1 );
+			} else {
+				Main.NewText( msg, color );
+			}
+
+			return AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
 		}
 	}
 }

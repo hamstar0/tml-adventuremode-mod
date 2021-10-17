@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using ModLibsCore.Classes.PlayerData;
+using ModLibsCore.Libraries.Debug;
 using ModLibsCore.Libraries.TModLoader;
 using ModLibsCore.Services.Timers;
 using Messages;
@@ -21,9 +22,14 @@ namespace AdventureMode {
 			//
 
 			if( Main.netMode == NetmodeID.Server ) {
-				int ticks = WorldLogic.GetRaftRestockTimerTicks();
+				var myworld = ModContent.GetInstance<AMWorld>();
+				if( myworld.Raft.IsInitialized ) {
+					int ticks = WorldLogic.GetRaftRestockTimerTicks();
 
-				RaftRestockTimerPacket.SendToClient( ticks, this.PlayerWho );
+					RaftRestockTimerPacket.SendToClient( ticks, this.PlayerWho );
+				} else {
+					LogLibraries.Alert( "Cannoy sync raft barrel; not initialized!" );
+				}
 			}
 		}
 
