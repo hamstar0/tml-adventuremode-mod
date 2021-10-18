@@ -7,7 +7,9 @@ namespace AdventureMode.Items {
 	public class MagicDuctTapeItem : ModItem {
 		public override void SetStaticDefaults() {
 			this.DisplayName.SetDefault( "Magic Duct Tape" );
-			this.Tooltip.SetDefault( "Allows jury-rigging accessory item combinations into new types" );
+			this.Tooltip.SetDefault( "Allows jury-rigging accessory item combinations into new types"
+				+"\nNote: Replaces the Tinkerer's Workshop"
+			);
 		}
 
 		public override void SetDefaults() {

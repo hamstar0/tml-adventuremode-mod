@@ -31,13 +31,18 @@ v1
 	-	@Necrotis
 		-	Debug anima drain while dead (MP? during boss?)
 -	F&T
-	-	Fix consuming Resurface Potion when failed to reach surface (also doesn't display failure message)
+	-	Tweak goblin's 2nd dialogue
+
+
+	-	@Necrotis (2.1.1)
+		-	Set elixir to require nearby honey (not honey bottles)
+	-	Prevent Resurface Potion if destination is not defined
+	-	Fix consuming Resurface Potion when failed to reach surface
 	-	Mention that duct tape replaces tinkerer's workshop
 	-	Ensure duct tape recipes are enabled
-
-
 	-	Fix rope building upward (via @Quick Ropes)
 	-	Remove minimap bound goblin marker when rescued (also mechanic's)
+	-	@Mod Libs General (1.3.1)
 	-	@Soul Barriers (1.3.0)
 		-	Fix world barrier hover hp
 		-	Increase world barrier particles

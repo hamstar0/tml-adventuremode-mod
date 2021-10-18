@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 using ModLibsGeneral.Libraries.Players;
 using ModLibsGeneral.Libraries.World;
@@ -17,9 +16,16 @@ namespace AdventureMode.Items {
 				result = "Too close to surface.";
 				return false;
 			}
-
-			if( WorldLocationLibraries.IsLavaLayer(player.Center) || tileY >= WorldLocationLibraries.UnderworldLayerTopTileY ) {
+			
+//Main.NewText( "Is lava? "+WorldLocationLibraries.IsLavaLayer(tileY, out float lp)+" ("+tileY+", "+lp+") - "+Main.rockLayer );
+			if( WorldLocationLibraries.IsLavaLayer(tileY, out float lavaPerc) && lavaPerc >= 0.5f ) {
 				result = "Too deep.";
+				return false;
+			}
+
+			var myplayer = player.GetModPlayer<AMPlayer>();
+			if( myplayer.ResurfacePoint == default ) {
+				result = "No recent surface point has been encountered.";
 				return false;
 			}
 
