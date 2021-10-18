@@ -22,17 +22,20 @@ v1
 	-	Fix world gate double kill (MP): Add respawn buffer timer to prevent kills
 	-	@Soul Barrier
 		-	Fix barrier v barrier missing fx (MP)
+-	@Powerful Magic
+	-	Increase focus interrupt threshold further
+	-	Decrease overheat cooldown time
+	-	Add tooltip about Space Gun overheat (including percent indicator)
 -	Remove respawn blocking during bosses
 -	@Test hosted MP WoF playthrough
--	Setup web server for game server?
-[v0.32.0]
--	@Test local MP
 	-	Test mining cursed bones
 	-	Bramble decay rate
-	-	@Necrotis
-		-	Debug anima drain while dead (MP? during boss?)
+	-	Debug anima drain while dead (MP? during boss?)
+-	Setup web server for game server?
 
 
+[v0.32.0]
+-	@Test local MP
 -	F&T
 	-	@Surroundings (1.1.0.2)
 		-	Fix premature lava overlay (broken 'IsLavaLayer?)
