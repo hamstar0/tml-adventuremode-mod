@@ -41,10 +41,12 @@ namespace AdventureMode.Logic {
 			unionGroup( whitelistTypes, ItemGroupIDs.AnyNonOreCraftedEquipment );
 			unionGroup( whitelistTypes, ItemGroupIDs.AnyOreBar );
 
+			whitelistTypes.Add( ItemID.Bottle );
+			whitelistTypes.Add( ItemID.BottledHoney );
 			if( config.EnableAlchemyRecipes ) {
 				unionGroup( whitelistTypes, ItemGroupIDs.AnyPotion );
-				whitelistTypes.Add( ItemID.Bottle );
-				whitelistTypes.Add( ItemID.BottledHoney );
+				//whitelistTypes.Add( ItemID.Bottle );
+				//whitelistTypes.Add( ItemID.BottledHoney );
 				whitelistTypes.Add( ItemID.BottledWater );
 			}
 

@@ -17,12 +17,13 @@ namespace AdventureMode.Recipes {
 			
 			this.AddIngredient( ItemID.RecallPotion, 1 );
 			this.AddIngredient( ItemID.FallenStar, 1 );
+			this.AddIngredient( ItemID.Bottle, 3 );
 
-			if( AMConfig.Instance.EnableAlchemyRecipes ) {
-				this.AddIngredient( ItemID.Bottle, 3 );
-			} else {
-				this.AddIngredient( ItemID.LesserHealingPotion, 3 );
-			}
+			//if( AMConfig.Instance.EnableAlchemyRecipes ) {
+			//	this.AddIngredient( ItemID.Bottle, 3 );
+			//} else {
+			//	this.AddIngredient( ItemID.LesserHealingPotion, 3 );
+			//}
 
 			this.SetResult( myitem, ResurfacePotionRecipe.GetStackAmount );
 
