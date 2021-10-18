@@ -3,9 +3,9 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using ModLibsCore.Libraries.Debug;
+using Orbs.Items;
 using AdventureMode.Logic;
 using AdventureMode.Recipes;
-using Orbs.Items;
 
 
 namespace AdventureMode {
@@ -41,6 +41,13 @@ namespace AdventureMode {
 				ModContent.ItemType<YellowOrbItem>(),
 				ModContent.ItemType<WhiteOrbItem>()
 			);
+			
+			AddRG( "Sand",
+				ItemID.SandBlock,
+				ItemID.CrimsandBlock,
+				ItemID.EbonsandBlock,
+				ItemID.PearlsandBlock
+			);
 		}
 
 		////
@@ -51,6 +58,9 @@ namespace AdventureMode {
 
 			var newRoDRecipe2 = new RodOfDiscordRecipe( true );
 			newRoDRecipe2.AddRecipe();
+			
+			var bottleRecipe = new BottleRecipe();
+			bottleRecipe.AddRecipe();
 
 			foreach( ModRecipe refundRecipe in RecipeLogic.CreateItemRefundRecipes() ) {
 				refundRecipe.AddRecipe();
