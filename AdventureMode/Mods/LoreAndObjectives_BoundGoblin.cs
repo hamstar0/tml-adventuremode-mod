@@ -9,27 +9,17 @@ using ModLibsMaps.Services.Maps;
 
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
-		private bool HasBoundGoblinAlert = false;
-
-
-
-		////////////////
-
 		private void ApplyLoreAndObjectives_BoundGoblin( bool isNew, bool isDone ) {
-			if( this.HasBoundGoblinAlert ) {
-				return;
-			}
-			this.HasBoundGoblinAlert = true;
-
 			string markerName = "AdventureMode_Spawn_BoundGoblin";
 			
-			if( !isDone && !NPC.savedGoblin ) {
+			if( !isDone ) {
 				Timers.RunUntil( () => {
-					if( NPC.downedGoblins && !NPC.savedGoblin ) {
+					if( !isDone && NPC.downedGoblins && !NPC.savedGoblin ) {
 						this.AddBoundGoblinMapMarker( markerName );
+
 						return false;
 					}
-					return true;
+					return !isDone;
 				}, false );
 			} else {
 				MapMarkersAPI.RemoveFullScreenMapMarker( markerName );

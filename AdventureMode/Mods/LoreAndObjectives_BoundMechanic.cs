@@ -11,13 +11,14 @@ namespace AdventureMode.Mods {
 		private void ApplyLoreAndObjectives_BoundMechanic( bool isNew, bool isDone ) {
 			string markerName = "AdventureMode_Spawn_BoundMechanic";
 
-			if( !isDone && !NPC.savedMech ) {
+			if( !isDone ) {
 				Timers.RunUntil( () => {
-					if( NPC.downedBoss3 && !NPC.savedMech ) {
+					if( !isDone && NPC.downedBoss3 && !NPC.savedMech ) {
 						this.AddBoundMechanicMapMarker( markerName );
+
 						return false;
 					}
-					return true;
+					return !isDone;
 				}, false );
 			} else {
 				MapMarkersAPI.RemoveFullScreenMapMarker( markerName );

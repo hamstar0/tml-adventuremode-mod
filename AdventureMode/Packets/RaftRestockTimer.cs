@@ -42,7 +42,8 @@ namespace AdventureMode.Packets {
 		}
 
 		public override void ReceiveOnClient() {
-			WorldLogic.InititalizeTimerHUD( (int)this.Ticks );
+//LogLibraries.Log( "RAFT TIMER 3 "+this.Ticks );
+			WorldLogic.DeclareTimerHUD( (int)this.Ticks );
 		}
 	}
 }

@@ -119,6 +119,9 @@
     <Reference Include="PowerfulMagic">
       <HintPath>..\..\..\Powerful Magic\Project\PowerfulMagic\bin\Release\net452\PowerfulMagic.dll</HintPath>
     </Reference>
+    <Reference Include="QuickRope">
+      <HintPath>..\..\..\Quick Rope (collab)\Project\QuickRope\bin\Release\net45\QuickRope.dll</HintPath>
+    </Reference>
     <Reference Include="ReadableBooks">
       <HintPath>..\..\..\Readable Books\Project\ReadableBooks\bin\Release\net452\ReadableBooks.dll</HintPath>
     </Reference>

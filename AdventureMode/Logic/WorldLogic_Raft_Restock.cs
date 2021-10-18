@@ -33,7 +33,8 @@ namespace AdventureMode.Logic {
 				: AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
 
 			if( Main.netMode != NetmodeID.Server ) {
-				WorldLogic.InititalizeTimerHUD( timerTicks );
+//LogLibraries.Log( "RAFT TIMER 1 "+timerTicks );
+				WorldLogic.DeclareTimerHUD( timerTicks );
 			}
 			
 			if( WorldLogic.GetRaftRestockTimerTicks() <= 0 ) {
@@ -41,38 +42,41 @@ namespace AdventureMode.Logic {
 					name: WorldLogic.RaftRestockTimerName,
 					tickDuration: timerTicks,
 					runsWhilePaused: false,
-					action: WorldLogic.RestockRaftBarrelAndAlertAndGetAndSetRestockTimerTicks
+					action: () => {
+						if( Main.netMode == NetmodeID.MultiplayerClient ) {
+							return 0;   // end timer if player transitions from SP to MP (redundant?)
+						}
+						if( Main.gameMenu && !Main.dedServ ) {
+							return 0;   // end timer if in menu (redundant?)
+						}
+
+						WorldLogic.RestockRaftBarrelAndAlert();
+
+						return WorldLogic.GetAndSetRestockTimerTicks();
+					}
 				);
 			}
 		}
 
 
-		private static int RestockRaftBarrelAndAlertAndGetAndSetRestockTimerTicks() {
-			if( Main.netMode == NetmodeID.MultiplayerClient ) {
-				return 0;   // end timer if player transitions from SP to MP (redundant?)
-			}
-			if( Main.gameMenu && !Main.dedServ ) {
-				return 0;   // end timer if in menu (redundant?)
-			}
+		////
 
-			//
-
+		private static void RestockRaftBarrelAndAlert() {
 			WorldLogic.RestockRaftIf( out string msg, out Color color );
 			
-			//
-
 			if( Main.netMode == NetmodeID.Server ) {
 				NetMessage.BroadcastChatMessage( NetworkText.FromLiteral(msg), color, -1 );
 			} else {
 				Main.NewText( msg, color );
 			}
+		}
 
-			//
-			
+		private static int GetAndSetRestockTimerTicks() {
 			int restockTicks = AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
 
 			if( Main.netMode == NetmodeID.SinglePlayer ) {
-				AMMod.Instance.RaftTimerHUD.SetTimerTicks( restockTicks );
+//LogLibraries.Log( "RAFT TIMER 2 "+restockTicks );
+				WorldLogic.DeclareTimerHUD( restockTicks );
 			} else if( Main.netMode == NetmodeID.Server ) {
 				RaftRestockTimerPacket.SendToClient( restockTicks, -1 );
 			}
@@ -83,8 +87,37 @@ namespace AdventureMode.Logic {
 		}
 
 
-		////
+		////////////////
 		
+		 private static int _SyncRaftTimerTimer = 60 * 15;
+
+		internal static void UpdateRaftRestockTimerSyncIf( int playerWho ) {
+			if( Main.netMode == NetmodeID.MultiplayerClient ) {
+				return;
+			}
+
+			//
+
+			if( WorldLogic._SyncRaftTimerTimer-- >= 1 ) {
+				return;
+			}
+
+			WorldLogic._SyncRaftTimerTimer = 60 * 15;
+
+			//
+
+			int ticks = WorldLogic.GetRaftRestockTimerTicks();
+
+			if( Main.netMode == NetmodeID.Server ) {
+				RaftRestockTimerPacket.SendToClient( ticks, playerWho );
+			} else if( Main.netMode == NetmodeID.SinglePlayer ) {
+				WorldLogic.DeclareTimerHUD( ticks );
+			}
+		}
+
+
+		////////////////
+
 		internal static void UpdateRaftRestockTimerSnapshot() {
 			int ticks = Timers.GetTimerTickDuration( WorldLogic.RaftRestockTimerName );
 

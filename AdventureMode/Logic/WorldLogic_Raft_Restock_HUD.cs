@@ -2,14 +2,13 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using ModLibsCore.Libraries.Debug;
-using ModLibsCore.Services.Timers;
 using HUDElementsLib;
 using HUDElementsLib.Elements.Samples;
 
 
 namespace AdventureMode.Logic {
 	static partial class WorldLogic {
-		internal static void InititalizeTimerHUD( int ticks ) {
+		internal static void DeclareTimerHUD( int ticks ) {
 			if( AMMod.Instance.RaftTimerHUD == null ) {
 				var dim = new Vector2( 176f, 52f );
 				var pos = new Vector2(
