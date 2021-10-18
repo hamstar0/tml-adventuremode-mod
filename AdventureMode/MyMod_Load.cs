@@ -9,7 +9,9 @@ namespace AdventureMode {
 		public override void Load() {
 			AMMod.Instance = this;
 
-			void loadMod( string[] modNames, Action loader ) {
+			//
+
+			void LoadMod( string[] modNames, Action loader ) {
 				foreach( string modName in modNames ) {
 					if( ModLoader.GetMod(modName) == null ) {
 						LogLibraries.Warn( "Error loading missing mod "+ modName );
@@ -26,79 +28,79 @@ namespace AdventureMode {
 
 			//
 
-			loadMod(
+			LoadMod(
 				new string[] { "Grappletech" },
 				this.ModInteractions.LoadGrappletech
 			);
-			loadMod(
+			LoadMod(
 				new string[] { "GreenHell" },
 				this.ModInteractions.LoadGreenHell
 			);
-			loadMod(
+			LoadMod(
 				new string[] { "GreenHell" },
 				this.ModInteractions.LoadPKEMeter
 			);
-			loadMod(
+			LoadMod(
 				new string[] { "Bullwhip" },
 				this.ModInteractions.LoadBullwhip
 			);
-			loadMod(
+			LoadMod(
 				new string[] { "Nihilism" },
 				this.ModInteractions.LoadNihilism
 			);
-			loadMod(
+			LoadMod(
 				new string[] { "Necrotis" },
 				this.ModInteractions.LoadNecrotis
 			);
-			loadMod(
+			LoadMod(
 				new string[] { "CursedBones", "Necrotis", "Orbs" },
 				this.ModInteractions.LoadCursedBones
 			);
-			loadMod(
+			LoadMod(
 				new string[] { "CursedBrambles" },
 				this.ModInteractions.LoadCursedBrambles
 			);
-			loadMod(
+			LoadMod(
 				new string[] { "Ergophobia", "MountedMagicMirrors" },
 				this.ModInteractions.LoadErgophobiaAndMountedMagicMirrors
 			);
-			loadMod(
-				new string[] { "Ergophobia", "QuickRopes" },
-				this.ModInteractions.LoadErgophobiaAndQuickRopes
+			LoadMod(
+				new string[] { "Ergophobia", "QuickRope" },
+				this.ModInteractions.LoadErgophobiaAndQuickRope
 			);
-			loadMod(
+			LoadMod(
 				new string[] { "TheTrickster", "LockedAbilities" },
 				this.ModInteractions.LoadTricksterAndLockedAbilies
 			);
-			loadMod(
+			LoadMod(
 				new string[] { "LockedAbilities" },
 				this.ModInteractions.LoadLockedAbilities
 			);
-			loadMod(
+			LoadMod(
 				new string[] { "Orbs", "Ergophobia", "FindableManaCrystals", "CursedBrambles" },
 				this.ModInteractions.LoadOrbs
 			);
-			loadMod(
+			LoadMod(
 				new string[] { "TerrainRemixer" },
 				this.ModInteractions.LoadTerrainRemixer
 			);
-			loadMod(
+			LoadMod(
 				new string[] { "AdventureModeLore", "Objectives" },
 				this.ModInteractions.LoadLoreAndObjectives
 			);
-			loadMod(
+			LoadMod(
 				new string[] { "TheMadRanger" },
 				this.ModInteractions.LoadTheMadRanger
 			);
-			loadMod(
+			LoadMod(
 				new string[] { "PowerfulMagic" },
 				this.ModInteractions.LoadPowerfulMagic
 			);
-			loadMod(
+			LoadMod(
 				new string[] { "RuinedItems" },
 				this.ModInteractions.LoadRuinedItems
 			);
-			loadMod(
+			LoadMod(
 				new string[] { "WorldGates", "SpiritWalking" },
 				this.ModInteractions.LoadWorldGatesAndSpiritWalking
 			);

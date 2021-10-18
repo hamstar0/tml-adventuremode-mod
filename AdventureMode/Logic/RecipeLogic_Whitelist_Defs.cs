@@ -11,6 +11,7 @@ using ModLibsEntityGroups.Services.EntityGroups.Definitions;
 using LockedAbilities.Items.Consumable;
 using Ergophobia.Items.FramingPlank;
 using Ergophobia.Items.TrackDeploymentKit;
+using Necrotis.Items;
 using AdventureMode.Items;
 
 
@@ -83,6 +84,7 @@ namespace AdventureMode.Logic {
 			whitelistTypes.Add( ModContent.ItemType<DarkHeartItem>() );
 			//
 			whitelistTypes.Add( ModContent.ItemType<ResurfacePotionItem>() );
+			whitelistTypes.Add( ModContent.ItemType<ElixirOfLifeItem>() );
 			//
 			whitelistTypes.Add( ItemID.Bowl );
 			whitelistTypes.Add( ItemID.BowlofSoup );
