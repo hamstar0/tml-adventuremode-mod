@@ -6,7 +6,6 @@ using Terraria.ModLoader;
 using ModLibsCore.Libraries.Debug;
 using ModLibsEntityGroups.Services.EntityGroups;
 using Ergophobia.Items.FramingPlank;
-using Necrotis.Items;
 using SoulBarriers.Items;
 
 
@@ -15,7 +14,6 @@ namespace AdventureMode.Logic {
 		public static void EditExistingRecipes( ISet<int> additionalWhitelistedItemTypes ) {
 			RecipeLogic.EditBowlRecipe();
 			RecipeLogic.EditFramingPlankRecipe();
-			RecipeLogic.EditElixirRecipe();
 			RecipeLogic.EditBossRecipes();
 			RecipeLogic.EditPBGRecipeIf();
 
@@ -56,18 +54,6 @@ namespace AdventureMode.Logic {
 			foreach( Recipe r in rf.SearchRecipes() ) {
 				var re = new RecipeEditor( r );
 				re.DeleteTile( TileID.Sawmill );
-			}
-		}
-
-		////
-		
-		public static void EditElixirRecipe() {
-			var rf = new RecipeFinder();
-			rf.SetResult( ModContent.ItemType<ElixirOfLifeItem>() );
-
-			foreach( Recipe r in rf.SearchRecipes() ) {
-				var re = new RecipeEditor( r );
-				re.DeleteIngredient( ItemID.ShinePotion );
 			}
 		}
 
