@@ -3,15 +3,28 @@ using System.Collections.Generic;
 using Terraria.ID;
 using ModLibsCore.Libraries.Debug;
 using ModLibsGeneral.Libraries.World;
+using TerrainRemixer;
 
 
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
 		public void LoadTerrainRemixer() {
+			AdventureModeModInteractions._LoadTerrainRemixer_WeakRef();
+		}
+
+		private static void _LoadTerrainRemixer_WeakRef() {
+			var terrainRemixerConfig = TerrainRemixer.TerrainRemixerConfig.Instance;
+
+			// Clear existing default passes
+			if( !terrainRemixerConfig.HasOverride("Passes") ) {
+				terrainRemixerConfig.SetOverride( "Passes", new List<TerrainRemixerGenPassSpec>() );
+			}
+
 			TerrainRemixer.TerrainRemixerAPI.AddPassHook(
 				() => {
 					// Upper caves softening
 					return new TerrainRemixer.TerrainRemixerGenPassSpec {
+						PassName = "High Cave Opener",
 						LayerName = "Tunnels",
 						NoiseFrequency = 0.005f,
 						WormsMode = TerrainRemixer.FractalType.Billow,
@@ -32,6 +45,7 @@ namespace AdventureMode.Mods {
 				() => {
 					// Deep caves blocking
 					return new TerrainRemixer.TerrainRemixerGenPassSpec {
+						PassName = "Deep Cave Closer",
 						LayerName = "Grass",
 						NoiseFrequency = 0.0075f,   //0.01f
 						WormsMode = TerrainRemixer.FractalType.Billow,
@@ -70,6 +84,7 @@ namespace AdventureMode.Mods {
 
 					// Extreme hills in map center
 					return new TerrainRemixer.TerrainRemixerGenPassSpec {
+						PassName = "Mid 'Extreme Hills'",
 						LayerName = "Tunnels",
 						NoiseFrequency = 0.01f,
 						WormsMode = TerrainRemixer.FractalType.FBM,

@@ -13,7 +13,11 @@ v1
 -	@B&D
 	-	Utility panel to show active timers
 	-	Self destructing environments
-[v0.33.0]
+[v0.34.0]
+-	@Test hosted MP WoF playthrough
+	-	Test mining cursed bones
+	-	Bramble decay rate
+	-	Debug anima drain while dead (MP? during boss?)
 -	@HUD Element Libs
 	-	Save "collisions enabled" state for elements
 -	F&T
@@ -27,13 +31,33 @@ v1
 	-	Decrease overheat cooldown time
 	-	Add tooltip about Space Gun overheat (including percent indicator)
 -	Remove respawn blocking during bosses
--	@Test hosted MP WoF playthrough
-	-	Test mining cursed bones
-	-	Bramble decay rate
-	-	Debug anima drain while dead (MP? during boss?)
--	Setup web server for game server?
+[v0.33.0]
+-	@Test
+	-	Bullwhip hotkey
+-	@AML
+	-	Fix messages appearing for unrelevant players
+	-	Premature 'About the Trickster' message
+-	@TMR
+	-	Fix multiple clients fighting for mouse aim (!)
+-	Clarify using PBG vs world gates
+-	@Ergophobia
+	-	Barrel misses the "can't be placed" note
+-	@Orbs
+	-	Optimize fullscreen map colors view
+-	@Soul Barriers
+	-	Increase particles per world barrier
+-	@Terrain Remixer
+	-	Avoid overridding dungeon/temple with noise
+-	Add tooltip to bait items about fishing removal
+-	Add gameplay message to inform about fishing removal
+-	Debug unresponsive Resurface Potions (MP?)
+-	18 Resurface Pots on spawn?!
 
 
+-	Set Terrain Remixer to be weak ref mod
+-	@Terrain Remixer (0.13.0)
+	-	Fix
+-	@Green Hell (0.7.4) (fixed sync issues)
 [v0.32.0]
 -	@Test local MP
 -	F&T
