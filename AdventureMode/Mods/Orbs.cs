@@ -9,17 +9,24 @@ namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
 		public void LoadOrbs() {
 			var config = Orbs.OrbsConfig.Instance;
+
 			var myTileKillWhitelist = new List<string>( config.BreakableTilesWhitelist );
-			myTileKillWhitelist.Add( TileID.GetUniqueKey( TileID.Candles ) );
-			myTileKillWhitelist.Add( TileID.GetUniqueKey( TileID.WaterCandle ) );
-			myTileKillWhitelist.Add( TileID.GetUniqueKey( TileID.PeaceCandle ) );
-			myTileKillWhitelist.Add( TileID.GetUniqueKey( TileID.Containers ) );
-			myTileKillWhitelist.Add( TileID.GetUniqueKey( ModContent.TileType<Ergophobia.Tiles.FramingPlankTile>() ) );
-			myTileKillWhitelist.Add( TileID.GetUniqueKey( ModContent.TileType<FindableManaCrystals.Tiles.ManaCrystalShardTile>() ) );
-			myTileKillWhitelist.Add( TileID.GetUniqueKey( ModContent.TileType<CursedBrambles.Tiles.CursedBrambleTile>() ) );
-			myTileKillWhitelist.Add( TileID.GetUniqueKey( ModContent.TileType<FallenCyborgTile>() ) );
-			
+			myTileKillWhitelist.Add( TileID.GetUniqueKey(TileID.Candles) );
+			myTileKillWhitelist.Add( TileID.GetUniqueKey(TileID.WaterCandle) );
+			myTileKillWhitelist.Add( TileID.GetUniqueKey(TileID.PeaceCandle) );
+			myTileKillWhitelist.Add( TileID.GetUniqueKey(TileID.Containers) );
+			myTileKillWhitelist.Add( TileID.GetUniqueKey(ModContent.TileType<Ergophobia.Tiles.FramingPlankTile>()) );
+			myTileKillWhitelist.Add( TileID.GetUniqueKey(ModContent.TileType<FindableManaCrystals.Tiles.ManaCrystalShardTile>()) );
+			myTileKillWhitelist.Add( TileID.GetUniqueKey(ModContent.TileType<CursedBrambles.Tiles.CursedBrambleTile>()) );
+			myTileKillWhitelist.Add( TileID.GetUniqueKey(ModContent.TileType<FallenCyborgTile>()) );
+
+			var wlExceptions = config.Get<Dictionary<string, List<int>>>(
+				nameof( config.BreakableTilesWhitelistFrameExceptions )
+			);
+			wlExceptions[ TileID.GetUniqueKey(TileID.Containers) ] = new List<int> { 180, 198 };	// unbreakable barrels
+
 			config.SetOverride( nameof(config.BreakableTilesWhitelist), myTileKillWhitelist );
+			config.SetOverride( nameof(config.BreakableTilesWhitelistFrameExceptions), wlExceptions );
 			config.SetOverride( nameof(config.OnlyGenOrbsInUndergroundChests), false );
 			config.SetOverride( nameof(config.AnyOrbPercentChancePerChest), 0.65f );
 			config.SetOverride( nameof(config.CyanOrbWeightPerOrbChest), 0.25f );

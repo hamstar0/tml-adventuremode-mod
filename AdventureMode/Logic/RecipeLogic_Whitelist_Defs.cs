@@ -101,7 +101,7 @@ namespace AdventureMode.Logic {
 			whitelistTypes.Add( ItemID.MinecartTrack );
 			whitelistTypes.Add( ItemID.BoosterTrack );
 			whitelistTypes.Add( ItemID.TallGate );
-			whitelistTypes.Add( ItemID.Barrel );
+			//whitelistTypes.Add( ItemID.Barrel );
 			whitelistTypes.Add( ModContent.ItemType<FramingPlankItem>() );
 			whitelistTypes.Add( ModContent.ItemType<TrackDeploymentKitItem>() );
 			//
