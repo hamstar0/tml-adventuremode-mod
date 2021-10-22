@@ -4,6 +4,7 @@ using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using ModLibsCore.Libraries.Debug;
 using ModLibsGeneral.Libraries.World;
 using ReadableBooks.Items.ReadableBook;
 using AdventureMode.Items;
@@ -54,8 +55,8 @@ namespace AdventureMode.Logic {
 
 		////////////////
 
-		internal static void SetupInitialSpawnInventory( AMPlayer myplayer, IList<Item> items ) {
-			Item makeItem( int itemType, int stack ) {
+		internal static void SetupInitialSpawnInventory( IList<Item> items ) {
+			Item MakeItem( int itemType, int stack ) {
 				var item = new Item();
 				item.SetDefaults( itemType );
 				item.stack = stack;
@@ -64,48 +65,70 @@ namespace AdventureMode.Logic {
 
 			//
 
-			myplayer.IsAdventurer = true;
-
-			//
-
-			items.Add( makeItem(ItemID.WoodenHammer, 1) );
+			items.Add( MakeItem(ItemID.WoodenHammer, 1) );
 
 			if( !AMConfig.Instance.EnableTorchRecipes ) {
-				items.Add( makeItem(ItemID.Torch, 15) );
+				items.Add( MakeItem(ItemID.Torch, 15) );
 			}
+
+			items.Add( MakeItem(ItemID.ClimbingClaws, 1) );
+
+			//items.Add( makeItem(ItemID.GrapplingHook, 1) );
+
+			items.Add( PlayerLogic.CreateGuideBook() );
+		}
+
+		internal static void SetupInWorldSpawnInventory( Player player ) {
+			int invIdx = 0;
+
+			void AddInvItem( int itemType, int stack ) {
+				if( invIdx >= player.inventory.Length ) {
+					LogLibraries.Alert( "Player inventory full." );
+					return;
+				}
+
+				while( !player.inventory[invIdx].IsAir ) {
+					invIdx++;
+					
+					if( invIdx >= player.inventory.Length ) {
+						LogLibraries.Alert( "Player inventory full." );
+						return;
+					}
+				}
+
+				var item = new Item();
+				item.SetDefaults( itemType );
+				item.stack = stack;
+
+				player.inventory[invIdx] = item;
+			}
+
+			//
 
 			int resurfPotType = ModContent.ItemType<ResurfacePotionItem>();
 
 			switch( WorldLibraries.GetSize() ) {
 			case WorldSize.SubSmall:
-				items.Add( makeItem( ItemID.RopeCoil, 15 ) );
-				items.Add( makeItem( resurfPotType, 3 ) );
+				AddInvItem( ItemID.RopeCoil, 15 );
+				AddInvItem( resurfPotType, 2 );
 				break;
 			case WorldSize.Small:
-				items.Add( makeItem( ItemID.RopeCoil, 20 ) );
-				items.Add( makeItem( resurfPotType, 5 ) );
+				AddInvItem( ItemID.RopeCoil, 20 );
+				AddInvItem( resurfPotType, 3 );
 				break;
 			case WorldSize.Medium:
-				items.Add( makeItem( ItemID.RopeCoil, 30 ) );
-				items.Add( makeItem( resurfPotType, 8 ) );
+				AddInvItem( ItemID.RopeCoil, 30 );
+				AddInvItem( resurfPotType, 6 );
 				break;
 			case WorldSize.Large:
-				items.Add( makeItem( ItemID.RopeCoil, 40 ) );
-				items.Add( makeItem( resurfPotType, 12 ) );
+				AddInvItem( ItemID.RopeCoil, 40 );
+				AddInvItem( resurfPotType, 10 );
 				break;
 			case WorldSize.SuperLarge:
-				items.Add( makeItem( ItemID.RopeCoil, 45 ) );
-				items.Add( makeItem( resurfPotType, 15 ) );
+				AddInvItem( ItemID.RopeCoil, 45 );
+				AddInvItem( resurfPotType, 12 );
 				break;
 			}
-
-			items.Add( makeItem(ItemID.ClimbingClaws, 1) );
-
-			//items.Add( makeItem(ItemID.GrapplingHook, 1) );
-
-			items.Add( PlayerLogic.CreateGuideBook() );
-
-			items.Add( makeItem(ModContent.ItemType<ResurfacePotionItem>(), 3) );
 		}
 
 

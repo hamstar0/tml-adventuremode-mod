@@ -13,10 +13,37 @@ using AdventureMode.Packets;
 
 
 namespace AdventureMode {
+	class AMCustomPlayerData {
+		public static AMCustomPlayerData Initialize( Player player, object rawData ) {
+			AMCustomPlayerData data = rawData as AMCustomPlayerData
+				?? new AMCustomPlayerData();
+
+			if( !data.IsSetup ) {
+				PlayerLogic.SetupInWorldSpawnInventory( player );
+
+				data.IsSetup = true;
+			}
+
+			return data;
+		}
+
+
+		public bool IsSetup = false;
+	}
+
+
+
+
 	class AMCustomPlayer : CustomPlayerData {
+		private AMCustomPlayerData Data;
+
+
+
+		////////////////
+
 		protected override void OnEnter( bool isCurrentPlayer, object data ) {
 			if( isCurrentPlayer ) {
-				this.OnEnter_CurrentPlayer();
+				this.OnEnter_CurrentPlayer( data );
 			}
 
 			//
@@ -33,8 +60,7 @@ namespace AdventureMode {
 			}
 		}
 
-
-		private void OnEnter_CurrentPlayer() {
+		private void OnEnter_CurrentPlayer( object data ) {
 			var config = AMConfig.Instance;
 			var myplayer = this.Player.GetModPlayer<AMPlayer>();
 			var myworld = ModContent.GetInstance<AMWorld>();
@@ -47,6 +73,10 @@ namespace AdventureMode {
 			if( !isNotAdventureWorld ) {
 				Main.NewText( "This world is not initialized for Adventure Mode. Exiting to menu in 15 seconds...", Color.Yellow );
 			}
+
+			//
+			
+			this.Data = AMCustomPlayerData.Initialize( this.Player, data );
 
 			//
 
@@ -69,6 +99,13 @@ namespace AdventureMode {
 				}
 				return false;
 			} );
+		}
+
+
+		////
+
+		protected override object OnExit() {
+			return this.Data;
 		}
 
 
