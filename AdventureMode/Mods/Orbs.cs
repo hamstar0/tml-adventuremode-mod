@@ -8,9 +8,10 @@ using AdventureModeLore.Tiles;
 namespace AdventureMode.Mods {
 	partial class AdventureModeModInteractions {
 		public void LoadOrbs() {
-			var config = Orbs.OrbsConfig.Instance;
+			var orbsConfig = Orbs.OrbsConfig.Instance;
 
-			var myTileKillWhitelist = new List<string>( config.BreakableTilesWhitelist );
+			var myTileKillWhitelist = orbsConfig.Get<List<string>>( nameof(orbsConfig.BreakableTilesWhitelist) );
+			myTileKillWhitelist = new List<string>( myTileKillWhitelist );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey(TileID.Candles) );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey(TileID.WaterCandle) );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey(TileID.PeaceCandle) );
@@ -20,28 +21,29 @@ namespace AdventureMode.Mods {
 			myTileKillWhitelist.Add( TileID.GetUniqueKey(ModContent.TileType<CursedBrambles.Tiles.CursedBrambleTile>()) );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey(ModContent.TileType<FallenCyborgTile>()) );
 
-			var wlExceptions = config.Get<Dictionary<string, List<int>>>(
-				nameof( config.BreakableTilesWhitelistFrameExceptions )
+			var wlExceptions = orbsConfig.Get<Dictionary<string, List<int>>>(
+				nameof( orbsConfig.BreakableTilesWhitelistFrameExceptions )
 			);
+			wlExceptions = new Dictionary<string, List<int>>( wlExceptions );
 			wlExceptions[ TileID.GetUniqueKey(TileID.Containers) ] = new List<int> { 180, 198 };	// unbreakable barrels
 
-			config.SetOverride( nameof(config.BreakableTilesWhitelist), myTileKillWhitelist );
-			config.SetOverride( nameof(config.BreakableTilesWhitelistFrameExceptions), wlExceptions );
-			config.SetOverride( nameof(config.OnlyGenOrbsInUndergroundChests), false );
-			config.SetOverride( nameof(config.AnyOrbPercentChancePerChest), 0.65f );
-			config.SetOverride( nameof(config.CyanOrbWeightPerOrbChest), 0.25f );
-			config.SetOverride( nameof(config.WhiteOrbWeightPerOrbChest), 0f );
-			config.SetOverride( nameof(config.IsGeoResonantOrbSoldByDryad), false );
+			orbsConfig.SetOverride( nameof(orbsConfig.BreakableTilesWhitelist), myTileKillWhitelist );
+			orbsConfig.SetOverride( nameof(orbsConfig.BreakableTilesWhitelistFrameExceptions), wlExceptions );
+			orbsConfig.SetOverride( nameof(orbsConfig.OnlyGenOrbsInUndergroundChests), false );
+			orbsConfig.SetOverride( nameof(orbsConfig.AnyOrbPercentChancePerChest), 0.65f );
+			orbsConfig.SetOverride( nameof(orbsConfig.CyanOrbWeightPerOrbChest), 0.25f );
+			orbsConfig.SetOverride( nameof(orbsConfig.WhiteOrbWeightPerOrbChest), 0f );
+			orbsConfig.SetOverride( nameof(orbsConfig.IsGeoResonantOrbSoldByDryad), false );
 
-			config.SetOverride( nameof(config.BlueOrbRecipeStack), 0 );
-			config.SetOverride( nameof(config.CyanOrbRecipeStack), 0 );
-			config.SetOverride( nameof(config.GreenOrbRecipeStack), 0 );
-			config.SetOverride( nameof(config.PinkOrbRecipeStack), 0 );
-			config.SetOverride( nameof(config.PurpleOrbRecipeStack), 0 );
-			config.SetOverride( nameof(config.RedOrbRecipeStack), 0 );
-			config.SetOverride( nameof(config.BrownOrbRecipeStack), 0 );
-			config.SetOverride( nameof(config.YellowOrbRecipeStack), 0 );
-			config.SetOverride( nameof(config.WhiteOrbRecipeStack), 1 );
+			orbsConfig.SetOverride( nameof(orbsConfig.BlueOrbRecipeStack), 0 );
+			orbsConfig.SetOverride( nameof(orbsConfig.CyanOrbRecipeStack), 0 );
+			orbsConfig.SetOverride( nameof(orbsConfig.GreenOrbRecipeStack), 0 );
+			orbsConfig.SetOverride( nameof(orbsConfig.PinkOrbRecipeStack), 0 );
+			orbsConfig.SetOverride( nameof(orbsConfig.PurpleOrbRecipeStack), 0 );
+			orbsConfig.SetOverride( nameof(orbsConfig.RedOrbRecipeStack), 0 );
+			orbsConfig.SetOverride( nameof(orbsConfig.BrownOrbRecipeStack), 0 );
+			orbsConfig.SetOverride( nameof(orbsConfig.YellowOrbRecipeStack), 0 );
+			orbsConfig.SetOverride( nameof(orbsConfig.WhiteOrbRecipeStack), 1 );
 		}
 	}
 }
