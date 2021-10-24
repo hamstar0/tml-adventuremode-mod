@@ -81,9 +81,18 @@ namespace AdventureMode {
 			//
 
 			Timers.SetTimer( 2 * 60, false, () => {
-				string _;
 				MessagesAPI.GetMessage("nihilism_init")?.SetReadMessage();
-				//InboxAPIMirrorsLibraries.ReadMessage( "nihilism_init", out _ );
+
+				MessagesAPI.AddMessage(
+					title: "Fishing disabled for Adventure Mode!",
+					description: "Have fishing bait? Just sell it. Fishing is now disabled.",
+					modOfOrigin: AMMod.Instance,
+					alertPlayer: true,
+					isImportant: false,
+					parentMessage: MessagesAPI.GameInfoCategoryMsg,
+					id: "AdventureModeFishingRemoved"
+				);
+
 				return false;
 			} );
 

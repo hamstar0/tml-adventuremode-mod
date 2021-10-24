@@ -35,17 +35,19 @@ v1
 -	Remove respawn blocking during bosses
 [v0.33.0]
 -	Clarify using PBG vs world gates
+
+
 -	Add tooltip to bait items about fishing removal
 -	Add gameplay message to inform about fishing removal
--	@AML
-	-	Fix messages appearing for unrelevant players
+-	Enable pickaxing cursed bones
+-	@AML (0.17.3)
 	-	Premature 'About the Trickster' message
-
-
+-	@Soul Barriers (1.4.0)
+	-	Fix hit fx
+	-	Fix sphere fx
+	-	Increase particles per world barrier
 -	@Orbs (1.6.2)
 	-	Prevent removing barrels
--	@Soul Barriers (1.3.1)
-	-	Increase particles per world barrier
 -	Fix player initial spawn; separate world-acknowledged spawn from character create 'spawn'
 -	Set Terrain Remixer to be weak ref mod
 -	@Terrain Remixer (0.13.0)
