@@ -33,10 +33,10 @@ v1
 	-	Decrease overheat cooldown time
 	-	Add tooltip about Space Gun overheat (including percent indicator)
 -	Remove respawn blocking during bosses
+
+
 [v0.33.0]
 -	Clarify using PBG vs world gates
-
-
 -	Add tooltip to bait items about fishing removal
 -	Add gameplay message to inform about fishing removal
 -	Enable pickaxing cursed bones
