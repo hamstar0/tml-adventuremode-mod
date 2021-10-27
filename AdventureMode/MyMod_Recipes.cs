@@ -48,6 +48,16 @@ namespace AdventureMode {
 				ItemID.EbonsandBlock,
 				ItemID.PearlsandBlock
 			);
+			
+			AddRG( "Gems",
+				ItemID.Amethyst,
+				ItemID.Sapphire,
+				ItemID.Topaz,
+				ItemID.Emerald,
+				ItemID.Ruby,
+				ItemID.Diamond,
+				ItemID.Amber
+			);
 		}
 
 		////
@@ -61,6 +71,9 @@ namespace AdventureMode {
 			
 			var bottleRecipe = new BottleRecipe();
 			bottleRecipe.AddRecipe();
+			
+			var wandSparkRecipe = new WandOfSparkingRecipe();
+			wandSparkRecipe.AddRecipe();
 
 			foreach( ModRecipe refundRecipe in RecipeLogic.CreateItemRefundRecipes() ) {
 				refundRecipe.AddRecipe();

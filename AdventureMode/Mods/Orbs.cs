@@ -15,6 +15,7 @@ namespace AdventureMode.Mods {
 			myTileKillWhitelist.Add( TileID.GetUniqueKey(TileID.WaterCandle) );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey(TileID.PeaceCandle) );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey(TileID.Containers) );
+			myTileKillWhitelist.Add( TileID.GetUniqueKey(TileID.Pumpkins) );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey(ModContent.TileType<Ergophobia.Tiles.FramingPlankTile>()) );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey(ModContent.TileType<FindableManaCrystals.Tiles.ManaCrystalShardTile>()) );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey(ModContent.TileType<CursedBrambles.Tiles.CursedBrambleTile>()) );

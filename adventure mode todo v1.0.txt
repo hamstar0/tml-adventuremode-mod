@@ -14,27 +14,46 @@ v1
 	-	Ways to improve terrain (make it more interesting)
 	-	Utility panel to show active timers
 	-	Self destructing environments
+-	@Messages
+	-	Skip re-alerting messages that have been read
+-	@HUD Element Libs
+	-	Save "collisions enabled" state for elements
+-	Remove respawn blocking during bosses
 [v0.34.0]
 -	@Test hosted MP WoF playthrough
 	-	Test mining cursed bones
 	-	Bramble decay rate
 	-	Debug anima drain while dead (MP? during boss?)
 	-	Bullwhip hotkey
--	@HUD Element Libs
-	-	Save "collisions enabled" state for elements
 -	F&T
 	-	Fix guide chat dominated by 'unconquered powerful entity' dialogue
 	-	Set beds to be 0 value items
 	-	Fix world gate double kill (MP): Add respawn buffer timer to prevent kills
-	-	@Soul Barrier
-		-	Fix barrier v barrier missing fx (MP)
+-	@AML
+	-	Add objective for increasing mana (mention using binocs)
+	-	Update radio messages to mention binocs focus
 -	@Powerful Magic
 	-	Increase focus interrupt threshold further
-	-	Decrease overheat cooldown time
 	-	Add tooltip about Space Gun overheat (including percent indicator)
--	Remove respawn blocking during bosses
+-	@TMR
+	-	Fix TMR holster animation sync
+	-	Fix TMR mouse hijacking of other clients
+	-	Nerf bandit bullets
+-	@FMC
+	-	Add right-click 'focus' mode to binocs
+		-	Show ! icon on binocs item when near a mana shard
+		-	Implement game zoom while focused
+	-	Consume mana to tighten and animate 'signs' particles thicker + cast random light
 
 
+-	Add Wand of Sparking recipe
+-	Set pumpkins to be breakable
+-	Allow resurface when in surface caves
+-	MP: Too many ecto drops per pot
+-	@Orbs (1.6.2.1)
+-	@Pot Luck (2.0.0)
+-	@Necrotis (2.1.2)
+-	@Objectives (0.7.2.1)
 [v0.33.0]
 -	Clarify using PBG vs world gates
 -	Add tooltip to bait items about fishing removal

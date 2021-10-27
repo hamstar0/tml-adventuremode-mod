@@ -8,13 +8,20 @@ using ModLibsGeneral.Libraries.World;
 namespace AdventureMode.Items {
 	public partial class ResurfacePotionItem : ModItem {
 		public static bool CanResurface( Player player, out string result ) {
+			int tileX = (int)player.MountedCenter.X / 16;
 			int tileY = (int)player.MountedCenter.Y / 16;
+			Tile tile = Main.tile[ tileX, tileY ];
 
-			// Cannot resurface if above surface
-			if( tileY < WorldLocationLibraries.SurfaceLayerBottomTileY ) {
-				//if( tile?.wall == 0 ) {
-				result = "Too close to surface.";
-				return false;
+			//if( tileY < WorldLocationLibraries.SurfaceLayerBottomTileY ) {
+			//	result = "Too close to surface.";
+			//	return false;
+			//}
+
+			if( tileY <= WorldLocationLibraries.SurfaceLayerBottomTileY ) {
+				if( tile == null || tile?.wall == 0 ) {
+					result = "Already on the surface.";
+					return false;
+				}
 			}
 			
 //Main.NewText( "Is lava? "+WorldLocationLibraries.IsLavaLayer(tileY, out float lp)+" ("+tileY+", "+lp+") - "+Main.rockLayer );
