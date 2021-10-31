@@ -16,6 +16,9 @@ namespace AdventureMode {
 			}
 
 			switch( item.type ) {
+			case ItemID.Bed:
+				item.value = 0;
+				break;
 			case ItemID.ReaverShark:
 				if( config.NerfReaverShark ) {
 					item.pick = 50;

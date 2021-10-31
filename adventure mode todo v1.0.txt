@@ -18,6 +18,12 @@ v1
 	-	Skip re-alerting messages that have been read
 -	@HUD Element Libs
 	-	Save "collisions enabled" state for elements
+-	@TMR
+	-	Fix TMR holster animation sync
+-	@FMC
+	-	@B&D: Show ! icon on binocs item when near a mana shard?
+-	@Boss Reign
+	-	Spawn boss minions at random during reign?
 -	Remove respawn blocking during bosses
 [v0.34.0]
 -	@Test hosted MP WoF playthrough
@@ -25,27 +31,35 @@ v1
 	-	Bramble decay rate
 	-	Debug anima drain while dead (MP? during boss?)
 	-	Bullwhip hotkey
+
+
 -	F&T
-	-	Fix guide chat dominated by 'unconquered powerful entity' dialogue
 	-	Set beds to be 0 value items
-	-	Fix world gate double kill (MP): Add respawn buffer timer to prevent kills
--	@AML
-	-	Add objective for increasing mana (mention using binocs)
+-	@Soul Barriers
+	-	Fix access gate double kill (MP): Add respawn buffer timer to prevent kills
+-	@AML (0.17.4)
+	-	Add objective for increasing mana after encountering world gate (mention using binocs)
 	-	Update radio messages to mention binocs focus
--	@Powerful Magic
-	-	Increase focus interrupt threshold further
-	-	Add tooltip about Space Gun overheat (including percent indicator)
--	@TMR
-	-	Fix TMR holster animation sync
-	-	Fix TMR mouse hijacking of other clients
-	-	Nerf bandit bullets
 -	@FMC
+	-	Further improved binoc focus (increase dust velocity, velocity starkness)
+-	@Powerful Magic (1.9.0)
+	-	Increase focus interrupt threshold further
+	-	Add Space Gun thermometer icon indicator
+	-	Add tooltip about Space Gun overheat (including percent indicator)
+-	@TMR (1.9.5)
+	-	Fix TMR mouse hijacking of other clients
+-	@Grappletech (2.0.0)
+	-	Improve unhookable tiles indicator (show icons on only hookable tiles)
+	-	When hook is flying, show valid grapple-able tiles in radius
+	-	When hook fails to grab, make an effect
+	-	Allow grabbing poles
+	-	Verify hook tooltips
+-	@FMC (1.4.0)
 	-	Add right-click 'focus' mode to binocs
-		-	Show ! icon on binocs item when near a mana shard
+		-	Add random light flickers
+		-	Tighten and animate 'signs' particles thicker
+		-	Add binoc tooltip
 		-	Implement game zoom while focused
-	-	Consume mana to tighten and animate 'signs' particles thicker + cast random light
-
-
 -	Add Wand of Sparking recipe
 -	Set pumpkins to be breakable
 -	Allow resurface when in surface caves
