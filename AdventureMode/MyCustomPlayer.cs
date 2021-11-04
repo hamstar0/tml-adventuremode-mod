@@ -3,6 +3,8 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using ModLibsCore.Classes.PlayerData;
 using ModLibsCore.Libraries.Debug;
 using ModLibsCore.Libraries.TModLoader;
@@ -15,8 +17,16 @@ using AdventureMode.Packets;
 namespace AdventureMode {
 	class AMCustomPlayerData {
 		public static AMCustomPlayerData Initialize( Player player, object rawData ) {
-			AMCustomPlayerData data = rawData as AMCustomPlayerData
-				?? new AMCustomPlayerData();
+			JObject jData = null;
+			if( rawData is string ) {
+				jData = (JObject)JsonConvert.DeserializeObject( rawData as string );
+			} else if( rawData is JObject ) {
+				jData = rawData as JObject;
+			}
+
+			var data = jData != null
+				? jData.ToObject<AMCustomPlayerData>()
+				: new AMCustomPlayerData();
 
 			if( !data.IsSetup ) {
 				PlayerLogic.SetupInWorldSpawnInventory( player );

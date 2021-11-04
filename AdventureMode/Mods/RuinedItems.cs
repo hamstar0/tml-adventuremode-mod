@@ -16,7 +16,8 @@ namespace AdventureMode.Mods {
 			config.SetOverride( nameof(config.NPCLootItemRuinPercentChance), 0.9f );
 			config.SetOverride( nameof(config.WorldGenChestItemRuinPercentChance), 1f );
 			config.SetOverride( nameof(config.MagitechScrapPrice), Item.buyPrice(0, 3, 0, 0) );
-
+			//config.SetOverride( nameof(config.MagitechScrapAttemptsRepairOnlyOncePerItem), false );
+			
 			if( ModLoader.GetMod("AdventureModeLore") != null ) {
 				config.SetOverride( nameof( config.MagitechScrapSoldByWhom ), new NPCDefinition( NPCID.Cyborg ) );
 			} else {

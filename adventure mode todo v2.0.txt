@@ -160,6 +160,9 @@ v1.1
 	-	Prevent furnishing if unsafe dungeon walls exposed to an area
 	-	Add rope lasso (craftable from ropes)
 	-	Add bridging kit (sold by mechanic)
+-	@Enraged
+	-	Add 'angry forehead vein' icon to boss when enraged
+	-	Use abstract thermometer icon instead of gauge (import from Powerful Magic's meteor items)
 -	@Boss Reigns
 	-	...
 	-	@Plan for "soft lockout" gates
@@ -167,12 +170,12 @@ v1.1
 		-	Gate has 5hp, but immediately regenerates 1 tile shorter on each PBG collide
 -	@Soul Barriers
 	-	Use distinct sound for PBG activation
--	Add more radio messages
-	-	@Plan
-		-	A way to clarify dryad helps with jungle
-		-	clarify cyborgs as mineable
-		-	Draw an item icon overlay for items with modified recipes
 -	@AML
+	-	Add more radio messages
+		-	@Plan
+			-	A way to clarify dryad helps with jungle
+			-	clarify cyborgs as mineable
+			-	Draw an item icon overlay for items with modified recipes
 	-	For each LE discovered, message "Research notes about world gates allow you to reduce their strength etc."
 	-	For each LE discovered, reduce horizontal gate barriers to 1/2 hp
 	-	@B&D: "Research Notes" vs "PBG Attenuation Sensors"
@@ -189,5 +192,33 @@ v1.1
 		-	Reinstate hint colors
 -	@Mod Libs UI
 	-	Implement UIThemedText color tags parsing
+-	@Net Debug (or HUD Elements Lib)
+	-	Fix scroll bar interactivity
+-	@Ruined Items
+	-	Allow using magitech scrap on items to make them stonger than their base (with % fail chance)
+-	@B&D
+	-	@World Gates?
+		-	@AML
+			-	Add some mana shards to LEs
+			-	Create an orb stockpile LE near dungeon
+		-	Implement Lesser World Gates
+			-	@Plan
+				-	Generate as rectangles with an area randomly between 48x32->256x128
+				-	Generate with a propertion ratio of 1:2->1:1
+				-	Generate without overlap and with 24 tile minimum separations
+				-	Resist magic and boulder projectiles (1/3 damage)
+				-	Regenerates slightly slower than the TMR can speed reload
+				-	Max field hp increases with depth
+	-	Rename World Gates to Greater World Gates
+	-	"Empyreal Soul"
+		-	Spawns from killed enemies; more hp, higher chance
+		-	Attempts to flee from the player; flies away until out of range, and then despawns
+		-	Must be picked up with empty hand only
+		-	Used with Orb Shards to craft regular Orbs
+	-	@Boss Reign
+		-	Spawn boss minions at random during reign?
+	-	Ways to improve terrain (make it more interesting)
+	-	Utility panel to show active timers
+	-	Self destructing environments
 
 

@@ -58,6 +58,11 @@ namespace AdventureMode {
 				ItemID.Diamond,
 				ItemID.Amber
 			);
+			
+			AddRG( "Evil Seeds",
+				ItemID.CorruptSeeds,
+				ItemID.CrimsonSeeds
+			);
 		}
 
 		////

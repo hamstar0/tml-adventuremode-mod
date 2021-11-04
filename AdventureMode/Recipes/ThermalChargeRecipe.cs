@@ -1,7 +1,6 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Orbs.Items;
 using AdventureMode.Items;
 
 
@@ -10,10 +9,14 @@ namespace AdventureMode.Recipes {
 		public ThermalChargeRecipe( ThermalChargeItem myitem ) : base( AMMod.Instance ) {
 			this.AddTile( TileID.WorkBenches );
 
-			this.AddIngredient( ModContent.ItemType<SeismicChargeItem>(), SeismicChargeRecipe.GetStackAmount );
-			this.AddIngredient( ModContent.ItemType<RedOrbItem>(), 1 );
+			int amt = SeismicChargeRecipe.GetStackAmount / 2;
 
-			this.SetResult( myitem, SeismicChargeRecipe.GetStackAmount );
+			this.AddIngredient( ModContent.ItemType<SeismicChargeItem>(), amt );
+			//this.AddIngredient( ModContent.ItemType<RedOrbItem>(), 1 );
+			this.AddIngredient( ItemID.MeteoriteBar, 1 );
+			this.AddIngredient( ItemID.Gel, 15 );
+
+			this.SetResult( myitem, amt );
 
 			//
 
