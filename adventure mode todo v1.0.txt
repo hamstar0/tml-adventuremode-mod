@@ -20,14 +20,14 @@ v1
 	-	Bramble decay rate
 	-	Debug anima drain while dead (MP? during boss?)
 	-	Bullwhip hotkey
+
+
 -	Add "Welcome to Adventure Mode" as a Message (in addition to the book)
 -	Lower elevation of bound goblin spawn area
 -	Set crafted items as 'ruined' (CraftRuinPercentChance, GeneralRuinRollChance)
 -	Remove respawn blocking during bosses
--	@Necrotis
+-	@Necrotis (2.1.3)
 	-	Increase anima drain rates slightly
-
-
 -	Change recipes of Seismic Charge-derived items to be more available
 -	@Ruined Items (2.11.1.2)
 	-	Remove limit to magitech scrap repair reuses per item

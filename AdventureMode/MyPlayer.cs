@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using ModLibsCore.Libraries.Debug;
+using Messages;
 using AdventureMode.Logic;
 
 
@@ -45,6 +47,23 @@ namespace AdventureMode {
 		public override void SetupStartInventory( IList<Item> items, bool mediumcoreDeath ) {
 			if( !mediumcoreDeath ) {
 				PlayerLogic.SetupInitialSpawnInventory( items );
+
+				//
+
+				IEnumerable<string> msgSegs = PlayerLogic.GetIntroTextLines()
+					.Select( lines => string.Join(" ", lines) );
+
+				MessagesAPI.AddMessage(
+					title: "Welcome To Adventure Mode",
+					description: string.Join( "\n \n", msgSegs ),
+					modOfOrigin: AMMod.Instance,
+					alertPlayer: false,
+					isImportant: false,
+					parentMessage: MessagesAPI.ModInfoCategoryMsg,
+					id: "AdventureModeWelcome"
+				);
+
+				//
 
 				this.IsAdventurer = true;
 			}

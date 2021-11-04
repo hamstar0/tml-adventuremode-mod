@@ -12,10 +12,10 @@ namespace AdventureMode.Logic {
 	static partial class NPCLogic {
 		public static (int tileX, int tileY) GetBoundGoblinOrigin() {
 			var myworld = ModContent.GetInstance<AMWorld>();
-			int goblinX = myworld.UndergroundDesertBounds.X + (myworld.UndergroundDesertBounds.Width / 2);
-			int goblinY = myworld.UndergroundDesertBounds.Y + ((2 * myworld.UndergroundDesertBounds.Height) / 3);
+			int goblinX = myworld.UndergroundDesertBounds.X + (myworld.UndergroundDesertBounds.Width / 2);	// 1/2
+			int goblinY = myworld.UndergroundDesertBounds.Y + ((3 * myworld.UndergroundDesertBounds.Height) / 4);	// 3/4
 
-			// halfway in, 2/3 down
+			// halfway in, 3/4 down
 			return (goblinX, goblinY);
 		}
 

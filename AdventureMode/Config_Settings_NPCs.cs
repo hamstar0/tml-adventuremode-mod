@@ -6,9 +6,8 @@ using Terraria.ModLoader.Config;
 
 namespace AdventureMode {
 	public partial class AMConfig : ModConfig {
-		[DefaultValue( true )]
 		[ReloadRequired]
-		public bool RespawnBlockedDuringBosses { get; set; } = true;
+		public bool RespawnBlockedDuringBosses { get; set; } = false;
 
 
 		////
