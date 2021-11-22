@@ -151,8 +151,6 @@ v1.1
 -	F&T
 	-	Fix herbs and herb seeds still dropping
 	-	Add failsafe against surprise KS spawns
--	@Messages
-	-	Show count of new messages on "Next Unread" button
 -	@Orbs
 	-	Set seismic charges to have custom sound
 	-	Import seismic charges
@@ -164,6 +162,7 @@ v1.1
 	-	Add 'angry forehead vein' icon to boss when enraged
 	-	Use abstract thermometer icon instead of gauge (import from Powerful Magic's meteor items)
 -	@Boss Reigns
+	-	Add background fx for specific boss reigns
 	-	...
 	-	@Plan for "soft lockout" gates
 		-	When reign in progress, generate a special "growing" world gate at world bottom
@@ -196,7 +195,17 @@ v1.1
 	-	Fix scroll bar interactivity
 -	@Ruined Items
 	-	Allow using magitech scrap on items to make them stonger than their base (with % fail chance)
+-	@Messages
+	-	Recolor folder + only; don't show unread number
+	-	Use custom elements for list items
+	-	Keep items in a given category colored for that category
+	-	Show unread total with 'Next Unread' button
+	-	Add dividers to button bar
+	-	Set category buttons to match colors of messages category
+	-	On category button click, unfold category into view
+	-	Implement UISelectableTextPanel for message body
 -	@B&D
+	-	Charging melee attacks with anima to make enemies drop ectoplasm + debuff them
 	-	@World Gates?
 		-	@AML
 			-	Add some mana shards to LEs
@@ -220,5 +229,32 @@ v1.1
 	-	Ways to improve terrain (make it more interesting)
 	-	Utility panel to show active timers
 	-	Self destructing environments
+-	@AML
+	-	Set P.B.G Magnetic Commutator to generate in underground LEs or jungle-side LE
+-	@Soul Barriers
+	-	Implement P.B.G Magnetic Commutator (enables Barrier Blast, Spin Shell)
+	-	@B&D: Implement P.B.G P.K.E Capacitor (enables Barrier Blast)
+	-	Implement Spin Shell
+		-	Implement shell fx
+		-	When shell built, apply effects (damage + knockback enemies, destroy brambles + thickets)
+		-	Implement shell build fx
+		-	Increase shell building when horizontal velocity increases (while 0 verticle velocity)
+		-	Interrupt shell building when horizontal velocity reduces
+		-	Hold r-click to build shell (with PGB + active barrier)
+	-	Implement Barrier Blast
+		-	Implement FX
+		-	Releases all barrier energy in a damaging explosion (radius = damage, damage = inv distance)
+		-	Right-click to activate (with PGB + active barrier)
+-	@Cursed Brambles
+	-	Generate thickets around world with @Terrain Remixer
+		-	@Plan
+			-	Gens after biomes are genned
+			-	Gens from dirt layer on down, getting denser with depth
+			-	Gens as a web of thin, long strands
+	-	Implement Cursed Thickets (spike variation of brambles)
+-	@Surroundings
+	-	Fix parallax
+	-	Refactor overlays into injection hooks
+-	@Mod Libs - Services - Draw Layers
 
 

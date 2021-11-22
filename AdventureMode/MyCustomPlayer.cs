@@ -18,10 +18,12 @@ namespace AdventureMode {
 	class AMCustomPlayerData {
 		public static AMCustomPlayerData Initialize( Player player, object rawData ) {
 			JObject jData = null;
-			if( rawData is string ) {
-				jData = (JObject)JsonConvert.DeserializeObject( rawData as string );
-			} else if( rawData is JObject ) {
-				jData = rawData as JObject;
+			if( rawData != null ) {
+				if( rawData is string ) {
+					jData = (JObject)JsonConvert.DeserializeObject( rawData as string );
+				} else if( rawData is JObject ) {
+					jData = rawData as JObject;
+				}
 			}
 
 			var data = jData != null

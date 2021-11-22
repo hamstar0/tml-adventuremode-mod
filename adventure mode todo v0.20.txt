@@ -1,0 +1,1023 @@
+[v0.29.0]
+-	@Beta
+-	Set colored message borders darker
+-	Add raft barrel timer (via. timer widget)
+-	@HUD Element Libs (3.1.2)
+	-	Add sample timer widget
+-	@Mod Libs UI (1.1.0)
+-	Fix pulsing texts in Messages dialog
+-	@Orbs (1.6.1)
+	-	Set binoculars cavern viewing to work above ground
+-	Set Enraged mod to be weak referenced
+-	@Messages (1.2.0)
+	-	Add category messages (recolored)
+-	@AML (0.14.0)
+	-	Radio message about purification powder corruption/crimson access
+	-	Add radio message about using furnishing kits around the map for mirror networking
+-	@Enraged (0.12.0)
+	-	Add flash when hitting bosses during enrage state
+	-	Prevent spawning brambles near players
+-	@Cursed Brambles (1.0.0)
+	-	Purification powder can now remove brambles
+	-	Set brambles to be removed by barriers
+	-	Implement bramble creation validation
+-	@Mod Libs Core (1.2.0.2)
+	-	Fix alerts and warns not showing context
+-	@Necrotis (1.15.0.1)
+	-	Fix ecto pickup in MP
+-	@Trickster (1.7.2)
+	-	Prevent spawning or teleporting near world barriers
+-	@Ergophobia (1.11.3)
+	-	Paint scaffold walls
+	-	Reduce scaffold price
+-	@Boss Reigns (1.3.0.1)
+	-	Fix 'fell presence' message not appearing on full red bar
+-	@Soul Barriers (0.24.3)
+	-	Hide barrier stat tooltips when not applicable
+	-	Apply UI scale for barrier hp hover popup
+	-	Exempt silt/slush/sand balls from PBG hits
+	-	Fix incorrect dust ownership per barrier
+	-	Fix barrier v barrier collisions
+-	F&T
+	-	@Ruined Items (2.11.1.1)
+		-	Fix "0%" melee speed
+[v0.28.0]
+-	@Beta
+-	Remove @Spirit Walking (until later, at least)
+-	Remove 'Failed to place cyborg' messages
+-	@Orbs (1.6.0.3)
+	-	Remove 'Implanted orb in chest at' log messages unless debug mode
+-	@TMR (1.9.2)
+	-	Preserve quickloader states when dropped
+-	@Ruined Items (2.11.1)
+	-	Fix melee speed affecting boomerangs
+-	@Soul Barriers (0.24.2)
+	-	Exempt boss minions from access barrier kills
+	-	Fix barrier v entity collisions
+	-	Fix syncing gates
+	-	Fix syncing killed npcs from access barriers
+-	@World Gates (1.2.4)
+-	@Mod Libs Core
+	-	Fix 'once' log messages displaying "(1th)"
+	-	Fix 'world in play safe' not activating for MP client
+-	Fix laundry list of exceptions
+-	@AML (0.13.5.1)
+	-	Set guide to radio about each green PKE being important (when it goes > 75% + PKE is owned)
+-	F&T
+	-	@FMC (1.3.2.1)
+		-	Fix mana crystal tooltips
+	-	@ModLibsCore (1.2.0.1)
+		-	Fix "log once" quantity outputs
+		-	Fix 'world load' for clients (simply use the PlayerEnter hooks)
+-	Unofficial beta (0.27.1)
+-	F&T
+	-	@Mod Libs General (1.2.1)
+		-	Fix chest edits not resorting items (plus trade orbs for item removals)
+	-	@AML (0.13.4)
+		-	Fix 'About Mana Shards (2)' when no PKE meter
+	-	@Ergophobia (1.11.2)
+		-	Fix plank ghost overlay zoom scaling
+		-	Fix missing "This tile is not allowed to be placed"
+	-	@Orbs (1.6.0.2)
+	-	@Messages (1.1.5)
+		-	Add debug checking for failed message alerts (not just important messages!)
+		-	Remove pulsing texts
+	-	@Soul Barriers (0.24.1)
+		-	Clarify "barrier strength" tooltip
+	-	@Surroundings (1.1.0.1)
+	-	@TMR (1.9.1)
+		-	Fix asymmetric reticule
+	-	Fix life crystal (and mana crystal?) tooltips
+	-	Fix raft mirror arrow icon zoom
+-	Unofficial beta (0.27.0)
+-	@Mod Libs Camera (1.0.1)
+-	Add radio message about 0% anima
+-	Reduce frequency of quakes
+-	@Soul Barriers (0.24.0)
+	-	Prevent 0hp barriers
+	-	Add dramatic effect for barrier v barrier hits
+	-	Scroll larger, non-hit dusts faster
+	-	Implement custom dust FX with option to recolor
+-	@Boss Reigns - During reign (1.3.0)
+	-	Implement occasional random quakes
+	-	Implement minor anima drain
+	-	Rename "Waves of Darkness" to Fell Spiritual Presence
+	-	Prevent opening chests when not near a town
+-	@AML (0.13.3.2)
+	-	Fix old man radio message
+-	@Soul Barriers (0.23.0)
+	-	Set PBG to indicate cooldown time in tooltips
+	-	Tweak PBG tooltip to not display overly long barrier strength percent
+	-	Clear player barriers on exit to menu
+	-	Fix 'Access granted' fail
+-	World Gates (1.2.3)
+	-	Tweak "Gate barrier too strong" message to not display long numbers
+-	@Necrotis (1.15.0)
+	-	Fix 0% combat text spam
+	-	Fix ankh barrier alignment
+	-	Fix massive anima loss from barrier activation
+	-	Set PBG to absorb necrotis (show ankh sprite)
+	-	Draw ankh overlay when barrier on (@Necrotis)
+		-	Add texture UI element to ankh to draw sprite
+		-	Create barrier overlay sprite
+-	@Soul Barriers (0.22.0)
+	-	Show damage numbers to barrier
+-	@Necrotis (1.13.0)
+	-	Add anima stat changing hooks
+	-	Add ankh draw layer hooking
+-	@World Gates (1.2.2)
+-	@AML (0.13.3)
+	-	After 'Find Jungle' quest, Old Man radios about using magic items to reveal secrets
+[v0.27.0]
+-	@Test
+	-	Verify Strange Plant ingredient for all boss summon items (or verify enabled summon items (EoC?))
+	-	Verify merchant dialogue + objectives ("lore")
+	-	Verify radio message when in cursed bones proximity
+-	@F&T
+	-	Fix premature tab alerts for read messages (check all uses of Messages)
+	-	@FMC (1.3.2)
+		-	Increase blue PKE readings
+	-	@World Gates (1.2.1)
+		-	Adjust hp values according to 10 increments
+	-	@Messages
+		-	Fully suppress chat message if important message is already read
+	-	@FMC (1.3.1)
+		-	Require only 3 mana shards per mana crystal
+	-	Remove king slime debug messages
+	-	@World Gates (1.2.0)
+		-	Set jungle gate to be 25, underground = 30
+	-	@Boss Reigns (1.2.3)
+		-	Increase (first?) red PKE gauge duration by 1 day
+	-	Reduce drop rate of speedloaders from bandits
+	-	@Green Hell
+		-	Edit "Beware the Jungle!" (@Green Hell)
+	-	@Mod Utility Panels (1.3.1)
+		-	Fix lightbulb icon not going to latest new message
+		-	Rename hover name Mod Utility Panels -> Utilities
+	-	@AML (0.13.2)
+		-	Edit "Ectoplasm Volume 2" book
+		-	Set green PKE gauge to ignore found LEs
+		-	Fix "You discovered a lost expedition!" spam
+	-	@Messages (1.1.3)
+		-	Prevent "Incoming message" chat alerts from already-read messages
+		-	Fix rendering of radio messages (they need quotes)
+		-	Tweak important message alert sound
+	-	Debug why magic weapon isnt working
+	-	@Necrotis (1.12.4)
+		-	Reduce ectoplasm pot drop frequency
+	-	@AML (0.13.1)
+	-	@World Gates (1.1.2)
+		-	Move 'World Gates' message to Game Info
+	-	@Messages (1.1.2)
+		-	Make dialogue messages format look more like dialogue
+		-	Reduce important icon pulse size and intensity
+		-	Fix important message sound
+	-	Remove King Slime debug message
+-	Add outcomes for objectives
+	-	All orbs: Radio message about reaching underworld + route planning
+	-	3 LEs: Radio message about finding mana shards
+-	@Messages (1.1.1)
+	-	Reduce scale of "important message" icon flash
+	-	Add chat message alerts for important messages
+	-	Set Events category to bottom
+	-	Move "Categories:" text label left 64
+-	@AML (0.13.0)
+-	Add messages
+	-	@Green Hell (0.7.1): Jungle arrival (Game)
+	-	@Spirit Walking (1.2.0)
+		-	@AM: Spirit Walking (Lore; after a walk)
+		-	Spirit Walking (Game; upon mirror get)
+	-	@Necrotis: Dilluted Ectoplasm (Lore)
+	-	@AML: Fallen Cyborgs (Lore)
+-	@AML (0.12.0): Add "radio" messages from the guide (under Events)
+	-	Underground desert (while goblin hunting) - Describe Seismic Charges
+	-	Dungeon - Drains anima
+	-	On full red bar, mention need to kill a boss
+	-	On going below ground for more than 60s, alert to mirrors + furnishing kits
+	-	On acquiring PKE, add story message + objective to discover 5 lost expeditions
+	-	On acquiring shadow mirror, alert
+	-	On encountering cursed bones, alert about defense, bypass, and removal
+	-	On encountering jungle or underground gate, alert about increasing magic power (add story msg about mana)
+	-	On encountering dungeon world gate, alert about it (reformat old message as "game info")
+	-	On finding an orb, alert about its use
+-	@World Gates (1.1.1)
+-	@Mod Utility Panels
+	-	Refine icon (transparent when unlit, darker edges when unlit, popup hover text, etc.)
+-	@Messages (1.1.0)
+	-	Add "Events & Interactions" category
+	-	Implement "important" messages (adds sound + added alert animation + icon coloration)
+		-	Add alert sound (zombie 45, half volume)
+		-	Implement custom alert animation (gold animation, radio "waves")
+		-	Define "important" messages
+	-	Add "Zombie 70" for new message alerts
+[v0.26.0]
+-	Objectives (0.7.2)
+-	Messages (1.0.1)
+-	World Gates (1.0.3)
+-	@Mod Utility Panels (1.3.0)
+	-	Refresh tab button colors when switching tabs
+	-	Improve icon again (smaller exclamation, make priority icon pulse instead, flatten border)
+	-	Rename Mod Control Panel to Mod Utility Panels
+-	F&T
+	-	Quick Ropes (0.3.0)
+		-	Disallowing placement vertically
+	-	@Spirit Walking (1.1.1)
+		-	Ensure spirits respect world barriers (add API)
+	-	@TMR (1.9.0.1)
+		-	Remove ammo slot compat for speedloaders (until method is found to enable reloading)
+	-	@Cursed Bones (0.8.2)
+		-	Gen smaller patches
+		-	Reduce projectile rate by half
+	-	@Necrotis (1.12.2)
+		-	Prevent stacked canopic jars from eating multiple ectos
+-	@Test
+-	F&T
+	-	@Ergophobia (1.11.1)
+		-	Reduce price of scaffolding kit to 50s
+	-	@World Gates
+		-	Relocate "Beware gate barriers!" message to hints
+	-	@Cursed Bones
+		-	Fix cursed bones genning inside walls still
+	-	Fix empty chests
+-	@Test
+-	Update dep mod versions
+-	Powerful Magic (1.8.1)
+-	F&T
+	-	Remove herb bags from chests
+	-	@Cursed Bones (0.8.0)
+		-	Increase cursed bones near surface
+		-	Fix cursed bones gen as scattered clusters inside solid matter
+	-	@Soul Barriers
+		-	Remove mouse hover showing barrier stats outside of debug mode
+	-	@TMR
+		-	Reduce bandit spawn rate
+	-	Remove "Remember to set my hotkey" messages from mods (TMR, etc)
+-	F&T
+	-	@Soul Barriers
+		-	Fix PBG barrier fadeout
+		-	Set barriers to kill npcs without drops
+		-	Fix PBG barrier fail
+		-	Reduce PBG cooldown (20s)
+	-	Grammar chat "The Plague" book
+	-	Ensure raft gen is at least partially submerged
+	-	Fix gate barrier collision spam
+	-	@AML (0.11.1)
+	-	@Cursed Bones
+		-	Lighten up surface patch size
+		-	Lighten up surface patch density
+		-	Prevent genning on open air
+	-	@Soul Barriers (0.21.0)
+		-	Show max strength for barrier under tooltips
+	-	@World Gates (1.0.1)
+		-	Add message and sound effect for unlocked gates (fail: npc hit 53, open: item 94)
+		-	Add alert for failed gate open attempts
+	-	Refactor LoadLibraries and LoadHooks
+		-	Attempt to remove reliance on any ModFoo hooks (use IL/On)
+		-	Replace 'WorldLogic.IsLoaded' with IL/On
+	-	@Soul Barriers
+		-	Indicate with PBG a need to be at full mana
+		-	Fix particle fx movement
+		-	Fix PBG vs world barrier damage amount
+		-	Fix PBG vs world barriers
+		-	Set barriers to slowly decay
+		-	Fix barriers not stopping skulls or bullets
+		-	Fix world barrier not killing NPCs
+	-	@Cursed Bones
+		-	Prevent world gen burying too deep into ground
+	-	@Trickster
+		-	Fix trickster not going into attack mode on first encounter
+-	@Messages
+	-	Fix new message popup button not going to an unread message
+	-	Prevent using weapon when clicking new message popup button
+-	@Objectives
+	-	Set tab to order after Welcome tab
+-	@Mod Control Panel
+	-	Improve priority alert highlight
+	-	Set tab open to clear alert state
+	-	Highlight alerted tab, use grey for others, white for selected
+	-	Improve control panel icon
+	-	Fix priority border glow
+-	@HUD Elements
+	-	Improve usage message
+-	@Objectives (0.7.1)
+	-	Set alerts to be priority messages
+-	@Mod Control Panel (1.2.0)
+-	Update mod pack
+-	Set Magitech Scrap to appear in the raft barrel
+-	@AML (0.11.0)
+-	@Mod Libs Net (1.0.2)
+-	@Bullwhip (1.3.0)
+-	@Ruined Items (2.11.0)
+	-	Set only items rarity 1 or higher to be 'ruined'
+	-	Fix item color after scrap repair
+-	@Cursed Bones (0.6.1)
+	-	@Add to AM; set ectoplasms and white orbs to randomly drop from mined bones
+	-	Make patches more diverse (thicker) than flat spots
+	-	Bully vegetation tiles during world gen
+	-	Blend with adjacent slope tiles
+	-	Set bones to resist bombs (ModTile.CanExplode?)
+	-	Cease firing skulls against dead players
+-	@Add World Gates mod
+	-	@Modify Soul Barriers recipe for AM (2 Magitech Scrap instead of 10 Nanites)
+	-	@Add Soul Barriers, World Gates, Messages mods to AM
+	-	Add config option to spawn player with a PBG
+	-	Add config
+	-	Add message on proximity to world barrier
+	-	Change to AccessBarrier (also debug)
+	-	@Soul Barriers
+		-	Show rectangle barrier hp on mouse hover
+		-	Create access barrier type
+		-	Fix (multiple?) world barrier hang
+	-	Declare world gates
+		-	Underworld (75 hp)
+		-	Lava layer start (40 hp)
+		-	Rock layer start (25 hp)
+		-	Before jungle (30 hp)
+		-	After dungeon (20 hp)
+	-	Setup mod
+-	@Add Messages mod (assumes the role of Inbox as well)
+	-	Clear alert when messages opened
+	-	Shrink message body title size
+	-	Set messages to indicate the mod they belong to
+	-	Add alert message for binding messages hotkey
+	-	Shrink message title text scale and clamp size
+	-	Fix message body scroll
+	-	Show title in description view
+	-	Add scroll bar to description view
+	-	Set right padding to 0
+	-	Fix buggy message select toggling
+	-	Add long string auto-line breaking
+	-	Fix vertical alignment of child elements
+	-	Add preset message categories (including toolbar buttons)
+	-	Add number icon for upstream messages with unread downstream messages
+	-	Improve messages icon
+		-	Hide icon when no unread messages exist
+		-	Change behavior of icon button: Open latest unread message
+		-	Show number of unread messages
+		-	Use soft blinking instead of pulsing
+	-	Improve message tree
+		-	Add indicator of tree open or closed
+	-	Add toolbar: Next Unread, Set All Read, Set Unread
+		-	Implement 'Set Unread'
+		-	Implement 'Set All Read'
+		-	Implement 'Next Unread'
+		-	Define buttons
+	-	Add panel to show message bodies (no longer are messages in the tree view exclusively)
+	-	Set messages tab to order itself after Welcome tab
+	-	@Improve Control Panel
+		-	Implement OnControlPanelInitialize event
+		-	Highlight current tab
+		-	Implement resizeable panel
+		-	Improve tabs bar
+	-	Fix clickable areas
+	-	Fix adding message with parent replacing child elements
+	-	Implement folder view
+	-	Implement message alert (10s animated icon button that appears on bottom of screen)
+	-	Add ids to messages
+	-	Refresh MessageManager
+	-	Implement message reading
+	-	Implement message folding
+	-	Implement message data structure (title, 'order', description)
+	-	Setup mod; import Objectives
+-	@Add Soul Barriers and World Gates mods
+	-	Thicken world barrier fx (scale up dusts, add more, increase range, add init velocity)
+	-	Prevent collisions between inactive barriers
+	-	Fix 0 strength barrier buff
+	-	Add debug command to generate world barrier
+	-	Add barrier hit sounds
+	-	Implement buff icons
+	-	Review barrier syncs
+	-	Implement barrier sync packets
+	-	Implement barrier npc (and "projectile npc") collisions
+	-	Implement barrier player collision (insta-kill?)
+	-	Implement area barrier fx
+	-	Remove "1 hp barriers" (by default)
+	-	Add cooldown debuff (use instead of "overheating")
+	-	Implement barrier-to-barrier collisions
+	-	Fix collisions
+	-	Implement barrier 'max strength' and recharge rate
+	-	Implement world barrier saving/serializing
+	-	Finish implementing API
+	-	Implement area barriers (API only)
+		-	Implement area barrier registry
+		-	Refactor world barriers to support having a host
+		-	Implement area collisions
+		-	Implement area fx
+		-	Define area barriers (world data)
+		-	@Plan
+			-	Runs collision checks in an area
+			-	Animates particles evenly in an area
+			-	Animates particles densely when a player is near
+	-	Add API
+		-	OnAreaBarrierCollide, OnNpcBarrierCollide, OnPlayerBarrierCollide
+		-	SetWorldBarrier, GetWorldBarrier, HitWorldBarrier
+		-	SetNpcBarrier, GetNpcBarrier, HitNpcBarrier
+		-	EnableRecipe, HitPlayerBarrier, GetPlayerBarrier, SetPlayerBarrier
+	-	Show barrier strength on mouse hover
+	-	Add buff for barrier (shows barrier strength in tooltip)
+	-	Implement P.B.G + barrier functionality
+		-	Add overheat effect for P.B.G (redish tint)
+		-	Remove "spiritual" debuffs while barrier on (uses barrier strength)
+		-	Set barrier to fail on death
+		-	Add overheating
+		-	Set barrier to instantly charge
+		-	Implement hit fx
+		-	Implement barrier defenses (stops projectiles, removes certain debuffs)
+		-	Implement use
+		-	Define item
+	-	Implement barrier fx
+	-	Setup mod
+	-	@Plan
+		-	Player can use raw mana to create a "soul barrier" with a P.B.G item
+		-	P.B.G: 2 Magitech Scrap, 1 Umbrella (Umbrella: Spear, 10 Silk, 5 Feather)
+		-	Barrier strength (hp) and color are determined by how much mana is poured in
+		-	Soul barriers protect against anima loss or projectile damage
+		-	Soul barriers can exist in places around the world, or on mobs
+		-	World barriers regenerate quickly until dispelled
+		-	Barriers colliding instantly detract the weaker one's hp from both
+-	@Create Alerted Ambushes mod
+	-	Prevent warping while ambush in session
+	-	Configure alert % chances
+	-	Add alert visual fx
+	-	Adjust ambush rates with depth
+	-	Implement ambushes
+	-	Add detection triggers
+	-	Setup mod
+	-	@Plan
+		-	Alerts: Pickaxe hits, wood chops, bomb explosions, or fall damage
+		-	On a successful alert (percent %), create an ambush
+		-	Ambushes are a 3-15s spawn rush + chance of miniboss
+		-	Ambushes also cause cursed bone tiles to generate nearby
+-	@Add Cursed Bones mod
+	-	Implement item drop hooking
+	-	Implement world gen
+		-	Generate as patches at found positions, including some scattered
+		-	Find walls/floors/ceilings
+	-	Implement cursed block projectile launching
+	-	Define mod + content
+-	@Bullwhip (1.3.0)
+	-	Add quick whip hotkey (only activates when no other item is active)
+-	MP F&T 4
+	-	Fix ecto pickup with jars
+	-	Trickster AI isnt syncing attacks
+	-	Trickster still doesnt drop dark hearts (again!)
+	-	Trickster ai still jank
+		-	Sync 'TricksterDecision's
+	-	Ecto still isnt reporting
+	-	Trickster still doesnt drop dark hearts
+-	@Trickster (1.7.1)
+-	MP F&T 3
+	-	Remove starting grapple
+	-	Remove bottles from world chests
+	-	Re-review trickster AI sync
+	-	Fix ecto "could not pickup" message fail
+	-	Review Trickster AI sync
+	-	Fix pot spiders
+-	MP F&T 2
+	-	Tweak The Great War, The Island of Terraria texts
+	-	Review Trickster sync code
+	-	Desynced bandit when retreat
+	-	Ecto pickup fail
+	-	Fix missing cactus armor recipes
+	-	Fix mining blocks (item only)
+	-	Fix pot spiders not dropping
+	-	Fix double ectos per pot
+-	@Ruined Items (2.10.0)
+	-	Reduce weapon damage 50%
+-	@Bullwhip (1.2.4)
+-	F&T
+	-	Fix Trickster not dropping dark heart
+	-	Double boomerang toss
+	-	Bullwhip animation starting, but whip not activating
+	-	No orbs in chests?
+[v0.25.0]
+-	Mod Libs F&T
+	-	Fix missing silver bow recipe (debug AM-relevant entity groups?)
+	-	Cyborg worldgen
+	-	Ectoplasm pickup
+	-	Player default spawn
+-	@Update each mod to Mod Libs
+-	MP F&T 1
+	-	@MH (5.13.0)
+		-	Upgrade net protocols into SimplePacket
+		-	Debug CursorPositionProtocol spam
+	-	@Nihilism (3.2.0.1)
+		-	Debug Nihilism.NetProtocol.FiltersProtocol spam
+	-	@Lore (0.9.0.1)
+		-	Shadow mirror inside PKE FE?
+		-	Prevent FEs from genning on top of big trees
+	-	@TMR (1.8.6)
+		-	Use low res ammo on HUD
+		-	Fix missing ammo on HUD
+	-	@Ergo (1.10.0)
+		-	Debug sync
+	-	Fix respawn
+	-	Fix missing client mods (MoreItemInfo, Surroundings?)
+	-	Fix missing raft item
+	-	Fix current log errors
+-	@Spirit Walking (1.0.0.2)
+-	@Green Hell (0.6.2.1)
+-	@Objectives (0.6.3.1)
+-	Create mod pack mod (Adventure Mode Mod Manager)
+-	@Spirit Walking (1.0.0.1)
+[v0.24.0]
+-	@Objectives (0.6.3)
+	-	Add noise for new objectives
+-	F&T
+	-	@Cursed Brambles (0.7.0)
+		-	When a given bramble decays, make its neighbors decay at random intervals too
+	-	@Necrotis (1.11.3)
+		-	Fix jar dupes (again)
+-	@Lore (0.9.0)
+	-	Add Shadow Mirrors to underground FEs
+-	@Add Spirit Walking mod
+	-	@Add to AM
+	-	Create custom mana emulation
+	-	Set player view to follow projectile via. hook
+	-	@Test with mana, not anima
+	-	Add activation particle explosion
+	-	Reduce pickup radius of red pellets
+	-	Add blackout debuff
+	-	Remove open air pellets
+	-	Implement player collision removal (0 width)
+	-	End walk if player dead
+	-	Fix spike hits causing player damage
+	-	Fix HUD element hiding
+	-	Generate 'soul pellets' at random that regenerate anima/mana (non-renewable)
+		-	Add pellet pickup blocker for 3 seconds after walk start (make sprite flash)
+		-	Implement pellet pickup memory (local player only)
+		-	Implement pellet pickup effects
+		-	Draw pellets
+		-	Implement pellet caching (per walk)
+		-	Implement pellets
+		-	Randomize pellet point randomizer
+	-	Fix spirit sprite misaligning with trail fx (does not get near solids)
+	-	Show anima hud element (add API function to hide elements)
+	-	Refactor energy use settings to separate mana and anima
+	-	Add mirror effects
+	-	Change mirror to gold
+	-	Prevent mirror use in open air
+	-	Implement spirit walking mode
+		-	Implement finishing dash move (skips past tiles, consumes anima/mana)
+			-	Create charge-up fx
+			-	Create tele-dash sequence (brief pause, teleport 12 blocks ahead, end walk)
+		-	Fix speedup/slowdown fx
+		-	Fix drowning vulnerability
+		-	Fix incorrect velocity
+		-	Fix rotation
+		-	Fix open air drain fail
+		-	Emit light
+		-	Add spirit ball expiration failsafe
+		-	Implement collision behavior
+			-	On open air collide, bleed energy (add tooltip)
+			-	Add trail fx
+			-	Fix weird skyrocketing bug
+			-	On tile collide, bleed energy
+			-	Replace mount with invisible projectile
+				-	Tie player's movement to projectile
+				-	Create projectile (no gravity, low bounce, small size)
+				-	Remove mount
+			-	Apply a custom mount to make hitbox small
+				-	Make hitbox small
+				-	Define mount
+		-	Implement flight behavior
+			-	Limit accelerate and deaccelerate use to bursts
+			-	Accelerate/deaccelerate with vertical arrows
+			-	Aim with horizontal arrows
+			-	Implement constant directional velocity
+		-	Play sound for flight
+		-	Disable UI layers
+		-	Disable spawns
+		-	Apply spirit world fx
+		-	Add particle trail
+		-	Cleanup fx (suppress armor particles, center spirit sprite)
+		-	Add music
+		-	Draw player as dungeon spirit
+		-	Setup mode (make player invincible and debilitated)
+		-	Implement mode activate (costs 20% mana/anima)
+	-	Add 'Shadow Mirror' item
+		-	Implement use effect
+		-	Create sprite
+		-	Define item
+	-	Create mod
+	-	@Plan
+		-	Uses 20 mana (anima in AM) to activate, drains steadily while active
+		-	Requires 5s activation time while motionless and debuff-less
+		-	Requires a shadow mirror to activate, found in FEs
+		-	Cannot activate during bosses, events, or max "background PKE" state
+		-	Applies 'chaos state' debuff for +30s after use
+		-	While spirit walking
+			-	Player flies in a given direction at a constant, quick speed
+			-	Player is invincible, but cannot do anything except aim their flight path
+			-	Player is very small, allowing access to tight spaces
+			-	"Spirit orbs" appear along the path that add duration to the walk (non-replenishing)
+		-	Aborts when:
+			-	Mana/Anima is drained
+			-	Player hits a solid tile
+			-	Player enters the underworld
+			-	Player is above ground with no wall
+		-	At the end of the walk, the player makes a short 'jaunt' a few feet, ignoring obstacle
+-	@HUD Elements Lib (3.1.0)
+-	@Locked Abilities (1.2.2.1)
+[v0.23.0]
+-	@Beta
+-	@Powerful Magic
+	-	Increase mana focus mode regen rate
+-	Add more potions to chests
+-	Change jungle fishing poles to other type of jungle loot
+-	Add chance to make a ruined item from crafting
+-	Reduce sell value of boss-dropped ores
+-	@Powerful Magic (1.7.0)
+	-	Set meteor armor to overheat with overuse of space gun or laser rifle
+-	F&T
+	-	Add recall pots to raft barrel restock pool
+	-	Enable placing and breaking bewitching table
+	-	Enable placing and breaking eternia crystal stand
+	-	Set underworld pots to not have spiders
+	-	@Enraged (0.10.0)
+		-	Reduce rage time for skeletron
+	-	@Necrotis (1.11.2)
+		-	Set underworld pots to not drop ectoplasm
+		-	Enable both types of canopic jar stacking
+		-	Add jar eat cooldown + mouse click lock until release
+		-	Add ectoplasm eat cooldown
+	-	@Trickster (1.6.3)
+		-	Reduce post-attack cooldown duration
+	-	@Ergo (1.9.1)
+		-	Enable candles to be placed
+		-	Implement adjusting height of scaffold (right-click)
+		-	Draw line for maximum ground height indicator for scaffold
+		-	Do not make grass obstruct scaffolds
+	-	@Orbs (1.5.0)
+		-	Set purification powder to change ebon/crimstone into regular stone (and ice, sandstone, etc)
+		-	Make corruption/crimson tiles fail to actuate from orb use (add tooltip)
+	-	@Ruined Items (2.8.0)
+		-	Remove scrap fail chance
+		-	Do not apply prefix to voodoo dolls or info accessories
+		-	Ease up on ReforgeComboRuinPercentChance and alert player
+		-	Verify reforge combo chance isn't malfunctioning
+	-	Debug failure to make map icon or spawn bound mechanic at dungeon bottom
+	-	@Lore (0.8.5)
+		-	Add mechanic rescue objective
+		-	Fix cyborg gen spacing
+		-	Prevent cyborgs from genning in dungeon/temple
+		-	Fix dialogues for demoman
+	-	@Objectives (0.6.2.1)
+		-	Prevent adding empty objectives
+	-	@MH (5.13.0)
+		-	Fix NPC dialogue icon at high zoom-in
+		-	Fix CP zoom (again?)
+	-	@Bullwhip (1.2.2.1)
+		-	Debug whip projectile stopping with 'weak' debuff (malfunctioning double-whip failsafe?)
+	-	@Powerful Magic (1.6.3.1)
+	-	@Trickster (1.6.2)
+		-	Increase minimum distance between spawns
+		-	Prevent teleporting into lava
+		-	Debug tricksters with decreasing hp and weird diahhrea fx
+	-	@Locked Abilities (1.2.2)
+		-	Verify Slime Mount when mounts disabled
+	-	@Grappletech (1.0.4)
+		-	Ignore actuated blocks
+	-	Fix strange plants failing to integrate into boss recipes
+	-	Set charges sub-type recipes to craft larger quantities
+	-	Set charges to have more uniform radius
+-	Seismic charges
+	-	Set seismic charges to only affect sandstone and brick
+	-	Add defoliation charge
+		-	Destroys mud, mushroom grass, jungle grass, and any mushrooms or vegetation
+		-	Crafted from seismic charges and green orbs
+		-	Define item + graphic
+		-	Define projectile
+	-	Add thermal charge
+		-	Melt ice blocks, creating snow and slush
+		-	Crafted from seismic charges and red orbs
+		-	Define projectile
+		-	Define item + graphic
+-	Add duct tape item sold from goblin, required for all tinkerer's workshop items
+-	@MH: Release 5.12
+-	F&T
+	-	@HUD Lib (3.0.2)
+		-	Scale hotbar size when inventory on
+	-	@Powerful Magic (1.6.3)
+		-	Increase size of magic projectiles
+	-	@Ergo (1.7.1)
+		-	Fix house validity message appearing incorrectly
+	-	@Enraged (0.9.0)
+		-	Change rage rate hooks to enraged behavior hooks
+		-	Restructure code files
+		-	Prevent enrage from happening during charging sequences
+		-	Added bosses whitelist
+		-	@Researched rage states:
+			-	Fishron:		a0 == 1
+			-	Twins:			a1 > 0
+			-	Skeletron/prime:	a1 > 0
+			-	BoC:			a0 < 0
+			-	Bee:			a0 == 0
+			-	EoC:			a1 > 0
+	-	@Cursed Brambles (0.6.2)
+		-	Increase decay rate of cursed brambles
+	-	Debug canopic jar dupe
+	-	"HamstarHelpers.TilePattern.CheckPoint - 0:000 - 000128.64         Tile out of Y range."
+	-	Remove CI dependency from LA
+	-	Tweak speech bubble alignment (move right)
+[v0.22.0]
+-	@Beta (remove Chest Implants from pack)
+-	Update versions
+-	@Necrotis (1.11.0)
+	-	Reduce surface corruption anima loss
+	-	Make eating an ectoplasm add a resistance buff for 30s
+-	@Lore (0.8.4)
+	-	Set demoman to mention seismic charges upon bound goblin objective
+	-	Set demo man to mention goblin rescue and Seismic Charges
+	-	Fix FE distribution throughout the map
+-	F&T
+	-	@Bullwhip (1.2.2)
+		-	Set bats to no longer use slime AI in water
+	-	@Ergo
+		-	Mention with furnishing kits: patch floor and wall holes (change "Not enough floor space")
+	-	Debug raft resupplies taking too long
+	-	Fix herb bags in world gen chests
+	-	Fix bound goblin spawning improperly
+	-	@Boss Reigns (1.2.1)
+		-	Fix PKE interference when red bar not filled (!)
+	-	@Orbs (1.4.2)
+	-	@Cursed Brambles (0.6.1)
+		-	Increase decay rate a lot
+	-	@Green Hell (0.6.2)
+		-	Fix panacea
+	-	Fix seismic charges
+	-	Fix seismic charge recipe
+	-	Remove Chest Implants mod; use in-line chest editing
+	-	@MH
+		-	Set custom float element to be more readable
+		-	Create world chest editing helpers
+	-	Scale starting rope and track kits with world size
+	-	@HUD (3.0.1)
+		-	Add remaining vanilla HUD boxes
+	-	@Powerful Magic (1.6.2)
+		-	Fix alignment for magic guns
+	-	@Green Hell (0.6.1)
+		-	Reduce infection alert spam
+		-	Nerf jungle snake venom
+	-	@Lore (0.8.3)
+		-	Increase cyborg scrap drops
+		-	Fix missing punctuation on PKE tutorial page about red meter
+		-	Do not generate camps on leaf blocks
+	-	@Ergophobia (1.7.0)
+		-	Add scaffolding kit sound (Item_69)
+		-	Add framing kit sound (Item_108)
+		-	Remove style from platforms tiles produced by furnishing kit
+		-	Fix stair placement going downward
+	-	Debug unresponsive attack: (player.itemTime, player.itemAnimation, player.CCed, mouseInterface)
+	-	@Ruined Items (2.7.0)
+		-	Alert to successful craft
+		-	Improve right-click icon
+		-	Fix 'glowing green' inventory suggestion for only first item found
+		-	Import Intrinsics mod method of "scribe mode" for applying magitech scrap repairs
+		-	Clarify 'needs reforge' if scrap option available
+		-	Fix non-per-instance scrap fail flag
+-	F&T
+	-	@Orbs (1.4.1)
+		-	Mention binocs new function
+	-	@Grappletech (1.0.3)
+	-	@Ergophobia (1.6.2)
+	-	@Bullwhip (1.2.1)
+		-	Failsafe against double strike
+	-	@MH
+		-	Fix control panel misalignment (see "Emitters UI")
+	-	@Necrotis (1.10.1)
+	-	@PKEMeter (1.5.3)
+	-	@TMR (1.8.5)
+-	@HUD (3.0.0)
+	-	Hide existing HUD when edit mode active
+	-	Add a button to reset position
+	-	Use a key binding instead of alt
+		-	Add soft hover popup text upon elements when in inventory alerting to key binding
+		-	Implement context mode (does not require inventory open)
+		-	Define key binding
+		-	@Plan
+			-	Edits HUD with or without inventory
+			-	Disables inventory elements, but not their boxes
+	-	Show labels for boxes on hover
+	-	Auto-adjust anchors based on what edges an element is closest to
+	-	Remove non-interactive element collisions
+	-	Clarify displaced rectangles as non-interactive (intensify non-displaced boxes
+	-	Set boxes to update for displacements for draws
+	-	Increase starkness of box hover intensity and remove pulse
+	-	Disable anchor controls by default; they should always be on
+	-	Fix chest box
+	-	Fix too-late mouseInterface
+	-	Hide boxes for inactive elements (e.g. PKE before finding a PKE meter, bullets, etc)
+	-	Fix UI scaling
+[v0.21.0]
+-	@Beta
+-	Give grappling hook at start, disable recipe
+-	@F&T
+	-	Increase bandit spawn rate
+	-	Move raft closer to land
+	-	Set raft items to stack
+	-	Set seismic charges to destroy obsidian/hellstone bricks
+	-	Fix kit prices
+	-	@Ruined Items (2.6.0)
+		-	Do not increase prices for reforging; just use lower chance of success
+	-	@Ergo (1.6.1)
+		-	Prevent track kits from placing in water
+		-	Prevent placing track kits on spaces that don't have enough horizontal room for deployment
+		-	Enable placing stairs
+			-	Disable placement if stair tiles exceed allowed platform bridge length
+			-	Enable placement for platform if a platform exists upper left or right
+			-	@Old data: "if smart cursor is active and stair contacts solid after 2 tiles"
+		-	INCOMPLETE? Ensure 'SquareTileFrame' on framing platforms and pillars
+		-	Alert to re-furnishing areas when alerting to furnishable areas
+	-	@HUD (2.1.2)
+		-	Re-enable hover text for controls on element with displacement
+		-	Highlight main box on hover upon displaced box
+		-	Highlight yellow displaced box on main box hover
+	-	@Necrotis (1.10.0)
+		-	@HUDElementsLib: Add hover text editing
+		-	Set ankh via. HUD Elements Lib
+	-	@TMR (1.8.3)
+		-	Update this (and PKE mod) to use HUD Lib
+		-	Set ammo dragable only with alt+click
+		-	Fix reticule in UIs (inventory, book)
+	-	@Lore (0.8.2)
+		-	Verify FEs can't gen on thin ice
+		-	Clarify dungeon objective (find occupants?)
+	-	@PKE (1.5.2)
+		-	Set dragable only with alt+click
+		-	Fix scroll
+-	@Add HUD Elements Lib mod (2.0.0)
+	-	Restore collisions
+	-	Fix interface layering
+	-	Implement custom displacement directions for vanilla elements
+	-	Fix anchors saving and loading
+	-	Enable collisions toggle button for vanilla elements
+	-	Engage player.mouseInterface when clicking controls
+	-	Improve collisions toggle button
+	-	Add button labels for controls
+	-	Implement screen position anchors
+		-	Implement anchor toggles
+		-	Implement collision toggle
+		-	Implement interactivity
+		-	Draw rectangles on elements
+	-	Prevent dragging elements offscreen
+	-	Fix positioning of vanilla elements
+	-	Display displacement rectangles during alt (yellow)
+	-	Implement dynamic positions for elements
+	-	Implement shifting around map, map icons, inventory, chest inventory
+		-	Implement shift directions
+		-	Define vanilla regions for HUD elements (locked)
+		-	Implement loading vanilla HUD elements
+	-	Add rectangle shading
+		-	Locked elements = red shade
+		-	Regular elements = white shade
+	-	Set alt to show HUD boxes
+	-	Implement virtual positions
+	-	Implement enable/disable
+	-	Use different outline for element being dragged
+	-	Implement locking
+	-	Implement displacement handling (AKA no "old position")
+		-	Re-check displacements after a shift ("anchor" already-displaced elements against re-displacement)
+		-	Apply displacement to collisions
+		-	Implement specification for displacement direction with HUDElement
+	-	Implement sliding collisions
+	-	Fix collision handling
+	-	Draw rectangles for collision objects
+	-	Implement collision handling between elements
+	-	Implement saving element offsets with player data
+	-	Implement draggable behavior for HUDElement
+	-	Define HUDElement class
+	-	Create mod
+[v0.20.0]
+-	@Beta
+-	Add debug stuff to track KS spawn and npc.type changes
+-	F&T
+	-	Increase 'extreme terrain' area and cave width a bit
+	-	Remove wall drops from tiles breakage
+	-	Enable 'Hook' item loot drops
+	-	Enable recipe for grapple hook
+	-	Reduce strange plants requirement for boss recipes
+	-	Emphasize "read tooltips before selling" in guide handbook
+	-	Add mention of using Strange Plants for boss items (tooltips, handbook)
+	-	Remove herb pouches from chests
+	-	Remove herb seeds from herb sprout drops
+	-	WL candle types
+	-	Fix issue with setting spawns for non-AM worlds
+	-	Fix missing silk recipe (!)
+	-	Alter jungle sign to clarify danger
+	-	Enable crafting chests and placing chests
+	-	@Necrotis
+		-	Fix ankh hover text layer
+		-	Fix ankh shift
+	-	@Locked Abilities
+		-	Fix accessory overlays with minimap shown
+	-	@Lore (0.8.1)
+		-	Reduce cyborg item drops
+		-	Fix objective mention for crimson vs corruption
+	-	@Grappletech (1.0.1)
+		-	Enable grappling planter boxes
+	-	@Cursed Brambles (0.6.0)
+		-	Emit miniscule light
+		-	Fix death message
+		-	Reduce damage
+		-	Increase decay rate a lot
+	-	@Ruined Items (2.5.0)
+		-	Set reforge to clear 'attempted fix' flag
+		-	Add tooltip to indicate if attempted to fix ruined item
+	-	@Boss Reigns (1.2.0)
+		-	During 'reign' event, set boss summon items to 'resonate' (including added tooltip)
+		-	Add 'reign' start message
+		-	Fix premature red bar lowering from non-progress events (e.g. blood moon)
+	-	@Necrotis (1.9.0)
+		-	Display anima drain/gain rate on ankh hover
+		-	Set ectoplasm to restore +50% anima
+		-	Set dying to only restore up to 20% anima
+		-	Remove shine pot ingredient from elixir
+		-	Change max darkness effect to 0.85
+		-	Change max speed drain to 0.85
+		-	Adjust rates: Slightly slower drain in corruption/crimson
+		-	Implement dragable ankh
+	-	@MMM (1.1.9)
+		-	Do not generate mirrors in corruption or crimson or spider caverns
+	-	@TMR (1.8.2)
+		-	Fix double penetrate regular bullets
+		-	Adjust speedloader X
+		-	Use smaller crosshair when in aim mode (look up 'Synthetik' fx)
+		-	Allow speedloaders to work in ammo slots
+	-	@Objectives (0.6.2)
+		-	Use larger font for 'Completed'
+	-	@More Item Info (1.3.1)
+		-	Remove redundant price display for coins
+		-	Fix price display order
+	-	Fix PKE meter position
+	-	@Ergophobia (1.6.0)
+		-	Add platforms under chest amidst mudstone floors of furnished houses
+		-	Lower cost of scaffolding, framing kit
+		-	Mention tile placing items tooltips as able to place or not
+		-	Set town npcs to not stand on beds
+		-	Failsafe against furnishing house with chest with items
+	-	@Bullwhip (1.2.0)
+		-	Reduce whip kb against slimes
+	-	@Green Hell (0.6.0)
+		-	Tweak infection debuff tooltips
+		-	Increase infection damage per stage
+		-	Increase infection worsen risk
+	-	@Orbs (1.4.0)
+		-	Enable breaking ash blocks
+		-	Change tooltips for bombs/dynamites
+		-	Add intensity to tile chunk colors when in map mode
+	-	@Enraged (0.8.1)
+		-	Set meter to light level of boss (except dial)
+	-	@PKE
+		-	Increase blue text brightness
+		-	Clarify 'proximity detector' aspect
+	-	@Lore (0.8.0)
+		-	Update guide info about wood as the only breakable material
+		-	Set surface FEs to be recognized by PKE green bar
+		-	Remove FEs from world memory when discovered by a player
+		-	Set FE camps further apart
+		-	Remove orbs objective
+	-	@Trickster (1.6.1)
+		-	Reduce surface spawn rate
+		-	Fix 'mock' state not checking player proximity
+-	@PKE (1.5.0)
+	-	Implement moveable PKE HUD item (while inventory is open)
+-	@TMR (1.8.1)
+	-	Remove reticule flicker, soften intensity
+	-	Implement moveable ammo display (in inventory mode)
+	-	Draw ammo in bottom left
+	-	Show ammo while aiming
+-	Add random potions to raft resupply
+-	Add armor de-craft recipes
+	-	@Plan
+		-	Find all armor items
+		-	Find all recipes that incorporate ore bars that craft said armors
+		-	Generate recipes for recovering 90% ores
+-	@Orbs
+	-	Binocs reveal empty cave areas
+-	Add Seismic Charge
+	-	Produce effect on explode: Changes sandstone -> sand in radius
+	-	Create sprite
+	-	Recipe: 12 Bombs, 1 Obsidian, 1 Orb (any)
+	-	Create item
+-	@Add Quick Rope mod
+-	@Grappletech
+	-	@Add FramingPlankTile to grappleable tiles WL
+	-	Add Tensioned Hook Bracer accessory
+		-	Create sprite
+		-	Implement removal of restriction against grappling to any block type
+		-	Define item
+	-	Implement grappleable tiles WL
+	-	Import AM's grapple restrictions
+	-	Create mod
+	-	@Future Plans
+		-	Add grappling items by default only work on platforms
+		-	Accessories needed to make a grapple item work on other materials
+		-	Hooks can also be modded to work on other materials, at expense
+-	@Trickster
+	-	@Test
+	-	Increase laugh-only chance to 33%
+	-	Implement laugh-only encounters
+	-	Add laugh-only trickster encounters (4 at start, 20% chance after)
+	-	Reduce rate
+	-	Debug spawns

@@ -49,22 +49,26 @@ namespace AdventureMode {
 				PlayerLogic.SetupInitialSpawnInventory( items );
 
 				//
+				
+				if( !Main.gameMenu ) {
+					MessagesAPI.AddMessagesInitializeEvent( () => {
+						IEnumerable<string> msgSegs = PlayerLogic.GetIntroTextLines()
+							.Select( lines => string.Join( " ", lines ) );
 
-				IEnumerable<string> msgSegs = PlayerLogic.GetIntroTextLines()
-					.Select( lines => string.Join(" ", lines) );
-
-				MessagesAPI.AddMessage(
-					title: "Welcome To Adventure Mode",
-					description: string.Join( "\n \n", msgSegs ),
-					modOfOrigin: AMMod.Instance,
-					alertPlayer: false,
-					isImportant: false,
-					parentMessage: MessagesAPI.ModInfoCategoryMsg,
-					id: "AdventureModeWelcome"
-				);
+						MessagesAPI.AddMessage(
+							title: "Welcome To Adventure Mode",
+							description: string.Join( "\n \n", msgSegs ),
+							modOfOrigin: AMMod.Instance,
+							alertPlayer: false,
+							isImportant: false,
+							parentMessage: MessagesAPI.ModInfoCategoryMsg,
+							id: "AdventureModeWelcome"
+						);
+					} );
+				}
 
 				//
-
+				
 				this.IsAdventurer = true;
 			}
 		}
