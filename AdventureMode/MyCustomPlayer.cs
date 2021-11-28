@@ -92,8 +92,8 @@ namespace AdventureMode {
 
 			//
 
-			Timers.SetTimer( 2 * 60, false, () => {
-				MessagesAPI.GetMessage("nihilism_init")?.SetReadMessage();
+			MessagesAPI.AddMessagesCategoriesInitializeEvent( () => {
+				MessagesAPI.GetMessage( "nihilism_init" )?.SetReadMessage();
 
 				MessagesAPI.AddMessage(
 					title: "Fishing disabled for Adventure Mode!",
@@ -104,8 +104,6 @@ namespace AdventureMode {
 					parentMessage: MessagesAPI.GameInfoCategoryMsg,
 					id: "AdventureModeFishingRemoved"
 				);
-
-				return false;
 			} );
 
 			//

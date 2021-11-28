@@ -20,7 +20,9 @@ namespace AdventureMode.Mods {
 			myTileKillWhitelist.Add( TileID.GetUniqueKey(ModContent.TileType<FindableManaCrystals.Tiles.ManaCrystalShardTile>()) );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey(ModContent.TileType<CursedBrambles.Tiles.CursedBrambleTile>()) );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey(ModContent.TileType<AdventureModeLore.Tiles.FallenCyborgTile>()) );
-			myTileKillWhitelist.Add( TileID.GetUniqueKey(ModContent.TileType<CursedBones.Tiles.CursedBonesTile>()) );
+			if( ModLoader.GetMod("CursedBones") != null ) {
+				AdventureModeModInteractions.LoadOrbs_WeakRef_CursedBones( myTileKillWhitelist );
+			}
 
 			var wlExceptions = orbsConfig.Get<Dictionary<string, List<int>>>(
 				nameof( orbsConfig.BreakableTilesWhitelistFrameExceptions )
@@ -45,6 +47,15 @@ namespace AdventureMode.Mods {
 			orbsConfig.SetOverride( nameof(orbsConfig.BrownOrbRecipeStack), 0 );
 			orbsConfig.SetOverride( nameof(orbsConfig.YellowOrbRecipeStack), 0 );
 			orbsConfig.SetOverride( nameof(orbsConfig.WhiteOrbRecipeStack), 1 );
+		}
+
+
+		////
+
+		private static void LoadOrbs_WeakRef_CursedBones( List<string> myTileKillWhitelist ) {
+			myTileKillWhitelist.Add(
+				TileID.GetUniqueKey( ModContent.TileType<CursedBones.Tiles.CursedBonesTile>() )
+			);
 		}
 	}
 }

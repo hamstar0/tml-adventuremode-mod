@@ -37,7 +37,7 @@ namespace AdventureMode {
 				this.ModInteractions.LoadGreenHell
 			);
 			LoadMod(
-				new string[] { "GreenHell" },
+				new string[] { "PKEMeter" },
 				this.ModInteractions.LoadPKEMeter
 			);
 			LoadMod(

@@ -13,9 +13,12 @@ v1
 -	Fix welcome message crash
 -	Update mods list in mod readme/description
 -	Add Nodecraft reference
+-	Remove whip pvp
+-	@Bullwhip
+	-	Fix lingering whip projectile (destroys while active)
 -	@Powerful Magic
 	-	Fix book hold offset when focusing
-[v0.37.0]
+[v0.38.0]
 -	@Trailer 2.0
 	-	Explain basics of story (world threatened by plague etc.)
 		-	Brief intro cutscene footage
@@ -46,22 +49,84 @@ v1
 -	@AML
 	-	Add diagrams to relevant technical messages
 	-	Add portraits to messages
+-	@TMR
+	-	Fix TMR (and projectile) not syncing or appearing on other clients
 -	@Messages
-	-	If an important message exists, preserve message icon on bottom of screen
 	-	Implement message icon hover behavior
-	-	Set category messages to use larger font
-	-	Skip re-alerting messages that have been read (even if important)
+	-	Set category messages to use larger font + lighter bg
 	-	Implement custom UIElement for displaying an animated portrait with a message
 	-	Implement custom UIElement for displaying an image with a message
 	-	Implement messages that use UIElement bodies
+-	@Soul Barriers
+	-	Verify fixed access barrier destroy sync
+[v0.37.0]
+-	Fix PBG particles not matching player
+-	Fix raft MM in-game tip
+-	Add ropes message
+-	Force removal of herb seed items (world or inventory)
+-	Add 1 hp world gate right next to raft
+-	Remove copper shortsword from starter items
+-	Intro tutorial
+	-	@Plan
+		-	1. The screen view is locked onto the raft until the player accesses the barrel.
+		-	2. The screen view locks onto the beach and raft until the player builds a furnished house.
+		-	3. A 1 hp world gate exists past the beach that impedes progress until removed via PBG.
+-	@Messages
+	-	If an important message exists, preserve icon
+	-	Skip re-alerting messages that have been read (even if important)
+-	@Bullwhip
+	-	Fix whip hotkey spam
+-	@Mod Utility Panels
+	-	Fix failure to center panels
+-	@Boss Reigns
+	-	Set reigns timer to begin only after PKE meter found
+-	@Grappletech
+	-	Allow grappling protruding tiles better (3 neighbors, adjacent)
+-	@Ergophobia
+	-	Show X indicator of unplaceble tile items (on mouse hover?)
+	-	Add better indicator for placing planks/platforms (add error on invalid placement)
+		-	@Plan for planks error: "Needs solid near"
+		-	@Plan for platforms error: "Needs solid or platform near"
+	-	Allow placing framing kits on top of herbs
+-	@Necrotis
+	-	Fix broadcasted ectoplasm pickup fail message
+-	@Cursed Bones
+	-	Review for lag
+-	@AML
+	-	Set old man to mention world gate in front of dungeon
+	-	Set guide to mention world gate next to raft
+	-	Set Trickster to be weak ref
+	-	Set Ruined Items to be weak ref
+	-	Set Powerful Magic to be weak ref
+	-	Set Green Hell to be weak ref
+	-	Set Enraged to be weak ref
+	-	Set Boss Reigns to be weak ref
+	-	Set Cursed Bones to be weak ref
 
 
+-	Set Trickster to be weak ref
+-	Set Ruined Items to be weak ref
+-	Set Powerful Magic to be weak ref
+-	Set Green Hell to be weak ref
+-	Set Enraged to be weak ref
+-	Set Boss Reigns to be weak ref
+-	Set Cursed Bones to be weak ref
+-	@Pot Luck (2.1.0)
+	-	Add config option to pick a single item from a pool of PotDef entries
+-	@Soul Barriers (1.5.0)
+	-	Fix weird fx with high fps (?)
+	-	Set barriers to use explicit ids (no auto ids)
+-	@World Gates (1.2.6.1)
+-	@Mod Libs General (1.3.1.1)
+-	@Locked Abilities (1.3.1.1)
+	-	Fix dupe bug
+-	@Enraged (0.13.1.1)
 [v0.36.0]
 -	@Necrotis (2.2.0)
 	-	Set demon magic scythe hits to add necrotis damage
 -	@Powerful Magic (1.10.0)
 	-	Fix non-player powered up magic projectiles
--	@Mod Libs Core
+-	@Mod Libs Core (1.3.0)
 	-	Implement player projectile claiming
 		-	Add Projectile.GetOwner() extension method
 		-	Add GlobalProjectile.SetDefaults hook to assign ownership during modes

@@ -3,23 +3,28 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Orbs.Items;
-using TheTrickster.NPCs;
 
 
 namespace AdventureMode.Logic {
 	static partial class NPCLogic {
 		public static void ApplyLoot( NPC npc ) {
-			if( npc.modNPC != null && npc.modNPC.GetType() == typeof(TricksterNPC) ) {
-				NPCLogic.ApplyLootForTrickster( npc );
+			if( npc.modNPC != null ) {
+				if( ModLoader.GetMod("TheTrickster") != null ) {
+					NPCLogic.ApplyLoot_WeakRef_Trickster( npc );
+				}
 			}
 		}
 
-		private static void ApplyLootForTrickster( NPC npc ) {
+		private static void ApplyLoot_WeakRef_Trickster( NPC npc ) {
+			if( npc.modNPC.GetType() != typeof(TheTrickster.NPCs.TricksterNPC) ) {
+				return;
+			}
+
 			if( Main.netMode == NetmodeID.MultiplayerClient ) {
 				return;
 			}
 
-			var tricksterNpc = npc.modNPC as TricksterNPC;
+			var tricksterNpc = npc.modNPC as TheTrickster.NPCs.TricksterNPC;
 			if( tricksterNpc == null ) {
 				return;
 			}

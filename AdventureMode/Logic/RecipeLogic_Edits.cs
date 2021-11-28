@@ -61,11 +61,11 @@ namespace AdventureMode.Logic {
 		
 		public static void EditPBGRecipeIf() {
 			if( ModLoader.GetMod("RuinedItems") != null ) {
-				RecipeLogic.EditPBGRecipe_WeakRefs();
+				RecipeLogic.EditPBGRecipe_WeakRefs_RuinedItems();
 			}
 		}
 
-		private static void EditPBGRecipe_WeakRefs() {
+		private static void EditPBGRecipe_WeakRefs_RuinedItems() {
 			var rf = new RecipeFinder();
 			rf.SetResult( ModContent.ItemType<PBGItem>() );
 
