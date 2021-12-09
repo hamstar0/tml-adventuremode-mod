@@ -42,7 +42,7 @@ namespace AdventureMode.Logic {
 					name: WorldLogic.RaftRestockTimerName,
 					tickDuration: timerTicks,
 					runsWhilePaused: false,
-					action: () => {
+					func: () => {
 						if( Main.netMode == NetmodeID.MultiplayerClient ) {
 							return 0;   // end timer if player transitions from SP to MP (redundant?)
 						}

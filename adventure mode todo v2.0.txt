@@ -205,6 +205,8 @@ v1.1
 	-	On category button click, unfold category into view
 	-	Implement UISelectableTextPanel for message body
 -	@B&D
+	-	@Bullwhip
+		-	Implement 'Cobra Charm' accessory (adds stun hits)
 	-	Charging melee attacks with anima to make enemies drop ectoplasm + debuff them
 	-	@World Gates?
 		-	@AML
