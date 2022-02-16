@@ -46,6 +46,9 @@ Future considerations
 	-	Add scrap to all tool, armor, and accessory recipes with >= rarity
 	-	Add Scrap item
 	-	@Spirit Walking: Add warps
+-	@Player Statistics
+	-	Add AM-specific (LEs, mana shards, cyborgs, life crystals)
+	-	Port mod to Mod Libs
 
 
 

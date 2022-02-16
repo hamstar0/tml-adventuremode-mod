@@ -19,7 +19,7 @@ namespace AdventureMode.Mods {
 			myTileKillWhitelist.Add( TileID.GetUniqueKey(ModContent.TileType<Ergophobia.Tiles.FramingPlankTile>()) );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey(ModContent.TileType<FindableManaCrystals.Tiles.ManaCrystalShardTile>()) );
 			myTileKillWhitelist.Add( TileID.GetUniqueKey(ModContent.TileType<CursedBrambles.Tiles.CursedBrambleTile>()) );
-			myTileKillWhitelist.Add( TileID.GetUniqueKey(ModContent.TileType<AdventureModeLore.Tiles.FallenCyborgTile>()) );
+			myTileKillWhitelist.Add( TileID.GetUniqueKey(ModContent.TileType<ModLibsUtilityContent.Tiles.FallenCyborgTile>()) );
 			if( ModLoader.GetMod("CursedBones") != null ) {
 				AdventureModeModInteractions.LoadOrbs_WeakRef_CursedBones( myTileKillWhitelist );
 			}

@@ -68,17 +68,38 @@ v1
 	-	Show unfinished objectives count on HUD above raft timer
 	-	Add money rewards every objective met
 	-	Show quest rewards for each objective
+-	@B&D "surveylance station" - Highlights nearby squares that have mana shards
 [v0.37.0]
 -	@Test
 -	Update package mod
+-	@Mod Libs General
+	-	Refactor projectile libs to base sync off of `Main.projectileIdentity[owner, uuid]`
+-	Set pots to drop random potions
 -	Add PKE chest tip
 -	Fix raft MM in-game tip (MP only?)
--	Force removal of herb seed items (world or inventory)
--	Remove copper shortsword from starter items
--	Add starting objective: Find a magic weapon (hint gems)
--	@B&D Blunderbuss
+-	Force removal (Nihilism?) of herb seed items (world or inventory)
+-	@Necrotis (2.2.0.2)
+-	@Messages (1.2.0.4)
+-	@Objectives (0.7.2.3)
+-	@PKEMeter (1.7.0.1)
+-	@TheMadRanger (1.9.5.1)
+-	Fix Mod Libs Utility Content subclass use
 
 
+-	@Mod Utility Panels (2.0.0)
+-	@Lost Expeditions (1.0.0)
+	-	Add Steam Balls to LEs
+-	@AML (0.19.0)
+	-	Add guide dialog + objective to find "thaumaturgical substances" to study and eliminate plague
+	-	Finish removing LE content
+-	Transfer cyborg tile credits to @Mod Libs Utility Content
+-	Separate @Lost Expeditions into its own mod
+-	@Steampunk Arsenal (0.18.0)
+-	@Create "Steam-Driven Rivet Launcher" mod (internal name = "Steampunk Arsenal")
+-	@HUD Elements Lib (4.0.0)
+	-	Fix editing elements without inventory open
+	-	Implement interactivity with elements
+-	@Mod Libs Core (1.4.0)
 -	@Cursed Bones (1.0.0)
 	-	Review for lag
 	-	Reduce item drops
