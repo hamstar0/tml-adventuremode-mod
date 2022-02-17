@@ -72,7 +72,7 @@ namespace AdventureMode.Logic {
 			foreach( Recipe r in rf.SearchRecipes() ) {
 				var re = new RecipeEditor( r );
 				re.DeleteIngredient( ItemID.Nanites );
-				re.AddIngredient( ModContent.ItemType<RuinedItems.Items.MagitechScrapItem>(), 2 );
+				re.AddIngredient( ModContent.ItemType<ModLibsUtilityContent.Items.MagitechScrapItem>(), 2 );
 			}
 		}
 

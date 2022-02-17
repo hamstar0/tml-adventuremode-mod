@@ -45,6 +45,11 @@ Junkyard
 	-	Increase raft resupply rate based on metric
 	-	Increase metric with each furnishing kit, rails kit, ropes
 	-	Add info widget to indicate quantified amount of infrastructure
+-	Intro tutorial
+	-	@Plan
+		-	1. The screen view is locked onto the raft until the player accesses the barrel.
+		-	2. The screen view locks onto the beach and raft until the player builds a furnished house.
+		-	3. A 1 hp world gate exists past the beach that impedes progress until removed via PBG.
 
 
 
