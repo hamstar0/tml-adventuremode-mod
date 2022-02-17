@@ -70,9 +70,11 @@ v1
 -	Update package mod
 -	@Mod Libs General
 	-	Refactor projectile libs to base sync off of `Main.projectileIdentity[owner, uuid]`
--	Add PKE chest tip
--	Fix raft MM in-game tip (MP only?)
 -	Force herb seeds to disappear
+-	Fix raft MM in-game tip (MP only?)
+-	Add PKE chest tip
+
+
 -	@Necrotis (2.2.0.2)
 -	@Messages (1.2.0.4)
 -	@Objectives (0.7.2.3)
@@ -80,8 +82,6 @@ v1
 -	@TheMadRanger (1.9.5.1)
 -	@RuinedItems (2.11.2)
 -	@Mod Libs Utility Content (1.1.0)
-
-
 -	Change @Mod Libs Utility Content subclass into manual hooks
 -	@Mod Utility Panels (2.0.0)
 -	@Lost Expeditions (1.0.0)

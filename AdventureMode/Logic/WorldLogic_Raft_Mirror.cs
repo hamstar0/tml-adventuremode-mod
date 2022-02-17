@@ -10,12 +10,12 @@ using MountedMagicMirrors;
 namespace AdventureMode.Logic {
 	static partial class WorldLogic {
 		private static bool IsRaftMirrorDiscovered = false;
-
+		
 
 
 		////
 
-		public static void HighlightRaftMirror( AMWorld myworld ) {
+		public static void HighlightRaftMirror_If( AMWorld myworld ) {
 			if( WorldLogic.IsRaftMirrorDiscovered ) {
 				return;
 			}
@@ -23,16 +23,21 @@ namespace AdventureMode.Logic {
 				return;
 			}
 
+			//
+
 			IList<(int x, int y)> mirrors = MountedMagicMirrorsAPI.GetDiscoveredMirrors( Main.LocalPlayer );
 			int mirrorX = myworld.Raft.Mirror.TileX;
 			int mirrorY = myworld.Raft.Mirror.TileY;
 
 			foreach( (int x, int y) in mirrors ) {
-				if( Math.Abs( mirrorX - x ) <= 2 && Math.Abs( mirrorY - y ) <= 2 ) {
+				if( Math.Abs(mirrorX - x) <= 2 && Math.Abs(mirrorY - y) <= 2 ) {
 					WorldLogic.IsRaftMirrorDiscovered = true;
+
 					return;
 				}
 			}
+
+			//
 
 			float pulse = (float)Main.mouseTextColor / 255f;
 			Vector2 dim = Main.fontMouseText.MeasureString( "V" );

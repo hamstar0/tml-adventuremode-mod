@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using ModLibsCore.Libraries.Debug;
 using AdventureMode.Logic;
-using AdventureMode.WorldGeneration;
+using AdventureMode.Data;
 
 
 namespace AdventureMode {
@@ -18,7 +18,7 @@ namespace AdventureMode {
 
 		public (int TileX, int TileY) JungleSignTile { get; internal set; } = (0, 0);
 
-		public RaftComponents Raft { get; internal set; } = new RaftComponents();
+		public RaftWorldData Raft { get; internal set; } = new RaftWorldData();
 
 
 		public Rectangle UndergroundDesertBounds { get; internal set; } = default( Rectangle );
@@ -37,7 +37,7 @@ namespace AdventureMode {
 			this.IsCurrentWorldAdventure = false;
 			this.HouseKitFurnitureIdx = 0;
 			this.JungleSignTile = (0, 0);
-			this.Raft = new RaftComponents();
+			this.Raft = new RaftWorldData();
 		}
 
 		////
@@ -75,7 +75,7 @@ namespace AdventureMode {
 				this.NewSpawn = (x, y);
 			}
 
-			WorldLogic.LoadRaftInfo( tag );
+			WorldLogic.LoadRaftData( this, tag );
 		}
 
 		public override TagCompound Save() {
@@ -96,7 +96,7 @@ namespace AdventureMode {
 				{ "new_spawn_y", this.NewSpawn.TileY }
 			};
 
-			WorldLogic.SaveRaftInfo( tag );
+			WorldLogic.SaveRaftData( this, tag );
 
 			return tag;
 		}
@@ -130,6 +130,8 @@ namespace AdventureMode {
 				int newSX = reader.ReadInt32();
 				int newSY = reader.ReadInt32();
 				this.NewSpawn = (newSX, newSY);
+
+				WorldLogic.NetReceiveRaftData( this, reader );
 			} catch { }
 		}
 
@@ -149,6 +151,8 @@ namespace AdventureMode {
 				writer.Write( (int)this.OldSpawn.TileY );
 				writer.Write( (int)this.NewSpawn.TileX );
 				writer.Write( (int)this.NewSpawn.TileY );
+
+				WorldLogic.NetSendRaftData( this, writer );
 			} catch { }
 		}
 
@@ -156,7 +160,7 @@ namespace AdventureMode {
 		////////////////
 
 		public override void PostDrawTiles() {
-			WorldLogic.HighlightRaftMirror( this );
+			WorldLogic.HighlightRaftMirror_If( this );
 		}
 	}
 }

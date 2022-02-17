@@ -6,7 +6,7 @@ using ModLibsCore.Libraries.Debug;
 
 namespace AdventureMode.Logic {
 	static partial class WorldLogic {
-		public static void UpdateWorldSpawnForInvasionStateIf() {
+		public static void UpdateWorldSpawnForInvasionState_If() {
 			var myworld = ModContent.GetInstance<AMWorld>();
 			if( !myworld.IsCurrentWorldAdventure ) {
 				return;

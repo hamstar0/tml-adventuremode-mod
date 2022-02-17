@@ -2,23 +2,10 @@
 using Terraria;
 using Terraria.World.Generation;
 using ModLibsCore.Libraries.Debug;
+using AdventureMode.Data;
 
 
 namespace AdventureMode.WorldGeneration {
-	public class RaftComponents {
-		public (int TileX, int TileY) Barrel { get; internal set; }
-
-		public (int TileX, int TileY) Mirror { get; internal set; }
-
-
-		////////////////
-
-		public bool IsInitialized => this.Barrel != default && this.Mirror != default;
-	}
-
-
-
-
 	partial class AMWorldGen {
 		private static int[][] RaftImageWalls = new int[][] {
 			new int[] {  },
@@ -67,17 +54,18 @@ namespace AdventureMode.WorldGeneration {
 		}
 
 		////////////////
-
+		
 		public static void PlaceRaft( AMWorld myworld, GenerationProgress progress ) {
 			int boatLeft, boatTop;
 			AMWorldGen.GetBoatCoordinates( out boatLeft, out boatTop );
 
-			myworld.Raft = new RaftComponents();
+			var raft = new RaftWorldData();
+			myworld.Raft = raft;
 
-			AMWorldGen.PlaceTiles( myworld, progress, 0.25f, boatLeft, boatTop, AMWorldGen.RaftImageTiles, myworld.Raft );
-			AMWorldGen.PlaceWalls( myworld, progress, 0.25f, boatLeft, boatTop, AMWorldGen.RaftImageWalls, myworld.Raft );
-			AMWorldGen.PlaceTiles( myworld, progress, 0.25f, boatLeft, boatTop, AMWorldGen.RaftImageTiles, myworld.Raft );
-			AMWorldGen.ProcessTiles( myworld, progress, 0.25f, boatLeft, boatTop, AMWorldGen.RaftImageTiles, myworld.Raft );
+			AMWorldGen.PlaceTiles( myworld, progress, 0.25f, boatLeft, boatTop, AMWorldGen.RaftImageTiles, ref raft );
+			AMWorldGen.PlaceWalls( myworld, progress, 0.25f, boatLeft, boatTop, AMWorldGen.RaftImageWalls, ref raft );
+			AMWorldGen.PlaceTiles( myworld, progress, 0.25f, boatLeft, boatTop, AMWorldGen.RaftImageTiles, ref raft );
+			AMWorldGen.ProcessTiles( myworld, progress, 0.25f, boatLeft, boatTop, AMWorldGen.RaftImageTiles, ref raft );
 		}
 	}
 }

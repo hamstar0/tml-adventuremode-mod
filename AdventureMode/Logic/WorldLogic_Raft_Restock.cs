@@ -6,24 +6,12 @@ using Terraria.Localization;
 using ModLibsCore.Libraries.Debug;
 using ModLibsCore.Services.Timers;
 using AdventureMode.Packets;
+using AdventureMode.Data;
 
 
 namespace AdventureMode.Logic {
 	static partial class WorldLogic {
-		public const string RaftRestockTimerName = "AdventureModeRaftRestock";
-
-
-
-		////////////////
-
-		public static int GetRaftRestockTimerTicks() {
-			return AMMod.Instance.RaftRestockTimerSnapshot;
-		}
-
-
-		////////////////
-
-		private static void BeginOrResumeRaftRestockTimerIf( int? remainingTicks ) {
+		private static void BeginOrResumeRaftRestockTimer_Host( int? remainingTicks ) {
 			if( Main.netMode == NetmodeID.MultiplayerClient ) {
 				return;
 			}
@@ -37,9 +25,9 @@ namespace AdventureMode.Logic {
 				WorldLogic.DeclareTimerHUD( timerTicks );
 			}
 			
-			if( WorldLogic.GetRaftRestockTimerTicks() <= 0 ) {
+			if( RaftModData.Instance.RaftRestockTimerSnapshot <= 0 ) {
 				Timers.SetTimer(
-					name: WorldLogic.RaftRestockTimerName,
+					name: RaftModData.RaftRestockTimerName,
 					tickDuration: timerTicks,
 					runsWhilePaused: false,
 					func: () => {
@@ -106,7 +94,7 @@ namespace AdventureMode.Logic {
 
 			//
 
-			int ticks = WorldLogic.GetRaftRestockTimerTicks();
+			int ticks = RaftModData.Instance.RaftRestockTimerSnapshot;
 
 			if( Main.netMode == NetmodeID.Server ) {
 				RaftRestockTimerPacket.SendToClient( ticks, playerWho );
@@ -119,10 +107,10 @@ namespace AdventureMode.Logic {
 		////////////////
 
 		internal static void UpdateRaftRestockTimerSnapshot() {
-			int ticks = Timers.GetTimerTickDuration( WorldLogic.RaftRestockTimerName );
+			int ticks = Timers.GetTimerTickDuration( RaftModData.RaftRestockTimerName );
 
 			if( ticks > 0 ) {
-				AMMod.Instance.RaftRestockTimerSnapshot = ticks;
+				RaftModData.Instance.RaftRestockTimerSnapshot = ticks;
 			}
 		}
 	}

@@ -8,6 +8,7 @@ using ModLibsCore.Libraries.Debug;
 using ModLibsGeneral.Libraries.Tiles;
 using MountedMagicMirrors.Tiles;
 using ReadableBooks.Items.ReadableBook;
+using AdventureMode.Data;
 
 
 namespace AdventureMode.WorldGeneration {
@@ -19,7 +20,7 @@ namespace AdventureMode.WorldGeneration {
 					int left,
 					int top,
 					int[][] tiles,
-					RaftComponents components ) {
+					ref RaftWorldData raftData ) {
 			for( int y = 0; y < tiles.Length; y++ ) {
 				progress.Value += progressStep / (float)tiles.Length;
 
@@ -33,7 +34,7 @@ namespace AdventureMode.WorldGeneration {
 						switch( tiles[y][x] ) {	// <- Especially for switch use
 						case TileID.Containers:
 							if( AMWorldGen.PlaceStarterBarrel(myworld, tileX, tileY) ) {
-								components.Barrel = (tileX, tileY);
+								raftData.Barrel = (tileX, tileY);
 							}
 							break;
 						case TileID.Cog:
@@ -59,7 +60,7 @@ namespace AdventureMode.WorldGeneration {
 						TilePlacementLibraries.Place3x3Wall( tileX, tileY, mirrorType );  //2,1
 
 						if( Main.tile[tileX, tileY].type == mirrorType ) {
-							components.Mirror = (tileX, tileY);
+							raftData.Mirror = (tileX, tileY);
 						}
 					}
 				}
@@ -73,7 +74,7 @@ namespace AdventureMode.WorldGeneration {
 					int left,
 					int top,
 					int[][] tiles,
-					RaftComponents components ) {
+					ref RaftWorldData raftData ) {
 			for( int y = 0; y < tiles.Length; y++ ) {
 				progress.Value += progressStep / (float)tiles.Length;
 
@@ -101,7 +102,7 @@ namespace AdventureMode.WorldGeneration {
 					int left,
 					int top,
 					int[][] walls,
-					RaftComponents components ) {
+					ref RaftWorldData raftData ) {
 			for( int y = 0; y < walls.Length; y++ ) {
 				progress.Value += progressStep / (float)walls.Length;
 

@@ -12,6 +12,7 @@ using ModLibsCore.Services.Timers;
 using Messages;
 using AdventureMode.Logic;
 using AdventureMode.Packets;
+using AdventureMode.Data;
 
 
 namespace AdventureMode {
@@ -63,7 +64,7 @@ namespace AdventureMode {
 			if( Main.netMode == NetmodeID.Server ) {
 				var myworld = ModContent.GetInstance<AMWorld>();
 				if( myworld.Raft.IsInitialized ) {
-					int ticks = WorldLogic.GetRaftRestockTimerTicks();
+					int ticks = RaftModData.Instance.RaftRestockTimerSnapshot;
 
 					RaftRestockTimerPacket.SendToClient( ticks, this.PlayerWho );
 				} else {
