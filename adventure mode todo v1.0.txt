@@ -59,22 +59,56 @@ v1
 -	@Soul Barriers
 	-	Verify fixed access barrier destroy sync
 [v0.38.0]
+-	@Test
+-	@Mod Libs General
+	-	Refactor projectile libs to base sync off of `Main.projectileIdentity[owner, uuid]`
+-	Force herb seeds to disappear
+-	Add PKE chest label
 -	@Objectives
 	-	Show unfinished objectives widget count on HUD above raft timer
 	-	Add money rewards every objective met
 	-	Show quest rewards for each objective
--	Set pots to drop random potions
--	@B&D "surveillance station" - Highlights nearby squares that have mana shards
+-	Prevent wall breaking
+-	@SA
+	-	Don't charge boiler if in vanity slot
+-	@PKE
+	-	Prevent widgets from fading when inventory active (only edit mode)
+	-	Fix text scroll halting
+-	Increase loot drop chance for cursed bones
+-	Fix cyborg scrap drops
+-	Remove default MMM world gens
+-	Remove mana shard from dungeon chest
+-	Edit cursed bones message
+-	@FMC (2.0.0)
+-	@FMC: Implement "Geothaumatic Surveillance Stations"
+	-	@AM: Disable "IsGeothaumSurveyStationBreakable", "EnableGeothaumSurveyStationRecipe" settings
+
+
+	-	Fix station use for free viewing
+	-	Reduce scan range for shards
+	-	Fix station design
+	-	@Test
+	-	Implement station use (binocs-like)
+	-	Finish world gen structure (silly purple balloon wall + luminite brick wall)
+	-	Implement map chunk reveals when near station
+		-	Alert about map use when near station
+		-	Edit code to show shard chunks
+		-	Import chunk code from Orbs mod
+	-	Remove discovery
+	-	Implement discovery
+	-	Add credit "DJEN"
+	-	Implement world gen (3x6 wall formation, including MMM on bottom)
+	-	Create sprite
+	-	Define wall tile
+	-	@Plan
+		-	Generated in any reasonably-open underground space that isn't near other stations
+		-	Activated when player draws near
+		-	When activated, highlights nearby map squares that have mana shards
+		-	Also allows viewing distant areas as if using the zoomed in binocs, but without a range limit
+		-	Has a Mounted Mirror attached to its base (replaces existing world gen mirrors)
 [v0.37.0]
--	@Test
 -	Update package mod
--	@Mod Libs General
-	-	Refactor projectile libs to base sync off of `Main.projectileIdentity[owner, uuid]`
--	Force herb seeds to disappear
--	Fix raft MM in-game tip (MP only?)
--	Add PKE chest tip
-
-
+-	Fix raft start in-game label (MP only?)
 -	@Necrotis (2.2.0.2)
 -	@Messages (1.2.0.4)
 -	@Objectives (0.7.2.3)

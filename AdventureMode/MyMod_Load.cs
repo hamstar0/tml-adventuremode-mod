@@ -49,6 +49,10 @@ namespace AdventureMode {
 				this.ModInteractions.LoadBullwhip
 			);
 			LoadMod(
+				new string[] { "FindableManaCrystals" },
+				this.ModInteractions.LoadFindableManaCrystals
+			);
+			LoadMod(
 				new string[] { "Nihilism" },
 				this.ModInteractions.LoadNihilism
 			);
