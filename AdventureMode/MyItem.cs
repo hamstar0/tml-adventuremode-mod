@@ -42,5 +42,44 @@ namespace AdventureMode {
 				break;
 			}
 		}
+
+
+		////////////////
+
+		public override void PostUpdate( Item item ) {
+			var config = AMConfig.Instance;
+
+			if( config.ForceRemoveHerbSeeds ) {
+				switch( item.type ) {
+				case ItemID.DaybloomSeeds:
+				case ItemID.BlinkrootSeeds:
+				case ItemID.DeathweedSeeds:
+				case ItemID.FireblossomSeeds:
+				case ItemID.MoonglowSeeds:
+				case ItemID.ShiverthornSeeds:
+				case ItemID.WaterleafSeeds:
+					item.active = false;
+					break;
+				}
+			}
+		}
+
+		public override void UpdateInventory( Item item, Player player ) {
+			var config = AMConfig.Instance;
+
+			if( config.ForceRemoveHerbSeeds ) {
+				switch( item.type ) {
+				case ItemID.DaybloomSeeds:
+				case ItemID.BlinkrootSeeds:
+				case ItemID.DeathweedSeeds:
+				case ItemID.FireblossomSeeds:
+				case ItemID.MoonglowSeeds:
+				case ItemID.ShiverthornSeeds:
+				case ItemID.WaterleafSeeds:
+					item.active = false;
+					break;
+				}
+			}
+		}
 	}
 }

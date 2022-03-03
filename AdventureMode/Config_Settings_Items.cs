@@ -33,5 +33,10 @@ namespace AdventureMode {
 
 		[DefaultValue( true )]
 		public bool NerfReaverShark { get; set; } = true;
+
+		////
+
+		[DefaultValue( true )]
+		public bool ForceRemoveHerbSeeds { get; set; } = true;
 	}
 }

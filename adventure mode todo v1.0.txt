@@ -64,12 +64,14 @@ v1
 -	@Test
 -	@Mod Libs General
 	-	Refactor projectile libs to base sync off of `Main.projectileIdentity[owner, uuid]`
+-	@Lost Expeditions
+	-	Add PKE chest label
+-	@AML
+	-	Add objective: Locate green PKE reading
+	-	Add initial objective: Stop plague
+
+
 -	Force herb seeds to disappear
--	Add PKE chest label
--	Add objective: Locate green PKE reading
--	Add initial objective: Stop plague
-
-
 -	@Objectives (0.8.0)
 	-	Show unfinished objectives widget count on HUD above raft timer
 -	@HUD Elements Lib (4.1.0)
