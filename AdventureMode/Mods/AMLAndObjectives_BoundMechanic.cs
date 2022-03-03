@@ -13,12 +13,15 @@ namespace AdventureMode.Mods {
 
 			if( !isDone ) {
 				Timers.RunUntil( () => {
-					if( !isDone && NPC.downedBoss3 && !NPC.savedMech ) {
-						this.AddBoundMechanicMapMarker( markerName );
-
-						return false;
+					if( NPC.downedBoss3 ) {
+						if( !NPC.savedMech ) {
+							this.AddBoundMechanicMapMarker( markerName );
+						} else {
+							MapMarkersAPI.RemoveFullScreenMapMarker( markerName );
+						}
 					}
-					return !isDone;
+
+					return NPC.savedMech;
 				}, false );
 			} else {
 				MapMarkersAPI.RemoveFullScreenMapMarker( markerName );

@@ -19,7 +19,7 @@ namespace AdventureMode.Logic {
 				AMMod.Instance.RaftTimerHUD = new TimerHUD(
 					pos: pos,
 					dim: dim,
-					title: "Time until raft restocks:",
+					title: "Time until raft restocks",
 					startTimeTicks: (long)ticks,
 					showTicks: false,
 					enabler: () => Main.playerInventory

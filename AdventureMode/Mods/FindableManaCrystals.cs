@@ -9,6 +9,7 @@ namespace AdventureMode.Mods {
 
 			config.SetOverride( nameof(config.IsGeothaumSurveyStationBreakable), false );
 			config.SetOverride( nameof(config.EnableGeothaumSurveyStationRecipe), false );
+			config.SetOverride( nameof(config.GeothaumSurveyStationDropsItem), false );
 		}
 	}
 }

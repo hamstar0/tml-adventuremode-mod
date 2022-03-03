@@ -13,13 +13,18 @@ namespace AdventureMode.Mods {
 			string markerName = "AdventureMode_Spawn_BoundGoblin";
 			
 			if( !isDone ) {
+				Main.instance.LoadNPC( NPCID.BoundGoblin );
+				
 				Timers.RunUntil( () => {
-					if( !isDone && NPC.downedGoblins && !NPC.savedGoblin ) {
-						this.AddBoundGoblinMapMarker( markerName );
-
-						return false;
+					if( NPC.downedGoblins ) {
+						if( !NPC.savedGoblin ) {
+							this.AddBoundGoblinMapMarker( markerName );
+						} else {
+							MapMarkersAPI.RemoveFullScreenMapMarker( markerName );
+						}
 					}
-					return !isDone;
+
+					return NPC.savedGoblin;
 				}, false );
 			} else {
 				MapMarkersAPI.RemoveFullScreenMapMarker( markerName );
@@ -32,8 +37,6 @@ namespace AdventureMode.Mods {
 			int goblinX = myworld.UndergroundDesertBounds.X + (myworld.UndergroundDesertBounds.Width / 2);
 			int goblinY = myworld.UndergroundDesertBounds.Y + ((2 * myworld.UndergroundDesertBounds.Height) / 3);
 
-			Main.instance.LoadNPC( NPCID.BoundGoblin );
-			
 			MapMarkersAPI.SetFullScreenMapMarker(
 				id: markerName,
 				tileX: goblinX,

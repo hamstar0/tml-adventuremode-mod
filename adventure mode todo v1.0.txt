@@ -58,32 +58,46 @@ v1
 	-	Implement messages that use UIElement bodies
 -	@Soul Barriers
 	-	Verify fixed access barrier destroy sync
+-	@Ergophobia
+	-	Set platform placement via. r-click to create max-length bridges
 [v0.38.0]
 -	@Test
 -	@Mod Libs General
 	-	Refactor projectile libs to base sync off of `Main.projectileIdentity[owner, uuid]`
 -	Force herb seeds to disappear
 -	Add PKE chest label
--	@Objectives
+-	Add objective: Locate green PKE reading
+-	Add initial objective: Stop plague
+
+
+-	@Objectives (0.8.0)
 	-	Show unfinished objectives widget count on HUD above raft timer
-	-	Add money rewards every objective met
-	-	Show quest rewards for each objective
--	Prevent wall breaking
--	@SA
+-	@HUD Elements Lib (4.1.0)
+-	@Steampunk Arsenal (0.18.0.1)
 	-	Don't charge boiler if in vanity slot
--	@PKE
-	-	Prevent widgets from fading when inventory active (only edit mode)
-	-	Fix text scroll halting
 -	Increase loot drop chance for cursed bones
+-	Disable enemy barriers (for now)
 -	Fix cyborg scrap drops
 -	Remove default MMM world gens
 -	Remove mana shard from dungeon chest
--	Edit cursed bones message
+-	@PKE (1.7.0.2)
+	-	Prevent widgets from fading when inventory active (only edit mode)
+-	@AM
+	-	Disable "GeothaumSurveyStationDropsItem" setting
+-	@FMC
+	-	Verify station cant be blocked by world gen
+	-	Improve station
+		-	Implement right-click to activate scan state
+		-	Add activation state animation
+		-	Fix perma-binoc scan state bug
+-	@Soul Barriers (2.0.0.1)
+-	@Orbs (1.7.1)
+	-	Prevent wall breaking
+-	@AML (0.19.0.1)
+	-	Edit cursed bones message
 -	@FMC (2.0.0)
 -	@FMC: Implement "Geothaumatic Surveillance Stations"
 	-	@AM: Disable "IsGeothaumSurveyStationBreakable", "EnableGeothaumSurveyStationRecipe" settings
-
-
 	-	Fix station use for free viewing
 	-	Reduce scan range for shards
 	-	Fix station design

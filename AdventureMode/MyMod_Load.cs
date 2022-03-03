@@ -53,6 +53,10 @@ namespace AdventureMode {
 				this.ModInteractions.LoadFindableManaCrystals
 			);
 			LoadMod(
+				new string[] { "MountedMagicMirrors" },
+				this.ModInteractions.LoadMountedMagicMirrors
+			);
+			LoadMod(
 				new string[] { "Nihilism" },
 				this.ModInteractions.LoadNihilism
 			);
@@ -107,6 +111,10 @@ namespace AdventureMode {
 			LoadMod(
 				new string[] { "RuinedItems" },
 				this.ModInteractions.LoadRuinedItems
+			);
+			LoadMod(
+				new string[] { "SoulBarriers" },
+				this.ModInteractions.LoadSoulBarriers
 			);
 			LoadMod(
 				new string[] { "WorldGates", "SpiritWalking" },

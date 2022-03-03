@@ -10,8 +10,10 @@ namespace AdventureMode.Mods {
 			var config = CursedBones.CursedBonesConfig.Instance;
 			var cbTile = ModContent.GetInstance<CursedBones.Tiles.CursedBonesTile>();
 
-			float ectoPerc = 1f / 10f;
-			float orbPerc = 0.5f / 10f;
+			float ectoPerc = 3f / 20f;
+			float orbPerc = 1f / 15f;
+
+			//
 
 			cbTile.AddCustomItemDropHook( ( x, y ) => {
 				int itemType = -1;
@@ -22,6 +24,8 @@ namespace AdventureMode.Mods {
 				} else if( myrand < (ectoPerc + orbPerc) ) {
 					itemType = ModContent.ItemType<Orbs.Items.WhiteOrbItem>();
 				}
+
+				//
 				
 				if( itemType != -1 ) {
 					Item.NewItem(
