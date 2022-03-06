@@ -53,6 +53,9 @@
     <Reference Include="LockedAbilities">
       <HintPath>..\..\..\Locked Abilities\Project\LockedAbilities\bin\Release\net452\LockedAbilities.dll</HintPath>
     </Reference>
+    <Reference Include="LostExpeditions">
+      <HintPath>..\..\..\Lost Expeditions\Project\LostExpeditions\bin\Release\net452\LostExpeditions.dll</HintPath>
+    </Reference>
     <Reference Include="Messages">
       <HintPath>..\..\..\Messages\Project\Messages\bin\Release\net452\Messages.dll</HintPath>
     </Reference>

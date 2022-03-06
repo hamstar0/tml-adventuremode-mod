@@ -29,6 +29,11 @@ namespace AdventureMode {
 
 		public (int TileX, int TileY) NewSpawn { get; internal set; } = (0, 0);
 
+		////
+
+		public (int tileX, int tileY)? CachedPKEChestTile { get; internal set; } = null;
+		public int CachedPKEChestIdx { get; internal set; } = 0;
+
 
 
 		////////////////
@@ -38,6 +43,8 @@ namespace AdventureMode {
 			this.HouseKitFurnitureIdx = 0;
 			this.JungleSignTile = (0, 0);
 			this.Raft = new RaftWorldData();
+			this.CachedPKEChestTile = null;
+			this.CachedPKEChestIdx = 0;
 		}
 
 		////
@@ -161,6 +168,7 @@ namespace AdventureMode {
 
 		public override void PostDrawTiles() {
 			WorldLogic.HighlightRaftMirror_If( this );
+			WorldLogic.HighlightPKEChest_If( this );
 		}
 	}
 }
