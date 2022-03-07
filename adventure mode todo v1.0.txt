@@ -63,11 +63,12 @@ v1
 [v0.38.0]
 -	@Test via testers MP
 -	@Test via private MP
--	@Mod Libs General
+
+
+-	@Mod Libs Core (1.4.0.1)
+-	@Mod Libs General (1.4.0)
 	-	Refactor projectile libs to base sync off of `Main.projectileIdentity[owner, uuid]`
 -	Reduce quantity of speedloaders at beach LE
-
-
 -	Fix PKE chest label
 -	Fix LE gens
 -	Fix missing subsequent NPC dialogues
