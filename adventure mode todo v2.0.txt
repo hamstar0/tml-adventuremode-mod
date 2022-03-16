@@ -259,6 +259,15 @@ v1.1
 			-	Gens from dirt layer on down, getting denser with depth
 			-	Gens as a web of thin, long strands
 	-	Implement Cursed Thickets (spike variation of brambles)
+-	@Create "Inspiration" mod
+	-	(For @AM) Implement non-PKE things that award "inspiration"
+		-	...
+		-	@Plan for things that award "inspiration points"
+			-	1: PKE scans, LE discoveries, Geothaum Station discoveries, World gate breaches
+			-	2: Boss/Trickster kills, Orbs used
+	-	Modify crafting to require "inspiration points"
+	-	Add HUD display of inspiration points
+	-	Define mod
 -	@Surroundings
 	-	Fix parallax
 	-	Refactor overlays into injection hooks

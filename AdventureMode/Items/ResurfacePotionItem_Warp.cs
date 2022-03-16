@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using ModLibsCore.Libraries.Debug;
 using ModLibsGeneral.Libraries.Players;
 using ModLibsGeneral.Libraries.World;
 
@@ -67,7 +68,11 @@ namespace AdventureMode.Items {
 		public static void ApplyWarp( Player player, Item item ) {
 			var myplayer = player.GetModPlayer<AMPlayer>();
 
+			//
+
 			ResurfacePotionItem.CreateWarpParticles( player.position, player.width, player.height );
+
+			//
 
 			player.grappling[0] = -1;
 			player.grapCount = 0;
@@ -79,13 +84,21 @@ namespace AdventureMode.Items {
 				}
 			}
 
+			//
+
 			bool immune = player.immune;
 			int immuneTime = player.immuneTime;
+
 			PlayerWarpLibraries.Teleport( player, myplayer.ResurfacePoint, 0 );
+
 			player.immune = immune;
 			player.immuneTime = immuneTime;
 
+			//
+
 			ResurfacePotionItem.CreateWarpParticles( player.position, player.width, player.height );
+
+			//
 
 			if( ItemLoader.ConsumeItem(item, player) && item.stack > 0 ) {
 				item.stack--;

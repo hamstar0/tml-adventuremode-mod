@@ -13,6 +13,9 @@ v1
 -	Update mods list in mod readme/description
 -	Add Nodecraft plug
 -	Remove whip pvp
+-	Set PBG to be given from talking to the guide
+-	F&T
+	-	Set dungeon LE to not (rarely?) dig 1 tile (dedi server world gen?)
 -	@Bullwhip
 	-	Fix lingering whip projectile (destroys while active)
 -	@Powerful Magic
@@ -56,15 +59,56 @@ v1
 	-	Implement custom UIElement for displaying an animated portrait with a message
 	-	Implement custom UIElement for displaying an image with a message
 	-	Implement messages that use UIElement bodies
--	@Soul Barriers
-	-	Verify fixed access barrier destroy sync
 -	@Ergophobia
 	-	Set platform placement via. r-click to create max-length bridges
-[v0.38.0]
+[v0.39.0]
 -	@Test via testers MP
 -	@Test via private MP
+-	@Boss Reigns (1.3.1.2)
+-	@The Trickster (1.7.5.5)
 
 
+-	F&T scans
+	-	Widen tile scans
+	-	Verify scannable barriers
+-	F&T MP
+	-	Fix resurface potion returning to spawn
+	-	Fix missing PKE colors
+	-	Fix cursed skull projectiles destroying PBGs
+-	Fix scans upon inventory items
+-	@AML (0.20.0)
+-	@PKE Meter (2.0.0)
+-	Make PKE able to 'scan' things to generate message alerts
+	-	@AML Implement scannable messages
+		-	Migrate messages to scannables
+		-	@Scannables
+			-	1: Orbs, Bones, Pots, Ectoplasms, Tricksters, Barriers, Cyborgs, Magitech
+			-	2: Canopic Jars, Elixirs, Mana Crystals/Shards, TMR, Bandoliers
+			-	3: MMMs, Geothaum Stations, Kits, Ropes, Dark Hearts/Pieces, Bullwhip, Binocs
+	-	Don't show item alerts without a scanner in inventory
+	-	Implement saving scans
+	-	Set scanning to be automatic; no left-click needed
+	-	Set PKE mouse icon + alert to not need PKE meter
+	-	Show icons for scannable items
+	-	Add tooltip for scanning
+	-	Implement "can scan" fx
+		-	Implement mouse icon for scannable under mouse
+		-	Implement sound cue
+		-	Implement HUD animation 
+	-	Implement scan feature (left click upon screen object)
+		-	Add hooks for scan completion
+		-	Define scannable regions data
+		-	Add sound for scan
+		-	Implement item use animation (use time locks against re-use)
+[v0.38.0]
+-	@Steampunk Arsenal (0.18.0.2)
+-	@Boss Reigns (1.3.1.1)
+-	@Soul Barriers (2.1.0)
+-	F&T MP
+	-	Fix fast evaporating PBG barrier (prematurely detecting player projectiles?)
+	-	Fix barriers vs world gates (test with debug message to indicate source of PBG fails)
+	-	Fix exceptions
+-	@Test via private MP
 -	@Mod Libs Core (1.4.0.1)
 -	@Mod Libs General (1.4.0)
 	-	Refactor projectile libs to base sync off of `Main.projectileIdentity[owner, uuid]`
