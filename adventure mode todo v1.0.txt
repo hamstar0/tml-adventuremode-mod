@@ -18,56 +18,37 @@ v1
 	-	Set dungeon LE to not (rarely?) dig 1 tile (dedi server world gen?)
 -	@Bullwhip
 	-	Fix lingering whip projectile (destroys while active)
+-	@TMR
+	-	Fix TMR holster animation sync?
+	-	Fix TMR (and projectile) not syncing or appearing on other clients
+-	@Ergophobia
+	-	Set platform placement via. r-click to create max-length bridges
+-	@HUD Element Libs
+	-	Save "collisions enabled" state for elements
 -	@Powerful Magic
 	-	Fix book hold offset when focusing
 [v0.39.0]
--	@Trailer 2.0
-	-	Explain basics of story (world threatened by plague etc.)
-		-	Brief intro cutscene footage
-		-	Dialogue messages
-	-	Action stuff ("this will be a dangerous journey requiring resourcefulness etc.")
-		-	Bullwhip repelling an ambush
-		-	Gun battle with bandits
-		-	Gun battle vs zombie horde
-		-	Technical messages
-		-	Using rail kit to bypass corruption
-		-	Footage of Trickster fight
-	-	Instructional intro about PKE meter + binoculars
-		-	"Welcome to Adventure Mode"
-		-	"This is a journey of discovery. Use of informational tools & resources is imperative."
-	-	Instructional footage of following objectives + dialogue
-	-	Instructional footage of using orbs to tunnel into the ground
-		-	"Though you can't dig, you aren't without options."
-	-	Instructional footage on traveling + boss fights
-	-	Instructional footage of avoiding Necrotis
-	-	Instructional footage of breaching world gates
-	-	Describe magic overhaul (segued)
-	-	Briefly warn about the Trickster
-	-	Outro books + cyborgs as "find information and evidence about why the island is deadly"
--	@HUD Element Libs
-	-	Save "collisions enabled" state for elements
--	@TMR
-	-	Fix TMR holster animation sync?
--	@AML
-	-	Add diagrams to relevant technical messages
-	-	Add portraits to messages
--	@TMR
-	-	Fix TMR (and projectile) not syncing or appearing on other clients
--	@Messages
-	-	Implement message icon hover behavior
-	-	Set category messages to use larger font + lighter bg
-	-	Implement custom UIElement for displaying an animated portrait with a message
-	-	Implement custom UIElement for displaying an image with a message
-	-	Implement messages that use UIElement bodies
--	@Ergophobia
-	-	Set platform placement via. r-click to create max-length bridges
-[v0.39.0]
 -	@Test via testers MP
 -	@Test via private MP
+
+
+-	@Grappletech (2.2.0)
+-	@Ergophobia (1.14.0.2)
+-	@Necrotis (2.2.1)
+-	F&T
+	-	@AML
+		-	Set as scannables
+			-	Fallen cyborgs
+			-	Dilluted ectoplasms
+	-	@PKE Meter
+		-	Fix sound alerts for items when PKE Meter not present
+	-	@Grappletech
+		-	Set rail mount grapple to not trigger grapple overlay
+		-	Allow grappling to partial corner protrusions on wider squares
+	-	@Ergophobia
+		-	Fix 'open space' error
 -	@Boss Reigns (1.3.1.2)
 -	@The Trickster (1.7.5.5)
-
-
 -	F&T scans
 	-	Widen tile scans
 	-	Verify scannable barriers

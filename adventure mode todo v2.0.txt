@@ -153,6 +153,29 @@ v1.2
 	-	@Add Alerted Ambushes mod? (also generates cursed brambles)
 	-	@Soul Barriers: Implement "Crystalis" mode with the PBG that allows breathers during bosses
 v1.1
+-	@Trailer 2.0
+	-	Explain basics of story (world threatened by plague etc.)
+		-	Brief intro cutscene footage
+		-	Dialogue messages
+	-	Action stuff ("this will be a dangerous journey requiring resourcefulness etc.")
+		-	Bullwhip repelling an ambush
+		-	Gun battle with bandits
+		-	Gun battle vs zombie horde
+		-	Technical messages
+		-	Using rail kit to bypass corruption
+		-	Footage of Trickster fight
+	-	Instructional intro about PKE meter + binoculars
+		-	"Welcome to Adventure Mode"
+		-	"This is a journey of discovery. Use of informational tools & resources is imperative."
+	-	Instructional footage of following objectives + dialogue
+	-	Instructional footage of using orbs to tunnel into the ground
+		-	"Though you can't dig, you aren't without options."
+	-	Instructional footage on traveling + boss fights
+	-	Instructional footage of avoiding Necrotis
+	-	Instructional footage of breaching world gates
+	-	Describe magic overhaul (segued)
+	-	Briefly warn about the Trickster
+	-	Outro books + cyborgs as "find information and evidence about why the island is deadly"
 -	F&T
 	-	Fix herbs and herb seeds still dropping
 	-	Add failsafe against surprise KS spawns
@@ -236,6 +259,14 @@ v1.1
 	-	Ways to improve terrain (make it more interesting)
 	-	Utility panel to show active timers
 	-	Self destructing environments
+-	@AML
+	-	Add diagrams to relevant technical messages
+	-	Add portraits to messages
+-	@Messages
+	-	Implement message icon hover behavior
+	-	Set category messages to use larger font + lighter bg
+	-	Implement custom UIElement for displaying an image with a message
+	-	Implement messages that use UIElement bodies
 -	@AML
 	-	Set P.B.G Magnetic Commutator to generate in underground LEs or jungle-side LE
 -	@Soul Barriers
