@@ -41,6 +41,10 @@ namespace AdventureMode {
 				this.ModInteractions.LoadPKEMeter
 			);
 			LoadMod(
+				new string[] { "PotLuck" },
+				this.ModInteractions.LoadPotLuck
+			);
+			LoadMod(
 				new string[] { "BossReigns", "PKEMeter" },
 				this.ModInteractions.LoadBossReignsAndPKEMeter
 			);

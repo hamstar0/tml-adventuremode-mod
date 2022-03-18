@@ -30,11 +30,11 @@ v1
 [v0.39.0]
 -	@Test via testers MP
 -	@Test via private MP
+
+
 -	@Mod Libs Utility Content (1.1.0.1)
 -	@Ruined Items (2.11.2.1)
 -	@Necrotis (2.2.1.1)
-
-
 -	Set gems scannable with message hint about crafting magic tools to "better understand magic phenomena"
 -	Set pots to rarely add a wraith to the spawn pool
 -	Set pots to drop gems occasionally
