@@ -42,9 +42,6 @@ namespace AdventureMode {
 				switch( heldItem.type ) {
 				case ItemID.RodofDiscord:
 					return PlayerLogic.UpdateRodOfDiscordUse( this );
-				default:
-					ResurfacePotionItem.PreItemCheck_RunBehaviorIf( this.player, heldItem );
-					break;
 				}
 			}
 

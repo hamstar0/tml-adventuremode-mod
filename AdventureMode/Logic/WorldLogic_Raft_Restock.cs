@@ -20,7 +20,7 @@ namespace AdventureMode.Logic {
 				? remainingTicks.Value
 				: AMConfig.Instance.RaftBarrelRestockSecondsDuration * 60;
 
-			if( Main.netMode != NetmodeID.Server ) {
+			if( Main.netMode == NetmodeID.SinglePlayer ) {
 //LogLibraries.Log( "RAFT TIMER 1 "+timerTicks );
 				WorldLogic.DeclareTimerHUD( timerTicks );
 			}

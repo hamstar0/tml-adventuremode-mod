@@ -2,35 +2,12 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using ModLibsCore.Services.Timers;
 using AdventureMode.Recipes;
 
 
 namespace AdventureMode.Items {
 	public partial class ResurfacePotionItem : ModItem {
-		public static void PreItemCheck_RunBehaviorIf( Player player, Item item ) {
-			if( item.type != ModContent.ItemType<ResurfacePotionItem>() ) {
-				return;
-			}
-
-			// Item animation I guess means it's activated?
-			if( player.itemAnimation >= 1 ) {
-				// Item animation without `itemTime` means it's newly activated, and assumes itemAnimation expires first?
-				if( player.itemTime == 0 ) {
-					player.itemTime = PlayerHooks.TotalUseTime( item.useTime, player, item );
-				} else if( player.itemTime == 2 ) {
-					if( ResurfacePotionItem.CanResurface(player, out string msg) ) {
-						ResurfacePotionItem.ApplyWarp( player, item );
-					} else {
-						Main.NewText( msg, Color.Yellow );
-					}
-				}
-			}
-		}
-
-
-
-		////////////////
-
 		public override void SetStaticDefaults() {
 			this.DisplayName.SetDefault( "Resurface Potion" );
 			this.Tooltip.SetDefault(
@@ -68,6 +45,16 @@ namespace AdventureMode.Items {
 		////////////////
 
 		public override bool UseItem( Player player ) {
+			Timers.SetTimer( "ResurfacePotionUse", 3, false, () => {
+				if( ResurfacePotionItem.CanResurface( player, out string msg ) ) {
+					ResurfacePotionItem.ApplyWarp( player, item );
+				} else {
+					Main.NewText( msg, Color.Yellow );
+				}
+
+				return false;
+			} );
+
 			return true;
 		}
 

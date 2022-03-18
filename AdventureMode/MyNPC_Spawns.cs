@@ -14,6 +14,11 @@ namespace AdventureMode {
 		private NPCSpawnInfo? _CurrentSpawnInfo = null;
 
 
+		////////////////
+
+		internal ISet<int> QueuedExclusiveSpawns = new HashSet<int>();
+
+
 
 		////////////////
 
@@ -47,6 +52,24 @@ namespace AdventureMode {
 		////////////////
 		
 		public override void EditSpawnPool( IDictionary<int, float> pool, NPCSpawnInfo spawnInfo ) {
+			if( this.QueuedExclusiveSpawns.Count > 0 ) {
+				pool.Clear();
+
+				//
+
+				foreach( int npcType in this.QueuedExclusiveSpawns ) {
+					pool[ npcType ] = 1f;
+				}
+
+				//
+
+				this.QueuedExclusiveSpawns.Clear();
+
+				return;
+			}
+
+			//
+
 			if( NPCLogic.CanBoundGoblinSpawn(spawnInfo) && !NPC.AnyNPCs(NPCID.BoundGoblin) ) {
 				pool[ NPCID.BoundGoblin ] = 1f;
 			}

@@ -19,6 +19,8 @@ namespace AdventureMode.Logic {
 				return false;
 			}
 
+			//
+
 			int chestIdx = myworld.GetRaftBarrelChestIndex();
 			if( chestIdx == -1 ) {
 				LogLibraries.Alert( "No raft barrel found to restock!" );
@@ -28,15 +30,19 @@ namespace AdventureMode.Logic {
 				return false;
 			}
 
+			//
+
 			ItemQuantityDefinition def = WorldLogic.PickItemForRaft();
 			Item newItem = def.GetItem();
 			Chest chest = Main.chest[ chestIdx ];
+
+			//
 
 			int emptyChestIdx = -1;
 
 			for( int i=0; i<chest.item.Length; i++ ) {
 				Item currItem = chest.item[i];
-				if( currItem?.active == true ) {
+				if( currItem?.IsAir == false ) {
 					continue;
 				}
 
@@ -49,6 +55,8 @@ namespace AdventureMode.Logic {
 				color = Color.Yellow;
 				return false;
 			}
+
+			//
 
 			chest.item[emptyChestIdx] = newItem;
 

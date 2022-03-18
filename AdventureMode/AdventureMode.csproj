@@ -119,6 +119,9 @@
     <Reference Include="PKEMeter">
       <HintPath>..\..\..\PKE Meter\Project\PKEMeter\bin\Release\net452\PKEMeter.dll</HintPath>
     </Reference>
+    <Reference Include="PotLuck">
+      <HintPath>..\..\..\Pot Luck\Project\PotLuck\bin\Release\net452\PotLuck.dll</HintPath>
+    </Reference>
     <Reference Include="PowerfulMagic">
       <HintPath>..\..\..\Powerful Magic\Project\PowerfulMagic\bin\Release\net452\PowerfulMagic.dll</HintPath>
     </Reference>
