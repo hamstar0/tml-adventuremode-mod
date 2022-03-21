@@ -6,16 +6,10 @@ v1
 	-	Create thread
 	-	Setup docs
 -	Fix custom config float elements rendering as black (also debug them not applying value changes)
--	@Test hosted MP WoF playthrough
-	-	Test mining cursed bones
-	-	Debug anima drain while dead (MP? during boss?)
-	-	Bullwhip hotkey
+-	@Final MP Test
 -	Update mods list in mod readme/description
 -	Add Nodecraft plug
 -	Remove whip pvp
--	Set PBG to be given from talking to the guide
--	F&T
-	-	Set dungeon LE to not (rarely?) dig 1 tile (dedi server world gen?)
 -	@Bullwhip
 	-	Fix lingering whip projectile (destroys while active)
 -	@TMR
@@ -27,11 +21,22 @@ v1
 	-	Save "collisions enabled" state for elements
 -	@Powerful Magic
 	-	Fix book hold offset when focusing
+-	@Necrotis
+	-	Set Omnis to begin at <1% anima?
+	-	Alert to "spiritual replenishment required" to recover from necrotis
+-	@FMC
+	-	Add message alert about "magic phenomena" when using binocs and getting a high reading
+	-	Increase binoc flicker intensity/sensitivity
+-	@Grappletech
+	-	Reduce display duration and intensity of hookables overlay
+	-	Reduce edge grabbiness by 1
+-	Attempt to make a blatant "Use magic to find magic" message more clearly
+-	Attempt to reduce influx of start messages?
+-	Double gem drops from pots
+-	@Test via MP
+
+
 [v0.39.0]
--	@Test via testers MP
--	@Test via private MP
-
-
 -	@Mod Libs Utility Content (1.1.0.1)
 -	@Ruined Items (2.11.2.1)
 -	@Necrotis (2.2.1.1)

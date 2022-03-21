@@ -7,9 +7,9 @@ using Terraria.ModLoader.Config;
 namespace AdventureMode {
 	public partial class AMConfig : ModConfig {
 		[Range( 0f, 1f )]
-		[DefaultValue( 0.1f )]
+		[DefaultValue( 0.3f )]
 		[CustomModConfigItem( typeof( MyFloatInputElement ) )]
-		public float PotGemPercentChance { get; set; } = 0.1f;
+		public float PotGemPercentChance { get; set; } = 0.3f;
 
 		[Range( 0f, 1f )]
 		[DefaultValue( 0.02f )]
