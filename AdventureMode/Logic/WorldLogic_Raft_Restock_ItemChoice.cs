@@ -42,7 +42,7 @@ namespace AdventureMode.Logic {
 
 			for( int i=0; i<chest.item.Length; i++ ) {
 				Item currItem = chest.item[i];
-				if( currItem?.IsAir == false ) {
+				if( currItem?.active == true ) {
 					continue;
 				}
 

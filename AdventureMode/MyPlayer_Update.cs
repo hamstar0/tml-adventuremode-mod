@@ -38,7 +38,7 @@ namespace AdventureMode {
 		public override bool PreItemCheck() {
 			Item heldItem = this.player.HeldItem;
 
-			if( heldItem?.IsAir != true ) {
+			if( heldItem?.active == true ) {
 				switch( heldItem.type ) {
 				case ItemID.RodofDiscord:
 					return PlayerLogic.UpdateRodOfDiscordUse( this );

@@ -13,6 +13,8 @@ namespace AdventureMode.WorldGeneration {
 
 			if( foundNewSpawn ) {
 				AMWorldGen.SetSpawn( tileX, tileY - 2 );
+			} else {
+				LogLibraries.Warn( "Could not set beach as default spawn: Could not locate." );
 			}
 		}
 

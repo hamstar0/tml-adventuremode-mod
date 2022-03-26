@@ -9,6 +9,7 @@ using ModLibsCore.Classes.PlayerData;
 using ModLibsCore.Libraries.Debug;
 using ModLibsCore.Libraries.TModLoader;
 using ModLibsCore.Services.Timers;
+using ModLibsGeneral.Services.Messages.Simple;
 using Messages;
 using AdventureMode.Logic;
 using AdventureMode.Packets;
@@ -77,13 +78,29 @@ namespace AdventureMode {
 			var config = AMConfig.Instance;
 			var myplayer = this.Player.GetModPlayer<AMPlayer>();
 			var myworld = ModContent.GetInstance<AMWorld>();
-			bool isNotAdventurer = myplayer.IsAdventurer || config.DebugModeSkipPlayerValidityCheck;
-			bool isNotAdventureWorld = myworld.IsCurrentWorldAdventure || config.DebugModeSkipWorldValidityCheck;
 
-			if( !isNotAdventurer ) {
-				Main.NewText( "Your character is not initialized for Adventure Mode. Exiting to menu in 15 seconds...", Color.Yellow );
+			//
+
+			bool isAdventurer = myplayer.IsAdventurer;
+
+			if( !isAdventurer ) {
+				if( PlayerLogic.RetrofitPlayerInventory_If(this.Player) ) {
+					isAdventurer = true;
+					myplayer.IsAdventurer = true;
+				}
+
+				isAdventurer |= config.DebugModeSkipPlayerValidityCheck;
+
+				if( !isAdventurer ) {
+					Main.NewText( "Your character is not initialized for Adventure Mode. Exiting to menu in 15 seconds...", Color.Yellow );
+				}
 			}
-			if( !isNotAdventureWorld ) {
+
+			//
+
+			bool isAdventureWorld = myworld.IsCurrentWorldAdventure || config.DebugModeSkipWorldValidityCheck;
+
+			if( !isAdventureWorld ) {
 				Main.NewText( "This world is not initialized for Adventure Mode. Exiting to menu in 15 seconds...", Color.Yellow );
 			}
 
@@ -109,16 +126,27 @@ namespace AdventureMode {
 
 			//
 
-			Timers.SetTimer( 15 * 60, true, () => {
-				if( !isNotAdventurer || !isNotAdventureWorld ) {
-					if( Main.netMode == NetmodeID.SinglePlayer || Main.netMode == NetmodeID.MultiplayerClient ) {
-						TmlLibraries.ExitToMenu( false );
-					} else if( Main.netMode == NetmodeID.Server ) {
-						TmlLibraries.ExitToDesktop( false );
+			if( !isAdventurer || !isAdventureWorld ) {
+				int seconds = 15;
+
+				Timers.SetTimer( 60, true, () => {
+					seconds--;
+
+					if( seconds <= 0 ) {
+						if( Main.netMode != NetmodeID.Server ) {
+							TmlLibraries.ExitToMenu( false );
+						} else {
+							TmlLibraries.ExitToDesktop( false );
+						}
+					} else {
+						if( Main.netMode != NetmodeID.Server ) {
+							SimpleMessage.PostMessage( "Exitting to menu in:", (seconds+1)+" seconds", 60 );
+						}
 					}
-				}
-				return false;
-			} );
+
+					return seconds > 0;
+				} );
+			}
 		}
 
 

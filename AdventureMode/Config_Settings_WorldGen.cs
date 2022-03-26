@@ -9,6 +9,7 @@ namespace AdventureMode {
 		public float WorldGenChestPotionMultiplier { get; set; } = 2f;
 
 		///
+
 		[DefaultValue( true )]
 		[ReloadRequired]
 		public bool SetDefaultSpawnToBeach { get; set; } = true;

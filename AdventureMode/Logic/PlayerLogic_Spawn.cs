@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using ModLibsCore.Libraries.Debug;
+using ModLibsGeneral.Libraries.Players;
 using ModLibsGeneral.Libraries.World;
 using ReadableBooks.Items.ReadableBook;
 using AdventureMode.Items;
@@ -54,8 +55,34 @@ namespace AdventureMode.Logic {
 
 
 		////////////////
+		
+		public static bool RetrofitPlayerInventory_If( Player player ) {
+			if( !PlayerLibraries.IsPlayerVanillaFresh(player) ) {
+				return false;
+			}
 
-		internal static void SetupInitialSpawnInventory( IList<Item> items ) {
+			//
+
+			IList<Item> invList = player.inventory.ToList();
+
+			PlayerLogic.SetupInitialSpawnInventoryTemplate( invList );
+
+			int i = 0;
+			foreach( Item item in invList ) {
+				player.inventory[i++] = item;
+			}
+
+			//
+
+			PlayerLogic.ApplyRecommendedInventorySortion( player );
+
+			return true;
+		}
+
+
+		////////////////
+
+		internal static void SetupInitialSpawnInventoryTemplate( IList<Item> items ) {
 			Item MakeItem( int itemType, int stack ) {
 				var item = new Item();
 				item.SetDefaults( itemType );
@@ -64,7 +91,7 @@ namespace AdventureMode.Logic {
 			}
 
 			//
-
+			
 			items.Add( MakeItem(ItemID.WoodenHammer, 1) );
 
 			if( !AMConfig.Instance.EnableTorchRecipes ) {
@@ -78,16 +105,19 @@ namespace AdventureMode.Logic {
 			items.Add( PlayerLogic.CreateGuideBook() );
 		}
 
+
+		////
+
 		internal static void SetupInWorldSpawnInventory( Player player ) {
 			int invIdx = 0;
 
-			void AddInvItem( int itemType, int stack ) {
+			void addInvItem( int itemType, int stack ) {
 				if( invIdx >= player.inventory.Length ) {
 					LogLibraries.Alert( "Player inventory full." );
 					return;
 				}
 
-				while( !player.inventory[invIdx].IsAir ) {
+				while( player.inventory[invIdx]?.active == true ) {
 					invIdx++;
 					
 					if( invIdx >= player.inventory.Length ) {
@@ -109,26 +139,30 @@ namespace AdventureMode.Logic {
 
 			switch( WorldLibraries.GetSize() ) {
 			case WorldSize.SubSmall:
-				AddInvItem( ItemID.RopeCoil, 15 );
-				AddInvItem( resurfPotType, 2 );
+				addInvItem( ItemID.RopeCoil, 15 );
+				addInvItem( resurfPotType, 2 );
 				break;
 			case WorldSize.Small:
-				AddInvItem( ItemID.RopeCoil, 20 );
-				AddInvItem( resurfPotType, 3 );
+				addInvItem( ItemID.RopeCoil, 20 );
+				addInvItem( resurfPotType, 3 );
 				break;
 			case WorldSize.Medium:
-				AddInvItem( ItemID.RopeCoil, 30 );
-				AddInvItem( resurfPotType, 6 );
+				addInvItem( ItemID.RopeCoil, 30 );
+				addInvItem( resurfPotType, 6 );
 				break;
 			case WorldSize.Large:
-				AddInvItem( ItemID.RopeCoil, 40 );
-				AddInvItem( resurfPotType, 10 );
+				addInvItem( ItemID.RopeCoil, 40 );
+				addInvItem( resurfPotType, 10 );
 				break;
 			case WorldSize.SuperLarge:
-				AddInvItem( ItemID.RopeCoil, 45 );
-				AddInvItem( resurfPotType, 12 );
+				addInvItem( ItemID.RopeCoil, 45 );
+				addInvItem( resurfPotType, 12 );
 				break;
 			}
+
+			//
+
+			PlayerLogic.ApplyRecommendedInventorySortion( player );
 		}
 
 
