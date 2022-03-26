@@ -37,6 +37,8 @@ v1
 -	Attempt to reduce influx of start messages?
 [v0.40.0]
 -	@Test via MP
+
+
 -	Updates
 	-	@PKE Meter (2.0.0.1)
 	-	@Soul Barriers (3.0.0)
@@ -45,11 +47,9 @@ v1
 	-	@Bullwhip (1.5.0.1)
 	-	@Trickster (1.7.5.6)
 	-	@Lost Expeditions (1.1.0)
-	-	@AML (0.20.0.1)
--	Add scannable for wings
--	Attempt to make a blatant "Use magic to find magic" message more clearly
-
-
+	-	@AML (0.20.1)
+-	@AML
+	-	Attempt to make a blatant "Use magic to find magic" message more clearly
 -	Set new, non-AM players to be "converted" on joining a server
 -	Apply recommended player inventory loadout on spawn
 -	F&T
