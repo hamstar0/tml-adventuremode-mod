@@ -46,7 +46,7 @@ namespace AdventureMode {
 		
 		public override void SetupStartInventory( IList<Item> items, bool mediumcoreDeath ) {
 			if( !mediumcoreDeath ) {
-				PlayerLogic.SetupInitialSpawnInventoryTemplate( items );
+				PlayerLogic.SetupSpawnInventoryDataBeforeInWorld( items );
 
 				//
 				

@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using ModLibsCore.Libraries.Debug;
+using ModLibsGeneral.Libraries.Items;
 using ModLibsGeneral.Libraries.World.Chests;
 using MountedMagicMirrors.Items;
 using Orbs.Items;
@@ -52,7 +53,7 @@ namespace AdventureMode.WorldGeneration {
 			// Double all potions in world chests
 			foreach( Chest chest in chestDef.GetMatchingWorldChests() ) {
 				foreach( Item item in chest.item ) {
-					if( item?.active != true || (!item.potion && (item.healLife == 0 && item.healMana == 0)) ) {
+					if( item?.Is() != true || (!item.potion && (item.healLife == 0 && item.healMana == 0)) ) {
 						continue;
 					}
 

@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using ModLibsCore.Libraries.Debug;
+using ModLibsGeneral.Libraries.Items;
 using AdventureMode.Logic;
 using AdventureMode.Items;
 
@@ -38,7 +39,7 @@ namespace AdventureMode {
 		public override bool PreItemCheck() {
 			Item heldItem = this.player.HeldItem;
 
-			if( heldItem?.active == true ) {
+			if( heldItem?.Is() == true ) {
 				switch( heldItem.type ) {
 				case ItemID.RodofDiscord:
 					return PlayerLogic.UpdateRodOfDiscordUse( this );

@@ -23,20 +23,29 @@ namespace AdventureMode.Logic {
 				int who = projectile.whoAmI;
 				int type = projectile.type;
 
-				if( !ProjectileLogic.RopeCoils.ContainsKey( who ) ) {
-					ProjectileLogic.RopeCoils[ who ] = type;
-
-					Timers.RunUntil( () => {
-						bool isActive = Main.projectile[who]?.active == true && ProjectileLogic.RopeCoils[who] == type;
-						if( !isActive ) {
-							ProjectileLogic.RopeCoils.Remove( who );
-						}
-
-						return isActive;
-					}, false );
-
-					projectile.velocity *= 0.65f;
+				if( ProjectileLogic.RopeCoils.ContainsKey( who ) ) {
+					break;
 				}
+
+				//
+
+				ProjectileLogic.RopeCoils[ who ] = type;
+
+				Timers.RunUntil( () => {
+					bool isCoil = Main.projectile[who]?.active == true
+						&& ProjectileLogic.RopeCoils[who] == type;
+
+					if( !isCoil ) {
+						ProjectileLogic.RopeCoils.Remove( who );
+					}
+
+					return isCoil;
+				}, false );
+
+				//
+
+				projectile.velocity *= 0.65f;
+
 				break;
 			}
 		}

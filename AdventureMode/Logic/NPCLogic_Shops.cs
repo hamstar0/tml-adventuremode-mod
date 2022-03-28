@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Terraria;
 using Terraria.ModLoader.Config;
+using ModLibsGeneral.Libraries.Items;
 
 
 namespace AdventureMode.Logic {
@@ -10,7 +11,7 @@ namespace AdventureMode.Logic {
 		public static void FilterShop( Item[] shopItems, IList<ItemDefinition> whitelist, ref int nextSlot ) {
 			for( int i = 0; i < shopItems.Length; i++ ) {
 				Item shopItem = shopItems[i];
-				if( shopItem?.active != true ) {
+				if( shopItem?.Is() != true ) {
 					continue;
 				}
 

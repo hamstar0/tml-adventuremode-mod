@@ -4,7 +4,9 @@ using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using ModLibsCore.Classes.Errors;
 using ModLibsCore.Libraries.Debug;
+using ModLibsGeneral.Libraries.Items;
 using ModLibsGeneral.Libraries.Players;
 using ModLibsGeneral.Libraries.World;
 using ReadableBooks.Items.ReadableBook;
@@ -63,9 +65,11 @@ namespace AdventureMode.Logic {
 
 			//
 
-			IList<Item> invList = player.inventory.ToList();
+			IList<Item> invList = player.inventory
+				.Take(3)
+				.ToList();
 
-			PlayerLogic.SetupInitialSpawnInventoryTemplate( invList );
+			PlayerLogic.SetupSpawnInventoryDataBeforeInWorld( invList );
 
 			int i = 0;
 			foreach( Item item in invList ) {
@@ -74,7 +78,7 @@ namespace AdventureMode.Logic {
 
 			//
 
-			PlayerLogic.ApplyRecommendedInventorySortion( player );
+			PlayerLogic.SetupSpawnInventoryInWorld( player );
 
 			return true;
 		}
@@ -82,7 +86,7 @@ namespace AdventureMode.Logic {
 
 		////////////////
 
-		internal static void SetupInitialSpawnInventoryTemplate( IList<Item> items ) {
+		internal static void SetupSpawnInventoryDataBeforeInWorld( IList<Item> items ) {
 			Item MakeItem( int itemType, int stack ) {
 				var item = new Item();
 				item.SetDefaults( itemType );
@@ -108,23 +112,22 @@ namespace AdventureMode.Logic {
 
 		////
 
-		internal static void SetupInWorldSpawnInventory( Player player ) {
+		internal static void SetupSpawnInventoryInWorld( Player player ) {
 			int invIdx = 0;
 
 			void addInvItem( int itemType, int stack ) {
-				if( invIdx >= player.inventory.Length ) {
-					LogLibraries.Alert( "Player inventory full." );
-					return;
-				}
+				Item invItemAt = player.inventory[invIdx];
 
-				while( player.inventory[invIdx]?.active == true ) {
+				while( invItemAt?.Is() == true ) {	// stack check REQUIRED?!
 					invIdx++;
-					
+					invItemAt = player.inventory[invIdx];
+
 					if( invIdx >= player.inventory.Length ) {
-						LogLibraries.Alert( "Player inventory full." );
-						return;
+						throw new ModLibsException( "Player inventory full." );
 					}
 				}
+
+				//
 
 				var item = new Item();
 				item.SetDefaults( itemType );
@@ -133,7 +136,7 @@ namespace AdventureMode.Logic {
 				player.inventory[invIdx] = item;
 			}
 
-			//
+			////
 
 			int resurfPotType = ModContent.ItemType<ResurfacePotionItem>();
 
@@ -159,10 +162,6 @@ namespace AdventureMode.Logic {
 				addInvItem( resurfPotType, 12 );
 				break;
 			}
-
-			//
-
-			PlayerLogic.ApplyRecommendedInventorySortion( player );
 		}
 
 

@@ -33,7 +33,8 @@ namespace AdventureMode {
 				: new AMCustomPlayerData();
 
 			if( !data.IsSetup ) {
-				PlayerLogic.SetupInWorldSpawnInventory( player );
+				PlayerLogic.SetupSpawnInventoryInWorld( player );
+				PlayerLogic.ApplyRecommendedInventorySortion( player );
 
 				data.IsSetup = true;
 			}

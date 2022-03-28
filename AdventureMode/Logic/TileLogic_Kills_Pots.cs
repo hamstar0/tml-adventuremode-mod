@@ -2,11 +2,13 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.Utilities;
+using Terraria.ModLoader;
 using ModLibsCore.Libraries.Debug;
 using ModLibsCore.Libraries.TModLoader;
-using ModLibsGeneral.Libraries.World;
 using ModLibsCore.Services.Timers;
-using Terraria.ModLoader;
+using ModLibsGeneral.Libraries.World;
+using ModLibsGeneral.Libraries.NPCs;
+
 
 namespace AdventureMode.Logic {
 	static partial class TileLogic {
@@ -72,7 +74,7 @@ namespace AdventureMode.Logic {
 
 			Timers.SetTimer( 4, false, () => {
 				npc = Main.npc[npcWho];
-				if( npc?.active != true || npc.type != spiderType ) {
+				if( npc?.active != true || npc.netID != spiderType ) {
 					return false;
 				}
 

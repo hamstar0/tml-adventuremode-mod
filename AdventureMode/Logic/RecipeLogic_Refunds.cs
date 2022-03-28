@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using ModLibsGeneral.Libraries.Items;
 using ModLibsGeneral.Libraries.Items.Attributes;
 using AdventureMode.Recipes;
 
@@ -25,10 +26,10 @@ namespace AdventureMode.Logic {
 					ISet<int> oreItemTypes,
 					ISet<Recipe> oreArmorRecipes ) {
 			Item PickSignificantIngredientItem( Item ing1, Item ing2 ) {
-				if( !ing1.active || !oreItemTypes.Contains(ing1.type) ) {
+				if( !ing1.Is() || !oreItemTypes.Contains(ing1.type) ) {
 					return ing2;
 				}
-				if( !ing2.active || !oreItemTypes.Contains(ing2.type) ) {
+				if( !ing2.Is() || !oreItemTypes.Contains(ing2.type) ) {
 					return ing1;
 				}
 				return ing1.stack > ing2.stack
@@ -80,7 +81,7 @@ namespace AdventureMode.Logic {
 		private static ISet<int> GetOreMadeItemRecipes( ISet<int> oreItemTypes ) {
 			var oreMadeItemTypes = new HashSet<int>();    // bars, tiles, mythril anvil, adamantite forge, etc.
 			foreach( Recipe recipe in Main.recipe ) {
-				if( recipe.requiredItem.Any( i => i.active && oreItemTypes.Contains(i.type) ) ) {
+				if( recipe.requiredItem.Any( i => i?.Is() == true && oreItemTypes.Contains(i.type) ) ) {
 					oreMadeItemTypes.Add( recipe.createItem.type );
 				}
 			}
@@ -92,7 +93,7 @@ namespace AdventureMode.Logic {
 			var oreArmorRecipes = new HashSet<Recipe>();
 
 			foreach( Recipe recipe in Main.recipe ) {
-				if( recipe.requiredItem.Any( i => i.active && oreMadeItemTypes.Contains(i.type) ) ) {
+				if( recipe.requiredItem.Any( i => i?.Is() == true && oreMadeItemTypes.Contains(i.type) ) ) {
 					if( ItemAttributeLibraries.IsArmor(recipe.createItem) ) {
 						oreArmorRecipes.Add( recipe );
 					}

@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using ModLibsCore.Libraries.Debug;
+using ModLibsGeneral.Libraries.Items;
 using ModLibsGeneral.Libraries.UI;
 using LostExpeditions;
 
@@ -60,7 +61,7 @@ namespace AdventureMode.Logic {
 				if( chestIdx != -1 ) {
 					Item pke = Main.chest[chestIdx]?
 						.item?
-						.FirstOrDefault( i => i?.active == true && i.type == pkeItemType );
+						.FirstOrDefault( i => i?.Is(pkeItemType) == true );
 
 					if( pke != null ) {
 						myworld.CachedPKEChestTile = (x+1, y);

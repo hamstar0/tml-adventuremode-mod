@@ -1,6 +1,7 @@
 ﻿using System;
 using Terraria;
 using Terraria.ID;
+using ModLibsGeneral.Libraries.Items;
 
 
 namespace AdventureMode.Logic {
@@ -10,7 +11,7 @@ namespace AdventureMode.Logic {
 
 			for( int i = 0; i < nextSlot; i++ ) {
 				Item item = shop.item[i];
-				if( item?.active != true ) { continue; }
+				if( item?.Is() != true ) { continue; }
 
 				if( item.type == ItemID.SittingDucksFishingRod ) {
 					fishingPoleIdx = i;

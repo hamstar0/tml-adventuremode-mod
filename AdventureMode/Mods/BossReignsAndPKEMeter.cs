@@ -6,6 +6,7 @@ using Terraria.ID;
 using ModLibsCore.Libraries.Debug;
 using ModLibsCore.Services.Hooks.LoadHooks;
 using ModLibsCore.Services.Timers;
+using ModLibsGeneral.Libraries.Items;
 
 
 namespace AdventureMode.Mods {
@@ -60,7 +61,7 @@ namespace AdventureMode.Mods {
 					continue;
 				}
 
-				if( plr.inventory.Any( i => i?.active == true && i.type == pkeMeterType ) ) {
+				if( plr.inventory.Any( i => i?.Is(pkeMeterType) == true ) ) {
 					return true;
 				}
 			}

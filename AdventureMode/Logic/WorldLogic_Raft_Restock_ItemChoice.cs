@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
 using ModLibsCore.Libraries.Debug;
+using ModLibsGeneral.Libraries.Items;
 
 
 namespace AdventureMode.Logic {
@@ -42,7 +43,7 @@ namespace AdventureMode.Logic {
 
 			for( int i=0; i<chest.item.Length; i++ ) {
 				Item currItem = chest.item[i];
-				if( currItem?.active == true ) {
+				if( currItem?.Is() == true ) {
 					continue;
 				}
 

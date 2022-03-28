@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using ModLibsCore.Libraries.Debug;
+using ModLibsGeneral.Libraries.Items;
 using AdventureMode.Items;
 
 
@@ -11,7 +12,7 @@ namespace AdventureMode.Logic {
 	static partial class PlayerLogic {
 		public static void ApplyRecommendedInventorySortion( Player player ) {
 			bool dumpItem( int idx ) {
-				if( player.inventory[idx]?.active != true ) {
+				if( player.inventory[idx]?.Is() != true ) {
 					return true;
 				}
 
@@ -19,7 +20,7 @@ namespace AdventureMode.Logic {
 
 				int dumpToIdx = 10;
 
-				while( player.inventory[dumpToIdx]?.active == true ) {
+				while( player.inventory[dumpToIdx]?.Is() == true ) {
 					dumpToIdx++;
 
 					if( dumpToIdx >= player.inventory.Length ) {
@@ -52,9 +53,12 @@ namespace AdventureMode.Logic {
 				//
 
 				int froIdx = 0;
+				Item invItemAt = player.inventory[froIdx];
 
-				while( player.inventory[froIdx]?.active != true || player.inventory[froIdx].type != itemType ) {
+				//while( invItemAt?.active != true || invItemAt?.stack <= 0 || invItemAt?.type != itemType ) {
+				while( invItemAt?.Is(itemType) != true ) {
 					froIdx++;
+					invItemAt = player.inventory[froIdx];
 
 					if( froIdx >= maxFroIdx ) {
 						return false;

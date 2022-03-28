@@ -12,7 +12,13 @@ namespace AdventureMode.Logic {
 				return;
 			}
 
-			if( !Main.npc.Any( n => n?.active == true && n.boss && n.netID != NPCID.WallofFlesh && n.netID != NPCID.WallofFleshEye ) ) {
+			bool nonWoFBossFound = Main.npc.Any( n =>
+				n?.active == true
+				&& n.boss
+				&& n.netID != NPCID.WallofFlesh
+				&& n.netID != NPCID.WallofFleshEye
+			);
+			if( !nonWoFBossFound ) {
 				myplayer.IsAlertedToBossesWhileDead = false;
 				return;
 			}
