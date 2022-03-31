@@ -299,6 +299,8 @@ v1.1
 	-	Modify crafting to require "inspiration points"
 	-	Add HUD display of inspiration points
 	-	Define mod
+-	@Ergophobia
+	-	Set platform placement via. r-click to create max-length bridges
 -	@Surroundings
 	-	Fix parallax
 	-	Refactor overlays into injection hooks

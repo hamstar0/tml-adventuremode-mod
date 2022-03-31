@@ -22,25 +22,29 @@ v1
 -	@FMC
 	-	Add message alert about "magic phenomena" when using binocs and getting a high reading for 2s
 	-	Increase binoc flicker intensity/sensitivity
--	@Ergophobia
-	-	Set platform placement via. r-click to create max-length bridges
 -	@Grappletech
 	-	Reduce display duration and intensity of hookables overlay
 	-	Reduce edge grabbiness by 1
 [v0.41.0]
 -	Updates
-	-	@Soul Barriers (3.0.0.1)
+	-	@Bullwhip (1.5.1)
 	-	@Mod Libs General (1.6.0)
+	-	@Mod Libs Core (1.5.1)
+	-	@Soul Barriers (3.0.1)
+	-	@TMR (1.9.6)
+	-	@World Gates (1.2.6.4)
+
+
+-	@Test world gates
 -	@Bullwhip
 	-	Remove whip pvp
-	-	Fix bullwhip while dead
-	-	Fix glitchy whip (projectile lingers on last frame)
 	-	Fix whip sync (sync projectile animation frames)
+	-	Fix bullwhip while dead
+-	@Soul Barriers
+	-	Fix sync for real this time seriously omg (reported incorrect strength message)
 -	@TMR
 	-	Fix TMR holster animation sync?
-	-	Fix TMR not syncing or appearing on other clients
-
-
+	-	Fix TMR not syncing or appearing on other clients (check flags)
 -	F&T
 	-	Fix player init failing
 	-	Fix pvp barriers
