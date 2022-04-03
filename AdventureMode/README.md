@@ -72,11 +72,14 @@ Credits:
     koolaidlemonade
   Templates:
     mcmanybucks (raft)
+  Test Hosting:
+    Nodecraft
   Testers:
     Agrair
     Arcri
     Blasfah
     CrabBar
+    direwolf420
     Fiendzy
     Flashkirby99
     FuryForged
@@ -84,6 +87,5 @@ Credits:
     koolaidlemonade
     PeasantUnit
     Planterrer
-    Putan
     Retro
     Waasephi

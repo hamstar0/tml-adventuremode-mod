@@ -5,10 +5,12 @@ v1
 	-	Release mods (update mod homepages)
 	-	Create thread
 	-	Setup docs
-	-	Fix custom config float elements rendering as black (also debug them not applying value changes)
 -	@Final MP Test
+
+
 [v0.42.0]
 -	Updates
+	-	@Mod Libs Core (1.5.1.1)
 	-	@FMC (2.1.0)
 	-	@Grappletech (2.2.1)
 	-	@HUD Elements Lib (4.2.0)
@@ -16,8 +18,8 @@ v1
 	-	@Necrotis (2.2.2)
 	-	@Powerful Magic (1.11.0)
 -	Add Nodecraft plug
-
-
+-	@Mod Libs Core
+	-	Fix custom config float elements rendering as black (also debug them not applying value changes)
 -	Update mods list in mod readme/description
 -	@Messages
 	-	Make category head 'messages' use a different font
