@@ -7,20 +7,30 @@ v1
 	-	Setup docs
 	-	Fix custom config float elements rendering as black (also debug them not applying value changes)
 -	@Final MP Test
--	Update mods list in mod readme/description
--	Add Nodecraft plug
 [v0.42.0]
+-	Updates
+	-	@FMC (2.1.0)
+	-	@Grappletech (2.2.1)
+	-	@HUD Elements Lib (4.2.0)
+	-	@Messages (1.3.0)
+	-	@Necrotis (2.2.2)
+	-	@Powerful Magic (1.11.0)
+-	Add Nodecraft plug
+
+
+-	Update mods list in mod readme/description
 -	@Messages
-	-	Make category head 'messages' use a different dont
+	-	Make category head 'messages' use a different font
+-	@Powerful Magic
+	-	Fix focus mode locking (even when items switched)
 -	@HUD Element Libs
 	-	Save "collisions enabled" state for elements
 -	@Powerful Magic
 	-	Fix book hold offset when focusing
 -	@Necrotis
-	-	Set Omnis to begin at <1% anima?
+	-	Set Omnis to begin at <0.1% anima?
 	-	Alert to "spiritual replenishment required" to recover from necrotis
 -	@FMC
-	-	Add message alert about "magic phenomena" when using binocs and getting a high reading for 2s
 	-	Increase binoc flicker intensity/sensitivity
 -	@Grappletech
 	-	Reduce display duration and intensity of hookables overlay
@@ -33,8 +43,6 @@ v1
 	-	@Soul Barriers (3.0.1)
 	-	@TMR (1.9.6)
 	-	@World Gates (1.2.6.4)
-
-
 -	@Test world gates
 -	@Bullwhip
 	-	Remove whip pvp
