@@ -59,9 +59,6 @@
     <Reference Include="Messages">
       <HintPath>..\..\..\Messages\Project\Messages\bin\Release\net452\Messages.dll</HintPath>
     </Reference>
-    <Reference Include="ModLibsAudio">
-      <HintPath>..\..\..\Mod Libs\Mod Libs Services Audio\Project\ModLibsAudio\bin\Release\net452\ModLibsAudio.dll</HintPath>
-    </Reference>
     <Reference Include="ModLibsCamera">
       <HintPath>..\..\..\Mod Libs\Mod Libs Services Camera Controls\Project\ModLibsCamera\bin\Release\net452\ModLibsCamera.dll</HintPath>
     </Reference>

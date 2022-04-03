@@ -25,7 +25,6 @@ This game mode uses the following mods:
   Locked Abilities,
   Lost Expeditions,
   Messages,
-  Mod Libs Audio,
   Mod Libs Camera,
   Mod Libs Core,
   Mod Libs Entity Groups,
