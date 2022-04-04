@@ -1,13 +1,20 @@
 v1
 -	@First public beta
--	Release mods!
--	@Mod Libs
-	-	Release mods (update mod homepages)
-	-	Create thread
-	-	Setup docs
+-	Upload mods to mod browser (apply validation)
 -	@Final MP Test
 
 
+-	Updates
+	-	@Mod Libs UI (1.2.0)
+	-	@Mod Libs Core (1.5.2)
+	-	@Mod Utility Panels (2.1.0)
+-	@Mod Libs
+	-	Upload mods to mod browser
+	-	Update mods' homepages
+	-	Create thread
+	-	@Mod Utility Panels
+		-	Implement default panel; shows list of mods (import from Mod Helpers)
+	-	Set mod icons
 [v0.42.0]
 -	Updates
 	-	@Mod Libs Core (1.5.1.1)

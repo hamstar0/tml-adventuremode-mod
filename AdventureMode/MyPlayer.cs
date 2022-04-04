@@ -31,7 +31,19 @@ namespace AdventureMode {
 
 		////////////////
 
+		public override void Initialize() {
+			this.IsAlertedToBossesWhileDead = false;
+			this.IsChaosStateChecked = false;
+			this.NecrotisAmount = 0f;
+			this.IsAdventurer = false;
+			this.ResurfacePoint = default;
+		}
+
+		////////////////
+
 		public override void Load( TagCompound tag ) {
+			this.IsAdventurer = false;
+
 			if( tag.ContainsKey("is_adventurer") ) {
 				this.IsAdventurer = tag.GetBool( "is_adventurer" );
 			}

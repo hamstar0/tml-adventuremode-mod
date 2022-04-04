@@ -83,7 +83,7 @@ namespace AdventureMode {
 			//
 
 			bool isAdventurer = myplayer.IsAdventurer;
-
+			
 			if( !isAdventurer ) {
 				if( PlayerLogic.RetrofitPlayerInventory_If(this.Player) ) {
 					isAdventurer = true;
