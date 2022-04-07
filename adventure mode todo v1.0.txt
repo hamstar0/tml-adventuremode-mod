@@ -2,8 +2,22 @@ v1
 -	@First public beta
 -	Upload mods to mod browser (apply validation)
 -	@Final MP Test
+-	Change client mods into server mods
+-	Build "setup/installer" mod
+	-	Store other .tmod files inside installer mod
+	-	Implement installation
+		-	Go to mod browser menu + updates
+		-	Outputs .tmod files into mod folder
+		-	Implement prompt for installation
 
 
+		-	@Plan
+			-	If MP, ignore install
+			-	Modify 'enabled.txt' to exclusively enable AM mods
+	-	Change 'manager' mod into "Adventure Mode" mod
+-	Create icon + logo
+-	Rename "Adventure Mode Lore" to "Adventure Mode - Setting"
+-	Rename "Adventure Mode Core" to "Adventure Mode - Basics"
 -	Updates
 	-	@Mod Libs UI (1.2.0)
 	-	@Mod Libs Core (1.5.2)
