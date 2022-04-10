@@ -15,7 +15,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AdventureModeLore">
-      <HintPath>..\..\..\Adventure Mode Lore\Project\AdventureModeLore\bin\Release\net452\AdventureModeLore.dll</HintPath>
+      <HintPath>..\..\..\Adventure Mode Setting\Project\AdventureModeLore\bin\Release\net452\AdventureModeLore.dll</HintPath>
     </Reference>
     <Reference Include="BossChecklist">
       <HintPath>..\..\..\..\..\..\My Games\Terraria\ModLoader\Mod Reader\BossChecklist\BossChecklist.FNA.dll</HintPath>

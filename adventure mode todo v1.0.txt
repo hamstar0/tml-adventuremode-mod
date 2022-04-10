@@ -1,20 +1,38 @@
-v1
+[v1]
+[v0.43.0]
 -	@First public beta
 -	Upload mods to mod browser (apply validation)
 -	@Final MP Test
--	Change client mods into server mods
--	Build "setup/installer" mod
-	-	Store other .tmod files inside installer mod
-	-	Implement installation
-		-	Go to mod browser menu + updates
+-	@Updates
+	-	Surroundings (1.2.0)
+	-	More Item Info (1.5.0)
+
+
+-	@Adventure Mode Setup
+	-	Add title screen overlay
+		-	Draw layers with appropriate illumination
+		-	Make logo follow terraria's logo as a sub-title
+		-	Break up logo (A, rock-only text, highlight layers)
+		-	Trim logo edges
+	-	Add config for whitelisting mods
+	-	Check for non-AM mods and display list
+	-	Add logo background on prompt
+	-	Add setting to force install prompt on each game load
+	-	Fix button hover
+	-	Add version checking
+	-	On confirm
+		-	Reload mods
 		-	Outputs .tmod files into mod folder
-		-	Implement prompt for installation
-
-
-		-	@Plan
-			-	If MP, ignore install
-			-	Modify 'enabled.txt' to exclusively enable AM mods
+		-	Set enabled mods list
+		-	Backup old mod pack (if any)
+		-	Show instruction images
+	-	Implement cancel
+	-	Define confirm buttons
+	-	@Plan
+		-	If MP, ignore install
+		-	Modify 'enabled.txt' to exclusively enable AM mods
 	-	Change 'manager' mod into "Adventure Mode" mod
+-	Change client mods into server mods
 -	Create icon + logo
 -	Rename "Adventure Mode Lore" to "Adventure Mode - Setting"
 -	Rename "Adventure Mode Core" to "Adventure Mode - Basics"
