@@ -26,11 +26,11 @@ namespace AdventureMode.Logic {
 			int whipType = ModContent.ItemType<Bullwhip.Items.BullwhipItem>();
 			int pbgType = ModContent.ItemType<SoulBarriers.Items.PBGItem>();
 
-			int tmrIdx = Array.FindIndex( player.inventory, i => i.type == tmrType );
-			int bandolierIdx = Array.FindIndex( player.inventory, i => i.type == bandolierType );
-			int whipIdx = Array.FindIndex( player.inventory, i => i.type == whipType );
-			int pbgIdx = Array.FindIndex( player.inventory, i => i.type == pbgType );
-			int binocIdx = Array.FindIndex( player.inventory, i => i.type == ItemID.Binoculars );
+			int tmrIdx = Array.FindIndex( player.inventory, item => item.type == tmrType );
+			int bandolierIdx = Array.FindIndex( player.inventory, item => item.type == bandolierType );
+			int whipIdx = Array.FindIndex( player.inventory, item => item.type == whipType );
+			int pbgIdx = Array.FindIndex( player.inventory, item => item.type == pbgType );
+			int binocIdx = Array.FindIndex( player.inventory, item => item.type == ItemID.Binoculars );
 
 			var slotExceptions = new HashSet<int>();
 			if( tmrIdx != -1 ) { slotExceptions.Add( tmrIdx ); }
@@ -53,7 +53,7 @@ namespace AdventureMode.Logic {
 			//
 
 			IList<Item> invList = player.inventory
-				.Where( i => i?.active == true )
+				.Where( item => item?.active == true )
 				.ToList();
 
 			//
