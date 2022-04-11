@@ -41,6 +41,8 @@ namespace AdventureMode.Logic {
 				},
 			};
 
+			//
+
 			if( config.OverrideRecipeTileRequirements ) {
 				texts[1].Add( "- Use house kits to create NPC houses, beds, storage, and fast travel points." );
 				texts[1].RemoveAt( 3 );
@@ -52,6 +54,8 @@ namespace AdventureMode.Logic {
 				texts[2].Insert( 0, "- Alchemy and non-equipment recipes disabled." );
 			}
 
+			//
+
 			return texts;
 		}
 
@@ -59,17 +63,83 @@ namespace AdventureMode.Logic {
 		////////////////
 		
 		public static bool RetrofitPlayerInventory_If( Player player ) {
-			if( !PlayerLibraries.IsPlayerVanillaFresh(player) ) {
+			int tmrType = ModContent.ItemType<TheMadRanger.Items.Weapons.TheMadRangerItem>();
+			int bandolierType = ModContent.ItemType<TheMadRanger.Items.Accessories.BandolierItem>();
+			int whipType = ModContent.ItemType<Bullwhip.Items.BullwhipItem>();
+			int pbgType = ModContent.ItemType<SoulBarriers.Items.PBGItem>();
+
+			int tmrIdx = Array.FindIndex( player.inventory, i => i.type == tmrType );
+			int bandolierIdx = Array.FindIndex( player.inventory, i => i.type == bandolierType );
+			int whipIdx = Array.FindIndex( player.inventory, i => i.type == whipType );
+			int pbgIdx = Array.FindIndex( player.inventory, i => i.type == pbgType );
+			int binocIdx = Array.FindIndex( player.inventory, i => i.type == ItemID.Binoculars );
+
+			var slotExceptions = new HashSet<int>();
+			if( tmrIdx != -1 ) { slotExceptions.Add( tmrIdx ); }
+			if( bandolierIdx != -1 ) { slotExceptions.Add( bandolierIdx ); }
+			if( whipIdx != -1 ) { slotExceptions.Add( whipIdx ); }
+			if( pbgIdx != -1 ) { slotExceptions.Add( pbgIdx ); }
+			if( binocIdx != -1 ) { slotExceptions.Add( binocIdx ); }
+
+			//
+
+			bool isVanillaFresh = PlayerLibraries.IsPlayerVanillaFresh(
+				player: player,
+				inventorySlotExceptions: slotExceptions
+			);
+
+			if( !isVanillaFresh ) {
 				return false;
 			}
 
 			//
 
 			IList<Item> invList = player.inventory
-				.Take(3)
+				.Where( i => i?.active == true )
 				.ToList();
 
+			//
+
+			if( tmrIdx == -1 ) {
+				Item tmrItem = new Item();
+				tmrItem.SetDefaults( tmrType, true );
+
+				invList.Add( tmrItem );
+			}
+			
+			if( bandolierIdx == -1 ) {
+				Item bandolierItem = new Item();
+				bandolierItem.SetDefaults( bandolierType, true );
+
+				invList.Add( bandolierItem );
+			}
+
+			if( whipIdx == -1 ) {
+				Item whipItem = new Item();
+				whipItem.SetDefaults( whipType, true );
+
+				invList.Add( whipItem );
+			}
+
+			if( pbgIdx == -1 ) {
+				Item pbgItem = new Item();
+				pbgItem.SetDefaults( pbgType, true );
+
+				invList.Add( pbgItem );
+			}
+
+			if( binocIdx == -1 ) {
+				Item binocItem = new Item();
+				binocItem.SetDefaults( ItemID.Binoculars, true );
+
+				invList.Add( binocItem );
+			}
+
+			//
+
 			PlayerLogic.SetupSpawnInventoryDataBeforeInWorld( invList );
+
+			//
 
 			int i = 0;
 			foreach( Item item in invList ) {
@@ -79,6 +149,8 @@ namespace AdventureMode.Logic {
 			//
 
 			PlayerLogic.SetupSpawnInventoryInWorld( player );
+
+			//
 
 			return true;
 		}
@@ -115,7 +187,7 @@ namespace AdventureMode.Logic {
 		internal static void SetupSpawnInventoryInWorld( Player player ) {
 			int invIdx = 0;
 
-			void addInvItem( int itemType, int stack ) {
+			void AddInvItem( int itemType, int stack ) {
 				Item invItemAt = player.inventory[invIdx];
 
 				while( invItemAt?.Is() == true ) {	// stack check REQUIRED?!
@@ -142,24 +214,24 @@ namespace AdventureMode.Logic {
 
 			switch( WorldLibraries.GetSize() ) {
 			case WorldSize.SubSmall:
-				addInvItem( ItemID.RopeCoil, 15 );
-				addInvItem( resurfPotType, 2 );
+				AddInvItem( ItemID.RopeCoil, 15 );
+				AddInvItem( resurfPotType, 2 );
 				break;
 			case WorldSize.Small:
-				addInvItem( ItemID.RopeCoil, 20 );
-				addInvItem( resurfPotType, 3 );
+				AddInvItem( ItemID.RopeCoil, 20 );
+				AddInvItem( resurfPotType, 3 );
 				break;
 			case WorldSize.Medium:
-				addInvItem( ItemID.RopeCoil, 30 );
-				addInvItem( resurfPotType, 6 );
+				AddInvItem( ItemID.RopeCoil, 30 );
+				AddInvItem( resurfPotType, 6 );
 				break;
 			case WorldSize.Large:
-				addInvItem( ItemID.RopeCoil, 40 );
-				addInvItem( resurfPotType, 10 );
+				AddInvItem( ItemID.RopeCoil, 40 );
+				AddInvItem( resurfPotType, 10 );
 				break;
 			case WorldSize.SuperLarge:
-				addInvItem( ItemID.RopeCoil, 45 );
-				addInvItem( resurfPotType, 12 );
+				AddInvItem( ItemID.RopeCoil, 45 );
+				AddInvItem( resurfPotType, 12 );
 				break;
 			}
 		}

@@ -1,13 +1,27 @@
 [v1]
-[v0.43.0]
 -	@First public beta
 -	Upload mods to mod browser (apply validation)
 -	@Final MP Test
+[v0.43.0]
+-	Updates
+	-	@Soul Barriers (3.0.2)
+	-	@Mod Libs Core (1.5.4)
+	-	@World Gates (1.2.7)
+-	Tone down cursed bones frequency on surface
+-	@Surroundings
+	-	Disable overlays during non-smooth lighting mode
+
+
+-	Fix improper player defaults loading (missing gun, whip, etc.)
+-	Fix errors
+-	Fix world gate destroy desync
+-	@MP Test
+-	@AMS
+	-	Make
+	-	Fix repeating install prompts
 -	@Updates
 	-	Surroundings (1.2.0)
 	-	More Item Info (1.5.0)
-
-
 -	@Adventure Mode Setup
 	-	Add title screen overlay
 		-	Draw layers with appropriate illumination

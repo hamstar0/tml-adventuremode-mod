@@ -1,6 +1,6 @@
 displayName = Adventure Mode - Basics
 author = hamstar
-version = 0.42.0
+version = 0.43.0
 modReferences = AdventureModeLore@0.20.1, BossChecklist@1.1.4, CursedBrambles@1.3.1.2, Ergophobia@1.14.0.2, FindableManaCrystals@2.1.0, HUDElementsLib@4.2.0, LockedAbilities@1.3.1.1, LostExpeditions@1.1.0, Messages@1.3.0, ModLibsCamera@1.0.1, ModLibsCore@1.5.2, ModLibsEntityGroups@1.1.0, ModLibsGeneral@1.6.0, ModLibsInterMod@1.2.0, ModLibsMaps@2.0.0, ModLibsNet@1.0.2, ModLibsNPCDialogue@1.0.0, ModLibsTiles@1.0.0, ModLibsUI@1.2.0, ModLibsUtilityContent@1.1.0.1, ModUtilityPanels@2.1.0, MountedMagicMirrors@1.1.10, Necrotis@2.2.2, Nihilism@4.0.0, Objectives@0.8.0.1, Orbs@1.7.1, PKEMeter@2.0.0, PotLuck@2.1.0, ReadableBooks@1.3.0, SoulBarriers@3.0.1, WorldGates@1.2.6.4
 weakReferences = BossReigns@1.3.1.2, Bullwhip@1.5.1, CursedBones@1.0.0, Enraged@0.13.1.1, Grappletech@2.2.1, GreenHell@0.7.4, MoreItemInfo@1.5.0, PowerfulMagic@1.11.0, QuickRope@0.3.0, RuinedItems@2.11.2.1, SpiritWalking@1.1.2, SteampunkArsenal@0.18.0.1, Surroundings@1.2.0, TerrainRemixer@0.13.0, TheMadRanger@1.9.6, TheTrickster@1.7.5.6
 buildIgnore = *.csproj, *.user, *.bat, obj\*, bin\*, .vs\*, .git\*

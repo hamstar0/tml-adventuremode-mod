@@ -11,7 +11,7 @@ using AdventureMode.Items;
 namespace AdventureMode.Logic {
 	static partial class PlayerLogic {
 		public static void ApplyRecommendedInventorySortion( Player player ) {
-			bool xferFirstOfTo( int toIdx, int itemType, int maxFroIdx=-1 ) {
+			bool XferFirstOfTo( int toIdx, int itemType, int maxFroIdx=-1 ) {
 				return PlayerLogic.XferFirstOfInventoryItemToPosition_If( player, toIdx, itemType, maxFroIdx );
 			}
 
@@ -23,37 +23,37 @@ namespace AdventureMode.Logic {
 			int plankType = ModContent.ItemType<Ergophobia.Items.FramingPlank.FramingPlankItem>();
 			int pbgType = ModContent.ItemType<SoulBarriers.Items.PBGItem>();
 
-			if( xferFirstOfTo(hotbarIdx, bullwhipType) ) {
+			if( XferFirstOfTo(hotbarIdx, bullwhipType) ) {
 				hotbarIdx++;
 			}
-			if( xferFirstOfTo(hotbarIdx, tmrType) ) {
+			if( XferFirstOfTo(hotbarIdx, tmrType) ) {
 				hotbarIdx++;
 			}
-			if( xferFirstOfTo(hotbarIdx, plankType) ) {
+			if( XferFirstOfTo(hotbarIdx, plankType) ) {
 				hotbarIdx++;
 			}
-			if( xferFirstOfTo(hotbarIdx, ItemID.WoodPlatform) ) {
+			if( XferFirstOfTo(hotbarIdx, ItemID.WoodPlatform) ) {
 				hotbarIdx++;
 			}
-			if( xferFirstOfTo(hotbarIdx, pbgType) ) {
+			if( XferFirstOfTo(hotbarIdx, pbgType) ) {
 				hotbarIdx++;
 			}
 
-			xferFirstOfTo( 7, ItemID.WoodenHammer );
-			xferFirstOfTo( 8, ItemID.RopeCoil );
-			xferFirstOfTo( 9, ModContent.ItemType<ResurfacePotionItem>() );
+			XferFirstOfTo( 7, ItemID.WoodenHammer );
+			XferFirstOfTo( 8, ItemID.RopeCoil );
+			XferFirstOfTo( 9, ModContent.ItemType<ResurfacePotionItem>() );
 
 			//
 
-			xferFirstOfTo( 18, ModContent.ItemType<TheMadRanger.Items.Accessories.BandolierItem>() );
-			xferFirstOfTo( 19, ItemID.ClimbingClaws );
+			XferFirstOfTo( 18, ModContent.ItemType<TheMadRanger.Items.Accessories.BandolierItem>() );
+			XferFirstOfTo( 19, ItemID.ClimbingClaws );
 
 			//
 			
 			int bookType = ModContent.ItemType<ReadableBooks.Items.ReadableBook.ReadableBookItem>();
 
 			for( int bookIdx = 40; bookIdx < player.inventory.Length; bookIdx++ ) {
-				if( !xferFirstOfTo(bookIdx, bookType, 39) ) {
+				if( !XferFirstOfTo(bookIdx, bookType, 39) ) {
 					break;
 				}
 			}
