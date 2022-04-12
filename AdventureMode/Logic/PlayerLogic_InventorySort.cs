@@ -41,10 +41,18 @@ namespace AdventureMode.Logic {
 			if( XferFirstOfTo(hotbarIdx, pbgType) ) {
 				hotbarIdx++;
 			}
-
-			XferFirstOfTo( 7, ItemID.WoodenHammer );
-			XferFirstOfTo( 8, ItemID.RopeCoil );
-			XferFirstOfTo( 9, ModContent.ItemType<ResurfacePotionItem>() );
+			if( XferFirstOfTo(hotbarIdx, ItemID.Binoculars) ) {
+				hotbarIdx++;
+			}
+			if( XferFirstOfTo(hotbarIdx, ItemID.WoodenHammer) ) {
+				hotbarIdx++;
+			}
+			if( XferFirstOfTo(hotbarIdx, ItemID.RopeCoil) ) {
+				hotbarIdx++;
+			}
+			if( XferFirstOfTo(hotbarIdx, ModContent.ItemType<ResurfacePotionItem>()) ) {
+				hotbarIdx++;
+			}
 
 			//
 
