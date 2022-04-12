@@ -2,13 +2,17 @@
 -	@First public beta
 -	Upload mods to mod browser (apply validation)
 -	@Final MP Test
+
+
 [v0.44.0]
+-	Updates
+	-	@AML (0.20.2.1)
+-	Return pickaxe to slot 1
+-	Fix PKE scan of world gates (ug desert?!)
 -	Updates
 	-	@Mod Libs Core (1.5.4.1)
 	-	@Soul Barriers (3.1.0)
 	-	@World Gates (1.2.8)
-
-
 -	Fix world gates init
 -	@Soul Barriers
 	-	Refactor IBarrierFactory

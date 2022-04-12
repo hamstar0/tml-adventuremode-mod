@@ -23,6 +23,9 @@ namespace AdventureMode.Logic {
 			int plankType = ModContent.ItemType<Ergophobia.Items.FramingPlank.FramingPlankItem>();
 			int pbgType = ModContent.ItemType<SoulBarriers.Items.PBGItem>();
 
+			if( XferFirstOfTo(hotbarIdx, ItemID.CopperPickaxe) ) {
+				hotbarIdx++;
+			}
 			if( XferFirstOfTo(hotbarIdx, bullwhipType) ) {
 				hotbarIdx++;
 			}
