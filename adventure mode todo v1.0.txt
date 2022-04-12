@@ -2,6 +2,16 @@
 -	@First public beta
 -	Upload mods to mod browser (apply validation)
 -	@Final MP Test
+[v0.44.0]
+-	Updates
+	-	@Mod Libs Core (1.5.4.1)
+	-	@Soul Barriers (3.1.0)
+	-	@World Gates (1.2.8)
+
+
+-	Fix world gates init
+-	@Soul Barriers
+	-	Refactor IBarrierFactory
 [v0.43.0]
 -	Updates
 	-	@AM (0.43.0)
@@ -10,8 +20,6 @@
 	-	@Soul Barriers (3.0.2)
 	-	@Surroundings (1.2.0.1)
 	-	@World Gates (1.2.7)
-
-
 -	Add exception for Surroundings mod to AMS "enabled mods" checks
 -	Tone down cursed bones frequency on surface
 -	@Surroundings
