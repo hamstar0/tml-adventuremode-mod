@@ -4,14 +4,18 @@
 -	@Final MP Test
 [v0.43.0]
 -	Updates
-	-	@Soul Barriers (3.0.2)
+	-	@AM (0.43.0)
+	-	@Cursed Bones (1.0.1)
 	-	@Mod Libs Core (1.5.4)
+	-	@Soul Barriers (3.0.2)
+	-	@Surroundings (1.2.0.1)
 	-	@World Gates (1.2.7)
+
+
+-	Add exception for Surroundings mod to AMS "enabled mods" checks
 -	Tone down cursed bones frequency on surface
 -	@Surroundings
-	-	Disable overlays during non-smooth lighting mode
-
-
+	-	Attempt to fix transparency color (cornflower blue) screen fill bug
 -	Fix improper player defaults loading (missing gun, whip, etc.)
 -	Fix errors
 -	Fix world gate destroy desync
