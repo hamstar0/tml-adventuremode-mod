@@ -2,13 +2,18 @@
 -	@First public beta
 -	Upload mods to mod browser (apply validation)
 -	@Final MP Test
+
+
+-	Updates
+	-	@Cursed Bones (1.1.0)
+	-	@FMC (2.1.0.1)
+-	Fix survey stations not genning mirrors
+-	Tone down cursed bones
 [v0.45.0]
 -	Updates
-	-	Soul Barriers (3.1.0.1)
-	-	World Gates (1.2.8.1)
+	-	@Soul Barriers (3.1.0.1)
+	-	@World Gates (1.2.8.1)
 -	Put binocs on hotbar
-
-
 -	Fix 'World gates not loaded.' on clients
 -	Fix BarrierStrengthPacket invalid player who
 [v0.44.0]
