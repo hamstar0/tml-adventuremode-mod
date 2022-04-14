@@ -2,11 +2,21 @@
 -	@First public beta
 -	Upload mods to mod browser (apply validation)
 -	@Final MP Test
-[v0.46.0]
+[v0.45.2]
+-	Updates
+	-	@AML (0.20.2.2)
+-	Fix logo not rendering (after install?)
+-	Fix PKE chest indicator alignment
+-	Add more PKE meters to chest
+-	Set deaths from access barriers to sync between players
+
+
+-	Set life crystals back to 20 hp
+-	Ensure Orbs scannables are informative
+-	Fix player retrofit
+[v0.45.1]
 -	Updates
 	-	@Cursed Bones (1.1.1)
-
-
 [v0.45.0]
 -	Updates
 	-	@Cursed Bones (1.1.0)

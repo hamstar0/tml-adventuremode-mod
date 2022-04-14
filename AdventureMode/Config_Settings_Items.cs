@@ -6,8 +6,8 @@ using Terraria.ModLoader.Config;
 
 namespace AdventureMode {
 	public partial class AMConfig : ModConfig {
-		[DefaultValue( true )]
-		public bool ReducedLifeCrystalStatIncrease { get; set; } = true;
+		[DefaultValue( false )]
+		public bool ReducedLifeCrystalStatIncrease { get; set; } = false;
 
 
 		[Range( 0, 60 * 60 * 30 )]

@@ -53,7 +53,7 @@ namespace AdventureMode.Logic {
 			//
 
 			IList<Item> invList = player.inventory
-				.Where( item => item?.active == true )
+				.Where( item => item?.active == true && item.type > 0 && item.stack > 0 )
 				.ToList();
 
 			//
@@ -83,6 +83,10 @@ namespace AdventureMode.Logic {
 			int i = 0;
 			foreach( Item item in invList ) {
 				player.inventory[i++] = item;
+
+				if( i >= player.inventory.Length ) {
+					break;
+				}
 			}
 
 			//

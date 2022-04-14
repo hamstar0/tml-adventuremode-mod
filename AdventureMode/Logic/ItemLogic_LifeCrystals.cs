@@ -7,6 +7,7 @@ namespace AdventureMode.Logic {
 		public static void OnLifeCrystalConsume( Player player ) {
 			if( AMConfig.Instance.ReducedLifeCrystalStatIncrease ) {
 				player.statLifeMax -= 10;
+
 				ItemLogic.ModifyLifeCrystalPopupText();
 			}
 		}
