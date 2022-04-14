@@ -6,11 +6,12 @@
 -	Updates
 	-	@AML (0.20.2.2)
 -	Fix logo not rendering (after install?)
--	Fix PKE chest indicator alignment
+-	Reduce sky barrier to 180 hp
 -	Add more PKE meters to chest
 -	Set deaths from access barriers to sync between players
 
 
+-	Fix PKE chest indicator alignment
 -	Set life crystals back to 20 hp
 -	Ensure Orbs scannables are informative
 -	Fix player retrofit

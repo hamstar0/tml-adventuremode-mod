@@ -15,12 +15,14 @@ namespace AdventureMode.Logic {
 
 		////
 
-		public static void HighlightRaftMirror_If( AMWorld myworld ) {
+		public static bool HighlightRaftMirror_If( AMWorld myworld, out bool hasDrawn ) {
 			if( WorldLogic.IsRaftMirrorDiscovered ) {
-				return;
+				hasDrawn = false;
+				return false;
 			}
 			if( !myworld.Raft.IsInitialized ) {
-				return;
+				hasDrawn = false;
+				return false;
 			}
 
 			//
@@ -33,7 +35,8 @@ namespace AdventureMode.Logic {
 				if( Math.Abs(mirrorX - x) <= 2 && Math.Abs(mirrorY - y) <= 2 ) {
 					WorldLogic.IsRaftMirrorDiscovered = true;
 
-					return;
+					hasDrawn = false;
+					return true;
 				}
 			}
 
@@ -48,6 +51,20 @@ namespace AdventureMode.Logic {
 			);
 			pos = UIZoomLibraries.ApplyZoomFromScreenCenter( pos, null, false, null, null );
 
+			//
+
+			if( pos.X < -Main.screenWidth || pos.X > (Main.screenWidth * 2) ) {
+				hasDrawn = false;
+				return true;
+			}
+
+			if( pos.Y < -Main.screenHeight || pos.Y > (Main.screenHeight * 2) ) {
+				hasDrawn = false;
+				return true;
+			}
+
+			//
+
 			Main.spriteBatch.Begin();
 			Utils.DrawBorderStringFourWay(
 				sb: Main.spriteBatch,
@@ -61,6 +78,11 @@ namespace AdventureMode.Logic {
 				scale: 2f * pulse
 			);
 			Main.spriteBatch.End();
+
+			//
+
+			hasDrawn = true;
+			return true;
 		}
 	}
 }

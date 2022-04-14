@@ -78,9 +78,10 @@ namespace AdventureMode.Logic {
 
 		////////////////
 
-		public static void HighlightPKEChest_If( AMWorld myworld ) {
+		public static bool HighlightPKEChest_If( AMWorld myworld, out bool hasDrawn ) {
 			if( WorldLogic.IsPKEChestDiscovered ) {
-				return;
+				hasDrawn = false;
+				return false;
 			}
 
 			//
@@ -88,7 +89,8 @@ namespace AdventureMode.Logic {
 			(int x, int y)? pkeChestTile = WorldLogic.GetPKEChestLocation_Caches( myworld );
 //DebugLibraries.Print( "pke chest", "tile: "+pkeChestTile );
 			if( !pkeChestTile.HasValue ) {
-				return;
+				hasDrawn = false;
+				return false;
 			}
 
 			//
@@ -101,7 +103,8 @@ namespace AdventureMode.Logic {
 			if( pkeItem == null ) {
 				WorldLogic.IsPKEChestDiscovered = true;
 
-				return;
+				hasDrawn = false;
+				return true;
 			}
 
 			//
@@ -109,11 +112,27 @@ namespace AdventureMode.Logic {
 			float pulse = (float)Main.mouseTextColor / 255f;
 			Vector2 dim = Main.fontMouseText.MeasureString( "V" );
 
-			Vector2 pos = new Vector2(
-				(pkeChestTile.Value.x * 16) - 8 - Main.screenPosition.X,
-				(pkeChestTile.Value.y * 16) - 8 - Main.screenPosition.Y
+			var wldPos = new Vector2( pkeChestTile.Value.x, pkeChestTile.Value.y );
+			wldPos *= 16f;
+			//wldPos.X += 8f;
+			wldPos.Y -= 8f;
+			var pos = new Vector2(
+				wldPos.X - Main.screenPosition.X,
+				wldPos.Y - Main.screenPosition.Y
 			);
 			pos = UIZoomLibraries.ApplyZoomFromScreenCenter( pos, null, false, null, null );
+
+			//
+
+			if( pos.X < -Main.screenWidth || pos.X > (Main.screenWidth * 2) ) {
+				hasDrawn = false;
+				return true;
+			}
+
+			if( pos.Y < -Main.screenHeight || pos.Y > (Main.screenHeight * 2) ) {
+				hasDrawn = false;
+				return true;
+			}
 
 			//
 
@@ -130,6 +149,11 @@ namespace AdventureMode.Logic {
 				scale: 2f * pulse
 			);
 			Main.spriteBatch.End();
+
+			//
+
+			hasDrawn = true;
+			return true;
 		}
 	}
 }
