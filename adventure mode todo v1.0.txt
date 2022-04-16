@@ -1,16 +1,38 @@
 [v1]
 -	@First public beta
 -	Upload mods to mod browser (apply validation)
+-	Create trailer
 -	@Final MP Test
-[v0.45.2]
+[v0.46.0]
 -	Updates
+	-	@Bullwhip (1.6.0)
+	-	@Soul Barriers (3.1.0.3)
+	-	@TMR (1.10.0)
+	-	@World Gates (1.2.9.1)
+-	Add Sendoreaper to testers
+
+
+-	Fix message about resurf pot for all players
+-	Fix whip pvp desynced kb
+-	@TMR
+	-	Prevent double hitting enemies
+-	@Soul Barriers
+	-	Fix world gate barrier v barrier
+		-	Add error when syncing for a gate that doesnt exist
+-	Validate backup mod pack
+-	Ensure 'ModPacks' folder exists before creating backup json
+[v0.45.2]
+-	Fix logo crash
+-	Updates
+	-	@AM (0.45.2)
 	-	@AML (0.20.2.2)
+	-	@Lost Expeditions (1.1.1)
+	-	@Soul Barriers (3.1.0.2)
+	-	@World Gates (1.2.9)
 -	Fix logo not rendering (after install?)
--	Reduce sky barrier to 180 hp
 -	Add more PKE meters to chest
+-	Reduce sky barrier to 180 hp
 -	Set deaths from access barriers to sync between players
-
-
 -	Fix PKE chest indicator alignment
 -	Set life crystals back to 20 hp
 -	Ensure Orbs scannables are informative

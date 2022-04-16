@@ -46,10 +46,12 @@ namespace AdventureMode.Items {
 
 		public override bool UseItem( Player player ) {
 			Timers.SetTimer( "ResurfacePotionUse", 3, false, () => {
-				if( ResurfacePotionItem.CanResurface( player, out string msg ) ) {
+				if( ResurfacePotionItem.CanResurface(player, out string msg) ) {
 					ResurfacePotionItem.ApplyWarp( player, item );
 				} else {
-					Main.NewText( msg, Color.Yellow );
+					if( player.whoAmI == Main.myPlayer ) {
+						Main.NewText( msg, Color.Yellow );
+					}
 				}
 
 				return false;
