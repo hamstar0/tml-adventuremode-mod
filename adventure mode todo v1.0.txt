@@ -3,12 +3,20 @@
 -	Upload mods to mod browser (apply validation)
 -	Create trailer
 -	@Final MP Test
+[v0.46.2]
+-	Updates
+	-	@AML (0.20.3)
+	-	@Bullwhip (1.6.0.1)
+	-	@Locked Abilities (1.3.1.2)
+
+
+-	Reduce scan radius of LEs
+-	Tweak Dark Heart Shard tooltip
+-	Fix bullwhip pvp sync (?)
 [v0.46.1]
 -	Updates
 	-	@Cursed Bones (1.1.1.1)
 	-	@World Gates (1.2.9.2)
-
-
 -	Prevent cursed bones from genning upon open air
 -	Fix world barriers
 [v0.46.0]
