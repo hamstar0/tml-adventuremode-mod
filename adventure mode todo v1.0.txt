@@ -3,6 +3,14 @@
 -	Upload mods to mod browser (apply validation)
 -	Create trailer
 -	@Final MP Test
+[v0.46.1]
+-	Updates
+	-	@Cursed Bones (1.1.1.1)
+	-	@World Gates (1.2.9.2)
+
+
+-	Prevent cursed bones from genning upon open air
+-	Fix world barriers
 [v0.46.0]
 -	Updates
 	-	@Bullwhip (1.6.0)
@@ -10,15 +18,12 @@
 	-	@TMR (1.10.0)
 	-	@World Gates (1.2.9.1)
 -	Add Sendoreaper to testers
-
-
 -	Fix message about resurf pot for all players
 -	Fix whip pvp desynced kb
 -	@TMR
 	-	Prevent double hitting enemies
 -	@Soul Barriers
 	-	Fix world gate barrier v barrier
-		-	Add error when syncing for a gate that doesnt exist
 -	Validate backup mod pack
 -	Ensure 'ModPacks' folder exists before creating backup json
 [v0.45.2]
