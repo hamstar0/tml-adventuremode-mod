@@ -3,13 +3,23 @@
 -	Upload mods to mod browser (apply validation)
 -	Create trailer
 -	@Final MP Test
+[v0.47.0]
+-	Updates
+	-	@AML (0.20.3.1)
+	-	@Bullwhip (1.6.1)
+
+
+-	Improve logo glow
+-	Tweak dryad message to mention orbs with powder
+-	@Bullwhip
+	-	Ensure local player hits their intended target
+	-	Sync hits to ents
+	-	Fix whip multi-hit to npcs in MP
 [v0.46.2]
 -	Updates
 	-	@AML (0.20.3)
 	-	@Bullwhip (1.6.0.1)
 	-	@Locked Abilities (1.3.1.2)
-
-
 -	Reduce scan radius of LEs
 -	Tweak Dark Heart Shard tooltip
 -	Fix bullwhip pvp sync (?)
