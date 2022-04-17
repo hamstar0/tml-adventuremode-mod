@@ -3,12 +3,20 @@
 -	Upload mods to mod browser (apply validation)
 -	Create trailer
 -	@Final MP Test
+[v0.48.0]
+-	Updates
+	-	@Bullwhip (1.6.2)
+	-	@Necrotis (2.2.3)
+
+
+-	Fix vanilla ectoplasm not being consumable
+-	Fix necrotis warning message broadcasts
+-	Fix AMS crash
+-	Fix whip pvp and "fling" fx in MP
 [v0.47.0]
 -	Updates
 	-	@AML (0.20.3.1)
 	-	@Bullwhip (1.6.1)
-
-
 -	Improve logo glow
 -	Tweak dryad message to mention orbs with powder
 -	@Bullwhip
