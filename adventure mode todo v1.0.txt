@@ -2,6 +2,7 @@
 -	@First public beta
 -	Upload mods to mod browser (apply validation)
 -	Create trailer
+-	Tweak logo illumination to cast to adjacent letters
 -	@Final MP Test
 
 
