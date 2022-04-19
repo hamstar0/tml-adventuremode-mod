@@ -1,0 +1,240 @@
+[v0.49.1]
+-	Tweak logo illumination to cast to adjacent letters
+-	Fix world gates
+[v0.49.0]
+-	Updates
+	-	@Bullwhip (1.6.3)
+	-	@Cursed Bones (1.1.1.2)
+	-	@Soul Barriers (3.2.0)
+	-	@World Gates (1.3.0)
+-	Fix premature world gate (within corruption?!)
+-	Fix cursed bones gen in open air
+-	Fix whip player hits
+-	Fix whip animations
+[v0.48.0]
+-	Updates
+	-	@Bullwhip (1.6.2)
+	-	@Necrotis (2.2.3)
+-	Fix vanilla ectoplasm not being consumable
+-	Fix necrotis warning message broadcasts
+-	Fix AMS crash
+-	Fix whip pvp and "fling" fx in MP
+[v0.47.0]
+-	Updates
+	-	@AML (0.20.3.1)
+	-	@Bullwhip (1.6.1)
+-	Improve logo glow
+-	Tweak dryad message to mention orbs with powder
+-	@Bullwhip
+	-	Ensure local player hits their intended target
+	-	Sync hits to ents
+	-	Fix whip multi-hit to npcs in MP
+[v0.46.2]
+-	Updates
+	-	@AML (0.20.3)
+	-	@Bullwhip (1.6.0.1)
+	-	@Locked Abilities (1.3.1.2)
+-	Reduce scan radius of LEs
+-	Tweak Dark Heart Shard tooltip
+-	Fix bullwhip pvp sync (?)
+[v0.46.1]
+-	Updates
+	-	@Cursed Bones (1.1.1.1)
+	-	@World Gates (1.2.9.2)
+-	Prevent cursed bones from genning upon open air
+-	Fix world barriers
+[v0.46.0]
+-	Updates
+	-	@Bullwhip (1.6.0)
+	-	@Soul Barriers (3.1.0.3)
+	-	@TMR (1.10.0)
+	-	@World Gates (1.2.9.1)
+-	Add Sendoreaper to testers
+-	Fix message about resurf pot for all players
+-	Fix whip pvp desynced kb
+-	@TMR
+	-	Prevent double hitting enemies
+-	@Soul Barriers
+	-	Fix world gate barrier v barrier
+-	Validate backup mod pack
+-	Ensure 'ModPacks' folder exists before creating backup json
+[v0.45.2]
+-	Fix logo crash
+-	Updates
+	-	@AM (0.45.2)
+	-	@AML (0.20.2.2)
+	-	@Lost Expeditions (1.1.1)
+	-	@Soul Barriers (3.1.0.2)
+	-	@World Gates (1.2.9)
+-	Fix logo not rendering (after install?)
+-	Add more PKE meters to chest
+-	Reduce sky barrier to 180 hp
+-	Set deaths from access barriers to sync between players
+-	Fix PKE chest indicator alignment
+-	Set life crystals back to 20 hp
+-	Ensure Orbs scannables are informative
+-	Fix player retrofit
+[v0.45.1]
+-	Updates
+	-	@Cursed Bones (1.1.1)
+[v0.45.0]
+-	Updates
+	-	@Cursed Bones (1.1.0)
+	-	@FMC (2.1.0.1)
+-	Fix survey stations not genning mirrors
+-	Tone down cursed bones
+-	Updates
+	-	@Soul Barriers (3.1.0.1)
+	-	@World Gates (1.2.8.1)
+-	Put binocs on hotbar
+-	Fix 'World gates not loaded.' on clients
+-	Fix BarrierStrengthPacket invalid player who
+[v0.44.0]
+-	Updates
+	-	@AML (0.20.2.1)
+-	Return pickaxe to slot 1
+-	Fix PKE scan of world gates (ug desert?!)
+-	Updates
+	-	@Mod Libs Core (1.5.4.1)
+	-	@Soul Barriers (3.1.0)
+	-	@World Gates (1.2.8)
+-	Fix world gates init
+-	@Soul Barriers
+	-	Refactor IBarrierFactory
+[v0.43.0]
+-	Updates
+	-	@AM (0.43.0)
+	-	@Cursed Bones (1.0.1)
+	-	@Mod Libs Core (1.5.4)
+	-	@Soul Barriers (3.0.2)
+	-	@Surroundings (1.2.0.1)
+	-	@World Gates (1.2.7)
+-	Add exception for Surroundings mod to AMS "enabled mods" checks
+-	Tone down cursed bones frequency on surface
+-	@Surroundings
+	-	Attempt to fix transparency color (cornflower blue) screen fill bug
+-	Fix improper player defaults loading (missing gun, whip, etc.)
+-	Fix errors
+-	Fix world gate destroy desync
+-	@MP Test
+-	@AMS
+	-	Make
+	-	Fix repeating install prompts
+-	@Updates
+	-	Surroundings (1.2.0)
+	-	More Item Info (1.5.0)
+-	@Adventure Mode Setup
+	-	Add title screen overlay
+		-	Draw layers with appropriate illumination
+		-	Make logo follow terraria's logo as a sub-title
+		-	Break up logo (A, rock-only text, highlight layers)
+		-	Trim logo edges
+	-	Add config for whitelisting mods
+	-	Check for non-AM mods and display list
+	-	Add logo background on prompt
+	-	Add setting to force install prompt on each game load
+	-	Fix button hover
+	-	Add version checking
+	-	On confirm
+		-	Reload mods
+		-	Outputs .tmod files into mod folder
+		-	Set enabled mods list
+		-	Backup old mod pack (if any)
+		-	Show instruction images
+	-	Implement cancel
+	-	Define confirm buttons
+	-	@Plan
+		-	If MP, ignore install
+		-	Modify 'enabled.txt' to exclusively enable AM mods
+	-	Change 'manager' mod into "Adventure Mode" mod
+-	Change client mods into server mods
+-	Create icon + logo
+-	Rename "Adventure Mode Lore" to "Adventure Mode - Setting"
+-	Rename "Adventure Mode Core" to "Adventure Mode - Basics"
+-	Updates
+	-	@Mod Libs UI (1.2.0)
+	-	@Mod Libs Core (1.5.2)
+	-	@Mod Utility Panels (2.1.0)
+-	@Mod Libs
+	-	Upload mods to mod browser
+	-	Update mods' homepages
+	-	Create thread
+	-	@Mod Utility Panels
+		-	Implement default panel; shows list of mods (import from Mod Helpers)
+	-	Set mod icons
+[v0.42.0]
+-	Updates
+	-	@Mod Libs Core (1.5.1.1)
+	-	@FMC (2.1.0)
+	-	@Grappletech (2.2.1)
+	-	@HUD Elements Lib (4.2.0)
+	-	@Messages (1.3.0)
+	-	@Necrotis (2.2.2)
+	-	@Powerful Magic (1.11.0)
+-	Add Nodecraft plug
+-	@Mod Libs Core
+	-	Fix custom config float elements rendering as black (also debug them not applying value changes)
+-	Update mods list in mod readme/description
+-	@Messages
+	-	Make category head 'messages' use a different font
+-	@Powerful Magic
+	-	Fix focus mode locking (even when items switched)
+-	@HUD Element Libs
+	-	Save "collisions enabled" state for elements
+-	@Powerful Magic
+	-	Fix book hold offset when focusing
+-	@Necrotis
+	-	Set Omnis to begin at <0.1% anima?
+	-	Alert to "spiritual replenishment required" to recover from necrotis
+-	@FMC
+	-	Increase binoc flicker intensity/sensitivity
+-	@Grappletech
+	-	Reduce display duration and intensity of hookables overlay
+	-	Reduce edge grabbiness by 1
+[v0.41.0]
+-	Updates
+	-	@Bullwhip (1.5.1)
+	-	@Mod Libs General (1.6.0)
+	-	@Mod Libs Core (1.5.1)
+	-	@Soul Barriers (3.0.1)
+	-	@TMR (1.9.6)
+	-	@World Gates (1.2.6.4)
+-	@Test world gates
+-	@Bullwhip
+	-	Remove whip pvp
+	-	Fix whip sync (sync projectile animation frames)
+	-	Fix bullwhip while dead
+-	@Soul Barriers
+	-	Fix sync for real this time seriously omg (reported incorrect strength message)
+-	@TMR
+	-	Fix TMR holster animation sync?
+	-	Fix TMR not syncing or appearing on other clients (check flags)
+-	F&T
+	-	Fix player init failing
+	-	Fix pvp barriers
+	-	Debug world gates
+	-	Fix "player conversion" (MP)
+	-	Fix exceptions
+[v0.40.0]
+-	@Test via MP
+-	Updates
+	-	@PKE Meter (2.0.0.1)
+	-	@Soul Barriers (3.0.0)
+	-	@Necrotis (2.2.1.2)
+	-	@Cursed Brambles (1.3.1.2)
+	-	@Bullwhip (1.5.0.1)
+	-	@Trickster (1.7.5.6)
+	-	@Lost Expeditions (1.1.0)
+	-	@AML (0.20.1)
+-	@AML
+	-	Attempt to make a blatant "Use magic to find magic" message more clearly
+-	Set new, non-AM players to be "converted" on joining a server
+-	Apply recommended player inventory loadout on spawn
+-	F&T
+	-	Fix world gates vs dungeon guardians
+	-	@AML
+		-	Fix conditions for 'About Mana Shards' message
+	-	@Soul Barriers
+		-	Fix PBG failing against gates to sync for other players
+-	Triple gem drops from pots
+

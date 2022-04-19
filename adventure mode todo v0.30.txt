@@ -1,0 +1,526 @@
+[v0.39.0]
+-	@Mod Libs Utility Content (1.1.0.1)
+-	@Ruined Items (2.11.2.1)
+-	@Necrotis (2.2.1.1)
+-	Set gems scannable with message hint about crafting magic tools to "better understand magic phenomena"
+-	Set pots to rarely add a wraith to the spawn pool
+-	Set pots to drop gems occasionally
+-	@Necrotis
+	-	Set up transition from Omnis-to-Natus to have its own message
+-	Fix individual resurface potion consume
+-	Fix erroneous 'Raft barrel cannot be restocked while full.'?
+-	@Ruined Items
+	-	Fix repairing with scrap
+-	@Grappletech (2.2.0)
+-	@Ergophobia (1.14.0.2)
+-	@Necrotis (2.2.1)
+-	F&T
+	-	@AML
+		-	Set as scannables
+			-	Fallen cyborgs
+			-	Dilluted ectoplasms
+	-	@PKE Meter
+		-	Fix sound alerts for items when PKE Meter not present
+	-	@Grappletech
+		-	Set rail mount grapple to not trigger grapple overlay
+		-	Allow grappling to partial corner protrusions on wider squares
+	-	@Ergophobia
+		-	Fix 'open space' error
+-	@Boss Reigns (1.3.1.2)
+-	@The Trickster (1.7.5.5)
+-	F&T scans
+	-	Widen tile scans
+	-	Verify scannable barriers
+-	F&T MP
+	-	Fix resurface potion returning to spawn
+	-	Fix missing PKE colors
+	-	Fix cursed skull projectiles destroying PBGs
+-	Fix scans upon inventory items
+-	@AML (0.20.0)
+-	@PKE Meter (2.0.0)
+-	Make PKE able to 'scan' things to generate message alerts
+	-	@AML Implement scannable messages
+		-	Migrate messages to scannables
+		-	@Scannables
+			-	1: Orbs, Bones, Pots, Ectoplasms, Tricksters, Barriers, Cyborgs, Magitech
+			-	2: Canopic Jars, Elixirs, Mana Crystals/Shards, TMR, Bandoliers
+			-	3: MMMs, Geothaum Stations, Kits, Ropes, Dark Hearts/Pieces, Bullwhip, Binocs
+	-	Don't show item alerts without a scanner in inventory
+	-	Implement saving scans
+	-	Set scanning to be automatic; no left-click needed
+	-	Set PKE mouse icon + alert to not need PKE meter
+	-	Show icons for scannable items
+	-	Add tooltip for scanning
+	-	Implement "can scan" fx
+		-	Implement mouse icon for scannable under mouse
+		-	Implement sound cue
+		-	Implement HUD animation 
+	-	Implement scan feature (left click upon screen object)
+		-	Add hooks for scan completion
+		-	Define scannable regions data
+		-	Add sound for scan
+		-	Implement item use animation (use time locks against re-use)
+[v0.38.0]
+-	@Steampunk Arsenal (0.18.0.2)
+-	@Boss Reigns (1.3.1.1)
+-	@Soul Barriers (2.1.0)
+-	F&T MP
+	-	Fix fast evaporating PBG barrier (prematurely detecting player projectiles?)
+	-	Fix barriers vs world gates (test with debug message to indicate source of PBG fails)
+	-	Fix exceptions
+-	@Test via private MP
+-	@Mod Libs Core (1.4.0.1)
+-	@Mod Libs General (1.4.0)
+	-	Refactor projectile libs to base sync off of `Main.projectileIdentity[owner, uuid]`
+-	Reduce quantity of speedloaders at beach LE
+-	Fix PKE chest label
+-	Fix LE gens
+-	Fix missing subsequent NPC dialogues
+-	Add PKE chest label
+-	@AML (0.19.1)
+	-	Add objective: Locate each PKE reading
+	-	Add initial objective: Stop plague
+-	Force herb seeds to disappear
+-	@Objectives (0.8.0)
+	-	Show unfinished objectives widget count on HUD above raft timer
+-	@HUD Elements Lib (4.1.0)
+-	@Steampunk Arsenal (0.18.0.1)
+	-	Don't charge boiler if in vanity slot
+-	Increase loot drop chance for cursed bones
+-	Disable enemy barriers (for now)
+-	Fix cyborg scrap drops
+-	Remove default MMM world gens
+-	Remove mana shard from dungeon chest
+-	@PKE (1.7.0.2)
+	-	Prevent widgets from fading when inventory active (only edit mode)
+-	@AM
+	-	Disable "GeothaumSurveyStationDropsItem" setting
+-	@FMC
+	-	Verify station cant be blocked by world gen
+	-	Improve station
+		-	Implement right-click to activate scan state
+		-	Add activation state animation
+		-	Fix perma-binoc scan state bug
+-	@Soul Barriers (2.0.0.1)
+-	@Orbs (1.7.1)
+	-	Prevent wall breaking
+-	@AML (0.19.0.1)
+	-	Edit cursed bones message
+-	@FMC (2.0.0)
+-	@FMC: Implement "Geothaumatic Surveillance Stations"
+	-	@AM: Disable "IsGeothaumSurveyStationBreakable", "EnableGeothaumSurveyStationRecipe" settings
+	-	Fix station use for free viewing
+	-	Reduce scan range for shards
+	-	Fix station design
+	-	@Test
+	-	Implement station use (binocs-like)
+	-	Finish world gen structure (silly purple balloon wall + luminite brick wall)
+	-	Implement map chunk reveals when near station
+		-	Alert about map use when near station
+		-	Edit code to show shard chunks
+		-	Import chunk code from Orbs mod
+	-	Remove discovery
+	-	Implement discovery
+	-	Add credit "DJEN"
+	-	Implement world gen (3x6 wall formation, including MMM on bottom)
+	-	Create sprite
+	-	Define wall tile
+	-	@Plan
+		-	Generated in any reasonably-open underground space that isn't near other stations
+		-	Activated when player draws near
+		-	When activated, highlights nearby map squares that have mana shards
+		-	Also allows viewing distant areas as if using the zoomed in binocs, but without a range limit
+		-	Has a Mounted Mirror attached to its base (replaces existing world gen mirrors)
+[v0.37.0]
+-	Update package mod
+-	Fix raft start in-game label (MP only?)
+-	@Necrotis (2.2.0.2)
+-	@Messages (1.2.0.4)
+-	@Objectives (0.7.2.3)
+-	@PKEMeter (1.7.0.1)
+-	@TheMadRanger (1.9.5.1)
+-	@RuinedItems (2.11.2)
+-	@Mod Libs Utility Content (1.1.0)
+-	Change @Mod Libs Utility Content subclass into manual hooks
+-	@Mod Utility Panels (2.0.0)
+-	@Lost Expeditions (1.0.0)
+	-	Add Steam Balls to LEs
+-	@AML (0.19.0)
+	-	Add guide dialog + objective to find "thaumaturgical substances" to study and eliminate plague
+	-	Finish removing LE content
+-	Transfer cyborg tile credits to @Mod Libs Utility Content
+-	Separate @Lost Expeditions into its own mod
+-	@Steampunk Arsenal (0.18.0)
+-	@Create "Steam-Driven Rivet Launcher" mod (internal name = "Steampunk Arsenal")
+-	@HUD Elements Lib (4.0.0)
+	-	Fix editing elements without inventory open
+	-	Implement interactivity with elements
+-	@Mod Libs Core (1.4.0)
+-	@Cursed Bones (1.0.0)
+	-	Review for lag
+	-	Reduce item drops
+	-	Increase pickaxe resist
+-	@Necrotis (2.2.0.1)
+	-	Fix broadcasted ectoplasm pickup fail message
+-	Set reigns timer to begin only after PKE meter found (ensure sync)
+-	@Boss Reigns (1.3.1)
+	-	Add boss reign pause API functions
+-	@FMC (1.6.0)
+	-	Change tooltips to indicate zoom mode "finds secrets"
+	-	Add icon to mouse while holding binocs, but not zooming
+	-	Set binocs zoom to use left-click
+-	@Messages (1.2.0.3)
+	-	If an important unread message exists, preserve icon
+-	@The Trickster (1.7.5.4)
+-	@Cursed Brambles (1.3.1.1)
+-	@Bullwhip (1.5.0)
+	-	Set whipped barriers to have % chance to drop ectoplasm
+	-	Implement added damage (via API) for bullwhips vs barriers (NPC or PvP)
+-	@Soul Barriers (2.0.0)
+	-	Validate sync
+	-	Set only random NPCs to randomly feature barriers
+	-	Prevent NPC barriers from breaching world gates
+	-	Implement PBG vs NPC barrier collisions
+	-	Fix critters receiving barriers
+	-	Fix PBG not stopping projectile skulls
+	-	Implement NPC (hostile, non-worm, non-boss, non-proj.) barriers (50 + hp)
+-	@World Gates (1.2.6.2)
+-	@Bullwhip (1.5.0)
+	-	1.4.1 -> 1.5.0
+	-	Add API to implement custom behaviors for whip hits
+	-	Add player animation while using hotkey bullwhip
+	-	Improve hotkey cooldown to lock out all items for 1.25s
+	-	Add cooldown between hotkey uses
+	-	Fix whip hotkey spam
+-	@Mod Libs Core (1.3.0.1)
+-	@Grappletech (2.1.0)
+	-	Allow grappling protruding tiles better (3 neighbors, adjacent)
+-	@Ergophobia (1.14.0)
+	-	Add better indicator for placing planks/platforms (add error on invalid placement)
+		-	@Plan for planks error: "Needs solid near"
+		-	@Plan for platforms error: "Needs solid or platform near"
+	-	Show obstructing individual tiles for framing kit
+-	@AML (0.18.1)
+	-	Set old man to mention world gate in front of dungeon
+	-	Set Trickster to be weak ref
+-	Set Trickster to be weak ref
+-	Set Ruined Items to be weak ref
+-	Set Powerful Magic to be weak ref
+-	Set Green Hell to be weak ref
+-	Set Enraged to be weak ref
+-	Set Boss Reigns to be weak ref
+-	Set Cursed Bones to be weak ref
+-	@Objectives (0.7.2.2)
+-	@Pot Luck (2.1.0)
+	-	Add config option to pick a single item from a pool of PotDef entries
+-	@Soul Barriers (1.5.0)
+	-	Fix weird fx with high fps (?)
+	-	Set barriers to use explicit ids (no auto ids)
+-	@World Gates (1.2.6.1)
+-	@Mod Libs General (1.3.1.1)
+-	@Locked Abilities (1.3.1.1)
+	-	Fix dupe bug
+-	@Enraged (0.13.1.1)
+[v0.36.0]
+-	@Necrotis (2.2.0)
+	-	Set demon magic scythe hits to add necrotis damage
+-	@Powerful Magic (1.10.0)
+	-	Fix non-player powered up magic projectiles
+-	@Mod Libs Core (1.3.0)
+	-	Implement player projectile claiming
+		-	Add Projectile.GetOwner() extension method
+		-	Add GlobalProjectile.SetDefaults hook to assign ownership during modes
+		-	Add NPC.AI, Player.ItemCheck, Projectile.AI On hooks to create ID mode
+-	@AML (0.18.0)
+	-	Add orb booklet to dungeon LE
+	-	Add 2nd P.K.E Meter to mid map LE
+	-	Reduce Dark Heart Pieces per LE (-1 to 2)
+	-	Create dungeon LE with 4 random orbs, 1 of each type of seismic explosive
+-	@Orbs (1.7.0)
+	-	Add tooltip to orb items to indicate full screen map view
+	-	Show usable orb types when holding an orb
+		-	Implement getter for list of voidable orb types
+		-	Implement getter for player-owned orbs
+	-	@B&D Plan: Show row of orbs + "(Right-click to cycle)" text on equip for 3s
+-	@PKE Meter (1.7.0)
+	-	Add 9 colored lights
+-	@Findable Mana Crystals (1.5.0)
+	-	Set binoc zoom to cast really low, constant light
+-	@Powerful Magic
+	-	Fix powered up laser fx (again)
+-	@Enraged (0.13.1)
+	-	Set all bosses to create brambles when enraged if below a certain speed for 4 seconds
+-	@Grappletech (2.0.1)
+	-	Show all grapple-able tiles in wide radius around player when using grapple
+-	@Surroundings (1.1.0.3)
+	-	Add message about disabling mod if too laggy
+-	@Powerful Magic (1.10.0)
+	-	Fix unpowered laser fx
+	-	Add 'power fx' to common spells
+[v0.35.0]
+-	Add "Welcome to Adventure Mode" as a Message (in addition to the book)
+-	Lower elevation of bound goblin spawn area
+-	Set crafted items as 'ruined' (CraftRuinPercentChance, GeneralRuinRollChance)
+-	Remove respawn blocking during bosses
+-	@Necrotis (2.1.3)
+	-	Increase anima drain rates slightly
+-	Change recipes of Seismic Charge-derived items to be more available
+-	@Ruined Items (2.11.1.2)
+	-	Remove limit to magitech scrap repair reuses per item
+-	@Cursed Brambles (1.3.1)
+	-	Ensure world is scanned for existing brambles on load
+	-	Increase bramble linger duration (4x)
+-	@AML (0.17.5)
+	-	Add some dark heart pieces to LEs
+-	@Trickster (1.7.5.3)
+	-	Increase spawn rates
+-	Fix 'give players free items on spawn' issue (20 ropes, 3 resurface pots)
+-	@B&D any remaining design considerations
+	-	B&D mechanic to repurpose old items for new ones (harvest for magitech scrap?)
+	-	B&D more use for magitech scrap
+	-	B&D another form of progression locking involving puzzles or mid-boss type battle
+	-	B&D a use for LEs more notable than secondary item upgrades
+[v0.34.0]
+-	F&T
+	-	Set beds to be 0 value items
+-	@Soul Barriers
+	-	Fix access gate double kill (MP): Add respawn buffer timer to prevent kills
+-	@AML (0.17.4)
+	-	Add objective for increasing mana after encountering world gate (mention using binocs)
+	-	Update radio messages to mention binocs focus
+-	@FMC
+	-	Further improved binoc focus (increase dust velocity, velocity starkness)
+-	@Powerful Magic (1.9.0)
+	-	Increase focus interrupt threshold further
+	-	Add Space Gun thermometer icon indicator
+	-	Add tooltip about Space Gun overheat (including percent indicator)
+-	@TMR (1.9.5)
+	-	Fix TMR mouse hijacking of other clients
+-	@Grappletech (2.0.0)
+	-	Improve unhookable tiles indicator (show icons on only hookable tiles)
+	-	When hook is flying, show valid grapple-able tiles in radius
+	-	When hook fails to grab, make an effect
+	-	Allow grabbing poles
+	-	Verify hook tooltips
+-	@FMC (1.4.0)
+	-	Add right-click 'focus' mode to binocs
+		-	Add random light flickers
+		-	Tighten and animate 'signs' particles thicker
+		-	Add binoc tooltip
+		-	Implement game zoom while focused
+-	Add Wand of Sparking recipe
+-	Set pumpkins to be breakable
+-	Allow resurface when in surface caves
+-	MP: Too many ecto drops per pot
+-	@Orbs (1.6.2.1)
+-	@Pot Luck (2.0.0)
+-	@Necrotis (2.1.2)
+-	@Objectives (0.7.2.1)
+[v0.33.0]
+-	Clarify using PBG vs world gates
+-	Add tooltip to bait items about fishing removal
+-	Add gameplay message to inform about fishing removal
+-	Enable pickaxing cursed bones
+-	@AML (0.17.3)
+	-	Premature 'About the Trickster' message
+-	@Soul Barriers (1.4.0)
+	-	Fix hit fx
+	-	Fix sphere fx
+	-	Increase particles per world barrier
+-	@Orbs (1.6.2)
+	-	Prevent removing barrels
+-	Fix player initial spawn; separate world-acknowledged spawn from character create 'spawn'
+-	Set Terrain Remixer to be weak ref mod
+-	@Terrain Remixer (0.13.0)
+	-	Fix
+-	@Green Hell (0.7.4) (fixed sync issues)
+[v0.32.0]
+-	@Test local MP
+-	F&T
+	-	@Surroundings (1.1.0.2)
+		-	Fix premature lava overlay (broken 'IsLavaLayer?)
+	-	Tweak goblin's 2nd dialogue
+	-	@Necrotis (2.1.1)
+		-	Set elixir to require nearby honey (not honey bottles)
+	-	Prevent Resurface Potion if destination is not defined
+	-	Fix consuming Resurface Potion when failed to reach surface
+	-	Mention that duct tape replaces tinkerer's workshop
+	-	Ensure duct tape recipes are enabled
+	-	Fix rope building upward (via @Quick Ropes)
+	-	Remove minimap bound goblin marker when rescued (also mechanic's)
+	-	@Mod Libs General (1.3.1)
+	-	@Soul Barriers (1.3.0)
+		-	Fix world barrier hover hp
+		-	Increase world barrier particles
+	-	@Green Hell (0.7.3)
+		-	Reduce infection debuff duration
+	-	Fix raft timer sync
+	-	@Messages
+		-	Fix exception
+	-	Fix stalled raft restock timer
+	-	@Powerful Magic (1.8.2)
+		-	Try to avoid interrupting charge on short falls
+	-	@Cursed Brambles (1.3.0)
+		-	Refactor decay to use slow scan snapshots
+		-	Increase decay rate
+	-	@Soul Barriers
+		-	Fix weird gaps in bramble collision (don't incur drain on client?)
+	-	Fix goblin spawn
+	-	Fix seismic charge tile sync
+	-	@Locked Abilities (1.3.1)
+		-	Duplicate accessories from blocked slots (MP)
+	-	@AML (0.17.2)
+		-	Add game Message about increased PBG decay rate in jungle
+	-	Fix missing armor uncraft recipes
+	-	Reduce world gen orbs to 65%
+	-	@Cursed Brambles (1.2.1)
+	-	@Soul Barriers (1.2.0)
+		-	Improve PBG tile collision detection (sync from client?)
+		-	Fix world gates not rendering (or showing hover hp)
+	-	Remove Resurface Potions making potion sickness + not consuming when used (but still being used)
+	-	Re-edit demo man objective dialogue
+	-	Fix goblin rescue icon not appearing in MP
+	-	@Mod Libs Core (1.2.0.3)
+	-	@AML (0.17.1)
+		-	Edit demo man's objective text?
+		-	Fix guide's alert icon remaining while custom message gone (e.g. end of red bar after boss)
+		-	Guide's dialogue being locked on "Uh oh!"
+	-	@TMR (1.9.4)
+		-	Increase damage vs bosses
+	-	@Green Hell (0.7.2)
+		-	Fix water parasites failing (MP?)
+	-	@Soul Barriers (1.0.1)
+		-	Fix Rectangular barriers not working to tile grid
+		-	Fix tile sync
+-	F&T
+	-	@Ergophobia (1.12.0)
+	-	Address exception noted in log
+	-	Enable Resurfacing Potion recipe (also verify other recipes)
+	-	@AML (0.17.0)
+		-	Add radio message about strange plants having strange properties
+		-	Edit Anima radio message
+		-	Edit "Uh oh!" message
+		-	Reduce cyborg's Magitech Scrap drops from 3 to 2
+		-	Add Mounted Mirrors to LE barrels
+		-	Reduce elixirs per LE barrel
+	-	@FMC (1.3.4)
+		-	Reduce blue PKE reading clarity slightly
+	-	@Bullwhip (1.4.0)
+		-	Sync whipped NPC ai changes
+		-	Sync relocated items
+	-	@Boss Reigns (1.3.0.3)
+		-	Give non-default name to drain fx
+	-	@Necrotis (2.1.0)
+		-	Fix premature bramble spawn after partially recovering from necrotis
+		-	Add bramble adjacency limit to generator (12 within 8 radius?)
+	-	@Cursed Brambles (1.2.0)
+		-	Reduce PBG damage vs brambles even more
+		-	Make brambles pickaxe more clearly and quickly
+	-	@Necrotis
+		-	Reduce bramble gen rate when Necrotis'd
+		-	When full Necrotis, stop producing brambles when dead
+[v0.31.0]
+-	Add elixir to raft restocks
+-	Add missing fail conditions and alerts for resurface potions
+-	Give Resurface Potions to new players
+-	F&T
+	-	Resurface Potions should use stars and bottles, and be craftable anywhere
+	-	@AML (0.16.1)
+		-	Add Elixirs to LEs
+		-	Remove hint colors temporarily (not implemented, yet)
+	-	@TMR (1.9.3)
+		-	Implement bandit bullet damage sync
+	-	@Soul Barriers (1.0.0)
+		-	Don't kill player with access barrier if freshly spawned
+		-	Do not block PBG when not at full mana (but do when below 10 mana)
+	-	@World Gates (v1.2.6)
+		-	Prevent tricksters from hitting barrier (detect also on client)
+	-	@Trickster (1.7.5.1)
+	-	@Necrotis (2.0.1)
+		-	Fix loaded ectoplasms wanting to float up
+		-	Removed shine pot from elixir recipe
+-	F&T
+	-	@Enraged (0.13.0)
+		-	Reduce boss brambles produced
+	-	@AML (0.16.0)
+		-	Colorize hints within radio messages
+		-	Add mention of using scaffolds to build an arena in 'boss reigns' radio (colorize the hint)
+	-	Reduce raft restock timer to 1 day
+	-	@More Item Info (1.4.0)
+		-	Ensure recipes are active
+	-	Increase world chest orb rate
+	-	@Cursed Brambles (1.1.2)
+		-	Reduce PBG barrier hit amount per bramble
+	-	@Messages
+		-	Set 'important' message alert icon to last much longer
+	-	@Trickster (1.7.5)
+		-	Increase spawn rate, reduce adjacent NPC requirement?
+	-	@Soul Barriers (0.26.0)
+		-	Make underworld, jungle drain PBG barrier at 3x the normal rate
+	-	@Necrotis
+		-	Remove anima drain stoppage from PBG
+-	Add Resurface Potion
+	-	Add to player start equipment
+	-	Define recipe (3x crafted from 1x Recall Potion)
+	-	Implement sprite
+	-	Implement warp behavior
+	-	Define item
+	-	@Plan v2
+		-	Warps you to the last point where you were touching 'sun or moon light'
+		-	Do not work if below top of lava layer
+	-	@Plan v1
+		-	When <250 tiles below lava layer, warp to lava layer top
+		-	When <250 tiles below rock layer, warp to rock layer top
+		-	When below surface, warp to last point of daylight contact
+		-	Otherwise, prevent use
+-	Create @Net Debug mod (1.3.0)
+	-	Fix duplicate entries
+	-	Set panel see-through
+	-	Display desynced items in list
+	-	Display desynced npcs on list
+	-	Implement NPC/item data send
+	-	Implement NPC/item data receive
+	-	Define mod
+[v0.30.0]
+-	F&T
+	-	@Trickster (1.7.4)
+		-	Reduce invinc duration from attack
+	-	@Necrotis (2.0.0)
+		-	Finish debug outputs
+		-	Debug necrotis drain halt (biome is attempting)
+-	@HUD Elements Lib (3.2.0)
+-	@Soul Barriers (0.25.0.2)
+	-	Allow client-side barrier collisions (bad sync overrides barrier values server-side)
+-	@FMC (1.3.3)
+	-	Increase binoc spark hint scale when near crystals
+	-	Make blue PKE gauge clearer
+-	F&T
+	-	@AML (0.15.1)
+		-	Rename 'About mana shards (2)'
+	-	@Orbs
+		-	Prevent breaking raft tiles
+	-	Implement raft resupply timer sync
+	-	Debug pickup fail for ectoplasm (MP)
+	-	Fix PBG fail to stop skulls? (MP)
+-	@Soul Barriers (0.25.0.1)
+	-	Periodically sync barrier from server
+-	@Trickster (1.7.3)
+-	@AML (0.15.0)
+	-	Add radio about Tricksters spawning near other tricksters
+	-	Add radio about PBG vs brambles (upon encountering brambles with a PBG in inventory)
+-	F&T
+	-	On small worlds, increase map percent width of center area cavern widener
+	-	@Terrain Remixer (0.12.0)
+		-	Implement dynamic settings getter hook via API
+	-	@TMR (1.9.2.1)
+		-	Fix bandit bullets being extremely powerful (MP)
+	-	@Cursed Brambles (1.1.1)
+		-	Reduce bramble damage
+		-	Fix brambles vs PBG
+	-	@World Gates (1.2.5)
+		-	Fix 'Access denied.' message (MP)
+	-	@Soul Barrier (0.25.0)
+		-	Fix missing world gate down message (MP)
+		-	Fix 0 hp barrier hit spam (MP?; during night?)
+		-	Fix incorrect damage popup for barrier hits
+	-	Fix missing timer widget in MP
