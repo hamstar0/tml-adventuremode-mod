@@ -32,7 +32,7 @@ namespace AdventureMode.Mods {
 
 			orbsConfig.SetOverride( nameof(orbsConfig.BreakableTilesWhitelist), myTileKillWhitelist );
 			orbsConfig.SetOverride( nameof(orbsConfig.BreakableTilesWhitelistFrameExceptions), wlExceptions );
-			orbsConfig.SetOverride( nameof(orbsConfig.OnlyGenOrbsInUndergroundChests), false );
+			//orbsConfig.SetOverride( nameof(orbsConfig.OnlyGenOrbsInUndergroundChests), false );
 			orbsConfig.SetOverride( nameof(orbsConfig.AnyOrbPercentChancePerChest), 0.65f );
 			orbsConfig.SetOverride( nameof(orbsConfig.CyanOrbWeightPerOrbChest), 0.25f );
 			orbsConfig.SetOverride( nameof(orbsConfig.WhiteOrbWeightPerOrbChest), 0f );

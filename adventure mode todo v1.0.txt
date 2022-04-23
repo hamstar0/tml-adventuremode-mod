@@ -3,14 +3,62 @@
 -	Upload mods to mod browser (apply validation)
 -	Create trailer
 -	@Final MP Test
+[v0.51.0]
+-	Updates
+	-	@AML 0.21.0
+	-	@Boss Reigns 1.4.0
+	-	@Cursed Bones 1.1.1.3
+	-	@Ergophobia 1.15.0
+	-	@Grappletech 2.2.2
+	-	@Green Hell 0.7.5
+	-	@Lost Expeditions 1.1.2
+	-	@Orbs 1.8.0
+	-	@PKE 2.0.0.2
+	-	@Powerful Magic 1.11.0.1
+	-	@World Gates 1.3.1
+-	@Test
+-	@AMS
+	-	Mention beta status, add link for feedback
+	-	Make glowing logo letters pulse (not flicker) and not clash with daylight
+
+
+-	@AM
+	-	Shrink tooltip for Strange Plants
+-	@AML
+	-	Make jungle water scannable
+	-	Make scaffolding kits scannable
+	-	Edit trickster message text
+-	@LE
+	-	Add more dark heart shards to LEs
+-	@Boss Reigns
+	-	When AM not loaded, disable digging while 'reigns' are in session
+	-	Avoid soft locking from WoF (adds hard coded exception when all pre-HM bosses downed)
+-	@Powerful Magic
+	-	Fix wand of sparking focus sprite alignment
+-	@Green Hell
+	-	Verify jungle snake hiss isnt broadcast
+-	@World Gates
+	-	Reduce gates by -5 (slightly lower than multiple of 20 amounts)
+-	@Grappletech
+	-	Fix overlay not showing
+-	@PKE
+	-	Attempt failsafe against PKE HUD toggle spam
+-	@Ergophobia
+	-	Fix placement height adjusting of scaffolding kits
+	-	Make scaffold kits cheap
+-	@Orbs
+	-	Enable orb use on obsidian brick, ebonstone brick, crimtane brick
+	-	Enable pickaxing obsidian brick, ebonstone brick, crimtane brick
+	-	Add more orbs to world chests
+	-	Show orb color of tile chunk on mouse icon while using binocs
+	-	Make orb sprites more distinct
+	-	Fix orb sync
 [v0.50.0]
 -	Updates
 	-	@FMC (2.1.0.2)
 	-	@Necrotis (2.2.4)
 	-	@Soul Barriers (3.3.0)
 	-	@World Gates (1.3.0.2)
-
-
 -	@Test (especially resurrecting world gates)
 -	Fix elixir altering health (remove heal effect completely)
 -	Make blue PKE reading more clear

@@ -48,7 +48,7 @@ namespace AdventureMode {
 			case ItemID.StrangePlant2:
 			case ItemID.StrangePlant3:
 			case ItemID.StrangePlant4:
-				addTip( "StrangePlant", "Important: This item is now used as an ingredient for boss summon items" );
+				addTip( "StrangePlant", "Important: Ingredient for boss summon items" );
 				break;
 			default:
 				//if( config.GrappleChainAmmoRate > 0 && ItemAttributeLibraries.IsGrapple( item ) ) {

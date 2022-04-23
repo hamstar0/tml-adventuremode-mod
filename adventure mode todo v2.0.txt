@@ -232,33 +232,6 @@ v1.1
 	-	Set category buttons to match colors of messages category
 	-	On category button click, unfold category into view
 	-	Implement UISelectableTextPanel for message body
--	@B&D
-	-	@Bullwhip
-		-	Implement 'Cobra Charm' accessory (adds stun hits)
-	-	Charging melee attacks with anima to make enemies drop ectoplasm + debuff them
-	-	@World Gates?
-		-	@AML
-			-	Add some mana shards to LEs
-			-	Create an orb stockpile LE near dungeon
-		-	Implement Lesser World Gates
-			-	@Plan
-				-	Generate as rectangles with an area randomly between 48x32->256x128
-				-	Generate with a propertion ratio of 1:2->1:1
-				-	Generate without overlap and with 24 tile minimum separations
-				-	Resist magic and boulder projectiles (1/3 damage)
-				-	Regenerates slightly slower than the TMR can speed reload
-				-	Max field hp increases with depth
-	-	Rename World Gates to Greater World Gates
-	-	"Empyreal Soul"
-		-	Spawns from killed enemies; more hp, higher chance
-		-	Attempts to flee from the player; flies away until out of range, and then despawns
-		-	Must be picked up with empty hand only
-		-	Used with Orb Shards to craft regular Orbs
-	-	@Boss Reign
-		-	Spawn boss minions at random during reign?
-	-	Ways to improve terrain (make it more interesting)
-	-	Utility panel to show active timers
-	-	Self destructing environments
 -	@AML
 	-	Add diagrams to relevant technical messages
 	-	Add portraits to messages
@@ -305,5 +278,38 @@ v1.1
 	-	Fix parallax
 	-	Refactor overlays into injection hooks
 -	@Mod Libs - Services - Draw Layers
+-	@B&D
+	-	@Bullwhip
+		-	Implement 'Cobra Charm' accessory (adds stun hits)
+	-	Charging melee attacks with anima to make enemies drop ectoplasm + debuff them
+	-	@World Gates?
+		-	@AML
+			-	Add some mana shards to LEs
+			-	Create an orb stockpile LE near dungeon
+		-	Implement Lesser World Gates
+			-	@Plan
+				-	Generate as rectangles with an area randomly between 48x32->256x128
+				-	Generate with a propertion ratio of 1:2->1:1
+				-	Generate without overlap and with 24 tile minimum separations
+				-	Resist magic and boulder projectiles (1/3 damage)
+				-	Regenerates slightly slower than the TMR can speed reload
+				-	Max field hp increases with depth
+	-	Rename World Gates to Greater World Gates
+	-	"Empyreal Soul"
+		-	Spawns from killed enemies; more hp, higher chance
+		-	Attempts to flee from the player; flies away until out of range, and then despawns
+		-	Must be picked up with empty hand only
+		-	Used with Orb Shards to craft regular Orbs
+	-	@Boss Reign
+		-	Spawn boss minions at random during reign?
+	-	Ways to improve terrain (make it more interesting)
+	-	Utility panel to show active timers
+	-	Self destructing environments
+	-	Low hp, high damage ghost enemies that can only be seen with binocs
+	-	Boss paths: Opens a path of chunks when boss mask is used
+	-	Boss kill zones: Non-orb chunks only open when a given boss is killed nearby
+	-	Boss reigns should be more significant
+		-	Boss "ghosts"!
+		-	Moon lord or cultist summons as ghost-like things that appear (with telegraphing)
 
 
