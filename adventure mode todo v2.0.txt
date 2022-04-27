@@ -311,5 +311,7 @@ v1.1
 	-	Boss reigns should be more significant
 		-	Boss "ghosts"!
 		-	Moon lord or cultist summons as ghost-like things that appear (with telegraphing)
+-	@Mod Libs General
+	-	Implement screen center-based `ConvertToScreenPosition` for UIZoomLibraries
 
 

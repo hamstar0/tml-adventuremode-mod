@@ -1,8 +1,40 @@
 [v1]
 -	@First public beta
+-	@Final MP Test
 -	Upload mods to mod browser (apply validation)
 -	Create trailer
--	@Final MP Test
+[v0.52.0]
+-	Updates
+	-	@AML 0.21.0.2
+	-	@Enraged 0.14.0
+	-	@Grappletech 2.2.2.1
+	-	@Necrotis 2.2.5.1
+	-	@Orbs 1.8.0.1
+	-	@PKE 2.0.0.3
+	-	@Surroundings 1.2.0.2
+-	@AMS
+	-	Updates
+	-	Verify if indicating how many mods are already loaded that are part of the game mode
+
+
+-	@AM
+	-	Updates
+-	Exceptions
+-	@AML
+	-	Set "max PKE meters" objective to accept +80% green
+-	@PKE
+	-	Tweak PKE mouse icon position (+16, -8)
+-	@Grappletech
+	-	Fix grapple overlay misalign (game zoom)
+-	@Necrotis
+	-	Tweak Dilluted Ectoplasm scannable text
+	-	Add alert highlight for on screen ectoplasms when below 35% anima
+-	@Orbs
+	-	Fix mouse orb overlay in main menu
+-	@Enraged
+	-	Reduced damage taken to 25%
+	-	Improve enrage meter readability
+-	Film trailer scenes
 [v0.51.0]
 -	Updates
 	-	@AML 0.21.0
@@ -16,12 +48,10 @@
 	-	@PKE 2.0.0.2
 	-	@Powerful Magic 1.11.0.1
 	-	@World Gates 1.3.1
--	@Test
 -	@AMS
-	-	Mention beta status, add link for feedback
 	-	Make glowing logo letters pulse (not flicker) and not clash with daylight
-
-
+	-	Mention beta status, add link for feedback
+	-	Updates
 -	@AM
 	-	Shrink tooltip for Strange Plants
 -	@AML
