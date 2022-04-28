@@ -22,7 +22,7 @@ namespace AdventureMode.Logic {
 
 		////////////////
 
-		public static bool CanBoundGoblinSpawn( NPCSpawnInfo spawnInfo ) {
+		public static bool CanBoundGoblinSpawn( NPCSpawnInfo spawnInfo, bool alsoValidateExistingNpcs ) {
 			(int x, int y) goblinOrigTile = NPCLogic.GetBoundGoblinOrigin();
 			var goblinOrigWldPos = new Vector2(goblinOrigTile.x, goblinOrigTile.y) * 16f;
 
@@ -31,10 +31,21 @@ namespace AdventureMode.Logic {
 			float minDist = 64f * 16f;    // 64 blocks
 			float minDistSqr = minDist * minDist;
 
-			return distSqr < minDistSqr;
+			//
+
+			if( distSqr < minDistSqr ) {
+				if( alsoValidateExistingNpcs ) {
+					if( NPC.AnyNPCs(NPCID.BoundGoblin) || NPC.AnyNPCs(NPCID.GoblinTinkerer) ) {
+						return false;
+					}
+				}
+				return true;
+			}
+
+			return false;
 		}
 
-		public static bool CanBoundMechanicSpawn( NPCSpawnInfo spawnInfo ) {
+		public static bool CanBoundMechanicSpawn( NPCSpawnInfo spawnInfo, bool alsoValidateExistingNpcs ) {
 			var myworld = ModContent.GetInstance<AMWorld>();
 			int mechanicTileX = myworld.DungeonBottom.TileX;
 			int mechanicTileY = myworld.DungeonBottom.TileY;
@@ -44,7 +55,18 @@ namespace AdventureMode.Logic {
 			float minDist = 96 * 16;    // 96 blocks
 			float minDistSqr = minDist * minDist;
 
-			return distSqr < minDistSqr;
+			//
+
+			if( distSqr < minDistSqr ) {
+				if( alsoValidateExistingNpcs ) {
+					if( NPC.AnyNPCs(NPCID.BoundMechanic) || NPC.AnyNPCs(NPCID.Mechanic) ) {
+						return false;
+					}
+				}
+				return true;
+			}
+
+			return false;
 		}
 
 		public static bool CanVoodooDemonSpawn( NPCSpawnInfo spawnInfo ) {

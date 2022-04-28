@@ -70,11 +70,11 @@ namespace AdventureMode {
 
 			//
 
-			if( NPCLogic.CanBoundGoblinSpawn(spawnInfo) && !NPC.AnyNPCs(NPCID.BoundGoblin) ) {
+			if( NPCLogic.CanBoundGoblinSpawn(spawnInfo, true) ) {
 				pool[ NPCID.BoundGoblin ] = 1f;
 			}
 
-			if( NPCLogic.CanBoundMechanicSpawn(spawnInfo) && !NPC.AnyNPCs(NPCID.BoundMechanic) ) {
+			if( NPCLogic.CanBoundMechanicSpawn(spawnInfo, true) ) {
 				pool[ NPCID.BoundMechanic ] = 1f;
 			}
 
@@ -87,12 +87,12 @@ namespace AdventureMode {
 		private bool CanSpawn( int npcType, NPCSpawnInfo spawnInfo ) {
 			switch( npcType ) {
 			case NPCID.BoundGoblin:
-				if( !NPCLogic.CanBoundGoblinSpawn(spawnInfo) ) {
+				if( !NPCLogic.CanBoundGoblinSpawn(spawnInfo, true) ) {
 					return false;
 				}
 				break;
 			case NPCID.BoundMechanic:
-				if( !NPCLogic.CanBoundMechanicSpawn(spawnInfo) ) {
+				if( !NPCLogic.CanBoundMechanicSpawn(spawnInfo, true) ) {
 					return false;
 				}
 				break;

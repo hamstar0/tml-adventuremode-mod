@@ -1,10 +1,18 @@
 [v1]
 -	@First public beta
--	@Final MP Test
 -	Upload mods to mod browser (apply validation)
+-	Update mod homepages
+-	@Final MP Test
 -	Create trailer
+
+
+[v0.52.1]
+-	@Surroundings (1.2.0.3)
+	-	Lower cave bottom background alignments
+-	Fix duplicate bound goblins and mechanics
 [v0.52.0]
 -	Updates
+	-	@AM 0.52.0
 	-	@AML 0.21.0.2
 	-	@Enraged 0.14.0
 	-	@Grappletech 2.2.2.1
@@ -14,9 +22,6 @@
 	-	@Surroundings 1.2.0.2
 -	@AMS
 	-	Updates
-	-	Verify if indicating how many mods are already loaded that are part of the game mode
-
-
 -	@AM
 	-	Updates
 -	Exceptions
