@@ -86,5 +86,19 @@ namespace AdventureMode {
 		public override void NPCLoot( NPC npc ) {
 			NPCLogic.ApplyLoot( npc );
 		}
+
+
+		////////////////
+
+		public override bool PreAI( NPC npc ) {
+			// Hopefully this won't become a source of bugs
+			if( npc.netID == NPCID.Guide ) {
+				npc.dontTakeDamage = true;
+				npc.immortal = true;
+				npc.life = npc.lifeMax;
+			}
+
+			return base.PreAI( npc );
+		}
 	}
 }

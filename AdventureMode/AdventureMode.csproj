@@ -32,9 +32,6 @@
     <Reference Include="CursedBrambles">
       <HintPath>..\..\..\Cursed Brambles\Project\CursedBrambles\bin\Release\net452\CursedBrambles.dll</HintPath>
     </Reference>
-    <Reference Include="Enraged">
-      <HintPath>..\..\..\Enraged\Project\Enraged\bin\Release\net452\Enraged.dll</HintPath>
-    </Reference>
     <Reference Include="Ergophobia">
       <HintPath>..\..\..\Ergophobia\Project\Ergophobia\bin\Release\net452\Ergophobia.dll</HintPath>
     </Reference>
@@ -94,9 +91,6 @@
     </Reference>
     <Reference Include="ModUtilityPanels">
       <HintPath>..\..\..\Mod Libs\Mod Utility Panels\Project\ModUtilityPanels\bin\Release\net452\ModUtilityPanels.dll</HintPath>
-    </Reference>
-    <Reference Include="MoreItemInfo">
-      <HintPath>..\..\..\More Item Info\Project\MoreItemInfo\bin\Release\net452\MoreItemInfo.dll</HintPath>
     </Reference>
     <Reference Include="MountedMagicMirrors">
       <HintPath>..\..\..\Mounted Magic Mirrors\Project\MountedMagicMirrors\bin\Release\net452\MountedMagicMirrors.dll</HintPath>

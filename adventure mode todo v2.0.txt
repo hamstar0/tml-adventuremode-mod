@@ -274,9 +274,22 @@ v1.1
 	-	Define mod
 -	@Ergophobia
 	-	Set platform placement via. r-click to create max-length bridges
+-	@Boss Reigns
+	-	@AM
+		-	Issue warnings from the pirates at increasing intervals when near red bar
+		-	Set high armor pirates (no captain, dutchman) to invade beach area until a boss is killed
 -	@Surroundings
 	-	Fix parallax
 	-	Refactor overlays into injection hooks
+-	@Powerful Magic
+	-	If enough velocity is lost
+		-	Upon focus end, the player dashes in the direction of the mouse
+		-	An fx appears to indicate the player may dash
+		-	A free dash charge is stored for when focus ends
+	-	Set focus to (slowly) recharge PBG barrier
+	-	Add fx for focusing
+	-	Add fx for increasing focus via. velocity loss
+	-	From the onset of focus, every unit of velocity lost from initial amount adds focus
 -	@Mod Libs - Services - Draw Layers
 -	@B&D
 	-	@Bullwhip
@@ -311,7 +324,21 @@ v1.1
 	-	Boss reigns should be more significant
 		-	Boss "ghosts"!
 		-	Moon lord or cultist summons as ghost-like things that appear (with telegraphing)
+	-	A way to replace Mounted Magic Mirrors with On A Rail
 -	@Mod Libs General
 	-	Implement screen center-based `ConvertToScreenPosition` for UIZoomLibraries
+-	@Enraged
+	-	Implement cursed brambles bloom
+-	@AML
+	-	Add "locales"
+		-	Flying Islands: "Lighter-than-air Land Masses" + "Signs of volatile magic infused into the land"
+		-	Underworld: "Hell" + "A civilization once lived here..."
+		-	Lava Caves: "Volcanic Caverns" + "Fresh signs of tectonic activity"
+		-	Caves: "Pourous Caves" + "The burial urns are stored deep indeed!"
+		-	Jungle: "Ancient Marsh" + "Legends speak of civilizations swallowed up here"
+		-	Snow: "Living Glacier" + "Slowly carving up the land"
+		-	Corruption: "Mysterious Blight" + "Powerful negative spiritual energies reside here"
+		-	Dungeon entrance: "Mysterious Dungeon" + "Wailing of the dead can be heard within"
+		-	Beach: "Terraria, land of the undead" + "Mission: Eliminate the source of undeath!"
 
 

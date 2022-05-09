@@ -1,11 +1,90 @@
 [v1]
 -	@First public beta
 -	Upload mods to mod browser (apply validation)
--	Update mod homepages
 -	@Final MP Test
+[v0.53.0]
+-	Updates
+	-	@AML 0.21.1
+	-	@Boss Reigns 1.4.0.1
+	-	@Findable Mana Crystals 2.1.0.4
+	-	@HUD Elements Lib 4.3.1
+	-	@Lost Expeditions 1.1.2.1
+	-	@Messages 1.4.0
+	-	@Mod Libs Core 1.5.4.2
+	-	@Mod Libs General 1.7.2
+	-	@Necrotis 2.2.5.3
+	-	@Objectives 0.9.0
+	-	@Orbs 1.9.0
+	-	@PKE Meter 3.0.0
+	-	@Powerful Magic 1.11.1
+	-	@Steampunk Arsenal 0.18.0.3
+	-	@The Mad Ranger 1.11.0
+	-	@The Trickster 1.7.5.7
+
+
+-	@AMS
+	-	Add Trash History
+	-	Set Quick Rope as an optional mod
+	-	Set logo 2nd glow softer
+	-	Tweak mod icon (add inside glow)
+-	Update mod homepages
+-	Create @Trash History mod
+	-	Create mod
+	-	@Plan
+		-	An inventory slot is dedicated to being the "pile"
+		-	When an item is placed on the pile, it's stored there invisibly
+		-	When the player left-clicks on the pile, an item is popped
+		-	When the player right-clicks the pile, 10 items are popped
+		-	Ctrl+click pile to make items added to its bottom (queued) instead of top (stacked)
+-	Tweak trailer thumbnail
+-	Exceptions
+-	@AM
+	-	Fix raft timer widget position
+	-	Make guide invincible with replenishing hp
+	-	Stop highlighting PKE barrel when player owns a PKE meter
+	-	Fix absent PKE barrel highligher (sync barrel contents to clients?)
+	-	Fix spark wand recipe
+-	@AML
+	-	On enter: "Terraria, land of the undead" + "Eliminate the source of undeath!"
+	-	Set all shard finding objectives as 'important'
+-	@Powerful Magic
+	-	Don't attempt to clamp horizontal velocity if not on the ground during focus
+-	Add timer buffer between after item hover before resuming orb switching
+-	@PKE
+	-	At 65% of a reading, emit alert
+		-	Use timer to buffer against start and end of reading
+		-	Implement 'real' reading and 'perceived' reading
+		-	Animate with corresponding color
+		-	Produce a sound
+		-	Detect reading and begin fx
+	-	Set PKE HUD to be enabled by default
+	-	Enable PKE scan while paused
+-	@FMC
+	-	Add message for geothaum use to "see map"
+	-	Modify geothaum map label (to mention "Mana Shards" specifically)
+-	@TMR
+	-	Improve speedloader (use reload hotkey)
+-	Swap Objectives widget with raft refill widget
+-	@Orbs
+	-	Prevent orb use/UI when dead
+	-	Prevent swapping when mouse hovering
+	-	Increase world orb supply
+	-	Add color labels when showing orb icons
+	-	Set inventory orbs to glow only when "resonating"
+	-	Set targetted chunk to auto-equip relevant orb
+	-	Fix incorrect orb color targetting
+	-	Highlight orb-able chunk with rectangle overlay
+	-	Pick player's targetted chunk by mouse (clamped to 12 tile maximum range)
+	-	Give orbs items special highlight in inventory (item slot?)
+-	@Messages
+	-	Animate Messages widget hover color
+	-	Add widget to show unread important messages on HUD
+	-	Add Mod.Call API
+-	@Objectives
+	-	Implement 'is important' objectives
+	-	Make the objectives HUD element more animated & interactive + open the dialog when clicked
+-	@B&D a way to introduce player to shard finding
 -	Create trailer
-
-
 [v0.52.1]
 -	@Surroundings (1.2.0.3)
 	-	Lower cave bottom background alignments

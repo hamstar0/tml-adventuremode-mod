@@ -78,7 +78,7 @@ namespace AdventureMode.Logic {
 
 		////////////////
 
-		public static bool HighlightPKEChest_If( AMWorld myworld, out bool hasDrawn ) {
+		public static bool HighlightPKEChest_Local_If( AMWorld myworld, out bool hasDrawn ) {
 			if( WorldLogic.IsPKEChestDiscovered ) {
 				hasDrawn = false;
 				return false;
@@ -96,11 +96,21 @@ namespace AdventureMode.Logic {
 			//
 
 			int pkeItemType = ModContent.ItemType<PKEMeter.Items.PKEMeterItem>();
-			Item pkeItem = Main.chest[ myworld.CachedPKEChestIdx ]?
+
+			if( Main.LocalPlayer.inventory.Any(i => i?.active == true && i.type == pkeItemType) ) {
+				WorldLogic.IsPKEChestDiscovered = true;
+
+				hasDrawn = false;
+				return true;
+			}
+
+			//
+
+			Item chestPKEItem = Main.chest[ myworld.CachedPKEChestIdx ]?
 				.item?
 				.FirstOrDefault( i => i.type == pkeItemType );
 
-			if( pkeItem == null ) {
+			if( chestPKEItem == null ) {
 				WorldLogic.IsPKEChestDiscovered = true;
 
 				hasDrawn = false;
@@ -120,7 +130,7 @@ namespace AdventureMode.Logic {
 				wldPos.X - Main.screenPosition.X,
 				wldPos.Y - Main.screenPosition.Y
 			);
-			pos = UIZoomLibraries.ApplyZoomFromScreenCenter( pos, null, false, null, null );
+			pos = UIZoomLibraries.ApplyZoomFromScreenCenter( pos, null, false );
 
 			//
 

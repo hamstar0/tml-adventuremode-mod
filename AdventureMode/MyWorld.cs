@@ -167,8 +167,8 @@ namespace AdventureMode {
 		////////////////
 
 		public override void PostDrawTiles() {
-			WorldLogic.HighlightRaftMirror_If( this, out _ );
-			WorldLogic.HighlightPKEChest_If( this, out _ );
+			WorldLogic.HighlightRaftMirror_Local_If( this, out _ );
+			WorldLogic.HighlightPKEChest_Local_If( this, out _ );
 		}
 	}
 }

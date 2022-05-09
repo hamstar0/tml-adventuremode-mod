@@ -13,13 +13,13 @@ namespace AdventureMode.Logic {
 				var dim = new Vector2( 176f, 52f );
 				var pos = new Vector2(
 					((float)Main.screenWidth - dim.X) * 0.5f,
-					(float)Main.screenHeight - dim.Y - 32f
+					(float)Main.screenHeight - dim.Y //- 32f
 				);
 
 				AMMod.Instance.RaftTimerHUD = new TimerHUD(
 					pos: pos,
 					dim: dim,
-					title: "Time until raft restocks",
+					title: "Raft restocks in",
 					startTimeTicks: (long)ticks,
 					showTicks: false,
 					enabler: () => Main.playerInventory

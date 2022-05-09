@@ -72,6 +72,18 @@ namespace AdventureMode {
 				} else {
 					LogLibraries.Alert( "Cannoy sync raft barrel; not initialized!" );
 				}
+
+				//
+
+				if( myworld.CachedPKEChestIdx != -1 ) {
+					Chest chest = Main.chest[ myworld.CachedPKEChestIdx ];
+
+					for( int i=0; i<chest.item.Length; i++ ) {
+						NetMessage.SendData( MessageID.SyncChestItem, this.PlayerWho, -1, null, myworld.CachedPKEChestIdx, i );
+					}
+				} else {
+					LogLibraries.Alert( "Cannoy sync PKE barrel; not initialized!" );
+				}
 			}
 		}
 
@@ -110,7 +122,7 @@ namespace AdventureMode {
 			this.Data = AMCustomPlayerData.Initialize( this.Player, data );
 
 			//
-
+			
 			MessagesAPI.AddMessagesCategoriesInitializeEvent( () => {
 				MessagesAPI.GetMessage( "nihilism_init" )?.SetReadMessage();
 

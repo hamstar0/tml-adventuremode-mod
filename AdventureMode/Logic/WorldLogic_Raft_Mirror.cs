@@ -15,7 +15,7 @@ namespace AdventureMode.Logic {
 
 		////
 
-		public static bool HighlightRaftMirror_If( AMWorld myworld, out bool hasDrawn ) {
+		public static bool HighlightRaftMirror_Local_If( AMWorld myworld, out bool hasDrawn ) {
 			if( WorldLogic.IsRaftMirrorDiscovered ) {
 				hasDrawn = false;
 				return false;
@@ -49,7 +49,7 @@ namespace AdventureMode.Logic {
 				(mirrorX * 16) - 8 - Main.screenPosition.X,
 				(mirrorY * 16) - 8 - Main.screenPosition.Y
 			);
-			pos = UIZoomLibraries.ApplyZoomFromScreenCenter( pos, null, false, null, null );
+			pos = UIZoomLibraries.ApplyZoomFromScreenCenter( pos, null, false );
 
 			//
 

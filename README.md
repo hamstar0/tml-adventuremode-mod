@@ -90,7 +90,7 @@ Testers:
 - Hayden
 - koolaidlemonade
 - PeasantUnit
-- Planterrer
+- Planterror
 - Retro
 - Sendoreaper
 - Waasephi
