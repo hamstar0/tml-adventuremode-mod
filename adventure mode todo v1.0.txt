@@ -2,6 +2,8 @@
 -	@First public beta
 -	Upload mods to mod browser (apply validation)
 -	@Final MP Test
+
+
 [v0.53.0]
 -	Updates
 	-	@AML 0.21.1
@@ -20,8 +22,6 @@
 	-	@Steampunk Arsenal 0.18.0.3
 	-	@The Mad Ranger 1.11.0
 	-	@The Trickster 1.7.5.7
-
-
 -	@AMS
 	-	Add Trash History
 	-	Set Quick Rope as an optional mod
