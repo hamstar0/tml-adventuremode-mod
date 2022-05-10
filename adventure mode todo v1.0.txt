@@ -2,16 +2,17 @@
 -	@First public beta
 -	Upload mods to mod browser (apply validation)
 -	@Final MP Test
+
+
 [v0.53.1]
 -	Updates
+	-	@AM 0.53.1
 	-	@AML 0.21.1.1
 	-	@Boss Reigns 1.4.0.2
 	-	@Messages 1.4.0.1
 	-	@Objectives 0.9.0.1
 	-	@PKE Meter 3.0.0.1
 	-	@Trash History 1.1.0
-
-
 -	@AML
 	-	Edit kit scan text
 -	@Trash History
