@@ -329,6 +329,8 @@ v1.1
 	-	Implement screen center-based `ConvertToScreenPosition` for UIZoomLibraries
 -	@Enraged
 	-	Implement cursed brambles bloom
+-	@Surroundings
+	-	Fix hanging background animation when Waves quality: Off
 -	@AML
 	-	Add "locales"
 		-	Flying Islands: "Lighter-than-air Land Masses" + "Signs of volatile magic infused into the land"

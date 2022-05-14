@@ -2,8 +2,51 @@
 -	@First public beta
 -	Upload mods to mod browser (apply validation)
 -	@Final MP Test
+[v0.54.0]
+-	Updates
+	-	@AM 0.54.0
+	-	@Bullwhip 1.6.3.1
+	-	@FMC 2.1.0.5
+	-	@HUD Elements Lib 5.0.0
+	-	@Messages 1.4.0.2
+	-	@Necrotis 2.2.6.1
+	-	@Objectives 0.9.0.2
+	-	@Orbs 1.9.0.3
+	-	@Ruined Items 2.11.3
+	-	@Soul Barriers 3.3.1
+	-	@Steampunk Arsenal 0.18.0.4
+	-	@Surroundings 1.2.0.4
+	-	@TMR 1.11.0.1
+	-	@Trash History 1.1.0.1
 
 
+-	@Surroundings
+	-	Debug blue screen
+		-	Attempt: SetRenderTarget(null) after drawing to target RT
+	-	Refactor for readability
+-	@Trash History
+	-	Fix UI scaling
+-	@HUD Elements Libs
+	-	Prevent spilling beyond screen edge
+	-	Upgrade anchors to percents
+	-	Fix element centering for raft timer (@AM), @Objectives, and @Messages
+	-	Add documentation
+-	@Ruined Items
+	-	Add alerts for crafting failures
+	-	Increase chance of magitech repair to 50%
+	-	Re-evaluate crafting chance of ruined items
+-	@Bullwhip
+	-	Fix whip pvp
+-	@FMC
+	-	Restore some noise to blue PKE meter
+-	@Necrotis
+	-	Reduce darkness effect
+	-	Fix red ankh when not in inventory
+	-	Fix anima drain recovery message
+-	@Soul Barriers
+	-	Fix barrier vs skulls (let clients with shields not be hit by projectiles)
+-	@Orbs
+	-	Prevent using orbs when no clear target exists (lock against use 5 ticks after switch)
 [v0.53.1]
 -	Updates
 	-	@AM 0.53.1
