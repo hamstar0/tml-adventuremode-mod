@@ -57,6 +57,7 @@ namespace AdventureMode {
 		////////////////
 
 		protected override void OnEnter( bool isCurrentPlayer, object data ) {
+LogLibraries.Log($"DEBUG OUT 1 {this.Player.name} {isCurrentPlayer}");
 			if( isCurrentPlayer ) {
 				this.OnEnter_CurrentPlayer( data );
 			}
@@ -96,6 +97,7 @@ namespace AdventureMode {
 
 			bool isAdventurer = myplayer.IsAdventurer;
 			
+LogLibraries.Log($"DEBUG OUT 2 {isAdventurer} {this.Player.name}");
 			if( !isAdventurer ) {
 				if( PlayerLogic.RetrofitPlayerInventory_If(this.Player) ) {
 					isAdventurer = true;
@@ -106,6 +108,8 @@ namespace AdventureMode {
 
 				if( !isAdventurer ) {
 					Main.NewText( "Your character is not initialized for Adventure Mode. Exiting to menu in 15 seconds...", Color.Yellow );
+
+					LogLibraries.Log( $"Could not validate {this.Player.name} for Adventure Mode." );
 				}
 			}
 

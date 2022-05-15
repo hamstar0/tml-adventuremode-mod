@@ -20,7 +20,8 @@ namespace AdventureMode.Logic {
 			}
 
 			////
-
+			
+LogLibraries.Log("DEBUG OUT 3");
 			int tmrType = ModContent.ItemType<TheMadRanger.Items.Weapons.TheMadRangerItem>();
 			int bandolierType = ModContent.ItemType<TheMadRanger.Items.Accessories.BandolierItem>();
 			int whipType = ModContent.ItemType<Bullwhip.Items.BullwhipItem>();
@@ -47,6 +48,8 @@ namespace AdventureMode.Logic {
 			);
 
 			if( !isVanillaFresh ) {
+				LogLibraries.Log( $"Could not 'retrofit' {player.name} for Adventure Mode." );
+
 				return false;
 			}
 

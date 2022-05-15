@@ -70,8 +70,9 @@ namespace AdventureMode.Logic {
 				return item;
 			}
 
-			//
+			////
 			
+LogLibraries.Log($"DEBUG OUT 4a {items?.Count}");
 			items.Add( MakeItem(ItemID.WoodenHammer, 1) );
 
 			if( !AMConfig.Instance.EnableTorchRecipes ) {
@@ -83,6 +84,7 @@ namespace AdventureMode.Logic {
 			//items.Add( makeItem(ItemID.GrapplingHook, 1) );
 
 			items.Add( PlayerLogic.CreateGuideBook() );
+LogLibraries.Log($"DEBUG OUT 4b {items.Count}");
 		}
 
 
