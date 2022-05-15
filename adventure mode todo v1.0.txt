@@ -1,12 +1,14 @@
 [v1]
 -	@First public beta
 -	Upload mods to mod browser (apply validation)
+
+
 [v0.54.1]
 -	Update
 	-	@TMR 1.11.0.2
 	-	@World Gates 1.3.1.1
-
-
+-	@AMS
+	-	Clarify mods enabled better
 -	@World Gates
 	-	Actuate all dungeon blocks beginning from just beneath sky barrier on up
 -	@TMR
