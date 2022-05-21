@@ -9,8 +9,11 @@
 	-	Implement dialogue saving
 -	@Objectives
 	-	Implement proper saving between games (MP?)
+
+
 [v0.55.0]
 -	Updates
+	-	@AM 0.55.0
 	-	@Boss Reigns 1.4.0.3
 	-	@FMC 2.2.0
 	-	@HUD Elements Lib 5.0.0.1
@@ -20,8 +23,6 @@
 	-	@Orbs 1.9.0.4
 	-	@PKE 4.0.0
 	-	@Trickster 1.7.5.8
-
-
 -	@LE
 	-	Added white orbs to dungeon, mid-map chest
 -	@HUD Elements Lib
