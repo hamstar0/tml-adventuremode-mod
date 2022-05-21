@@ -1,9 +1,53 @@
 [v1]
+-	Edit trailer
+	-	Redo orbs + geothaum discovery (improve clarity)
+	-	Hasten corruption rail sequence
+	-	Replace desert caves with skull dodging 
+	-	Redo raft
+	-	Shorten intro
+-	@AML
+	-	Implement dialogue saving
+-	@Objectives
+	-	Implement proper saving between games (MP?)
+[v0.55.0]
+-	Updates
+	-	@Boss Reigns 1.4.0.3
+	-	@FMC 2.2.0
+	-	@HUD Elements Lib 5.0.0.1
+	-	@LE 1.1.3
+	-	@Mod Libs General 1.7.3
+	-	@Necrotis 2.2.6.2
+	-	@Orbs 1.9.0.4
+	-	@PKE 4.0.0
+	-	@Trickster 1.7.5.8
+
+
+-	@LE
+	-	Added white orbs to dungeon, mid-map chest
+-	@HUD Elements Lib
+	-	Fix widget clickable position relative to zoom
+-	@Necrotis
+	-	Restore darkness amount at full necrotis
+-	@PKE
+	-	Increase scan light fx cap to 80%
+	-	Fix held PKE alert sound spam
+	-	Fix widget gauge hover
+-	@FMC
+	-	Add reticule that reveals shards directly
+	-	Re-widen shard detect range
+-	@Boss Reigns
+	-	Suppress red PKE gauge proximity alerts
+-	@PKE
+	-	Add API option to suppress proximity alerts for a given gauge
+	-	Fix item scan re-blip sound
+	-	Reduce sharpness of sound and PKE animation alert frequency rate change
+		-	Cap max incoming signal to 70%
+	-	Add hover texts to PKE widget (also shows % of a given gauge)
+	-	Make "something is near" animated lights fx more significant
+	-	Add looping alert pings that increase in rate and volume with proximity
+[v0.54.1]
 -	@First public beta
 -	Upload mods to mod browser (apply validation)
-
-
-[v0.54.1]
 -	Update
 	-	@TMR 1.11.0.2
 	-	@World Gates 1.3.1.1
