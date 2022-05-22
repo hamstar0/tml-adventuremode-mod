@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -20,6 +21,13 @@ namespace AdventureMode.Logic {
 				return;
 			}
 			shop.item[ nextSlot++ ] = binocs;
+
+			if( !shop.item.Any(i=>i?.active == true && i.type == ItemID.Marshmallow) ) {
+				var marshmallow = new Item();
+				marshmallow.SetDefaults( ItemID.Marshmallow );
+
+				shop.item[ nextSlot++ ] = marshmallow;
+			}
 		}
 
 		////
