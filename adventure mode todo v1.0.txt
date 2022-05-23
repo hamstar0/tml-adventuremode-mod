@@ -4,13 +4,30 @@
 	-	Hasten corruption rail sequence
 	-	Replace desert caves with skull dodging 
 	-	Redo raft
-	-	Shorten intro
+	-	Shorten intro; redo zombie march
 -	@AML
 	-	Implement dialogue saving
 -	@Objectives
 	-	Implement proper saving between games (MP?)
+[v0.56.0]
+-	@AM
+	-	Add more kits to raft
+	-	Lower price of kits
+-	@Enraged!
+	-	Implement bramble blooms at beginning of rage moments
+[v0.55.2]
+-	Updates
+	-	@AM 0.55.2
+	-	@AML 0.21.2
+	-	@HUD Elements Lib 5.0.0.4
+	-	@Messages 1.4.0.3
 
 
+-	@AML
+	-	Remember scanned scannables
+-	@Messages
+	-	Skip creating popup alerts for already-read messages (even if important)
+[v0.55.1]
 [v0.55.0]
 -	Updates
 	-	@AM 0.55.0
