@@ -93,7 +93,7 @@ namespace AdventureMode {
 			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.Wood), 50 ),
 			new ItemQuantityDefinition( nameof(Terraria), nameof(ItemID.WoodPlatform), 50 ),
 			new ItemQuantityDefinition( nameof(Ergophobia), nameof(FramingPlankItem), 50 ),
-			new ItemQuantityDefinition( nameof(Ergophobia), nameof(HouseFurnishingKitItem), 3 ),
+			new ItemQuantityDefinition( nameof(Ergophobia), nameof(HouseFurnishingKitItem), 4 ),
 			new ItemQuantityDefinition( nameof(Ergophobia), nameof(HouseFramingKitItem), 2 ),
 			new ItemQuantityDefinition( nameof(MountedMagicMirrors), nameof(MountableMagicMirrorTileItem), 5, true ),
 			new ItemQuantityDefinition( nameof(Ergophobia), nameof(TrackDeploymentKitItem), 12, true )

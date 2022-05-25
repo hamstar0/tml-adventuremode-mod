@@ -77,6 +77,10 @@ namespace AdventureMode {
 				this.ModInteractions.LoadCursedBrambles
 			);
 			LoadMod(
+				new string[] { "Ergophobia" },
+				this.ModInteractions.LoadErgophobia
+			);
+			LoadMod(
 				new string[] { "Ergophobia", "MountedMagicMirrors" },
 				this.ModInteractions.LoadErgophobiaAndMountedMagicMirrors
 			);

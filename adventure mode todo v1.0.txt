@@ -10,19 +10,33 @@
 -	@Objectives
 	-	Implement proper saving between games (MP?)
 [v0.56.0]
+-	Updates
+	-	@AM 0.56.0
+	-	@AML 0.21.2.1
+	-	@Boss Reigns 1.4.0.4
+	-	@Cursed Brambles 2.0.0
+	-	@Enraged! 1.0.0
+	-	@Necrotis 2.2.6.3
+
+
 -	@AM
 	-	Add more kits to raft
 	-	Lower price of kits
+	-	Increase bandit spawn rates
 -	@Enraged!
 	-	Implement bramble blooms at beginning of rage moments
+		-	Deploy bloom generator upon rage start
+		-	@Cursed Brambles
+			-	Implement branching bloom generator
+			-	Implement basic bloom generator
+			-	Implement API for bramble generators
+			-	Define bramble generators
 [v0.55.2]
 -	Updates
 	-	@AM 0.55.2
 	-	@AML 0.21.2
 	-	@HUD Elements Lib 5.0.0.4
 	-	@Messages 1.4.0.3
-
-
 -	@AML
 	-	Remember scanned scannables
 -	@Messages
