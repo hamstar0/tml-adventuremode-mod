@@ -213,6 +213,7 @@ v1.1
 	-	"and my game just stackoverflowed on picking up a red orb when I was at below 33% anima"
 -	Re-add @Spirit Walking
 -	@Necrotis
+	-	Recolor ankh when certain buffs exist (e.g. elixir)
 	-	Implement periodic ectoplasm refresh checks to replace removed ecto items
 -	F&T
 	-	@AML

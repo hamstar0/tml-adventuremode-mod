@@ -1,7 +1,7 @@
 displayName = Adventure Mode - Basics
 author = hamstar
-version = 0.56.0
-modReferences = AdventureModeLore@0.21.2.1, BossChecklist@1.1.4, CursedBrambles@2.0.0, Ergophobia@1.15.0, FindableManaCrystals@2.2.0, HUDElementsLib@5.0.0.4, LockedAbilities@1.3.1.2, LostExpeditions@1.1.3, Messages@1.4.0.3, ModLibsCamera@1.0.1, ModLibsCore@1.5.4.2, ModLibsEntityGroups@1.1.0, ModLibsGeneral@1.7.3, ModLibsInterMod@1.2.0, ModLibsMaps@2.0.0, ModLibsNet@1.0.2, ModLibsNPCDialogue@1.0.0, ModLibsTiles@1.0.0, ModLibsUI@1.2.0, ModLibsUtilityContent@1.1.0.1, ModUtilityPanels@2.1.0, MountedMagicMirrors@1.1.10, Necrotis@2.2.6.3, Nihilism@4.0.0, Objectives@0.9.0.2, Orbs@1.9.0.4, PKEMeter@4.0.0, PotLuck@2.1.0, ReadableBooks@1.3.0.1, SoulBarriers@3.3.1, WorldGates@1.3.1.1
-weakReferences = BossReigns@1.4.0.4, Bullwhip@1.6.3.1, CursedBones@1.1.1.3, Grappletech@2.2.2.1, GreenHell@0.7.5, PowerfulMagic@1.11.1, QuickRope@0.3.0, RuinedItems@2.11.3, SpiritWalking@1.1.2, TerrainRemixer@0.13.0, TheMadRanger@1.11.0.2, TheTrickster@1.7.5.8
+version = 0.57.0
+modReferences = AdventureModeLore@0.21.2.1, BossChecklist@1.1.4, CursedBrambles@2.0.0, Ergophobia@1.15.0, FindableManaCrystals@2.2.0, HUDElementsLib@5.0.0.4, LockedAbilities@1.3.1.2, LostExpeditions@1.1.3, Messages@1.4.0.3, ModLibsCamera@1.0.1, ModLibsCore@1.5.4.2, ModLibsEntityGroups@1.1.0, ModLibsGeneral@1.7.3, ModLibsInterMod@1.2.0, ModLibsMaps@2.0.0, ModLibsNet@1.0.2, ModLibsNPCDialogue@1.0.0, ModLibsTiles@1.0.0, ModLibsUI@1.2.0, ModLibsUtilityContent@1.1.0.1, ModUtilityPanels@2.1.0, MountedMagicMirrors@1.1.10, Necrotis@2.2.6.4, Nihilism@4.0.0, Objectives@0.9.0.2, Orbs@1.9.0.4, PKEMeter@4.1.0, PotLuck@2.1.0, ReadableBooks@1.3.0.1, SoulBarriers@3.3.1, WorldGates@1.3.1.1
+weakReferences = BossReigns@1.4.0.4, Bullwhip@1.6.3.1, CursedBones@1.1.1.3, Grappletech@2.2.2.1, GreenHell@0.7.5, PowerfulMagic@1.11.1, QuickRope@0.3.0, RuinedItems@2.11.3, SpiritWalking@1.1.2, TerrainRemixer@0.13.0, TheMadRanger@1.11.0.2, TheTrickster@1.7.5.9
 buildIgnore = *.csproj, *.user, *.bat, obj\*, bin\*, .vs\*, .git\*
 homepage = https://forums.terraria.org/index.php?threads/adventure-mode.85140/

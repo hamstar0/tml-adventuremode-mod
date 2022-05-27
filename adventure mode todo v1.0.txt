@@ -1,14 +1,33 @@
 [v1]
--	Edit trailer
-	-	Redo orbs + geothaum discovery (improve clarity)
-	-	Hasten corruption rail sequence
-	-	Replace desert caves with skull dodging 
-	-	Redo raft
-	-	Shorten intro; redo zombie march
 -	@AML
 	-	Implement dialogue saving
 -	@Objectives
 	-	Implement proper saving between games (MP?)
+-	@AM
+	-	Implement "To be continued" ending after defeating WoF
+-	Edit trailer
+
+
+[v0.57.0]
+-	Updates
+	-	@AM 0.57.0
+	-	@Necrotis 2.2.6.4
+	-	@PKE 4.1.0
+	-	@Trickster 1.7.5.9
+-	@AMS
+	-	Fix numbered backup mod pack names not being "valid"
+	-	Add Miscellaniety to exceptions list
+-	@Necrotis
+	-	Fix elixir tooltips
+-	@Trickster
+	-	Increase min map distance between encounters
+-	@PKE
+	-	Increase sound alert rate max range
+	-	Fix hud beep spam at certain depth (?)
+	-	Stop beeping when PKE is not on HUD
+-	Create 'Miscellaniety' mod (not to be released)
+	-	Implement 'spawn zombie horde' command
+	-	Define mod
 [v0.56.0]
 -	Updates
 	-	@AM 0.56.0
@@ -17,8 +36,6 @@
 	-	@Cursed Brambles 2.0.0
 	-	@Enraged! 1.0.0
 	-	@Necrotis 2.2.6.3
-
-
 -	@AM
 	-	Add more kits to raft
 	-	Lower price of kits
@@ -26,11 +43,11 @@
 -	@Enraged!
 	-	Implement bramble blooms at beginning of rage moments
 		-	Deploy bloom generator upon rage start
-		-	@Cursed Brambles
-			-	Implement branching bloom generator
-			-	Implement basic bloom generator
-			-	Implement API for bramble generators
-			-	Define bramble generators
+-	@Cursed Brambles
+	-	Implement branching bloom generator
+	-	Implement basic bloom generator
+	-	Implement API for bramble generators
+	-	Define bramble generators
 [v0.55.2]
 -	Updates
 	-	@AM 0.55.2
