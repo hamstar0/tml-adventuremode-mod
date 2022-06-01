@@ -9,13 +9,13 @@
 	-	Fix immunity to boulders while barrier active
 -	@PKE
 	-	Failsafe against proximity alert spam when 2 gauges are 'significant'
+
+
 [v0.57.1]
 -	Updates
 	-	@FMC 2.2.1
 	-	@Locked Abilities 1.3.2
 	-	@Trash History 1.1.0.2
-
-
 -	@FMC
 	-	Increase binoc zoom mouse hover detect range for shards
 -	@Trash History
