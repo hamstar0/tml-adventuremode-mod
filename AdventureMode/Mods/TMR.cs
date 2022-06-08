@@ -9,7 +9,7 @@ namespace AdventureMode.Mods {
 			config.SetOverride( nameof( config.BanditLootBandolierDropPercentChance ), 0f );
 			config.SetOverride( nameof( config.BanditLootSpeedloaderDropPercentChance ), 0.005f );
 			config.SetOverride( nameof( config.BanditLootGunDropPercentChance ), 0f );
-			config.SetOverride( nameof( config.BanditSpawnChance ), 0.4f );
+			config.SetOverride( nameof( config.BanditSpawnChance ), 0.32f );
 			config.SetOverride( nameof( config.RecipeAvailableForSpeedloader ), false );
 		}
 	}

@@ -1,0 +1,348 @@
+[v0.57.1]
+-	Updates
+	-	@FMC 2.2.1
+	-	@Locked Abilities 1.3.2
+	-	@Trash History 1.1.0.2
+-	@FMC
+	-	Increase binoc zoom mouse hover detect range for shards
+-	@Trash History
+	-	Fix missing mod icon crash
+-	@Locked Abilities
+	-	Added (incomplete, basic) API
+-	Edit trailer
+[v0.57.0]
+-	Updates
+	-	@AM 0.57.0
+	-	@Necrotis 2.2.6.4
+	-	@PKE 4.1.0
+	-	@Trickster 1.7.5.9
+-	@AMS
+	-	Fix numbered backup mod pack names not being "valid"
+	-	Add Miscellaniety to exceptions list
+-	@Necrotis
+	-	Fix elixir tooltips
+-	@Trickster
+	-	Increase min map distance between encounters
+-	@PKE
+	-	Increase sound alert rate max range
+	-	Fix hud beep spam at certain depth (?)
+	-	Stop beeping when PKE is not on HUD
+-	Create 'Miscellaniety' mod (not to be released)
+	-	Implement 'spawn zombie horde' command
+	-	Define mod
+[v0.56.0]
+-	Updates
+	-	@AM 0.56.0
+	-	@AML 0.21.2.1
+	-	@Boss Reigns 1.4.0.4
+	-	@Cursed Brambles 2.0.0
+	-	@Enraged! 1.0.0
+	-	@Necrotis 2.2.6.3
+-	@AM
+	-	Add more kits to raft
+	-	Lower price of kits
+	-	Increase bandit spawn rates
+-	@Enraged!
+	-	Implement bramble blooms at beginning of rage moments
+		-	Deploy bloom generator upon rage start
+-	@Cursed Brambles
+	-	Implement branching bloom generator
+	-	Implement basic bloom generator
+	-	Implement API for bramble generators
+	-	Define bramble generators
+[v0.55.2]
+-	Updates
+	-	@AM 0.55.2
+	-	@AML 0.21.2
+	-	@HUD Elements Lib 5.0.0.4
+	-	@Messages 1.4.0.3
+-	@AML
+	-	Remember scanned scannables
+-	@Messages
+	-	Skip creating popup alerts for already-read messages (even if important)
+[v0.55.1]
+[v0.55.0]
+-	Updates
+	-	@AM 0.55.0
+	-	@Boss Reigns 1.4.0.3
+	-	@FMC 2.2.0
+	-	@HUD Elements Lib 5.0.0.1
+	-	@LE 1.1.3
+	-	@Mod Libs General 1.7.3
+	-	@Necrotis 2.2.6.2
+	-	@Orbs 1.9.0.4
+	-	@PKE 4.0.0
+	-	@Trickster 1.7.5.8
+-	@LE
+	-	Added white orbs to dungeon, mid-map chest
+-	@HUD Elements Lib
+	-	Fix widget clickable position relative to zoom
+-	@Necrotis
+	-	Restore darkness amount at full necrotis
+-	@PKE
+	-	Increase scan light fx cap to 80%
+	-	Fix held PKE alert sound spam
+	-	Fix widget gauge hover
+-	@FMC
+	-	Add reticule that reveals shards directly
+	-	Re-widen shard detect range
+-	@Boss Reigns
+	-	Suppress red PKE gauge proximity alerts
+-	@PKE
+	-	Add API option to suppress proximity alerts for a given gauge
+	-	Fix item scan re-blip sound
+	-	Reduce sharpness of sound and PKE animation alert frequency rate change
+		-	Cap max incoming signal to 70%
+	-	Add hover texts to PKE widget (also shows % of a given gauge)
+	-	Make "something is near" animated lights fx more significant
+	-	Add looping alert pings that increase in rate and volume with proximity
+[v0.54.1]
+-	@First public beta
+-	Upload mods to mod browser (apply validation)
+-	Update
+	-	@TMR 1.11.0.2
+	-	@World Gates 1.3.1.1
+-	@AMS
+	-	Clarify mods enabled better
+-	@World Gates
+	-	Actuate all dungeon blocks beginning from just beneath sky barrier on up
+-	@TMR
+	-	Fix mouse item cloning (gives unlimited gun ammo)
+-	@Final MP Test
+[v0.54.0]
+-	Updates
+	-	@AM 0.54.0
+	-	@Bullwhip 1.6.3.1
+	-	@FMC 2.1.0.5
+	-	@HUD Elements Lib 5.0.0
+	-	@Messages 1.4.0.2
+	-	@Necrotis 2.2.6.1
+	-	@Objectives 0.9.0.2
+	-	@Orbs 1.9.0.3
+	-	@Ruined Items 2.11.3
+	-	@Soul Barriers 3.3.1
+	-	@Steampunk Arsenal 0.18.0.4
+	-	@Surroundings 1.2.0.4
+	-	@TMR 1.11.0.1
+	-	@Trash History 1.1.0.1
+-	@Surroundings
+	-	Debug blue screen
+		-	Attempt: SetRenderTarget(null) after drawing to target RT
+	-	Refactor for readability
+-	@Trash History
+	-	Fix UI scaling
+-	@HUD Elements Libs
+	-	Prevent spilling beyond screen edge
+	-	Upgrade anchors to percents
+	-	Fix element centering for raft timer (@AM), @Objectives, and @Messages
+	-	Add documentation
+-	@Ruined Items
+	-	Add alerts for crafting failures
+	-	Increase chance of magitech repair to 50%
+	-	Re-evaluate crafting chance of ruined items
+-	@Bullwhip
+	-	Fix whip pvp
+-	@FMC
+	-	Restore some noise to blue PKE meter
+-	@Necrotis
+	-	Reduce darkness effect
+	-	Fix red ankh when not in inventory
+	-	Fix anima drain recovery message
+-	@Soul Barriers
+	-	Fix barrier vs skulls (let clients with shields not be hit by projectiles)
+-	@Orbs
+	-	Prevent using orbs when no clear target exists (lock against use 5 ticks after switch)
+[v0.53.1]
+-	Updates
+	-	@AM 0.53.1
+	-	@AML 0.21.1.1
+	-	@Boss Reigns 1.4.0.2
+	-	@Messages 1.4.0.1
+	-	@Objectives 0.9.0.1
+	-	@PKE Meter 3.0.0.1
+	-	@Trash History 1.1.0
+-	@AML
+	-	Edit kit scan text
+-	@Trash History
+	-	Add trash flush button
+	-	Fix MP issues (await sync?)
+-	Exceptions
+[v0.53.0]
+-	Updates
+	-	@AML 0.21.1
+	-	@Boss Reigns 1.4.0.1
+	-	@Findable Mana Crystals 2.1.0.4
+	-	@HUD Elements Lib 4.3.1
+	-	@Lost Expeditions 1.1.2.1
+	-	@Messages 1.4.0
+	-	@Mod Libs Core 1.5.4.2
+	-	@Mod Libs General 1.7.2
+	-	@Necrotis 2.2.5.3
+	-	@Objectives 0.9.0
+	-	@Orbs 1.9.0
+	-	@PKE Meter 3.0.0
+	-	@Powerful Magic 1.11.1
+	-	@Steampunk Arsenal 0.18.0.3
+	-	@The Mad Ranger 1.11.0
+	-	@The Trickster 1.7.5.7
+-	@AMS
+	-	Add Trash History
+	-	Set Quick Rope as an optional mod
+	-	Set logo 2nd glow softer
+	-	Tweak mod icon (add inside glow)
+-	Update mod homepages
+-	Create @Trash History mod
+	-	Create mod
+	-	@Plan
+		-	An inventory slot is dedicated to being the "pile"
+		-	When an item is placed on the pile, it's stored there invisibly
+		-	When the player left-clicks on the pile, an item is popped
+		-	When the player right-clicks the pile, 10 items are popped
+		-	Ctrl+click pile to make items added to its bottom (queued) instead of top (stacked)
+-	Tweak trailer thumbnail
+-	Exceptions
+-	@AM
+	-	Fix raft timer widget position
+	-	Make guide invincible with replenishing hp
+	-	Stop highlighting PKE barrel when player owns a PKE meter
+	-	Fix absent PKE barrel highligher (sync barrel contents to clients?)
+	-	Fix spark wand recipe
+-	@AML
+	-	On enter: "Terraria, land of the undead" + "Eliminate the source of undeath!"
+	-	Set all shard finding objectives as 'important'
+-	@Powerful Magic
+	-	Don't attempt to clamp horizontal velocity if not on the ground during focus
+-	Add timer buffer between after item hover before resuming orb switching
+-	@PKE
+	-	At 65% of a reading, emit alert
+		-	Use timer to buffer against start and end of reading
+		-	Implement 'real' reading and 'perceived' reading
+		-	Animate with corresponding color
+		-	Produce a sound
+		-	Detect reading and begin fx
+	-	Set PKE HUD to be enabled by default
+	-	Enable PKE scan while paused
+-	@FMC
+	-	Add message for geothaum use to "see map"
+	-	Modify geothaum map label (to mention "Mana Shards" specifically)
+-	@TMR
+	-	Improve speedloader (use reload hotkey)
+-	Swap Objectives widget with raft refill widget
+-	@Orbs
+	-	Prevent orb use/UI when dead
+	-	Prevent swapping when mouse hovering
+	-	Increase world orb supply
+	-	Add color labels when showing orb icons
+	-	Set inventory orbs to glow only when "resonating"
+	-	Set targetted chunk to auto-equip relevant orb
+	-	Fix incorrect orb color targetting
+	-	Highlight orb-able chunk with rectangle overlay
+	-	Pick player's targetted chunk by mouse (clamped to 12 tile maximum range)
+	-	Give orbs items special highlight in inventory (item slot?)
+-	@Messages
+	-	Animate Messages widget hover color
+	-	Add widget to show unread important messages on HUD
+	-	Add Mod.Call API
+-	@Objectives
+	-	Implement 'is important' objectives
+	-	Make the objectives HUD element more animated & interactive + open the dialog when clicked
+-	@B&D a way to introduce player to shard finding
+-	Create trailer
+[v0.52.1]
+-	@Surroundings (1.2.0.3)
+	-	Lower cave bottom background alignments
+-	Fix duplicate bound goblins and mechanics
+[v0.52.0]
+-	Updates
+	-	@AM 0.52.0
+	-	@AML 0.21.0.2
+	-	@Enraged 0.14.0
+	-	@Grappletech 2.2.2.1
+	-	@Necrotis 2.2.5.1
+	-	@Orbs 1.8.0.1
+	-	@PKE 2.0.0.3
+	-	@Surroundings 1.2.0.2
+-	@AMS
+	-	Updates
+-	@AM
+	-	Updates
+-	Exceptions
+-	@AML
+	-	Set "max PKE meters" objective to accept +80% green
+-	@PKE
+	-	Tweak PKE mouse icon position (+16, -8)
+-	@Grappletech
+	-	Fix grapple overlay misalign (game zoom)
+-	@Necrotis
+	-	Tweak Dilluted Ectoplasm scannable text
+	-	Add alert highlight for on screen ectoplasms when below 35% anima
+-	@Orbs
+	-	Fix mouse orb overlay in main menu
+-	@Enraged
+	-	Reduced damage taken to 25%
+	-	Improve enrage meter readability
+-	Film trailer scenes
+[v0.51.0]
+-	Updates
+	-	@AML 0.21.0
+	-	@Boss Reigns 1.4.0
+	-	@Cursed Bones 1.1.1.3
+	-	@Ergophobia 1.15.0
+	-	@Grappletech 2.2.2
+	-	@Green Hell 0.7.5
+	-	@Lost Expeditions 1.1.2
+	-	@Orbs 1.8.0
+	-	@PKE 2.0.0.2
+	-	@Powerful Magic 1.11.0.1
+	-	@World Gates 1.3.1
+-	@AMS
+	-	Make glowing logo letters pulse (not flicker) and not clash with daylight
+	-	Mention beta status, add link for feedback
+	-	Updates
+-	@AM
+	-	Shrink tooltip for Strange Plants
+-	@AML
+	-	Make jungle water scannable
+	-	Make scaffolding kits scannable
+	-	Edit trickster message text
+-	@LE
+	-	Add more dark heart shards to LEs
+-	@Boss Reigns
+	-	When AM not loaded, disable digging while 'reigns' are in session
+	-	Avoid soft locking from WoF (adds hard coded exception when all pre-HM bosses downed)
+-	@Powerful Magic
+	-	Fix wand of sparking focus sprite alignment
+-	@Green Hell
+	-	Verify jungle snake hiss isnt broadcast
+-	@World Gates
+	-	Reduce gates by -5 (slightly lower than multiple of 20 amounts)
+-	@Grappletech
+	-	Fix overlay not showing
+-	@PKE
+	-	Attempt failsafe against PKE HUD toggle spam
+-	@Ergophobia
+	-	Fix placement height adjusting of scaffolding kits
+	-	Make scaffold kits cheap
+-	@Orbs
+	-	Enable orb use on obsidian brick, ebonstone brick, crimtane brick
+	-	Enable pickaxing obsidian brick, ebonstone brick, crimtane brick
+	-	Add more orbs to world chests
+	-	Show orb color of tile chunk on mouse icon while using binocs
+	-	Make orb sprites more distinct
+	-	Fix orb sync
+[v0.50.0]
+-	Updates
+	-	@FMC (2.1.0.2)
+	-	@Necrotis (2.2.4)
+	-	@Soul Barriers (3.3.0)
+	-	@World Gates (1.3.0.2)
+-	@Test (especially resurrecting world gates)
+-	Fix elixir altering health (remove heal effect completely)
+-	Make blue PKE reading more clear
+-	Fix resurrecting world gates (client-only) (?!)
+	-	Fix resurrecting world gates
+	-	Ensure server syncs all barriers to new connected players
+	-	Refactor barrier collision checks
+		-	Host handles all player collision checks (server -> clients)
+		-	Host handles all npc and projectile collision checks (server -> all clients)
+
